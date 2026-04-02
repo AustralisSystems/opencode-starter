@@ -47,8 +47,7 @@
       },
     },
   },
-  "default_agent": "devops-engineer",
-  "theme": "catppuccin",
+  "default_agent": "plan",
   "autoupdate": true,
   "instructions": ["rules/*.md"],
   // WARNING: this is a security risk, do not share sessions with anyone automatically.
