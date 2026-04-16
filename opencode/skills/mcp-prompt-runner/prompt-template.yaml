@@ -1,0 +1,211 @@
+---
+# Qwen MCP Bridge - Prompt Template
+# Version: 1.0.0
+# Purpose: Template for standardized prompts with variable substitution
+# Use: Replace {variables} with actual values at runtime
+
+name: qwen-mcp-template
+version: 1.0.0
+type: mcp-template
+created: 2025-10-28
+
+# ============================================================================
+# TEMPLATE VARIABLES (Replace these at runtime)
+# ============================================================================
+variables:
+  task_description:
+    type: string
+    required: true
+    description: "Brief description of the task or objective"
+    example: "Code review for security vulnerabilities"
+  
+  context:
+    type: string
+    required: true
+    description: "Relevant context or code to analyze"
+    example: "Review authentication handler for OWASP compliance"
+  
+  model_type:
+    type: string
+    required: true
+    enum: ["7b", "72b"]
+    description: "Model size: 7b for simple tasks, 72b for complex reasoning"
+    example: "7b"
+  
+  temperature:
+    type: float
+    required: false
+    default: 0.7
+    minimum: 0.0
+    maximum: 1.0
+    description: "Creativity/randomness: 0.0=deterministic, 1.0=random"
+    example: 0.7
+  
+  output_format:
+    type: string
+    required: false
+    default: "text"
+    enum: ["text", "json", "markdown", "code"]
+    description: "Desired output format"
+    example: "markdown"
+  
+  max_tokens:
+    type: integer
+    required: false
+    default: 2048
+    description: "Maximum tokens for response"
+    example: 2048
+
+# ============================================================================
+# SYSTEM PROMPT (Instructions for the model)
+# ============================================================================
+system: |
+  You are a helpful AI assistant powered by Qwen.
+  
+  Task Type: {task_description}
+  Model Size: {model_type}
+  Output Format: {output_format}
+  
+  Your role is to provide clear, accurate, and helpful responses.
+  - Be concise yet thorough
+  - Provide examples when helpful
+  - Format output as requested
+  - Focus on practical, actionable answers
+
+# ============================================================================
+# USER PROMPT (The actual task/question)
+# ============================================================================
+prompt: |
+  Please help with the following task:
+  
+  Task: {task_description}
+  
+  Context:
+  {context}
+  
+  Please provide your response in {output_format} format.
+
+# ============================================================================
+# RESPONSE SCHEMA (Expected response structure)
+# ============================================================================
+response_schema:
+  type: object
+  properties:
+    success:
+      type: boolean
+      description: "Whether task was successfully completed"
+    
+    result:
+      type: string
+      description: "The main response content"
+    
+    summary:
+      type: string
+      description: "Brief summary of the response"
+    
+    metadata:
+      type: object
+      properties:
+        tokens_used:
+          type: integer
+        latency_ms:
+          type: integer
+        model:
+          type: string
+      description: "Execution metadata"
+
+# ============================================================================
+# MODEL PARAMETERS
+# ============================================================================
+parameters:
+  # Core parameters
+  temperature: {temperature}
+  max_tokens: {max_tokens}
+  
+  # Advanced sampling parameters
+  top_p: 0.9              # Nucleus sampling
+  top_k: 40               # Top-K filtering
+  repetition_penalty: 1.0 # Penalize repeated tokens
+  frequency_penalty: 0.0  # Frequency-based penalty
+  presence_penalty: 0.0   # Presence-based penalty
+  
+  # Decoding parameters
+  num_beams: 1            # 1 = greedy, >1 = beam search
+  early_stopping: true    # Stop when all beams complete
+  length_penalty: 1.0     # Balance output length
+
+# ============================================================================
+# EXECUTION OPTIONS
+# ============================================================================
+execution:
+  mode: "sync"                    # sync or async
+  timeout_seconds: 300            # 5 minutes
+  retry_on_failure: true
+  max_retries: 3
+  
+  # Async options (if mode: async)
+  queue_name: "qwen-inference"
+  priority: "normal"              # low, normal, high
+  
+  # Caching options
+  cache_enabled: true
+  cache_ttl_seconds: 3600         # 1 hour
+  cache_key_hash: "sha256"
+
+# ============================================================================
+# EXAMPLE INSTANTIATIONS (How to use this template)
+# ============================================================================
+
+# Example 1: Code Review (Simple - use 7b)
+example_code_review:
+  task_description: "Code review for security issues"
+  context: |
+    def login(username, password):
+        user = db.query(f"SELECT * FROM users WHERE name='{username}'")
+        if user and user['password'] == password:
+            return create_session(user)
+        return None
+  model_type: "7b"
+  temperature: 0.3
+  output_format: "markdown"
+  max_tokens: 1024
+
+# Example 2: Architecture Design (Complex - use 72b)
+example_architecture:
+  task_description: "Design microservices architecture for e-commerce platform"
+  context: |
+    Platform needs:
+    - Handle 10K concurrent users
+    - Multiple payment providers
+    - Real-time inventory
+    - Global deployment
+  model_type: "72b"
+  temperature: 0.7
+  output_format: "json"
+  max_tokens: 4096
+
+# Example 3: Documentation Generation
+example_documentation:
+  task_description: "Generate API documentation"
+  context: |
+    FastAPI endpoint: POST /api/v1/users
+    Creates a new user with validation
+  model_type: "7b"
+  temperature: 0.5
+  output_format: "markdown"
+  max_tokens: 2048
+
+# ============================================================================
+# METADATA
+# ============================================================================
+metadata:
+  author: "ai-agents development team"
+  purpose: "Standardized prompt template for Qwen inference"
+  compatible_with:
+    - qwen-7b-instruct
+    - qwen-72b-instruct
+  created_date: "2025-10-28"
+  version_history:
+    - version: "1.0.0"
+      date: "2025-10-28"
+      changes: "Initial release"

@@ -1,0 +1,622 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // When set, ONLY these providers are enabled (all others ignored)
+  // "enabled_providers": ["github-copilot", "opencode"],
+  // ── built-in agent overrides ─────────────────────────────────────────────────
+  // PRIMARY: full development agent — all tools enabled by default
+  "agent": {
+    "build": {
+      // Model override — default: global model
+      // "model": "",
+      // Model variant e.g. "high" for extended thinking
+      // "variant": "",
+      // Temperature (0.0–1.0) — default: model-specific (typically 0)
+      // "temperature": 0.3,
+      // Top_p (0.0–1.0) response diversity control
+      // "top_p": 1.0,
+      // Path to custom system prompt
+      // "prompt": "{file:./prompts/build.md}",
+      // Max agentic iterations; omit "steps" for model-decided/unbounded iteration
+      // "steps": 64,
+      // Disable this agent
+      // "disable": false,
+      // Color: hex (#4a9eff) or theme: primary|secondary|accent|success|warning|error|info
+      // "color": "primary",
+      "permission": {
+        "*": "allow",
+        "doom_loop": "deny"
+      }
+    },
+    // SUBAGENT: fast read-only codebase exploration
+    "explore": {
+      "description": "Fast read-only agent for exploring and searching the codebase",
+      "mode": "subagent",
+      // "model": "",
+      // "temperature": 0.1,
+      // "steps": 20,
+      // "hidden": false,
+      "permission": {
+        "bash": "deny",
+        "edit": "deny"
+      }
+    },
+    // SYSTEM: hidden agents for automatic tasks
+    // "compaction": { "model": "" },   // model used for context compaction summaries
+    // "title": { "model": "" },         // model used for session title generation
+    // "summary": { "model": "" }        // model used for session summary generation
+    // SUBAGENT: general purpose — inherits global permission policy
+    "general": {
+      "description": "General purpose agent for research and multi-step tasks",
+      // "model": "",
+      // "temperature": 0.3,
+      // "steps": 40,
+      // "hidden": false
+      "mode": "subagent"
+    },
+    // PRIMARY: planning/analysis agent — autonomous override (allow operations)
+    "plan": {
+      // For autonomous: allow all operations
+      "permission": {
+        "*": "allow",
+        "doom_loop": "deny"
+      }
+    }
+  },
+  // ═══════════════════════════════════════════════════════════════════════════════
+  // OPENCODE CONFIGURATION - FULLY AUTONOMOUS AI AGENT CLI
+  // ═══════════════════════════════════════════════════════════════════════════════
+  // This configuration is optimized for fully autonomous AI agent operations.
+  // All settings are set to maximize agent independence and capability.
+  // ── meta / updates ────────────────────────────────────────────────────────────────
+  // true = auto-install on start | false = disable | "notify" = prompt only
+  // For autonomous operation: auto-update ensures latest capabilities
+  "autoupdate": true,
+  // ── custom commands ───────────────────────────────────────────────────────────
+  // Invoke via /commandname in the TUI
+  "command": {
+    // Example custom commands:
+    // "test": {
+    //   "template": "Run the full test suite with coverage and show any failures.\nSuggest fixes for failing tests.",
+    //   "description": "Run tests with coverage",
+    //   "agent": "build",
+    //   "model": "",
+    //   "subtask": false
+    // },
+    // "lint": {
+    //   "template": "Run linting on the codebase and report any issues.",
+    //   "description": "Run linter",
+    //   "agent": "build"
+    // },
+    // "format": {
+    //   "template": "Format all code files in the project using appropriate formatters.",
+    //   "description": "Format code",
+    //   "agent": "build"
+    // }
+  },
+  // ── context compaction ─────────────────────────────────────────────────────────
+  // Session auto-compaction when context window fills
+  "compaction": {
+    // Auto-compact when context window fills — default: true
+    "auto": true,
+    // Remove old tool call outputs to save tokens — default: true
+    "prune": true,
+    // Token buffer reserved to prevent overflow during compaction — default: 10000
+    "reserved": 20000
+  },
+  // ── default agent ────────────────────────────────────────────────────────────────
+  // "build" | "plan" | any custom primary agent name — default: "build"
+  // build = full development agent with all tools
+  "default_agent": "build",
+  // ── provider allow/block lists ────────────────────────────────────────────────
+  // Disable specific providers even if their credentials are present
+  "disabled_providers": [],
+  // ── experimental ───────────────────────────────────────────────────────────
+  // Unstable options — may change or be removed without notice
+  "experimental": {
+    // Allow multiple tool calls in a single batch operation — default: false
+    "batch_tool": true,
+    // Agent loop continues even when a tool call is denied — default: false
+    "continue_loop_on_deny": true,
+    // Disable paste content summarisation — default: false
+    "disable_paste_summary": false,
+    // Timeout in ms for MCP server requests — default: 5000
+    "mcp_timeout": 30000,
+    // Enable OpenTelemetry spans for AI SDK calls — default: false
+    "openTelemetry": false,
+    // Tool names restricted to primary agents only (not subagents)
+    "primary_tools": []
+  },
+  // ── code formatters ───────────────────────────────────────────────────────────
+  // Set to false to disable ALL formatters
+  "formatter": {
+    // Disable a specific built-in formatter:
+    // "prettier": { "disabled": true },
+    //
+    // Custom formatter:
+    // "my-formatter": {
+    //   "command": ["npx", "prettier", "--write", "$FILE"],
+    //   "extensions": [".js", ".ts", ".jsx", ".tsx"],
+    //   "environment": { "NODE_ENV": "development" }
+    // }
+  },
+  // ── instruction / rules files ─────────────────────────────────────────────────
+  // Paths and globs to instruction files loaded as context into every session
+  "instructions": [],
+  // ── logging ────────────────────────────────────────────────────────────────────────
+  // "DEBUG" | "INFO" | "WARN" | "ERROR"
+  // DEBUG for troubleshooting, INFO for normal operation
+  "logLevel": "DEBUG",
+  // ── LSP servers ───────────────────────────────────────────────────────────────
+  // Requires OPENCODE_EXPERIMENTAL_LSP_TOOL=true to expose the lsp tool to agents
+  // Set to false to disable ALL LSP
+  "lsp": {
+    // Example configurations:
+    // "python": {
+    //   "command": ["pylsp"],
+    //   "extensions": [".py"],
+    //   "disabled": false,
+    //   "env": { "PYTHONPATH": "." },
+    //   "initialization": {}
+    // },
+    // "typescript": {
+    //   "command": ["typescript-language-server", "--stdio"],
+    //   "extensions": [".ts", ".tsx", ".js", ".jsx"]
+    // },
+    // "go": {
+    //   "command": ["gopls"],
+    //   "extensions": [".go"]
+    // },
+    // "rust": {
+    //   "command": ["rust-analyzer"],
+    //   "extensions": [".rs"]
+    // },
+    // "java": {
+    //   "command": ["jdtls"],
+    //   "extensions": [".java"]
+    // }
+  },
+  // ── MCP servers ───────────────────────────────────────────────────────────────
+  // Model Context Protocol servers for extended capabilities
+  "mcp": {
+    // Uncomment and configure to add MCP tool servers:
+    //
+    // Local MCP server:
+    // "my-local-server": {
+    //   "type": "local",
+    //   "command": ["npx", "-y", "@modelcontextprotocol/server-filesystem", "/path"],
+    //   "environment": { "MY_VAR": "value" },
+    //   "enabled": true,
+    //   "timeout": 30000    // ms for MCP tool discovery on startup — default: 5000
+    // },
+    //
+    // Remote MCP server:
+    // "my-remote-server": {
+    //   "type": "remote",
+    //   "url": "https://mcp.example.com",
+    //   "enabled": true,
+    //   "headers": { "Authorization": "Bearer {env:MY_TOKEN}" },
+    //   "timeout": 30000,
+    //   "oauth": false       // false = disable OAuth auto-detection
+    // }
+  },
+  // ── models ────────────────────────────────────────────────────────────────────────
+  // Format: "provider_id/model_id"
+  // Primary model for agent operations (coder agent)
+  "model": "github-copilot/gpt-5.2-codex",
+  // ── permissions ────────────────────────────────────────────────────────────────
+  // EACH KEY: "allow" | "ask" | "deny"
+  // For fully autonomous operation: allow everything except dangerous commands
+  "permission": {
+    // Wildcard default for all tools not explicitly listed below
+    "*": "allow",
+    // Shell command execution — default: "allow"
+    "bash": "allow",
+    // Code search — default: "allow"
+    "codesearch": "allow",
+    // Triggered when the same tool call repeats 3x with identical input — default: "ask"
+    // "deny" = stop loop cleanly | "allow" = let it continue | "ask" = prompt user
+    // Autonomous: deny to prevent infinite loops
+    "doom_loop": "deny",
+    // All file writes/edits/patches/multiedits — default: "allow"
+    "edit": "allow",
+    // Access to paths outside the project working directory — default: "ask"
+    "external_directory": "allow",
+    // File glob pattern searches — default: "allow"
+    "glob": "allow",
+    // Regex content searches — default: "allow"
+    "grep": "allow",
+    // Directory listings — default: "allow"
+    "list": "allow",
+    // LSP queries (go-to-def, hover, references, etc.) — default: "allow"
+    "lsp": "allow",
+    // Agent asking the user questions mid-task — default: "allow"
+    // Autonomous mode: allow to enable self-directed reasoning
+    "question": "allow",
+    // File reads — .env files denied by default (security)
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    // Loading skill (SKILL.md) files — default: "allow"
+    "skill": "allow",
+    // Subagent (Task tool) spawning — default: "allow"
+    "task": "allow",
+    // Todo list management during sessions — default: "allow"
+    "todowrite": "allow",
+    // Fetch content from a specific URL — default: "allow"
+    "webfetch": "allow",
+    // Web search via Exa AI — default: "allow"
+    "websearch": "allow"
+  },
+  // ── npm plugins ───────────────────────────────────────────────────────────────
+  // npm package names of opencode plugins to load
+  "plugin": [],
+  // ── provider configurations ────────────────────────────────────────────────────
+  "provider": {
+    // Amazon Bedrock provider
+    "amazon-bedrock": {
+      "options": {
+        "profile": "default",
+        // "endpoint": ""
+        "region": "us-east-1"
+      }
+    },
+    // Anthropic (Claude) provider
+    "anthropic": {
+      "options": {
+        "chunkTimeout": 180000,
+        "setCacheKey": true,
+        // "apiKey": "{env:ANTHROPIC_API_KEY}",
+        "timeout": false
+      }
+    },
+    // Azure OpenAI provider
+    "azure": {
+      "options": {
+        "chunkTimeout": 180000,
+        // "apiKey": "{env:AZURE_OPENAI_API_KEY}",
+        // "baseURL": "https://your-resource.openai.azure.com/",
+        "timeout": false
+      }
+    },
+    // GitHub Copilot provider (primary for autonomous operations)
+    "github-copilot": {
+      "options": {
+        // ms between stream chunks before aborting — default: 30000
+        "chunkTimeout": 180000,
+        // Enable prompt caching to cut costs on long sessions — default: false
+        "setCacheKey": true,
+        // "apiKey": "{env:GITHUB_TOKEN}",     // or reference env var
+        // "baseURL": "",                       // custom endpoint
+        // "enterpriseUrl": ""                  // GitHub Enterprise URL
+        // ms total per request; false = no hard ceiling — default: 300000
+        "timeout": false
+      }
+    },
+    // Google Gemini provider
+    "google": {
+      "options": {
+        "chunkTimeout": 180000,
+        // "apiKey": "{env:GOOGLE_API_KEY}",
+        "timeout": false
+      }
+    },
+    // LM Studio (local models)
+    "lmstudio": {
+      "name": "LM Studio (local)",
+      "npm": "@ai-sdk/openai-compatible",
+      "options": {
+        "baseURL": "http://127.0.0.1:1234/v1"
+      }
+    },
+    // OpenAI provider (GPT-5 models with OAuth)
+    "openai": {
+      // Model configurations
+      "models": {
+        "gpt-5.1": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.1 (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "high"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "auto",
+              "textVerbosity": "low"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "none": {
+              "reasoningEffort": "none",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            }
+          }
+        },
+        "gpt-5.1-codex": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.1 Codex (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            }
+          }
+        },
+        "gpt-5.1-codex-max": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.1 Codex Max (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            }
+          }
+        },
+        "gpt-5.1-codex-mini": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.1 Codex Mini (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            }
+          }
+        },
+        "gpt-5.2": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.2 (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "none": {
+              "reasoningEffort": "none",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            }
+          }
+        },
+        "gpt-5.2-codex": {
+          "limit": {
+            "context": 272000,
+            "output": 128000
+          },
+          "modalities": {
+            "input": [
+              "text",
+              "image"
+            ],
+            "output": [
+              "text"
+            ]
+          },
+          "name": "GPT 5.2 Codex (OAuth)",
+          "variants": {
+            "high": {
+              "reasoningEffort": "high",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            },
+            "low": {
+              "reasoningEffort": "low",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "medium": {
+              "reasoningEffort": "medium",
+              "reasoningSummary": "auto",
+              "textVerbosity": "medium"
+            },
+            "xhigh": {
+              "reasoningEffort": "xhigh",
+              "reasoningSummary": "detailed",
+              "textVerbosity": "medium"
+            }
+          }
+        }
+      },
+      "options": {
+        // Include additional fields in requests
+        "include": [
+          "reasoning.encrypted_content"
+        ],
+        // Reasoning effort for models that support it
+        "reasoningEffort": "high",
+        // How to summarize reasoning traces
+        "reasoningSummary": "detailed",
+        // Store prompts for future use
+        "store": false,
+        // Text verbosity level: "low" | "medium" | "high"
+        "textVerbosity": "medium"
+      }
+    },
+    // OpenCode built-in provider
+    "opencode": {
+      "options": {
+        "chunkTimeout": 180000,
+        "setCacheKey": true,
+        "timeout": false
+      }
+    },
+    // OpenRouter provider (aggregates many models)
+    "openrouter": {
+      "options": {
+        "chunkTimeout": 180000,
+        // "apiKey": "{env:OPENROUTER_API_KEY}",
+        "timeout": false
+      }
+    }
+  },
+  // ── server ─────────────────────────────────────────────────────────────────────
+  "server": {
+    // Additional CORS origins for browser-based clients
+    "cors": [],
+    "hostname": "0.0.0.0",
+    // Enable mDNS service discovery on the local network — default: false
+    "mdns": false,
+    // mDNS domain name — default: "opencode.local"
+    "mdnsDomain": "opencode.local",
+    "port": 4096
+  },
+  // ── sharing ────────────────────────────────────────────────────────────────────
+  // "manual" = /share command only | "auto" = share automatically | "disabled"
+  // Disabled for fully autonomous local operation
+  "share": "disabled",
+  // ── skill paths ───────────────────────────────────────────────────────────────
+  "skills": {
+    // Additional local filesystem paths to search for SKILL.md bundles
+    "paths": [
+      "C:/Users/TristanBurns/.agents/skills",
+      "C:/Users/TristanBurns/.claude/skills"
+    ],
+    // Remote URLs to fetch skill indexes from
+    "urls": []
+  },
+  // Used for lightweight tasks (title generation, etc.) — default: cheaper model
+  "small_model": "github-copilot/claude-haiku-4.5",
+  // ── snapshots ────────────────────────────────────────────────────────────────────
+  // Tracks file changes per session enabling /undo and /redo — default: true
+  // Enable for autonomous rollback capability
+  "snapshot": true,
+  // ── enterprise ────────────────────────────────────────────────────────────────
+  // "enterprise": { "url": "https://github.mycompany.com" },
+  // ── file watcher ───────────────────────────────────────────────────────────────
+  // Glob patterns for paths to exclude from the file watcher
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "build/**",
+      ".venv/**",
+      "venv/**",
+      "__pycache__/**",
+      ".next/**",
+      ".cache/**",
+      "*.log",
+      "coverage/**",
+      ".nyc_output/**",
+      "artifacts/**",
+      "*.pyc"
+    ]
+  }
+}

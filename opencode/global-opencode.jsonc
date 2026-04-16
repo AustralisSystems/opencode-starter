@@ -1,0 +1,180 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Agent profiles optimized for long-running autonomous sessions
+  "agent": {
+    "build": {
+      "description": "Autonomous implementation agent tuned for long-running sessions.",
+      "mode": "primary",
+      "permission": {
+        "*": "allow",
+        "bash": {
+          "*": "allow",
+          "rm -rf *": "deny",
+          "sudo *": "deny"
+        },
+        "doom_loop": "deny"
+      },
+      "steps": 64,
+      "temperature": 0.2
+    },
+    "explore": {
+      "description": "Read-only codebase exploration for fast context gathering.",
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "read": "allow"
+      },
+      "steps": 20,
+      "temperature": 0.1
+    },
+    "general": {
+      "description": "General subagent for long-running parallel execution.",
+      "mode": "subagent",
+      "permission": {
+        "*": "allow",
+        "bash": {
+          "*": "allow",
+          "rm -rf *": "deny",
+          "sudo *": "deny"
+        },
+        "doom_loop": "deny"
+      },
+      "steps": 40,
+      "temperature": 0.2
+    },
+    "plan": {
+      "description": "Planning and analysis with constrained execution.",
+      "mode": "primary",
+      "permission": {
+        "*": "deny",
+        "bash": "deny",
+        "edit": "deny",
+        "read": "allow"
+      },
+      "steps": 24,
+      "temperature": 0.1
+    }
+  },
+  // Global runtime behavior (not repo-specific)
+  "autoupdate": true,
+  "compaction": {
+    "auto": true,
+    "prune": true
+  },
+  "default_agent": "build",
+  // Experimental (global runtime tuning)
+  "experimental": {
+    "batch_tool": true,
+    "continue_loop_on_deny": true,
+    "disable_paste_summary": false,
+    "mcp_timeout": 30000,
+    "openTelemetry": true,
+    "primary_tools": []
+  },
+  "logLevel": "INFO",
+  // MCP defaults that are generally useful across repos
+  "mcp": {
+    "fetch": {
+      "command": [
+        "uvx",
+        "mcp-server-fetch"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "github-grep": {
+      "command": [
+        "mcp-remote",
+        "https://mcp.grep.app"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "playwriter": {
+      "command": [
+        "npx",
+        "-y",
+        "playwriter"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "sequential-thinking": {
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "time": {
+      "command": [
+        "uvx",
+        "mcp-server-time"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "upstash-context7": {
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    }
+  },
+  // Global model defaults
+  "model": "opencode/minimax-m2.5",
+  // Global permissions: allow/deny only (no ask)
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "rm -rf *": "deny",
+      "sudo *": "deny"
+    },
+    "codesearch": "allow",
+    "doom_loop": "deny",
+    "edit": "allow",
+    "external_directory": "deny",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "question": "deny",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "skill": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow"
+  },
+  // Global plugins
+  "plugin": [
+    "@franlol/opencode-md-table-formatter@latest",
+    "opencode-websearch-cited@1.2.0",
+    "opencode-cost-guard"
+  ],
+  // Keep provider config global and portable; project-specific provider tuning
+  // should live in repo-level opencode.jsonc if needed.
+  "provider": {},
+  "share": "disabled",
+  "small_model": "github-copilot/claude-haiku-4.5",
+  "snapshot": true
+}

@@ -1,83 +1,248 @@
 {
   "$schema": "https://opencode.ai/config.json",
-  "model": "google-vertex/gemini-3.1-pro-preview",
-  "small_model": "google-vertex/gemini-2.5-flash",
-  "enabled_providers": ["google-vertex", "openrouter", "anthropic", "calculon"],
-  "provider": {
-    "google-vertex": {
-      "models": {
-        "gemini-2.5-flash": {
-          "temperature": true,
+  // Combined agent profile: global baseline + project tuning.
+  "agent": {
+    "build": {
+      "description": "Autonomous implementation agent tuned for long-running sessions.",
+      "mode": "primary",
+      "permission": {
+        "*": "allow",
+        "bash": {
+          "*": "allow",
+          "rm -rf *": "deny",
+          "sudo *": "deny"
         },
-        "gemini-2.5-pro": {
-          "temperature": true,
-        },
-        "gemini-3.1-pro-preview": {
-          "temperature": true,
-        },
+        "doom_loop": "deny"
       },
-      "options": {
-        "project": "{env:VERTEXAI_PROJECT_ID}",
-        "location": "{env:VERTEXAI_REGION}",
-      },
+      "steps": 96,
+      "temperature": 0.2
     },
-    "anthropic": {
-      "models": {
-        "claude-opus-4-6": {
-          "temperature": true,
-        },
-        "claude-sonnet-4-6": {
-          "temperature": true,
-        },
-        "claude-haiku-4-5": {
-          "temperature": true,
-        },
+    "explore": {
+      "description": "Read-only codebase exploration for fast context gathering.",
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny",
+        "glob": "allow",
+        "grep": "allow",
+        "list": "allow",
+        "read": "allow"
       },
-      "options": {
-        "apiKey": "{env:ANTHROPIC_API_KEY}",
-      },
+      "steps": 20,
+      "temperature": 0.1
     },
-    "calculon": {
-      "npm": "@ai-sdk/openai-compatible",
-      "name": "calculon",
-      "options": {
-        "baseURL": "http://calculon.local:8000/v1",
-        "apiKey": "{env:OMLX_API_KEY}",
-      },
-      "models": {
-        "Qwen3.5-9B-MLX-4bit": {
-          "name": "Qwen3.5-9B-MLX-4bit",
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"],
-          },
-          "attachment": true,
+    "general": {
+      "description": "General subagent for long-running parallel execution.",
+      "mode": "subagent",
+      "permission": {
+        "*": "allow",
+        "bash": {
+          "*": "allow",
+          "rm -rf *": "deny",
+          "sudo *": "deny"
         },
-        "gemma-4-e4b-it-8bit": {
-          "name": "gemma-4-e4b-it-8bit",
-          "modalities": {
-            "input": ["text", "image"],
-            "output": ["text"],
-          },
-          "attachment": true,
-        },
+        "doom_loop": "deny"
       },
+      "steps": 40,
+      "temperature": 0.2
     },
+    "plan": {
+      "description": "Planning and analysis with autonomous execution enabled.",
+      "mode": "primary",
+      "permission": {
+        "*": "allow",
+        "doom_loop": "deny"
+      },
+      "steps": 24,
+      "temperature": 0.1
+    }
   },
-  "default_agent": "plan",
   "autoupdate": true,
-  "instructions": ["rules/*.md"],
-  "share": "disabled",
+  // Project command shortcuts.
+  "command": {
+    "gate-a-cli": {
+      "agent": "build",
+      "description": "Run Gate A (cli)",
+      "template": "Run Gate A for CLI scope (ace pipeline run gate-a cli), summarize findings by severity, and propose minimal remediations."
+    },
+    "gate-b-cli": {
+      "agent": "build",
+      "description": "Run Gate B (cli)",
+      "template": "Run Gate B for CLI scope (ace pipeline run gate-b cli), summarize failures, and propose a targeted fix plan."
+    },
+    "gate-target": {
+      "agent": "build",
+      "description": "Run gates for a target",
+      "template": "Run gate validation for target $ARGUMENTS and return a concise findings table with next-step fixes."
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true,
+    "reserved": 20000
+  },
+  "default_agent": "build",
+  // Project-scoped provider selection and model defaults.
+  "enabled_providers": [
+    "github-copilot",
+    "opencode",
+    "openrouter"
+  ],
+  "experimental": {
+    "batch_tool": true,
+    "continue_loop_on_deny": true,
+    "disable_paste_summary": false,
+    "mcp_timeout": 30000,
+    "openTelemetry": true,
+    "primary_tools": []
+  },
+  "formatter": {},
+  // Combined instruction sources.
+  "instructions": [
+    "rules/*.md",
+    "./AGENTS.md",
+    "./AGENTS.md.yaml"
+  ],
+  "logLevel": "INFO",
+  "lsp": {},
+  // Combined MCP set including local memorygraph.
+  "mcp": {
+    "fetch": {
+      "command": [
+        "uvx",
+        "mcp-server-fetch"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "github-grep": {
+      "command": [
+        "mcp-remote",
+        "https://mcp.grep.app"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "memorygraph": {
+      "command": [
+        "memorygraph",
+        "--profile",
+        "extended"
+      ],
+      "enabled": true,
+      "environment": {
+        "MEMORY_BACKEND": "sqlite",
+        "MEMORY_SQLITE_PATH": "C:\\github_development\\AustralisSystems\\memorygraph\\memory.db",
+        "MEMORY_TOOL_PROFILE": "extended"
+      },
+      "timeout": 12000,
+      "type": "local"
+    },
+    "playwriter": {
+      "command": [
+        "npx",
+        "-y",
+        "playwriter"
+      ],
+      "enabled": false,
+      "type": "local"
+    },
+    "sequential-thinking": {
+      "command": [
+        "npx",
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "time": {
+      "command": [
+        "uvx",
+        "mcp-server-time"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    },
+    "upstash-context7": {
+      "command": [
+        "npx",
+        "-y",
+        "@upstash/context7-mcp"
+      ],
+      "enabled": true,
+      "timeout": 12000,
+      "type": "local"
+    }
+  },
+  "model": "github-copilot/gpt-5.3-codex",
+  // Combined global + project permissions.
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "git push *": "deny",
+      "rm -rf *": "deny",
+      "sudo *": "deny"
+    },
+    "codesearch": "allow",
+    "doom_loop": "deny",
+    "edit": "allow",
+    "external_directory": "deny",
+    "glob": "allow",
+    "grep": "allow",
+    "list": "allow",
+    "lsp": "allow",
+    "question": "deny",
+    "read": {
+      "*": "allow",
+      "*.env": "deny",
+      "*.env.*": "deny",
+      "*.env.example": "allow"
+    },
+    "skill": "allow",
+    "task": "allow",
+    "todowrite": "allow",
+    "webfetch": "allow",
+    "websearch": "allow"
+  },
   "plugin": [
     "@franlol/opencode-md-table-formatter@latest",
     "opencode-websearch-cited@1.2.0",
     "opencode-cost-guard"
   ],
-  "mcp": {
-    "smartplaylist": {
-      "type": "remote",
-      "url": "http://personal.local:8000/mcp",
-      "enabled": true,
-    },
+  "provider": {},
+  "share": "disabled",
+  // Keep external skills discoverable for local setups.
+  "skills": {
+    "paths": [
+      "C:/Users/TristanBurns/.agents/skills",
+      "C:/Users/TristanBurns/.claude/skills"
+    ],
+    "urls": []
   },
+  "small_model": "github-copilot/claude-haiku-4.5",
+  "snapshot": true,
+  // Project-scale repo optimizations.
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "build/**",
+      ".venv/**",
+      "venv/**",
+      "__pycache__/**",
+      ".next/**",
+      ".cache/**",
+      "*.log",
+      "coverage/**",
+      ".nyc_output/**",
+      "artifacts/**",
+      "*.pyc"
+    ]
+  }
 }

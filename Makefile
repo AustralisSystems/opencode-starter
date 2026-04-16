@@ -6,6 +6,9 @@ DRY_RUN ?= 0
 FORCE_OVERWRITE ?= 0
 STOW_PACKAGES := $(patsubst $(STOW_DIR)/%/,%,$(wildcard $(STOW_DIR)/*/))
 STOW_BASE_ARGS := -d $(STOW_DIR) -t $(TARGET)
+ROOT_CONFIG_FILES := $(wildcard $(STOW_DIR)/*.jsonc)
+ROOT_CONFIG_NAMES := $(notdir $(ROOT_CONFIG_FILES))
+MANAGED_FILE_MARKER_SUFFIX := .opencode-managed-file
 
 .PHONY: help
 help: ## Display this help
@@ -26,11 +29,11 @@ endif
 
 .PHONY: dry-run
 dry-run: ## Preview install actions without changing files
-	@$(MAKE) -s install DRY_RUN=1
+	@"$(MAKE)" -s install DRY_RUN=1
 
 .PHONY: install-force
 install-force: ## Install and force-overwrite existing destination files
-	@$(MAKE) -s install FORCE_OVERWRITE=1 DRY_RUN=$(DRY_RUN)
+	@"$(MAKE)" -s install FORCE_OVERWRITE=1 DRY_RUN=$(DRY_RUN)
 
 .PHONY: preflight-targets
 preflight-targets: ## Detect destination conflicts before install
@@ -39,6 +42,9 @@ preflight-targets: ## Detect destination conflicts before install
 		package=$$(basename "$$dir"); \
 		target_link="$(TARGET)/$$package"; \
 		if [ -e "$$target_link" ] && [ ! -L "$$target_link" ]; then \
+			if [ -f "$$target_link/.opencode-managed-copy" ]; then \
+				continue; \
+			fi; \
 			if [ "$(FORCE_OVERWRITE)" = "1" ]; then \
 				if [ "$(DRY_RUN)" = "1" ]; then \
 					echo "  [DRY-RUN] rm -rf \"$$target_link\""; \
@@ -52,14 +58,69 @@ preflight-targets: ## Detect destination conflicts before install
 			fi; \
 		fi; \
 	done; \
+	for file in $(ROOT_CONFIG_NAMES); do \
+		target_file="$(TARGET)/$$file"; \
+		managed_marker="$(TARGET)/.$$file$(MANAGED_FILE_MARKER_SUFFIX)"; \
+		if [ -e "$$target_file" ] && [ ! -L "$$target_file" ] && [ ! -f "$$managed_marker" ]; then \
+			if [ "$(FORCE_OVERWRITE)" = "1" ]; then \
+				if [ "$(DRY_RUN)" = "1" ]; then \
+					echo "  [DRY-RUN] rm -f \"$$target_file\""; \
+				else \
+					echo "  ! Force-overwriting existing destination: $$target_file"; \
+					rm -f "$$target_file"; \
+				fi; \
+			else \
+				echo "  ✗ config destination exists and is not managed: $$target_file"; \
+				conflicts=1; \
+			fi; \
+		fi; \
+	done; \
 	if [ "$$conflicts" -eq 1 ]; then \
 		echo "Conflict(s) detected. Re-run with FORCE_OVERWRITE=1 (or make install-force) to replace existing destinations."; \
 		exit 1; \
 	fi
 
+.PHONY: install-root-files
+install-root-files: ## Install root-level config files (internal)
+	@if [ "$(DRY_RUN)" = "1" ]; then \
+		echo "[DRY-RUN] mkdir -p $(TARGET)"; \
+	else \
+		mkdir -p $(TARGET); \
+	fi
+	@for src_file in $(ROOT_CONFIG_FILES); do \
+		config_name=$$(basename "$$src_file"); \
+		target_file="$(TARGET)/$$config_name"; \
+		managed_marker="$(TARGET)/.$$config_name$(MANAGED_FILE_MARKER_SUFFIX)"; \
+		if [ -e "$$target_file" ] && [ ! -L "$$target_file" ] && [ ! -f "$$managed_marker" ]; then \
+			if [ "$(FORCE_OVERWRITE)" = "1" ]; then \
+				if [ "$(DRY_RUN)" = "1" ]; then \
+					echo "  [DRY-RUN] rm -f \"$$target_file\""; \
+				else \
+					rm -f "$$target_file"; \
+				fi; \
+			else \
+				echo "  ✗ $$config_name exists and is not managed - skipping"; \
+				continue; \
+			fi; \
+		fi; \
+		if [ "$(DRY_RUN)" = "1" ]; then \
+			echo "  [DRY-RUN] ln -sfn \"$(CURDIR)/$$src_file\" \"$$target_file\""; \
+			echo "  [DRY-RUN] fallback copy if symlink unsupported"; \
+		else \
+			if ln -sfn "$(CURDIR)/$$src_file" "$$target_file" 2>/dev/null && [ -L "$$target_file" ]; then \
+				rm -f "$$managed_marker"; \
+				echo "  [OK] $$config_name (symlink)"; \
+			else \
+				cp -f "$(CURDIR)/$$src_file" "$$target_file"; \
+				touch "$$managed_marker"; \
+				echo "  [OK] $$config_name (managed copy)"; \
+			fi; \
+		fi; \
+	done
+
 .PHONY: install
 install: check ## Install opencode configuration
-	@$(MAKE) -s preflight-targets FORCE_OVERWRITE=$(FORCE_OVERWRITE) DRY_RUN=$(DRY_RUN)
+	@"$(MAKE)" -s preflight-targets FORCE_OVERWRITE=$(FORCE_OVERWRITE) DRY_RUN=$(DRY_RUN)
 	@if [ "$(DRY_RUN)" = "1" ]; then \
 		echo "[DRY-RUN] mkdir -p $(TARGET)"; \
 	else \
@@ -74,8 +135,9 @@ ifdef STOW
 	fi
 else
 	@echo "Installing with ln -s..."
-	@$(MAKE) -s install-ln DRY_RUN=$(DRY_RUN)
+	@"$(MAKE)" -s install-ln DRY_RUN=$(DRY_RUN)
 endif
+	@"$(MAKE)" -s install-root-files FORCE_OVERWRITE=$(FORCE_OVERWRITE) DRY_RUN=$(DRY_RUN)
 	@echo "✓ Installation complete"
 
 .PHONY: install-ln
@@ -89,6 +151,18 @@ install-ln: ## Install using ln -s (internal)
 		package=$$(basename "$$dir"); \
 		target_link="$(TARGET)/$$package"; \
 		if [ -e "$$target_link" ] && [ ! -L "$$target_link" ]; then \
+			if [ -f "$$target_link/.opencode-managed-copy" ]; then \
+				if [ "$(DRY_RUN)" = "1" ]; then \
+					echo "  [DRY-RUN] refresh managed copy \"$$target_link\""; \
+				else \
+					rm -rf "$$target_link"; \
+					mkdir -p "$$target_link"; \
+					cp -R "$(CURDIR)/$$dir." "$$target_link/"; \
+					touch "$$target_link/.opencode-managed-copy"; \
+					echo "  [OK] $$package (managed copy)"; \
+				fi; \
+				continue; \
+			fi; \
 			if [ "$(FORCE_OVERWRITE)" = "1" ]; then \
 				if [ "$(DRY_RUN)" = "1" ]; then \
 					echo "  [DRY-RUN] rm -rf \"$$target_link\""; \
@@ -103,9 +177,17 @@ install-ln: ## Install using ln -s (internal)
 		fi; \
 		if [ "$(DRY_RUN)" = "1" ]; then \
 			echo "  [DRY-RUN] ln -sfn \"$(CURDIR)/$$dir\" \"$$target_link\""; \
+			echo "  [DRY-RUN] fallback copy if symlink unsupported"; \
 		else \
-			ln -sfn "$(CURDIR)/$$dir" "$$target_link"; \
-			echo "  ✓ $$package"; \
+			if ln -sfn "$(CURDIR)/$$dir" "$$target_link" 2>/dev/null && [ -L "$$target_link" ]; then \
+				echo "  [OK] $$package (symlink)"; \
+			else \
+				rm -rf "$$target_link"; \
+				mkdir -p "$$target_link"; \
+				cp -R "$(CURDIR)/$$dir." "$$target_link/"; \
+				touch "$$target_link/.opencode-managed-copy"; \
+				echo "  [OK] $$package (managed copy)"; \
+			fi; \
 		fi; \
 	done
 
@@ -120,8 +202,9 @@ ifdef STOW
 	fi
 else
 	@echo "Removing symlinks..."
-	@$(MAKE) -s uninstall-ln DRY_RUN=$(DRY_RUN)
+	@"$(MAKE)" -s uninstall-ln DRY_RUN=$(DRY_RUN)
 endif
+	@"$(MAKE)" -s uninstall-root-files DRY_RUN=$(DRY_RUN)
 	@echo "✓ Uninstallation complete"
 
 .PHONY: uninstall-ln
@@ -135,6 +218,38 @@ uninstall-ln: ## Uninstall using rm (internal)
 			else \
 				echo "  Removing $$package..."; \
 				rm -f "$$target_link"; \
+			fi; \
+		elif [ -d "$$target_link" ] && [ -f "$$target_link/.opencode-managed-copy" ]; then \
+			if [ "$(DRY_RUN)" = "1" ]; then \
+				echo "  [DRY-RUN] rm -rf \"$$target_link\""; \
+			else \
+				echo "  Removing $$package managed copy..."; \
+				rm -rf "$$target_link"; \
+			fi; \
+		fi; \
+	done
+
+.PHONY: uninstall-root-files
+uninstall-root-files: ## Uninstall root-level config files (internal)
+	@for file in $(ROOT_CONFIG_NAMES); do \
+		target_file="$(TARGET)/$$file"; \
+		managed_marker="$(TARGET)/.$$file$(MANAGED_FILE_MARKER_SUFFIX)"; \
+		if [ -L "$$target_file" ]; then \
+			if [ "$(DRY_RUN)" = "1" ]; then \
+				echo "  [DRY-RUN] rm -f \"$$target_file\""; \
+			else \
+				rm -f "$$target_file"; \
+			fi; \
+			if [ "$(DRY_RUN)" = "1" ]; then \
+				echo "  [DRY-RUN] rm -f \"$$managed_marker\""; \
+			else \
+				rm -f "$$managed_marker"; \
+			fi; \
+		elif [ -f "$$target_file" ] && [ -f "$$managed_marker" ]; then \
+			if [ "$(DRY_RUN)" = "1" ]; then \
+				echo "  [DRY-RUN] rm -f \"$$target_file\" \"$$managed_marker\""; \
+			else \
+				rm -f "$$target_file" "$$managed_marker"; \
 			fi; \
 		fi; \
 	done
@@ -150,8 +265,9 @@ ifdef STOW
 	fi
 else
 	@echo "Refreshing symlinks..."
-	@$(MAKE) -s uninstall-ln install-ln DRY_RUN=$(DRY_RUN)
+	@"$(MAKE)" -s uninstall-ln install-ln DRY_RUN=$(DRY_RUN)
 endif
+	@"$(MAKE)" -s install-root-files FORCE_OVERWRITE=$(FORCE_OVERWRITE) DRY_RUN=$(DRY_RUN)
 	@echo "✓ Restow complete"
 
 ##@ Utilities

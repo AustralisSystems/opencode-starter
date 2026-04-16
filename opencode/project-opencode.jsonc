@@ -1,0 +1,97 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  // Project agent tuning.
+  "agent": {
+    "build": {
+      "steps": 96,
+      "temperature": 0.2
+    },
+    "explore": {
+      "mode": "subagent",
+      "permission": {
+        "bash": "deny",
+        "edit": "deny"
+      }
+    },
+    "plan": {
+      "permission": {
+        "*": "allow",
+        "doom_loop": "deny"
+      }
+    }
+  },
+  // Project command shortcuts.
+  "command": {
+    "gate-a-cli": {
+      "agent": "build",
+      "description": "Run Gate A (cli)",
+      "template": "Run Gate A for CLI scope (ace pipeline run gate-a cli), summarize findings by severity, and propose minimal remediations."
+    },
+    "gate-b-cli": {
+      "agent": "build",
+      "description": "Run Gate B (cli)",
+      "template": "Run Gate B for CLI scope (ace pipeline run gate-b cli), summarize failures, and propose a targeted fix plan."
+    },
+    "gate-target": {
+      "agent": "build",
+      "description": "Run gates for a target",
+      "template": "Run gate validation for target $ARGUMENTS and return a concise findings table with next-step fixes."
+    }
+  },
+  "compaction": {
+    "auto": true,
+    "prune": true
+    },
+  // Project-level provider scope and model selection.
+  "enabled_providers": [
+    "github-copilot",
+    "opencode"
+  ],
+  "experimental": {
+    "batch_tool": true,
+    "continue_loop_on_deny": true,
+    "mcp_timeout": 30000
+  },
+  // Keep formatter/LSP project-aware and auto-detected by local toolchain.
+  "formatter": {},
+  // Project-level instruction sources.
+  "instructions": [
+    "./AGENTS.md",
+    "./AGENTS.md.yaml"
+  ],
+  "lsp": {},
+  "model": "github-copilot/gpt-5.3-codex",
+  // Project guardrails.
+  "permission": {
+    "*": "allow",
+    "bash": {
+      "*": "allow",
+      "git push *": "deny",
+      "rm -rf *": "deny",
+      "sudo *": "deny"
+    },
+    "doom_loop": "deny",
+    "external_directory": "deny",
+    "question": "deny"
+  },
+  "small_model": "github-copilot/claude-haiku-4.5",
+  // Improve performance on large repos.
+  "watcher": {
+    "ignore": [
+      "node_modules/**",
+      "dist/**",
+      ".git/**",
+      "build/**",
+      ".venv/**",
+      "venv/**",
+      "__pycache__/**",
+      ".next/**",
+      ".cache/**",
+      "*.log",
+      "coverage/**",
+      ".nyc_output/**",
+      "artifacts/**",
+      "*.pyc"
+    ]
+  }
+}

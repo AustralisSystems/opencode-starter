@@ -140,7 +140,6 @@ Cross-platform debugging:
 - **Glob**: File discovery
 - **gdb**: GNU debugger
 - **lldb**: LLVM debugger
-- **chrome-devtools**: Browser debugging
 - **vscode-debugger**: IDE debugging
 - **strace**: System call tracing
 - **tcpdump**: Network debugging

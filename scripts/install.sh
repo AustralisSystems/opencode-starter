@@ -49,6 +49,38 @@ has_cmd() {
   command -v "$1" >/dev/null 2>&1
 }
 
+find_make_cmd() {
+  local candidate=""
+  for candidate in make mingw32-make gmake; do
+    if has_cmd "$candidate"; then
+      echo "$candidate"
+      return 0
+    fi
+  done
+  return 1
+}
+
+add_windows_make_paths() {
+  local candidate=""
+  local added=0
+
+  for candidate in \
+    "/c/Program Files (x86)/GnuWin32/bin" \
+    "/c/Program Files/Git/usr/bin" \
+    "/mingw64/bin" \
+    "/usr/bin"
+  do
+    if [[ -d "$candidate" && ":$PATH:" != *":$candidate:"* ]]; then
+      PATH="$PATH:$candidate"
+      added=1
+    fi
+  done
+
+  if [[ "$added" -eq 1 ]]; then
+    log "Extended PATH in current shell with common Windows make locations"
+  fi
+}
+
 run_cmd() {
   if [[ "$DRY_RUN" -eq 1 ]]; then
     log "[DRY-RUN] $*"
@@ -398,38 +430,38 @@ install_windows() {
   fi
 
   if [[ "$FORCE_MODE" -eq 1 ]]; then
-    if has_cmd choco; then
+    if has_cmd winget; then
+      if ! winget_install_any reinstall "${WINGET_STOW_IDS[@]}"; then
+        warn "Could not force-reinstall stow via winget using known IDs (${WINGET_STOW_IDS[*]})."
+      fi
+    elif has_cmd choco; then
       run_cmd choco uninstall stow -y --no-progress || true
       run_cmd choco install stow -y --no-progress || true
     elif has_cmd scoop; then
       run_cmd scoop uninstall stow || true
       run_cmd scoop install stow || true
-    elif has_cmd winget; then
-      if ! winget_install_any reinstall "${WINGET_STOW_IDS[@]}"; then
-        warn "Could not force-reinstall stow via winget using known IDs (${WINGET_STOW_IDS[*]})."
-      fi
     else
       warn "Could not force-reinstall stow on Windows (winget/choco/scoop unavailable for stow)."
     fi
   elif ! has_cmd stow; then
-    if has_cmd choco; then
-      run_cmd choco install stow -y --no-progress || true
-    elif has_cmd scoop; then
-      run_cmd scoop install stow || true
-    elif has_cmd winget; then
+    if has_cmd winget; then
       if ! winget_install_any install "${WINGET_STOW_IDS[@]}"; then
         warn "Could not install stow via winget using known IDs (${WINGET_STOW_IDS[*]})."
       fi
+    elif has_cmd choco; then
+      run_cmd choco install stow -y --no-progress || true
+    elif has_cmd scoop; then
+      run_cmd scoop install stow || true
     else
       warn "Could not auto-install stow on Windows (winget/choco/scoop unavailable for stow)."
     fi
   elif [[ "$AUTO_UPDATE" -eq 1 ]]; then
-    if has_cmd choco; then
+    if has_cmd winget; then
+      winget_install_any upgrade "${WINGET_STOW_IDS[@]}" || true
+    elif has_cmd choco; then
       run_cmd choco upgrade stow -y --no-progress || true
     elif has_cmd scoop; then
       run_cmd scoop update stow || true
-    elif has_cmd winget; then
-      winget_install_any upgrade "${WINGET_STOW_IDS[@]}" || true
     fi
   fi
 
@@ -443,6 +475,12 @@ install_windows() {
 
   if [[ -d "/c/Program Files (x86)/GnuWin32/bin" ]]; then
     warn "If make is still not found in this shell, add C:\\Program Files (x86)\\GnuWin32\\bin to PATH or open a new terminal session."
+  fi
+
+  add_windows_make_paths
+
+  if ! find_make_cmd >/dev/null 2>&1; then
+    warn "No make-compatible command detected after install attempts (make/mingw32-make/gmake)."
   fi
 }
 
@@ -485,13 +523,20 @@ uninstall_macos() {
 
 print_summary() {
   printf '\nInstall summary:\n'
-  for tool in git node npm make stow pre-commit opencode; do
+  for tool in git node npm stow pre-commit opencode; do
     if has_cmd "$tool"; then
       printf '  [OK] %s -> %s\n' "$tool" "$(command -v "$tool")"
     else
       printf '  [MISSING] %s\n' "$tool"
     fi
   done
+
+  local make_cmd=""
+  if make_cmd="$(find_make_cmd)"; then
+    printf '  [OK] make-compatible -> %s (%s)\n' "$make_cmd" "$(command -v "$make_cmd")"
+  else
+    printf '  [MISSING] make-compatible (make/mingw32-make/gmake)\n'
+  fi
 }
 
 run_default_make_install() {
@@ -500,9 +545,14 @@ run_default_make_install() {
     return 0
   fi
 
-  if ! has_cmd make; then
-    warn "make is not available in PATH; skipping make install"
-    return 0
+  local make_cmd=""
+  if ! make_cmd="$(find_make_cmd)"; then
+    if [[ "$DRY_RUN" -eq 1 ]]; then
+      warn "No make-compatible command in PATH during dry-run; skipping make install preview"
+      return 0
+    fi
+    err "No make-compatible command available (make/mingw32-make/gmake); cannot apply config install"
+    return 1
   fi
 
   if [[ ! -f "$PROJECT_ROOT/Makefile" ]]; then
@@ -511,22 +561,23 @@ run_default_make_install() {
   fi
 
   if [[ "$DRY_RUN" -eq 1 ]]; then
-    log "Running make install dry run in $PROJECT_ROOT"
-    make -C "$PROJECT_ROOT" install DRY_RUN=1 "FORCE_OVERWRITE=$FORCE_OVERWRITE"
+    log "Running $make_cmd install dry run in $PROJECT_ROOT"
+    "$make_cmd" -C "$PROJECT_ROOT" install DRY_RUN=1 "FORCE_OVERWRITE=$FORCE_OVERWRITE"
   else
-    log "Running make install in $PROJECT_ROOT"
-    run_cmd make -C "$PROJECT_ROOT" install "FORCE_OVERWRITE=$FORCE_OVERWRITE"
+    log "Running $make_cmd install in $PROJECT_ROOT"
+    run_cmd "$make_cmd" -C "$PROJECT_ROOT" install "FORCE_OVERWRITE=$FORCE_OVERWRITE"
   fi
 }
 
 run_default_make_uninstall() {
-  if has_cmd make && [[ -f "$PROJECT_ROOT/Makefile" ]]; then
+  local make_cmd=""
+  if make_cmd="$(find_make_cmd)" && [[ -f "$PROJECT_ROOT/Makefile" ]]; then
     if [[ "$DRY_RUN" -eq 1 ]]; then
-      log "Running make uninstall dry run in $PROJECT_ROOT"
-      make -C "$PROJECT_ROOT" uninstall DRY_RUN=1
+      log "Running $make_cmd uninstall dry run in $PROJECT_ROOT"
+      "$make_cmd" -C "$PROJECT_ROOT" uninstall DRY_RUN=1
     else
-      log "Running make uninstall in $PROJECT_ROOT"
-      run_cmd make -C "$PROJECT_ROOT" uninstall
+      log "Running $make_cmd uninstall in $PROJECT_ROOT"
+      run_cmd "$make_cmd" -C "$PROJECT_ROOT" uninstall
     fi
     return 0
   fi

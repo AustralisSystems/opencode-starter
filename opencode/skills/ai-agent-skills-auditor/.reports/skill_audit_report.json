@@ -1,0 +1,2897 @@
+{
+  "generated_at": "2026-03-30T04:14:31.317920+00:00",
+  "skills_root": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills",
+  "summary": {
+    "critical": 0,
+    "high": 28,
+    "medium": 212,
+    "low": 40,
+    "skill_count": 73
+  },
+  "results": [
+    {
+      "skill": "agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\agent",
+      "frontmatter": {
+        "name": "agent",
+        "description": "Level 2 Task Coordinator in THE SWARM hierarchy (2-TIER ARCHITECTURE). Coordinates ONE discrete task by delegating to specialized sub-agents. Reports results to PRIME. Does NOT execute work directly - delegates to purpose-built skills.",
+        "allowed-tools": "[*]",
+        "version": "3.0.0",
+        "updated": "2025-10-27"
+      },
+      "findings": [
+        {
+          "skill": "agent",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\agent\\SKILL.md"
+        },
+        {
+          "skill": "agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\agent"
+        },
+        {
+          "skill": "agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\agent"
+        },
+        {
+          "skill": "agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\agent"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skill-cross-vendor-compatibility",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-cross-vendor-compatibility",
+      "frontmatter": {
+        "name": "ai-agent-skill-cross-vendor-compatibility",
+        "description": "Align AI agent skills across Anthropic, OpenAI, Google, and open skill standards by defining portable core fields, runtime-specific extensions, and migration-safe compatibility notes."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skill-cross-vendor-compatibility",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-cross-vendor-compatibility"
+        },
+        {
+          "skill": "ai-agent-skill-cross-vendor-compatibility",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-cross-vendor-compatibility"
+        },
+        {
+          "skill": "ai-agent-skill-cross-vendor-compatibility",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-cross-vendor-compatibility"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skill-evaluation-checklist",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-evaluation-checklist",
+      "frontmatter": {
+        "name": "ai-agent-skill-evaluation-checklist",
+        "description": "Create practical evaluation checklists for AI agent skills, including test prompts, measurable assertions, regression checks, and quality scoring for create/update cycles."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skill-evaluation-checklist",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-evaluation-checklist"
+        },
+        {
+          "skill": "ai-agent-skill-evaluation-checklist",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-evaluation-checklist"
+        },
+        {
+          "skill": "ai-agent-skill-evaluation-checklist",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-evaluation-checklist"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skill-frontmatter-modern-fields",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-frontmatter-modern-fields",
+      "frontmatter": {
+        "name": "ai-agent-skill-frontmatter-modern-fields",
+        "description": "Design, validate, and modernize SKILL.md frontmatter for AI agent skills, including portable minimum fields and runtime-specific advanced fields with compatibility notes."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skill-frontmatter-modern-fields",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-frontmatter-modern-fields"
+        },
+        {
+          "skill": "ai-agent-skill-frontmatter-modern-fields",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-frontmatter-modern-fields"
+        },
+        {
+          "skill": "ai-agent-skill-frontmatter-modern-fields",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-frontmatter-modern-fields"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skill-safety-invocation-controls",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-safety-invocation-controls",
+      "frontmatter": {
+        "name": "ai-agent-skill-safety-invocation-controls",
+        "description": "Define and harden AI agent skill invocation and safety controls, including auto/manual trigger strategy, permission boundaries, tool restrictions, and high-impact action safeguards."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skill-safety-invocation-controls",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-safety-invocation-controls"
+        },
+        {
+          "skill": "ai-agent-skill-safety-invocation-controls",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-safety-invocation-controls"
+        },
+        {
+          "skill": "ai-agent-skill-safety-invocation-controls",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skill-safety-invocation-controls"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skills-auditor",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-auditor",
+      "frontmatter": {
+        "name": "ai-agent-skills-auditor",
+        "description": "Perform deep research on current AI agent skill best practices, maintain an authoritative best-practices reference, then audit and update every in-scope skill package (SKILL.md plus references/scripts/assets) to close quality, safety, and capability gaps."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skills-auditor",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-auditor\\SKILL.md"
+        }
+      ]
+    },
+    {
+      "skill": "ai-agent-skills-creator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-creator",
+      "frontmatter": {
+        "name": "ai-agent-skills-creator",
+        "description": "Create, review, refactor, and update AI agent skill packages (SKILL.md plus references/scripts/assets) using cross-vendor best practices, trigger-focused metadata, safety controls, evaluation discipline, and packaging hygiene. Use when building new skills or modernizing existing skills."
+      },
+      "findings": [
+        {
+          "skill": "ai-agent-skills-creator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-creator\\SKILL.md"
+        },
+        {
+          "skill": "ai-agent-skills-creator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-creator"
+        },
+        {
+          "skill": "ai-agent-skills-creator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\ai-agent-skills-creator"
+        }
+      ]
+    },
+    {
+      "skill": "algorithmic-art",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\algorithmic-art",
+      "frontmatter": {
+        "name": "algorithmic-art",
+        "description": "Creating algorithmic art using p5.js with seeded randomness and interactive parameter exploration. Use this when users request creating art using code, generative art, algorithmic art, flow fields, or particle systems. Create original algorithmic art rather than copying existing artists' work to avoid copyright violations.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "algorithmic-art",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\algorithmic-art\\SKILL.md"
+        },
+        {
+          "skill": "algorithmic-art",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\algorithmic-art"
+        },
+        {
+          "skill": "algorithmic-art",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\algorithmic-art"
+        },
+        {
+          "skill": "algorithmic-art",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\algorithmic-art"
+        }
+      ]
+    },
+    {
+      "skill": "artifacts-builder",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\artifacts-builder",
+      "frontmatter": {
+        "name": "artifacts-builder",
+        "description": "Suite of tools for creating elaborate, multi-component claude.ai HTML artifacts using modern frontend web technologies (React, Tailwind CSS, shadcn/ui). Use for complex artifacts requiring state management, routing, or shadcn/ui components - not for simple single-file HTML/JSX artifacts.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "artifacts-builder",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\artifacts-builder\\SKILL.md"
+        },
+        {
+          "skill": "artifacts-builder",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\artifacts-builder"
+        },
+        {
+          "skill": "artifacts-builder",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\artifacts-builder"
+        }
+      ]
+    },
+    {
+      "skill": "brand-guidelines",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\brand-guidelines",
+      "frontmatter": {
+        "name": "brand-guidelines",
+        "description": "Applies Anthropic's official brand colors and typography to any sort of artifact that may benefit from having Anthropic's look-and-feel. Use it when brand colors or style guidelines, visual formatting, or company design standards apply.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "brand-guidelines",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\brand-guidelines"
+        },
+        {
+          "skill": "brand-guidelines",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\brand-guidelines"
+        },
+        {
+          "skill": "brand-guidelines",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\brand-guidelines"
+        }
+      ]
+    },
+    {
+      "skill": "canvas-design",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\canvas-design",
+      "frontmatter": {
+        "name": "canvas-design",
+        "description": "Create beautiful visual art in .png and .pdf documents using design philosophy. You should use this skill when the user asks to create a poster, piece of art, design, or other static piece. Create original visual designs, never copying existing artists' work to avoid copyright violations.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "canvas-design",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\canvas-design\\SKILL.md"
+        },
+        {
+          "skill": "canvas-design",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\canvas-design"
+        },
+        {
+          "skill": "canvas-design",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\canvas-design"
+        },
+        {
+          "skill": "canvas-design",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\canvas-design"
+        }
+      ]
+    },
+    {
+      "skill": "code-debug",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-debug",
+      "frontmatter": {
+        "name": "code-debug",
+        "description": "Debug code issues, trace errors, analyze stack traces, and troubleshoot runtime problems. Use when debugging errors, investigating failures, or troubleshooting application issues.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "code-debug",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-debug"
+        },
+        {
+          "skill": "code-debug",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-debug"
+        },
+        {
+          "skill": "code-debug",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-debug"
+        }
+      ]
+    },
+    {
+      "skill": "code-remediation",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-remediation",
+      "frontmatter": {
+        "name": "code-remediation",
+        "description": "Fix code quality issues, security vulnerabilities, and standards violations based on analysis reports. Use when addressing linting errors, fixing security issues, or remediating quality problems.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "code-remediation",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-remediation"
+        },
+        {
+          "skill": "code-remediation",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-remediation"
+        },
+        {
+          "skill": "code-remediation",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\code-remediation"
+        }
+      ]
+    },
+    {
+      "skill": "codex-agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-agent",
+      "frontmatter": {
+        "name": "codex-agent",
+        "description": "Level 2 Execution Unit for GPT-5.1/GPT-5-codex models (2-TIER ARCHITECTURE). Executes ONE discrete coding task via direct code generation. Specializes in algorithm implementation and code optimization. Reports directly to PRIME. Replaces deprecated OpenAI Codex.",
+        "allowed-tools": "[*]",
+        "version": "4.0.0",
+        "created": "2025-10-26",
+        "updated": "2025-11-02",
+        "model": "GPT-5.1/GPT-5-codex (openai/GPT-5.1 or openai/GPT-5-codex)",
+        "cli": "Direct codex CLI (defaults to GPT-5-codex)"
+      },
+      "findings": [
+        {
+          "skill": "codex-agent",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-agent\\SKILL.md"
+        },
+        {
+          "skill": "codex-agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-agent"
+        },
+        {
+          "skill": "codex-agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-agent"
+        },
+        {
+          "skill": "codex-agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-agent"
+        }
+      ]
+    },
+    {
+      "skill": "codex-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-swarm-orchestrator",
+      "frontmatter": {
+        "name": "codex-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for GPT-5.1/GPT-5-codex (Codex) model instances. Handles all mechanics of spawning MULTIPLE CODEX AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 10 concurrent Codex instances (GPT-5.1/GPT-5-codex) for simple code generation tasks. Replaces deprecated OpenAI Codex (shutdown March 2023).",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.0.0",
+        "created": "2025-10-26",
+        "updated": "2025-11-02",
+        "role": "Parallel Spawning Specialist for GPT-5.1/GPT-5-codex (Codex CLI) - Simple Code Generation",
+        "model": "GPT-5.1/GPT-5-codex (openai/GPT-5.1 or openai/GPT-5-codex, codex CLI default)"
+      },
+      "findings": [
+        {
+          "skill": "codex-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "codex-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-swarm-orchestrator"
+        },
+        {
+          "skill": "codex-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-swarm-orchestrator"
+        },
+        {
+          "skill": "codex-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\codex-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "docx",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\docx",
+      "frontmatter": {
+        "name": "docx",
+        "description": "Use this skill whenever the user wants to create, read, edit, or manipulate Word documents (.docx files). Triggers include: any mention of 'Word doc', 'word document', '.docx', or requests to produce professional documents with formatting like tables of contents, headings, page numbers, or letterheads. Also use when extracting or reorganizing content from .docx files, inserting or replacing images in documents, performing find-and-replace in Word files, working with tracked changes or comments, or converting content into a polished Word document. If the user asks for a 'report', 'memo', 'letter', 'template', or similar deliverable as a Word or .docx file, use this skill. Do NOT use for PDFs, spreadsheets, Google Docs, or general coding tasks unrelated to document generation.",
+        "license": "Proprietary. LICENSE.txt has complete terms"
+      },
+      "findings": [
+        {
+          "skill": "docx",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\docx\\SKILL.md"
+        },
+        {
+          "skill": "docx",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\docx\\SKILL.md"
+        },
+        {
+          "skill": "docx",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\docx"
+        },
+        {
+          "skill": "docx",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\docx"
+        }
+      ]
+    },
+    {
+      "skill": "fastapi-design",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-design",
+      "frontmatter": {
+        "name": "fastapi-design",
+        "description": "Design FastAPI architecture and API structure using MCP Framework v6.0.0. Use when planning FastAPI services, designing endpoints, or structuring applications before implementation. Orchestrates framework steps 1, 3, 9-11 (design intent) with approval gate.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastapi-design",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-design\\SKILL.md"
+        },
+        {
+          "skill": "fastapi-design",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-design"
+        },
+        {
+          "skill": "fastapi-design",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-design"
+        },
+        {
+          "skill": "fastapi-design",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-design"
+        }
+      ]
+    },
+    {
+      "skill": "fastapi-implement",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-implement",
+      "frontmatter": {
+        "name": "fastapi-implement",
+        "description": "Implement FastAPI services, routers, endpoints, and middleware using MCP Framework v6.0.0. Use when building FastAPI applications, creating REST APIs, or implementing backend services. Orchestrates steps 1, 12-14, 18 (implement intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1, 2]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "fastapi-implement",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-implement"
+        },
+        {
+          "skill": "fastapi-implement",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-implement"
+        },
+        {
+          "skill": "fastapi-implement",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-implement"
+        }
+      ]
+    },
+    {
+      "skill": "fastapi-planning",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-planning",
+      "frontmatter": {
+        "name": "fastapi-planning",
+        "description": "Plan FastAPI implementation tasks, API design, and service architecture using MCP Framework v6.0.0. Use when planning FastAPI services, estimating API development, or scoping REST endpoints. Orchestrates steps 1, 9-11 (planning intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastapi-planning",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-planning"
+        },
+        {
+          "skill": "fastapi-planning",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-planning"
+        },
+        {
+          "skill": "fastapi-planning",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-planning"
+        }
+      ]
+    },
+    {
+      "skill": "fastapi-quality-review",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-quality-review",
+      "frontmatter": {
+        "name": "fastapi-quality-review",
+        "description": "Review FastAPI code quality, API design, security, and performance using MCP Framework v6.0.0. Use when validating FastAPI services, checking API standards, or auditing security. Orchestrates steps 5-8, 17 (quality-review intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastapi-quality-review",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-quality-review"
+        },
+        {
+          "skill": "fastapi-quality-review",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-quality-review"
+        },
+        {
+          "skill": "fastapi-quality-review",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-quality-review"
+        }
+      ]
+    },
+    {
+      "skill": "fastapi-refactor",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-refactor",
+      "frontmatter": {
+        "name": "fastapi-refactor",
+        "description": "Refactor FastAPI services for performance, maintainability, and best practices using MCP Framework v6.0.0. Use when optimizing FastAPI applications, improving API design, or restructuring services. Orchestrates steps 5, 14-16 (refactor intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "fastapi-refactor",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-refactor"
+        },
+        {
+          "skill": "fastapi-refactor",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-refactor"
+        },
+        {
+          "skill": "fastapi-refactor",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastapi-refactor"
+        }
+      ]
+    },
+    {
+      "skill": "fastmcp-design",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-design",
+      "frontmatter": {
+        "name": "fastmcp-design",
+        "description": "Design FastMCP servers with tools, resources, and prompts using MCP Framework v6.0.0. Use when planning MCP servers, designing tool decorators, or architecting Model Context Protocol integrations. Orchestrates steps 1, 3, 9-11 (design intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastmcp-design",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-design"
+        },
+        {
+          "skill": "fastmcp-design",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-design"
+        },
+        {
+          "skill": "fastmcp-design",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-design"
+        }
+      ]
+    },
+    {
+      "skill": "fastmcp-implement",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-implement",
+      "frontmatter": {
+        "name": "fastmcp-implement",
+        "description": "Implement FastMCP servers with tool decorators, resources, prompts, and authentication using MCP Framework v6.0.0. Use when building MCP servers, creating tools, or implementing Model Context Protocol integrations. Orchestrates steps 1, 12-14, 18 (implement intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1, 2]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "fastmcp-implement",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-implement\\SKILL.md"
+        },
+        {
+          "skill": "fastmcp-implement",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-implement"
+        },
+        {
+          "skill": "fastmcp-implement",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-implement"
+        },
+        {
+          "skill": "fastmcp-implement",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-implement"
+        }
+      ]
+    },
+    {
+      "skill": "fastmcp-planning",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-planning",
+      "frontmatter": {
+        "name": "fastmcp-planning",
+        "description": "Plan FastMCP server implementation, tool development, and MCP protocol integration using MCP Framework v6.0.0. Use when scoping MCP projects, breaking down tool development, or planning integration work. Orchestrates steps 1, 9-11 (planning intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastmcp-planning",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-planning"
+        },
+        {
+          "skill": "fastmcp-planning",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-planning"
+        },
+        {
+          "skill": "fastmcp-planning",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-planning"
+        }
+      ]
+    },
+    {
+      "skill": "fastmcp-quality-review",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-quality-review",
+      "frontmatter": {
+        "name": "fastmcp-quality-review",
+        "description": "Review FastMCP server quality, MCP protocol compliance, and tool implementation using MCP Framework v6.0.0. Use when validating MCP servers, checking protocol adherence, or auditing tool security. Orchestrates steps 5-8, 17 (quality-review intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "fastmcp-quality-review",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-quality-review"
+        },
+        {
+          "skill": "fastmcp-quality-review",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-quality-review"
+        },
+        {
+          "skill": "fastmcp-quality-review",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-quality-review"
+        }
+      ]
+    },
+    {
+      "skill": "fastmcp-refactor",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-refactor",
+      "frontmatter": {
+        "name": "fastmcp-refactor",
+        "description": "Refactor FastMCP servers for performance, maintainability, and MCP best practices using MCP Framework v6.0.0. Use when optimizing MCP servers, improving tool organization, or restructuring integrations. Orchestrates steps 5, 14-16 (refactor intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "fastmcp-refactor",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-refactor"
+        },
+        {
+          "skill": "fastmcp-refactor",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-refactor"
+        },
+        {
+          "skill": "fastmcp-refactor",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\fastmcp-refactor"
+        }
+      ]
+    },
+    {
+      "skill": "find-skills",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\find-skills",
+      "frontmatter": {
+        "name": "find-skills",
+        "description": "Helps users discover and install agent skills when they ask questions like \"how do I do X\", \"find a skill for X\", \"is there a skill that can...\", or express interest in extending capabilities. This skill should be used when the user is looking for functionality that might exist as an installable skill."
+      },
+      "findings": [
+        {
+          "skill": "find-skills",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\find-skills\\SKILL.md"
+        },
+        {
+          "skill": "find-skills",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\find-skills"
+        },
+        {
+          "skill": "find-skills",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\find-skills"
+        },
+        {
+          "skill": "find-skills",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\find-skills"
+        }
+      ]
+    },
+    {
+      "skill": "gemini-agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-agent",
+      "frontmatter": {
+        "name": "gemini-agent",
+        "description": "Level 2 Execution Unit for Gemini model (2-TIER ARCHITECTURE). Executes ONE discrete task via OpenRouter/LiteLLM routing. Specializes in complex strategic tasks, deep analysis, and multi-step reasoning. Reports directly to PRIME.",
+        "allowed-tools": "[*]",
+        "version": "1.0.0",
+        "created": "2025-11-01",
+        "updated": "2025-11-01"
+      },
+      "findings": [
+        {
+          "skill": "gemini-agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-agent"
+        },
+        {
+          "skill": "gemini-agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-agent"
+        },
+        {
+          "skill": "gemini-agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-agent"
+        }
+      ]
+    },
+    {
+      "skill": "gemini-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-swarm-orchestrator",
+      "frontmatter": {
+        "name": "gemini-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Gemini 2.5 Pro model instances via qwen CLI \u2192 LiteLLM proxy \u2192 OpenRouter. Handles all mechanics of spawning MULTIPLE GEMINI AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 10 concurrent Gemini instances for strategic/complex analysis and fast strategic tasks. Released June 2025.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.0.0",
+        "created": "2025-10-27",
+        "updated": "2025-11-02",
+        "role": "Parallel Spawning Specialist for Gemini 2.5 Pro (Strategic/Complex Analysis)",
+        "model": "Google Gemini 2.5 Pro (google/gemini-2.5-pro)",
+        "router": "qwen CLI \u2192 LiteLLM proxy (localhost:47821) \u2192 OpenRouter"
+      },
+      "findings": [
+        {
+          "skill": "gemini-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "gemini-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-swarm-orchestrator"
+        },
+        {
+          "skill": "gemini-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-swarm-orchestrator"
+        },
+        {
+          "skill": "gemini-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\gemini-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "golden-rule",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "golden-rule",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule\\SKILL.md"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule\\SKILL.md"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule\\SKILL.md"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule\\SKILL.md"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule"
+        },
+        {
+          "skill": "golden-rule",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\golden-rule"
+        }
+      ]
+    },
+    {
+      "skill": "grok-agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-agent",
+      "frontmatter": {
+        "name": "grok-agent",
+        "description": "Level 2 Execution Unit for Grok model (2-TIER ARCHITECTURE). Executes ONE discrete task quickly and efficiently. Specializes in fast data analysis and pattern recognition. Reports directly to PRIME.",
+        "allowed-tools": "[*]",
+        "version": "3.1.0",
+        "created": "2025-10-26",
+        "updated": "2025-10-29"
+      },
+      "findings": [
+        {
+          "skill": "grok-agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-agent"
+        },
+        {
+          "skill": "grok-agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-agent"
+        },
+        {
+          "skill": "grok-agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-agent"
+        }
+      ]
+    },
+    {
+      "skill": "grok-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-swarm-orchestrator",
+      "frontmatter": {
+        "name": "grok-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Grok 1/Grok 4 Fast model instances. PRIMARY via native grok CLI (v1.0.1+, direct xAI API), FALLBACK via qwen CLI \u2192 LiteLLM proxy \u2192 OpenRouter. Handles all mechanics of spawning MULTIPLE GROK AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 15 concurrent Grok instances for fast analysis (Grok 1: 92 tok/s) and complex tasks (Grok 4: 2M context). Released August-September 2025.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.1.0",
+        "created": "2025-10-27",
+        "updated": "2025-11-03",
+        "role": "Parallel Spawning Specialist for Grok 1 (Fast - 92 tok/s) & Grok 4 Fast (Complex - 2M context)",
+        "models": "Grok 1 (grok-code-fast-1, Aug 2025), Grok 4 Fast (grok-4-latest, Sep 2025)",
+        "routing": "PRIMARY native grok CLI (v1.0.1+), FALLBACK qwen CLI \u2192 LiteLLM \u2192 OpenRouter"
+      },
+      "findings": [
+        {
+          "skill": "grok-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "grok-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-swarm-orchestrator"
+        },
+        {
+          "skill": "grok-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-swarm-orchestrator"
+        },
+        {
+          "skill": "grok-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\grok-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "haiku-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\haiku-swarm-orchestrator",
+      "frontmatter": {
+        "name": "haiku-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Claude 4.5 Haiku model instances via direct Claude CLI. Handles all mechanics of spawning MULTIPLE HAIKU AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 15 concurrent Haiku instances for fast code generation and rapid execution. Released November 2024.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.0.0",
+        "created": "2025-10-25",
+        "updated": "2025-11-02",
+        "role": "Parallel Spawning Specialist for Claude 4.5 Haiku (Fast Code Generation & Rapid Execution)",
+        "model": "Claude 4.5 Haiku (anthropic/claude-4.5-haiku)",
+        "cli": "Direct Claude CLI (native Anthropic access)"
+      },
+      "findings": [
+        {
+          "skill": "haiku-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\haiku-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "haiku-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\haiku-swarm-orchestrator"
+        },
+        {
+          "skill": "haiku-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\haiku-swarm-orchestrator"
+        },
+        {
+          "skill": "haiku-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\haiku-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "internal-comms",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\internal-comms",
+      "frontmatter": {
+        "name": "internal-comms",
+        "description": "A set of resources to help me write all kinds of internal communications, using the formats that my company likes to use. Claude should use this skill whenever asked to write some sort of internal communications (status reports, leadership updates, 3P updates, company newsletters, FAQs, incident reports, project updates, etc.).",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "internal-comms",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\internal-comms\\SKILL.md"
+        },
+        {
+          "skill": "internal-comms",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\internal-comms"
+        },
+        {
+          "skill": "internal-comms",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\internal-comms"
+        },
+        {
+          "skill": "internal-comms",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\internal-comms"
+        }
+      ]
+    },
+    {
+      "skill": "json-render-core",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-core",
+      "frontmatter": {
+        "name": "json-render-core",
+        "description": "Core package for defining schemas, catalogs, and AI prompt generation for json-render. Use when working with @json-render/core, defining schemas, creating catalogs, or building JSON specs for UI/video generation."
+      },
+      "findings": [
+        {
+          "skill": "json-render-core",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-core"
+        },
+        {
+          "skill": "json-render-core",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-core"
+        },
+        {
+          "skill": "json-render-core",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-core"
+        }
+      ]
+    },
+    {
+      "skill": "json-render-react",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-react",
+      "frontmatter": {
+        "name": "json-render-react",
+        "description": "React renderer for json-render that turns JSON specs into React components. Use when working with @json-render/react, building React UIs from JSON, creating component catalogs, or rendering AI-generated specs."
+      },
+      "findings": [
+        {
+          "skill": "json-render-react",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-react"
+        },
+        {
+          "skill": "json-render-react",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-react"
+        },
+        {
+          "skill": "json-render-react",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\json-render-react"
+        }
+      ]
+    },
+    {
+      "skill": "kimi-agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-agent",
+      "frontmatter": {
+        "name": "kimi-agent",
+        "description": "Level 2 Execution Unit for Kimi model (2-TIER ARCHITECTURE). Executes ONE discrete task quickly and efficiently. Specializes in fast data analysis and pattern recognition. Reports directly to PRIME.",
+        "allowed-tools": "[*]",
+        "version": "3.1.0",
+        "created": "2025-10-26",
+        "updated": "2025-10-29"
+      },
+      "findings": [
+        {
+          "skill": "kimi-agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-agent"
+        },
+        {
+          "skill": "kimi-agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-agent"
+        },
+        {
+          "skill": "kimi-agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-agent"
+        }
+      ]
+    },
+    {
+      "skill": "kimi-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-swarm-orchestrator",
+      "frontmatter": {
+        "name": "kimi-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Kimi K2 (thinking & fast) model instances. PRIMARY via native kimi CLI (v1.0.1+, direct Moonshot AI API), FALLBACK via qwen CLI \u2192 LiteLLM proxy \u2192 OpenRouter. Handles all mechanics of spawning MULTIPLE KIMI AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 15 concurrent Kimi instances for fast analysis (Kimi 1: fast execution (128K context)) and complex tasks (Kimi 4: 256K context (thinking mode)). Released November 2025.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.1.0",
+        "created": "2025-10-27",
+        "updated": "2025-11-03",
+        "role": "Parallel Spawning Specialist for Kimi K2 (Fast - fast execution (128K context)) & Kimi K2 Thinking (Complex - 256K context (thinking mode))",
+        "models": "Kimi K2 (kimi-k2, Nov 2025), Kimi K2 Thinking (kimi-k2-thinking, Nov 2025)",
+        "routing": "PRIMARY native kimi CLI (v1.0.1+), FALLBACK qwen CLI \u2192 LiteLLM \u2192 OpenRouter"
+      },
+      "findings": [
+        {
+          "skill": "kimi-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "kimi-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-swarm-orchestrator"
+        },
+        {
+          "skill": "kimi-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-swarm-orchestrator"
+        },
+        {
+          "skill": "kimi-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\kimi-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "mcp-builder",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-builder",
+      "frontmatter": {
+        "name": "mcp-builder",
+        "description": "Guide for creating high-quality MCP (Model Context Protocol) servers that enable LLMs to interact with external services through well-designed tools. Use when building MCP servers to integrate external APIs or services, whether in Python (FastMCP) or Node/TypeScript (MCP SDK).",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "mcp-builder",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-builder\\SKILL.md"
+        },
+        {
+          "skill": "mcp-builder",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-builder"
+        },
+        {
+          "skill": "mcp-builder",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-builder"
+        }
+      ]
+    },
+    {
+      "skill": "mcp-prompt-runner",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner",
+      "frontmatter": {
+        "name": "mcp-prompt-runner",
+        "description": "MCP Prompt Runner - Execute MCP YAML templates via qwen CLI/hooks system. Provides both direct worker.py invocation and OpenRouter/LiteLLM proxy patterns. Supports model selection (7b for simple tasks, 72b for complex). Includes sync and async patterns with comprehensive configuration reference.",
+        "version": "1.0.0",
+        "updated": "2025-10-28",
+        "allowed-tools": "[Bash, WebFetch]"
+      },
+      "findings": [
+        {
+          "skill": "mcp-prompt-runner",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner\\SKILL.md"
+        },
+        {
+          "skill": "mcp-prompt-runner",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner\\SKILL.md"
+        },
+        {
+          "skill": "mcp-prompt-runner",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner"
+        },
+        {
+          "skill": "mcp-prompt-runner",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner"
+        },
+        {
+          "skill": "mcp-prompt-runner",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-prompt-runner"
+        }
+      ]
+    },
+    {
+      "skill": "mcp-tools",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-tools",
+      "frontmatter": {
+        "name": "mcp-tools",
+        "description": "MANDATORY MCP tools workflow enforcement for ALL tasks. Ensures proper use of neo4j-memory, context7, grep, sequential-thinking, and other MCP tools following THE GOLDEN RULE workflow. Use this to validate MCP tool usage compliance.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "mcp-tools",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-tools\\SKILL.md"
+        },
+        {
+          "skill": "mcp-tools",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-tools"
+        },
+        {
+          "skill": "mcp-tools",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-tools"
+        },
+        {
+          "skill": "mcp-tools",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\mcp-tools"
+        }
+      ]
+    },
+    {
+      "skill": "memory",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "memory",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory\\SKILL.md"
+        },
+        {
+          "skill": "memory",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory\\SKILL.md"
+        },
+        {
+          "skill": "memory",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory\\SKILL.md"
+        },
+        {
+          "skill": "memory",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory\\SKILL.md"
+        },
+        {
+          "skill": "memory",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory"
+        },
+        {
+          "skill": "memory",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory"
+        },
+        {
+          "skill": "memory",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory"
+        }
+      ]
+    },
+    {
+      "skill": "memory-graph",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "memory-graph",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph\\SKILL.md"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph\\SKILL.md"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph\\SKILL.md"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "medium",
+          "code": "broken_local_link",
+          "message": "Broken local link target in SKILL.md: adr/017-context-budget-constraint.md",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph\\SKILL.md"
+        },
+        {
+          "skill": "memory-graph",
+          "severity": "medium",
+          "code": "broken_local_link",
+          "message": "Broken local link target in SKILL.md: CONFIGURATION.md",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\memory-graph\\SKILL.md"
+        }
+      ]
+    },
+    {
+      "skill": "next-best-practices",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-best-practices",
+      "frontmatter": {
+        "name": "next-best-practices",
+        "description": "Next.js best practices - file conventions, RSC boundaries, data patterns, async APIs, metadata, error handling, route handlers, image/font optimization, bundling",
+        "user-invocable": "false"
+      },
+      "findings": [
+        {
+          "skill": "next-best-practices",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-best-practices"
+        },
+        {
+          "skill": "next-best-practices",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-best-practices"
+        },
+        {
+          "skill": "next-best-practices",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-best-practices"
+        }
+      ]
+    },
+    {
+      "skill": "next-cache-components",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-cache-components",
+      "frontmatter": {
+        "name": "next-cache-components",
+        "description": "Next.js 16 Cache Components - PPR, use cache directive, cacheLife, cacheTag, updateTag"
+      },
+      "findings": [
+        {
+          "skill": "next-cache-components",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-cache-components"
+        },
+        {
+          "skill": "next-cache-components",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-cache-components"
+        },
+        {
+          "skill": "next-cache-components",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\next-cache-components"
+        }
+      ]
+    },
+    {
+      "skill": "playwriter",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\playwriter",
+      "frontmatter": {
+        "name": "playwriter",
+        "description": "Control the user own Chrome browser via Playwriter extension with Playwright code snippets in a stateful local js sandbox via playwriter cli. Use this over other Playwright MCPs to automate the browser \u2014 it connects to the user's existing Chrome instead of launching a new one. Use this for JS-heavy websites (Instagram, Twitter, cookie/login walls, lazy-loaded UIs) instead of webfetch/curl. Run `playwriter skill` command to read the complete up to date skill"
+      },
+      "findings": [
+        {
+          "skill": "playwriter",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\playwriter\\SKILL.md"
+        },
+        {
+          "skill": "playwriter",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\playwriter"
+        },
+        {
+          "skill": "playwriter",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\playwriter"
+        },
+        {
+          "skill": "playwriter",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\playwriter"
+        }
+      ]
+    },
+    {
+      "skill": "powershell-design",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "powershell-design",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design\\SKILL.md"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design\\SKILL.md"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design\\SKILL.md"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design\\SKILL.md"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design"
+        },
+        {
+          "skill": "powershell-design",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-design"
+        }
+      ]
+    },
+    {
+      "skill": "powershell-module-architecture",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture\\SKILL.md"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture\\SKILL.md"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture\\SKILL.md"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture\\SKILL.md"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture"
+        },
+        {
+          "skill": "powershell-module-architecture",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\powershell-module-architecture"
+        }
+      ]
+    },
+    {
+      "skill": "prime",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime",
+      "frontmatter": {
+        "name": "prime",
+        "description": "Strategic Orchestrator for THE SWARM hierarchy. Acts as Level 1 commander, decomposing user requests, classifying task complexity, allocating resources across 6 specialized swarm orchestrators, and validating outcomes. Enforces RFC 2119, GOLDEN RULE, and SOLID/DRY/KISS principles universally. November 2025 architecture.",
+        "allowed-tools": "[*]",
+        "version": "4.0.0",
+        "created": "2025-10-23",
+        "updated": "2025-11-02",
+        "role": "Level 1 Strategic Orchestrator",
+        "architecture": "2-tier"
+      },
+      "findings": [
+        {
+          "skill": "prime",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime\\SKILL.md"
+        },
+        {
+          "skill": "prime",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime\\SKILL.md"
+        },
+        {
+          "skill": "prime",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime"
+        },
+        {
+          "skill": "prime",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime"
+        },
+        {
+          "skill": "prime",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\prime"
+        }
+      ]
+    },
+    {
+      "skill": "production-code",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "production-code",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code\\SKILL.md"
+        },
+        {
+          "skill": "production-code",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code\\SKILL.md"
+        },
+        {
+          "skill": "production-code",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code\\SKILL.md"
+        },
+        {
+          "skill": "production-code",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code\\SKILL.md"
+        },
+        {
+          "skill": "production-code",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code"
+        },
+        {
+          "skill": "production-code",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code"
+        },
+        {
+          "skill": "production-code",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\production-code"
+        }
+      ]
+    },
+    {
+      "skill": "python-design",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-design",
+      "frontmatter": {
+        "name": "python-design",
+        "description": "Design Python application architecture, module structure, and API contracts using MCP Framework v6.0.0. Use when planning Python applications, designing modules, or structuring codebases before implementation. Orchestrates steps 1, 3, 9-11 (design intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "python-design",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-design\\SKILL.md"
+        },
+        {
+          "skill": "python-design",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-design"
+        },
+        {
+          "skill": "python-design",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-design"
+        },
+        {
+          "skill": "python-design",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-design"
+        }
+      ]
+    },
+    {
+      "skill": "python-implement",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-implement",
+      "frontmatter": {
+        "name": "python-implement",
+        "description": "Implement Python code with optimization, testing, and error handling using MCP Framework v6.0.0. Use when writing Python code, creating modules, or implementing features. Orchestrates steps 1, 12-14, 18 (implement intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1, 2]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "python-implement",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-implement"
+        },
+        {
+          "skill": "python-implement",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-implement"
+        },
+        {
+          "skill": "python-implement",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-implement"
+        }
+      ]
+    },
+    {
+      "skill": "python-planning",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-planning",
+      "frontmatter": {
+        "name": "python-planning",
+        "description": "Plan Python implementation tasks, scope, and timeline using MCP Framework v6.0.0. Use when breaking down Python work into tasks, estimating effort, or creating implementation roadmaps. Orchestrates steps 1, 9-11 (planning intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "python-planning",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-planning"
+        },
+        {
+          "skill": "python-planning",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-planning"
+        },
+        {
+          "skill": "python-planning",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-planning"
+        }
+      ]
+    },
+    {
+      "skill": "python-quality-review",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-quality-review",
+      "frontmatter": {
+        "name": "python-quality-review",
+        "description": "Review Python code quality, security, metrics, and standards compliance using MCP Framework v6.0.0. Use when validating Python code, checking quality, or performing security analysis. Orchestrates steps 5-8, 17 (quality-review intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "python-quality-review",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-quality-review"
+        },
+        {
+          "skill": "python-quality-review",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-quality-review"
+        },
+        {
+          "skill": "python-quality-review",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-quality-review"
+        }
+      ]
+    },
+    {
+      "skill": "python-refactor",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-refactor",
+      "frontmatter": {
+        "name": "python-refactor",
+        "description": "Refactor Python code for optimization, maintainability, and performance using MCP Framework v6.0.0. Use when improving existing Python code, optimizing performance, or reducing technical debt. Orchestrates steps 5, 14-16 (refactor intent).",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "python-refactor",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-refactor"
+        },
+        {
+          "skill": "python-refactor",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-refactor"
+        },
+        {
+          "skill": "python-refactor",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-refactor"
+        }
+      ]
+    },
+    {
+      "skill": "python-typecheck",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-typecheck",
+      "frontmatter": {
+        "name": "python-typecheck",
+        "description": "Python type checking with mypy, type hint validation, and type annotation improvements. Use when checking Python types, fixing mypy errors, or adding/improving type hints.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "python-typecheck",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-typecheck"
+        },
+        {
+          "skill": "python-typecheck",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-typecheck"
+        },
+        {
+          "skill": "python-typecheck",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\python-typecheck"
+        }
+      ]
+    },
+    {
+      "skill": "quality-security",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-security",
+      "frontmatter": {
+        "name": "quality-security",
+        "description": "Security analysis including vulnerability scanning, dependency audits, authentication review, and threat assessment. Use when checking security, auditing dependencies, or validating auth implementations.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "quality-security",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-security"
+        },
+        {
+          "skill": "quality-security",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-security"
+        },
+        {
+          "skill": "quality-security",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-security"
+        }
+      ]
+    },
+    {
+      "skill": "quality-validation",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-validation",
+      "frontmatter": {
+        "name": "quality-validation",
+        "description": "Comprehensive code quality validation including linting, standards compliance, metrics, and best practices. Use when validating code quality across any codebase before commits or deployments. Cross-platform and multi-language.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[]",
+        "safe_for_auto_approval": "true"
+      },
+      "findings": [
+        {
+          "skill": "quality-validation",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-validation"
+        },
+        {
+          "skill": "quality-validation",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-validation"
+        },
+        {
+          "skill": "quality-validation",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\quality-validation"
+        }
+      ]
+    },
+    {
+      "skill": "qwen-agent",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-agent",
+      "frontmatter": {
+        "name": "qwen-agent",
+        "description": "Level 2 Execution Unit for Qwen model (2-TIER ARCHITECTURE). Executes ONE discrete task via OpenRouter/LiteLLM routing. Supports both Qwen 2.5 72B (Tier 1 complex) and 7B (Tier 2 simple) models. Reports directly to PRIME.",
+        "allowed-tools": "[*]",
+        "version": "1.0.0",
+        "created": "2025-10-28",
+        "updated": "2025-10-28"
+      },
+      "findings": [
+        {
+          "skill": "qwen-agent",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-agent"
+        },
+        {
+          "skill": "qwen-agent",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-agent"
+        },
+        {
+          "skill": "qwen-agent",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-agent"
+        }
+      ]
+    },
+    {
+      "skill": "qwen-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-swarm-orchestrator",
+      "frontmatter": {
+        "name": "qwen-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Qwen3-Coder model instances via qwen CLI \u2192 LiteLLM proxy \u2192 OpenRouter. Handles all mechanics of spawning MULTIPLE QWEN AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 10 concurrent Qwen instances for agentic AI coding. Released July 2025.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.0.0",
+        "created": "2025-11-02",
+        "updated": "2025-11-02",
+        "role": "Parallel Spawning Specialist for Qwen3-Coder (Complex & Simple Tasks - SAME MODEL)",
+        "model": "Qwen3-Coder (qwen/qwen-3-coder)",
+        "router": "qwen CLI \u2192 LiteLLM proxy (localhost:47821) \u2192 OpenRouter"
+      },
+      "findings": [
+        {
+          "skill": "qwen-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "qwen-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-swarm-orchestrator"
+        },
+        {
+          "skill": "qwen-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-swarm-orchestrator"
+        },
+        {
+          "skill": "qwen-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\qwen-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "readme-metadata",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "readme-metadata",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata\\SKILL.md"
+        },
+        {
+          "skill": "readme-metadata",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata\\SKILL.md"
+        },
+        {
+          "skill": "readme-metadata",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata\\SKILL.md"
+        },
+        {
+          "skill": "readme-metadata",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata"
+        },
+        {
+          "skill": "readme-metadata",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata"
+        },
+        {
+          "skill": "readme-metadata",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\readme-metadata"
+        }
+      ]
+    },
+    {
+      "skill": "rfc2119",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "rfc2119",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119\\SKILL.md"
+        },
+        {
+          "skill": "rfc2119",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119\\SKILL.md"
+        },
+        {
+          "skill": "rfc2119",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119\\SKILL.md"
+        },
+        {
+          "skill": "rfc2119",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119"
+        },
+        {
+          "skill": "rfc2119",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119"
+        },
+        {
+          "skill": "rfc2119",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\rfc2119"
+        }
+      ]
+    },
+    {
+      "skill": "skill-creator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\skill-creator",
+      "frontmatter": {
+        "name": "skill-creator",
+        "description": "Create new skills, modify and improve existing skills, and measure skill performance. Use when users want to create a skill from scratch, edit, or optimize an existing skill, run evals to test a skill, benchmark skill performance with variance analysis, or optimize a skill's description for better triggering accuracy."
+      },
+      "findings": [
+        {
+          "skill": "skill-creator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\skill-creator\\SKILL.md"
+        }
+      ]
+    },
+    {
+      "skill": "slack-gif-creator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator",
+      "frontmatter": {
+        "name": "slack-gif-creator",
+        "description": "Toolkit for creating animated GIFs optimized for Slack, with validators for size constraints and composable animation primitives. This skill applies when users request animated GIFs or emoji animations for Slack from descriptions like \"make me a GIF for Slack of X doing Y\".",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "slack-gif-creator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator\\SKILL.md"
+        },
+        {
+          "skill": "slack-gif-creator",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator\\SKILL.md"
+        },
+        {
+          "skill": "slack-gif-creator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator"
+        },
+        {
+          "skill": "slack-gif-creator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator"
+        },
+        {
+          "skill": "slack-gif-creator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\slack-gif-creator"
+        }
+      ]
+    },
+    {
+      "skill": "solid-dry-kiss-principles",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles",
+      "frontmatter": {},
+      "findings": [
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "high",
+          "code": "missing_frontmatter",
+          "message": "SKILL.md should include YAML frontmatter.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "high",
+          "code": "missing_name",
+          "message": "Frontmatter should include a name field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "low",
+          "code": "body_too_long",
+          "message": "SKILL.md body is over 500 lines; consider progressive disclosure.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "medium",
+          "code": "broken_local_link",
+          "message": "Broken local link target in SKILL.md: config",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        },
+        {
+          "skill": "solid-dry-kiss-principles",
+          "severity": "medium",
+          "code": "broken_local_link",
+          "message": "Broken local link target in SKILL.md: config",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\solid-dry-kiss-principles\\SKILL.md"
+        }
+      ]
+    },
+    {
+      "skill": "sonnet-swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\sonnet-swarm-orchestrator",
+      "frontmatter": {
+        "name": "sonnet-swarm-orchestrator",
+        "description": "Specialized parallel spawning sub-agent for Claude 4.5 Sonnet model instances via direct Claude CLI. Handles all mechanics of spawning MULTIPLE SONNET AGENTS via Bash subprocess IN PARALLEL. Does NOT make strategic decisions - only executes spawning instructions from PRIME. Supports up to 5 concurrent Claude 4.5 Sonnet instances for complex reasoning, architectural design, and strategic planning. Released October 2024.",
+        "allowed-tools": "[Bash, BashOutput, KillShell]",
+        "version": "4.0.0",
+        "created": "2025-10-25",
+        "updated": "2025-11-02",
+        "role": "Parallel Spawning Specialist for Claude 4.5 Sonnet (Complex Reasoning & Strategic Planning)",
+        "model": "Claude 4.5 Sonnet (anthropic/claude-4.5-sonnet)",
+        "cli": "Direct Claude CLI (native Anthropic access)"
+      },
+      "findings": [
+        {
+          "skill": "sonnet-swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\sonnet-swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "sonnet-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\sonnet-swarm-orchestrator"
+        },
+        {
+          "skill": "sonnet-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\sonnet-swarm-orchestrator"
+        },
+        {
+          "skill": "sonnet-swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\sonnet-swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "swarm-orchestrator",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\swarm-orchestrator",
+      "frontmatter": {
+        "name": "swarm-orchestrator",
+        "description": "Unified skill for PRIME protocol activation and universal agent spawn template. Provides single-word activation for THE SWARM hierarchy and standardized spawn template for all 7 swarm orchestrators. Consolidates orchestrator entry point and spawn template functionality into one portable skill.",
+        "allowed-tools": "[*]",
+        "version": "4.0.0",
+        "created": "2025-11-02",
+        "updated": "2025-11-02",
+        "architecture": "2-tier",
+        "role": "PRIME Protocol Entry Point + Universal Agent Spawn Template"
+      },
+      "findings": [
+        {
+          "skill": "swarm-orchestrator",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\swarm-orchestrator\\SKILL.md"
+        },
+        {
+          "skill": "swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\swarm-orchestrator"
+        },
+        {
+          "skill": "swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\swarm-orchestrator"
+        },
+        {
+          "skill": "swarm-orchestrator",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\swarm-orchestrator"
+        }
+      ]
+    },
+    {
+      "skill": "test-implementation",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\test-implementation",
+      "frontmatter": {
+        "name": "test-implementation",
+        "description": "Comprehensive test suite creation including unit tests, integration tests, API tests, and E2E validation. Use when creating tests, improving coverage, or implementing test strategies.",
+        "allowed-tools": "[*]",
+        "metadata": "",
+        "auto_approval_supported": "true",
+        "auto_approval_gates": "[1, 2]",
+        "safe_for_auto_approval": "false"
+      },
+      "findings": [
+        {
+          "skill": "test-implementation",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\test-implementation"
+        },
+        {
+          "skill": "test-implementation",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\test-implementation"
+        },
+        {
+          "skill": "test-implementation",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\test-implementation"
+        }
+      ]
+    },
+    {
+      "skill": "theme-factory",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\theme-factory",
+      "frontmatter": {
+        "name": "theme-factory",
+        "description": "Toolkit for styling artifacts with a theme. These artifacts can be slides, docs, reportings, HTML landing pages, etc. There are 10 pre-set themes with colors/fonts that you can apply to any artifact that has been creating, or can generate a new theme on-the-fly.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "theme-factory",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\theme-factory\\SKILL.md"
+        },
+        {
+          "skill": "theme-factory",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\theme-factory"
+        },
+        {
+          "skill": "theme-factory",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\theme-factory"
+        },
+        {
+          "skill": "theme-factory",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\theme-factory"
+        }
+      ]
+    },
+    {
+      "skill": "vercel-react-best-practices",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-best-practices",
+      "frontmatter": {
+        "name": "vercel-react-best-practices",
+        "description": "React and Next.js performance optimization guidelines from Vercel Engineering. This skill should be used when writing, reviewing, or refactoring React/Next.js code to ensure optimal performance patterns. Triggers on tasks involving React components, Next.js pages, data fetching, bundle optimization, or performance improvements.",
+        "license": "MIT",
+        "metadata": "",
+        "author": "vercel",
+        "version": "1.0.0"
+      },
+      "findings": [
+        {
+          "skill": "vercel-react-best-practices",
+          "severity": "low",
+          "code": "description_long",
+          "message": "Description is long and may be truncated by some runtimes.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-best-practices\\SKILL.md"
+        },
+        {
+          "skill": "vercel-react-best-practices",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-best-practices"
+        },
+        {
+          "skill": "vercel-react-best-practices",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-best-practices"
+        },
+        {
+          "skill": "vercel-react-best-practices",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-best-practices"
+        }
+      ]
+    },
+    {
+      "skill": "vercel-react-native-skills",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-native-skills",
+      "frontmatter": {
+        "name": "vercel-react-native-skills",
+        "description": "",
+        "license": "MIT",
+        "metadata": "",
+        "author": "vercel",
+        "version": "1.0.0"
+      },
+      "findings": [
+        {
+          "skill": "vercel-react-native-skills",
+          "severity": "high",
+          "code": "missing_description",
+          "message": "Frontmatter should include a description field.",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-native-skills\\SKILL.md"
+        },
+        {
+          "skill": "vercel-react-native-skills",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-native-skills"
+        },
+        {
+          "skill": "vercel-react-native-skills",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-native-skills"
+        },
+        {
+          "skill": "vercel-react-native-skills",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\vercel-react-native-skills"
+        }
+      ]
+    },
+    {
+      "skill": "web-design-guidelines",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\web-design-guidelines",
+      "frontmatter": {
+        "name": "web-design-guidelines",
+        "description": "Review UI code for Web Interface Guidelines compliance. Use when asked to \"review my UI\", \"check accessibility\", \"audit design\", \"review UX\", or \"check my site against best practices\".",
+        "metadata": "",
+        "author": "vercel",
+        "version": "1.0.0",
+        "argument-hint": "<file-or-pattern>"
+      },
+      "findings": [
+        {
+          "skill": "web-design-guidelines",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\web-design-guidelines"
+        },
+        {
+          "skill": "web-design-guidelines",
+          "severity": "medium",
+          "code": "missing_scripts",
+          "message": "Missing optional support directory: scripts/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\web-design-guidelines"
+        },
+        {
+          "skill": "web-design-guidelines",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\web-design-guidelines"
+        }
+      ]
+    },
+    {
+      "skill": "webapp-testing",
+      "path": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\webapp-testing",
+      "frontmatter": {
+        "name": "webapp-testing",
+        "description": "Toolkit for interacting with and testing local web applications using Playwright. Supports verifying frontend functionality, debugging UI behavior, capturing browser screenshots, and viewing browser logs.",
+        "license": "Complete terms in LICENSE.txt"
+      },
+      "findings": [
+        {
+          "skill": "webapp-testing",
+          "severity": "medium",
+          "code": "missing_references",
+          "message": "Missing optional support directory: references/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\webapp-testing"
+        },
+        {
+          "skill": "webapp-testing",
+          "severity": "medium",
+          "code": "missing_assets",
+          "message": "Missing optional support directory: assets/",
+          "location": "C:\\github_development\\projects\\digital-angels-kit\\agentic_code_engine\\_ai_agent\\.agents\\skills\\webapp-testing"
+        }
+      ]
+    }
+  ]
+}
