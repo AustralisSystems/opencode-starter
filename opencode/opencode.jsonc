@@ -78,15 +78,15 @@
   },
   "compaction": {
     "auto": true,
-    "prune": true,
-    "reserved": 20000
+    "prune": true
   },
   "default_agent": "build",
   // Project-scoped provider selection and model defaults.
   "enabled_providers": [
     "github-copilot",
+    "openrouter",
     "opencode",
-    "openrouter"
+    "lm-studio"
   ],
   "experimental": {
     "batch_tool": true,
