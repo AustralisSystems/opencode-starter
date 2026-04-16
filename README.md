@@ -46,44 +46,86 @@
 
 ## Prerequisites
 
-- [OpenCode](https://opencode.ai) - AI-powered code editor
-- [GNU Stow](https://www.gnu.org/software/stow/) - Symlink farm manager (optional but recommended)
-- [Node.js](https://nodejs.org/) - JavaScript runtime (v18+)
-- [Git](https://git-scm.com/) - Version control
-- [pre-commit](https://pre-commit.com/) - Git hook framework (optional)
+- Bash-compatible shell (Git Bash, WSL, or Linux/macOS shell)
+- Internet access for package installation
+- Admin/sudo permissions (recommended for system package installs)
 
 ### Installing Prerequisites
 
-**macOS:**
+Use the installer script (recommended):
 
 ```bash
-brew install stow node pre-commit
+./scripts/install.sh
 ```
 
-**Ubuntu/Debian:**
+By default, the script installs missing tools, updates existing ones, and runs `make install`. To install only missing tools without upgrades:
 
 ```bash
-sudo apt install stow nodejs npm
-pip install pre-commit
+./scripts/install.sh --no-update
 ```
 
-**Arch Linux:**
+If you only want prerequisite setup and do not want it to run the Makefile:
 
 ```bash
-sudo pacman -S stow nodejs npm python-pre-commit
+./scripts/install.sh --skip-make
 ```
 
-**Ubuntu/Debian:**
+If destination files already exist and you want to force overwrite during install:
 
 ```bash
-sudo apt install stow nodejs npm
-pip install pre-commit
+./scripts/install.sh --overwrite
 ```
 
-**Arch Linux:**
+If you want a full force cycle (reinstall packages and overwrite config content):
 
 ```bash
-sudo pacman -S stow nodejs npm python-pre-commit
+./scripts/install.sh --force
+```
+
+To uninstall config content and remove managed packages:
+
+```bash
+./scripts/install.sh --uninstall
+```
+
+To brute-force uninstall (aggressive content deletion + package removal):
+
+```bash
+./scripts/install.sh --uninstall --force
+```
+
+To preview actions without changing anything:
+
+```bash
+./scripts/install.sh --dry-run
+```
+
+You can preview the force cycle without changing anything:
+
+```bash
+./scripts/install.sh --dry-run --force
+```
+
+You can also preview uninstall behavior without changing anything:
+
+```bash
+./scripts/install.sh --dry-run --uninstall
+./scripts/install.sh --dry-run --uninstall --force
+```
+
+The script handles OS detection and installs prerequisites for this submodule, including:
+
+- `git`
+- `node` / `npm`
+- `make`
+- `stow`
+- `pre-commit`
+- `opencode-ai`
+
+If the script is not executable yet:
+
+```bash
+chmod +x ./scripts/install.sh
 ```
 
 ## Installation
@@ -95,8 +137,8 @@ sudo pacman -S stow nodejs npm python-pre-commit
 git clone https://github.com/jjmartres/opencode.git
 cd opencode
 
-# Install configuration
-make install
+# Install prerequisites
+./scripts/install.sh
 
 # (Optional) Install pre-commit hooks
 make install-hooks
@@ -124,6 +166,8 @@ The Makefile automatically detects if GNU Stow is available:
 - **With Stow**: Uses `stow` for proper symlink management
 - **Without Stow**: Falls back to `ln -s` for direct symlinks
 
+During install, existing non-symlink destination files are detected as conflicts by default. Use force overwrite only when you intentionally want to replace existing files.
+
 ## Usage
 
 ### Basic Commands
@@ -150,8 +194,11 @@ make restow
 ```bash
 make help                    # Display all available commands
 make install                 # Install OpenCode configuration
+make install FORCE_OVERWRITE=1  # Install and replace existing destination files
+make install-force           # Shortcut for forced overwrite install
 make uninstall              # Remove configuration symlinks
 make restow                 # Refresh symlinks (after updates)
+make dry-run                # Preview install actions without changing files
 make status                 # Show installation status
 make list                   # List available packages
 make clean                  # Remove broken symlinks
