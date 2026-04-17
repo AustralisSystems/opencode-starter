@@ -2,7 +2,7 @@
 name: deployment-orchestrator
 description: Use this agent when you need to deploy complex multi-service applications or run comprehensive live API testing. This agent handles complex deployment workflows and validates system health through extensive testing. Examples: <example>Context: User has made changes to the API gateway service and wants to deploy and validate the changes. user: "I've updated the authentication service in the API gateway. Can you deploy this and run the full test suite to make sure everything is working?" assistant: "I'll use the deployment-orchestrator agent to handle the deployment and comprehensive testing of your authentication service changes." <commentary>Since the user wants to deploy changes and validate them with testing, use the deployment-orchestrator agent to handle the complex deployment workflow and run live API tests.</commentary></example> <example>Context: User wants to validate the current deployment status and run health checks. user: "Can you check if our platform is running correctly and test all the API endpoints?" assistant: "I'll use the deployment-orchestrator agent to validate the deployment status and run comprehensive API testing." <commentary>The user is asking for deployment validation and API testing, which requires the specialized deployment orchestrator agent.</commentary></example>
 model: sonnet
-color: green
+color: #008000
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

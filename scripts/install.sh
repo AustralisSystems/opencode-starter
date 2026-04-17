@@ -14,6 +14,17 @@ UNINSTALL_MODE=0
 SCRIPT_DIR="$(cd -- "$(dirname -- "${BASH_SOURCE[0]}")" && pwd)"
 PROJECT_ROOT="$(cd -- "$SCRIPT_DIR/.." && pwd)"
 TARGET_CONFIG_DIR="${HOME}/.config/opencode"
+
+normalize_path() {
+  local p="$1"
+  if command -v cygpath >/dev/null 2>&1 && [[ "$(uname -s)" =~ MINGW|MSYS|CYGWIN ]]; then
+    cygpath -u "$p"
+  else
+    printf '%s' "$p"
+  fi
+}
+
+TARGET_CONFIG_DIR="$(normalize_path "${TARGET_CONFIG_DIR}")"
 MANAGED_CONFIG_PACKAGES=(agent command mcp plugin rules skill themes)
 WINGET_STOW_IDS=(GNU.Stow GnuWin32.Stow)
 
@@ -562,10 +573,10 @@ run_default_make_install() {
 
   if [[ "$DRY_RUN" -eq 1 ]]; then
     log "Running $make_cmd install dry run in $PROJECT_ROOT"
-    "$make_cmd" -C "$PROJECT_ROOT" install DRY_RUN=1 "FORCE_OVERWRITE=$FORCE_OVERWRITE"
+    "$make_cmd" -C "$PROJECT_ROOT" install DRY_RUN=1 "FORCE_OVERWRITE=$FORCE_OVERWRITE" "TARGET=$TARGET_CONFIG_DIR"
   else
     log "Running $make_cmd install in $PROJECT_ROOT"
-    run_cmd "$make_cmd" -C "$PROJECT_ROOT" install "FORCE_OVERWRITE=$FORCE_OVERWRITE"
+    run_cmd "$make_cmd" -C "$PROJECT_ROOT" install "FORCE_OVERWRITE=$FORCE_OVERWRITE" "TARGET=$TARGET_CONFIG_DIR"
   fi
 }
 

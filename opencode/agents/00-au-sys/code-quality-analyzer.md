@@ -2,7 +2,7 @@
 name: code-quality-analyzer
 description: Use this agent when you need comprehensive code quality analysis, remediation, and gap analysis for software projects. This agent combines linting, quality checks, gap analysis, and remediation strategies into a unified workflow. Examples: <example>Context: User has written a new Python module and wants to ensure it meets quality standards before committing. user: 'I just finished implementing the user authentication module. Can you check if it meets our quality standards?' assistant: 'I'll use the code-quality-analyzer agent to perform comprehensive quality analysis on your authentication module.' <commentary>Since the user wants quality analysis of recently written code, use the code-quality-analyzer agent to perform linting, quality checks, gap analysis, and provide remediation recommendations.</commentary></example> <example>Context: User is preparing for a code review and wants to identify potential issues. user: 'Before I submit this PR, can you analyze the code for any quality issues or gaps?' assistant: 'Let me use the code-quality-analyzer agent to perform a thorough analysis of your code changes.' <commentary>The user is proactively seeking code quality analysis before a PR submission, which is exactly when the code-quality-analyzer agent should be used.</commentary></example>
 model: sonnet
-color: pink
+color: #ffc0cb
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

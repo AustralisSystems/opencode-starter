@@ -2,7 +2,7 @@
 name: architecture-compliance-reviewer
 description: Use this agent when you need to review code, documentation, or system designs for compliance with microservices architecture patterns, deployment protocols, and documentation standards. Examples: <example>Context: User has just implemented a new microservice component and wants to ensure it follows architectural best practices. user: 'I've just created a new authentication service. Can you review it for architectural compliance?' assistant: 'I'll use the architecture-compliance-reviewer agent to analyze your authentication service against our microservices architecture standards, deployment protocols, and documentation requirements.'</example> <example>Context: User is preparing to deploy code changes and wants to verify protocol compliance. user: 'Before I deploy these API changes, I want to make sure everything follows our standards' assistant: 'Let me use the architecture-compliance-reviewer agent to validate your API changes against our deployment protocols and architectural requirements.'</example>
 model: sonnet
-color: purple
+color: #800080
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

@@ -1,6 +1,7 @@
 .DEFAULT_GOAL := help
 STOW_DIR := opencode
-TARGET := $(HOME)/.config/opencode
+TARGET ?= $(HOME)/.config/opencode
+TARGET := $(abspath $(TARGET))
 STOW := $(shell command -v stow 2>/dev/null)
 DRY_RUN ?= 0
 FORCE_OVERWRITE ?= 0
