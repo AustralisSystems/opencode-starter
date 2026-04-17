@@ -82,13 +82,6 @@
     "reserved": 10000
   },
   "default_agent": "build",
-  // Project-scoped provider selection and model defaults.
-  "enabled_providers": [
-    "github-copilot",
-    "openrouter",
-    "opencode",
-    "lm-studio"
-  ],
   "experimental": {
     "batch_tool": true,
     "continue_loop_on_deny": true,
@@ -212,7 +205,6 @@
   },
   "plugin": [
     "@franlol/opencode-md-table-formatter@latest",
-    "opencode-websearch-cited@1.2.0",
     "opencode-cost-guard"
   ],
   "provider": {},
@@ -221,7 +213,6 @@
   "skills": {
     "paths": [
       "C:/Users/TristanBurns/.agents/skills",
-      "C:/Users/TristanBurns/.claude/skills"
     ],
     "urls": []
   },
