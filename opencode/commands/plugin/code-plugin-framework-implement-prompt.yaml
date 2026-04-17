@@ -1,0 +1,483 @@
+# === MCP PROMPT: Plugin Framework Implementation Protocol ===
+name: "code-plugin-framework-implement-prompt"
+version: "1.0.0"
+description: "Comprehensive plugin framework implementation protocol for production-ready plugin framework code development"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Plugin Framework Implementation"
+  description: "Execute comprehensive plugin framework implementation from design blueprints with mandatory SOLID/DRY/KISS principles and production readiness"
+
+  # Argument Schema
+  arguments:
+    implementation_target:
+      type: "string"
+      description: "Target components for plugin framework implementation"
+      required: true
+      enum:
+        [
+          "entire-framework",
+          "core-plugins",
+          "registry-system",
+          "hot-loading",
+          "lifecycle-management",
+          "integration-layer",
+        ]
+
+    design_source:
+      type: "string"
+      description: "Source of plugin framework design blueprints"
+      required: true
+
+    plugin_scope:
+      type: "string"
+      description: "Scope of plugin implementation effort"
+      required: false
+      enum: ["framework-wide", "specific-modules", "integration-layer", "extension-points"]
+
+    validation_level:
+      type: "string"
+      description: "Level of validation during implementation"
+      required: false
+      enum: ["standard", "comprehensive", "continuous", "strict"]
+
+    commit_strategy:
+      type: "string"
+      description: "Git commit strategy for implementation"
+      required: false
+      enum: ["atomic", "feature-based", "incremental", "monolithic"]
+
+    quality_enforcement:
+      type: "string"
+      description: "Code quality enforcement level"
+      required: false
+      enum: ["standard", "strict", "enterprise", "maximum"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI plugin framework implementation specialist executing the Plugin Framework Implementation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive implementation methodology
+        - Create complete production-ready plugin framework code
+        - Maintain enterprise-grade code quality standards
+        - Use systematic implementation and validation
+        - Follow SOLID, DRY, KISS principles throughout
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code or test scripts
+        - Making placeholder or incomplete implementations
+        - Partial or incomplete plugin framework code
+        - Creating implementation without proper design analysis
+        - Skipping security or performance implementations
+        - Creating duplicate or backup files
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PLUGIN FRAMEWORK IMPLEMENTATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **IMPLEMENTATION PARAMETERS:**
+        - Implementation Target: {{implementation_target}}
+        - Design Source: {{design_source}}
+        - Plugin Scope: {{plugin_scope}}
+        - Validation Level: {{validation_level}}
+        - Commit Strategy: {{commit_strategy}}
+        - Quality Enforcement: {{quality_enforcement}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PLUGIN FRAMEWORK IMPLEMENTATION PROTOCOL:**
+
+# Plugin Framework Implementation Protocol Configuration
+implementation_protocol:
+  # Implementation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  implementation_focus:
+    plugin_framework_production_code: true # MUST implement production plugin code
+    complete_plugin_implementation: true # MUST implement all planned components
+    registry_integration: true # MUST implement registry integration
+    hot_loading_implementation: true # MUST implement hot-loading capabilities
+    lifecycle_management: true # MUST implement plugin lifecycle
+    security_implementation: true # MUST implement security measures
+    performance_optimization: true # MUST optimize for performance
+    cross_cutting_concerns: true # MUST implement cross-cutting concerns
+    production_only: true # STRICTLY production code only
+    no_test_code: true # ABSOLUTELY no test code
+
+  # Implementation Configuration - MANDATORY SETTINGS
+  implementation_settings:
+    follow_design_blueprints: true
+    apply_solid_principles: true
+    apply_dry_principle: true
+    apply_kiss_principle: true
+    continuous_validation: true
+    atomic_commits: true
+    systematic_approach: true # MANDATORY: Systematic implementation
+    production_standards: true # MANDATORY: Production-grade code
+    comprehensive_coverage: true # MANDATORY: Complete implementation
+    quality_enforcement: true # MANDATORY: Quality standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Implementation Setup and Blueprint Validation"
+    mandatory_actions:
+      - "VALIDATE plugin framework design blueprints and specifications"
+      - "SETUP development environment for plugin framework"
+      - "PREPARE plugin framework structure and directories"
+      - "CONFIGURE plugin development dependencies"
+      - "ESTABLISH implementation tracking and monitoring"
+
+    setup_requirements:
+      - "MANDATORY: Complete blueprint validation"
+      - "MANDATORY: Environment properly configured"
+      - "MANDATORY: All dependencies resolved"
+      - "FORBIDDEN: Proceeding without validation"
+
+  phase_2:
+    name: "Core Plugin Framework Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin interface contracts and abstract base classes"
+      - "CREATE plugin manager and coordinator components"
+      - "DEVELOP plugin loader and resolver mechanisms"
+      - "IMPLEMENT plugin context and environment management"
+      - "BUILD plugin configuration management system"
+
+    core_requirements:
+      plugin_interfaces:
+        - "IMPLEMENT IPlugin interface contract"
+        - "CREATE plugin base abstract classes"
+        - "DEFINE plugin lifecycle interfaces"
+        - "IMPLEMENT plugin metadata structures"
+
+      plugin_manager:
+        - "IMPLEMENT plugin discovery mechanisms"
+        - "CREATE plugin instantiation logic"
+        - "DEVELOP plugin dependency injection"
+        - "BUILD plugin state management"
+
+      configuration_system:
+        - "IMPLEMENT configuration loading"
+        - "CREATE configuration validation"
+        - "DEVELOP configuration hot-reload"
+        - "BUILD configuration persistence"
+
+  phase_3:
+    name: "Extension Point and Hook Implementation"
+    mandatory_actions:
+      - "IMPLEMENT extension point registration system"
+      - "CREATE hook mechanism for plugin integration"
+      - "DEVELOP event-based plugin communication"
+      - "IMPLEMENT plugin callback management"
+      - "BUILD plugin filter and action systems"
+
+    extension_requirements:
+      extension_points:
+        - "IMPLEMENT extension point registry"
+        - "CREATE extension point discovery"
+        - "DEVELOP extension point validation"
+        - "BUILD extension point invocation"
+
+      hook_system:
+        - "IMPLEMENT hook registration"
+        - "CREATE hook priority management"
+        - "DEVELOP hook execution chain"
+        - "BUILD hook error handling"
+
+      event_system:
+        - "IMPLEMENT event dispatcher"
+        - "CREATE event subscription management"
+        - "DEVELOP event filtering"
+        - "BUILD event error recovery"
+
+  phase_4:
+    name: "Plugin Registry Integration Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin registry client components"
+      - "CREATE plugin discovery and search mechanisms"
+      - "DEVELOP plugin download and installation logic"
+      - "IMPLEMENT plugin version management system"
+      - "BUILD plugin dependency resolution algorithms"
+
+    registry_requirements:
+      registry_client:
+        - "IMPLEMENT registry API client"
+        - "CREATE authentication mechanisms"
+        - "DEVELOP secure communication"
+        - "BUILD retry and failover logic"
+
+      plugin_discovery:
+        - "IMPLEMENT search algorithms"
+        - "CREATE metadata parsing"
+        - "DEVELOP compatibility checking"
+        - "BUILD recommendation engine"
+
+      installation_system:
+        - "IMPLEMENT download manager"
+        - "CREATE package extraction"
+        - "DEVELOP verification system"
+        - "BUILD rollback mechanisms"
+
+  phase_5:
+    name: "Hot-Loading and Runtime Management Implementation"
+    mandatory_actions:
+      - "IMPLEMENT runtime plugin loading mechanisms"
+      - "CREATE plugin unloading and cleanup logic"
+      - "DEVELOP plugin hot-reload capabilities"
+      - "IMPLEMENT memory management for plugins"
+      - "BUILD plugin isolation mechanisms"
+
+    hot_loading_requirements:
+      runtime_loading:
+        - "IMPLEMENT dynamic module loading"
+        - "CREATE classloader isolation"
+        - "DEVELOP namespace management"
+        - "BUILD resource injection"
+
+      unloading_system:
+        - "IMPLEMENT graceful shutdown"
+        - "CREATE resource cleanup"
+        - "DEVELOP state preservation"
+        - "BUILD memory reclamation"
+
+      hot_reload_capabilities:
+        - "IMPLEMENT file watcher system"
+        - "CREATE reload triggers"
+        - "DEVELOP state migration"
+        - "BUILD zero-downtime reload"
+
+  phase_6:
+    name: "Plugin Lifecycle Management Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin installation procedures"
+      - "CREATE plugin activation mechanisms"
+      - "DEVELOP plugin deactivation logic"
+      - "IMPLEMENT plugin update procedures"
+      - "BUILD plugin removal system"
+
+    lifecycle_requirements:
+      installation_procedures:
+        - "IMPLEMENT pre-installation checks"
+        - "CREATE installation validation"
+        - "DEVELOP post-installation setup"
+        - "BUILD installation rollback"
+
+      activation_system:
+        - "IMPLEMENT activation sequence"
+        - "CREATE dependency activation"
+        - "DEVELOP activation validation"
+        - "BUILD activation monitoring"
+
+      update_mechanisms:
+        - "IMPLEMENT version comparison"
+        - "CREATE update strategies"
+        - "DEVELOP migration logic"
+        - "BUILD update rollback"
+
+  phase_7:
+    name: "Plugin Security and Isolation Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin authentication system"
+      - "CREATE plugin authorization mechanisms"
+      - "DEVELOP plugin sandboxing capabilities"
+      - "IMPLEMENT resource quotas and limits"
+      - "BUILD plugin security monitoring"
+
+    security_requirements:
+      authentication_system:
+        - "IMPLEMENT plugin identity verification"
+        - "CREATE signature validation"
+        - "DEVELOP certificate management"
+        - "BUILD trust chain validation"
+
+      authorization_mechanisms:
+        - "IMPLEMENT permission models"
+        - "CREATE capability-based security"
+        - "DEVELOP access control lists"
+        - "BUILD role-based access"
+
+      isolation_capabilities:
+        - "IMPLEMENT process isolation"
+        - "CREATE resource sandboxing"
+        - "DEVELOP network isolation"
+        - "BUILD filesystem restrictions"
+
+  phase_8:
+    name: "Inter-Plugin Communication Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin messaging system"
+      - "CREATE plugin event bus architecture"
+      - "DEVELOP plugin RPC mechanisms"
+      - "IMPLEMENT shared state management"
+      - "BUILD plugin coordination protocols"
+
+    communication_requirements:
+      messaging_system:
+        - "IMPLEMENT message routing"
+        - "CREATE message serialization"
+        - "DEVELOP message validation"
+        - "BUILD message persistence"
+
+      event_bus:
+        - "IMPLEMENT publish-subscribe"
+        - "CREATE event filtering"
+        - "DEVELOP event ordering"
+        - "BUILD event replay"
+
+      coordination_protocols:
+        - "IMPLEMENT consensus mechanisms"
+        - "CREATE distributed locks"
+        - "DEVELOP transaction support"
+        - "BUILD conflict resolution"
+
+  phase_9:
+    name: "Plugin Performance and Observability Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin performance monitoring"
+      - "CREATE plugin metrics collection"
+      - "DEVELOP plugin logging framework"
+      - "IMPLEMENT plugin tracing capabilities"
+      - "BUILD plugin debugging tools"
+
+    observability_requirements:
+      monitoring_system:
+        - "IMPLEMENT health checks"
+        - "CREATE performance metrics"
+        - "DEVELOP resource tracking"
+        - "BUILD alerting mechanisms"
+
+      logging_framework:
+        - "IMPLEMENT structured logging"
+        - "CREATE log aggregation"
+        - "DEVELOP log filtering"
+        - "BUILD log correlation"
+
+      debugging_tools:
+        - "IMPLEMENT debug interfaces"
+        - "CREATE profiling capabilities"
+        - "DEVELOP state inspection"
+        - "BUILD troubleshooting aids"
+
+  phase_10:
+    name: "Quality Assurance and Production Readiness"
+    mandatory_actions:
+      - "VALIDATE all plugin framework implementations"
+      - "VERIFY SOLID/DRY/KISS compliance"
+      - "ENSURE production readiness criteria met"
+      - "EXECUTE post-implementation quality checks"
+      - "GENERATE implementation documentation"
+
+    quality_requirements:
+      - "MANDATORY: Complete implementation validation"
+      - "MANDATORY: Code quality verification"
+      - "MANDATORY: Security validation"
+      - "MANDATORY: Performance verification"
+      - "FORBIDDEN: Incomplete implementations"
+
+# Implementation Validation Criteria
+validation_criteria:
+  framework_completeness: "MANDATORY - 100% of plugin framework implemented"
+  interface_implementation: "MANDATORY - All plugin interfaces implemented"
+  registry_integration: "MANDATORY - Registry integration functional"
+  hot_loading_operational: "MANDATORY - Hot-loading fully operational"
+  lifecycle_management: "MANDATORY - Complete lifecycle management"
+  security_implemented: "MANDATORY - All security measures active"
+  performance_optimized: "MANDATORY - Performance targets met"
+  observability_active: "MANDATORY - Full observability implemented"
+  solid_compliance: "MANDATORY - SOLID/DRY/KISS principles applied"
+  production_ready: "MANDATORY - Production readiness validated"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL implementation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs: []
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces plugin source code files, configuration files, and test files only
+  # Documentation should be created using separate documentation commands
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all implementation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL implementation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all implementation outputs"
+    - "FORBIDDEN: Creating implementation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same implementation session"
+
+# Implementation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE design blueprints from ({{design_source}}) for ({{implementation_target}})"
+  - "2. SETUP plugin framework development environment"
+  - "3. IMPLEMENT core plugin framework components"
+  - "4. CREATE extension points and hook mechanisms"
+  - "5. IMPLEMENT registry integration and discovery"
+  - "6. BUILD hot-loading and runtime management"
+  - "7. IMPLEMENT plugin lifecycle management"
+  - "8. CREATE security and isolation mechanisms"
+  - "9. IMPLEMENT inter-plugin communication"
+  - "10. BUILD performance and observability features"
+  - "11. VALIDATE implementation completeness"
+  - "12. EXECUTE post-implementation quality checks with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each implementation phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all implementation tracking"
+  - "MANDATORY: Timestamp all implementation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Post-Implementation Quality Check
+post_implementation_quality:
+  automatic_execution: true
+  quality_check_command: "/code-quality-comprehensive"
+
+  mandatory_checks:
+    - "Code quality validation on all modified files"
+    - "SOLID/DRY/KISS compliance verification"
+    - "Security implementation validation"
+    - "Performance optimization verification"
+    - "Production readiness assessment"
+
+  quality_workflow:
+    - "Complete all plugin framework implementation"
+    - "Execute automatic quality check"
+    - "Apply quality fixes"
+    - "Flag complex issues for remediation"
+    - "Commit with quality validation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL implementations MUST be production-ready"
+    - "ALL plugin components MUST be fully implemented"
+    - "ALL security measures MUST be active"
+    - "ALL performance requirements MUST be met"
+    - "ALL implementations MUST follow SOLID/DRY/KISS"
+    - "ALL code MUST be properly documented"
+    - "ALWAYS use systematic implementation methodology"
+    - "NEVER create test code"
+
+  strictly_forbidden:
+    - "Creating test code or test scripts"
+    - "Making placeholder implementations"
+    - "Partial or incomplete plugin code"
+    - "Skipping security implementations"
+    - "Creating implementations without validation"
+    - "Missing critical plugin components"
+    - "Proceeding without quality checks"
+    - "Creating duplicate or backup files"

@@ -1,0 +1,641 @@
+# === MCP PROMPT: End-to-End Testing Protocol ===
+name: "test-protocol-end-to-end-prompt"
+version: "1.0.0"
+description: "Comprehensive end-to-end testing protocol for multi-service integration validation, user journey testing, and complete workflow validation"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "End-to-End Testing Implementation"
+  description: "Execute comprehensive end-to-end testing across all service integrations with complete user journey validation and multi-service workflow testing"
+
+  # Argument Schema
+  arguments:
+    testing_scope:
+      type: "string"
+      description: "Scope of end-to-end testing to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "critical-paths",
+          "user-journeys",
+          "service-integration",
+          "performance-focused",
+          "security-focused",
+        ]
+
+    integration_level:
+      type: "string"
+      description: "Level of integration testing depth"
+      required: true
+      enum:
+        [
+          "basic",
+          "standard",
+          "advanced",
+          "enterprise",
+          "full-system",
+        ]
+
+    workflow_complexity:
+      type: "string"
+      description: "Complexity of workflows to test"
+      required: true
+      enum:
+        [
+          "simple",
+          "standard",
+          "complex",
+          "enterprise",
+          "comprehensive",
+        ]
+
+    environment_target:
+      type: "string"
+      description: "Target environment for end-to-end testing"
+      required: false
+      enum: ["local", "development", "staging", "production", "multi-environment"]
+
+    validation_depth:
+      type: "string"
+      description: "Depth of validation to perform"
+      required: false
+      enum: ["functional", "performance", "security", "comprehensive"]
+
+    automation_level:
+      type: "string"
+      description: "Level of test automation"
+      required: false
+      enum: ["manual", "hybrid", "automated", "full-automation"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI end-to-end integration testing specialist implementing comprehensive multi-service workflow validation.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive end-to-end testing methodology
+        - Execute complete user journey validation across all services
+        - Maintain systematic multi-service integration testing
+        - Use comprehensive workflow validation procedures
+        - Follow SOLID, DRY, KISS principles in testing design
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual service implementations or system changes
+        - Modifying production services or configurations
+        - Creating new service implementations during testing
+        - Testing with incomplete service integrations
+        - Partial or incomplete end-to-end coverage
+        - Proceeding with broken service communications
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY END-TO-END TESTING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **END-TO-END TESTING PARAMETERS:**
+        - Testing Scope: {{testing_scope}}
+        - Integration Level: {{integration_level}}
+        - Workflow Complexity: {{workflow_complexity}}
+        - Environment Target: {{environment_target}}
+        - Validation Depth: {{validation_depth}}
+        - Automation Level: {{automation_level}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING END-TO-END TESTING PROTOCOL:**
+
+# End-to-End Testing Protocol Configuration
+e2e_testing_protocol:
+  # Testing Scope - MANDATORY COMPREHENSIVE COVERAGE
+  testing_focus:
+    multi_service_integration: true # MUST test all service integrations
+    user_journey_validation: true # MUST validate complete user journeys
+    data_flow_validation: true # MUST validate data flow through system
+    service_communication: true # MUST test inter-service communication
+    performance_validation: true # MUST validate E2E performance
+    error_handling_across_services: true # MUST test error handling
+    security_validation: true # MUST validate security throughout workflows
+    workflow_orchestration: true # MUST test workflow orchestration
+    testing_only: true # STRICTLY testing only, no service implementation
+
+  # Testing Configuration - MANDATORY SETTINGS
+  testing_settings:
+    enable_comprehensive_validation: true
+    test_complete_user_journeys: true
+    validate_service_integrations: true
+    test_data_flow_integrity: true
+    monitor_performance_e2e: true
+    validate_security_boundaries: true
+    systematic_approach: true # MANDATORY: Systematic testing methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all E2E aspects
+    production_ready_testing: true # MANDATORY: Production-focused testing
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "End-to-End Test Architecture and Service Mapping"
+    mandatory_actions:
+      - "MAP complete service architecture and dependencies"
+      - "ANALYZE service integration points and communication patterns"
+      - "IDENTIFY critical user journeys and workflow paths"
+      - "DOCUMENT service data flow and transformation chains"
+      - "ESTABLISH end-to-end testing framework architecture"
+
+    architecture_mapping_requirements:
+      - "MANDATORY: Complete service dependency mapping"
+      - "MANDATORY: Document ALL integration points and protocols"
+      - "MANDATORY: Identify ALL critical user journey paths"
+      - "FORBIDDEN: Missing any service integration points"
+
+  phase_2:
+    name: "User Journey Definition and Workflow Analysis"
+    mandatory_actions:
+      - "DEFINE comprehensive user journey scenarios across all services"
+      - "ANALYZE complete workflow paths from start to finish"
+      - "IDENTIFY user touchpoints and interaction patterns"
+      - "MAP user data flow through entire system architecture"
+      - "ESTABLISH user journey validation criteria and success metrics"
+
+    user_journey_requirements:
+      critical_user_journeys:
+        - "DEFINE new user onboarding complete journey"
+        - "MAP workflow creation and execution end-to-end flow"
+        - "ANALYZE data processing and storage complete journey"
+        - "DOCUMENT reporting and analytics user workflow"
+        - "ESTABLISH administration and configuration journeys"
+
+      workflow_analysis:
+        - "ANALYZE n8n workflow orchestration across all services"
+        - "MAP data transformation through PostgreSQL, Neo4j, Qdrant"
+        - "TRACE AI processing through LightRAG service integration"
+        - "VALIDATE infrastructure automation through Terraform/Ansible"
+        - "MONITOR system observability through Prometheus/Grafana"
+
+      journey_validation_criteria:
+        - "ESTABLISH journey completion success criteria"
+        - "DEFINE journey performance and timing requirements"
+        - "SPECIFY journey error handling and recovery expectations"
+        - "VALIDATE journey security and authentication requirements"
+        - "DOCUMENT journey data integrity and consistency requirements"
+
+  phase_3:
+    name: "Multi-Service Integration Testing Framework"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive multi-service integration testing"
+      - "TEST service-to-service communication protocols"
+      - "VALIDATE service authentication and authorization chains"
+      - "VERIFY service data exchange and transformation accuracy"
+      - "ESTABLISH service dependency and failure testing"
+
+    integration_testing_requirements:
+      service_communication_testing:
+        - "TEST n8n to PostgreSQL data persistence integration"
+        - "VALIDATE n8n to Neo4j knowledge graph integration"
+        - "VERIFY n8n to Qdrant vector embedding integration"
+        - "TEST n8n to LightRAG AI processing integration"
+        - "VALIDATE n8n to MinIO artifact storage integration"
+
+      infrastructure_integration_testing:
+        - "TEST n8n to Terraform executor integration"
+        - "VALIDATE n8n to Ansible executor integration"
+        - "VERIFY infrastructure deployment and configuration"
+        - "TEST monitoring integration with Prometheus"
+        - "VALIDATE dashboard and alerting with Grafana"
+
+      data_flow_integration:
+        - "VALIDATE data consistency across all storage services"
+        - "TEST data transformation accuracy between services"
+        - "VERIFY data synchronization and replication"
+        - "VALIDATE data backup and recovery across services"
+        - "TEST data access control and security boundaries"
+
+  phase_4:
+    name: "Complete User Journey Execution Testing"
+    mandatory_actions:
+      - "EXECUTE complete user journeys from start to finish"
+      - "VALIDATE user workflow execution across all services"
+      - "TEST user authentication and authorization throughout journeys"
+      - "VERIFY user data persistence and retrieval accuracy"
+      - "ESTABLISH user experience and performance validation"
+
+    user_journey_execution:
+      new_user_complete_journey:
+        - "EXECUTE user registration through authentication service"
+        - "VALIDATE user profile creation and storage in PostgreSQL"
+        - "TEST user permission setup and authorization validation"
+        - "VERIFY user workspace initialization across all services"
+        - "VALIDATE user onboarding workflow completion"
+
+      workflow_creation_journey:
+        - "EXECUTE workflow design and creation in n8n interface"
+        - "VALIDATE workflow configuration storage in PostgreSQL"
+        - "TEST workflow node and connection persistence"
+        - "VERIFY workflow metadata and version management"
+        - "VALIDATE workflow sharing and collaboration features"
+
+      data_processing_journey:
+        - "EXECUTE data ingestion through n8n workflows"
+        - "VALIDATE data processing and transformation accuracy"
+        - "TEST data storage across PostgreSQL, Neo4j, Qdrant"
+        - "VERIFY data indexing and search capabilities"
+        - "VALIDATE data export and reporting functionality"
+
+  phase_5:
+    name: "Service Orchestration and Workflow Testing"
+    mandatory_actions:
+      - "TEST n8n workflow orchestration across all integrated services"
+      - "VALIDATE workflow execution sequencing and dependency management"
+      - "VERIFY workflow error handling and recovery mechanisms"
+      - "TEST workflow scaling and performance under load"
+      - "ESTABLISH workflow monitoring and observability validation"
+
+    orchestration_testing_framework:
+      workflow_execution_testing:
+        - "TEST simple workflow execution with single service integration"
+        - "VALIDATE complex workflow execution with multi-service dependencies"
+        - "VERIFY workflow branching and conditional logic execution"
+        - "TEST workflow parallel execution and synchronization"
+        - "VALIDATE workflow retry and error recovery mechanisms"
+
+      service_dependency_testing:
+        - "TEST workflow execution with service dependencies"
+        - "VALIDATE workflow behavior during service unavailability"
+        - "VERIFY workflow graceful degradation and failover"
+        - "TEST workflow recovery after service restoration"
+        - "VALIDATE workflow state consistency across failures"
+
+      performance_orchestration_testing:
+        - "TEST workflow execution performance under normal load"
+        - "VALIDATE workflow scaling with increased concurrent execution"
+        - "VERIFY workflow resource utilization optimization"
+        - "TEST workflow execution latency and throughput"
+        - "VALIDATE workflow performance monitoring accuracy"
+
+  phase_6:
+    name: "Data Flow and Integrity Validation Testing"
+    mandatory_actions:
+      - "VALIDATE data flow integrity through complete system architecture"
+      - "TEST data transformation accuracy across service boundaries"
+      - "VERIFY data consistency and synchronization across services"
+      - "ESTABLISH data quality and validation throughout workflows"
+      - "TEST data backup, recovery, and disaster recovery scenarios"
+
+    data_flow_validation:
+      data_persistence_validation:
+        - "VALIDATE data persistence in PostgreSQL with ACID compliance"
+        - "TEST knowledge graph creation and updates in Neo4j"
+        - "VERIFY vector embedding storage and retrieval in Qdrant"
+        - "VALIDATE artifact storage and versioning in MinIO"
+        - "TEST data replication and backup across all storage services"
+
+      data_transformation_validation:
+        - "VALIDATE data transformation accuracy in n8n workflows"
+        - "TEST AI processing and enhancement through LightRAG"
+        - "VERIFY data format conversion and schema validation"
+        - "VALIDATE data enrichment and metadata augmentation"
+        - "TEST data aggregation and analytics processing"
+
+      data_consistency_validation:
+        - "VALIDATE cross-service data consistency and synchronization"
+        - "TEST data integrity during concurrent access and updates"
+        - "VERIFY data conflict resolution and merge strategies"
+        - "VALIDATE data audit trail and change tracking"
+        - "TEST data recovery and rollback capabilities"
+
+  phase_7:
+    name: "Performance and Scalability End-to-End Testing"
+    mandatory_actions:
+      - "EXECUTE performance testing of complete end-to-end workflows"
+      - "VALIDATE system scalability under realistic load conditions"
+      - "TEST performance bottlenecks and optimization opportunities"
+      - "VERIFY system resource utilization and efficiency"
+      - "ESTABLISH performance baselines and SLA compliance"
+
+    performance_testing_framework:
+      load_testing_e2e:
+        - "TEST end-to-end workflow performance under normal load"
+        - "VALIDATE system response times for complete user journeys"
+        - "VERIFY throughput capacity for concurrent workflow execution"
+        - "TEST resource utilization across all services under load"
+        - "VALIDATE performance consistency and stability"
+
+      stress_testing_e2e:
+        - "TEST system behavior under peak load conditions"
+        - "VALIDATE system graceful degradation under stress"
+        - "VERIFY system recovery after stress conditions"
+        - "TEST system breaking points and failure modes"
+        - "VALIDATE system auto-scaling and resource management"
+
+      scalability_testing:
+        - "TEST horizontal scaling of service components"
+        - "VALIDATE database scaling and performance optimization"
+        - "VERIFY load balancing and traffic distribution"
+        - "TEST container orchestration and resource allocation"
+        - "VALIDATE system capacity planning and growth handling"
+
+  phase_8:
+    name: "Security Validation Across Complete Workflows"
+    mandatory_actions:
+      - "VALIDATE security controls throughout complete user workflows"
+      - "TEST authentication and authorization across service boundaries"
+      - "VERIFY data encryption and security throughout data flow"
+      - "ESTABLISH security monitoring and threat detection validation"
+      - "TEST security incident response and recovery procedures"
+
+    security_validation_framework:
+      authentication_authorization_testing:
+        - "VALIDATE user authentication across all service touchpoints"
+        - "TEST single sign-on (SSO) integration and token management"
+        - "VERIFY role-based access control (RBAC) enforcement"
+        - "VALIDATE API authentication and authorization mechanisms"
+        - "TEST service-to-service authentication and trust validation"
+
+      data_security_testing:
+        - "VALIDATE data encryption in transit across service communications"
+        - "TEST data encryption at rest in all storage services"
+        - "VERIFY data access control and permission enforcement"
+        - "VALIDATE data masking and privacy protection"
+        - "TEST data backup encryption and secure recovery"
+
+      security_monitoring_testing:
+        - "VALIDATE security event logging and monitoring"
+        - "TEST intrusion detection and threat monitoring"
+        - "VERIFY security alert generation and notification"
+        - "VALIDATE security incident response automation"
+        - "TEST security compliance reporting and auditing"
+
+  phase_9:
+    name: "Error Handling and Recovery Testing Across Services"
+    mandatory_actions:
+      - "TEST error handling and recovery across service boundaries"
+      - "VALIDATE system resilience and fault tolerance"
+      - "VERIFY error propagation and containment strategies"
+      - "ESTABLISH disaster recovery and business continuity testing"
+      - "TEST system monitoring and alerting during failures"
+
+    error_recovery_testing:
+      service_failure_testing:
+        - "TEST individual service failure and system response"
+        - "VALIDATE cascading failure prevention and containment"
+        - "VERIFY service recovery and state restoration"
+        - "TEST circuit breaker and retry mechanism effectiveness"
+        - "VALIDATE service health monitoring and alerting"
+
+      data_recovery_testing:
+        - "TEST database failure and recovery scenarios"
+        - "VALIDATE data backup and restoration procedures"
+        - "VERIFY data consistency after recovery operations"
+        - "TEST disaster recovery and failover capabilities"
+        - "VALIDATE business continuity and data availability"
+
+      workflow_recovery_testing:
+        - "TEST workflow interruption and resume capabilities"
+        - "VALIDATE workflow state persistence during failures"
+        - "VERIFY workflow error handling and rollback mechanisms"
+        - "TEST workflow recovery and compensation strategies"
+        - "VALIDATE workflow monitoring and failure notification"
+
+  phase_10:
+    name: "End-to-End Testing Validation and Certification"
+    mandatory_actions:
+      - "VALIDATE comprehensive end-to-end testing coverage"
+      - "GENERATE complete integration testing documentation"
+      - "ANALYZE end-to-end testing results and findings"
+      - "PROVIDE end-to-end testing certification and recommendations"
+      - "ESTABLISH ongoing end-to-end testing and maintenance procedures"
+
+    testing_certification_requirements:
+      - "MANDATORY: Validate ALL user journeys tested completely"
+      - "MANDATORY: Verify ALL service integrations validated"
+      - "MANDATORY: Confirm ALL data flow paths tested"
+      - "MANDATORY: Ensure ALL performance requirements validated"
+      - "FORBIDDEN: Incomplete or partial end-to-end testing coverage"
+
+# End-to-End Testing Validation Criteria
+validation_criteria:
+  user_journey_coverage: "MANDATORY - ALL critical user journeys tested completely"
+  service_integration: "MANDATORY - ALL service integrations validated"
+  data_flow_validation: "MANDATORY - Complete data flow through system validated"
+  performance_validation: "MANDATORY - End-to-end performance requirements met"
+  security_validation: "MANDATORY - Security controls validated throughout workflows"
+  error_handling: "MANDATORY - Error handling and recovery tested across services"
+  workflow_orchestration: "MANDATORY - Workflow orchestration validated completely"
+  scalability_testing: "MANDATORY - System scalability and capacity validated"
+  documentation_completeness: "MANDATORY - Complete end-to-end testing documentation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL end-to-end testing output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-195022"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all end-to-end testing output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL end-to-end testing deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all E2E testing outputs"
+    - "FORBIDDEN: Creating E2E testing files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same testing session"
+
+# End-to-End Testing Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. MAP service architecture and analyze integration dependencies ({{testing_scope}})"
+  - "2. DEFINE user journeys and analyze complete workflow paths"
+  - "3. IMPLEMENT multi-service integration testing framework"
+  - "4. EXECUTE complete user journey testing across all services"
+  - "5. TEST service orchestration and workflow execution"
+  - "6. VALIDATE data flow and integrity throughout system"
+  - "7. EXECUTE performance and scalability end-to-end testing"
+  - "8. VALIDATE security controls across complete workflows"
+  - "9. TEST error handling and recovery across service boundaries"
+  - "10. VALIDATE comprehensive E2E testing and provide certification"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each E2E testing phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all E2E testing tracking"
+  - "MANDATORY: Timestamp all E2E testing deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# End-to-End Testing Framework
+e2e_testing_framework:
+  service_categories:
+    core_application_services:
+      - "n8n workflow orchestration and execution"
+      - "PostgreSQL data persistence and management"
+      - "Neo4j knowledge graph and relationships"
+      - "Qdrant vector embeddings and search"
+
+    ai_and_processing_services:
+      - "LightRAG AI processing and enhancement"
+      - "MinIO artifact storage and versioning"
+      - "Custom data processing and transformation"
+      - "AI model integration and inference"
+
+    infrastructure_services:
+      - "Terraform infrastructure automation"
+      - "Ansible configuration management"
+      - "Container orchestration and deployment"
+      - "Network and security configuration"
+
+    monitoring_and_observability:
+      - "Prometheus metrics collection and storage"
+      - "Grafana dashboards and visualization"
+      - "Log aggregation and analysis"
+      - "Alert management and notification"
+
+# User Journey Scenarios
+user_journey_scenarios:
+  complete_workflow_lifecycle:
+    journey_steps:
+      - "User registration and authentication"
+      - "Workspace setup and configuration"
+      - "Workflow design and creation"
+      - "Data source integration and configuration"
+      - "Workflow execution and monitoring"
+      - "Data processing and transformation"
+      - "Results analysis and visualization"
+      - "Workflow sharing and collaboration"
+      - "Workflow maintenance and optimization"
+      - "Data export and reporting"
+
+  data_processing_pipeline:
+    journey_steps:
+      - "Data ingestion and validation"
+      - "Data transformation and enrichment"
+      - "AI processing and enhancement"
+      - "Knowledge graph creation and updates"
+      - "Vector embedding generation and storage"
+      - "Search and retrieval operations"
+      - "Analytics and insights generation"
+      - "Report creation and distribution"
+      - "Data archiving and cleanup"
+      - "Performance monitoring and optimization"
+
+  infrastructure_automation:
+    journey_steps:
+      - "Infrastructure requirements definition"
+      - "Terraform template creation and validation"
+      - "Infrastructure deployment and provisioning"
+      - "Configuration management with Ansible"
+      - "Service deployment and initialization"
+      - "Monitoring and alerting setup"
+      - "Performance testing and optimization"
+      - "Security configuration and validation"
+      - "Backup and disaster recovery setup"
+      - "Infrastructure maintenance and updates"
+
+# Integration Testing Patterns
+integration_patterns:
+  synchronous_integration:
+    - "Direct API calls between services"
+    - "Real-time data synchronization"
+    - "Immediate response validation"
+    - "Error handling and propagation"
+
+  asynchronous_integration:
+    - "Message queue based communication"
+    - "Event-driven architecture patterns"
+    - "Eventual consistency validation"
+    - "Retry and compensation mechanisms"
+
+  data_integration:
+    - "ETL pipeline validation"
+    - "Data consistency across services"
+    - "Schema evolution and migration"
+    - "Data quality and validation"
+
+# Performance Testing Scenarios
+performance_scenarios:
+  normal_load_testing:
+    concurrent_users: "100 active users"
+    workflow_execution_rate: "50 workflows per minute"
+    data_processing_volume: "1GB per hour"
+    response_time_target: "< 2 seconds"
+
+  peak_load_testing:
+    concurrent_users: "500 active users"
+    workflow_execution_rate: "200 workflows per minute"
+    data_processing_volume: "5GB per hour"
+    response_time_target: "< 5 seconds"
+
+  stress_testing:
+    concurrent_users: "1000+ active users"
+    workflow_execution_rate: "500+ workflows per minute"
+    data_processing_volume: "10GB+ per hour"
+    response_time_target: "System stability maintenance"
+
+# Security Testing Framework
+security_testing:
+  authentication_testing:
+    - "Multi-factor authentication validation"
+    - "Single sign-on (SSO) integration testing"
+    - "Token-based authentication validation"
+    - "Session management and timeout testing"
+
+  authorization_testing:
+    - "Role-based access control (RBAC) validation"
+    - "Resource-level permission testing"
+    - "API endpoint authorization validation"
+    - "Data access control testing"
+
+  data_security_testing:
+    - "Encryption in transit validation"
+    - "Encryption at rest validation"
+    - "Data masking and privacy testing"
+    - "Secure data backup and recovery"
+
+# Error Handling and Recovery
+error_recovery_scenarios:
+  service_failure_scenarios:
+    database_failure: "PostgreSQL, Neo4j, or Qdrant unavailability"
+    application_failure: "n8n or LightRAG service crashes"
+    infrastructure_failure: "Container or network failures"
+    external_failure: "Third-party service unavailability"
+
+  recovery_mechanisms:
+    automatic_recovery: "Service restart and health check validation"
+    failover_testing: "Secondary service activation and validation"
+    data_recovery: "Backup restoration and consistency validation"
+    graceful_degradation: "Reduced functionality maintenance"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL end-to-end testing MUST cover complete user journeys"
+    - "ALL service integrations MUST be tested and validated"
+    - "ALL data flow paths MUST be validated for integrity"
+    - "ALL performance requirements MUST be met and validated"
+    - "ALL security controls MUST be tested throughout workflows"
+    - "ALL error handling MUST be tested across service boundaries"
+    - "ALWAYS use systematic E2E testing methodology"
+    - "NEVER skip critical integration testing scenarios"
+
+  strictly_forbidden:
+    - "Executing actual service implementations during testing"
+    - "Modifying production services or configurations"
+    - "Creating new service implementations during testing"
+    - "Partial or incomplete end-to-end coverage"
+    - "Skipping critical user journey validation"
+    - "Missing performance or security validation"
+    - "Proceeding with broken service integrations"
+    - "Testing without proper monitoring and validation"

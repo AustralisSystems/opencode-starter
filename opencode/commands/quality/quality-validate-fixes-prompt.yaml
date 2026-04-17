@@ -1,0 +1,123 @@
+# === MCP PROMPT: Quality Fix Validation Protocol ===
+name: "quality-validate-fixes-prompt"
+version: "1.0.0"
+description: "Comprehensive validation protocol for quality remediation verification and regression detection"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Quality Fix Validation"
+  description: "Execute systematic validation of quality remediation including compilation verification, functional testing, metrics validation, and deployment readiness with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to validate"
+      required: true
+
+    validation_scope:
+      type: "string"
+      description: "Scope of validation to perform"
+      required: true
+      enum: ["compilation", "functional", "quality-metrics", "deployment", "comprehensive"]
+
+    validation_depth:
+      type: "string"
+      description: "Depth of validation testing"
+      required: false
+      enum: ["basic", "standard", "comprehensive", "enterprise"]
+
+    performance_baseline:
+      type: "string"
+      description: "Performance baseline for regression detection"
+      required: false
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Validation Environment Setup and Preparation"
+    mandatory_actions:
+      - "PREPARE isolated validation environment"
+      - "SETUP test data and dependencies"
+      - "CONFIGURE validation tools and frameworks"
+
+  phase_2:
+    name: "Static Analysis and Compilation Validation"
+    mandatory_actions:
+      - "VERIFY all files compile without syntax errors"
+      - "VALIDATE import resolution and dependencies"
+      - "CHECK type annotations and compatibility"
+
+  phase_3:
+    name: "Functional Testing and Regression Detection"
+    mandatory_actions:
+      - "EXECUTE comprehensive unit test suite"
+      - "RUN integration tests and API validation"
+      - "PERFORM end-to-end workflow testing"
+
+  phase_4:
+    name: "Quality Metrics Verification and Improvement Validation"
+    mandatory_actions:
+      - "MEASURE code coverage and ensure maintenance"
+      - "VERIFY complexity reduction achievements"
+      - "VALIDATE security vulnerability resolution"
+
+  phase_5:
+    name: "Performance Testing and Regression Analysis"
+    mandatory_actions:
+      - "EXECUTE performance benchmarks and load tests"
+      - "COMPARE against baseline performance metrics"
+      - "IDENTIFY any performance regressions"
+
+  phase_6:
+    name: "Security Testing and Vulnerability Assessment"
+    mandatory_actions:
+      - "RUN comprehensive security scans"
+      - "VERIFY resolution of identified vulnerabilities"
+      - "VALIDATE security controls and protections"
+
+  phase_7:
+    name: "Deployment Readiness and System Validation"
+    mandatory_actions:
+      - "VERIFY successful build and deployment processes"
+      - "VALIDATE container health and service startup"
+      - "CHECK monitoring endpoints and health checks"
+
+  phase_8:
+    name: "Integration and System Compatibility Testing"
+    mandatory_actions:
+      - "TEST external service integrations"
+      - "VALIDATE API contract compliance"
+      - "VERIFY database connectivity and operations"
+
+  phase_9:
+    name: "Validation Results Analysis and Reporting"
+    mandatory_actions:
+      - "ANALYZE validation results and metrics"
+      - "COMPARE before/after improvement measurements"
+      - "IDENTIFY any remaining issues or concerns"
+
+  phase_10:
+    name: "Deployment Decision and Certification"
+    mandatory_actions:
+      - "EVALUATE overall validation success criteria"
+      - "MAKE deployment readiness recommendation"
+      - "GENERATE validation certification and reports"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL validation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "Quality_Validation_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive validation analysis)"
+    - "Test_Results_Summary-{{YYYY-MM-DD-HHMMSS}}.json (test execution results)"
+    - "Performance_Validation-{{YYYY-MM-DD-HHMMSS}}.md (performance analysis)"
+    - "Deployment_Readiness_Certificate-{{YYYY-MM-DD-HHMMSS}}.md (certification status)"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL compilation checks MUST pass without errors"
+    - "ALL critical functionality MUST be preserved"
+    - "ALL security vulnerabilities MUST be resolved"
+    - "ALL performance baselines MUST be maintained"
+    - "ALL validation criteria MUST be satisfied before deployment"

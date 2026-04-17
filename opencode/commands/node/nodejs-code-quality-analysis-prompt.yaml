@@ -1,0 +1,256 @@
+name: "Node.js Code Quality Analysis"
+description: "Deep code quality analysis with metrics, linting, testing, and maintainability assessment for Node.js backend applications"
+version: "2.1.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Get latest quality standards
+    - grep # Find quality patterns in GitHub
+    - sequential-thinking # Structure analysis approach
+    - filesystem # Analyze existing code
+    - memory # Track metrics during analysis
+    - time # Timestamp analysis activities
+
+# Execution Protocol
+execution_phases:
+  1_standards_research:
+    description: "Establish quality benchmarks and industry standards"
+    tools: ["context7", "grep"]
+    required_actions:
+      - "Get latest Node.js code quality standards and metrics"
+      - "Research industry benchmarks for backend applications"
+      - "Find examples of high-quality Node.js codebases"
+      - "Identify automated quality tools and their configurations"
+    success_criteria:
+      - "Quality standards documented and benchmarked"
+      - "Industry metrics identified and validated"
+      - "Tool configurations researched and understood"
+
+  2_codebase_analysis:
+    description: "Comprehensive analysis of code quality metrics"
+    tools: ["sequential-thinking", "filesystem", "memory"]
+    required_actions:
+      - "Analyze code complexity and maintainability"
+      - "Evaluate test coverage and quality"
+      - "Assess documentation completeness"
+      - "Review naming conventions and code consistency"
+      - "Analyze dependency management and security"
+    success_criteria:
+      - "All quality metrics calculated and documented"
+      - "Code patterns analyzed and categorized"
+      - "Issues identified and severity assessed"
+
+  3_reporting:
+    description: "Generate actionable quality improvement reports"
+    tools: ["memory", "time", "filesystem"]
+    required_actions:
+      - "Compile quality metrics into comprehensive report"
+      - "Create improvement recommendations with priorities"
+      - "Generate automated tooling configuration"
+      - "Provide quality gate definitions"
+    success_criteria:
+      - "Complete quality analysis report generated"
+      - "Improvement roadmap created with measurable targets"
+      - "Automated quality tooling recommendations provided"
+
+# Analysis Parameters
+parameters:
+  quality_dimensions:
+    maintainability:
+      - "Cyclomatic complexity analysis"
+      - "Function and class size metrics"
+      - "Code duplication detection"
+      - "Coupling and cohesion assessment"
+      - "Technical debt identification"
+
+    readability:
+      - "Naming convention consistency"
+      - "Comment quality and coverage"
+      - "Code organization and structure"
+      - "Variable and function clarity"
+      - "Documentation completeness"
+
+    testability:
+      - "Unit test coverage percentage"
+      - "Integration test completeness"
+      - "Test quality and maintainability"
+      - "Mocking and stubbing patterns"
+      - "End-to-end test coverage"
+
+    reliability:
+      - "Error handling completeness"
+      - "Edge case coverage"
+      - "Input validation coverage"
+      - "Resource cleanup patterns"
+      - "Graceful degradation implementation"
+
+  node_specific_metrics:
+    performance_patterns:
+      - "Async/await vs callback analysis"
+      - "Event loop blocking detection"
+      - "Memory usage patterns"
+      - "Database connection efficiency"
+
+    security_quality:
+      - "Input validation implementation"
+      - "Authentication pattern consistency"
+      - "Secret management practices"
+      - "Dependency vulnerability assessment"
+
+    ecosystem_integration:
+      - "Package.json quality and dependencies"
+      - "ESLint and Prettier configuration"
+      - "TypeScript integration quality"
+      - "Testing framework implementation"
+
+# Quality Metrics
+metrics_collection:
+  complexity_metrics:
+    - "Cyclomatic Complexity (target: <10 per function)"
+    - "Cognitive Complexity (target: <15 per function)"
+    - "Maintainability Index (target: >70)"
+    - "Technical Debt Ratio (target: <5%)"
+
+  coverage_metrics:
+    - "Line Coverage (target: >80%)"
+    - "Branch Coverage (target: >75%)"
+    - "Function Coverage (target: >90%)"
+    - "Integration Test Coverage (target: >60%)"
+
+  quality_gates:
+    - "No critical security vulnerabilities"
+    - "No code smells rated as 'major'"
+    - "Duplication ratio <3%"
+    - "All public APIs documented"
+
+# Deliverable Specifications
+deliverables:
+  document_count: 3
+  document_types:
+    - "Quality Metrics Dashboard"
+    - "Issue Analysis and Prioritization"
+    - "Quality Improvement Implementation"
+
+  document_1_metrics:
+    title: "Node.js Code Quality Metrics Dashboard"
+    contents:
+      - "Overall quality score and trending"
+      - "Complexity metrics with visualizations"
+      - "Test coverage analysis and gaps"
+      - "Dependency quality assessment"
+      - "Performance and security metrics"
+    visualization_requirements:
+      - "Quality score radar chart"
+      - "Complexity distribution histograms"
+      - "Coverage trending over time"
+      - "Dependency vulnerability matrix"
+
+  document_2_issues:
+    title: "Quality Issue Analysis and Prioritization"
+    contents:
+      - "Critical issues requiring immediate attention"
+      - "Major issues impacting maintainability"
+      - "Minor issues and technical debt"
+      - "Code smell detection and analysis"
+      - "Refactoring opportunities identification"
+    prioritization_framework:
+      - "Impact vs Effort matrix"
+      - "Business risk assessment"
+      - "Technical debt interest calculation"
+      - "Developer productivity impact"
+
+  document_3_improvement:
+    title: "Quality Improvement Implementation Guide"
+    contents:
+      - "Automated quality tooling setup"
+      - "Quality gate configuration"
+      - "Continuous improvement processes"
+      - "Team quality standards documentation"
+      - "Monitoring and measurement strategies"
+    implementation_focus:
+      - "ESLint and Prettier configuration"
+      - "Husky pre-commit hooks setup"
+      - "Jest testing framework optimization"
+      - "SonarQube or similar integration"
+
+# Automated Tool Integration
+tool_configurations:
+  linting_tools:
+    eslint:
+      config: "@typescript-eslint/recommended"
+      rules: "airbnb-base with Node.js specific overrides"
+      plugins: ["security", "node", "import"]
+
+    prettier:
+      config: "Standard formatting with 2-space indentation"
+      integration: "ESLint integration enabled"
+
+  testing_tools:
+    jest:
+      coverage: "statement, branch, function, line coverage"
+      reporters: "default, coverage, junit"
+
+    supertest:
+      api_testing: "HTTP assertion library for Node.js"
+
+  quality_analysis:
+    sonarqube:
+      metrics: "bugs, vulnerabilities, code smells, coverage"
+      quality_gates: "custom rules for Node.js backend"
+
+# Success Criteria
+success_criteria:
+  analysis_completeness:
+    - "All quality dimensions analyzed and measured"
+    - "Industry benchmarks compared and documented"
+    - "Tool configurations validated and tested"
+    - "Improvement recommendations prioritized"
+
+  report_actionability:
+    - "Specific, measurable improvement targets set"
+    - "Automated tooling configurations provided"
+    - "Implementation timeline with milestones"
+    - "ROI analysis for quality improvements"
+
+  measurement_framework:
+    - "Baseline quality metrics established"
+    - "Continuous monitoring setup configured"
+    - "Quality trend analysis capabilities enabled"
+    - "Team accountability measures defined"
+
+# Quality Improvement Roadmap
+improvement_phases:
+  phase_1_critical:
+    duration: "1-2 sprints"
+    focus: "Security vulnerabilities and critical bugs"
+    tools: "ESLint security plugin, vulnerability scanning"
+
+  phase_2_foundation:
+    duration: "2-3 sprints"
+    focus: "Testing infrastructure and coverage"
+    tools: "Jest setup, coverage reporting, CI integration"
+
+  phase_3_optimization:
+    duration: "3-4 sprints"
+    focus: "Performance optimization and refactoring"
+    tools: "Performance profiling, code complexity analysis"
+
+  phase_4_maintenance:
+    duration: "Ongoing"
+    focus: "Continuous quality monitoring and improvement"
+    tools: "Quality gates, automated reporting, trend analysis"
+
+# Command Integration
+related_commands:
+  prerequisite: "nodejs-backend-implementation"
+  parallel: "nodejs-code-review"
+  follow_up: "nodejs-gap-analysis"
+
+# Execution Context
+execution_context:
+  working_directory: "src/"
+  output_format: "markdown documents with metrics and analysis"
+  documentation_level: "Comprehensive quality analysis reports"
+  validation_required: false

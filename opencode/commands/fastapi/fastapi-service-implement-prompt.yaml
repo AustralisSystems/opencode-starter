@@ -1,0 +1,499 @@
+name: "FastAPI Service Layer Implementation"
+description: "Implement production-ready FastAPI service layer with Clean Architecture principles, Domain-Driven Design, and enterprise-grade business logic"
+
+# CRITICAL MCP ORCHESTRATION - MANDATORY EXECUTION
+# This YAML prompt MUST be read and executed by LLMs - this is not optional
+mcp_enforcement:
+  mandatory_execution: true
+  read_and_execute_required: true
+  non_compliance_forbidden: true
+
+# Comprehensive MCP Tool Orchestration Workflow
+mcp_tool_orchestration:
+  enduring_memory_management:
+    session_start:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["service_architecture_patterns", "domain_driven_design_decisions", "clean_architecture_implementations", "business_logic_patterns"]
+        project_context: "auto_detect"
+        purpose: "Load accumulated service implementation knowledge and domain-specific patterns"
+
+    session_end:
+      - tool: neo4j-memory
+        action: save_contexts
+        save_types: ["successful_service_patterns", "domain_implementations", "business_rule_engines", "integration_patterns"]
+        quality_threshold: ">= 90%"
+        purpose: "Persist validated service patterns for future implementations"
+
+  temporal_memory_tracking:
+    - tool: memory
+      action: track_progress
+      track_items: ["service_implementation_decisions", "domain_modeling_choices", "business_rule_validations"]
+      purpose: "Track session progress and implementation decisions"
+
+  phase_1_intelligent_research:
+    - tool: neo4j-memory
+      action: load_contexts
+      purpose: "Load previous service architectural decisions and domain patterns from enduring memory"
+
+    - tool: context7
+      action: get_documentation
+      library: "fastapi"
+      focus: "dependency injection, background tasks, async patterns"
+      purpose: "Get latest FastAPI service layer patterns and best practices"
+
+    - tool: context7
+      action: get_documentation
+      library: "sqlalchemy"
+      focus: "async ORM, repository patterns, unit of work"
+      purpose: "Get latest SQLAlchemy patterns for service data access"
+
+    - tool: grep
+      action: search_github
+      query: "class.*Service.*async.*def"
+      filters:
+        language: ["Python"]
+        path: "*.py"
+      purpose: "Find modern async service implementation patterns"
+
+    conditional_research:
+      - condition: "complex_business_rules_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "DomainService.*business.*rules"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find domain service patterns for complex business logic"
+          - tool: neo4j-memory
+            action: retrieve_patterns
+            pattern_type: "business_rule_implementations"
+
+      - condition: "transaction_management_required"
+        then:
+          - tool: grep
+            action: search_github
+            query: "UnitOfWork.*async.*with"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find Unit of Work transaction management patterns"
+          - tool: context7
+            action: get_documentation
+            library: "sqlalchemy"
+            focus: "async_transactions, unit_of_work_pattern"
+
+      - condition: "external_integrations_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "CircuitBreaker.*async.*external"
+            purpose: "Find circuit breaker patterns for external service integration"
+          - tool: context7
+            action: get_documentation
+            library: "aiohttp"
+            focus: "async_client_patterns, error_handling"
+
+      - condition: "event_driven_architecture_required"
+        then:
+          - tool: grep
+            action: search_github
+            query: "DomainEvent.*publish.*async"
+            purpose: "Find domain event publishing patterns"
+          - tool: context7
+            action: get_documentation
+            library: "fastapi"
+            focus: "background_tasks, event_publishing"
+
+  phase_2_analysis:
+    - tool: filesystem
+      action: read_multiple_files
+      paths:
+        - "src/"
+        - "models/"
+        - "services/"
+      purpose: "Analyze existing business logic and service patterns"
+
+    - tool: sequential-thinking
+      action: plan_implementation
+      focus: "Service architecture, business logic separation, transaction management"
+      purpose: "Plan comprehensive service layer implementation strategy"
+
+  phase_3_implementation:
+    - tool: filesystem
+      action: create_directory
+      path: "services/"
+      purpose: "Create service layer directory structure"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement application services with use case orchestration"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Create domain services with business logic"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement repository patterns and data access"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Create Unit of Work implementation for transactions"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement business validation and rules engine"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Create domain events and event handlers"
+
+  phase_4_testing:
+    - tool: filesystem
+      action: write_file
+      purpose: "Create comprehensive service layer tests"
+
+    - tool: playwright
+      action: test_api_endpoints
+      purpose: "Validate service integrations and external API calls"
+
+  phase_5_quality_validation:
+    automated_validation_workflow:
+      - tool: filesystem
+        action: analyze_code_quality
+        validation_types: ["business_logic_correctness", "transaction_integrity", "service_architecture", "domain_modeling"]
+
+      - tool: sequential-thinking
+        action: validate_service_implementation
+        validation_criteria: ["clean_architecture_compliance", "ddd_principles", "solid_principles", "business_rule_coverage"]
+
+      - conditional_validation:
+          if_business_logic_issues_detected: true
+          then:
+            - tool: filesystem
+              action: apply_business_logic_fixes
+            - tool: sequential-thinking
+              action: re_validate_business_logic
+
+      - conditional_validation:
+          if_performance_issues_detected: true
+          then:
+            - tool: filesystem
+              action: apply_performance_optimizations
+            - tool: sequential-thinking
+              action: re_validate_performance
+
+  phase_6_enduring_memory_persistence:
+    - tool: neo4j-memory
+      action: save_context
+      context_types: ["successful_service_patterns", "domain_implementations", "business_rule_engines", "integration_patterns"]
+      quality_validation: "required"
+      purpose: "Persist validated service patterns for future implementations"
+
+    - tool: memory
+      action: save_progress
+      purpose: "Track session implementation decisions and outcomes"
+
+# Command Parameters and Options
+parameters:
+  domain_name:
+    type: string
+    required: true
+    description: "Business domain name for the service (e.g., 'users', 'orders', 'payments')"
+    example: "orders"
+
+  pattern_type:
+    type: string
+    default: "clean"
+    options: ["clean", "cqrs", "microservice", "monolith"]
+    description: "Service architecture pattern to implement"
+
+  transaction_management:
+    type: string
+    default: "unit-of-work"
+    options: ["unit-of-work", "simple", "distributed"]
+    description: "Transaction management strategy"
+
+  event_integration:
+    type: string
+    default: "none"
+    options: ["rabbitmq", "kafka", "redis", "none"]
+    description: "Event-driven architecture integration"
+
+  cache_strategy:
+    type: string
+    default: "redis"
+    options: ["redis", "memory", "distributed", "none"]
+    description: "Caching strategy for service layer"
+
+  business_rules:
+    type: string
+    default: "standard"
+    options: ["simple", "standard", "complex", "rule-engine"]
+    description: "Business rules complexity level"
+
+  audit_level:
+    type: string
+    default: "standard"
+    options: ["none", "basic", "standard", "full"]
+    description: "Business operation audit tracking level"
+
+  tenancy_support:
+    type: string
+    default: "single"
+    options: ["single", "multi", "hybrid"]
+    description: "Multi-tenancy support level"
+
+  background_processing:
+    type: string
+    default: "none"
+    options: ["celery", "background-tasks", "none"]
+    description: "Background task processing system"
+
+  external_integrations:
+    type: array
+    default: []
+    description: "External services to integrate (comma-separated)"
+    example: ["stripe", "sendgrid", "twilio"]
+
+# Service Implementation Specifications
+implementation_specs:
+  core_architecture:
+    - "Clean Architecture service layer with proper dependency flow"
+    - "Domain-Driven Design with bounded contexts and aggregates"
+    - "Application services for use case orchestration"
+    - "Domain services for complex business logic"
+    - "Infrastructure services for external dependencies"
+    - "Repository pattern with proper abstraction"
+
+  business_logic:
+    - "Rich domain models with business behavior"
+    - "Value objects for immutable business concepts"
+    - "Business rule validation and enforcement"
+    - "Use case implementations as first-class citizens"
+    - "Domain event publishing and handling"
+    - "Command/Query responsibility segregation (if CQRS selected)"
+
+  transaction_management:
+    - "Unit of Work pattern for transaction consistency"
+    - "ACID compliance with proper rollback mechanisms"
+    - "Optimistic locking for concurrent operations"
+    - "Distributed transaction support (if required)"
+    - "Saga pattern for long-running processes"
+
+  performance_optimization:
+    - "Async/await patterns throughout service layer"
+    - "Connection pooling for database operations"
+    - "Multi-layer caching strategies"
+    - "Background task processing for long operations"
+    - "Bulk operation optimization"
+    - "Query optimization and N+1 prevention"
+
+  integration_patterns:
+    - "Circuit breaker pattern for external services"
+    - "Retry mechanisms with exponential backoff"
+    - "Event-driven integration with message queues"
+    - "API versioning and backward compatibility"
+    - "External service client implementations"
+
+# Implementation Patterns and Best Practices
+patterns:
+  service_layer_structure:
+    - "Application services handle use case orchestration"
+    - "Domain services contain pure business logic"
+    - "Infrastructure services manage external dependencies"
+    - "Service interfaces define clear contracts"
+    - "Dependency injection with proper abstraction"
+
+  business_logic_patterns:
+    - "Rich domain models with encapsulated behavior"
+    - "Value objects for complex business concepts"
+    - "Specification pattern for business rules"
+    - "Strategy pattern for algorithm selection"
+    - "Factory pattern for complex object creation"
+
+  data_access_patterns:
+    - "Repository pattern with interface abstraction"
+    - "Unit of Work for transaction management"
+    - "Query objects for complex data retrieval"
+    - "Specification pattern for dynamic queries"
+    - "Data mapper pattern for object-relational mapping"
+
+  integration_patterns:
+    - "Adapter pattern for external service integration"
+    - "Facade pattern for complex subsystem interaction"
+    - "Circuit breaker for resilience"
+    - "Message queuing for asynchronous processing"
+    - "Event sourcing for audit trails (if required)"
+
+# Quality Standards and Validation
+quality_standards:
+  code_quality:
+    - "95% minimum test coverage for business logic"
+    - "Maximum cyclomatic complexity of 10 per method"
+    - "Full type annotations with mypy validation"
+    - "Black code formatting and Ruff linting compliance"
+    - "Bandit security scanning for business logic"
+
+  performance_benchmarks:
+    - "< 50ms response time for simple business operations"
+    - "< 200ms response time for complex business operations"
+    - "Support 500+ concurrent business operations"
+    - "< 0.1% error rate under normal business load"
+    - "> 80% cache hit ratio for frequently accessed data"
+
+  business_logic_requirements:
+    - "All business rules must be testable and tested"
+    - "Domain invariants must be enforced at all times"
+    - "Business operations must be atomic and consistent"
+    - "Audit trails for all critical business operations"
+    - "Authorization checks at appropriate business boundaries"
+
+  architecture_compliance:
+    - "Clean Architecture dependency rules enforced"
+    - "SOLID principles compliance throughout"
+    - "Domain-Driven Design patterns properly implemented"
+    - "Separation of concerns maintained"
+    - "Interface segregation for focused contracts"
+
+# Expected Deliverables (Implementation Only - NO Documentation Files)
+deliverables:
+  service_implementations:
+    - "Application services with use case orchestration"
+    - "Domain services with business logic implementation"
+    - "Infrastructure services for external integrations"
+    - "Repository implementations with proper abstraction"
+    - "Unit of Work implementation for transactions"
+
+  business_logic_components:
+    - "Domain models with business behavior"
+    - "Value objects for immutable concepts"
+    - "Business rules engine and validation"
+    - "Domain event implementations"
+    - "Command and query handlers (if CQRS)"
+
+  integration_components:
+    - "External service client implementations"
+    - "Message queue handlers and processors"
+    - "Cache service implementations"
+    - "Background task processors"
+    - "Circuit breaker implementations"
+
+  data_access_components:
+    - "Repository interface definitions"
+    - "Repository implementations with ORM integration"
+    - "Query specification implementations"
+    - "Database migration scripts"
+    - "Connection pooling configuration"
+
+  testing_components:
+    - "Unit tests for all business logic"
+    - "Integration tests for service interactions"
+    - "Contract tests for external dependencies"
+    - "Performance tests for service operations"
+    - "Security tests for business authorization"
+
+  configuration_components:
+    - "Service dependency injection configuration"
+    - "Environment-specific configuration templates"
+    - "Cache configuration and strategies"
+    - "Background task queue configuration"
+    - "External service integration configuration"
+
+# Implementation Workflow
+workflow:
+  step_1_preparation:
+    - "Load previous business logic and architectural context"
+    - "Research latest service layer patterns and frameworks"
+    - "Analyze existing domain models and business requirements"
+    - "Plan service architecture and component interactions"
+
+  step_2_core_implementation:
+    - "Create service layer directory structure"
+    - "Implement application services with use case orchestration"
+    - "Create domain services with business logic"
+    - "Implement repository pattern with proper abstractions"
+
+  step_3_business_logic:
+    - "Implement rich domain models with business behavior"
+    - "Create value objects for immutable business concepts"
+    - "Build business rules engine and validation framework"
+    - "Implement domain events and event handling"
+
+  step_4_integration_features:
+    - "Create external service integration clients"
+    - "Implement caching strategies and cache invalidation"
+    - "Setup background task processing"
+    - "Create circuit breaker and resilience patterns"
+
+  step_5_transaction_management:
+    - "Implement Unit of Work pattern for transactions"
+    - "Create transaction boundaries and rollback mechanisms"
+    - "Setup optimistic locking for concurrent operations"
+    - "Implement distributed transaction support (if needed)"
+
+  step_6_testing_validation:
+    - "Create comprehensive service layer test suite"
+    - "Test external service integrations"
+    - "Validate business rules and domain invariants"
+    - "Performance test service operations under load"
+
+  step_7_finalization:
+    - "Save business logic decisions to memory"
+    - "Update extended memory with domain knowledge"
+    - "Verify all quality standards are met"
+    - "Complete architecture compliance validation"
+
+# Integration Requirements
+integration:
+  existing_architecture:
+    - "Integrate with existing domain models"
+    - "Follow established authentication patterns"
+    - "Use existing database connections and configuration"
+    - "Maintain consistent error handling strategies"
+
+  external_dependencies:
+    - "Database integration with proper ORM usage"
+    - "Cache service integration (Redis/Memcached)"
+    - "Message queue integration (RabbitMQ/Kafka/Redis)"
+    - "External API integrations with proper error handling"
+    - "Monitoring and observability service integration"
+
+  framework_integration:
+    - "FastAPI dependency injection integration"
+    - "Pydantic model validation integration"
+    - "SQLAlchemy ORM and session management"
+    - "Background task framework integration"
+    - "Authentication and authorization system integration"
+
+# Success Criteria
+success_criteria:
+  functional:
+    - "All business use cases implemented and working correctly"
+    - "Business rules enforced and validated"
+    - "Transaction management working with proper rollback"
+    - "External integrations working with proper error handling"
+    - "Background processing functioning for long operations"
+
+  technical:
+    - "Code passes all quality checks and standards"
+    - "Test coverage meets minimum requirements"
+    - "Security scanning passes without critical issues"
+    - "Performance benchmarks met under load"
+    - "Architecture compliance verified"
+
+  business:
+    - "Domain invariants maintained at all times"
+    - "Audit trails complete for all critical operations"
+    - "Business authorization working correctly"
+    - "Multi-tenancy support (if required) functioning"
+    - "Business metrics and monitoring operational"
+
+  operational:
+    - "Service health checks functional"
+    - "Monitoring and logging working correctly"
+    - "Configuration management complete"
+    - "Integration with existing systems successful"
+    - "Performance acceptable under expected load"

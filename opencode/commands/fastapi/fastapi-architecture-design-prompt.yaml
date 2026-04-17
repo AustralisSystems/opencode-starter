@@ -1,0 +1,510 @@
+# === MCP PROMPT: FastAPI Architecture Design Protocol ===
+name: "fastapi-architecture-design-prompt"
+version: "1.0.0"
+description: "Comprehensive FastAPI architecture design protocol for modern API applications with industry best practices and design patterns"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "FastAPI Architecture Design"
+  description: "Execute comprehensive FastAPI application architecture design with modern patterns, Clean Architecture principles, and production-ready specifications"
+
+  # Argument Schema
+  arguments:
+    design_scope:
+      type: "string"
+      description: "Scope of FastAPI architecture design to create"
+      required: true
+      enum:
+        [
+          "api-application",
+          "microservice",
+          "monolithic",
+          "distributed-system",
+          "serverless-api",
+          "enterprise-gateway",
+        ]
+
+    api_complexity:
+      type: "string"
+      description: "Complexity level of the FastAPI application"
+      required: true
+      enum:
+        [
+          "simple-crud",
+          "complex-business",
+          "enterprise",
+          "high-performance",
+          "real-time",
+          "data-intensive",
+        ]
+
+    architecture_pattern:
+      type: "string"
+      description: "Primary architectural pattern to implement"
+      required: false
+      enum: ["clean-architecture", "hexagonal", "layered", "event-driven", "cqrs", "ddd"]
+
+    database_integration:
+      type: "string"
+      description: "Database integration strategy"
+      required: false
+      enum: ["postgresql", "mongodb", "sqlite", "mysql", "multiple", "nosql-hybrid"]
+
+    authentication_type:
+      type: "string"
+      description: "Authentication and authorization strategy"
+      required: false
+      enum: ["jwt", "oauth2", "api-key", "session-based", "multi-factor", "rbac"]
+
+    deployment_target:
+      type: "string"
+      description: "Target deployment environment"
+      required: false
+      enum: ["container", "serverless", "kubernetes", "traditional", "cloud-native", "edge"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI FastAPI architecture specialist executing the FastAPI Architecture Design Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive FastAPI design methodology
+        - Create complete modern FastAPI architecture specifications
+        - Maintain production-ready design standards
+        - Use systematic analysis and design documentation
+        - Follow Clean Architecture, SOLID, DRY, KISS principles
+        - Emphasize FastAPI-specific patterns and best practices
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating implementation code or actual FastAPI modules
+        - Making changes to live systems
+        - Partial or incomplete design specifications
+        - Creating designs without proper analysis
+        - Skipping security or performance considerations
+        - Creating placeholder or temporary designs
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY FASTAPI ARCHITECTURE DESIGN PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **DESIGN PARAMETERS:**
+        - Design Scope: {{design_scope}}
+        - API Complexity: {{api_complexity}}
+        - Architecture Pattern: {{architecture_pattern}}
+        - Database Integration: {{database_integration}}
+        - Authentication Type: {{authentication_type}}
+        - Deployment Target: {{deployment_target}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING FASTAPI ARCHITECTURE DESIGN PROTOCOL:**
+
+# FastAPI Architecture Design Protocol Configuration
+design_protocol:
+  # Design Scope - MANDATORY COMPREHENSIVE COVERAGE
+  design_focus:
+    fastapi_application_architecture: true # MUST design complete FastAPI architecture
+    api_router_organization: true # MUST design API routing structure
+    dependency_injection_patterns: true # MUST design FastAPI DI patterns
+    database_integration_architecture: true # MUST design database patterns
+    authentication_authorization: true # MUST design auth middleware
+    request_response_schemas: true # MUST design Pydantic models
+    async_programming_patterns: true # MUST design async/await patterns
+    middleware_architecture: true # MUST design middleware stack
+    error_handling_architecture: true # MUST design exception handling
+    performance_optimization: true # MUST design caching and optimization
+    testing_architecture: true # MUST design testing strategies
+    openapi_documentation: true # MUST design API documentation
+    design_only: true # STRICTLY design only, no implementation
+
+  # Design Configuration - MANDATORY SETTINGS
+  design_settings:
+    enable_comprehensive_analysis: true
+    apply_clean_architecture: true
+    apply_solid_principles: true
+    apply_fastapi_best_practices: true
+    design_for_scalability: true
+    design_for_performance: true
+    systematic_approach: true # MANDATORY: Systematic design methodology
+    follow_fastapi_patterns: true # MANDATORY: FastAPI-specific patterns
+    comprehensive_coverage: true # MANDATORY: Cover all design aspects
+    production_ready_design: true # MANDATORY: Production-focused design
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "FastAPI Requirements Analysis and Domain Discovery"
+    mandatory_actions:
+      - "ANALYZE complete FastAPI application requirements and API specifications"
+      - "DISCOVER business domain context and API contract requirements"
+      - "MAP API endpoints, resources, and data flow requirements"
+      - "IDENTIFY performance, scalability, and security requirements"
+      - "DOCUMENT stakeholder needs and API consumption patterns"
+
+    analysis_requirements:
+      - "MANDATORY: Complete FastAPI application understanding"
+      - "MANDATORY: Identify all API functional requirements"
+      - "MANDATORY: Map all non-functional requirements"
+      - "FORBIDDEN: Incomplete requirements analysis"
+
+  phase_2:
+    name: "FastAPI Application Structure and Layered Architecture Design"
+    mandatory_actions:
+      - "DESIGN FastAPI application directory structure and module organization"
+      - "CREATE layered architecture with clear separation of concerns"
+      - "PLAN core, api, services, schemas, models, and crud layers"
+      - "DESIGN configuration management and environment handling"
+      - "ESTABLISH project structure following FastAPI best practices"
+
+    structure_requirements:
+      application_layers:
+        - "DESIGN presentation layer (API routers and endpoints)"
+        - "CREATE business logic layer (services and use cases)"
+        - "DEFINE data access layer (repositories and CRUD)"
+        - "PLAN infrastructure layer (database, external APIs)"
+
+      module_organization:
+        - "DESIGN core module (config, dependencies, security)"
+        - "CREATE api module (routers, endpoints, middleware)"
+        - "DEFINE schemas module (Pydantic models for I/O)"
+        - "PLAN models module (database entities)"
+
+      configuration_management:
+        - "DESIGN settings management with Pydantic BaseSettings"
+        - "CREATE environment-based configuration"
+        - "DEFINE secrets and credentials handling"
+        - "PLAN feature flags and runtime configuration"
+
+  phase_3:
+    name: "API Router Organization and Endpoint Design Architecture"
+    mandatory_actions:
+      - "DESIGN RESTful API router structure and organization"
+      - "CREATE endpoint design patterns and URL conventions"
+      - "PLAN API versioning strategies and backward compatibility"
+      - "DEFINE request/response patterns and HTTP methods"
+      - "ESTABLISH error response standards and status codes"
+
+    router_requirements:
+      router_organization:
+        - "DESIGN modular router structure by domain/resource"
+        - "CREATE hierarchical router inclusion patterns"
+        - "DEFINE router dependencies and middleware"
+        - "PLAN router-level authentication and authorization"
+
+      endpoint_patterns:
+        - "DESIGN RESTful endpoint conventions"
+        - "CREATE CRUD operation mappings"
+        - "DEFINE query parameter handling patterns"
+        - "PLAN pagination and filtering strategies"
+
+      versioning_strategy:
+        - "DESIGN API versioning mechanisms (URL/header/content)"
+        - "CREATE version compatibility strategies"
+        - "DEFINE deprecation and migration patterns"
+        - "PLAN backward compatibility maintenance"
+
+  phase_4:
+    name: "FastAPI Dependency Injection and Service Layer Architecture"
+    mandatory_actions:
+      - "DESIGN FastAPI dependency injection patterns and hierarchies"
+      - "CREATE service layer architecture with business logic separation"
+      - "PLAN dependency lifecycle management (singleton, transient, scoped)"
+      - "DEFINE typed dependencies using Annotated and Depends"
+      - "ESTABLISH inversion of control and dependency resolution"
+
+    dependency_requirements:
+      injection_patterns:
+        - "DESIGN typed dependency declarations with Annotated"
+        - "CREATE dependency factories and providers"
+        - "DEFINE dependency scoping and lifecycle"
+        - "PLAN dependency testing and mocking strategies"
+
+      service_layer:
+        - "DESIGN service classes for business logic"
+        - "CREATE use case implementations"
+        - "DEFINE service interfaces and abstractions"
+        - "PLAN service composition and orchestration"
+
+      lifecycle_management:
+        - "DESIGN singleton dependencies for shared resources"
+        - "CREATE request-scoped dependencies for stateful operations"
+        - "DEFINE cleanup and resource disposal patterns"
+        - "PLAN dependency health checking and monitoring"
+
+  phase_5:
+    name: "Database Integration and Data Architecture Design"
+    mandatory_actions:
+      - "DESIGN database integration architecture with SQLModel/SQLAlchemy"
+      - "CREATE repository pattern implementations for data access"
+      - "PLAN database session management and connection pooling"
+      - "DEFINE ORM models and database schema design"
+      - "ESTABLISH migration strategies and database versioning"
+
+    database_requirements:
+      integration_architecture:
+        - "DESIGN async database operations with AsyncSession"
+        - "CREATE connection pooling and performance optimization"
+        - "DEFINE database configuration and environment management"
+        - "PLAN database health checks and monitoring"
+
+      repository_patterns:
+        - "DESIGN generic repository interfaces and implementations"
+        - "CREATE CRUD operations with type safety"
+        - "DEFINE query patterns and filtering strategies"
+        - "PLAN transaction management and rollback strategies"
+
+      schema_design:
+        - "DESIGN SQLModel entities with proper relationships"
+        - "CREATE database indexes and performance optimization"
+        - "DEFINE data validation and constraint handling"
+        - "PLAN schema migrations and versioning"
+
+  phase_6:
+    name: "Authentication, Authorization, and Security Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive authentication and authorization middleware"
+      - "CREATE JWT token management and validation patterns"
+      - "PLAN role-based access control (RBAC) and permissions"
+      - "DEFINE security middleware stack and CORS handling"
+      - "ESTABLISH input validation and sanitization strategies"
+
+    security_requirements:
+      authentication_patterns:
+        - "DESIGN JWT token creation and validation"
+        - "CREATE OAuth2 integration patterns"
+        - "DEFINE multi-factor authentication support"
+        - "PLAN session management and token refresh"
+
+      authorization_mechanisms:
+        - "DESIGN role-based access control systems"
+        - "CREATE permission-based authorization"
+        - "DEFINE resource-level access controls"
+        - "PLAN dynamic permission evaluation"
+
+      security_middleware:
+        - "DESIGN CORS middleware configuration"
+        - "CREATE rate limiting and throttling"
+        - "DEFINE input validation and sanitization"
+        - "PLAN security headers and CSP policies"
+
+  phase_7:
+    name: "Pydantic Schema and Validation Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive Pydantic model architecture"
+      - "CREATE request/response schema validation patterns"
+      - "PLAN data transformation and serialization strategies"
+      - "DEFINE custom validators and field validation rules"
+      - "ESTABLISH error handling for validation failures"
+
+    schema_requirements:
+      model_architecture:
+        - "DESIGN base schema classes and inheritance"
+        - "CREATE request/response model separation"
+        - "DEFINE model composition and reusability"
+        - "PLAN schema versioning and evolution"
+
+      validation_patterns:
+        - "DESIGN custom field validators"
+        - "CREATE model-level validation rules"
+        - "DEFINE conditional validation patterns"
+        - "PLAN validation error handling and reporting"
+
+      serialization_strategy:
+        - "DESIGN JSON serialization customization"
+        - "CREATE data transformation patterns"
+        - "DEFINE field aliasing and naming strategies"
+        - "PLAN performance optimization for large payloads"
+
+  phase_8:
+    name: "Async Programming and Performance Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive async/await programming patterns"
+      - "CREATE concurrent request handling strategies"
+      - "PLAN database connection pooling and optimization"
+      - "DEFINE caching strategies and implementation patterns"
+      - "ESTABLISH performance monitoring and profiling"
+
+    performance_requirements:
+      async_patterns:
+        - "DESIGN async endpoint implementations"
+        - "CREATE concurrent database operations"
+        - "DEFINE async middleware patterns"
+        - "PLAN async error handling and recovery"
+
+      caching_strategies:
+        - "DESIGN multi-level caching architecture"
+        - "CREATE Redis integration for distributed caching"
+        - "DEFINE cache invalidation strategies"
+        - "PLAN cache warming and preloading"
+
+      optimization_techniques:
+        - "DESIGN response compression and optimization"
+        - "CREATE database query optimization patterns"
+        - "DEFINE connection pooling strategies"
+        - "PLAN resource utilization monitoring"
+
+  phase_9:
+    name: "Error Handling, Logging, and Observability Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive error handling and exception architecture"
+      - "CREATE structured logging and monitoring patterns"
+      - "PLAN distributed tracing and observability"
+      - "DEFINE health check and status monitoring"
+      - "ESTABLISH alerting and notification strategies"
+
+    observability_requirements:
+      error_handling:
+        - "DESIGN custom exception hierarchies"
+        - "CREATE global exception handlers"
+        - "DEFINE error response standardization"
+        - "PLAN error recovery and fallback patterns"
+
+      logging_architecture:
+        - "DESIGN structured logging with correlation IDs"
+        - "CREATE log aggregation and analysis patterns"
+        - "DEFINE sensitive data masking strategies"
+        - "PLAN log retention and management"
+
+      monitoring_patterns:
+        - "DESIGN metrics collection and reporting"
+        - "CREATE health check endpoints"
+        - "DEFINE performance monitoring dashboards"
+        - "PLAN alerting and notification systems"
+
+  phase_10:
+    name: "Testing Architecture and Quality Assurance Design"
+    mandatory_actions:
+      - "DESIGN comprehensive testing strategies for FastAPI applications"
+      - "CREATE unit testing patterns with pytest and FastAPI TestClient"
+      - "PLAN integration testing with database and external services"
+      - "DEFINE test data management and fixture strategies"
+      - "ESTABLISH continuous testing and quality gates"
+
+    testing_requirements:
+      unit_testing:
+        - "DESIGN pytest-based testing patterns"
+        - "CREATE FastAPI TestClient usage patterns"
+        - "DEFINE dependency mocking and injection"
+        - "PLAN test coverage and quality metrics"
+
+      integration_testing:
+        - "DESIGN database testing with test containers"
+        - "CREATE API endpoint integration tests"
+        - "DEFINE external service mocking strategies"
+        - "PLAN end-to-end testing workflows"
+
+      quality_assurance:
+        - "DESIGN code quality checks and linting"
+        - "CREATE automated testing pipelines"
+        - "DEFINE performance testing strategies"
+        - "PLAN security testing and vulnerability assessment"
+
+# FastAPI Architecture Design Validation Criteria
+validation_criteria:
+  fastapi_architecture: "MANDATORY - Complete FastAPI architecture designed"
+  api_router_design: "MANDATORY - API routing and endpoints designed"
+  dependency_injection: "MANDATORY - FastAPI DI patterns designed"
+  database_integration: "MANDATORY - Database architecture specified"
+  authentication_security: "MANDATORY - Auth and security designed"
+  schema_validation: "MANDATORY - Pydantic models designed"
+  async_patterns: "MANDATORY - Async programming patterns specified"
+  performance_optimization: "MANDATORY - Performance strategies designed"
+  error_handling: "MANDATORY - Error handling architecture designed"
+  testing_strategy: "MANDATORY - Testing architecture designed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL design output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-24-143000"
+
+  required_outputs:
+    - "./project/docs/fastapi-development/architecture/Architecture_Design_{{YYYY-MM-DD-HHMMSS}}.ipynb (architecture design)"
+    - "./project/docs/fastapi-development/architecture/Security_Design_{{YYYY-MM-DD-HHMMSS}}.ipynb (security design)"
+    - "./project/docs/fastapi-development/architecture/Integration_Patterns_{{YYYY-MM-DD-HHMMSS}}.ipynb (integration patterns)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all design output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL design deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all design outputs"
+    - "FORBIDDEN: Creating design files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same design session"
+
+# FastAPI Design Execution Workflow with Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE FastAPI application requirements for ({{design_scope}}) with complexity ({{api_complexity}})"
+  - "2. DESIGN application structure and layered architecture"
+  - "3. CREATE API router organization and endpoint patterns"
+  - "4. DESIGN dependency injection and service layer architecture"
+  - "5. PLAN database integration and repository patterns"
+  - "6. DESIGN authentication, authorization, and security"
+  - "7. CREATE Pydantic schema and validation architecture"
+  - "8. DESIGN async programming and performance patterns"
+  - "9. PLAN error handling and observability architecture"
+  - "10. DESIGN testing strategies and quality assurance"
+  - "11. VALIDATE all designs against requirements"
+  - "12. COMPILE comprehensive design documentation with timestamps"
+
+# FastAPI-Specific Design Principles
+fastapi_design_principles:
+  modern_python_patterns:
+    type_hints: "Use comprehensive type annotations throughout"
+    async_await: "Leverage async/await for I/O operations"
+    pydantic_models: "Use Pydantic for data validation and serialization"
+    dependency_injection: "Utilize FastAPI's DI system effectively"
+
+  api_design_patterns:
+    restful_design: "Follow RESTful API design principles"
+    resource_modeling: "Model resources and relationships clearly"
+    status_codes: "Use appropriate HTTP status codes"
+    error_responses: "Standardize error response formats"
+
+  performance_patterns:
+    async_operations: "Design for concurrent request handling"
+    database_optimization: "Optimize database queries and connections"
+    response_caching: "Implement appropriate caching strategies"
+    resource_management: "Manage resources and connections efficiently"
+
+  security_patterns:
+    authentication_first: "Design security from the ground up"
+    input_validation: "Validate all inputs comprehensively"
+    authorization_layers: "Implement layered authorization"
+    secure_defaults: "Use secure defaults throughout"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL designs MUST be comprehensive and complete"
+    - "ALL FastAPI patterns MUST follow best practices"
+    - "ALL specifications MUST be detailed and accurate"
+    - "ALL security considerations MUST be addressed"
+    - "ALL performance requirements MUST be designed"
+    - "ALL designs MUST follow Clean Architecture principles"
+    - "ALWAYS use systematic design methodology"
+    - "NEVER create implementation code"
+
+  strictly_forbidden:
+    - "Creating implementation code or actual FastAPI modules"
+    - "Making changes to live systems"
+    - "Partial or incomplete design specifications"
+    - "Skipping security or performance design"
+    - "Creating designs without proper analysis"
+    - "Missing critical design components"
+    - "Proceeding without comprehensive coverage"
+    - "Designing without production readiness focus"
+
+---

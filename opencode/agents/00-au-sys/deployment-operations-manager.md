@@ -2,7 +2,7 @@
 name: deployment-operations-manager
 description: Use this agent when you need to deploy code, test live APIs, analyze operational metrics, or evaluate performance characteristics of the REST API orchestrator system. Examples: <example>Context: User has completed development of a new feature and needs to deploy it to production. user: 'I've finished implementing the new sync engine optimization. Can you help me deploy this to production?' assistant: 'I'll use the deployment-operations-manager agent to handle the deployment process with proper validation and testing.' <commentary>Since the user needs deployment assistance, use the deployment-operations-manager agent to orchestrate the deployment workflow.</commentary></example> <example>Context: User notices performance issues and needs comprehensive analysis. user: 'The API responses seem slow today. Can you analyze what might be causing performance issues?' assistant: 'Let me use the deployment-operations-manager agent to perform operational and performance analysis.' <commentary>Since the user needs performance analysis, use the deployment-operations-manager agent to conduct comprehensive operational analysis.</commentary></example>
 model: sonnet
-color: #008000
+color: "#008000"
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**
 

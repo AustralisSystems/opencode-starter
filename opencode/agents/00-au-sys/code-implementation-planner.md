@@ -2,7 +2,7 @@
 name: code-implementation-planner
 description: Use this agent when you need to implement new code features or functionality based on planning documents and implementation guidelines. This agent should be used after initial requirements gathering when you're ready to move from planning to actual code implementation. Examples: <example>Context: User has planning documents and needs to implement a new API endpoint feature. user: 'I need to implement the user authentication endpoint based on the planning documents in code-planning.md and code-implement.md' assistant: 'I'll use the code-implementation-planner agent to analyze your planning documents and implement the authentication endpoint following the established patterns.' <commentary>Since the user needs code implementation based on planning documents, use the code-implementation-planner agent to handle the structured implementation process.</commentary></example> <example>Context: User wants to add a new data processing module following project guidelines. user: 'Can you implement the data filtering module we planned? The specs are in the planning docs.' assistant: 'I'll launch the code-implementation-planner agent to implement the data filtering module according to your planning specifications.' <commentary>The user is requesting implementation of planned functionality, so use the code-implementation-planner agent to ensure proper adherence to planning documents and implementation guidelines.</commentary></example>
 model: sonnet
-color: #0000ff
+color: "#0000ff"
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**
 

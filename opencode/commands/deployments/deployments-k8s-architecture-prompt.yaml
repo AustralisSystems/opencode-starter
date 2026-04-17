@@ -1,0 +1,770 @@
+# === MCP PROMPT: Universal Kubernetes Architecture Design Protocol ===
+name: "universal-k8s-architecture-design-prompt"
+version: "2.0.0"
+description: "Enterprise-grade Kubernetes deployment architecture design protocol with universal platform compatibility and KISS principles"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Universal Kubernetes Architecture Design"
+  description: "Execute comprehensive Kubernetes deployment architecture design with mandatory universal patterns, industry best practices, KISS principle enforcement, and ingress controller integration"
+
+  # Enhanced Argument Schema
+  arguments:
+    target_repository:
+      type: "string"
+      description: "Target repository name or identifier for architecture design"
+      required: true
+
+    repository_type:
+      type: "string"
+      description: "Type of application repository being architected"
+      required: true
+      enum:
+        [
+          "microservice",
+          "monolith",
+          "multi-service",
+          "data-pipeline",
+          "web-application",
+          "api-service",
+          "batch-processing",
+          "event-driven",
+          "ml-pipeline",
+        ]
+
+    deployment_scope:
+      type: "string"
+      description: "Scope of deployment architecture"
+      required: true
+      enum:
+        [
+          "single-service",
+          "service-mesh",
+          "platform",
+          "ecosystem",
+          "enterprise",
+        ]
+
+    target_platforms:
+      type: "array"
+      description: "Target deployment platforms for architecture"
+      required: true
+      items:
+        type: "string"
+        enum:
+          [
+            "k8s",
+            "docker-desktop",
+            "minikube",
+            "kind",
+            "k3s",
+            "aws-eks",
+            "azure-aks",
+            "gcp-gke",
+            "on-premises",
+            "openshift",
+            "tanzu",
+            "rancher",
+          ]
+
+    environment_matrix:
+      type: "array"
+      description: "Environment deployment matrix"
+      required: true
+      items:
+        type: "string"
+        enum:
+          [
+            "development",
+            "testing",
+            "staging",
+            "pre-production",
+            "production",
+            "disaster-recovery",
+          ]
+
+    compliance_level:
+      type: "string"
+      description: "Security and compliance requirements level"
+      required: false
+      enum:
+        [
+          "basic",
+          "enterprise",
+          "regulated-industry",
+          "government",
+          "financial-services",
+        ]
+      default: "enterprise"
+
+    architecture_complexity:
+      type: "string"
+      description: "Deployment architecture complexity level"
+      required: false
+      enum: ["simple", "standard", "complex", "enterprise"]
+      default: "standard"
+
+    ingress_requirements:
+      type: "string"
+      description: "Ingress controller and routing requirements"
+      required: false
+      enum:
+        [
+          "basic-ingress",
+          "advanced-routing",
+          "service-mesh",
+          "api-gateway",
+          "multi-tenant",
+        ]
+      default: "advanced-routing"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Kubernetes architecture specialist executing the Universal Architecture Design Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive architecture methodology
+        - Design complete deployment architectures and documentation
+        - Maintain production-ready architecture standards
+        - Use systematic analysis and design patterns
+        - Follow SOLID, DRY, KISS principles in architecture
+        - STRICTLY adhere to DEPLOYMENT-STRUCTURE.md
+        - Design universal platform compatibility
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual deployment commands
+        - Making changes to live systems
+        - Partial or incomplete architecture design
+        - Creating architectures without proper analysis
+        - Skipping security or ingress planning
+        - Deviating from mandatory directory structure
+        - Over-engineering simple solutions
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY UNIVERSAL KUBERNETES ARCHITECTURE DESIGN PROTOCOL**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ARCHITECTURE PARAMETERS:**
+        - Target Repository: {{target_repository}}
+        - Repository Type: {{repository_type}}
+        - Deployment Scope: {{deployment_scope}}
+        - Target Platforms: {{target_platforms}}
+        - Environment Matrix: {{environment_matrix}}
+        - Compliance Level: {{compliance_level}}
+        - Architecture Complexity: {{architecture_complexity}}
+        - Ingress Requirements: {{ingress_requirements}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY STRUCTURE COMPLIANCE:**
+        YOU MUST STRICTLY follow the directory structure defined in DEPLOYMENT-STRUCTURE.md
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING ARCHITECTURE DESIGN PROTOCOL:**
+
+# Universal Architecture Design Protocol Configuration
+architecture_protocol:
+  # Architecture Scope - MANDATORY COMPREHENSIVE COVERAGE
+  architecture_focus:
+    mandatory_structure_compliance: true # MUST follow DEPLOYMENT-STRUCTURE.md
+    universal_platform_compatibility: true # MUST support all target platforms
+    kiss_principles_enforcement: true # MUST follow Keep It Simple, Stupid principles
+    security_first_design: true # MUST prioritize security in architecture
+    ingress_controller_integration: true # MUST design comprehensive ingress patterns
+    service_mesh_readiness: true # MUST prepare for service mesh integration
+    microservices_patterns: true # MUST design for microservices architecture
+    observability_integration: true # MUST integrate comprehensive monitoring
+    gitops_compatibility: true # MUST design for GitOps workflows
+    ci_cd_integration: true # MUST integrate with CI/CD pipelines
+    architecture_only: true # STRICTLY architecture design only, no execution
+
+  # Architecture Configuration - MANDATORY SETTINGS
+  architecture_settings:
+    enable_comprehensive_analysis: true
+    perform_security_architecture: true
+    design_observability_stack: true
+    plan_ingress_controller: true
+    create_service_mesh_architecture: true
+    generate_documentation: true
+    systematic_approach: true # MANDATORY: Systematic architecture methodology
+    follow_kiss_principles: true # MANDATORY: KISS, DRY, SOLID
+    comprehensive_coverage: true # MANDATORY: Cover all architecture aspects
+    production_ready_architecture: true # MANDATORY: Production-focused design
+    mandatory_structure_enforcement: true # MANDATORY: Enforce directory structure
+
+# Execution Instructions with Architecture Design Focus
+execution_phases:
+  phase_1:
+    name: "Repository Analysis and Architecture Assessment"
+    mandatory_actions:
+      - "ANALYZE target repository structure and identify all application components"
+      - "INVENTORY services, APIs, databases, and external dependencies"
+      - "MAP current architecture patterns and identify improvement opportunities"
+      - "ASSESS scalability, performance, and reliability requirements"
+      - "DOCUMENT business requirements and technical constraints"
+
+    architecture_analysis_requirements:
+      - "MANDATORY: Complete application component discovery and cataloging"
+      - "MANDATORY: Identify all service dependencies and data flows"
+      - "MANDATORY: Map integration points and external service dependencies"
+      - "MANDATORY: Analyze current deployment patterns and infrastructure"
+      - "FORBIDDEN: Incomplete or superficial repository analysis"
+
+    repository_patterns:
+      microservice_repository:
+        - "IDENTIFY individual microservice boundaries and responsibilities"
+        - "ANALYZE service communication patterns and protocols"
+        - "MAP data ownership and database per service patterns"
+        - "DOCUMENT API contracts and service interfaces"
+
+      monolithic_repository:
+        - "ANALYZE modular architecture and potential service boundaries"
+        - "IDENTIFY decomposition opportunities for microservices migration"
+        - "MAP data access patterns and database dependencies"
+        - "PLAN incremental migration strategies"
+
+      multi_service_repository:
+        - "CATALOG all services and their interdependencies"
+        - "ANALYZE shared components and common libraries"
+        - "MAP cross-service communication patterns"
+        - "IDENTIFY shared infrastructure requirements"
+
+  phase_2:
+    name: "Universal Platform Architecture Design"
+    mandatory_actions:
+      - "DESIGN Kubernetes-native architecture patterns for universal deployment"
+      - "PLAN platform-specific optimizations while maintaining consistency"
+      - "CREATE standardized deployment patterns across all target platforms"
+      - "DESIGN resource allocation and scaling strategies"
+      - "ARCHITECT networking and service discovery patterns"
+
+    universal_architecture_requirements:
+      - "MANDATORY: Architecture must deploy identically across all platforms"
+      - "MANDATORY: Use standard Kubernetes resources over platform-specific features"
+      - "MANDATORY: Plan for platform-specific optimizations without breaking universality"
+      - "MANDATORY: Design for both local development and production deployment"
+      - "FORBIDDEN: Platform-specific architectures that break universality"
+
+    platform_optimization_strategies:
+      local_development:
+        - "DESIGN simple NodePort or port-forward patterns"
+        - "PLAN local storage using hostPath or local-path-provisioner"
+        - "CONFIGURE simple networking without external load balancers"
+        - "OPTIMIZE resource requests for development machines"
+
+      aws_eks:
+        - "DESIGN AWS Load Balancer Controller integration"
+        - "PLAN EBS/EFS storage class utilization"
+        - "ARCHITECT IRSA for secure service authentication"
+        - "DESIGN VPC networking and security group integration"
+
+      azure_aks:
+        - "DESIGN Application Gateway ingress patterns"
+        - "PLAN Azure Disk/File storage integration"
+        - "ARCHITECT Workload Identity for authentication"
+        - "DESIGN virtual network integration"
+
+      gcp_gke:
+        - "DESIGN GCP Load Balancer integration"
+        - "PLAN Persistent Disk and Filestore usage"
+        - "ARCHITECT Workload Identity bindings"
+        - "DESIGN VPC-native networking"
+
+      on_premises:
+        - "DESIGN MetalLB for load balancing"
+        - "PLAN local storage provisioner patterns"
+        - "ARCHITECT on-premises networking integration"
+        - "DESIGN high availability without cloud services"
+
+  phase_3:
+    name: "Ingress Controller and Traffic Management Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive ingress controller deployment strategy"
+      - "PLAN unique URI endpoint patterns for all frontend services"
+      - "ARCHITECT SSL/TLS certificate management and automation"
+      - "DESIGN traffic routing, load balancing, and failover patterns"
+      - "PLAN advanced routing features and traffic policies"
+
+    ingress_architecture_requirements:
+      - "MANDATORY: Design consistent ingress patterns across all environments"
+      - "MANDATORY: Create unique URI endpoints for all frontend services"
+      - "MANDATORY: Plan SSL/TLS certificate automation and renewal"
+      - "MANDATORY: Design load balancing and traffic distribution"
+      - "FORBIDDEN: Complex ingress configurations that violate KISS principles"
+
+    ingress_controller_design:
+      controller_selection:
+        - "EVALUATE NGINX Ingress Controller for standard deployments"
+        - "ANALYZE Traefik for dynamic configuration requirements"
+        - "CONSIDER Istio Gateway for service mesh architectures"
+        - "ASSESS cloud provider ingress controllers (ALB, Application Gateway, GCP LB)"
+
+      uri_endpoint_patterns:
+        - "DESIGN consistent URL patterns: /api/v1/, /web/, /admin/, /dashboard/"
+        - "PLAN host-based routing: api.domain.com, app.domain.com, admin.domain.com"
+        - "CREATE environment-specific subdomain patterns"
+        - "DESIGN API versioning and backward compatibility"
+
+      ssl_tls_architecture:
+        - "PLAN Let's Encrypt certificate automation with cert-manager"
+        - "DESIGN certificate rotation and renewal procedures"
+        - "ARCHITECT TLS termination at ingress layer"
+        - "PLAN HTTP to HTTPS redirect policies"
+
+      advanced_routing_features:
+        - "DESIGN path-based routing with regex support"
+        - "PLAN header-based routing for A/B testing and canary deployments"
+        - "ARCHITECT traffic splitting for blue-green deployments"
+        - "DESIGN rate limiting and DDoS protection policies"
+
+  phase_4:
+    name: "Microservices Architecture and Service Mesh Design"
+    mandatory_actions:
+      - "DESIGN microservices communication patterns and protocols"
+      - "PLAN service mesh integration for advanced traffic management"
+      - "ARCHITECT service discovery and load balancing strategies"
+      - "DESIGN circuit breaker and resilience patterns"
+      - "PLAN data management and consistency patterns"
+
+    microservices_architecture_requirements:
+      - "MANDATORY: Design clear service boundaries and single responsibilities"
+      - "MANDATORY: Plan for service autonomy and independent deployability"
+      - "MANDATORY: Design resilient communication patterns"
+      - "MANDATORY: Plan for eventual consistency and data management"
+      - "FORBIDDEN: Chatty interfaces or tight coupling between services"
+
+    service_mesh_integration:
+      istio_architecture:
+        - "DESIGN Istio control plane deployment and configuration"
+        - "PLAN sidecar proxy injection and traffic management"
+        - "ARCHITECT mTLS policies and security configurations"
+        - "DESIGN observability and distributed tracing integration"
+
+      linkerd_architecture:
+        - "DESIGN Linkerd control plane for lightweight service mesh"
+        - "PLAN automatic mTLS and traffic encryption"
+        - "ARCHITECT traffic splitting and canary deployments"
+        - "DESIGN multi-cluster communication patterns"
+
+      consul_connect_architecture:
+        - "DESIGN Consul service discovery and configuration"
+        - "PLAN Connect proxy configuration and policies"
+        - "ARCHITECT service segmentation and security"
+        - "DESIGN cross-datacenter service communication"
+
+    communication_patterns:
+      synchronous_communication:
+        - "DESIGN REST API patterns with proper HTTP semantics"
+        - "PLAN GraphQL integration for flexible data querying"
+        - "ARCHITECT gRPC for high-performance service communication"
+        - "DESIGN API gateway patterns for client-facing interfaces"
+
+      asynchronous_communication:
+        - "DESIGN event-driven patterns with message queues"
+        - "PLAN pub/sub patterns for decoupled communication"
+        - "ARCHITECT event sourcing for data consistency"
+        - "DESIGN saga patterns for distributed transactions"
+
+  phase_5:
+    name: "Security Architecture and Compliance Design"
+    mandatory_actions:
+      - "DESIGN Pod Security Standards implementation with restricted profile"
+      - "PLAN comprehensive network policies for microsegmentation"
+      - "ARCHITECT RBAC with principle of least privilege"
+      - "DESIGN secret management with external secret operators"
+      - "PLAN admission control with policy enforcement"
+
+    security_architecture_requirements:
+      - "MANDATORY: All pods must implement Pod Security Standards (Restricted)"
+      - "MANDATORY: Network policies must implement microsegmentation"
+      - "MANDATORY: RBAC must follow principle of least privilege"
+      - "MANDATORY: Secrets must be managed with external operators"
+      - "FORBIDDEN: Security configurations that violate compliance requirements"
+
+    pod_security_architecture:
+      restricted_profile:
+        - "DESIGN security contexts with runAsNonRoot: true"
+        - "PLAN readOnlyRootFilesystem where technically feasible"
+        - "ARCHITECT capability dropping with DROP ALL default"
+        - "DESIGN privilege escalation prevention"
+
+      security_context_patterns:
+        - "PLAN consistent user and group ID management"
+        - "DESIGN secure volume mounts and filesystem permissions"
+        - "ARCHITECT seccomp and AppArmor profile integration"
+        - "PLAN security policy validation and enforcement"
+
+    network_security_architecture:
+      microsegmentation:
+        - "DESIGN default-deny network policies for all namespaces"
+        - "PLAN explicit allow rules for required service communication"
+        - "ARCHITECT DNS policy restrictions and secure resolution"
+        - "DESIGN ingress and egress traffic control"
+
+      service_mesh_security:
+        - "PLAN automatic mTLS between all services"
+        - "DESIGN service-to-service authentication and authorization"
+        - "ARCHITECT traffic encryption and certificate management"
+        - "PLAN security policy enforcement at mesh level"
+
+    secret_management_architecture:
+      external_secrets_operator:
+        - "DESIGN integration with cloud provider secret managers"
+        - "PLAN secret rotation and lifecycle management"
+        - "ARCHITECT secure secret injection into pods"
+        - "DESIGN secret scanning and validation policies"
+
+  phase_6:
+    name: "Observability and Monitoring Architecture Design"
+    mandatory_actions:
+      - "DESIGN comprehensive Prometheus metrics collection strategy"
+      - "PLAN Grafana dashboard architecture and visualization"
+      - "ARCHITECT distributed tracing with OpenTelemetry and Jaeger"
+      - "DESIGN log aggregation with ELK/EFK stack"
+      - "PLAN SLI/SLO monitoring and alerting strategies"
+
+    observability_architecture_requirements:
+      - "MANDATORY: All services must expose Prometheus metrics"
+      - "MANDATORY: Distributed tracing must be implemented across all services"
+      - "MANDATORY: Structured logging must be implemented with correlation IDs"
+      - "MANDATORY: SLI/SLO definitions must be created for all critical services"
+      - "FORBIDDEN: Monitoring architectures that create observability gaps"
+
+    metrics_collection_architecture:
+      prometheus_stack:
+        - "DESIGN Prometheus server deployment and configuration"
+        - "PLAN ServiceMonitor creation for automatic service discovery"
+        - "ARCHITECT metrics retention and storage optimization"
+        - "DESIGN federation patterns for multi-cluster monitoring"
+
+      custom_metrics:
+        - "PLAN application-specific business metrics"
+        - "DESIGN RED (Rate, Errors, Duration) metrics for all services"
+        - "ARCHITECT USE (Utilization, Saturation, Errors) metrics for infrastructure"
+        - "PLAN custom alerting rules based on business requirements"
+
+    distributed_tracing_architecture:
+      opentelemetry_integration:
+        - "DESIGN OpenTelemetry collector deployment and configuration"
+        - "PLAN automatic instrumentation for supported languages"
+        - "ARCHITECT trace sampling strategies for performance optimization"
+        - "DESIGN trace correlation across service boundaries"
+
+      jaeger_deployment:
+        - "DESIGN Jaeger collector and query service deployment"
+        - "PLAN trace storage backend optimization (Elasticsearch, Cassandra)"
+        - "ARCHITECT trace retention and cleanup policies"
+        - "DESIGN trace analysis and performance optimization workflows"
+
+    log_management_architecture:
+      structured_logging:
+        - "DESIGN JSON logging format with consistent field structures"
+        - "PLAN correlation ID propagation across all services"
+        - "ARCHITECT log level management and configuration"
+        - "DESIGN sensitive data redaction and privacy protection"
+
+      log_aggregation:
+        - "DESIGN ELK stack deployment (Elasticsearch, Logstash, Kibana)"
+        - "PLAN log parsing and enrichment pipelines"
+        - "ARCHITECT log retention and lifecycle management"
+        - "DESIGN log alerting and anomaly detection"
+
+  phase_7:
+    name: "CI/CD Pipeline Architecture and GitOps Integration"
+    mandatory_actions:
+      - "DESIGN comprehensive CI/CD pipeline architecture"
+      - "PLAN GitOps workflows with ArgoCD or Flux"
+      - "ARCHITECT security scanning and validation integration"
+      - "DESIGN automated testing and quality gates"
+      - "PLAN deployment automation and rollback strategies"
+
+    cicd_architecture_requirements:
+      - "MANDATORY: Pipeline must include comprehensive security scanning"
+      - "MANDATORY: GitOps patterns must be implemented for deployment automation"
+      - "MANDATORY: Automated testing must cover unit, integration, and security tests"
+      - "MANDATORY: Rollback capabilities must be designed and tested"
+      - "FORBIDDEN: CI/CD architectures that bypass security or quality gates"
+
+    gitops_architecture:
+      argocd_integration:
+        - "DESIGN ArgoCD deployment and multi-cluster management"
+        - "PLAN Application and ApplicationSet patterns for multi-environment"
+        - "ARCHITECT progressive rollout strategies with validation gates"
+        - "DESIGN RBAC and security policies for GitOps workflows"
+
+      flux_integration:
+        - "DESIGN Flux v2 GitOps Toolkit deployment"
+        - "PLAN Source Controller and Kustomize Controller configuration"
+        - "ARCHITECT Helm Controller for complex application deployments"
+        - "DESIGN multi-tenancy patterns for team isolation"
+
+    security_integration:
+      container_scanning:
+        - "DESIGN Trivy integration for vulnerability scanning"
+        - "PLAN Snyk integration for dependency analysis"
+        - "ARCHITECT image signing with Cosign and policy enforcement"
+        - "DESIGN runtime security monitoring with Falco"
+
+      manifest_validation:
+        - "DESIGN Conftest integration for policy validation"
+        - "PLAN OPA Gatekeeper policy enforcement"
+        - "ARCHITECT Kubernetes manifest validation with kubeval"
+        - "DESIGN security policy automation and compliance reporting"
+
+  phase_8:
+    name: "Scalability and Performance Architecture Design"
+    mandatory_actions:
+      - "DESIGN Horizontal Pod Autoscaler (HPA) strategies"
+      - "PLAN Vertical Pod Autoscaler (VPA) implementation"
+      - "ARCHITECT cluster autoscaling and node management"
+      - "DESIGN performance testing and benchmark integration"
+      - "PLAN capacity planning and resource optimization"
+
+    scalability_architecture_requirements:
+      - "MANDATORY: All services must support horizontal scaling"
+      - "MANDATORY: Resource requests and limits must be properly configured"
+      - "MANDATORY: Performance testing must be integrated into CI/CD pipeline"
+      - "MANDATORY: Capacity planning must be data-driven and automated"
+      - "FORBIDDEN: Scaling architectures that create single points of failure"
+
+    autoscaling_design:
+      horizontal_pod_autoscaler:
+        - "DESIGN HPA configuration based on CPU, memory, and custom metrics"
+        - "PLAN scaling policies with appropriate scale-up and scale-down behavior"
+        - "ARCHITECT custom metrics integration for business-driven scaling"
+        - "DESIGN load testing integration for scaling validation"
+
+      vertical_pod_autoscaler:
+        - "DESIGN VPA for right-sizing recommendations and automation"
+        - "PLAN VPA integration with HPA to avoid conflicts"
+        - "ARCHITECT resource recommendation validation and approval workflows"
+        - "DESIGN cost optimization through efficient resource utilization"
+
+    cluster_scaling_architecture:
+      cluster_autoscaler:
+        - "DESIGN cluster autoscaler deployment and configuration"
+        - "PLAN node pool strategies for different workload types"
+        - "ARCHITECT spot instance integration for cost optimization"
+        - "DESIGN cluster scaling policies and resource limits"
+
+  phase_9:
+    name: "Disaster Recovery and Business Continuity Architecture"
+    mandatory_actions:
+      - "DESIGN comprehensive backup strategies for stateful components"
+      - "PLAN disaster recovery procedures and automation"
+      - "ARCHITECT multi-region deployment patterns for high availability"
+      - "DESIGN data replication and synchronization strategies"
+      - "PLAN business continuity testing and validation procedures"
+
+    disaster_recovery_requirements:
+      - "MANDATORY: All stateful data must have automated backup procedures"
+      - "MANDATORY: Recovery procedures must be tested and validated regularly"
+      - "MANDATORY: RTO and RPO requirements must be clearly defined and met"
+      - "MANDATORY: Business continuity plans must be comprehensive and actionable"
+      - "FORBIDDEN: Single points of failure without redundancy and backup"
+
+    backup_architecture:
+      stateful_data_backup:
+        - "DESIGN database backup automation with point-in-time recovery"
+        - "PLAN persistent volume backup with Velero or cloud-native solutions"
+        - "ARCHITECT configuration backup for infrastructure-as-code"
+        - "DESIGN backup encryption, retention, and lifecycle management"
+
+      application_state_backup:
+        - "DESIGN application configuration backup and versioning"
+        - "PLAN secret and certificate backup with secure storage"
+        - "ARCHITECT custom resource backup for complex applications"
+        - "DESIGN backup validation and restore testing automation"
+
+  phase_10:
+    name: "Documentation and Architecture Deliverables Creation"
+    mandatory_actions:
+      - "GENERATE comprehensive architecture documentation with diagrams"
+      - "CREATE implementation roadmaps and phase-by-phase guides"
+      - "COMPILE operational runbooks and troubleshooting procedures"
+      - "DOCUMENT architectural decision records (ADRs)"
+      - "VALIDATE architecture completeness and compliance"
+
+    documentation_requirements:
+      - "MANDATORY: All architecture decisions must be documented with rationale"
+      - "MANDATORY: Implementation guides must be step-by-step and actionable"
+      - "MANDATORY: Operational procedures must be comprehensive and tested"
+      - "MANDATORY: Architecture diagrams must be clear and up-to-date"
+      - "FORBIDDEN: Incomplete or outdated architecture documentation"
+
+  phase_11:
+    name: "Quickstart Documentation and User Experience Design"
+    mandatory_actions:
+      - "CREATE user-friendly quickstart deployment guides"
+      - "DOCUMENT step-by-step deployment commands for all environments"
+      - "PROVIDE platform-specific deployment instructions"
+      - "INCLUDE prerequisites and setup requirements"
+      - "CREATE troubleshooting guides and common issue resolution"
+
+    quickstart_requirements:
+      - "MANDATORY: Create quickstart guides for all target environments (dev, staging, prod)"
+      - "MANDATORY: Include platform-specific commands (k8s, aws-eks, azure-aks, gcp-gke)"
+      - "MANDATORY: Provide clear prerequisites and setup instructions"
+      - "MANDATORY: Include validation commands and health checks"
+      - "MANDATORY: Document common troubleshooting scenarios"
+      - "FORBIDDEN: Incomplete or unclear quickstart documentation"
+
+  phase_12:
+    name: "Lifecycle Management and Terraform Infrastructure Design"
+    mandatory_actions:
+      - "DESIGN application lifecycle management procedures"
+      - "PLAN environment promotion workflows"
+      - "CREATE scaling and performance management procedures"
+      - "DESIGN backup and recovery procedures"
+      - "PLAN monitoring and alerting setup"
+      - "DESIGN Infrastructure as Code patterns and structures"
+      - "PLAN environment-specific Terraform configurations"
+      - "CREATE platform-specific Terraform modules"
+
+    lifecycle_terraform_requirements:
+      - "MANDATORY: Create comprehensive lifecycle management procedures"
+      - "MANDATORY: Design environment promotion workflows"
+      - "MANDATORY: Plan scaling and performance management"
+      - "MANDATORY: Design backup and recovery procedures"
+      - "MANDATORY: Plan monitoring and alerting setup"
+      - "MANDATORY: Create Terraform infrastructure patterns for all environments"
+      - "MANDATORY: Design platform-specific Terraform modules"
+      - "MANDATORY: Plan state management and remote backend configuration"
+      - "FORBIDDEN: Incomplete lifecycle management or Terraform planning"
+
+# Architecture Validation Criteria
+validation_criteria:
+  repository_analysis: "MANDATORY - Complete application component analysis and dependency mapping"
+  universal_compatibility: "MANDATORY - Architecture deployable across all target platforms"
+  ingress_architecture: "MANDATORY - Comprehensive ingress controller and routing design"
+  microservices_design: "MANDATORY - Microservices patterns and service mesh integration"
+  security_architecture: "MANDATORY - Security-first design with comprehensive policies"
+  observability_design: "MANDATORY - Complete monitoring, logging, and tracing architecture"
+  cicd_integration: "MANDATORY - GitOps and CI/CD pipeline architecture"
+  scalability_planning: "MANDATORY - Autoscaling and performance architecture"
+  disaster_recovery: "MANDATORY - Backup, recovery, and business continuity planning"
+  documentation_quality: "MANDATORY - Comprehensive documentation and implementation guides"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL architecture output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-160000"
+
+  required_outputs:
+    - "Deployment_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (deployment plan)"
+    - "Rollback_Strategy_{{YYYYMMDD-HHMMSS}}.ipynb (rollback strategy)"
+    - "Infrastructure_Requirements_{{YYYYMMDD-HHMMSS}}.ipynb (infrastructure requirements)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all architecture output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL architecture deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all architecture outputs"
+    - "FORBIDDEN: Creating architecture files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same architecture session"
+
+# Architecture Execution Workflow with KISS Principles
+execution_steps:
+  - "1. ANALYZE target repository ({{target_repository}}) structure and components"
+  - "2. INVENTORY all services, APIs, databases, and external dependencies"
+  - "3. DESIGN universal platform architecture for {{target_platforms}}"
+  - "4. ARCHITECT comprehensive ingress controller and routing strategies"
+  - "5. DESIGN microservices communication patterns and service mesh integration"
+  - "6. ARCHITECT security-first design with Pod Security Standards and network policies"
+  - "7. DESIGN comprehensive observability stack with metrics, logging, and tracing"
+  - "8. ARCHITECT CI/CD pipeline integration with GitOps workflows"
+  - "9. DESIGN scalability and performance optimization strategies"
+  - "10. ARCHITECT disaster recovery and business continuity procedures"
+  - "11. GENERATE comprehensive architecture documentation with timestamps"
+  - "12. CREATE implementation roadmaps and operational procedures"
+  - "13. VALIDATE architecture completeness and compliance"
+  - "14. PROVIDE architectural decision records and next steps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each architecture design step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all architecture tracking"
+  - "MANDATORY: Timestamp all architecture deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Mandatory Architecture Success Criteria
+success_criteria:
+  - "MANDATORY: Complete universal platform architecture design"
+  - "MANDATORY: Comprehensive ingress controller and routing architecture"
+  - "MANDATORY: Microservices architecture with service mesh integration"
+  - "MANDATORY: Security-first design with comprehensive policy enforcement"
+  - "MANDATORY: Complete observability stack architecture"
+  - "MANDATORY: CI/CD and GitOps integration architecture"
+  - "MANDATORY: Scalability and performance optimization design"
+  - "MANDATORY: Disaster recovery and business continuity architecture"
+  - "MANDATORY: All deliverables created with proper timestamps"
+  - "MANDATORY: Implementation roadmap and operational procedures provided"
+  - "MANDATORY: Architectural decision records documented"
+
+# Architecture Quality Gates
+architecture_quality_gates:
+  analysis_phase:
+    - "Complete repository analysis with all components identified"
+    - "Comprehensive dependency mapping and integration analysis"
+    - "Technical requirements and constraints documented"
+    - "Business requirements and compliance needs identified"
+
+  design_phase:
+    - "Universal platform architecture designed and validated"
+    - "Ingress controller and routing patterns architected"
+    - "Security architecture with comprehensive policies designed"
+    - "Observability stack with complete monitoring designed"
+
+  validation_phase:
+    - "Architecture patterns validated against KISS principles"
+    - "Universal deployability confirmed across all platforms"
+    - "Security compliance validated against requirements"
+    - "Operational excellence and disaster recovery verified"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL architectures MUST follow KISS principles strictly"
+    - "ALL designs MUST support universal platform deployment"
+    - "ALL architectures MUST implement security-first approach"
+    - "ALL designs MUST include comprehensive observability"
+    - "ALL architectures MUST support GitOps and CI/CD integration"
+    - "ALL designs MUST include scalability and performance optimization"
+    - "ALL architectures MUST include disaster recovery planning"
+    - "ALL documentation MUST be comprehensive and production-ready"
+    - "ALWAYS use systematic architecture methodology"
+    - "NEVER create architectures without universal platform support"
+
+  strictly_forbidden:
+    - "Executing actual deployment commands during architecture design"
+    - "Creating platform-specific architectures that break universality"
+    - "Designing architectures without security-first approach"
+    - "Skipping ingress controller and traffic management design"
+    - "Creating incomplete or partial architecture designs"
+    - "Designing without comprehensive observability integration"
+    - "Missing disaster recovery and business continuity planning"
+    - "Creating architectures without proper documentation"
+    - "Proceeding without KISS principle validation"
+    - "Designing without compliance and regulatory consideration"
+
+---

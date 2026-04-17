@@ -1,0 +1,192 @@
+name: "Node.js Backend Implementation"
+description: "Implement production-ready Node.js backend services, APIs, and infrastructure using current patterns and best practices"
+version: "2.1.0"
+category: "implementation"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7  # Get latest documentation BEFORE coding
+    - grep      # Find real GitHub examples
+    - sequential-thinking  # Plan implementation approach
+    - filesystem          # Read/write code
+    - memory              # Track progress during work
+    - time                # Timestamp operations
+
+# Execution Protocol
+execution_phases:
+  1_research:
+    description: "Research current patterns and validate requirements"
+    tools: ["context7", "grep"]
+    required_actions:
+      - "Get latest Node.js 21.x documentation for specified frameworks"
+      - "Search GitHub for production implementations using grep"
+      - "Validate security patterns in real codebases"
+    success_criteria:
+      - "Framework documentation retrieved and analyzed"
+      - "Real-world examples identified and studied"
+      - "Security patterns validated against production usage"
+
+  2_planning:
+    description: "Structure implementation approach systematically"
+    tools: ["sequential-thinking", "memory"]
+    required_actions:
+      - "Break down implementation into logical components"
+      - "Plan file structure and module organization"
+      - "Define interfaces and data models"
+      - "Identify dependencies and configuration"
+    success_criteria:
+      - "Implementation plan created with clear phases"
+      - "Architecture decisions documented"
+      - "Dependencies and structure defined"
+
+  3_implementation:
+    description: "Execute code implementation with validation"
+    tools: ["filesystem", "memory", "time"]
+    required_actions:
+      - "Create core service files with proper structure"
+      - "Implement API endpoints with validation"
+      - "Add database integration and models"
+      - "Configure security middleware and authentication"
+      - "Set up error handling and logging"
+    success_criteria:
+      - "All code files created and properly structured"
+      - "API endpoints functional and tested"
+      - "Database integration working"
+      - "Security measures implemented"
+
+# Implementation Parameters
+parameters:
+  target_technologies:
+    node_version: "21.x LTS"
+    primary_frameworks:
+      - "Express.js v5.x"
+      - "Fastify v4.x"
+      - "NestJS v10+"
+    database_options:
+      - "PostgreSQL with node-postgres"
+      - "MongoDB with mongoose"
+      - "Redis for caching"
+    orm_options:
+      - "Prisma (preferred)"
+      - "Drizzle ORM"
+      - "TypeORM"
+    security_patterns:
+      - "helmet.js with practical CSP settings"
+      - "JWT authentication"
+      - "Input validation with joi/zod"
+      - "Rate limiting"
+
+  implementation_focus:
+    architecture_patterns:
+      - "Clean Architecture"
+      - "Hexagonal Architecture"
+      - "Layered Architecture"
+    design_principles:
+      - "SOLID principles"
+      - "DRY (Don't Repeat Yourself)"
+      - "KISS (Keep It Simple, Stupid)"
+    performance_optimization:
+      - "Connection pooling"
+      - "Response caching"
+      - "Async/await patterns"
+      - "Error handling strategies"
+
+# Deliverable Specifications (Implementation Only - NO Documentation Files)
+deliverables:
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces Node.js source code files, configuration files, and test files only
+  # Documentation should be created using separate documentation commands
+
+  implementation_files:
+    - "Node.js backend service implementations"
+    - "API route handlers and controllers"
+    - "Database integration and models"
+    - "Authentication and authorization middleware"
+    - "Configuration files and environment setup"
+    - "Test suite implementations"
+    - "Build and deployment scripts"
+    contents:
+      - "Project structure and configuration"
+      - "Core service implementation"
+      - "API endpoint development"
+      - "Database integration"
+      - "Security middleware setup"
+    code_requirements:
+      - "Production-ready code with proper error handling"
+      - "Modern ES modules with node: protocol"
+      - "TypeScript support configuration"
+      - "Environment-specific configurations"
+
+  document_2_validation:
+    title: "Implementation Validation and Testing"
+    contents:
+      - "Unit test implementation"
+      - "Integration test setup"
+      - "API endpoint testing"
+      - "Performance validation"
+      - "Security testing"
+    testing_requirements:
+      - "Built-in Node.js test runner usage"
+      - "API testing with supertest or similar"
+      - "Database connection testing"
+      - "Security header validation"
+
+# Quality Standards
+quality_requirements:
+  code_standards:
+    - "ESLint configuration for Node.js backend"
+    - "Prettier code formatting"
+    - "Error handling in all async operations"
+    - "Input validation on all endpoints"
+    - "Proper logging implementation"
+
+  security_standards:
+    - "helmet.js with practical production settings"
+    - "JWT token validation"
+    - "Input sanitization"
+    - "Rate limiting implementation"
+    - "HTTPS configuration guidance"
+
+  performance_standards:
+    - "Connection pooling for databases"
+    - "Response caching where appropriate"
+    - "Proper async/await usage"
+    - "Memory leak prevention"
+    - "Load testing considerations"
+
+# Success Criteria
+success_criteria:
+  technical:
+    - "All code compiles and runs without errors"
+    - "API endpoints respond with correct status codes"
+    - "Database operations complete successfully"
+    - "Security middleware functions correctly"
+    - "Tests pass and provide adequate coverage"
+
+  architectural:
+    - "Clean separation of concerns implemented"
+    - "Dependency injection used appropriately"
+    - "Error boundaries established"
+    - "Configuration externalized properly"
+    - "Logging and monitoring integrated"
+
+  production_readiness:
+    - "Environment-specific configurations"
+    - "Docker containerization ready"
+    - "Health check endpoints implemented"
+    - "Graceful shutdown handling"
+    - "Documentation for deployment"
+
+# Command Integration
+related_commands:
+  prerequisite: "nodejs-backend-architecture-design"
+  follow_up: "nodejs-code-review"
+  analysis: "nodejs-code-quality-analysis"
+
+# Execution Context
+execution_context:
+  working_directory: "src/"
+  output_format: "markdown documents with executable code"
+  documentation_level: "Code comments and setup instructions only"
+  validation_required: true

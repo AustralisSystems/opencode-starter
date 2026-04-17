@@ -1,0 +1,540 @@
+# === MCP PROMPT: Code Implementation Protocol ===
+name: "code-implement-prompt"
+version: "1.0.0"
+description: "AI-driven exhaustive production code implementation protocol from planning blueprints"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Implementation"
+  description: "Execute comprehensive implementation of ALL production code following SOLID, DRY, and KISS principles with mandatory validation"
+
+  # Argument Schema
+  arguments:
+    implementation_target:
+      type: "string"
+      description: "Target for implementation (entire plan, specific module, or component)"
+      required: true
+
+    implementation_scope:
+      type: "string"
+      description: "Scope of implementation"
+      required: false
+      enum:
+        [
+          "full-implementation",
+          "module-specific",
+          "api-layer",
+          "data-layer",
+          "business-logic",
+          "integration-layer",
+          "security-layer",
+          "infrastructure",
+        ]
+
+    blueprint_source:
+      type: "string"
+      description: "Source of implementation blueprints/plans"
+      required: false
+
+    validation_level:
+      type: "string"
+      description: "Level of validation during implementation"
+      required: false
+      enum: ["standard", "comprehensive", "continuous", "strict"]
+
+    commit_strategy:
+      type: "string"
+      description: "Git commit strategy"
+      required: false
+      enum: ["atomic", "feature-based", "incremental"]
+
+    quality_enforcement:
+      type: "string"
+      description: "Code quality enforcement level"
+      required: false
+      enum: ["standard", "strict", "enterprise", "maximum"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI implementation specialist executing the Code Implementation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow exhaustive implementation methodology
+        - Implement ONLY production code (no tests)
+        - Apply SOLID, DRY, KISS principles strictly
+        - Complete ALL planned features
+        - Fix code in-place (no duplicates)
+        - Include comprehensive error handling
+        - Document with docstrings only
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code or test scripts
+        - Writing external documentation
+        - Creating duplicate or backup files
+        - Leaving TODOs or placeholders
+        - Implementing partial solutions
+        - Skipping error handling
+        - Ignoring security requirements
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE IMPLEMENTATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **IMPLEMENTATION PARAMETERS:**
+        - Implementation Target: {{implementation_target}}
+        - Implementation Scope: {{implementation_scope}}
+        - Blueprint Source: {{blueprint_source}}
+        - Validation Level: {{validation_level}}
+        - Commit Strategy: {{commit_strategy}}
+        - Quality Enforcement: {{quality_enforcement}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING IMPLEMENTATION PROTOCOL:**
+
+# Implementation Protocol Configuration
+implementation_protocol:
+  # Implementation Scope - MANDATORY EXHAUSTIVE COVERAGE
+  implementation_focus:
+    production_code_only: true # MUST implement ONLY production code
+    complete_implementation: true # MUST implement ALL planned features
+    follow_blueprints: true # MUST follow planning specifications
+    continuous_integration: true # MUST use continuous validation
+    continuous_validation: true # MUST validate at each step
+    no_test_code: true # FORBIDDEN: Creating ANY test code
+    no_external_docs: true # FORBIDDEN: External documentation
+    docstrings_only: true # ALLOWED: In-code documentation only
+    fix_in_place: true # MUST fix existing code in-place
+    no_duplicate_files: true # FORBIDDEN: Creating duplicate files
+
+  # Code Requirements - MANDATORY SETTINGS
+  code_requirements:
+    follow_solid_principles: true # MANDATORY: SOLID principles
+    apply_dry_principle: true # MANDATORY: Don't Repeat Yourself
+    implement_kiss_principle: true # MANDATORY: Keep It Simple, Stupid
+    production_ready: true # MANDATORY: Production-grade code
+    complete_error_handling: true # MANDATORY: Full error handling
+    proper_logging: true # MANDATORY: Comprehensive logging
+    security_by_design: true # MANDATORY: Secure implementation
+    performance_optimized: true # MANDATORY: Optimized code
+    modify_existing_only: true # MANDATORY: Fix existing code only
+    pristine_codebase: true # MANDATORY: Clean codebase hygiene
+
+  # Documentation Requirements - STRICT LIMITATIONS
+  documentation_limits:
+    docstrings_allowed: true # ALLOWED: Function/class docstrings
+    inline_comments_allowed: true # ALLOWED: Inline code comments
+    type_hints_required: true # MANDATORY: Type annotations
+    external_docs_forbidden: true # FORBIDDEN: README, guides, etc.
+    test_docs_forbidden: true # FORBIDDEN: Test documentation
+    api_docs_in_code_only: true # ALLOWED: OpenAPI in code only
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Implementation Setup and Validation"
+    mandatory_actions:
+      - "VERIFY development environment setup"
+      - "LOAD implementation blueprints and plans"
+      - "PARSE technical specifications"
+      - "REVIEW API contracts and schemas"
+      - "PREPARE code structure and directories"
+      - "INITIALIZE tracking and validation tools"
+
+    environment_setup:
+      development_environment:
+        - "VERIFY ALL required tools installed"
+        - "CHECK ALL language runtimes"
+        - "CONFIRM ALL dependencies available"
+        - "CONFIGURE ALL IDE settings"
+        - "DOUBLE-CHECK environment readiness"
+
+      blueprint_verification:
+        - "LOAD ALL implementation plans"
+        - "PARSE ALL technical specifications"
+        - "IMPORT ALL API contracts"
+        - "REVIEW ALL database schemas"
+        - "UNDERSTAND ALL architectures"
+        - "FORBIDDEN: Proceeding without plans"
+
+      codebase_hygiene:
+        - "FORBIDDEN: create duplicate files"
+        - "FORBIDDEN: create alternative versions"
+        - "FORBIDDEN: create backup copies"
+        - "ALWAYS modify existing code"
+        - "ALWAYS fix in-place"
+        - "MANDATORY: Pristine codebase"
+
+  phase_2:
+    name: "Core Business Logic Implementation"
+    mandatory_actions:
+      - "IMPLEMENT ALL domain models"
+      - "CREATE ALL business services"
+      - "BUILD ALL data repositories"
+      - "DEVELOP ALL algorithms"
+      - "CODE ALL workflows"
+      - "APPLY SOLID principles throughout"
+
+    business_logic_implementation:
+      domain_models:
+        - "IMPLEMENT complete domain entities"
+        - "CREATE value objects and aggregates"
+        - "BUILD domain services"
+        - "CODE business rules"
+        - "DEVELOP validation logic"
+
+      service_layer:
+        - "CREATE application services"
+        - "IMPLEMENT use cases"
+        - "BUILD orchestration logic"
+        - "CODE transaction management"
+        - "DEVELOP event handling"
+
+      design_principles:
+        - "MANDATORY: Single Responsibility"
+        - "MANDATORY: Open/Closed Principle"
+        - "MANDATORY: Liskov Substitution"
+        - "MANDATORY: Interface Segregation"
+        - "MANDATORY: Dependency Inversion"
+
+  phase_3:
+    name: "API and Interface Development"
+    mandatory_actions:
+      - "IMPLEMENT ALL REST endpoints"
+      - "CREATE ALL GraphQL resolvers"
+      - "BUILD ALL WebSocket handlers"
+      - "DEVELOP ALL CLI commands"
+      - "CODE ALL SDK interfaces"
+      - "VALIDATE ALL contracts"
+
+    api_implementation:
+      rest_api:
+        - "IMPLEMENT all HTTP endpoints"
+        - "CREATE request validation"
+        - "BUILD response serialization"
+        - "CODE error handling"
+        - "DEVELOP middleware"
+
+      graphql_api:
+        - "CREATE schema definitions"
+        - "IMPLEMENT resolvers"
+        - "BUILD data loaders"
+        - "CODE subscriptions"
+        - "DEVELOP authentication"
+
+      interface_contracts:
+        - "VALIDATE all API contracts"
+        - "ENSURE backward compatibility"
+        - "IMPLEMENT versioning"
+        - "CODE rate limiting"
+        - "DEVELOP documentation"
+
+  phase_4:
+    name: "Data Layer Implementation"
+    mandatory_actions:
+      - "CREATE ALL database models"
+      - "IMPLEMENT ALL migrations"
+      - "BUILD ALL data access objects"
+      - "CODE ALL query builders"
+      - "DEVELOP ALL caching layers"
+      - "OPTIMIZE ALL queries"
+
+    data_implementation:
+      database_models:
+        - "CREATE entity models"
+        - "IMPLEMENT relationships"
+        - "BUILD indexes"
+        - "CODE constraints"
+        - "DEVELOP triggers"
+
+      data_access:
+        - "IMPLEMENT repositories"
+        - "CREATE DAOs"
+        - "BUILD query builders"
+        - "CODE transaction handling"
+        - "DEVELOP connection pooling"
+
+      performance_optimization:
+        - "OPTIMIZE query performance"
+        - "IMPLEMENT caching strategies"
+        - "CREATE batch processing"
+        - "BUILD lazy loading"
+        - "FORBIDDEN: N+1 queries"
+
+  phase_5:
+    name: "Integration and Service Communication"
+    mandatory_actions:
+      - "IMPLEMENT ALL API clients"
+      - "CREATE ALL service adapters"
+      - "BUILD ALL message handlers"
+      - "CODE ALL event processors"
+      - "DEVELOP ALL webhooks"
+      - "ENSURE fault tolerance"
+
+    external_integrations:
+      api_clients:
+        - "IMPLEMENT HTTP clients"
+        - "CREATE authentication handlers"
+        - "BUILD retry mechanisms"
+        - "CODE circuit breakers"
+        - "DEVELOP timeout handling"
+
+      message_handling:
+        - "IMPLEMENT queue consumers"
+        - "CREATE event publishers"
+        - "BUILD message serializers"
+        - "CODE error handlers"
+        - "DEVELOP dead letter queues"
+
+      service_mesh:
+        - "IMPLEMENT service discovery"
+        - "CREATE load balancing"
+        - "BUILD health checks"
+        - "CODE monitoring hooks"
+        - "DEVELOP tracing"
+
+  phase_6:
+    name: "Security Implementation"
+    mandatory_actions:
+      - "IMPLEMENT ALL authentication mechanisms"
+      - "CREATE ALL authorization checks"
+      - "BUILD ALL encryption features"
+      - "CODE ALL secure storage"
+      - "DEVELOP ALL compliance features"
+      - "VALIDATE ALL security measures"
+
+    authentication_implementation:
+      auth_mechanisms:
+        - "IMPLEMENT JWT handling"
+        - "CREATE OAuth flows"
+        - "BUILD session management"
+        - "CODE MFA support"
+        - "DEVELOP SSO integration"
+
+      authorization_implementation:
+        - "IMPLEMENT RBAC systems"
+        - "CREATE permission checks"
+        - "BUILD access controls"
+        - "CODE policy engines"
+        - "DEVELOP audit trails"
+
+      data_security:
+        - "IMPLEMENT encryption at rest"
+        - "CREATE key management"
+        - "BUILD data masking"
+        - "CODE secure storage"
+        - "FORBIDDEN: Plain passwords"
+
+  phase_7:
+    name: "Code Documentation and Quality"
+    mandatory_actions:
+      - "ADD ALL function docstrings"
+      - "INCLUDE ALL parameter descriptions"
+      - "DOCUMENT ALL return values"
+      - "EXPLAIN ALL complex logic"
+      - "ADD ALL type hints"
+      - "VALIDATE code quality"
+
+    documentation_requirements:
+      function_documentation:
+        - "ADD comprehensive docstrings"
+        - "INCLUDE parameter descriptions"
+        - "DOCUMENT return values"
+        - "EXPLAIN exceptions raised"
+        - "ADD usage examples"
+
+      code_comments:
+        - "COMMENT complex algorithms"
+        - "EXPLAIN business logic"
+        - "DOCUMENT workarounds"
+        - "NOTE assumptions"
+        - "FORBIDDEN: External docs"
+
+      type_annotations:
+        - "ADD type hints to all functions"
+        - "INCLUDE generic types"
+        - "DOCUMENT custom types"
+        - "USE typing module"
+        - "ENSURE type safety"
+
+  phase_8:
+    name: "Final Validation and Quality Check"
+    mandatory_actions:
+      - "VERIFY ALL features implemented"
+      - "CHECK ALL APIs functional"
+      - "CONFIRM ALL integrations working"
+      - "VALIDATE ALL data flows"
+      - "TEST ALL error handling"
+      - "EXECUTE quality checks"
+
+    implementation_verification:
+      completeness_check:
+        - "VERIFY 100% plan coverage"
+        - "CONFIRM all features complete"
+        - "VALIDATE all contracts met"
+        - "CHECK all integrations"
+        - "FORBIDDEN: Partial delivery"
+
+      quality_validation:
+        - "RUN all linters"
+        - "CHECK code standards"
+        - "VERIFY best practices"
+        - "VALIDATE patterns"
+        - "CONFIRM principles"
+
+      security_validation:
+        - "SCAN for vulnerabilities"
+        - "CHECK dependencies"
+        - "VERIFY configurations"
+        - "VALIDATE secrets handling"
+        - "CONFIRM access controls"
+
+    post_implementation_quality:
+      automatic_quality_check:
+        - "EXECUTE code-quality-comprehensive on all changes"
+        - "PERFORM linting and type checking"
+        - "RUN formatting validation"
+        - "CHECK complexity metrics"
+        - "ANALYZE code duplication"
+
+# Implementation Patterns
+implementation_patterns:
+  solid_patterns:
+    single_responsibility: "One class, one purpose"
+    open_closed: "Open for extension, closed for modification"
+    liskov_substitution: "Subtypes must be substitutable"
+    interface_segregation: "Many specific interfaces"
+    dependency_inversion: "Depend on abstractions"
+
+  dry_patterns:
+    extract_common: "Identify and extract repeated code"
+    create_utilities: "Build reusable components"
+    use_composition: "Compose behaviors"
+    avoid_duplication: "Never copy-paste code"
+
+  kiss_patterns:
+    simple_solutions: "Simplest working solution"
+    clear_naming: "Self-documenting code"
+    flat_structures: "Avoid deep nesting"
+    obvious_code: "Code explains itself"
+
+# Validation Matrices
+validation_matrices:
+  implementation_progress:
+    structure: |
+      | Component | Planned | Implemented | Validated | Committed | Status |
+      |-----------|---------|-------------|-----------|-----------|--------|
+      | User API | [X] | [X] | [X] | [X] | COMPLETE |
+      | Auth Service | [X] | [X] | [X] | [X] | COMPLETE |
+
+  code_quality_matrix:
+    structure: |
+      | File | SOLID | DRY | KISS | Documented | Linted | Status |
+      |------|-------|-----|------|------------|--------|--------|
+      | user.py | [X] | [X] | [X] | [X] | [X] | PASS |
+      | auth.py | [X] | [X] | [X] | [X] | [X] | PASS |
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL implementation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-142155"
+
+  required_outputs: []
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces source code files, configuration files, and test files only
+  # Documentation should be created using separate documentation commands
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all implementation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL implementation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all outputs"
+    - "FORBIDDEN: Creating implementation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same implementation session"
+
+# Implementation Execution Workflow
+execution_steps:
+  - "1. VERIFY environment and load blueprints ({{implementation_target}})"
+  - "2. PREPARE code structure and tracking"
+  - "3. IMPLEMENT core business logic following SOLID"
+  - "4. CREATE API and interface layers"
+  - "5. BUILD data layer with optimizations"
+  - "6. DEVELOP integrations and services"
+  - "7. IMPLEMENT security measures"
+  - "8. ADD comprehensive documentation (docstrings only)"
+  - "9. VALIDATE implementation completeness"
+  - "10. RUN quality checks and linting"
+  - "11. VERIFY security compliance"
+  - "12. EXECUTE post-implementation quality check"
+  - "13. GENERATE implementation documentation with timestamps"
+  - "14. COMMIT code with atomic strategy"
+
+# Codebase Hygiene Rules
+codebase_hygiene:
+  always_required:
+    - "ALWAYS modify existing files"
+    - "FIX code in-place ONLY"
+    - "MAINTAIN pristine codebase"
+    - "DELETE transient files"
+    - "CLEAN repository state"
+
+  strictly_forbidden:
+    - "FORBIDDEN: create duplicate files"
+    - "FORBIDDEN: create backup copies"
+    - "FORBIDDEN: create alternative versions"
+    - "NO file.py.new or file_v2.py"
+    - "NO file_backup.py or file_old.py"
+    - "NO temporary implementation files"
+
+# Documentation Limits
+documentation_limits:
+  allowed_documentation:
+    - "Function and class docstrings"
+    - "Inline code comments"
+    - "Type hints and annotations"
+    - "API documentation in code"
+    - "Configuration comments"
+
+  forbidden_documentation:
+    - "External README files"
+    - "Separate documentation files"
+    - "Test documentation"
+    - "User guides or tutorials"
+    - "Wiki or markdown docs"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL production code MUST be implemented"
+    - "ALL code MUST follow SOLID/DRY/KISS"
+    - "ALL code MUST be production-ready"
+    - "ALL public code MUST have docstrings"
+    - "ALL complex logic MUST have comments"
+    - "ALL security measures MUST be implemented"
+    - "ALWAYS modify existing code in-place"
+    - "NEVER create duplicate files or copies"
+
+  strictly_forbidden:
+    - "Creating ANY test code or scripts"
+    - "Writing external documentation"
+    - "Placeholder or stub implementations"
+    - "Broken code delivery"
+    - "Skipping error handling"
+    - "Ignoring security requirements"
+    - "Creating duplicate code blocks/files"
+    - "Making backup copies of files"

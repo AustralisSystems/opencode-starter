@@ -1,0 +1,655 @@
+# === MCP PROMPT: Test Prerequisites Validation Protocol ===
+name: "test-prerequisites-prompt"
+version: "1.0.0"
+description: "Comprehensive test prerequisites validation protocol for test environment readiness and setup verification"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Test Prerequisites Validation"
+  description: "Execute comprehensive test environment validation and prerequisites setup with mandatory readiness certification"
+
+  # Argument Schema
+  arguments:
+    validation_scope:
+      type: "string"
+      description: "Scope of prerequisites validation to perform"
+      required: true
+      enum:
+        [
+          "complete",
+          "infrastructure",
+          "services",
+          "data",
+          "security",
+          "monitoring",
+          "network",
+        ]
+
+    environment_target:
+      type: "string"
+      description: "Target environment(s) for prerequisites validation"
+      required: true
+      enum:
+        [
+          "local",
+          "development",
+          "staging",
+          "production",
+          "multi-environment",
+          "all-environments",
+        ]
+
+    setup_focus:
+      type: "string"
+      description: "Primary focus of prerequisites setup and validation"
+      required: true
+      enum:
+        [
+          "validation-only",
+          "setup-and-validation",
+          "configuration",
+          "dependency-check",
+          "readiness-assessment",
+        ]
+
+    complexity_level:
+      type: "string"
+      description: "Prerequisites validation complexity level"
+      required: false
+      enum: ["basic", "standard", "comprehensive", "enterprise"]
+
+    infrastructure_requirements:
+      type: "string"
+      description: "Hardware, software, and network requirements"
+      required: false
+
+    compliance_validation:
+      type: "string"
+      description: "Security and regulatory compliance requirements"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI test prerequisites validation specialist executing the comprehensive Prerequisites Validation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive validation methodology
+        - Execute complete test environment prerequisites validation
+        - Maintain production-ready validation standards
+        - Use systematic verification and certification procedures
+        - Follow SOLID, DRY, KISS principles in validation
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual deployment commands or system changes
+        - Modifying production systems or configurations
+        - Deploying code or infrastructure components
+        - Proceeding with incomplete validation
+        - Skipping critical prerequisite checks
+        - Creating incomplete test environments
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY TEST PREREQUISITES VALIDATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **PREREQUISITES VALIDATION PARAMETERS:**
+        - Validation Scope: {{validation_scope}}
+        - Environment Target: {{environment_target}}
+        - Setup Focus: {{setup_focus}}
+        - Complexity Level: {{complexity_level}}
+        - Infrastructure Requirements: {{infrastructure_requirements}}
+        - Compliance Validation: {{compliance_validation}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING TEST PREREQUISITES VALIDATION PROTOCOL:**
+
+# Prerequisites Validation Protocol Configuration
+validation_protocol:
+  # Validation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  validation_focus:
+    infrastructure_validation: true # MUST validate all infrastructure components
+    service_dependency_validation: true # MUST validate service dependencies
+    environment_setup_validation: true # MUST validate environment setup
+    data_preparation_validation: true # MUST validate test data preparation
+    security_configuration_validation: true # MUST validate security setup
+    network_connectivity_validation: true # MUST validate network readiness
+    monitoring_setup_validation: true # MUST validate monitoring systems
+    readiness_certification: true # MUST provide readiness certification
+    validation_only: true # STRICTLY validation only, no system changes
+
+  # Validation Configuration - MANDATORY SETTINGS
+  validation_settings:
+    enable_comprehensive_validation: true
+    perform_dependency_verification: true
+    execute_readiness_assessment: true
+    validate_security_configuration: true
+    verify_monitoring_setup: true
+    certify_environment_readiness: true
+    systematic_approach: true # MANDATORY: Systematic validation methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all prerequisite aspects
+    production_ready_validation: true # MANDATORY: Production-focused validation
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Infrastructure Requirements Discovery and Analysis"
+    mandatory_actions:
+      - "DISCOVER all infrastructure components and requirements"
+      - "ANALYZE hardware, software, and network dependencies"
+      - "INVENTORY all system resources and capacity requirements"
+      - "MAP infrastructure dependencies and relationships"
+      - "DOCUMENT infrastructure architecture and topology"
+
+    discovery_requirements:
+      - "MANDATORY: Complete infrastructure component discovery"
+      - "MANDATORY: Document all hardware requirements"
+      - "MANDATORY: Map software dependencies"
+      - "FORBIDDEN: Missing any critical infrastructure components"
+
+  phase_2:
+    name: "Service Dependency Validation and Health Checks"
+    mandatory_actions:
+      - "VALIDATE all service dependencies and availability"
+      - "EXECUTE health checks for all platform services"
+      - "VERIFY service configuration and connectivity"
+      - "CHECK service authentication and authorization"
+      - "TEST service integration points and API endpoints"
+
+    service_validation_requirements:
+      core_services:
+        - "VALIDATE n8n orchestration service health and configuration"
+        - "VERIFY PostgreSQL database connectivity and performance"
+        - "CHECK Neo4j graph database availability and access"
+        - "VALIDATE Qdrant vector database setup and indexing"
+        - "VERIFY LightRAG service configuration and dependencies"
+
+      supporting_services:
+        - "CHECK MinIO storage service availability and access"
+        - "VALIDATE Terraform executor service configuration"
+        - "VERIFY Ansible executor service setup"
+        - "CHECK Prometheus metrics collection service"
+        - "VALIDATE Grafana visualization service setup"
+
+      external_services:
+        - "VERIFY external API connectivity and authentication"
+        - "CHECK third-party integration availability"
+        - "VALIDATE webhook endpoints and callbacks"
+        - "VERIFY cloud service connections and permissions"
+
+  phase_3:
+    name: "Test Environment Setup and Configuration Validation"
+    mandatory_actions:
+      - "VALIDATE test environment isolation and configuration"
+      - "VERIFY container orchestration setup and networking"
+      - "CHECK environment variable configuration and security"
+      - "VALIDATE resource allocation and capacity planning"
+      - "TEST environment startup and shutdown procedures"
+
+    environment_validation:
+      container_environment:
+        - "VALIDATE Docker container configuration and networking"
+        - "VERIFY container resource limits and allocations"
+        - "CHECK container security policies and access controls"
+        - "VALIDATE container volume mounting and persistence"
+
+      network_configuration:
+        - "TEST internal service-to-service connectivity"
+        - "VALIDATE external network access and firewall rules"
+        - "CHECK load balancing and traffic routing"
+        - "VERIFY DNS resolution and service discovery"
+
+      resource_allocation:
+        - "VALIDATE CPU and memory allocation for all services"
+        - "CHECK storage capacity and performance requirements"
+        - "VERIFY network bandwidth and latency requirements"
+        - "VALIDATE backup and disaster recovery capabilities"
+
+  phase_4:
+    name: "Test Data Preparation and Validation"
+    mandatory_actions:
+      - "PREPARE comprehensive test data sets for all scenarios"
+      - "VALIDATE test data quality and consistency"
+      - "VERIFY test data security and access controls"
+      - "CHECK test data backup and recovery procedures"
+      - "TEST data migration and transformation processes"
+
+    test_data_validation:
+      data_generation:
+        - "GENERATE realistic test data for all services"
+        - "CREATE edge case and boundary condition data"
+        - "PREPARE performance testing data sets"
+        - "GENERATE security testing data scenarios"
+
+      data_quality_validation:
+        - "VALIDATE data format consistency and standards"
+        - "CHECK data integrity and referential consistency"
+        - "VERIFY data classification and handling procedures"
+        - "VALIDATE data retention and archival policies"
+
+      data_security:
+        - "VERIFY test data encryption and protection"
+        - "CHECK data access controls and permissions"
+        - "VALIDATE data masking and anonymization"
+        - "TEST data audit logging and compliance"
+
+  phase_5:
+    name: "Security Configuration and Access Control Validation"
+    mandatory_actions:
+      - "VALIDATE authentication systems and mechanisms"
+      - "VERIFY authorization and access control policies"
+      - "CHECK security boundary enforcement and isolation"
+      - "TEST encryption and data protection measures"
+      - "VALIDATE security monitoring and audit logging"
+
+    security_validation:
+      authentication_systems:
+        - "VALIDATE OAuth 2.0/OIDC authentication configuration"
+        - "VERIFY JWT token handling and validation"
+        - "CHECK API key authentication and management"
+        - "VALIDATE multi-factor authentication setup"
+
+      authorization_controls:
+        - "VERIFY role-based access control (RBAC) configuration"
+        - "CHECK resource-level permission enforcement"
+        - "VALIDATE privilege escalation prevention"
+        - "TEST cross-tenant access isolation"
+
+      security_boundaries:
+        - "VALIDATE network security group configuration"
+        - "CHECK firewall rules and access restrictions"
+        - "VERIFY service mesh security policies"
+        - "TEST intrusion detection and prevention"
+
+  phase_6:
+    name: "Network Connectivity and Performance Validation"
+    mandatory_actions:
+      - "TEST network connectivity between all services"
+      - "VALIDATE network performance and latency requirements"
+      - "VERIFY load balancing and failover mechanisms"
+      - "CHECK network security and access controls"
+      - "TEST network monitoring and troubleshooting capabilities"
+
+    network_validation:
+      connectivity_testing:
+        - "TEST internal service-to-service communication"
+        - "VALIDATE external API and service connectivity"
+        - "CHECK database connection pooling and management"
+        - "VERIFY file storage access and performance"
+
+      performance_testing:
+        - "MEASURE network latency between services"
+        - "TEST network throughput and bandwidth utilization"
+        - "VALIDATE connection timeout and retry mechanisms"
+        - "CHECK network resource utilization and limits"
+
+      reliability_testing:
+        - "TEST network failover and recovery procedures"
+        - "VALIDATE load balancing and traffic distribution"
+        - "CHECK network monitoring and alerting"
+        - "VERIFY network backup and redundancy"
+
+  phase_7:
+    name: "Monitoring and Observability Setup Validation"
+    mandatory_actions:
+      - "VALIDATE monitoring system configuration and deployment"
+      - "VERIFY metrics collection and aggregation setup"
+      - "CHECK alerting rules and notification mechanisms"
+      - "TEST dashboard configuration and visualization"
+      - "VALIDATE logging system setup and retention"
+
+    monitoring_validation:
+      metrics_collection:
+        - "VALIDATE Prometheus configuration and scraping"
+        - "VERIFY custom metrics generation and collection"
+        - "CHECK metric retention and storage policies"
+        - "TEST metric aggregation and calculation rules"
+
+      alerting_systems:
+        - "VALIDATE alert rule configuration and evaluation"
+        - "VERIFY notification delivery mechanisms"
+        - "CHECK alert escalation and acknowledgment"
+        - "TEST alert correlation and deduplication"
+
+      visualization_systems:
+        - "VALIDATE Grafana dashboard configuration"
+        - "VERIFY real-time data visualization"
+        - "CHECK dashboard access controls and permissions"
+        - "TEST dashboard performance and responsiveness"
+
+  phase_8:
+    name: "Performance Baseline and Capacity Planning Validation"
+    mandatory_actions:
+      - "ESTABLISH performance baselines for all services"
+      - "VALIDATE capacity planning and resource scaling"
+      - "CHECK performance monitoring and profiling tools"
+      - "TEST load testing infrastructure and procedures"
+      - "VERIFY performance optimization and tuning capabilities"
+
+    performance_validation:
+      baseline_establishment:
+        - "MEASURE baseline response times for all services"
+        - "ESTABLISH throughput baselines and capacity limits"
+        - "DOCUMENT resource utilization patterns"
+        - "VALIDATE performance SLA and target definitions"
+
+      capacity_planning:
+        - "VALIDATE auto-scaling configuration and triggers"
+        - "CHECK resource allocation and limit enforcement"
+        - "TEST capacity expansion and contraction procedures"
+        - "VERIFY resource monitoring and alerting thresholds"
+
+      load_testing_setup:
+        - "VALIDATE load testing tool configuration"
+        - "CHECK test scenario and workload definitions"
+        - "VERIFY load testing data generation"
+        - "TEST load testing execution and reporting"
+
+  phase_9:
+    name: "Backup and Disaster Recovery Validation"
+    mandatory_actions:
+      - "VALIDATE backup system configuration and scheduling"
+      - "VERIFY backup data integrity and recovery procedures"
+      - "CHECK disaster recovery planning and execution"
+      - "TEST failover mechanisms and recovery time objectives"
+      - "VALIDATE business continuity and data protection"
+
+    backup_recovery_validation:
+      backup_systems:
+        - "VALIDATE automated backup scheduling and execution"
+        - "VERIFY backup data encryption and security"
+        - "CHECK backup retention and archival policies"
+        - "TEST backup restoration and verification procedures"
+
+      disaster_recovery:
+        - "VALIDATE disaster recovery plan documentation"
+        - "VERIFY failover procedures and automation"
+        - "CHECK recovery time objectives (RTO) and recovery point objectives (RPO)"
+        - "TEST disaster recovery simulation and validation"
+
+      business_continuity:
+        - "VALIDATE business continuity planning"
+        - "VERIFY critical system identification and prioritization"
+        - "CHECK communication and escalation procedures"
+        - "TEST business continuity plan execution"
+
+  phase_10:
+    name: "Prerequisites Validation Compilation and Readiness Certification"
+    mandatory_actions:
+      - "COMPILE comprehensive prerequisites validation results"
+      - "GENERATE validation matrices and readiness reports"
+      - "CREATE environment certification documentation"
+      - "DOCUMENT all validation failures and remediation"
+      - "PROVIDE final test environment readiness certification"
+
+    certification_requirements:
+      - "MANDATORY: Create all validation results in markdown document format"
+      - "MANDATORY: Include comprehensive validation matrices and metrics"
+      - "MANDATORY: Document all validation procedures and outcomes"
+      - "MANDATORY: Provide clear environment readiness certification"
+      - "FORBIDDEN: Incomplete or partial prerequisites validation"
+
+# Prerequisites Validation Criteria
+validation_criteria:
+  infrastructure_ready: "MANDATORY - All infrastructure components validated and operational"
+  services_operational: "MANDATORY - All services running and healthy with dependencies met"
+  environment_configured: "MANDATORY - Test environment properly configured and isolated"
+  data_prepared: "MANDATORY - All test data prepared, validated, and accessible"
+  security_configured: "MANDATORY - All security measures configured and verified"
+  network_validated: "MANDATORY - Network connectivity and performance validated"
+  monitoring_operational: "MANDATORY - All monitoring and observability systems active"
+  backup_recovery_ready: "MANDATORY - Backup and disaster recovery systems validated"
+  performance_baselined: "MANDATORY - Performance baselines established and documented"
+  certification_complete: "MANDATORY - Environment readiness certification provided"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL prerequisites validation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-192922"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all prerequisites validation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL validation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all validation outputs"
+    - "FORBIDDEN: Creating validation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same validation session"
+
+# Prerequisites Validation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DISCOVER and analyze infrastructure requirements ({{validation_scope}})"
+  - "2. VALIDATE service dependencies and execute health checks"
+  - "3. VERIFY test environment setup and configuration"
+  - "4. PREPARE and validate test data sources and quality"
+  - "5. CONFIGURE and validate security systems and access controls"
+  - "6. TEST network connectivity and performance validation"
+  - "7. SETUP and validate monitoring and observability systems"
+  - "8. ESTABLISH performance baselines and capacity planning"
+  - "9. VALIDATE backup and disaster recovery systems"
+  - "10. COMPILE comprehensive validation results and provide readiness certification"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each validation phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all validation tracking"
+  - "MANDATORY: Timestamp all validation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Infrastructure Validation Framework
+infrastructure_validation_framework:
+  hardware_requirements:
+    compute_resources:
+      - "CPU: Minimum 8 cores, recommended 16 cores"
+      - "Memory: Minimum 32GB, recommended 64GB"
+      - "Storage: Minimum 500GB SSD, recommended 1TB NVMe"
+      - "Network: Gigabit Ethernet, low latency"
+
+    capacity_planning:
+      - "Concurrent users: Support for 1000+ concurrent sessions"
+      - "Data throughput: Handle 10GB/hour data processing"
+      - "API requests: Support 10,000 requests/minute"
+      - "Storage growth: Plan for 100GB/month growth"
+
+  software_requirements:
+    operating_system:
+      - "Linux: Ubuntu 20.04+ or CentOS 8+"
+      - "Container runtime: Docker 20.10+ or containerd"
+      - "Orchestration: Kubernetes 1.21+ or Docker Compose"
+      - "Security: SELinux or AppArmor enabled"
+
+    development_tools:
+      - "Version control: Git 2.30+"
+      - "Build tools: Make, npm, Python 3.9+"
+      - "Monitoring: Prometheus, Grafana"
+      - "Logging: ELK stack or equivalent"
+
+# Service Dependency Matrix
+service_dependency_matrix:
+  core_services:
+    n8n_orchestration:
+      dependencies: ["PostgreSQL", "Redis", "API Gateway"]
+      health_check: "GET /healthz"
+      startup_time: "< 30 seconds"
+      resource_requirements: "2 CPU, 4GB RAM"
+
+    postgresql_database:
+      dependencies: ["Storage", "Network"]
+      health_check: "SELECT 1"
+      startup_time: "< 15 seconds"
+      resource_requirements: "2 CPU, 8GB RAM, 100GB storage"
+
+    neo4j_graph:
+      dependencies: ["Storage", "Network"]
+      health_check: "CALL dbms.components()"
+      startup_time: "< 20 seconds"
+      resource_requirements: "2 CPU, 4GB RAM, 50GB storage"
+
+    qdrant_vectors:
+      dependencies: ["Storage", "Network"]
+      health_check: "GET /collections"
+      startup_time: "< 10 seconds"
+      resource_requirements: "1 CPU, 2GB RAM, 20GB storage"
+
+  supporting_services:
+    lightrag_processing:
+      dependencies: ["Qdrant", "Neo4j", "MinIO"]
+      health_check: "GET /health"
+      startup_time: "< 25 seconds"
+      resource_requirements: "4 CPU, 8GB RAM"
+
+    minio_storage:
+      dependencies: ["Storage", "Network"]
+      health_check: "GET /minio/health/ready"
+      startup_time: "< 10 seconds"
+      resource_requirements: "1 CPU, 1GB RAM, 200GB storage"
+
+# Test Data Requirements
+test_data_requirements:
+  data_categories:
+    user_data:
+      - "Test users: 1000 synthetic user profiles"
+      - "Authentication tokens: Valid/invalid token sets"
+      - "User permissions: Role-based access scenarios"
+      - "User sessions: Session management test data"
+
+    business_data:
+      - "Workflows: 100 sample workflow definitions"
+      - "Documents: 500 test documents (various formats)"
+      - "Metrics: Historical performance data"
+      - "Configuration: Service configuration templates"
+
+    test_scenarios:
+      - "Load testing: Synthetic load generation data"
+      - "Security testing: Penetration testing payloads"
+      - "Integration testing: API request/response pairs"
+      - "Performance testing: Benchmark datasets"
+
+# Security Configuration Requirements
+security_configuration_requirements:
+  authentication_systems:
+    oauth_configuration:
+      - "OAuth 2.0 provider: Configured and operational"
+      - "JWT token validation: Properly configured"
+      - "Token expiration: 1 hour access, 24 hour refresh"
+      - "Token rotation: Automated rotation enabled"
+
+    api_security:
+      - "API key management: Secure key generation and storage"
+      - "Rate limiting: 100 requests/minute per user"
+      - "CORS policy: Restrictive origin policies"
+      - "Input validation: Comprehensive input sanitization"
+
+  authorization_controls:
+    rbac_configuration:
+      - "Roles: Admin, User, Guest with defined permissions"
+      - "Resources: All APIs and data access controlled"
+      - "Permissions: Least privilege principle enforced"
+      - "Audit logging: All access attempts logged"
+
+# Network Configuration Requirements
+network_configuration_requirements:
+  internal_networking:
+    service_mesh:
+      - "Service discovery: Automatic service registration"
+      - "Load balancing: Round-robin with health checks"
+      - "Circuit breaker: Hystrix or equivalent"
+      - "Timeout configuration: 30s connection, 60s read"
+
+    security_groups:
+      - "Database access: Only from application services"
+      - "External access: Only through API gateway"
+      - "Admin access: VPN or bastion host only"
+      - "Monitoring access: Prometheus scraping allowed"
+
+  external_connectivity:
+    api_gateway:
+      - "Public endpoints: Rate limited and authenticated"
+      - "Health checks: Public health endpoint available"
+      - "SSL/TLS: Certificate-based encryption"
+      - "DDoS protection: CloudFlare or equivalent"
+
+# Monitoring Setup Requirements
+monitoring_setup_requirements:
+  metrics_collection:
+    prometheus_configuration:
+      - "Scraping interval: 15 seconds"
+      - "Retention: 30 days local, 1 year remote"
+      - "Alerting rules: Critical and warning thresholds"
+      - "Service discovery: Kubernetes or static configuration"
+
+    custom_metrics:
+      - "Business metrics: User signups, workflow executions"
+      - "Performance metrics: Response times, throughput"
+      - "Error metrics: Error rates, exception counts"
+      - "Resource metrics: CPU, memory, disk, network"
+
+  visualization_setup:
+    grafana_configuration:
+      - "Dashboards: Application, infrastructure, business"
+      - "Alerting: Integration with PagerDuty or Slack"
+      - "User access: Role-based dashboard access"
+      - "Data sources: Prometheus, Loki, Jaeger"
+
+# Performance Baseline Requirements
+performance_baseline_requirements:
+  response_time_targets:
+    api_endpoints:
+      - "Authentication: < 200ms"
+      - "Data retrieval: < 500ms"
+      - "Data creation: < 1000ms"
+      - "Complex queries: < 2000ms"
+
+    workflow_execution:
+      - "Simple workflows: < 5 seconds"
+      - "Complex workflows: < 30 seconds"
+      - "Batch processing: < 5 minutes/1000 items"
+      - "Report generation: < 10 seconds"
+
+  throughput_targets:
+    concurrent_users:
+      - "Normal load: 500 concurrent users"
+      - "Peak load: 1000 concurrent users"
+      - "Stress test: 2000 concurrent users"
+      - "Recovery: < 2 minutes after load reduction"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL prerequisites validation MUST be comprehensive and complete"
+    - "ALL service dependencies MUST be verified and documented"
+    - "ALL infrastructure requirements MUST be met and validated"
+    - "ALL security configurations MUST be verified and tested"
+    - "ALL test data MUST be prepared and validated"
+    - "ALL monitoring systems MUST be operational"
+    - "ALWAYS use systematic validation methodology"
+    - "NEVER proceed without complete validation"
+
+  strictly_forbidden:
+    - "Executing actual deployment commands or system changes"
+    - "Modifying production systems or configurations"
+    - "Proceeding with incomplete validation"
+    - "Skipping critical prerequisite checks"
+    - "Missing security configuration validation"
+    - "Incomplete service dependency verification"
+    - "Proceeding without proper monitoring setup"
+    - "Validation without proper documentation"

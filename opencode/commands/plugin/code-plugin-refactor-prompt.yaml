@@ -1,0 +1,448 @@
+# === MCP PROMPT: Plugin Refactoring Protocol ===
+name: "code-plugin-refactor-prompt"
+version: "1.0.0"
+description: "Comprehensive plugin architecture refactoring protocol for systematic transformation from monolithic to modular plugin-based systems"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Plugin Architecture Refactoring"
+  description: "Execute exhaustive refactoring of production code to plugin architecture with mandatory preservation of functionality and quality improvement"
+
+  # Argument Schema
+  arguments:
+    refactoring_target:
+      type: "string"
+      description: "Target component or module to refactor to plugin architecture"
+      required: true
+
+    transformation_approach:
+      type: "string"
+      description: "Refactoring transformation approach"
+      required: true
+      enum: ["gradual", "aggressive", "conservative"]
+
+    plugin_granularity:
+      type: "string"
+      description: "Granularity of plugin decomposition"
+      required: false
+      enum: ["fine", "medium", "coarse"]
+
+    isolation_level:
+      type: "string"
+      description: "Plugin isolation strictness"
+      required: false
+      enum: ["strict", "moderate", "minimal"]
+
+    hot_loading_strategy:
+      type: "string"
+      description: "Hot-loading implementation strategy"
+      required: false
+      enum: ["full", "partial", "none"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI plugin refactoring specialist executing the Plugin Architecture Refactoring Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow systematic refactoring methodology
+        - Transform monolithic code TO plugin architecture
+        - Preserve ALL existing functionality
+        - Maintain production-ready quality
+        - Transform code in-place only
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code
+        - Creating duplicate files or backups
+        - Breaking existing functionality
+        - Creating placeholder implementations
+        - Leaving code in transitional state
+        - Making incomplete transformations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PLUGIN REFACTORING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **REFACTORING PARAMETERS:**
+        - Refactoring Target: {{refactoring_target}}
+        - Transformation Approach: {{transformation_approach}}
+        - Plugin Granularity: {{plugin_granularity}}
+        - Isolation Level: {{isolation_level}}
+        - Hot-Loading Strategy: {{hot_loading_strategy}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PLUGIN REFACTORING PROTOCOL:**
+
+# Plugin Refactoring Protocol Configuration
+refactoring_protocol:
+  # Refactoring Scope - MANDATORY TRANSFORMATION COVERAGE
+  refactoring_focus:
+    monolith_decomposition: true # MUST break monoliths
+    interface_extraction: true # MUST extract interfaces
+    registry_implementation: true # MUST add registry
+    hot_loading_addition: true # MUST enable hot-loading
+    isolation_creation: true # MUST add isolation
+    extension_points: true # MUST create hooks
+    lifecycle_management: true # MUST add lifecycle
+    communication_patterns: true # MUST establish communication
+    functionality_preservation: true # MUST preserve behavior
+    production_code_only: true # STRICTLY production code
+    in_place_transformation: true # MUST transform existing
+
+  # Refactoring Configuration - MANDATORY SETTINGS
+  refactoring_settings:
+    systematic_transformation: true
+    incremental_changes: true
+    validation_at_each_step: true
+    quality_improvement: true
+    clean_codebase_maintenance: true
+    no_duplicate_files: true
+    systematic_approach: true # MANDATORY: Systematic refactoring
+    production_standards: true # MANDATORY: Production quality
+    complete_transformation: true # MANDATORY: Full refactoring
+    professional_quality: true # MANDATORY: Enterprise standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Refactoring Analysis and Planning"
+    mandatory_actions:
+      - "ANALYZE target component architecture"
+      - "IDENTIFY monolithic structures"
+      - "MAP component dependencies"
+      - "PLAN plugin boundaries"
+      - "DESIGN transformation strategy"
+
+    planning_requirements:
+      - "MANDATORY: Complete component analysis"
+      - "MANDATORY: Dependency mapping"
+      - "MANDATORY: Transformation strategy"
+      - "FORBIDDEN: Incomplete planning"
+
+  phase_2:
+    name: "Plugin Interface Extraction"
+    mandatory_actions:
+      - "EXTRACT common interfaces from components"
+      - "DEFINE plugin contracts"
+      - "CREATE lifecycle method signatures"
+      - "ESTABLISH metadata structures"
+      - "DESIGN communication interfaces"
+
+    interface_extraction:
+      contract_definition:
+        - "EXTRACT plugin base interfaces"
+        - "DEFINE required methods"
+        - "SPECIFY optional extensions"
+        - "CREATE type definitions"
+
+      lifecycle_interfaces:
+        - "DEFINE initialization interface"
+        - "CREATE activation methods"
+        - "SPECIFY deactivation logic"
+        - "ESTABLISH cleanup contracts"
+
+      communication_interfaces:
+        - "DEFINE event interfaces"
+        - "CREATE message contracts"
+        - "SPECIFY data exchange formats"
+        - "ESTABLISH protocol standards"
+
+  phase_3:
+    name: "Component Decomposition"
+    mandatory_actions:
+      - "DECOMPOSE monolithic components"
+      - "EXTRACT plugin modules"
+      - "SEPARATE concerns into plugins"
+      - "ISOLATE functionality"
+      - "MAINTAIN behavioral equivalence"
+
+    decomposition_strategy:
+      module_extraction:
+        - "IDENTIFY cohesive units"
+        - "EXTRACT as plugins"
+        - "MAINTAIN interfaces"
+        - "PRESERVE behavior"
+
+      dependency_breaking:
+        - "IDENTIFY tight coupling"
+        - "INTRODUCE abstractions"
+        - "INJECT dependencies"
+        - "ELIMINATE circular deps"
+
+      state_management:
+        - "ISOLATE plugin state"
+        - "DEFINE state interfaces"
+        - "IMPLEMENT state preservation"
+        - "ENABLE state migration"
+
+  phase_4:
+    name: "Registry Integration Implementation"
+    mandatory_actions:
+      - "IMPLEMENT plugin registry"
+      - "CREATE discovery mechanisms"
+      - "ADD registration logic"
+      - "ESTABLISH metadata management"
+      - "ENABLE query capabilities"
+
+    registry_implementation:
+      registry_core:
+        - "CREATE registry service"
+        - "IMPLEMENT storage backend"
+        - "ADD indexing logic"
+        - "ENABLE search capabilities"
+
+      plugin_registration:
+        - "IMPLEMENT registration API"
+        - "ADD validation logic"
+        - "CREATE conflict resolution"
+        - "ENABLE versioning"
+
+      discovery_mechanisms:
+        - "IMPLEMENT auto-discovery"
+        - "CREATE scanning logic"
+        - "ADD filtering capabilities"
+        - "ENABLE dynamic loading"
+
+  phase_5:
+    name: "Hot-Loading Implementation"
+    mandatory_actions:
+      - "IMPLEMENT runtime loading"
+      - "CREATE safe unloading"
+      - "ADD state preservation"
+      - "ENABLE zero-downtime swapping"
+      - "IMPLEMENT rollback mechanisms"
+
+    hot_loading_features:
+      runtime_loading:
+        - "IMPLEMENT dynamic loading"
+        - "CREATE module isolation"
+        - "ADD dependency injection"
+        - "ENABLE lazy initialization"
+
+      safe_unloading:
+        - "IMPLEMENT graceful shutdown"
+        - "ADD resource cleanup"
+        - "PRESERVE plugin state"
+        - "ENABLE safe disposal"
+
+      version_management:
+        - "IMPLEMENT version checking"
+        - "ADD compatibility validation"
+        - "CREATE migration paths"
+        - "ENABLE rollback support"
+
+  phase_6:
+    name: "Plugin Isolation Creation"
+    mandatory_actions:
+      - "IMPLEMENT namespace isolation"
+      - "CREATE security boundaries"
+      - "ADD resource restrictions"
+      - "ESTABLISH permission systems"
+      - "ENABLE sandboxing"
+
+    isolation_implementation:
+      namespace_isolation:
+        - "CREATE plugin namespaces"
+        - "ISOLATE global state"
+        - "PREVENT cross-pollution"
+        - "ENFORCE boundaries"
+
+      security_boundaries:
+        - "IMPLEMENT sandboxing"
+        - "ADD permission checks"
+        - "CREATE capability limits"
+        - "ENFORCE restrictions"
+
+      resource_control:
+        - "LIMIT resource usage"
+        - "ADD quota management"
+        - "IMPLEMENT throttling"
+        - "ENABLE monitoring"
+
+  phase_7:
+    name: "Extension Points Creation"
+    mandatory_actions:
+      - "CREATE hook systems"
+      - "IMPLEMENT filter chains"
+      - "ADD event dispatchers"
+      - "ESTABLISH middleware stacks"
+      - "ENABLE pipeline processing"
+
+    extension_mechanisms:
+      hook_system:
+        - "CREATE hook registry"
+        - "IMPLEMENT hook execution"
+        - "ADD priority management"
+        - "ENABLE conditional hooks"
+
+      event_system:
+        - "IMPLEMENT event bus"
+        - "CREATE subscription management"
+        - "ADD event filtering"
+        - "ENABLE async events"
+
+      middleware_system:
+        - "CREATE middleware stack"
+        - "IMPLEMENT chain execution"
+        - "ADD error handling"
+        - "ENABLE composition"
+
+  phase_8:
+    name: "Communication Pattern Establishment"
+    mandatory_actions:
+      - "IMPLEMENT inter-plugin messaging"
+      - "CREATE event-driven communication"
+      - "ADD service discovery"
+      - "ESTABLISH RPC mechanisms"
+      - "ENABLE broadcast patterns"
+
+    communication_implementation:
+      messaging_system:
+        - "CREATE message router"
+        - "IMPLEMENT serialization"
+        - "ADD validation logic"
+        - "ENABLE persistence"
+
+      event_communication:
+        - "IMPLEMENT pub-sub"
+        - "CREATE event routing"
+        - "ADD filtering logic"
+        - "ENABLE replay"
+
+      service_discovery:
+        - "CREATE service registry"
+        - "IMPLEMENT lookup logic"
+        - "ADD health checking"
+        - "ENABLE load balancing"
+
+  phase_9:
+    name: "Validation and Quality Assurance"
+    mandatory_actions:
+      - "VALIDATE functionality preservation"
+      - "VERIFY plugin contracts"
+      - "CHECK isolation effectiveness"
+      - "TEST hot-loading capabilities"
+      - "CONFIRM quality improvements"
+
+    validation_requirements:
+      functionality_validation:
+        - "VERIFY behavioral equivalence"
+        - "CHECK feature completeness"
+        - "VALIDATE data integrity"
+        - "CONFIRM compatibility"
+
+      quality_validation:
+        - "MEASURE modularity improvement"
+        - "CHECK coupling reduction"
+        - "VERIFY cohesion increase"
+        - "ASSESS maintainability"
+
+      performance_validation:
+        - "MEASURE overhead"
+        - "CHECK scalability"
+        - "VERIFY efficiency"
+        - "ASSESS resource usage"
+
+  phase_10:
+    name: "Refactoring Documentation and Completion"
+    mandatory_actions:
+      - "DOCUMENT transformation changes"
+      - "CREATE plugin documentation"
+      - "GENERATE migration guides"
+      - "PRODUCE quality reports"
+      - "DELIVER markdown documents"
+
+    documentation_requirements:
+      - "MANDATORY: Complete change documentation"
+      - "MANDATORY: Plugin usage guides"
+      - "MANDATORY: API documentation"
+      - "MANDATORY: Quality metrics"
+      - "FORBIDDEN: Incomplete documentation"
+
+# Refactoring Validation Criteria
+validation_criteria:
+  monoliths_decomposed: "MANDATORY - All monolithic code transformed"
+  interfaces_extracted: "MANDATORY - All plugin interfaces defined"
+  registry_implemented: "MANDATORY - Registry fully functional"
+  hot_loading_enabled: "MANDATORY - Hot-loading operational"
+  isolation_established: "MANDATORY - Plugin isolation active"
+  extensions_created: "MANDATORY - Extension points available"
+  communication_working: "MANDATORY - Inter-plugin communication"
+  functionality_preserved: "MANDATORY - All features intact"
+  quality_improved: "MANDATORY - Measurable improvements"
+  documentation_complete: "MANDATORY - All docs delivered"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL refactoring output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "Refactoring_Report_{{YYYYMMDD-HHMMSS}}.ipynb (refactoring report)"
+    - "Regression_Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (regression test results)"
+    - "Quality_Improvement_{{YYYYMMDD-HHMMSS}}.ipynb (quality improvement)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all refactoring output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL refactoring deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all refactoring outputs"
+    - "FORBIDDEN: Creating refactoring files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same refactoring session"
+
+# Refactoring Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE ({{refactoring_target}}) for plugin transformation potential"
+  - "2. EXTRACT interfaces using ({{transformation_approach}}) approach"
+  - "3. DECOMPOSE components to ({{plugin_granularity}}) granularity"
+  - "4. IMPLEMENT registry with discovery mechanisms"
+  - "5. ADD hot-loading with ({{hot_loading_strategy}}) strategy"
+  - "6. CREATE isolation at ({{isolation_level}}) level"
+  - "7. ESTABLISH extension points and hooks"
+  - "8. IMPLEMENT inter-plugin communication"
+  - "9. VALIDATE functionality preservation"
+  - "10. DOCUMENT refactoring with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each refactoring phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all refactoring tracking"
+  - "MANDATORY: Timestamp all refactoring deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL monolithic code MUST be transformed"
+    - "ALL functionality MUST be preserved"
+    - "ALL interfaces MUST be extracted"
+    - "ALL plugins MUST be isolated"
+    - "ALL changes MUST be validated"
+    - "ALL code MUST remain production-ready"
+    - "ALWAYS transform in-place"
+    - "NEVER create duplicate files"
+
+  strictly_forbidden:
+    - "Creating test code"
+    - "Breaking functionality"
+    - "Creating backup files"
+    - "Leaving incomplete transformations"
+    - "Creating placeholder code"
+    - "Skipping validation"
+    - "Making non-atomic changes"
+    - "Creating transitional states"

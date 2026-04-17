@@ -1,0 +1,448 @@
+# === MCP PROMPT: Python Code Refactoring Protocol ===
+name: "python-code-refactor-prompt"
+version: "1.0.0"
+description: "Comprehensive Python code refactoring protocol for systematic quality improvement, SOLID principles application, and code modernization"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Code Refactoring"
+  description: "Execute exhaustive refactoring of Python production code with SOLID principles, design patterns, and modernization while preserving functionality"
+
+  # Argument Schema
+  arguments:
+    refactoring_target:
+      type: "string"
+      description: "Target Python module or package to refactor"
+      required: true
+
+    refactoring_approach:
+      type: "string"
+      description: "Refactoring transformation approach"
+      required: true
+      enum: ["gradual", "aggressive", "conservative"]
+
+    pattern_application:
+      type: "string"
+      description: "Primary refactoring pattern focus"
+      required: false
+      enum: ["SOLID", "design-patterns", "pythonic", "performance"]
+
+    modernization_level:
+      type: "string"
+      description: "Python modernization depth"
+      required: false
+      enum: ["full", "partial", "minimal"]
+
+    type_annotation_strategy:
+      type: "string"
+      description: "Type annotation coverage strategy"
+      required: false
+      enum: ["comprehensive", "essential", "minimal"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Python refactoring specialist executing the Python Code Refactoring Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow systematic refactoring methodology
+        - Apply SOLID principles comprehensively
+        - Implement appropriate design patterns
+        - Modernize code to Python 3.11+ standards
+        - Transform code in-place only
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code
+        - Creating duplicate files or backups
+        - Breaking existing functionality
+        - Creating placeholder implementations
+        - Leaving code in transitional state
+        - Making incomplete transformations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PYTHON REFACTORING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **REFACTORING PARAMETERS:**
+        - Refactoring Target: {{refactoring_target}}
+        - Refactoring Approach: {{refactoring_approach}}
+        - Pattern Application: {{pattern_application}}
+        - Modernization Level: {{modernization_level}}
+        - Type Annotation Strategy: {{type_annotation_strategy}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PYTHON REFACTORING PROTOCOL:**
+
+# Python Refactoring Protocol Configuration
+refactoring_protocol:
+  # Refactoring Scope - MANDATORY TRANSFORMATION COVERAGE
+  refactoring_focus:
+    solid_principles: true # MUST apply SOLID principles
+    design_patterns: true # MUST implement appropriate patterns
+    code_modernization: true # MUST modernize to Python 3.11+
+    type_annotations: true # MUST add type hints
+    code_smell_elimination: true # MUST remove code smells
+    performance_optimization: true # MUST optimize algorithms
+    pythonic_idioms: true # MUST apply Python best practices
+    async_await_migration: true # MUST modernize concurrency
+    functionality_preservation: true # MUST preserve behavior
+    production_code_only: true # STRICTLY production code
+    in_place_transformation: true # MUST transform existing
+
+  # Refactoring Configuration - MANDATORY SETTINGS
+  refactoring_settings:
+    systematic_transformation: true
+    incremental_changes: true
+    validation_at_each_step: true
+    quality_improvement: true
+    clean_codebase_maintenance: true
+    no_duplicate_files: true
+    pep8_compliance: true # MANDATORY: PEP 8 style guide
+    type_safety: true # MANDATORY: Type annotations
+    modern_python: true # MANDATORY: Python 3.11+ features
+    professional_quality: true # MANDATORY: Enterprise standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Code Analysis and Refactoring Planning"
+    mandatory_actions:
+      - "ANALYZE Python code structure and quality"
+      - "IDENTIFY code smells and anti-patterns"
+      - "MAP module dependencies and coupling"
+      - "ASSESS SOLID principle violations"
+      - "DESIGN refactoring strategy"
+
+    planning_requirements:
+      - "MANDATORY: Complete code quality analysis"
+      - "MANDATORY: Dependency and coupling assessment"
+      - "MANDATORY: Refactoring strategy documentation"
+      - "FORBIDDEN: Incomplete planning"
+
+  phase_2:
+    name: "SOLID Principles Application"
+    mandatory_actions:
+      - "APPLY Single Responsibility Principle"
+      - "IMPLEMENT Open-Closed Principle"
+      - "ENFORCE Liskov Substitution Principle"
+      - "APPLY Interface Segregation Principle"
+      - "IMPLEMENT Dependency Inversion Principle"
+
+    solid_transformations:
+      single_responsibility:
+        - "EXTRACT classes with single purpose"
+        - "SEPARATE concerns into modules"
+        - "REMOVE mixed responsibilities"
+        - "CREATE focused functions"
+
+      open_closed:
+        - "IMPLEMENT extension points"
+        - "CREATE abstract base classes"
+        - "USE dependency injection"
+        - "ESTABLISH plugin patterns"
+
+      dependency_inversion:
+        - "DEFINE abstract interfaces"
+        - "INJECT dependencies"
+        - "REMOVE concrete couplings"
+        - "IMPLEMENT IoC patterns"
+
+  phase_3:
+    name: "Design Pattern Implementation"
+    mandatory_actions:
+      - "IDENTIFY applicable design patterns"
+      - "IMPLEMENT Factory patterns where needed"
+      - "APPLY Strategy pattern for algorithms"
+      - "USE Observer pattern for events"
+      - "IMPLEMENT Repository pattern for data"
+
+    pattern_applications:
+      creational_patterns:
+        - "IMPLEMENT Factory Method"
+        - "APPLY Abstract Factory"
+        - "USE Builder pattern"
+        - "IMPLEMENT Singleton carefully"
+
+      structural_patterns:
+        - "APPLY Adapter pattern"
+        - "IMPLEMENT Decorator pattern"
+        - "USE Facade for complexity"
+        - "APPLY Proxy pattern"
+
+      behavioral_patterns:
+        - "IMPLEMENT Strategy pattern"
+        - "APPLY Observer pattern"
+        - "USE Command pattern"
+        - "IMPLEMENT Iterator pattern"
+
+  phase_4:
+    name: "Code Modernization and Python 3.11+ Features"
+    mandatory_actions:
+      - "MIGRATE legacy Python 2 code"
+      - "IMPLEMENT async/await patterns"
+      - "USE dataclasses and attrs"
+      - "APPLY f-strings consistently"
+      - "UTILIZE match/case statements"
+
+    modernization_tasks:
+      python3_migration:
+        - "CONVERT print statements to functions"
+        - "UPDATE string formatting"
+        - "MIGRATE dict methods"
+        - "FIX encoding issues"
+
+      async_implementation:
+        - "CONVERT callbacks to async/await"
+        - "IMPLEMENT asyncio patterns"
+        - "USE async context managers"
+        - "APPLY async generators"
+
+      modern_features:
+        - "USE walrus operator (:=)"
+        - "APPLY structural pattern matching"
+        - "IMPLEMENT type unions"
+        - "USE positional-only parameters"
+
+  phase_5:
+    name: "Type Annotation and Type Safety"
+    mandatory_actions:
+      - "ADD comprehensive type hints"
+      - "IMPLEMENT Protocol classes"
+      - "USE TypedDict for structures"
+      - "APPLY Generic types appropriately"
+      - "VALIDATE with mypy"
+
+    type_safety_implementation:
+      basic_annotations:
+        - "ADD function parameter types"
+        - "SPECIFY return types"
+        - "ANNOTATE class attributes"
+        - "TYPE module-level variables"
+
+      advanced_typing:
+        - "IMPLEMENT Protocol classes"
+        - "USE TypeVar for generics"
+        - "APPLY Union and Optional"
+        - "CREATE type aliases"
+
+      validation:
+        - "RUN mypy strict mode"
+        - "FIX type inconsistencies"
+        - "ADD type ignore comments sparingly"
+        - "VALIDATE runtime types"
+
+  phase_6:
+    name: "Code Smell Elimination"
+    mandatory_actions:
+      - "ELIMINATE long methods"
+      - "REFACTOR large classes"
+      - "REMOVE duplicate code"
+      - "FIX inappropriate intimacy"
+      - "RESOLVE feature envy"
+
+    smell_elimination:
+      method_refactoring:
+        - "EXTRACT methods from long functions"
+        - "COMPOSE methods effectively"
+        - "REMOVE dead code"
+        - "SIMPLIFY complex conditionals"
+
+      class_refactoring:
+        - "EXTRACT classes from large ones"
+        - "MOVE methods to appropriate classes"
+        - "REMOVE god objects"
+        - "APPLY single responsibility"
+
+      duplication_removal:
+        - "EXTRACT common code"
+        - "CREATE utility functions"
+        - "IMPLEMENT DRY principle"
+        - "USE inheritance appropriately"
+
+  phase_7:
+    name: "Performance Optimization"
+    mandatory_actions:
+      - "OPTIMIZE algorithm complexity"
+      - "IMPLEMENT caching strategies"
+      - "USE efficient data structures"
+      - "APPLY lazy evaluation"
+      - "OPTIMIZE database queries"
+
+    optimization_strategies:
+      algorithm_optimization:
+        - "REDUCE time complexity"
+        - "OPTIMIZE space usage"
+        - "USE appropriate algorithms"
+        - "IMPLEMENT memoization"
+
+      caching_implementation:
+        - "ADD functools.lru_cache"
+        - "IMPLEMENT custom caching"
+        - "USE Redis for distributed cache"
+        - "APPLY cache invalidation"
+
+      data_structure_optimization:
+        - "USE collections.deque for queues"
+        - "APPLY sets for membership tests"
+        - "USE generators for memory efficiency"
+        - "IMPLEMENT __slots__ for classes"
+
+  phase_8:
+    name: "Pythonic Idioms and Best Practices"
+    mandatory_actions:
+      - "APPLY Python idioms consistently"
+      - "USE context managers appropriately"
+      - "IMPLEMENT properties instead of getters/setters"
+      - "APPLY list comprehensions effectively"
+      - "USE pathlib for file operations"
+
+    pythonic_transformations:
+      idiom_application:
+        - "USE enumerate instead of range(len())"
+        - "APPLY zip for parallel iteration"
+        - "USE unpacking effectively"
+        - "IMPLEMENT truthiness correctly"
+
+      context_managers:
+        - "IMPLEMENT __enter__ and __exit__"
+        - "USE contextlib utilities"
+        - "CREATE custom context managers"
+        - "APPLY with statements"
+
+      comprehensions:
+        - "USE list comprehensions"
+        - "APPLY generator expressions"
+        - "IMPLEMENT dict comprehensions"
+        - "USE set comprehensions"
+
+  phase_9:
+    name: "Quality Validation and Compliance"
+    mandatory_actions:
+      - "VALIDATE functionality preservation"
+      - "VERIFY PEP 8 compliance"
+      - "CHECK type safety with mypy"
+      - "RUN performance benchmarks"
+      - "CONFIRM quality improvements"
+
+    validation_requirements:
+      functionality_validation:
+        - "VERIFY behavioral equivalence"
+        - "CHECK feature completeness"
+        - "VALIDATE data integrity"
+        - "CONFIRM backward compatibility"
+
+      quality_validation:
+        - "RUN ruff for style checking"
+        - "APPLY black formatting"
+        - "CHECK mypy strict mode"
+        - "MEASURE cyclomatic complexity"
+
+      performance_validation:
+        - "BENCHMARK execution time"
+        - "PROFILE memory usage"
+        - "CHECK algorithm complexity"
+        - "VALIDATE optimization gains"
+
+  phase_10:
+    name: "Refactoring Documentation and Completion"
+    mandatory_actions:
+      - "DOCUMENT refactoring changes"
+      - "UPDATE module docstrings"
+      - "GENERATE type stubs if needed"
+      - "PRODUCE quality reports"
+      - "DELIVER markdown documents"
+
+    documentation_requirements:
+      - "MANDATORY: Complete change documentation"
+      - "MANDATORY: Updated API documentation"
+      - "MANDATORY: Type annotation docs"
+      - "MANDATORY: Quality metrics"
+      - "FORBIDDEN: Incomplete documentation"
+
+# Refactoring Validation Criteria
+validation_criteria:
+  solid_applied: "MANDATORY - All SOLID principles implemented"
+  patterns_implemented: "MANDATORY - Design patterns appropriately used"
+  code_modernized: "MANDATORY - Python 3.11+ features utilized"
+  type_safety_achieved: "MANDATORY - Comprehensive type annotations"
+  smells_eliminated: "MANDATORY - Code smells removed"
+  performance_optimized: "MANDATORY - Measurable performance gains"
+  pythonic_code: "MANDATORY - Python idioms consistently applied"
+  functionality_preserved: "MANDATORY - All features intact"
+  quality_improved: "MANDATORY - Code quality metrics improved"
+  documentation_complete: "MANDATORY - All docs delivered"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL refactoring output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "./project/docs/python-development/Refactoring_Plan-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive refactoring analysis)"
+    - "./project/docs/python-development/Implementation_Guide-{{YYYY-MM-DD-HHMMSS}}.md (refactoring steps and patterns)"
+    - "./project/docs/python-development/Validation_Report-{{YYYY-MM-DD-HHMMSS}}.md (testing and validation results)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all refactoring output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL refactoring deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all refactoring outputs"
+    - "FORBIDDEN: Creating refactoring files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same refactoring session"
+
+# Refactoring Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE ({{refactoring_target}}) for refactoring opportunities"
+  - "2. APPLY SOLID principles using ({{refactoring_approach}}) approach"
+  - "3. IMPLEMENT design patterns based on ({{pattern_application}}) focus"
+  - "4. MODERNIZE code to ({{modernization_level}}) level"
+  - "5. ADD type annotations with ({{type_annotation_strategy}}) coverage"
+  - "6. ELIMINATE code smells systematically"
+  - "7. OPTIMIZE performance and algorithms"
+  - "8. APPLY Pythonic idioms and best practices"
+  - "9. VALIDATE functionality preservation and quality"
+  - "10. DOCUMENT refactoring with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each refactoring phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all refactoring tracking"
+  - "MANDATORY: Timestamp all refactoring deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL SOLID principles MUST be applied"
+    - "ALL functionality MUST be preserved"
+    - "ALL code MUST be modernized to Python 3.11+"
+    - "ALL type annotations MUST be added"
+    - "ALL changes MUST be validated"
+    - "ALL code MUST remain production-ready"
+    - "ALWAYS transform in-place"
+    - "NEVER create duplicate files"
+
+  strictly_forbidden:
+    - "Creating test code"
+    - "Breaking functionality"
+    - "Creating backup files"
+    - "Leaving incomplete transformations"
+    - "Creating placeholder code"
+    - "Skipping validation"
+    - "Making non-atomic changes"
+    - "Creating transitional states"

@@ -1,0 +1,543 @@
+# === MCP PROMPT: Code Refactoring Protocol ===
+name: "code-refactor-prompt"
+version: "1.0.0"
+description: "AI-driven exhaustive production code refactoring and improvement protocol"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Refactoring"
+  description: "Execute comprehensive refactoring of production code following SOLID, DRY, and KISS principles while maintaining functionality"
+
+  # Argument Schema
+  arguments:
+    refactoring_target:
+      type: "string"
+      description: "Target for refactoring (all findings, specific component, or focus area)"
+      required: true
+
+    refactoring_scope:
+      type: "string"
+      description: "Scope of refactoring"
+      required: false
+      enum:
+        [
+          "comprehensive",
+          "quality-focused",
+          "performance",
+          "security",
+          "solid-principles",
+          "dry-principle",
+          "kiss-principle",
+          "structure",
+          "naming",
+        ]
+
+    review_findings:
+      type: "string"
+      description: "Path to review findings or gap analysis results"
+      required: false
+
+    priority_level:
+      type: "string"
+      description: "Priority level for refactoring"
+      required: false
+      enum: ["critical", "high", "medium", "low", "all"]
+
+    validation_strategy:
+      type: "string"
+      description: "Validation approach for refactoring"
+      required: false
+      enum: ["comprehensive", "incremental", "continuous", "final"]
+
+    preserve_behavior:
+      type: "boolean"
+      description: "Strict requirement to preserve existing behavior"
+      required: false
+      default: true
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI refactoring specialist executing the Code Refactoring Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow exhaustive refactoring methodology
+        - Apply SOLID, DRY, KISS principles throughout
+        - Maintain existing functionality strictly
+        - Refactor code in-place (no duplicates)
+        - Delete all transient files and scripts
+        - Use systematic change approach
+        - Improve code quality comprehensively
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code or test scripts
+        - Writing external documentation
+        - Creating duplicate or backup files
+        - Breaking existing functionality
+        - Leaving temporary files or debug code
+        - Making mixed-purpose changes
+        - Creating custom fix scripts
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE REFACTORING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **REFACTORING PARAMETERS:**
+        - Refactoring Target: {{refactoring_target}}
+        - Refactoring Scope: {{refactoring_scope}}
+        - Review Findings: {{review_findings}}
+        - Priority Level: {{priority_level}}
+        - Validation Strategy: {{validation_strategy}}
+        - Preserve Behavior: {{preserve_behavior}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING REFACTORING PROTOCOL:**
+
+# Refactoring Protocol Configuration
+refactoring_protocol:
+  # Refactoring Scope - MANDATORY EXHAUSTIVE COVERAGE
+  refactoring_focus:
+    production_code_only: true # MUST refactor ONLY production code
+    fix_all_gaps: true # MUST fix ALL identified gaps
+    improve_all_quality: true # MUST improve ALL quality issues
+    optimize_all_performance: true # MUST optimize ALL bottlenecks
+    apply_all_principles: true # MUST apply SOLID/DRY/KISS everywhere
+    systematic_tracking: true # MUST use systematic tracking
+    quality_validation: true # MUST use validation processes
+    delete_transient_code: true # MUST delete ALL temporary files
+    no_test_creation: true # FORBIDDEN: Creating test code
+    no_external_docs: true # FORBIDDEN: External documentation
+    fix_in_place: true # MUST refactor existing code in-place
+    no_duplicate_files: true # FORBIDDEN: Creating duplicate files
+
+  # Code Requirements - MANDATORY SETTINGS
+  refactoring_requirements:
+    maintain_functionality: true # MANDATORY: Preserve behavior
+    improve_quality: true # MANDATORY: Better code quality
+    follow_solid_principles: true # MANDATORY: SOLID principles
+    apply_dry_principle: true # MANDATORY: Remove duplication
+    implement_kiss_principle: true # MANDATORY: Simplify complexity
+    quality_best_practices: true # MANDATORY: Quality standards
+    clean_codebase: true # MANDATORY: Delete temp files
+    production_ready: true # MANDATORY: Production-grade
+    modify_existing_only: true # MANDATORY: Refactor existing code only
+    pristine_codebase: true # MANDATORY: No duplicate files
+
+  # Quality Workflow Requirements
+  quality_workflow:
+    systematic_changes: true # MANDATORY: Organized changes
+    validation_steps: true # MANDATORY: Validation processes
+    incremental_improvement: true # MANDATORY: One change per iteration
+    clear_documentation: true # MANDATORY: Clear change descriptions
+    verified_changes: true # MANDATORY: Verified modifications
+    clean_process: true # MANDATORY: No mixed changes
+    quality_protection: true # MANDATORY: Quality safeguards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Analysis and Refactoring Planning"
+    mandatory_actions:
+      - "LOAD ALL review findings and gap analysis"
+      - "EXTRACT ALL quality issues and violations"
+      - "IDENTIFY ALL technical debt items"
+      - "PRIORITIZE refactoring by severity and dependencies"
+      - "PLAN systematic refactoring approach"
+      - "DESIGN validation strategy"
+
+    findings_analysis:
+      review_integration:
+        - "PARSE ALL code review reports"
+        - "EXTRACT ALL quality issues"
+        - "IDENTIFY ALL violations"
+        - "MAP ALL technical debt"
+        - "LIST ALL improvements needed"
+        - "DOUBLE-CHECK nothing missed"
+
+      gap_analysis:
+        - "LOAD ALL gap findings"
+        - "MAP ALL missing features"
+        - "IDENTIFY ALL deficiencies"
+        - "TRACK ALL requirements"
+        - "LIST ALL remediation needs"
+        - "MANDATORY: Complete inventory"
+
+      prioritization:
+        - "SCORE ALL issues by severity"
+        - "ORDER by dependencies"
+        - "GROUP related changes"
+        - "PLAN systematic changes"
+        - "DESIGN validation strategy"
+        - "FORBIDDEN: Skipping issues"
+
+      codebase_hygiene:
+        - "FORBIDDEN: create duplicate files"
+        - "FORBIDDEN: create refactored copies"
+        - "FORBIDDEN: make backup versions"
+        - "ALWAYS refactor code in-place"
+        - "ALWAYS maintain clean codebase"
+        - "MANDATORY: Direct refactoring only"
+
+  phase_2:
+    name: "SOLID Principles Refactoring"
+    mandatory_actions:
+      - "APPLY Single Responsibility Principle"
+      - "IMPLEMENT Open/Closed Principle"
+      - "ENSURE Liskov Substitution Principle"
+      - "ENFORCE Interface Segregation"
+      - "APPLY Dependency Inversion"
+      - "VALIDATE principle compliance"
+
+    single_responsibility:
+      - "SPLIT ALL god classes"
+      - "EXTRACT ALL mixed concerns"
+      - "SEPARATE ALL responsibilities"
+      - "CREATE focused classes"
+      - "MANDATORY: One purpose only"
+
+    open_closed:
+      - "REPLACE ALL conditionals with polymorphism"
+      - "INTRODUCE abstractions"
+      - "ENABLE extensions"
+      - "PREVENT modifications"
+      - "MANDATORY: Extensibility"
+
+    liskov_substitution:
+      - "FIX ALL inheritance issues"
+      - "ENSURE substitutability"
+      - "REMOVE type checking"
+      - "HONOR contracts"
+      - "MANDATORY: Proper inheritance"
+
+    interface_segregation:
+      - "SPLIT ALL fat interfaces"
+      - "CREATE specific contracts"
+      - "REMOVE unused methods"
+      - "FOCUS interfaces"
+      - "MANDATORY: Minimal interfaces"
+
+    dependency_inversion:
+      - "INJECT ALL dependencies"
+      - "DEPEND on abstractions"
+      - "REMOVE concrete dependencies"
+      - "USE interfaces"
+      - "MANDATORY: Loose coupling"
+
+  phase_3:
+    name: "DRY and KISS Principles Application"
+    mandatory_actions:
+      - "ELIMINATE ALL code duplication"
+      - "EXTRACT common functionality"
+      - "SIMPLIFY complex logic"
+      - "IMPROVE code clarity"
+      - "OPTIMIZE for maintainability"
+      - "VALIDATE improvements"
+
+    dry_implementation:
+      - "FIND ALL duplications"
+      - "EXTRACT common code"
+      - "CREATE utilities"
+      - "BUILD abstractions"
+      - "REMOVE redundancy"
+      - "MANDATORY: Zero duplication"
+
+    kiss_enforcement:
+      - "SIMPLIFY ALL complexity"
+      - "REMOVE clever code"
+      - "FLATTEN structures"
+      - "CLEAR naming"
+      - "OBVIOUS solutions"
+      - "FORBIDDEN: Over-engineering"
+
+  phase_4:
+    name: "Performance Optimization Refactoring"
+    mandatory_actions:
+      - "OPTIMIZE ALL algorithms"
+      - "IMPLEMENT caching strategies"
+      - "IMPROVE resource utilization"
+      - "CONVERT to async patterns"
+      - "ELIMINATE bottlenecks"
+      - "VALIDATE performance gains"
+
+    algorithm_optimization:
+      - "REPLACE ALL O(n) algorithms"
+      - "OPTIMIZE ALL data structures"
+      - "IMPROVE ALL search operations"
+      - "CACHE ALL expensive calls"
+      - "BATCH ALL I/O operations"
+      - "MANDATORY: Meet SLAs"
+
+    resource_optimization:
+      - "POOL ALL connections"
+      - "CACHE ALL repeated queries"
+      - "LAZY load ALL heavy data"
+      - "STREAM large datasets"
+      - "OPTIMIZE memory usage"
+      - "DOUBLE-CHECK no waste"
+
+    async_refactoring:
+      - "CONVERT blocking calls"
+      - "IMPLEMENT async patterns"
+      - "ADD proper cancellation"
+      - "HANDLE timeouts"
+      - "MANAGE backpressure"
+      - "MANDATORY: Non-blocking"
+
+  phase_5:
+    name: "Security Hardening Refactoring"
+    mandatory_actions:
+      - "VALIDATE ALL inputs"
+      - "IMPLEMENT access controls"
+      - "SECURE ALL endpoints"
+      - "ADD audit logging"
+      - "ENCRYPT sensitive data"
+      - "VERIFY security improvements"
+
+    input_validation:
+      - "VALIDATE ALL inputs"
+      - "SANITIZE ALL data"
+      - "PREVENT injections"
+      - "CHECK boundaries"
+      - "TYPE validation"
+      - "MANDATORY: Never trust input"
+
+    access_control:
+      - "CHECK ALL permissions"
+      - "IMPLEMENT RBAC"
+      - "ADD audit logging"
+      - "SECURE endpoints"
+      - "TOKEN validation"
+      - "FORBIDDEN: Open access"
+
+  phase_6:
+    name: "Clean Code and Structure Refactoring"
+    mandatory_actions:
+      - "IMPROVE ALL naming conventions"
+      - "REORGANIZE code structure"
+      - "REMOVE ALL dead code"
+      - "UPDATE documentation"
+      - "FORMAT code consistently"
+      - "VALIDATE cleanliness"
+
+    naming_refactoring:
+      - "RENAME ALL unclear variables"
+      - "FIX ALL method names"
+      - "CLARIFY ALL class names"
+      - "IMPROVE ALL constants"
+      - "DOCUMENT ALL acronyms"
+      - "MANDATORY: Self-documenting"
+
+    structure_refactoring:
+      - "EXTRACT ALL long methods"
+      - "SPLIT large files"
+      - "ORGANIZE packages"
+      - "GROUP related code"
+      - "CLEAR boundaries"
+      - "DOUBLE-CHECK coherent structure"
+
+    code_cleanup:
+      - "REMOVE ALL dead code"
+      - "DELETE commented code"
+      - "CLEAN up imports"
+      - "FORMAT consistently"
+      - "FIX indentation"
+      - "MANDATORY: Pristine code"
+
+  phase_7:
+    name: "Transient Code Cleanup"
+    mandatory_actions:
+      - "DELETE ALL temporary files"
+      - "REMOVE ALL debug code"
+      - "CLEAN ALL test scripts"
+      - "CONVERT useful snippets to proper modules"
+      - "UPDATE repository hygiene"
+      - "VERIFY cleanup completeness"
+
+    transient_removal:
+      - "DELETE ALL test scripts"
+      - "REMOVE debug files"
+      - "CLEAN temp configs"
+      - "DELETE scratch files"
+      - "REMOVE experiments"
+      - "MANDATORY: Clean workspace"
+
+    snippet_conversion:
+      - "EXTRACT reusable code"
+      - "CREATE proper modules"
+      - "BUILD utilities"
+      - "ADD to libraries"
+      - "DOCUMENT usage"
+      - "FORBIDDEN: Loose scripts"
+
+    repository_hygiene:
+      - "UPDATE .gitignore"
+      - "CLEAN build artifacts"
+      - "REMOVE cache files"
+      - "DELETE logs"
+      - "CLEAN dependencies"
+      - "DOUBLE-CHECK no junk"
+
+  phase_8:
+    name: "Final Validation and Delivery"
+    mandatory_actions:
+      - "VERIFY functionality preservation"
+      - "VALIDATE quality improvements"
+      - "CONFIRM performance gains"
+      - "CHECK security enhancements"
+      - "PREPARE change documentation"
+      - "READY for review"
+
+    functionality_preservation:
+      - "VERIFY ALL features work"
+      - "CHECK ALL APIs respond"
+      - "TEST ALL integrations"
+      - "VALIDATE ALL workflows"
+      - "CONFIRM ALL behavior"
+      - "MANDATORY: No regressions"
+
+    quality_verification:
+      - "RUN ALL linters"
+      - "CHECK complexity metrics"
+      - "VERIFY SOLID compliance"
+      - "MEASURE improvements"
+      - "VALIDATE standards"
+      - "DOUBLE-CHECK quality improved"
+
+# Refactoring Patterns
+refactoring_patterns:
+  quality_patterns:
+    extract_method:
+      when: "Method > 20 lines or complex"
+      how: "Extract cohesive functionality"
+      commit: "refactor: extract {method_name} from {original}"
+
+    introduce_parameter_object:
+      when: "Method has > 3 parameters"
+      how: "Group into logical object"
+      commit: "refactor: introduce {object_name} parameter object"
+
+    replace_conditional:
+      when: "Complex if/else chains"
+      how: "Use polymorphism or strategy"
+      commit: "refactor: replace conditional with {pattern}"
+
+  performance_patterns:
+    introduce_caching:
+      when: "Repeated expensive operations"
+      how: "Add cache layer with TTL"
+      commit: "perf: add caching to {operation}"
+
+    optimize_algorithm:
+      when: "O(n) or worse complexity"
+      how: "Use efficient data structures"
+      commit: "perf: optimize {algorithm} from O(n) to O(n log n)"
+
+# Validation Matrices
+validation_matrices:
+  refactoring_progress:
+    structure: |
+      | Issue ID | Type | Severity | Refactored | Tested | Committed | Status |
+      |----------|------|----------|------------|--------|-----------|--------|
+      | REF-001 | SOLID | High | [X] | [X] | [X] | COMPLETE |
+
+  quality_improvement:
+    structure: |
+      | Metric | Before | After | Improvement | Target Met |
+      |--------|--------|-------|-------------|------------|
+      | Complexity | 25 | 8 | 68% | [X] |
+
+  change_history:
+    structure: |
+      | Change | Type | Description | Systematic | Validated | Clean | Status |
+      |--------|------|-------------|------------|-----------|-------|--------|
+      | CHG123 | refactor | Extract method | [X] | [X] | [X] | VALID |
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL refactoring output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-142155"
+
+  required_outputs:
+    - "./project/docs/code-development/refactoring/Refactoring_Report_{{YYYY-MM-DD-HHMMSS}}.ipynb (refactoring report)"
+    - "./project/docs/code-development/refactoring/Regression_Test_Results_{{YYYY-MM-DD-HHMMSS}}.ipynb (regression test results)"
+    - "./project/docs/code-development/refactoring/Quality_Improvement_{{YYYY-MM-DD-HHMMSS}}.ipynb (quality improvement)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all refactoring output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL refactoring deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all outputs"
+    - "FORBIDDEN: Creating refactoring files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same refactoring session"
+
+# Refactoring Execution Workflow
+execution_steps:
+  - "1. ANALYZE all review findings and gap analysis ({{refactoring_target}})"
+  - "2. PRIORITIZE issues by severity and dependencies"
+  - "3. APPLY SOLID principles systematically"
+  - "4. IMPLEMENT DRY and KISS principles"
+  - "5. OPTIMIZE performance bottlenecks"
+  - "6. HARDEN security vulnerabilities"
+  - "7. IMPROVE code clarity and structure"
+  - "8. DELETE all transient files and scripts"
+  - "9. VALIDATE functionality preservation"
+  - "10. VERIFY quality improvements"
+  - "11. CONFIRM performance gains"
+  - "12. GENERATE refactoring documentation with timestamps"
+  - "13. PREPARE changes for review"
+  - "14. DELIVER complete refactoring results"
+
+# Codebase Hygiene Rules
+codebase_hygiene:
+  always_required:
+    - "ALWAYS modify existing files"
+    - "REFACTOR in-place ONLY"
+    - "DELETE transient files"
+    - "MAINTAIN clean codebase"
+    - "PRESERVE functionality"
+
+  strictly_forbidden:
+    - "FORBIDDEN: create duplicate files"
+    - "FORBIDDEN: create backup copies"
+    - "FORBIDDEN: create alternative versions"
+    - "NO file_refactored.py"
+    - "NO file.py.new or file_v2.py"
+    - "NO temporary refactoring files"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL identified issues MUST be refactored"
+    - "ALL code MUST follow SOLID/DRY/KISS"
+    - "ALL changes MUST preserve functionality"
+    - "ALL changes MUST be systematic"
+    - "ALL transient files MUST be deleted"
+    - "Documentation in markdown documents only"
+    - "ALWAYS refactor existing code in-place"
+    - "NEVER create duplicate files or copies"
+
+  strictly_forbidden:
+    - "Creating ANY test code or scripts"
+    - "Writing external documentation"
+    - "Leaving temporary files"
+    - "Mixed purpose changes"
+    - "Breaking existing functionality"
+    - "Including debug code"
+    - "Creating duplicate code blocks/files"
+    - "Making backup copies of files"
+    - "Creating custom fix scripts"

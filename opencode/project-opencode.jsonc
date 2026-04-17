@@ -40,8 +40,9 @@
   },
   "compaction": {
     "auto": true,
-    "prune": true
-    },
+    "prune": true,
+    "reserved": 10000
+  },
   // Project-level provider scope and model selection.
   "enabled_providers": [
     "github-copilot",

@@ -1,0 +1,664 @@
+# === MCP PROMPT: Live API Testing Protocol ===
+name: "test-live-api-prompt"
+version: "1.0.0"
+description: "Comprehensive live API testing protocol for production environment validation with complete endpoint and workflow testing"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Live API Testing Execution"
+  description: "Execute comprehensive live API testing against production endpoints with mandatory workflow validation and integration testing"
+
+  # Argument Schema
+  arguments:
+    api_scope:
+      type: "string"
+      description: "Scope of API testing to perform"
+      required: true
+      enum:
+        [
+          "all-apis",
+          "core-apis",
+          "specific-endpoints",
+          "integration-focus",
+          "performance-critical",
+          "security-focus",
+        ]
+
+    environment_target:
+      type: "string"
+      description: "Target environment(s) for API testing"
+      required: true
+      enum:
+        [
+          "local",
+          "development",
+          "staging",
+          "production",
+          "multi-environment",
+          "all-environments",
+        ]
+
+    testing_focus:
+      type: "string"
+      description: "Primary focus of API testing"
+      required: true
+      enum:
+        [
+          "functional",
+          "performance",
+          "security",
+          "integration",
+          "end-to-end",
+          "comprehensive",
+        ]
+
+    complexity_level:
+      type: "string"
+      description: "API testing complexity level"
+      required: false
+      enum: ["basic", "standard", "comprehensive", "enterprise"]
+
+    performance_requirements:
+      type: "string"
+      description: "Performance SLA requirements and baselines"
+      required: false
+
+    security_validation:
+      type: "string"
+      description: "Security and authentication validation requirements"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI live API testing specialist executing the comprehensive API Testing Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive API testing methodology
+        - Execute complete live API testing against production endpoints
+        - Maintain production-ready testing standards
+        - Use systematic validation and verification procedures
+        - Follow SOLID, DRY, KISS principles in testing
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual deployment commands or system changes
+        - Modifying production systems or configurations
+        - Creating new API endpoints or services
+        - Testing with mocked services in live environments
+        - Partial or incomplete API testing coverage
+        - Proceeding with degraded services
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY LIVE API TESTING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **API TESTING PARAMETERS:**
+        - API Scope: {{api_scope}}
+        - Environment Target: {{environment_target}}
+        - Testing Focus: {{testing_focus}}
+        - Complexity Level: {{complexity_level}}
+        - Performance Requirements: {{performance_requirements}}
+        - Security Validation: {{security_validation}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING LIVE API TESTING PROTOCOL:**
+
+# Live API Testing Protocol Configuration
+testing_protocol:
+  # Testing Scope - MANDATORY COMPREHENSIVE COVERAGE
+  testing_focus:
+    endpoint_validation: true # MUST test all API endpoints individually
+    workflow_validation: true # MUST validate complete API workflows
+    integration_testing: true # MUST test service integrations
+    performance_benchmarking: true # MUST benchmark API performance
+    security_testing: true # MUST test security boundaries
+    error_handling: true # MUST test error scenarios
+    data_consistency: true # MUST validate data consistency
+    user_journey_testing: true # MUST test user workflows
+    testing_only: true # STRICTLY testing only, no system changes
+
+  # Testing Configuration - MANDATORY SETTINGS
+  testing_settings:
+    enable_comprehensive_validation: true
+    perform_live_endpoint_testing: true
+    execute_workflow_testing: true
+    validate_integration_points: true
+    test_security_boundaries: true
+    benchmark_performance: true
+    systematic_approach: true # MANDATORY: Systematic testing methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all API aspects
+    production_ready_testing: true # MANDATORY: Production-focused testing
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "API Discovery and Documentation"
+    mandatory_actions:
+      - "DISCOVER all available API endpoints in target environment"
+      - "DOCUMENT API specifications, parameters, and expected responses"
+      - "INVENTORY all service APIs and their dependencies"
+      - "MAP API authentication and authorization requirements"
+      - "CATALOG API rate limits and performance characteristics"
+
+    discovery_requirements:
+      - "MANDATORY: Complete API endpoint discovery"
+      - "MANDATORY: Document all API specifications"
+      - "MANDATORY: Map service dependencies"
+      - "FORBIDDEN: Missing any production API endpoints"
+
+  phase_2:
+    name: "Individual API Endpoint Testing"
+    mandatory_actions:
+      - "TEST each API endpoint individually with valid requests"
+      - "VALIDATE response formats, status codes, and data structures"
+      - "VERIFY authentication and authorization mechanisms"
+      - "CHECK error handling for invalid inputs"
+      - "MEASURE response times and performance characteristics"
+
+    endpoint_testing_requirements:
+      functional_validation:
+        - "TEST all HTTP methods (GET, POST, PUT, DELETE, PATCH)"
+        - "VALIDATE request parameter handling"
+        - "VERIFY response data format and structure"
+        - "CHECK status code accuracy and consistency"
+
+      security_validation:
+        - "TEST authentication mechanisms (OAuth, JWT, API keys)"
+        - "VALIDATE authorization and access controls"
+        - "CHECK input sanitization and injection prevention"
+        - "VERIFY rate limiting and abuse prevention"
+
+      performance_validation:
+        - "MEASURE response time for each endpoint"
+        - "TEST concurrent request handling"
+        - "VALIDATE throughput and scalability"
+        - "CHECK resource utilization during load"
+
+  phase_3:
+    name: "End-to-End API Workflow Testing"
+    mandatory_actions:
+      - "EXECUTE complete user journey workflows via APIs"
+      - "VALIDATE multi-step API sequences and state management"
+      - "TEST cross-service API integration chains"
+      - "VERIFY data consistency across workflow steps"
+      - "CHECK transaction integrity and rollback scenarios"
+
+    workflow_scenarios:
+      user_registration_workflow:
+        - "EXECUTE registration API → email verification API → profile setup API"
+        - "VALIDATE state consistency across all steps"
+        - "TEST error recovery at each workflow stage"
+        - "VERIFY audit trail and logging completeness"
+
+      data_management_workflow:
+        - "EXECUTE create resource API → update API → share API → delete API"
+        - "VALIDATE data consistency throughout lifecycle"
+        - "TEST concurrent access and conflict resolution"
+        - "VERIFY backup and recovery procedures"
+
+      business_process_workflow:
+        - "EXECUTE business logic workflows via API chains"
+        - "VALIDATE business rule enforcement"
+        - "TEST approval and notification workflows"
+        - "VERIFY integration with external systems"
+
+  phase_4:
+    name: "Service Integration Testing"
+    mandatory_actions:
+      - "TEST API integrations between all service pairs"
+      - "VALIDATE data flow and consistency across services"
+      - "VERIFY authentication propagation between services"
+      - "CHECK circuit breaker and failover mechanisms"
+      - "TEST event propagation and message passing"
+
+    integration_testing:
+      service_to_service:
+        - "TEST n8n APIs with PostgreSQL integration"
+        - "VALIDATE LightRAG APIs with Qdrant integration"
+        - "CHECK Terraform executor API integrations"
+        - "VERIFY monitoring API data collection"
+
+      api_gateway_integration:
+        - "TEST API gateway routing and load balancing"
+        - "VALIDATE request/response transformation"
+        - "CHECK rate limiting and throttling"
+        - "VERIFY security policy enforcement"
+
+      external_integration:
+        - "TEST third-party API integrations"
+        - "VALIDATE webhook handling and callbacks"
+        - "CHECK API version compatibility"
+        - "VERIFY error handling for external failures"
+
+  phase_5:
+    name: "Performance and Load Testing"
+    mandatory_actions:
+      - "EXECUTE performance benchmarks for all critical APIs"
+      - "MEASURE response times under various load conditions"
+      - "TEST system behavior at capacity limits"
+      - "VALIDATE performance SLA compliance"
+      - "IDENTIFY performance bottlenecks and constraints"
+
+    performance_testing:
+      baseline_performance:
+        - "MEASURE single request response times"
+        - "BENCHMARK throughput for each endpoint"
+        - "TEST memory and CPU utilization"
+        - "VALIDATE database query performance"
+
+      load_testing:
+        - "TEST concurrent user scenarios"
+        - "MEASURE system behavior under peak load"
+        - "VALIDATE auto-scaling mechanisms"
+        - "CHECK graceful degradation patterns"
+
+      stress_testing:
+        - "TEST system behavior beyond capacity"
+        - "VALIDATE error handling under stress"
+        - "CHECK recovery after overload"
+        - "VERIFY circuit breaker activation"
+
+  phase_6:
+    name: "Security and Authentication Testing"
+    mandatory_actions:
+      - "VALIDATE all authentication mechanisms and flows"
+      - "TEST authorization and access control enforcement"
+      - "CHECK input validation and injection prevention"
+      - "VERIFY session management and token handling"
+      - "VALIDATE encryption and data protection"
+
+    security_testing:
+      authentication_testing:
+        - "TEST OAuth 2.0/OIDC flows"
+        - "VALIDATE JWT token handling"
+        - "CHECK API key authentication"
+        - "VERIFY multi-factor authentication"
+
+      authorization_testing:
+        - "TEST role-based access control"
+        - "VALIDATE permission enforcement"
+        - "CHECK resource-level authorization"
+        - "VERIFY privilege escalation prevention"
+
+      vulnerability_testing:
+        - "TEST SQL injection prevention"
+        - "VALIDATE XSS protection"
+        - "CHECK CSRF protection"
+        - "VERIFY input sanitization"
+
+  phase_7:
+    name: "Error Handling and Recovery Testing"
+    mandatory_actions:
+      - "TEST error scenarios and exception handling"
+      - "VALIDATE error response formats and codes"
+      - "CHECK retry mechanisms and backoff strategies"
+      - "VERIFY graceful degradation during failures"
+      - "TEST recovery procedures and data consistency"
+
+    error_testing_scenarios:
+      client_errors:
+        - "TEST invalid request formats (400 errors)"
+        - "VALIDATE unauthorized access (401 errors)"
+        - "CHECK forbidden operations (403 errors)"
+        - "VERIFY not found resources (404 errors)"
+
+      server_errors:
+        - "TEST internal server errors (500 errors)"
+        - "VALIDATE service unavailable (503 errors)"
+        - "CHECK timeout handling (504 errors)"
+        - "VERIFY error recovery procedures"
+
+      network_failures:
+        - "SIMULATE network connectivity issues"
+        - "TEST timeout and retry mechanisms"
+        - "VALIDATE circuit breaker behavior"
+        - "CHECK failover procedures"
+
+  phase_8:
+    name: "Data Consistency and State Management Testing"
+    mandatory_actions:
+      - "VALIDATE data consistency across API operations"
+      - "TEST transaction integrity and ACID compliance"
+      - "CHECK state management in stateful operations"
+      - "VERIFY data synchronization across services"
+      - "TEST conflict resolution and data merging"
+
+    data_consistency_testing:
+      crud_operations:
+        - "TEST create, read, update, delete consistency"
+        - "VALIDATE data integrity constraints"
+        - "CHECK referential integrity"
+        - "VERIFY audit trail accuracy"
+
+      concurrent_access:
+        - "TEST concurrent modification scenarios"
+        - "VALIDATE optimistic/pessimistic locking"
+        - "CHECK conflict detection and resolution"
+        - "VERIFY eventual consistency models"
+
+      distributed_transactions:
+        - "TEST multi-service transaction coordination"
+        - "VALIDATE rollback procedures"
+        - "CHECK compensation patterns"
+        - "VERIFY data consistency across boundaries"
+
+  phase_9:
+    name: "Monitoring and Observability Validation"
+    mandatory_actions:
+      - "VALIDATE API monitoring and metrics collection"
+      - "TEST logging and trace generation"
+      - "CHECK alert triggering and notification"
+      - "VERIFY dashboard accuracy and real-time updates"
+      - "VALIDATE audit logging and compliance tracking"
+
+    observability_testing:
+      metrics_validation:
+        - "TEST API request/response metrics collection"
+        - "VALIDATE performance metric accuracy"
+        - "CHECK error rate monitoring"
+        - "VERIFY SLA compliance tracking"
+
+      logging_validation:
+        - "TEST structured logging generation"
+        - "VALIDATE log correlation and tracing"
+        - "CHECK log retention and rotation"
+        - "VERIFY security event logging"
+
+      alerting_validation:
+        - "TEST alert rule evaluation"
+        - "VALIDATE notification delivery"
+        - "CHECK escalation procedures"
+        - "VERIFY alert resolution tracking"
+
+  phase_10:
+    name: "Test Results Compilation and Certification"
+    mandatory_actions:
+      - "COMPILE comprehensive API testing results"
+      - "GENERATE API testing matrices and validation reports"
+      - "CREATE performance benchmark documentation"
+      - "DOCUMENT all API failures and resolutions"
+      - "PROVIDE API production readiness certification"
+
+    documentation_requirements:
+      - "MANDATORY: Create all API test results in markdown document format"
+      - "MANDATORY: Include comprehensive API testing matrices and metrics"
+      - "MANDATORY: Document all API testing procedures and outcomes"
+      - "MANDATORY: Provide clear API production readiness assessment"
+      - "FORBIDDEN: Incomplete or partial API testing documentation"
+
+# API Testing Validation Criteria
+validation_criteria:
+  endpoint_coverage: "MANDATORY - All API endpoints tested individually"
+  workflow_validation: "MANDATORY - All API workflows tested end-to-end"
+  integration_testing: "MANDATORY - All service integrations validated"
+  performance_compliance: "MANDATORY - All performance SLAs met"
+  security_validation: "MANDATORY - All security requirements verified"
+  error_handling: "MANDATORY - All error scenarios tested"
+  data_consistency: "MANDATORY - Data integrity maintained across APIs"
+  monitoring_coverage: "MANDATORY - Complete API observability achieved"
+  documentation_quality: "MANDATORY - All API test deliverables created"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL API testing output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-192922"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all API testing output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL API test deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all API testing outputs"
+    - "FORBIDDEN: Creating API test files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same testing session"
+
+# API Testing Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DISCOVER and document all API endpoints ({{api_scope}})"
+  - "2. EXECUTE individual endpoint testing with validation"
+  - "3. VALIDATE end-to-end API workflow execution"
+  - "4. TEST service integration via API chains"
+  - "5. BENCHMARK API performance and validate SLA compliance"
+  - "6. EXECUTE security testing and vulnerability assessment"
+  - "7. SIMULATE error scenarios and validate recovery procedures"
+  - "8. VALIDATE data consistency across API operations"
+  - "9. VERIFY monitoring and observability coverage"
+  - "10. COMPILE comprehensive API testing results with timestamp documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each API testing phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all API testing tracking"
+  - "MANDATORY: Timestamp all API test deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# API Testing Framework
+api_testing_framework:
+  endpoint_categories:
+    core_business_apis:
+      - "User management and authentication APIs"
+      - "Data CRUD operation APIs"
+      - "Business logic and workflow APIs"
+      - "Payment and transaction APIs"
+
+    integration_apis:
+      - "Third-party service integration APIs"
+      - "Webhook and callback APIs"
+      - "Event streaming and messaging APIs"
+      - "File upload and download APIs"
+
+    system_apis:
+      - "Health check and monitoring APIs"
+      - "Configuration and settings APIs"
+      - "Admin and management APIs"
+      - "Reporting and analytics APIs"
+
+  testing_categories:
+    functional_testing:
+      - "Request/response validation"
+      - "Business logic verification"
+      - "Data format validation"
+      - "Status code verification"
+
+    performance_testing:
+      - "Response time measurement"
+      - "Throughput testing"
+      - "Load testing"
+      - "Stress testing"
+
+    security_testing:
+      - "Authentication testing"
+      - "Authorization testing"
+      - "Input validation testing"
+      - "Vulnerability assessment"
+
+# API Workflow Testing Scenarios
+api_workflow_scenarios:
+  user_journey_workflows:
+    new_user_onboarding:
+      steps:
+        - "POST /api/users/register"
+        - "GET /api/users/verify-email"
+        - "POST /api/auth/login"
+        - "PUT /api/users/profile"
+        - "GET /api/dashboard"
+      validation: "Complete user onboarding via API chain"
+
+    data_management_workflow:
+      steps:
+        - "POST /api/resources"
+        - "GET /api/resources/{id}"
+        - "PUT /api/resources/{id}"
+        - "POST /api/resources/{id}/share"
+        - "DELETE /api/resources/{id}"
+      validation: "Complete data lifecycle via API operations"
+
+    business_process_workflow:
+      steps:
+        - "POST /api/workflows"
+        - "POST /api/workflows/{id}/execute"
+        - "GET /api/workflows/{id}/status"
+        - "POST /api/workflows/{id}/approve"
+        - "GET /api/workflows/{id}/results"
+      validation: "Complete business process via API workflow"
+
+# Performance Benchmarks
+performance_benchmarks:
+  api_response_times:
+    get_operations: "< 200ms"
+    post_operations: "< 500ms"
+    put_operations: "< 300ms"
+    delete_operations: "< 200ms"
+
+  api_throughput:
+    read_operations: "1000 requests/second"
+    write_operations: "500 requests/second"
+    bulk_operations: "100 requests/second"
+
+  concurrent_users:
+    light_load: "100 concurrent users"
+    normal_load: "500 concurrent users"
+    peak_load: "1000 concurrent users"
+
+# Security Testing Framework
+security_testing_framework:
+  authentication_testing:
+    oauth_flows: "Test OAuth 2.0/OIDC authentication flows"
+    jwt_validation: "Validate JWT token handling and expiration"
+    api_key_auth: "Test API key authentication mechanisms"
+    session_management: "Validate session handling and security"
+
+  authorization_testing:
+    rbac_validation: "Test role-based access control"
+    resource_authorization: "Validate resource-level permissions"
+    privilege_escalation: "Test privilege escalation prevention"
+    cross_tenant_access: "Validate tenant isolation"
+
+  input_validation:
+    injection_prevention: "Test SQL injection prevention"
+    xss_protection: "Validate XSS protection mechanisms"
+    input_sanitization: "Test input sanitization and validation"
+    file_upload_security: "Validate file upload security"
+
+# Error Handling Testing
+error_handling_testing:
+  client_error_scenarios:
+    bad_request: "Test 400 Bad Request handling"
+    unauthorized: "Test 401 Unauthorized responses"
+    forbidden: "Test 403 Forbidden access"
+    not_found: "Test 404 Not Found resources"
+    method_not_allowed: "Test 405 Method Not Allowed"
+
+  server_error_scenarios:
+    internal_error: "Test 500 Internal Server Error"
+    service_unavailable: "Test 503 Service Unavailable"
+    gateway_timeout: "Test 504 Gateway Timeout"
+    insufficient_storage: "Test 507 Insufficient Storage"
+
+  recovery_scenarios:
+    retry_mechanisms: "Test automatic retry logic"
+    circuit_breaker: "Test circuit breaker activation"
+    fallback_responses: "Test fallback mechanisms"
+    graceful_degradation: "Test graceful service degradation"
+
+# Integration Testing Matrix
+integration_testing_matrix:
+  service_integrations:
+    "API Gateway → Authentication Service":
+      test_scenarios: ["Token validation", "Rate limiting", "Request routing"]
+      expected_behavior: "Secure request processing"
+      validation_method: "End-to-end request flow"
+
+    "Business API → Data Service":
+      test_scenarios:
+        ["Data persistence", "Query operations", "Transaction handling"]
+      expected_behavior: "Reliable data operations"
+      validation_method: "Data consistency checks"
+
+    "Workflow API → External Services":
+      test_scenarios:
+        ["Third-party integration", "Webhook handling", "Error recovery"]
+      expected_behavior: "Robust external integration"
+      validation_method: "Integration workflow validation"
+
+# Data Consistency Testing
+data_consistency_testing:
+  crud_validation:
+    create_operations: "Validate data creation and persistence"
+    read_operations: "Verify data retrieval accuracy"
+    update_operations: "Check data modification consistency"
+    delete_operations: "Validate data deletion and cleanup"
+
+  transaction_testing:
+    acid_compliance: "Test ACID transaction properties"
+    rollback_scenarios: "Validate transaction rollback"
+    isolation_levels: "Test transaction isolation"
+    consistency_checks: "Verify data consistency"
+
+  concurrent_access:
+    race_conditions: "Test concurrent modification scenarios"
+    locking_mechanisms: "Validate optimistic/pessimistic locking"
+    conflict_resolution: "Test conflict detection and resolution"
+    eventual_consistency: "Validate eventual consistency models"
+
+# Monitoring and Observability Testing
+observability_testing:
+  metrics_collection:
+    api_metrics: "Validate API request/response metrics"
+    performance_metrics: "Test performance metric collection"
+    business_metrics: "Verify business KPI tracking"
+    error_metrics: "Validate error rate monitoring"
+
+  logging_validation:
+    structured_logging: "Test JSON structured logging"
+    correlation_tracking: "Validate request correlation IDs"
+    log_aggregation: "Test centralized log collection"
+    log_retention: "Validate log retention policies"
+
+  tracing_testing:
+    distributed_tracing: "Test end-to-end request tracing"
+    span_correlation: "Validate trace span relationships"
+    performance_tracing: "Test performance bottleneck identification"
+    error_tracing: "Validate error propagation tracking"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL API testing MUST be comprehensive and complete"
+    - "ALL API endpoints MUST be tested individually and in workflows"
+    - "ALL service integrations MUST be validated"
+    - "ALL performance benchmarks MUST be met"
+    - "ALL security requirements MUST be validated"
+    - "ALL testing MUST be production-focused"
+    - "ALWAYS use systematic testing methodology"
+    - "NEVER execute actual system changes or deployments"
+
+  strictly_forbidden:
+    - "Modifying production systems or configurations"
+    - "Creating new API endpoints or services"
+    - "Partial or incomplete API testing coverage"
+    - "Skipping security or performance validation"
+    - "Missing error handling testing"
+    - "Incomplete workflow validation"
+    - "Proceeding with degraded services"
+    - "Testing without proper validation"

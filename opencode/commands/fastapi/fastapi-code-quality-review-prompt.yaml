@@ -1,0 +1,528 @@
+# === MCP PROMPT: FastAPI Code Quality Review Protocol ===
+name: "fastapi-code-quality-review-prompt"
+version: "1.0.0"
+description: "Comprehensive FastAPI code quality review protocol for architectural compliance, security analysis, and performance optimization validation"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "FastAPI Code Quality Review"
+  description: "Execute comprehensive FastAPI code quality analysis, architectural review, and compliance validation with industry standards and best practices"
+
+  # Argument Schema
+  arguments:
+    review_scope:
+      type: "string"
+      description: "Scope of FastAPI code quality review"
+      required: true
+      enum:
+        [
+          "complete-application",
+          "specific-modules",
+          "api-endpoints",
+          "architecture-layers",
+          "security-focused",
+          "performance-focused",
+        ]
+
+    quality_focus:
+      type: "string"
+      description: "Primary focus area for quality analysis"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "security-focused",
+          "performance-focused",
+          "architecture-focused",
+          "fastapi-patterns",
+          "compliance-focused",
+        ]
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of quality analysis to perform"
+      required: false
+      enum: ["surface", "deep", "architectural", "enterprise", "forensic"]
+
+    compliance_standards:
+      type: "string"
+      description: "Compliance standards to validate against"
+      required: false
+      enum: ["clean-architecture", "solid", "fastapi-best-practices", "security-standards", "all"]
+
+    security_analysis:
+      type: "string"
+      description: "Level of security analysis to perform"
+      required: false
+      enum: ["basic", "comprehensive", "penetration-focused", "compliance", "owasp"]
+
+    performance_analysis:
+      type: "string"
+      description: "Level of performance analysis to perform"
+      required: false
+      enum: ["basic", "comprehensive", "load-testing", "optimization", "profiling"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI FastAPI code quality specialist executing the FastAPI Code Quality Review Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive FastAPI quality review methodology
+        - Perform deep architectural and code quality analysis
+        - Maintain enterprise-grade review standards
+        - Use systematic analysis and quality documentation
+        - Identify all violations and provide specific remediation
+        - Apply Clean Architecture, SOLID, and FastAPI best practices
+
+        ABSOLUTELY FORBIDDEN:
+        - Making code changes or modifications
+        - Creating new files or implementations
+        - Modifying existing code during review
+        - Superficial or incomplete quality analysis
+        - Missing critical quality issues
+        - Providing generic recommendations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY FASTAPI CODE QUALITY REVIEW PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **REVIEW PARAMETERS:**
+        - Review Scope: {{review_scope}}
+        - Quality Focus: {{quality_focus}}
+        - Analysis Depth: {{analysis_depth}}
+        - Compliance Standards: {{compliance_standards}}
+        - Security Analysis: {{security_analysis}}
+        - Performance Analysis: {{performance_analysis}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING FASTAPI CODE QUALITY REVIEW PROTOCOL:**
+
+# FastAPI Code Quality Review Protocol Configuration
+review_protocol:
+  # Review Scope - MANDATORY COMPREHENSIVE COVERAGE
+  review_focus:
+    architecture_compliance_analysis: true # MUST analyze Clean Architecture compliance
+    fastapi_patterns_validation: true # MUST validate FastAPI best practices
+    security_vulnerability_analysis: true # MUST perform security analysis
+    performance_optimization_review: true # MUST analyze performance patterns
+    code_organization_assessment: true # MUST assess code structure
+    api_design_quality_review: true # MUST review API design patterns
+    dependency_injection_analysis: true # MUST analyze DI implementation
+    database_integration_review: true # MUST review database patterns
+    error_handling_assessment: true # MUST assess error handling
+    testing_strategy_validation: true # MUST validate testing approaches
+    documentation_compliance_check: true # MUST check documentation standards
+    review_only: true # STRICTLY review only, no code changes
+
+  # Review Configuration - MANDATORY SETTINGS
+  review_settings:
+    enable_deep_analysis: true
+    validate_clean_architecture: true
+    check_solid_principles: true
+    verify_fastapi_best_practices: true
+    analyze_security_vulnerabilities: true
+    assess_performance_patterns: true
+    systematic_approach: true # MANDATORY: Systematic review methodology
+    enterprise_standards: true # MANDATORY: Enterprise-grade analysis
+    comprehensive_coverage: true # MANDATORY: Cover all quality aspects
+    actionable_recommendations: true # MANDATORY: Provide specific fixes
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "FastAPI Codebase Discovery and Structure Analysis"
+    mandatory_actions:
+      - "SCAN complete FastAPI codebase and identify all components"
+      - "ANALYZE application structure and module organization"
+      - "MAP API endpoints, routers, and middleware components"
+      - "IDENTIFY dependencies, services, and repository patterns"
+      - "DOCUMENT codebase architecture and component relationships"
+
+    discovery_requirements:
+      - "MANDATORY: Complete codebase inventory and mapping"
+      - "MANDATORY: Identify all FastAPI components and patterns"
+      - "MANDATORY: Document component relationships and dependencies"
+      - "FORBIDDEN: Incomplete codebase analysis"
+
+  phase_2:
+    name: "Clean Architecture and SOLID Principles Compliance Analysis"
+    mandatory_actions:
+      - "ANALYZE adherence to Clean Architecture principles"
+      - "VALIDATE Single Responsibility Principle implementation"
+      - "CHECK Open/Closed Principle compliance in FastAPI code"
+      - "ASSESS Liskov Substitution Principle adherence"
+      - "VERIFY Interface Segregation in FastAPI interfaces"
+      - "EVALUATE Dependency Inversion implementation"
+
+    architecture_analysis:
+      clean_architecture_validation:
+        - "ANALYZE layer separation and dependency direction"
+        - "VALIDATE business logic isolation from framework code"
+        - "CHECK entity and use case implementation"
+        - "ASSESS dependency rule compliance"
+
+      solid_principles_check:
+        - "VALIDATE single responsibility in FastAPI services"
+        - "CHECK extensibility without modification"
+        - "ASSESS interface compatibility and substitution"
+        - "VERIFY interface granularity and focus"
+        - "ANALYZE abstraction dependency patterns"
+
+      dependency_analysis:
+        - "REVIEW FastAPI dependency injection implementation"
+        - "ANALYZE dependency scoping and lifecycle"
+        - "CHECK circular dependency patterns"
+        - "VALIDATE dependency abstraction usage"
+
+  phase_3:
+    name: "FastAPI Best Practices and Pattern Validation"
+    mandatory_actions:
+      - "VALIDATE FastAPI router organization and structure"
+      - "ANALYZE endpoint design and HTTP method usage"
+      - "CHECK Pydantic model implementation and validation"
+      - "ASSESS async/await pattern implementation"
+      - "REVIEW dependency injection usage and patterns"
+
+    fastapi_patterns_analysis:
+      router_organization:
+        - "ANALYZE router structure and modularity"
+        - "VALIDATE endpoint grouping and hierarchy"
+        - "CHECK router dependencies and middleware"
+        - "ASSESS URL pattern design and consistency"
+
+      endpoint_design:
+        - "VALIDATE HTTP method selection and usage"
+        - "CHECK status code usage and consistency"
+        - "ANALYZE request/response model design"
+        - "ASSESS error response standardization"
+
+      pydantic_implementation:
+        - "REVIEW model design and validation patterns"
+        - "CHECK field validation and custom validators"
+        - "ANALYZE model inheritance and composition"
+        - "VALIDATE serialization and deserialization"
+
+      async_patterns:
+        - "ANALYZE async/await implementation consistency"
+        - "CHECK database operation async patterns"
+        - "VALIDATE concurrent request handling"
+        - "ASSESS performance optimization usage"
+
+  phase_4:
+    name: "Security Vulnerability and Compliance Analysis"
+    mandatory_actions:
+      - "PERFORM comprehensive security vulnerability assessment"
+      - "ANALYZE authentication and authorization implementation"
+      - "CHECK input validation and sanitization patterns"
+      - "ASSESS CORS configuration and security headers"
+      - "REVIEW rate limiting and throttling implementation"
+
+    security_analysis:
+      vulnerability_assessment:
+        - "SCAN for common security vulnerabilities (OWASP Top 10)"
+        - "ANALYZE authentication bypass possibilities"
+        - "CHECK for injection vulnerabilities"
+        - "ASSESS data exposure and privacy risks"
+
+      authentication_review:
+        - "VALIDATE JWT implementation and security"
+        - "CHECK OAuth2 flow implementation"
+        - "ANALYZE session management patterns"
+        - "ASSESS password handling and storage"
+
+      input_validation:
+        - "REVIEW Pydantic validation completeness"
+        - "CHECK for validation bypass possibilities"
+        - "ANALYZE sanitization and encoding patterns"
+        - "ASSESS file upload security measures"
+
+      security_configuration:
+        - "VALIDATE CORS policy configuration"
+        - "CHECK security header implementation"
+        - "ANALYZE HTTPS enforcement patterns"
+        - "ASSESS rate limiting effectiveness"
+
+  phase_5:
+    name: "Performance Optimization and Scalability Review"
+    mandatory_actions:
+      - "ANALYZE application performance patterns and bottlenecks"
+      - "REVIEW database query optimization and connection pooling"
+      - "ASSESS caching strategy implementation and effectiveness"
+      - "EVALUATE async programming and concurrency patterns"
+      - "CHECK resource utilization and memory management"
+
+    performance_analysis:
+      bottleneck_identification:
+        - "IDENTIFY potential performance bottlenecks"
+        - "ANALYZE database query performance patterns"
+        - "CHECK N+1 query problems and optimization"
+        - "ASSESS API response time patterns"
+
+      caching_strategy:
+        - "REVIEW caching implementation and strategies"
+        - "ANALYZE cache invalidation patterns"
+        - "CHECK cache hit rates and effectiveness"
+        - "ASSESS distributed caching usage"
+
+      concurrency_patterns:
+        - "ANALYZE async/await usage for I/O operations"
+        - "CHECK connection pooling configuration"
+        - "VALIDATE concurrent request handling"
+        - "ASSESS resource contention patterns"
+
+      scalability_assessment:
+        - "EVALUATE horizontal scaling readiness"
+        - "ANALYZE stateless operation implementation"
+        - "CHECK load balancing compatibility"
+        - "ASSESS resource scaling patterns"
+
+  phase_6:
+    name: "Database Integration and Repository Pattern Analysis"
+    mandatory_actions:
+      - "REVIEW database integration patterns and implementations"
+      - "ANALYZE repository pattern adherence and design"
+      - "CHECK ORM usage and query optimization"
+      - "ASSESS transaction management and data consistency"
+      - "VALIDATE database migration and schema management"
+
+    database_analysis:
+      integration_patterns:
+        - "ANALYZE SQLModel/SQLAlchemy implementation"
+        - "CHECK database session management"
+        - "VALIDATE connection pooling configuration"
+        - "ASSESS async database operation usage"
+
+      repository_implementation:
+        - "REVIEW repository interface design"
+        - "ANALYZE CRUD operation implementation"
+        - "CHECK query pattern optimization"
+        - "VALIDATE data access abstraction"
+
+      transaction_management:
+        - "ANALYZE transaction scope and boundaries"
+        - "CHECK rollback and error handling"
+        - "VALIDATE data consistency patterns"
+        - "ASSESS concurrent access handling"
+
+  phase_7:
+    name: "API Design Quality and RESTful Compliance Assessment"
+    mandatory_actions:
+      - "EVALUATE RESTful API design principles adherence"
+      - "ANALYZE URL design patterns and resource modeling"
+      - "CHECK HTTP method usage and status code consistency"
+      - "ASSESS API versioning and backward compatibility"
+      - "REVIEW OpenAPI documentation quality and completeness"
+
+    api_design_analysis:
+      restful_compliance:
+        - "VALIDATE resource-based URL design"
+        - "CHECK HTTP method semantic correctness"
+        - "ANALYZE status code usage consistency"
+        - "ASSESS HATEOAS implementation where applicable"
+
+      url_design:
+        - "REVIEW URL structure and naming conventions"
+        - "ANALYZE resource hierarchy and relationships"
+        - "CHECK query parameter usage patterns"
+        - "VALIDATE URL consistency across endpoints"
+
+      versioning_strategy:
+        - "ANALYZE API versioning implementation"
+        - "CHECK backward compatibility maintenance"
+        - "VALIDATE version migration strategies"
+        - "ASSESS deprecation handling patterns"
+
+      documentation_quality:
+        - "REVIEW OpenAPI schema completeness"
+        - "CHECK endpoint documentation quality"
+        - "ANALYZE example usage and descriptions"
+        - "VALIDATE API contract accuracy"
+
+  phase_8:
+    name: "Error Handling and Logging Architecture Review"
+    mandatory_actions:
+      - "ANALYZE error handling patterns and exception management"
+      - "REVIEW logging implementation and structured logging usage"
+      - "CHECK error response standardization and consistency"
+      - "ASSESS monitoring and observability implementation"
+      - "VALIDATE error recovery and graceful degradation"
+
+    error_handling_analysis:
+      exception_management:
+        - "REVIEW custom exception hierarchy design"
+        - "ANALYZE global exception handler implementation"
+        - "CHECK error propagation and handling patterns"
+        - "VALIDATE error response formatting"
+
+      logging_implementation:
+        - "ANALYZE structured logging usage and patterns"
+        - "CHECK log level usage and consistency"
+        - "REVIEW sensitive data masking in logs"
+        - "VALIDATE correlation ID and request tracking"
+
+      monitoring_integration:
+        - "REVIEW health check endpoint implementation"
+        - "ANALYZE metrics collection patterns"
+        - "CHECK alerting and notification setup"
+        - "VALIDATE performance monitoring integration"
+
+  phase_9:
+    name: "Code Organization, Maintainability, and Documentation Assessment"
+    mandatory_actions:
+      - "EVALUATE code organization and module structure"
+      - "ANALYZE code readability and maintainability patterns"
+      - "CHECK naming conventions and coding standards"
+      - "ASSESS documentation quality and completeness"
+      - "REVIEW code duplication and reusability patterns"
+
+    code_quality_analysis:
+      organization_assessment:
+        - "ANALYZE module structure and separation of concerns"
+        - "CHECK import organization and dependencies"
+        - "REVIEW file and directory naming conventions"
+        - "VALIDATE code grouping and cohesion"
+
+      maintainability_review:
+        - "ASSESS code complexity and readability"
+        - "CHECK function and class size appropriateness"
+        - "ANALYZE code duplication patterns"
+        - "VALIDATE refactoring opportunities"
+
+      documentation_review:
+        - "REVIEW docstring quality and completeness"
+        - "CHECK inline comment appropriateness"
+        - "ANALYZE type hint usage and accuracy"
+        - "VALIDATE API documentation coverage"
+
+  phase_10:
+    name: "Quality Analysis Compilation and Remediation Recommendations"
+    mandatory_actions:
+      - "COMPILE comprehensive quality analysis findings"
+      - "PRIORITIZE identified issues by severity and impact"
+      - "PROVIDE specific remediation recommendations"
+      - "CREATE actionable improvement roadmap"
+      - "GENERATE quality review deliverables with timestamps"
+
+    compilation_requirements:
+      - "MANDATORY: Document all quality issues found"
+      - "MANDATORY: Provide specific remediation steps"
+      - "MANDATORY: Prioritize fixes by impact and effort"
+      - "MANDATORY: Create actionable improvement plan"
+      - "FORBIDDEN: Generic or vague recommendations"
+
+# FastAPI Quality Review Validation Criteria
+validation_criteria:
+  architecture_compliance: "MANDATORY - Clean Architecture and SOLID compliance analyzed"
+  fastapi_patterns: "MANDATORY - FastAPI best practices validated"
+  security_analysis: "MANDATORY - Security vulnerabilities identified"
+  performance_review: "MANDATORY - Performance optimization opportunities found"
+  api_design_quality: "MANDATORY - API design quality assessed"
+  code_organization: "MANDATORY - Code structure and maintainability evaluated"
+  database_integration: "MANDATORY - Database patterns and optimization reviewed"
+  error_handling: "MANDATORY - Error handling and logging analyzed"
+  documentation_quality: "MANDATORY - Documentation completeness assessed"
+  remediation_plan: "MANDATORY - Specific improvement recommendations provided"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL review output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-24-143000"
+
+  required_outputs:
+    - "Analysis_Report_{{YYYYMMDD-HHMMSS}}.ipynb (analysis report)"
+    - "Findings_Recommendations_{{YYYYMMDD-HHMMSS}}.ipynb (findings recommendations)"
+    - "Action_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (action plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all review output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL review deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all review outputs"
+    - "FORBIDDEN: Creating review files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same review session"
+
+# FastAPI Quality Review Execution Workflow with Date Stamp Tracking
+execution_steps:
+  - "1. SCAN FastAPI codebase for ({{review_scope}}) with focus ({{quality_focus}})"
+  - "2. ANALYZE Clean Architecture and SOLID principles compliance"
+  - "3. VALIDATE FastAPI best practices and pattern implementation"
+  - "4. PERFORM security vulnerability assessment and analysis"
+  - "5. REVIEW performance optimization and scalability patterns"
+  - "6. ANALYZE database integration and repository implementations"
+  - "7. ASSESS API design quality and RESTful compliance"
+  - "8. REVIEW error handling and logging architecture"
+  - "9. EVALUATE code organization and maintainability"
+  - "10. COMPILE findings and create remediation recommendations with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each review phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all quality analysis tracking"
+  - "MANDATORY: Timestamp all review deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# FastAPI-Specific Quality Standards
+fastapi_quality_standards:
+  framework_compliance:
+    dependency_injection: "Proper use of FastAPI's DI system with Annotated types"
+    async_patterns: "Consistent async/await usage for I/O operations"
+    pydantic_integration: "Comprehensive Pydantic model validation"
+    openapi_generation: "Proper OpenAPI schema generation and documentation"
+
+  performance_standards:
+    async_database: "Async database operations with connection pooling"
+    response_caching: "Appropriate caching strategies implementation"
+    request_optimization: "Optimized request/response handling"
+    resource_management: "Efficient resource utilization and cleanup"
+
+  security_standards:
+    authentication: "Secure authentication implementation (JWT/OAuth2)"
+    input_validation: "Comprehensive input validation with Pydantic"
+    authorization: "Proper authorization and access control"
+    security_headers: "Appropriate security headers and CORS configuration"
+
+  code_quality_standards:
+    clean_architecture: "Clean Architecture principles adherence"
+    solid_principles: "SOLID principles implementation"
+    type_safety: "Comprehensive type annotations usage"
+    error_handling: "Robust error handling and exception management"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL quality analysis MUST be comprehensive and thorough"
+    - "ALL FastAPI patterns MUST be validated against best practices"
+    - "ALL security vulnerabilities MUST be identified"
+    - "ALL performance issues MUST be documented"
+    - "ALL recommendations MUST be specific and actionable"
+    - "ALL findings MUST be prioritized by impact"
+    - "ALWAYS provide detailed remediation steps"
+    - "NEVER make code changes during review"
+
+  strictly_forbidden:
+    - "Making code changes or modifications"
+    - "Creating new files or implementations"
+    - "Modifying existing code during review"
+    - "Providing superficial or incomplete analysis"
+    - "Missing critical quality issues"
+    - "Generic or vague recommendations"
+    - "Incomplete security or performance analysis"
+    - "Proceeding without comprehensive coverage"
+
+---

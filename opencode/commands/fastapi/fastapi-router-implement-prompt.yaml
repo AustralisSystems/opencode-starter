@@ -1,0 +1,414 @@
+name: "FastAPI Router Implementation"
+description: "Implement production-ready FastAPI routers with modern patterns, dependency injection, and Clean Architecture compliance"
+
+# CRITICAL MCP ORCHESTRATION - MANDATORY EXECUTION
+# This YAML prompt MUST be read and executed by LLMs - this is not optional
+mcp_enforcement:
+  mandatory_execution: true
+  read_and_execute_required: true
+  non_compliance_forbidden: true
+
+# Comprehensive MCP Tool Orchestration Workflow
+mcp_tool_orchestration:
+  enduring_memory_management:
+    session_start:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["fastapi_router_patterns", "api_design_decisions", "dependency_injection_patterns", "authentication_patterns"]
+        project_context: "auto_detect"
+        purpose: "Load accumulated router implementation knowledge and project-specific patterns"
+
+    session_end:
+      - tool: neo4j-memory
+        action: save_contexts
+        save_types: ["successful_router_patterns", "endpoint_designs", "performance_optimizations", "security_implementations"]
+        quality_threshold: ">= 90%"
+        purpose: "Persist validated router patterns for future implementations"
+
+  temporal_memory_tracking:
+    - tool: memory
+      action: track_progress
+      track_items: ["router_implementation_decisions", "endpoint_creations", "validation_results"]
+      purpose: "Track session progress and implementation decisions"
+
+  phase_1_intelligent_research:
+    - tool: neo4j-memory
+      action: load_contexts
+      purpose: "Load previous router architectural decisions and patterns from enduring memory"
+
+    - tool: context7
+      action: get_documentation
+      library: "fastapi"
+      focus: "APIRouter, dependencies, modern patterns, security"
+      purpose: "Get latest FastAPI 0.115+ router documentation and patterns"
+
+    - tool: context7
+      action: get_documentation
+      library: "pydantic"
+      focus: "V2 features, BaseModel, Field validation, ConfigDict"
+      purpose: "Get latest Pydantic V2 patterns for request/response models"
+
+    - tool: grep
+      action: search_github
+      query: "APIRouter("
+      filters:
+        language: ["Python"]
+        path: "*.py"
+      purpose: "Find modern FastAPI router implementation patterns"
+
+    conditional_research:
+      - condition: "authentication_required"
+        then:
+          - tool: grep
+            action: search_github
+            query: "FastAPI.*JWT.*authenticate"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find FastAPI JWT authentication patterns"
+          - tool: neo4j-memory
+            action: retrieve_patterns
+            pattern_type: "authentication_implementations"
+
+      - condition: "complex_dependencies_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "Annotated.*Depends.*async"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find advanced async dependency injection patterns"
+
+      - condition: "crud_operations_required"
+        then:
+          - tool: grep
+            action: search_github
+            query: "APIRouter.*CRUD.*FastAPI"
+            purpose: "Find comprehensive CRUD router implementations"
+          - tool: context7
+            action: get_documentation
+            library: "fastapi"
+            focus: "crud_operations_best_practices"
+
+  phase_2_analysis:
+    - tool: filesystem
+      action: read_multiple_files
+      paths:
+        - "src/"
+        - "./"
+      purpose: "Analyze existing codebase structure and patterns"
+
+    - tool: sequential-thinking
+      action: plan_implementation
+      focus: "Router architecture, endpoint design, dependency patterns"
+      purpose: "Plan comprehensive router implementation strategy"
+
+  phase_3_implementation:
+    - tool: filesystem
+      action: create_directory
+      path: "routers/"
+      purpose: "Create router module directory"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement main router module with modern patterns"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Create request/response models with Pydantic V2"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement dependency injection configuration"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Create exception handlers and middleware"
+
+  phase_4_testing:
+    - tool: filesystem
+      action: write_file
+      purpose: "Create comprehensive router tests"
+
+    - tool: playwright
+      action: test_api_endpoints
+      purpose: "Validate API endpoints and authentication flows"
+
+  phase_5_quality_validation:
+    automated_validation_workflow:
+      - tool: filesystem
+        action: analyze_code_quality
+        validation_types: ["endpoint_functionality", "authentication", "type_safety", "performance"]
+
+      - tool: playwright
+        action: test_api_endpoints
+        test_types: ["functionality", "authentication", "error_handling", "performance"]
+
+      - tool: sequential-thinking
+        action: validate_router_implementation
+        validation_criteria: ["clean_architecture_compliance", "solid_principles", "security_implementation"]
+
+      - conditional_validation:
+          if_security_issues_detected: true
+          then:
+            - tool: filesystem
+              action: apply_security_fixes
+            - tool: sequential-thinking
+              action: re_validate_security
+
+  phase_6_enduring_memory_persistence:
+    - tool: neo4j-memory
+      action: save_context
+      context_types: ["successful_router_patterns", "endpoint_implementations", "authentication_patterns", "performance_optimizations"]
+      quality_validation: "required"
+      purpose: "Persist validated router patterns for future implementations"
+
+    - tool: memory
+      action: save_progress
+      purpose: "Track session implementation decisions and outcomes"
+
+# Command Parameters and Options
+parameters:
+  resource_name:
+    type: string
+    required: true
+    description: "Name of the resource for the router (e.g., 'users', 'products')"
+    example: "users"
+
+  operations:
+    type: string
+    default: "crud"
+    options: ["crud", "full", "readonly", "custom"]
+    description: "Set of operations to implement"
+
+  auth_method:
+    type: string
+    default: "jwt"
+    options: ["jwt", "oauth2", "api_key", "none"]
+    description: "Authentication method to implement"
+
+  cache_backend:
+    type: string
+    default: "none"
+    options: ["redis", "memory", "none"]
+    description: "Caching backend for responses"
+
+  validation_level:
+    type: string
+    default: "standard"
+    options: ["strict", "standard", "minimal"]
+    description: "Input validation strictness"
+
+  pattern_type:
+    type: string
+    default: "standard"
+    options: ["standard", "microservice", "monolith"]
+    description: "Architecture pattern to follow"
+
+  event_integration:
+    type: string
+    default: "none"
+    options: ["rabbitmq", "kafka", "redis", "none"]
+    description: "Event system integration"
+
+# FastAPI Router Implementation Specifications
+implementation_specs:
+  core_features:
+    - "Modern APIRouter configuration with prefixes, tags, dependencies"
+    - "Annotated dependency injection following FastAPI 0.115+ patterns"
+    - "Comprehensive Pydantic V2 request/response models"
+    - "Full REST API endpoint implementation (GET, POST, PUT, PATCH, DELETE)"
+    - "Proper HTTP status code management"
+    - "Comprehensive exception handling with custom error responses"
+
+  architecture_compliance:
+    - "Clean Architecture controller layer implementation"
+    - "Service layer dependency injection with proper abstractions"
+    - "Repository pattern integration for data access"
+    - "Domain model integration with proper separation"
+    - "SOLID principles compliance throughout implementation"
+
+  security_features:
+    - "JWT authentication with role-based access control"
+    - "Input validation and sanitization with custom validators"
+    - "Rate limiting configuration per endpoint"
+    - "CORS handling and security headers"
+    - "Request/response logging with correlation IDs"
+
+  performance_optimization:
+    - "Full async/await pattern implementation"
+    - "Connection pooling for database operations"
+    - "Response caching with Redis integration"
+    - "Background task processing capabilities"
+    - "Request streaming for large data operations"
+
+  monitoring_integration:
+    - "Prometheus metrics collection"
+    - "Structured logging with correlation tracking"
+    - "Health check endpoints"
+    - "Error tracking and alerting"
+    - "Performance monitoring and profiling"
+
+# Implementation Patterns and Best Practices
+patterns:
+  router_structure:
+    - "APIRouter with proper configuration"
+    - "Dependency injection using Annotated types"
+    - "Resource-based endpoint organization"
+    - "Consistent error handling patterns"
+    - "OpenAPI documentation integration"
+
+  validation_patterns:
+    - "Pydantic V2 BaseModel with ConfigDict"
+    - "Field validation with custom validators"
+    - "Request body validation with proper error messages"
+    - "Query parameter validation and parsing"
+    - "Path parameter validation and conversion"
+
+  security_patterns:
+    - "Bearer token authentication"
+    - "Role-based access control decorators"
+    - "Input sanitization and XSS prevention"
+    - "SQL injection prevention"
+    - "Rate limiting with sliding window"
+
+  performance_patterns:
+    - "Async endpoint implementation"
+    - "Database connection management"
+    - "Response caching strategies"
+    - "Background task queuing"
+    - "Request batching and bulk operations"
+
+# Quality Standards and Validation
+quality_standards:
+  code_quality:
+    - "95% minimum test coverage"
+    - "Full type annotations with mypy validation"
+    - "Black code formatting compliance"
+    - "Ruff linting without errors"
+    - "Bandit security scanning compliance"
+
+  performance_benchmarks:
+    - "< 100ms response time for simple operations"
+    - "< 500ms response time for complex operations"
+    - "Support 1000+ concurrent requests"
+    - "< 0.1% error rate under normal load"
+    - "Efficient memory usage with connection pooling"
+
+  security_requirements:
+    - "OWASP Top 10 compliance"
+    - "Proper authentication and authorization"
+    - "Input validation and sanitization"
+    - "Secure error handling without information leakage"
+    - "Rate limiting and DDoS protection"
+
+  documentation_requirements:
+    - "Comprehensive OpenAPI schema"
+    - "Request/response examples"
+    - "Error response documentation"
+    - "Authentication flow documentation"
+    - "Rate limiting information"
+
+# Expected Deliverables (Implementation Only - NO Documentation Files)
+deliverables:
+  implementation_files:
+    - "Main router module with all endpoints"
+    - "Request/response models with Pydantic V2"
+    - "Dependency injection configuration"
+    - "Exception handlers and middleware"
+    - "Authentication and authorization components"
+    - "Validation rules and custom validators"
+    - "Caching integration and configuration"
+    - "Background task handlers"
+    - "Monitoring and metrics collection"
+    - "Health check implementations"
+
+  testing_files:
+    - "Unit tests for all router endpoints"
+    - "Integration tests for service layer"
+    - "Performance tests and benchmarks"
+    - "Security tests for authentication"
+    - "Load tests for concurrent requests"
+
+  configuration_files:
+    - "Environment configuration templates"
+    - "Docker configuration for deployment"
+    - "Monitoring configuration"
+    - "Logging configuration"
+    - "Security configuration templates"
+
+# Implementation Workflow
+workflow:
+  step_1_preparation:
+    - "Load previous architectural context"
+    - "Research latest FastAPI and Pydantic patterns"
+    - "Analyze existing codebase structure"
+    - "Plan router architecture and endpoints"
+
+  step_2_core_implementation:
+    - "Create router module with modern patterns"
+    - "Implement request/response models"
+    - "Setup dependency injection configuration"
+    - "Create exception handlers"
+
+  step_3_feature_implementation:
+    - "Implement authentication and authorization"
+    - "Add input validation and sanitization"
+    - "Setup caching and performance optimization"
+    - "Implement monitoring and logging"
+
+  step_4_testing_validation:
+    - "Create comprehensive test suite"
+    - "Validate API endpoints with Playwright"
+    - "Run performance and security tests"
+    - "Verify architecture compliance"
+
+  step_5_finalization:
+    - "Save implementation decisions to memory"
+    - "Update extended memory with patterns"
+    - "Verify all quality standards met"
+    - "Complete implementation validation"
+
+# Integration Requirements
+integration:
+  existing_architecture:
+    - "Integrate with existing service layer"
+    - "Follow established authentication patterns"
+    - "Use existing database connections"
+    - "Maintain consistent error handling"
+
+  external_services:
+    - "Database integration with proper pooling"
+    - "Cache service integration (Redis)"
+    - "Message queue integration (if specified)"
+    - "Monitoring service integration"
+
+  deployment_compatibility:
+    - "Docker container compatibility"
+    - "Environment variable configuration"
+    - "Health check integration"
+    - "Load balancer compatibility"
+
+# Success Criteria
+success_criteria:
+  functional:
+    - "All specified endpoints implemented and working"
+    - "Authentication and authorization functional"
+    - "Input validation working correctly"
+    - "Error handling comprehensive and consistent"
+    - "Performance meets specified benchmarks"
+
+  technical:
+    - "Code passes all quality checks"
+    - "Test coverage meets minimum requirements"
+    - "Security scanning passes"
+    - "Architecture compliance verified"
+    - "Documentation complete and accurate"
+
+  operational:
+    - "Health checks functional"
+    - "Monitoring and logging working"
+    - "Deployment configuration complete"
+    - "Integration with existing services successful"
+    - "Performance under load acceptable"

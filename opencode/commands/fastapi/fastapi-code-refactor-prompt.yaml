@@ -1,0 +1,395 @@
+name: "FastAPI Code Refactoring"
+description: "Refactor and modernize FastAPI applications with latest patterns, performance optimizations, and Clean Architecture compliance"
+
+# CRITICAL MCP ORCHESTRATION - MANDATORY EXECUTION
+# This YAML prompt MUST be read and executed by LLMs - this is not optional
+mcp_enforcement:
+  mandatory_execution: true
+  read_and_execute_required: true
+  non_compliance_forbidden: true
+
+# Comprehensive MCP Tool Orchestration Workflow
+mcp_tool_orchestration:
+  enduring_memory_management:
+    session_start:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["fastapi_refactoring_patterns", "architectural_decisions", "performance_optimizations", "pydantic_v2_migrations"]
+        project_context: "auto_detect"
+        purpose: "Load accumulated refactoring knowledge and project-specific patterns"
+
+    session_end:
+      - tool: neo4j-memory
+        action: save_contexts
+        save_types: ["new_patterns", "refactoring_outcomes", "performance_improvements", "lessons_learned"]
+        quality_threshold: ">= 85%"
+        purpose: "Persist successful refactoring patterns for future use"
+
+  temporal_memory_tracking:
+    - tool: memory
+      action: track_progress
+      track_items: ["refactoring_decisions", "code_changes", "validation_results"]
+      purpose: "Track session progress and decisions"
+
+  phase_1_intelligent_research:
+    - tool: neo4j-memory
+      action: load_contexts
+      purpose: "Load previous refactoring decisions and architectural patterns from enduring memory"
+
+    - tool: context7
+      action: get_documentation
+      library: "fastapi"
+      focus: "0.115+ features, modern patterns, performance, security"
+      purpose: "Get latest FastAPI refactoring patterns and best practices"
+
+    - tool: context7
+      action: get_documentation
+      library: "pydantic"
+      focus: "V2 migration, performance improvements, validation patterns"
+      purpose: "Get Pydantic V2 migration strategies and optimization techniques"
+
+    conditional_research:
+      - condition: "pydantic_v1_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "pydantic.*BaseModel.*ConfigDict"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find Pydantic V2 migration patterns and ConfigDict usage"
+          - tool: context7
+            action: get_documentation
+            library: "pydantic"
+            focus: "migration_guide_v1_to_v2"
+
+      - condition: "legacy_depends_pattern_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "Annotated.*Depends.*FastAPI"
+            filters:
+              language: ["Python"]
+              path: "*.py"
+            purpose: "Find modern dependency injection patterns with Annotated"
+
+      - condition: "performance_issues_detected"
+        then:
+          - tool: grep
+            action: search_github
+            query: "FastAPI.*async.*performance"
+            purpose: "Find performance optimization patterns"
+          - tool: neo4j-memory
+            action: retrieve_patterns
+            pattern_type: "performance_optimizations"
+
+  phase_2_analysis:
+    - tool: filesystem
+      action: read_multiple_files
+      paths:
+        - "."
+        - "src/"
+        - "app/"
+      purpose: "Analyze existing FastAPI codebase for refactoring opportunities"
+
+    - tool: sequential-thinking
+      action: plan_refactoring
+      focus: "Code modernization, performance optimization, architecture improvement"
+      purpose: "Plan comprehensive refactoring strategy with risk assessment"
+
+  phase_3_implementation:
+    - tool: filesystem
+      action: edit_file
+      purpose: "Apply FastAPI 0.115+ modernization patterns"
+
+    - tool: filesystem
+      action: edit_file
+      purpose: "Migrate to Pydantic V2 with performance optimizations"
+
+    - tool: filesystem
+      action: edit_file
+      purpose: "Implement modern dependency injection patterns"
+
+    - tool: filesystem
+      action: edit_file
+      purpose: "Apply async/await optimization patterns"
+
+    - tool: filesystem
+      action: edit_file
+      purpose: "Implement Clean Architecture refactoring"
+
+  phase_4_validation:
+    - tool: playwright
+      action: test_api_endpoints
+      purpose: "Validate API functionality after refactoring"
+
+  phase_5_quality_validation:
+    automated_validation_workflow:
+      - tool: filesystem
+        action: analyze_code_quality
+        validation_types: ["type_safety", "performance", "security", "architecture"]
+
+      - tool: sequential-thinking
+        action: validate_refactoring_outcomes
+        validation_criteria: ["functionality_preserved", "performance_improved", "architecture_enhanced"]
+
+      - conditional_validation:
+          if_quality_threshold_not_met: "< 85%"
+          then:
+            - tool: sequential-thinking
+              action: identify_improvement_areas
+            - tool: filesystem
+              action: apply_additional_fixes
+
+  phase_6_enduring_memory_persistence:
+    - tool: neo4j-memory
+      action: save_context
+      context_types: ["successful_patterns", "refactoring_outcomes", "performance_metrics", "architectural_improvements"]
+      quality_validation: "required"
+      purpose: "Persist validated refactoring patterns for future projects"
+
+    - tool: memory
+      action: save_progress
+      purpose: "Track session refactoring decisions and immediate outcomes"
+
+# Command Parameters and Options
+parameters:
+  target_area:
+    type: string
+    required: true
+    description: "Area of code to refactor (e.g., 'routers', 'services', 'models', 'all')"
+    example: "routers"
+
+  refactoring_type:
+    type: string
+    default: "modernization"
+    options: ["modernization", "performance", "architecture", "security", "full"]
+    description: "Type of refactoring to perform"
+
+  fastapi_version:
+    type: string
+    default: "0.115+"
+    options: ["0.110+", "0.115+", "latest"]
+    description: "Target FastAPI version for modernization"
+
+  pydantic_migration:
+    type: boolean
+    default: true
+    description: "Migrate from Pydantic V1 to V2"
+
+  preserve_compatibility:
+    type: boolean
+    default: true
+    description: "Maintain backward compatibility where possible"
+
+  performance_focus:
+    type: boolean
+    default: true
+    description: "Apply performance optimization patterns"
+
+  architecture_improvement:
+    type: boolean
+    default: true
+    description: "Apply Clean Architecture and SOLID principles"
+
+# FastAPI Refactoring Specifications
+refactoring_specs:
+  modernization_patterns:
+    - "Upgrade to FastAPI 0.115+ with modern dependency injection using Annotated types"
+    - "Migrate Pydantic models from V1 to V2 with ConfigDict and performance optimizations"
+    - "Implement modern async/await patterns for I/O operations"
+    - "Apply latest security patterns with proper authentication and authorization"
+    - "Upgrade response models with proper status codes and error handling"
+
+  performance_optimizations:
+    - "Implement connection pooling for database operations"
+    - "Add response caching with Redis integration where appropriate"
+    - "Optimize query patterns and reduce N+1 database queries"
+    - "Implement async background tasks for long-running operations"
+    - "Apply lazy loading and pagination for large data sets"
+
+  architecture_improvements:
+    - "Refactor to Clean Architecture with proper layer separation"
+    - "Apply SOLID principles throughout the codebase"
+    - "Implement Repository and Unit of Work patterns"
+    - "Create proper service layer abstractions"
+    - "Separate business logic from presentation concerns"
+
+  security_enhancements:
+    - "Implement proper input validation and sanitization"
+    - "Add rate limiting and DDoS protection"
+    - "Upgrade authentication to use modern JWT patterns"
+    - "Implement proper CORS and security headers"
+    - "Add security middleware for common vulnerabilities"
+
+# Code Transformation Patterns
+transformation_patterns:
+  pydantic_v2_migration:
+    - "Replace BaseModel with V2 patterns and ConfigDict"
+    - "Update field definitions with new Field syntax"
+    - "Migrate custom validators to V2 patterns"
+    - "Update serialization and parsing logic"
+    - "Optimize model performance with V2 features"
+
+  dependency_injection_modernization:
+    - "Replace Depends() with Annotated[Type, Depends()] pattern"
+    - "Implement proper dependency scoping and lifecycle"
+    - "Create reusable dependency providers"
+    - "Add proper error handling for dependency failures"
+    - "Implement dependency caching where appropriate"
+
+  async_optimization:
+    - "Convert blocking operations to async/await patterns"
+    - "Implement proper async context managers"
+    - "Add async database session management"
+    - "Create async background task processors"
+    - "Optimize async request handling"
+
+  error_handling_improvement:
+    - "Implement custom exception hierarchies"
+    - "Add proper error response models"
+    - "Create centralized error handling middleware"
+    - "Implement proper logging with correlation IDs"
+    - "Add error monitoring and alerting"
+
+# Quality Standards and Validation
+quality_standards:
+  code_quality:
+    - "95% minimum test coverage maintained after refactoring"
+    - "All type hints properly updated with modern patterns"
+    - "Black formatting and Ruff linting compliance"
+    - "MyPy type checking passes without errors"
+    - "Bandit security scanning passes"
+
+  performance_benchmarks:
+    - "Response times improved or maintained"
+    - "Memory usage optimized through V2 migrations"
+    - "Database query efficiency improved"
+    - "Concurrent request handling enhanced"
+    - "Background task processing optimized"
+
+  compatibility_requirements:
+    - "API contract compatibility maintained"
+    - "Existing client integrations preserved"
+    - "Database schema compatibility ensured"
+    - "Configuration backward compatibility"
+    - "Deployment process compatibility"
+
+# Expected Deliverables (Implementation Only - NO Documentation Files)
+deliverables:
+  refactored_code:
+    - "Modernized FastAPI application code with 0.115+ patterns"
+    - "Pydantic V2 migrated models with performance optimizations"
+    - "Updated dependency injection using Annotated types"
+    - "Async/await optimization throughout codebase"
+    - "Clean Architecture implementation"
+    - "Enhanced security implementations"
+    - "Performance-optimized database interactions"
+    - "Improved error handling and logging"
+
+  validation_results:
+    - "API endpoint functionality validation"
+    - "Performance benchmark results"
+    - "Security scan results"
+    - "Type checking validation"
+    - "Test coverage verification"
+
+  configuration_updates:
+    - "Updated environment configuration templates"
+    - "Modernized Docker configuration"
+    - "Updated dependency management files"
+    - "CI/CD pipeline configuration updates"
+
+# Implementation Workflow
+workflow:
+  step_1_preparation:
+    - "Load previous refactoring context and decisions"
+    - "Research latest FastAPI and Pydantic patterns"
+    - "Analyze existing codebase for refactoring opportunities"
+    - "Plan refactoring strategy with risk assessment"
+
+  step_2_modernization:
+    - "Upgrade FastAPI patterns to 0.115+ standards"
+    - "Migrate Pydantic models to V2 with optimizations"
+    - "Update dependency injection to use Annotated types"
+    - "Implement modern async/await patterns"
+
+  step_3_architecture_improvement:
+    - "Apply Clean Architecture principles"
+    - "Implement SOLID design principles"
+    - "Refactor service layer architecture"
+    - "Create proper abstraction layers"
+
+  step_4_performance_optimization:
+    - "Implement connection pooling and caching"
+    - "Optimize database query patterns"
+    - "Add background task processing"
+    - "Implement proper async patterns"
+
+  step_5_security_enhancement:
+    - "Update authentication and authorization"
+    - "Implement input validation and sanitization"
+    - "Add security middleware and headers"
+    - "Apply rate limiting and protection"
+
+  step_6_validation:
+    - "Test API endpoints for functionality"
+    - "Validate performance improvements"
+    - "Run security and quality scans"
+    - "Verify backward compatibility"
+
+  step_7_finalization:
+    - "Save refactoring decisions to memory"
+    - "Update extended memory with patterns"
+    - "Verify all quality standards met"
+    - "Complete refactoring validation"
+
+# Integration Requirements
+integration:
+  existing_codebase:
+    - "Maintain API contract compatibility"
+    - "Preserve existing functionality"
+    - "Update dependent components"
+    - "Maintain configuration compatibility"
+
+  external_dependencies:
+    - "Update database integration patterns"
+    - "Maintain cache service compatibility"
+    - "Preserve message queue integrations"
+    - "Update monitoring and logging systems"
+
+  deployment_compatibility:
+    - "Ensure Docker container compatibility"
+    - "Maintain deployment pipeline functionality"
+    - "Update environment variable usage"
+    - "Preserve health check implementations"
+
+# Success Criteria
+success_criteria:
+  functional:
+    - "All existing functionality preserved"
+    - "API endpoints respond correctly"
+    - "Authentication and authorization working"
+    - "Database operations functioning"
+    - "Background tasks processing correctly"
+
+  performance:
+    - "Response times improved or maintained"
+    - "Memory usage optimized"
+    - "Database query performance improved"
+    - "Concurrent request handling enhanced"
+    - "Background task efficiency increased"
+
+  quality:
+    - "Code passes all quality checks"
+    - "Test coverage maintained or improved"
+    - "Security scanning passes"
+    - "Type checking validates successfully"
+    - "Documentation updated appropriately"
+
+  compatibility:
+    - "Backward compatibility maintained"
+    - "Client integrations unaffected"
+    - "Deployment process unchanged"
+    - "Configuration compatibility preserved"
+    - "Monitoring and alerting functional"

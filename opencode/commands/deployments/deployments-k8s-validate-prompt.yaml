@@ -1,0 +1,622 @@
+# === MCP PROMPT: Kubernetes Deployment Validation Protocol ===
+name: "kubernetes-deployment-validation-prompt"
+version: "1.0.0"
+description: "Comprehensive post-deployment validation protocol for Kubernetes with very strict pass/fail criteria"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Kubernetes Deployment Validation"
+  description: "Execute comprehensive post-deployment validation for Kubernetes deployments with paranoid-level thoroughness and K8s-specific checks"
+
+  # Argument Schema
+  arguments:
+    deployment_name:
+      type: "string"
+      description: "Name of the deployment to validate"
+      required: true
+
+    namespace:
+      type: "string"
+      description: "Kubernetes namespace where deployment exists"
+      required: true
+
+    k8s_platform:
+      type: "string"
+      description: "Kubernetes platform type"
+      required: true
+      enum:
+        [
+          "k8s",
+          "docker-desktop",
+          "minikube",
+          "kind",
+          "aws-eks",
+          "azure-aks",
+          "gcp-gke",
+          "on-premises",
+        ]
+
+    service_name:
+      type: "string"
+      description: "Service name for connectivity testing (optional)"
+      required: false
+
+    ingress_host:
+      type: "string"
+      description: "Ingress hostname for external testing (optional)"
+      required: false
+
+    validation_depth:
+      type: "string"
+      description: "Level of validation thoroughness"
+      required: false
+      default: "comprehensive"
+      enum: ["basic", "standard", "comprehensive", "paranoid"]
+
+    run_integration_tests:
+      type: "boolean"
+      description: "Run full integration test suite"
+      required: false
+      default: true
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Kubernetes deployment validation specialist executing the Kubernetes Deployment Validation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every K8s validation action
+        - Be VERY STRICT and PARANOID about Kubernetes resource states
+        - Catch ALL K8s issues, errors, warnings, and anomalies
+        - ANY pod not Running = FAIL
+        - ANY error in logs = FAIL (be STRICT)
+        - Create comprehensive K8s validation reports with kubectl remediation commands
+        - Follow systematic Kubernetes validation methodology
+        - NEVER claim success when any K8s resource has issues
+
+        ABSOLUTELY FORBIDDEN:
+        - Claiming "100% successful deployment" without thorough K8s validation
+        - Ignoring CrashLoopBackOff, ImagePullBackOff, or Error pod states
+        - Superficial or incomplete Kubernetes validation
+        - Optimistic reporting when pods are restarting
+        - Skipping security or RBAC validation
+        - False positive success claims
+
+        STRICT KUBERNETES FAIL CRITERIA (ANY = FAIL):
+        - ANY pod not in Running state
+        - ANY pod restart count > 0 in last 10 minutes
+        - ANY ERROR in pod logs
+        - ANY failing liveness/readiness probe
+        - ANY Service without endpoints
+        - ANY PVC not in Bound status
+        - ANY security policy violation
+        - ANY RBAC permission error
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY KUBERNETES DEPLOYMENT VALIDATION PROTOCOL**
+
+        **ALWAYS THINK THEN...** Before executing any K8s validation action, you MUST use thinking to:
+        1. Analyze the Kubernetes validation requirements
+        2. Plan your approach and identify critical K8s checks
+        3. Consider potential K8s failure scenarios
+        4. Only then proceed with validation
+
+        **VALIDATION PARAMETERS:**
+        - Deployment Name: {{deployment_name}}
+        - Namespace: {{namespace}}
+        - K8s Platform: {{k8s_platform}}
+        - Service Name: {{service_name}}
+        - Ingress Host: {{ingress_host}}
+        - Validation Depth: {{validation_depth}}
+        - Run Integration Tests: {{run_integration_tests}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING KUBERNETES DEPLOYMENT VALIDATION PROTOCOL:**
+
+# Kubernetes Validation Protocol Configuration
+validation_protocol:
+  # K8s Validation Focus - MANDATORY COMPREHENSIVE COVERAGE
+  validation_focus:
+    pod_health: true # MUST validate all pod states
+    pod_logs: true # MUST analyze logs from all pods
+    service_ingress: true # MUST validate services and ingress
+    resource_status: true # MUST check all K8s resources
+    security_compliance: true # MUST validate security policies
+    monitoring_integration: true # MUST verify monitoring setup
+    integration_testing: true # MUST run integration tests
+    strict_kubernetes_criteria: true # MUST use K8s-specific strict criteria
+
+  # K8s Validation Settings - MANDATORY
+  validation_settings:
+    enable_deep_k8s_analysis: true
+    analyze_all_pod_logs: true
+    test_all_k8s_resources: true
+    validate_security_policies: true
+    check_rbac_permissions: true
+    verify_network_policies: true
+    test_service_mesh: true # If Istio/Linkerd/Consul present
+    comprehensive_k8s_coverage: true
+    zero_tolerance_pod_errors: true # ANY pod error = FAIL
+    strict_k8s_failure_criteria: true
+
+# Kubernetes Execution Phases
+execution_phases:
+  phase_1:
+    name: "Pod Status Validation"
+    mandatory_actions:
+      - "CHECK all pods are in Running state (FAIL if any Pending/CrashLoopBackOff/Error/ImagePullBackOff)"
+      - "VERIFY pod restart counts are 0 or stable (FAIL if any restarts in last 10 minutes)"
+      - "VALIDATE pod readiness and liveness probe status (all must be passing)"
+      - "CHECK pod resource requests and limits are defined"
+      - "DETECT OOMKilled or Evicted pods (FAIL if any found)"
+      - "VERIFY correct number of replicas (desired = current = ready)"
+      - "VALIDATE pod scheduling (no unschedulable pods)"
+      - "CHECK pod conditions (PodScheduled, Initialized, ContainersReady, Ready)"
+
+    validation_commands:
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}}"
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.metadata.name}{\"\\t\"}{.status.phase}{\"\\t\"}{.status.containerStatuses[0].restartCount}{\"\\n\"}{end}'"
+      - "kubectl describe pods -n {{namespace}} -l app={{deployment_name}} | grep -A 10 'Conditions:'"
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.metadata.name}{\"\\t\"}{.status.conditions[?(@.type==\"Ready\")].status}{\"\\n\"}{end}'"
+
+    fail_criteria:
+      - "ANY pod not in Running state"
+      - "ANY pod with status Pending/CrashLoopBackOff/Error/ImagePullBackOff"
+      - "ANY pod with restart count > 0 in last 10 minutes"
+      - "ANY pod with Ready condition = False"
+      - "ANY OOMKilled pod"
+      - "ANY Evicted pod"
+      - "Desired replicas != Current replicas != Ready replicas"
+
+  phase_2:
+    name: "Pod Log Analysis"
+    mandatory_actions:
+      - "RETRIEVE logs from ALL pods in the deployment"
+      - "SEARCH for ERROR, CRITICAL, FATAL, PANIC messages"
+      - "CHECK for stack traces and unhandled exceptions"
+      - "VALIDATE expected startup messages are present"
+      - "ANALYZE init container logs (if present)"
+      - "CHECK sidecar container logs (service mesh, logging, monitoring)"
+      - "DETECT configuration errors or missing environment variables"
+      - "CHECK for security-related errors (auth failures, permission denied)"
+      - "VERIFY no resource exhaustion warnings (memory, disk, connections)"
+
+    validation_commands:
+      - "kubectl logs -n {{namespace}} -l app={{deployment_name}} --all-containers=true --tail=500 | grep -i 'error\\|critical\\|fatal\\|panic' | head -50"
+      - "kubectl logs -n {{namespace}} -l app={{deployment_name}} --all-containers=true --tail=500 | grep -i 'exception\\|stack trace' | head -20"
+      - "kubectl logs -n {{namespace}} -l app={{deployment_name}} --all-containers=true --tail=500 | grep -i 'warn' | head -30"
+      - "kubectl logs -n {{namespace}} -l app={{deployment_name}} --previous --all-containers=true 2>/dev/null | grep -i 'error\\|fatal' | head -20"
+
+    fail_criteria:
+      - "ANY ERROR message in current pod logs"
+      - "ANY CRITICAL or FATAL or PANIC message"
+      - "ANY unhandled exception or stack trace"
+      - "ANY configuration error (missing env vars, config files)"
+      - "ANY security-related error (permission denied, auth failure)"
+      - "ANY resource exhaustion warning (OOM, disk full)"
+      - "MORE THAN 10 WARNING messages in logs"
+      - "ANY crash in previous container logs"
+
+  phase_3:
+    name: "Service and Ingress Validation"
+    mandatory_actions:
+      - "VERIFY Service exists and has valid endpoints"
+      - "CHECK Service selector matches pod labels exactly"
+      - "TEST Service port accessibility from within cluster"
+      - "VALIDATE Service type (ClusterIP, NodePort, LoadBalancer)"
+      - "VERIFY Ingress configuration and routing rules"
+      - "CHECK Ingress backend services are correct"
+      - "TEST external access through Ingress (if {{ingress_host}} provided)"
+      - "VALIDATE TLS certificate if HTTPS"
+      - "CHECK Ingress annotations (nginx, traefik, ALB, etc.)"
+
+    validation_commands:
+      - "kubectl get service {{service_name}} -n {{namespace}} -o yaml"
+      - "kubectl get endpoints {{service_name}} -n {{namespace}}"
+      - "kubectl describe service {{service_name}} -n {{namespace}}"
+      - "kubectl get ingress -n {{namespace}} -o yaml"
+      - "kubectl describe ingress -n {{namespace}}"
+      - "kubectl run test-pod --rm -i --restart=Never --image=curlimages/curl -n {{namespace}} -- curl -f http://{{service_name}}.{{namespace}}.svc.cluster.local"
+
+    fail_criteria:
+      - "Service does NOT exist"
+      - "Service has NO endpoints (endpoints list is empty)"
+      - "Service selector does NOT match any pods"
+      - "Service ports misconfigured"
+      - "Ingress backend service NOT found"
+      - "Ingress routing rules incorrect"
+      - "TLS certificate invalid or expired"
+      - "External access test fails (if ingress_host provided)"
+
+  phase_4:
+    name: "ConfigMap and Secret Validation"
+    mandatory_actions:
+      - "VERIFY ConfigMaps exist and are referenced in deployment"
+      - "CHECK ConfigMaps are mounted correctly in pods"
+      - "VALIDATE Secrets exist and are accessible"
+      - "CHECK Secret volumes are present in pods"
+      - "VERIFY environment variables from ConfigMaps/Secrets are set"
+      - "CHECK for missing or misconfigured values"
+      - "ENSURE no secrets are exposed in logs or env output"
+      - "TEST ConfigMap/Secret updates propagate (if applicable)"
+
+    validation_commands:
+      - "kubectl get configmap -n {{namespace}}"
+      - "kubectl describe configmap -n {{namespace}}"
+      - "kubectl get secret -n {{namespace}}"
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.metadata.name}{\"\\n\"}{range .spec.containers[*]}{.name}{\"\\n\"}{range .env[*]}{.name}{\"=\"}{.value}{\"\\n\"}{end}{end}{end}' | grep -v PASSWORD | grep -v SECRET | grep -v TOKEN"
+      - "kubectl describe pods -n {{namespace}} -l app={{deployment_name}} | grep -A 5 'Mounts:'"
+
+    fail_criteria:
+      - "Required ConfigMap does NOT exist"
+      - "ConfigMap NOT mounted in pods"
+      - "Required Secret does NOT exist"
+      - "Secret NOT mounted or env vars NOT set"
+      - "Missing required configuration values"
+      - "Secrets exposed in logs or environment output"
+
+  phase_5:
+    name: "Resource Status Validation"
+    mandatory_actions:
+      - "CHECK PersistentVolumeClaim status (MUST be Bound, not Pending/Lost)"
+      - "VERIFY PVC storage usage and capacity"
+      - "VALIDATE HorizontalPodAutoscaler status and metrics"
+      - "CHECK VerticalPodAutoscaler recommendations (if used)"
+      - "VERIFY NetworkPolicy configuration and enforcement"
+      - "CHECK ServiceAccount and RBAC permissions"
+      - "VALIDATE ResourceQuota and LimitRange compliance"
+      - "CHECK PodDisruptionBudget configuration"
+
+    validation_commands:
+      - "kubectl get pvc -n {{namespace}}"
+      - "kubectl describe pvc -n {{namespace}}"
+      - "kubectl get hpa -n {{namespace}}"
+      - "kubectl describe hpa -n {{namespace}}"
+      - "kubectl get networkpolicy -n {{namespace}}"
+      - "kubectl get serviceaccount -n {{namespace}}"
+      - "kubectl get rolebinding,clusterrolebinding -n {{namespace}}"
+      - "kubectl get resourcequota,limitrange -n {{namespace}}"
+      - "kubectl get pdb -n {{namespace}}"
+
+    fail_criteria:
+      - "ANY PVC not in Bound status (Pending or Lost)"
+      - "ANY PVC storage usage > 90%"
+      - "HPA unable to get metrics"
+      - "NetworkPolicy NOT enforcing (if required)"
+      - "ServiceAccount missing or permissions incorrect"
+      - "ResourceQuota exceeded"
+      - "PodDisruptionBudget violated"
+
+  phase_6:
+    name: "Rollout Status Validation"
+    mandatory_actions:
+      - "VERIFY Deployment rollout completed successfully"
+      - "CHECK ReplicaSet status (old vs new)"
+      - "VALIDATE no ongoing rollbacks"
+      - "CHECK rollout history"
+      - "VERIFY desired vs actual replica count matches"
+      - "CHECK deployment strategy (RollingUpdate settings)"
+      - "VALIDATE maxSurge and maxUnavailable configuration"
+      - "CHECK rollout annotations and status messages"
+
+    validation_commands:
+      - "kubectl rollout status deployment/{{deployment_name}} -n {{namespace}}"
+      - "kubectl get replicaset -n {{namespace}} -l app={{deployment_name}}"
+      - "kubectl rollout history deployment/{{deployment_name}} -n {{namespace}}"
+      - "kubectl describe deployment {{deployment_name}} -n {{namespace}}"
+      - "kubectl get deployment {{deployment_name}} -n {{namespace}} -o jsonpath='{.spec.replicas}{\" \"}{.status.replicas}{\" \"}{.status.readyReplicas}{\" \"}{.status.updatedReplicas}'"
+
+    fail_criteria:
+      - "Rollout NOT complete (progressing or failed)"
+      - "Multiple ReplicaSets with pods (rollout stuck)"
+      - "Desired replicas != Ready replicas"
+      - "Rollout status shows error or failure"
+      - "Old ReplicaSet still has pods"
+
+  phase_7:
+    name: "Health and Readiness Probes"
+    mandatory_actions:
+      - "TEST liveness probe endpoints from within pods"
+      - "TEST readiness probe endpoints from within pods"
+      - "VERIFY probe configurations are correct (path, port, headers)"
+      - "CHECK probe success rates (must be 100%)"
+      - "TEST startup probes if defined"
+      - "VALIDATE probe timing (initialDelaySeconds, periodSeconds, timeoutSeconds)"
+      - "CHECK failureThreshold and successThreshold values"
+      - "VERIFY probes are not causing false positives/negatives"
+
+    validation_commands:
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.metadata.name}{\" \"}{.status.containerStatuses[0].ready}{\" \"}{.status.containerStatuses[0].restartCount}{\"\\n\"}{end}'"
+      - "kubectl describe pods -n {{namespace}} -l app={{deployment_name}} | grep -A 3 'Liveness:'"
+      - "kubectl describe pods -n {{namespace}} -l app={{deployment_name}} | grep -A 3 'Readiness:'"
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- wget -q -O- http://localhost:{{port}}/health"
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- wget -q -O- http://localhost:{{port}}/ready"
+
+    fail_criteria:
+      - "ANY liveness probe failing"
+      - "ANY readiness probe failing"
+      - "ANY pod NOT ready due to probe failures"
+      - "Probe endpoint returning non-200 status"
+      - "Probe timing causing restarts (too aggressive)"
+
+  phase_8:
+    name: "API Endpoint Testing (from within cluster)"
+    mandatory_actions:
+      - "CREATE test pod in same namespace for testing"
+      - "TEST internal service communication via ClusterIP"
+      - "VALIDATE API endpoints functionality via Service DNS"
+      - "TEST inter-pod networking"
+      - "CHECK DNS resolution (service.namespace.svc.cluster.local)"
+      - "VALIDATE service mesh routing (if Istio/Linkerd/Consul)"
+      - "TEST load balancing across pod replicas"
+      - "CLEANUP test pod after validation"
+
+    validation_commands:
+      - "kubectl run api-test --rm -i --restart=Never --image=curlimages/curl -n {{namespace}} -- curl -f http://{{service_name}}.{{namespace}}.svc.cluster.local/health"
+      - "kubectl run api-test --rm -i --restart=Never --image=curlimages/curl -n {{namespace}} -- curl -f http://{{service_name}}.{{namespace}}.svc.cluster.local/api/endpoint"
+      - "kubectl run dns-test --rm -i --restart=Never --image=busybox -n {{namespace}} -- nslookup {{service_name}}.{{namespace}}.svc.cluster.local"
+
+    fail_criteria:
+      - "Service DNS NOT resolving"
+      - "API endpoints returning errors from within cluster"
+      - "Inter-pod communication failing"
+      - "Service mesh routing incorrect (if configured)"
+      - "Load balancing NOT working across replicas"
+
+  phase_9:
+    name: "Security Validation"
+    mandatory_actions:
+      - "VERIFY Pod Security Standards compliance (Baseline or Restricted)"
+      - "CHECK container security contexts (runAsNonRoot, readOnlyRootFilesystem)"
+      - "VALIDATE NetworkPolicies are in effect (default-deny recommended)"
+      - "CHECK RBAC permissions are correct and least-privilege"
+      - "VERIFY no privileged containers are running"
+      - "CHECK capabilities are dropped appropriately"
+      - "VALIDATE seccomp and AppArmor profiles (if configured)"
+      - "CHECK image pull secrets and registry authentication"
+
+    validation_commands:
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.metadata.name}{\"\\n\"}{range .spec.containers[*]}{.securityContext}{\"\\n\"}{end}{end}'"
+      - "kubectl get networkpolicy -n {{namespace}}"
+      - "kubectl auth can-i --list --as=system:serviceaccount:{{namespace}}:{{service_account}}"
+      - "kubectl get pods -n {{namespace}} -l app={{deployment_name}} -o jsonpath='{range .items[*]}{.spec.securityContext.runAsNonRoot}{\"\\n\"}{end}'"
+
+    fail_criteria:
+      - "ANY container running as root (runAsNonRoot: false or not set)"
+      - "ANY privileged container (privileged: true)"
+      - "NetworkPolicy NOT enforcing (if security level is high)"
+      - "RBAC permissions too broad (not least-privilege)"
+      - "Capabilities NOT dropped (should drop ALL)"
+      - "readOnlyRootFilesystem: false (should be true where possible)"
+
+  phase_10:
+    name: "Monitoring and Observability"
+    mandatory_actions:
+      - "CHECK ServiceMonitor is created and active (Prometheus Operator)"
+      - "VERIFY Prometheus is scraping metrics from pods"
+      - "CHECK metric endpoints are accessible (/metrics)"
+      - "VERIFY Grafana dashboard availability (if configured)"
+      - "VALIDATE log forwarding to aggregation system (if configured)"
+      - "TEST alerting rules if configured (PrometheusRule)"
+      - "CHECK distributed tracing integration (Jaeger/Zipkin if configured)"
+      - "VALIDATE custom metrics for HPA (if configured)"
+
+    validation_commands:
+      - "kubectl get servicemonitor -n {{namespace}}"
+      - "kubectl describe servicemonitor -n {{namespace}}"
+      - "kubectl get prometheusrule -n {{namespace}}"
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- wget -q -O- http://localhost:{{port}}/metrics | head -20"
+      - "kubectl logs -n monitoring prometheus-{{instance}} | grep {{deployment_name}}"
+
+    fail_criteria:
+      - "ServiceMonitor NOT created (if Prometheus Operator used)"
+      - "Prometheus NOT scraping metrics"
+      - "/metrics endpoint NOT accessible or returning errors"
+      - "Critical PrometheusRules NOT active"
+      - "Log forwarding NOT working (if configured)"
+
+  phase_11:
+    name: "Integration Testing"
+    mandatory_actions:
+      - "TEST database connectivity from pods (if applicable)"
+      - "VERIFY external service integrations (APIs, webhooks)"
+      - "TEST message queue connections (Kafka, RabbitMQ, Redis)"
+      - "VALIDATE cache connectivity (Redis, Memcached)"
+      - "CHECK S3/blob storage access (if applicable)"
+      - "TEST service mesh mTLS (if Istio/Linkerd)"
+      - "VALIDATE cross-namespace communication (if required)"
+      - "EXECUTE end-to-end workflow tests"
+
+    validation_commands:
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- nc -zv {{database_host}} {{database_port}}"
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- redis-cli -h {{redis_host}} ping"
+      - "kubectl exec -n {{namespace}} {{pod_name}} -- curl -f http://{{external_api}}/health"
+
+    fail_criteria:
+      - "Database connectivity failing"
+      - "External service integration broken"
+      - "Message queue connection errors"
+      - "Cache connectivity issues"
+      - "Storage access failures"
+      - "Service mesh mTLS errors"
+      - "End-to-end workflow failures"
+
+  phase_12:
+    name: "Comprehensive Reporting and Remediation"
+    mandatory_actions:
+      - "GENERATE comprehensive K8s validation report with timestamps"
+      - "CATEGORIZE all issues by severity (CRITICAL, HIGH, MEDIUM, LOW)"
+      - "DOCUMENT each K8s issue with kubectl output evidence"
+      - "PROVIDE kubectl commands for remediation for EACH issue"
+      - "CREATE detailed rollback plan using kubectl rollout undo"
+      - "DETERMINE final PASS/FAIL status (be VERY STRICT)"
+      - "GENERATE structured JSON results for CI/CD integration"
+      - "INCLUDE performance metrics and resource usage"
+
+    report_requirements:
+      - "Executive summary with clear K8s pass/fail"
+      - "All 12 K8s validation phases with detailed findings"
+      - "Complete issue list with kubectl remediation commands"
+      - "Rollback plan with specific kubectl commands"
+      - "Security compliance status"
+      - "Monitoring and observability status"
+      - "Appendix with pod logs, kubectl describe output"
+
+    kubectl_remediation_template:
+      issue_description: "Clear description of the K8s problem"
+      kubectl_diagnosis: "kubectl commands to diagnose the issue"
+      root_cause: "Root cause analysis (pod state, config, resource)"
+      kubectl_fix: "kubectl commands to fix the issue"
+      verification: "kubectl commands to verify the fix"
+      prevention: "Recommendations to prevent recurrence"
+
+    pass_fail_determination:
+      PASS_criteria:
+        - "ALL pods in Running state"
+        - "ZERO pod restarts in last 10 minutes"
+        - "ZERO errors in pod logs"
+        - "ALL health/readiness probes passing"
+        - "ALL Services have valid endpoints"
+        - "ALL PVCs in Bound status"
+        - "Security policies compliant"
+        - "RBAC configured correctly"
+        - "Monitoring active and scraping"
+        - "Integration tests passing"
+
+      FAIL_criteria:
+        - "ANY pod not in Running state"
+        - "ANY pod restarts in last 10 minutes"
+        - "ANY errors in pod logs"
+        - "ANY failing health/readiness probe"
+        - "ANY Service without endpoints"
+        - "ANY PVC not Bound"
+        - "ANY security policy violation"
+        - "ANY RBAC permission error"
+        - "ANY integration test failure"
+
+# Deliverables Configuration
+deliverables:
+  naming_convention: "MANDATORY: ALL K8s validation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+
+  required_outputs:
+    k8s_validation_report:
+      path: "./project/docs/deployments/K8s_Validation_Report-{{YYYY-MM-DD-HHMMSS}}.md"
+      format: "markdown"
+      content:
+        - "Executive summary with K8s pass/fail determination"
+        - "Kubernetes resource status summary"
+        - "All 12 validation phases with kubectl evidence"
+        - "Complete issue list with kubectl remediation commands"
+        - "Security compliance status"
+        - "Monitoring and observability status"
+        - "Rollback decision and kubectl commands"
+        - "Performance metrics and resource usage"
+        - "Appendix with pod logs and kubectl describe output"
+
+    k8s_validation_results:
+      path: "./project/docs/deployments/K8s_Validation_Results-{{YYYY-MM-DD-HHMMSS}}.json"
+      format: "json"
+      content:
+        deployment_name: "{{deployment_name}}"
+        namespace: "{{namespace}}"
+        k8s_platform: "{{k8s_platform}}"
+        validation_timestamp: "{{ISO-8601 UTC}}"
+        validation_depth: "{{validation_depth}}"
+        overall_result: "PASS|FAIL"
+        pod_status: {}
+        service_status: {}
+        security_status: {}
+        phases: []
+        issues_found: []
+        kubectl_remediation: []
+
+    k8s_remediation_steps:
+      path: "./project/docs/deployments/K8s_Remediation_Steps-{{YYYY-MM-DD-HHMMSS}}.md"
+      format: "markdown"
+      condition: "Only if issues found"
+      content:
+        - "Issue-by-issue kubectl remediation guide"
+        - "Root cause analysis for each K8s issue"
+        - "kubectl commands to diagnose"
+        - "kubectl commands to fix"
+        - "kubectl commands to verify fix"
+        - "Prevention recommendations"
+
+# Kubernetes Execution Workflow
+execution_steps:
+  - "1. VALIDATE deployment exists in namespace {{namespace}}"
+  - "2. EXECUTE Phase 1: Pod Status Validation"
+  - "3. EXECUTE Phase 2: Pod Log Analysis"
+  - "4. EXECUTE Phase 3: Service and Ingress Validation"
+  - "5. EXECUTE Phase 4: ConfigMap and Secret Validation"
+  - "6. EXECUTE Phase 5: Resource Status Validation"
+  - "7. EXECUTE Phase 6: Rollout Status Validation"
+  - "8. EXECUTE Phase 7: Health and Readiness Probes"
+  - "9. EXECUTE Phase 8: API Endpoint Testing (from within cluster)"
+  - "10. EXECUTE Phase 9: Security Validation"
+  - "11. EXECUTE Phase 10: Monitoring and Observability"
+  - "12. EXECUTE Phase 11: Integration Testing (if {{run_integration_tests}})"
+  - "13. EXECUTE Phase 12: Comprehensive Reporting and Remediation"
+  - "14. DETERMINE final PASS/FAIL using VERY STRICT K8s criteria"
+  - "15. GENERATE all required deliverables with proper timestamps"
+  - "16. PROVIDE kubectl rollback commands if FAIL"
+
+# Success Criteria
+success_criteria:
+  - "MANDATORY: Complete ALL 12 K8s validation phases"
+  - "MANDATORY: All pods in Running state with 0 restarts"
+  - "MANDATORY: Analyze ALL pod logs for errors"
+  - "MANDATORY: All health/readiness probes passing"
+  - "MANDATORY: All Services have valid endpoints"
+  - "MANDATORY: All K8s resources in healthy state"
+  - "MANDATORY: Security validation passing"
+  - "MANDATORY: RBAC configured correctly"
+  - "MANDATORY: Monitoring active and scraping"
+  - "MANDATORY: Integration tests passing (if enabled)"
+  - "MANDATORY: Generate comprehensive K8s validation report"
+  - "MANDATORY: Apply VERY STRICT K8s pass/fail criteria"
+  - "MANDATORY: Provide kubectl remediation for ALL issues"
+  - "MANDATORY: Create all deliverables with proper timestamps"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "Be VERY STRICT and PARANOID about Kubernetes states"
+    - "ANY pod not Running = FAIL"
+    - "ANY error in pod logs = FAIL"
+    - "ALL pods must have 0 restarts in last 10 minutes"
+    - "ALL health checks must pass 100%"
+    - "ALL Services must have valid endpoints"
+    - "Security policies must be compliant"
+    - "Complete kubectl remediation for EVERY issue"
+    - "Generate detailed K8s evidence-based reports"
+    - "Use UTC timestamps for all operations"
+    - "NEVER claim success when ANY K8s resource has issues"
+
+  strictly_forbidden:
+    - "Claiming successful deployment when pods are not Running"
+    - "Ignoring CrashLoopBackOff or ImagePullBackOff states"
+    - "Superficial or incomplete K8s validation"
+    - "Optimistic reporting when pods are restarting"
+    - "Skipping security or RBAC validation"
+    - "Incomplete kubectl remediation steps"
+    - "Missing K8s evidence or kubectl output"
+    - "Creating deliverables without proper timestamps"
+    - "False positive K8s success claims"
+
+---

@@ -1,0 +1,502 @@
+# === MCP PROMPT: Code Performance Analysis Protocol ===
+name: "quality-code-performance-analysis-prompt"
+version: "1.0.0"
+description: "AI-driven performance excellence protocol for comprehensive runtime optimization and bottleneck analysis"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Performance Analysis"
+  description: "Execute exhaustive performance analysis of deployed systems with profiling, resource utilization assessment, bottleneck identification, and data-driven optimization strategies with quantified improvement opportunities"
+
+  # Argument Schema
+  arguments:
+    target_system:
+      type: "string"
+      description: "Target system or application for performance analysis"
+      required: true
+
+    analysis_scope:
+      type: "string"
+      description: "Scope of performance analysis to conduct"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "response-time-focused",
+          "throughput-focused",
+          "resource-utilization-focused",
+          "scalability-focused",
+          "database-performance-focused",
+          "network-performance-focused"
+        ]
+
+    performance_dimensions:
+      type: "string"
+      description: "Performance dimensions to analyze"
+      required: true
+      enum: ["all-dimensions", "latency-only", "throughput-only", "resource-only", "custom-selection"]
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of performance analysis to perform"
+      required: false
+      enum: ["surface-level", "detailed", "comprehensive", "deep-profiling"]
+
+    baseline_comparison:
+      type: "string"
+      description: "Baseline comparison for performance analysis"
+      required: false
+      enum: ["current-baseline", "historical-trend", "target-sla", "industry-benchmark"]
+
+    optimization_focus:
+      type: "string"
+      description: "Primary optimization focus area"
+      required: false
+      enum: ["user-experience", "cost-efficiency", "scalability", "reliability", "all-areas"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI performance analysis specialist executing the Code Performance Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive runtime optimization methodology
+        - Analyze ALL performance dimensions (response time, throughput, resources)
+        - Profile applications and identify bottlenecks systematically
+        - Maintain production-ready performance analysis standards
+        - Use data-driven optimization approach with quantified improvements
+        - Generate detailed insights with benchmarks and profiling data
+        - Create comprehensive optimization roadmaps with ROI calculations
+
+        ABSOLUTELY FORBIDDEN:
+        - Superficial or incomplete performance analysis
+        - Missing critical performance bottlenecks or optimization opportunities
+        - Analysis without proper profiling data and measurements
+        - Skipping resource utilization or scalability assessments
+        - Incomplete database or network performance analysis
+        - Creating optimization recommendations without ROI calculations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE PERFORMANCE ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Target System: {{target_system}}
+        - Analysis Scope: {{analysis_scope}}
+        - Performance Dimensions: {{performance_dimensions}}
+        - Analysis Depth: {{analysis_depth}}
+        - Baseline Comparison: {{baseline_comparison}}
+        - Optimization Focus: {{optimization_focus}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CODE PERFORMANCE ANALYSIS PROTOCOL:**
+
+# Code Performance Analysis Protocol Configuration
+analysis_protocol:
+  # Performance Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  performance_dimensions:
+    response_time_analysis: true     # Latency analysis at all levels
+    throughput_analysis: true        # Processing capacity assessment
+    resource_utilization: true       # CPU, memory, disk, network analysis
+    scalability_analysis: true       # Horizontal and vertical scaling
+    concurrency_analysis: true       # Thread/process performance
+    database_performance: true       # Query optimization analysis
+    network_performance: true        # Bandwidth, latency assessment
+    caching_effectiveness: true      # Cache hit rates, efficiency
+
+  # Performance Analysis Configuration - MANDATORY SETTINGS
+  analysis_configuration:
+    baseline_comparison: true        # Compare against performance baselines
+    trend_analysis: true            # Historical performance trend analysis
+    anomaly_detection: true         # Identify performance anomalies
+    predictive_modeling: true       # Forecast future performance
+    load_testing_correlation: true  # Correlate with load test data
+    quantitative_analysis: true     # Data-driven performance insights
+    roi_calculation: true           # Return on investment for optimizations
+    comprehensive_coverage: true    # Cover all performance aspects
+    production_ready_analysis: true # Production-focused performance insights
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Performance Inventory and Baseline Establishment"
+    mandatory_actions:
+      - "INVENTORY all system components and performance characteristics"
+      - "MAP application tier architecture and infrastructure components"
+      - "ESTABLISH performance baselines and SLA targets"
+      - "DOCUMENT normal operation metrics and growth patterns"
+      - "CATALOG performance monitoring and profiling tools"
+
+    performance_inventory_requirements:
+      - "MANDATORY: Complete system performance component mapping"
+      - "MANDATORY: Establish accurate performance baselines"
+      - "MANDATORY: Document SLA targets and performance requirements"
+      - "FORBIDDEN: Incomplete performance inventory or missing baselines"
+
+  phase_2:
+    name: "Response Time Analysis and Latency Breakdown"
+    mandatory_actions:
+      - "ANALYZE end-to-end latency and response time distributions"
+      - "BREAKDOWN service latency and component-level timing"
+      - "ASSESS user-perceived latency and transaction performance"
+      - "EXAMINE latency percentiles and outlier identification"
+      - "EVALUATE SLA compliance and performance targets"
+
+    response_time_analysis_framework:
+      end_to_end_latency:
+        - "Measure page load times and API response times"
+        - "Analyze transaction completion and interactive responsiveness"
+        - "Assess mobile performance and cross-platform latency"
+        - "Evaluate user experience and perceived performance"
+        - "MANDATORY: Complete end-to-end latency analysis"
+
+      service_latency_analysis:
+        - "Breakdown service call times and internal API latency"
+        - "Analyze database query times and cache response times"
+        - "Assess external dependency latency and network round trips"
+        - "Evaluate serialization overhead and queue wait times"
+        - "MANDATORY: Comprehensive service latency breakdown"
+
+      latency_distribution_analysis:
+        - "Calculate percentile analysis (P50, P95, P99, P99.9)"
+        - "Identify outliers and bimodal distributions"
+        - "Analyze long tail performance and SLA compliance"
+        - "Assess performance consistency and variability"
+        - "MANDATORY: Complete latency distribution assessment"
+
+  phase_3:
+    name: "Throughput and Capacity Analysis"
+    mandatory_actions:
+      - "MEASURE system throughput and processing capacity"
+      - "ANALYZE request processing rates and concurrent handling"
+      - "ASSESS data processing capacity and batch performance"
+      - "EVALUATE capacity utilization and headroom analysis"
+      - "IDENTIFY scaling triggers and resource saturation points"
+
+    throughput_capacity_framework:
+      system_throughput_measurement:
+        - "Measure requests per second and concurrent connections"
+        - "Analyze active sessions and message processing rates"
+        - "Assess batch job throughput and data processing capacity"
+        - "Evaluate records per second and bytes per second"
+        - "MANDATORY: Complete system throughput measurement"
+
+      capacity_utilization:
+        - "Analyze current vs. maximum capacity utilization"
+        - "Assess headroom analysis and scaling trigger points"
+        - "Identify resource saturation and bottleneck points"
+        - "Evaluate capacity planning and growth projections"
+        - "MANDATORY: Comprehensive capacity utilization analysis"
+
+      scaling_analysis:
+        - "Assess horizontal and vertical scaling effectiveness"
+        - "Analyze auto-scaling behavior and load distribution"
+        - "Evaluate scaling latency and capacity adjustments"
+        - "Identify scaling limitations and architectural constraints"
+        - "MANDATORY: Complete scaling analysis and assessment"
+
+  phase_4:
+    name: "Resource Utilization Profiling"
+    mandatory_actions:
+      - "PROFILE CPU performance and utilization patterns"
+      - "ANALYZE memory usage, allocation, and optimization"
+      - "ASSESS I/O performance including disk and network"
+      - "EVALUATE resource efficiency and optimization opportunities"
+      - "IDENTIFY resource bottlenecks and utilization patterns"
+
+    resource_utilization_framework:
+      cpu_performance_analysis:
+        - "Analyze user vs. system time and wait states"
+        - "Profile CPU steal time and core distribution"
+        - "Assess thread efficiency and CPU utilization patterns"
+        - "Evaluate hot methods/functions and call graph analysis"
+        - "MANDATORY: Complete CPU performance profiling"
+
+      memory_performance_analysis:
+        - "Analyze heap utilization and stack usage patterns"
+        - "Profile buffer pools and cache efficiency"
+        - "Assess page faults and memory allocation patterns"
+        - "Evaluate garbage collection impact and memory leaks"
+        - "MANDATORY: Comprehensive memory performance analysis"
+
+      io_performance_analysis:
+        - "Analyze disk I/O patterns and read/write rates"
+        - "Assess IOPS distribution and latency analysis"
+        - "Evaluate queue depths and cache effectiveness"
+        - "Analyze network I/O and bandwidth utilization"
+        - "MANDATORY: Complete I/O performance assessment"
+
+  phase_5:
+    name: "Database and Storage Performance Analysis"
+    mandatory_actions:
+      - "ANALYZE query performance and execution optimization"
+      - "ASSESS database resource utilization and efficiency"
+      - "EVALUATE storage performance and I/O patterns"
+      - "IDENTIFY slow queries and optimization opportunities"
+      - "EXAMINE replication lag and backup performance impact"
+
+    database_storage_framework:
+      query_performance_analysis:
+        - "Identify slow query execution times and patterns"
+        - "Analyze query plans and index usage effectiveness"
+        - "Assess lock contention and resource consumption"
+        - "Evaluate query optimization and rewrite opportunities"
+        - "MANDATORY: Complete query performance analysis"
+
+      database_optimization:
+        - "Identify missing indexes and optimization opportunities"
+        - "Analyze denormalization opportunities and caching candidates"
+        - "Assess batch processing and bulk operation efficiency"
+        - "Evaluate connection pooling and resource management"
+        - "MANDATORY: Comprehensive database optimization analysis"
+
+      storage_performance:
+        - "Analyze storage I/O patterns and throughput limits"
+        - "Assess storage latency and performance bottlenecks"
+        - "Evaluate replication lag and backup impact"
+        - "Analyze data lifecycle and archival performance"
+        - "MANDATORY: Complete storage performance assessment"
+
+  phase_6:
+    name: "Bottleneck Identification and Root Cause Analysis"
+    mandatory_actions:
+      - "IDENTIFY performance bottlenecks across all system layers"
+      - "ANALYZE resource and application bottleneck patterns"
+      - "ASSESS bottleneck impact and cascade effects"
+      - "EVALUATE bottleneck resolution strategies and priorities"
+      - "QUANTIFY bottleneck impact on user experience and costs"
+
+    bottleneck_analysis_framework:
+      performance_bottleneck_detection:
+        - "Identify CPU saturation and memory pressure points"
+        - "Detect disk I/O limits and network congestion"
+        - "Analyze connection pool exhaustion and resource limits"
+        - "Assess lock contention and synchronization issues"
+        - "MANDATORY: Complete bottleneck identification"
+
+      application_bottlenecks:
+        - "Identify serial processing and algorithm complexity issues"
+        - "Analyze data structure efficiency and optimization"
+        - "Assess synchronization issues and threading problems"
+        - "Evaluate architectural constraints and design limitations"
+        - "MANDATORY: Comprehensive application bottleneck analysis"
+
+      bottleneck_impact_analysis:
+        - "Quantify user impact and experience degradation"
+        - "Analyze cascade effects and system-wide impact"
+        - "Assess performance degradation and scalability limitations"
+        - "Calculate cost implications and business impact"
+        - "MANDATORY: Complete bottleneck impact assessment"
+
+  phase_7:
+    name: "Performance Pattern and Anti-Pattern Detection"
+    mandatory_actions:
+      - "DETECT performance optimization patterns and opportunities"
+      - "IDENTIFY performance anti-patterns and inefficiencies"
+      - "ANALYZE caching opportunities and async processing potential"
+      - "ASSESS batch optimization and resource leak detection"
+      - "EVALUATE algorithm efficiency and structural improvements"
+
+    pattern_detection_framework:
+      optimization_patterns:
+        - "Detect caching opportunities for repeated expensive operations"
+        - "Identify async processing potential for blocking operations"
+        - "Analyze batch optimization and N+1 query pattern resolution"
+        - "Assess connection pooling and resource reuse opportunities"
+        - "MANDATORY: Complete optimization pattern identification"
+
+      anti_pattern_detection:
+        - "Identify resource leaks and gradual performance degradation"
+        - "Detect inefficient algorithms and non-linear scaling issues"
+        - "Analyze memory leaks and resource management problems"
+        - "Assess architectural anti-patterns and design inefficiencies"
+        - "MANDATORY: Comprehensive anti-pattern detection"
+
+  phase_8:
+    name: "Scalability Assessment and Capacity Planning"
+    mandatory_actions:
+      - "ASSESS horizontal and vertical scalability characteristics"
+      - "ANALYZE scaling bottlenecks and architectural limitations"
+      - "EVALUATE auto-scaling effectiveness and elasticity"
+      - "PROJECT future capacity requirements and growth planning"
+      - "IDENTIFY scaling optimization opportunities and strategies"
+
+    scalability_assessment_framework:
+      scaling_analysis:
+        - "Assess horizontal scaling effectiveness and limitations"
+        - "Analyze vertical scaling potential and resource constraints"
+        - "Evaluate auto-scaling behavior and trigger effectiveness"
+        - "Assess load distribution and scaling latency"
+        - "MANDATORY: Complete scalability analysis"
+
+      capacity_planning:
+        - "Project future capacity requirements based on growth"
+        - "Analyze seasonal patterns and peak load planning"
+        - "Assess infrastructure capacity and expansion needs"
+        - "Evaluate cost implications of scaling strategies"
+        - "MANDATORY: Comprehensive capacity planning analysis"
+
+  phase_9:
+    name: "Optimization Strategy and ROI Analysis"
+    mandatory_actions:
+      - "COMPILE comprehensive optimization opportunities"
+      - "CALCULATE ROI and business impact for each optimization"
+      - "PRIORITIZE improvements based on impact and effort"
+      - "CREATE detailed implementation roadmap and timelines"
+      - "ESTIMATE costs, benefits, and resource requirements"
+
+    optimization_strategy_framework:
+      optimization_opportunities:
+        - "Identify high-impact performance improvement opportunities"
+        - "Recommend caching strategies and query optimizations"
+        - "Suggest scaling improvements and load balancing"
+        - "Provide resource tuning and capacity optimization"
+        - "MANDATORY: Comprehensive optimization opportunity identification"
+
+      roi_analysis:
+        - "Calculate return on investment for each optimization"
+        - "Analyze cost-benefit ratio and business impact"
+        - "Assess implementation effort and resource requirements"
+        - "Evaluate risk factors and success probability"
+        - "MANDATORY: Complete ROI analysis for all optimizations"
+
+      implementation_roadmap:
+        - "Prioritize optimizations based on impact and feasibility"
+        - "Create phased implementation plan with timelines"
+        - "Identify dependencies and prerequisite requirements"
+        - "Establish success metrics and monitoring requirements"
+        - "MANDATORY: Detailed implementation roadmap creation"
+
+  phase_10:
+    name: "Comprehensive Documentation and Monitoring Strategy"
+    mandatory_actions:
+      - "GENERATE comprehensive performance analysis documentation"
+      - "CREATE performance monitoring and alerting strategies"
+      - "COMPILE optimization playbooks and implementation guides"
+      - "DOCUMENT performance testing and validation procedures"
+      - "PREPARE executive summary with key findings and ROI"
+
+    documentation_monitoring_framework:
+      comprehensive_documentation:
+        - "Create detailed performance analysis report in Jupyter format"
+        - "Generate performance baseline documentation and metrics"
+        - "Compile bottleneck analysis and optimization findings"
+        - "Document profiling results and performance insights"
+        - "MANDATORY: Complete performance analysis documentation"
+
+      monitoring_strategy:
+        - "Design performance monitoring and alerting strategy"
+        - "Create performance dashboard and visualization requirements"
+        - "Establish performance testing and regression detection"
+        - "Document performance SLA monitoring and compliance"
+        - "MANDATORY: Comprehensive performance monitoring strategy"
+
+# Performance Analysis Validation Criteria
+validation_criteria:
+  performance_inventory: "MANDATORY - Complete system performance component mapping"
+  response_time_analysis: "MANDATORY - Comprehensive latency and response time assessment"
+  throughput_capacity: "MANDATORY - Complete throughput and capacity analysis"
+  resource_utilization: "MANDATORY - Comprehensive resource utilization profiling"
+  database_storage: "MANDATORY - Complete database and storage performance analysis"
+  bottleneck_identification: "MANDATORY - Comprehensive bottleneck identification and analysis"
+  pattern_detection: "MANDATORY - Complete performance pattern and anti-pattern detection"
+  scalability_assessment: "MANDATORY - Comprehensive scalability and capacity planning"
+  optimization_strategy: "MANDATORY - Complete optimization strategy with ROI analysis"
+  documentation_monitoring: "MANDATORY - All deliverables created and monitoring strategy"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL performance analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-22-085549"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Performance_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive performance analysis with profiling, bottlenecks, scalability)"
+    - "./project/docs/quality-analysis/Optimization_Recommendations-{{YYYY-MM-DD-HHMMSS}}.md (optimization strategies, ROI analysis, implementation roadmap)"
+    - "./project/docs/quality-analysis/Monitoring_Strategy-{{YYYY-MM-DD-HHMMSS}}.md (performance monitoring, alerting, baseline metrics)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all performance analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL performance analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all performance analysis outputs"
+    - "FORBIDDEN: Creating performance analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same performance analysis session"
+
+# Performance Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. INVENTORY system components {{target_system}} and establish performance baselines"
+  - "2. ANALYZE response times, latency distributions, and user experience metrics"
+  - "3. ASSESS throughput, capacity utilization, and scaling characteristics"
+  - "4. PROFILE resource utilization including CPU, memory, and I/O performance"
+  - "5. ANALYZE database and storage performance with optimization opportunities"
+  - "6. IDENTIFY bottlenecks across all system layers with root cause analysis"
+  - "7. DETECT performance patterns, anti-patterns, and optimization opportunities"
+  - "8. ASSESS scalability characteristics and capacity planning requirements"
+  - "9. COMPILE optimization strategies with ROI analysis and implementation roadmap"
+  - "10. GENERATE comprehensive documentation and performance monitoring strategy"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each performance analysis step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all performance analysis tracking"
+  - "MANDATORY: Timestamp all deliverable creation and validation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Performance Analysis Framework
+performance_analysis_framework:
+  measurement_accuracy:
+    quantitative_requirements:
+      - "All performance measurements MUST be quantitative and data-driven"
+      - "All findings MUST include measurable impact and improvement potential"
+      - "All recommendations MUST have clear ROI calculations"
+      - "All optimizations MUST preserve functionality and reliability"
+
+  analysis_techniques:
+    profiling_methods:
+      - "Sampling profiler for low-overhead production profiling"
+      - "Instrumentation for detailed timing and method-level data"
+      - "Distributed tracing for request flow and service dependencies"
+      - "Load testing correlation for capacity and performance validation"
+
+    bottleneck_detection:
+      - "Resource bottleneck identification (CPU, memory, I/O, network)"
+      - "Application bottleneck analysis (algorithms, data structures)"
+      - "Architectural bottleneck assessment (design limitations)"
+      - "Performance anti-pattern detection and resolution"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL performance dimensions MUST be analyzed comprehensively"
+    - "ALL bottlenecks MUST be identified with root cause analysis"
+    - "ALL optimization opportunities MUST include ROI calculations"
+    - "ALL recommendations MUST be quantitative and data-driven"
+    - "ALL changes MUST preserve functionality and be tested under load"
+    - "ALL improvements MUST be sustainable and measurable"
+    - "ALWAYS use systematic performance analysis methodology"
+    - "NEVER skip critical performance assessment areas"
+
+  strictly_forbidden:
+    - "Superficial or incomplete performance analysis"
+    - "Missing critical performance bottlenecks or optimization opportunities"
+    - "Analysis without proper profiling data and measurements"
+    - "Recommendations without clear ROI and business impact"
+    - "Optimizations without proper testing and validation"
+    - "Performance improvements that compromise functionality"
+    - "Analysis without considering scalability and future growth"
+    - "Performance assessment without comprehensive monitoring strategy"

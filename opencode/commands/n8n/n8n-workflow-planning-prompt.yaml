@@ -1,0 +1,361 @@
+name: "N8N Workflow Planning"
+description: "Strategic planning for n8n workflow development based on requirements analysis, template discovery, and node selection strategy"
+version: "2.1.0"
+category: "planning"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Latest n8n documentation and workflow best practices
+    - grep # Real-world workflow implementations on GitHub
+    - sequential-thinking # Structured workflow planning methodology
+    - filesystem # Requirements and constraints analysis
+    - memory # Track planning decisions and rationale
+    - time # Timestamp planning activities
+
+  n8n_specific_tools:
+    - tools_documentation # Understand n8n MCP capabilities at session start
+    - search_templates # Text-based template search
+    - search_templates_by_metadata # Smart template filtering (complexity, audience, time, service)
+    - get_templates_for_task # Curated templates by task type
+    - list_node_templates # Templates using specific nodes
+    - search_nodes # Node discovery by functionality
+    - list_nodes # Browse nodes by category
+    - list_ai_tools # Discover AI-capable nodes
+
+# n8n Workflow Context
+n8n_context:
+  workflow_types:
+    - automation # Event-driven process automation
+    - integration # System-to-system data sync
+    - data-processing # ETL and data transformation
+    - webhook # Real-time event processing
+    - scheduled # Time-based task execution
+    - event-driven # Event-based triggers
+
+  complexity_levels:
+    - simple # Linear workflows with 3-5 nodes
+    - intermediate # Branching logic with 5-15 nodes
+    - advanced # Complex routing with 15+ nodes
+    - enterprise # Multi-workflow orchestration
+
+  template_usage:
+    - template-first # Start with template, customize as needed
+    - hybrid # Combine template components with custom nodes
+    - custom-build # Build from scratch when no template fits
+
+# Execution Protocol
+execution_phases:
+  1_session_initialization:
+    description: "Initialize n8n MCP session and load capabilities"
+    tools: ["tools_documentation", "context7", "memory"]
+    required_actions:
+      - "Execute tools_documentation() to understand n8n MCP capabilities"
+      - "Use context7 to get latest n8n workflow best practices"
+      - "Load previous workflow planning context from memory (if exists)"
+      - "Set up session tracking for planning decisions"
+    success_criteria:
+      - "n8n MCP tools inventory understood"
+      - "Latest n8n documentation loaded"
+      - "Session context initialized"
+
+  2_requirements_analysis:
+    description: "Analyze workflow requirements and constraints"
+    tools: ["filesystem", "sequential-thinking", "memory", "time"]
+    required_actions:
+      - "Gather functional requirements (triggers, transformations, actions)"
+      - "Identify non-functional requirements (performance, security, compliance)"
+      - "Classify workflow type (automation, integration, data-processing, webhook)"
+      - "Document constraints and limitations"
+      - "Define success criteria and acceptance tests"
+    success_criteria:
+      - "Requirements clearly documented and categorized"
+      - "Workflow type identified and justified"
+      - "Constraints and limitations understood"
+      - "Success criteria defined and measurable"
+
+  3_template_discovery:
+    description: "Discover and evaluate existing n8n templates"
+    tools:
+      [
+        "search_templates",
+        "search_templates_by_metadata",
+        "get_templates_for_task",
+        "list_node_templates",
+      ]
+    required_actions:
+      - "Search templates by metadata (complexity, audience, setup time, service)"
+      - "Search templates by task type (webhook_processing, slack_integration, etc.)"
+      - "Search templates by text keywords"
+      - "Search templates by required nodes"
+      - "Evaluate top 3-5 templates against requirements"
+      - "Document template selection rationale or custom build justification"
+    success_criteria:
+      - "Multiple template search strategies executed"
+      - "Top templates evaluated with scoring matrix"
+      - "Template selection decision documented with rationale"
+      - "Template customization requirements identified (if using template)"
+      - "Template attribution documented (author, username, URL)"
+
+  4_node_selection:
+    description: "Select and evaluate nodes for workflow implementation"
+    tools:
+      ["search_nodes", "list_nodes", "get_node_essentials", "list_ai_tools"]
+    required_actions:
+      - "Execute broad node search to understand available options"
+      - "Use get_node_essentials for quick understanding (10-20 properties)"
+      - "Map requirements to specific nodes"
+      - "Evaluate node alternatives with scoring criteria"
+      - "Document node selection decisions with rationale"
+      - "Identify AI-capable nodes if needed (list_ai_tools)"
+    success_criteria:
+      - "All required nodes identified and documented"
+      - "Node selection criteria applied and scored"
+      - "Alternatives evaluated and documented"
+      - "Node capabilities verified against requirements"
+
+  5_architecture_planning:
+    description: "Design workflow architecture and data flow"
+    tools: ["sequential-thinking", "memory", "filesystem", "time"]
+    required_actions:
+      - "Design workflow structure (linear, branching, parallel, error-handling)"
+      - "Map data flow between nodes"
+      - "Plan expression usage for data transformations"
+      - "Design connection architecture (main paths, error paths)"
+      - "Plan error handling and recovery strategy"
+      - "Document architecture decisions and rationale"
+    success_criteria:
+      - "Workflow architecture designed and documented"
+      - "Data flow mapped with transformations identified"
+      - "Connection structure planned (main and error paths)"
+      - "Error handling strategy defined"
+      - "Expression planning completed"
+
+  6_implementation_roadmap:
+    description: "Create phased implementation plan with timelines"
+    tools: ["sequential-thinking", "memory", "time"]
+    required_actions:
+      - "Define implementation phases with deliverables"
+      - "Create realistic timeline with milestones"
+      - "Identify resource requirements and allocations"
+      - "Perform risk assessment with mitigation strategies"
+      - "Define validation checkpoints for each phase"
+      - "Document rollback and recovery procedures"
+    success_criteria:
+      - "Implementation roadmap created with clear phases"
+      - "Timeline realistic and achievable"
+      - "Resource requirements documented"
+      - "Risks identified with mitigation strategies"
+      - "Validation checkpoints defined"
+
+# n8n Planning Parameters
+n8n_planning_parameters:
+  template_discovery_strategies:
+    metadata_search:
+      complexity: ["simple", "intermediate", "advanced"]
+      target_audience: ["marketers", "developers", "analysts", "business-users"]
+      max_setup_minutes: [15, 30, 60]
+      required_service: ["slack", "google", "openai", "webhook", "database"]
+
+    task_search:
+      common_tasks:
+        - webhook_processing
+        - slack_integration
+        - data_transformation
+        - api_integration
+        - email_automation
+        - database_sync
+
+    node_search:
+      trigger_nodes: ["webhook", "schedule", "email-trigger", "manual"]
+      action_nodes: ["slack", "email", "http-request", "database"]
+      transform_nodes: ["set", "code", "function", "split", "merge"]
+
+  node_selection_criteria:
+    functionality_match: 40 # Percentage weight
+    reliability: 25 # Stability and maintenance
+    performance: 20 # Execution speed
+    documentation: 15 # Docs quality and examples
+
+  workflow_patterns:
+    linear_pipeline:
+      description: "Simple sequential processing"
+      use_cases: ["Straightforward automations", "Single data flow"]
+      complexity: "simple"
+
+    branching:
+      description: "Conditional logic and routing"
+      use_cases: ["Multiple execution paths", "Decision trees"]
+      complexity: "intermediate"
+
+    parallel_processing:
+      description: "Concurrent operations"
+      use_cases: ["Performance optimization", "Multiple API calls"]
+      complexity: "intermediate"
+
+    error_handling:
+      description: "Robust error management"
+      use_cases: ["Production workflows", "Critical processes"]
+      complexity: "advanced"
+
+# Deliverable Specifications
+deliverables:
+  document_count: 4
+  document_types:
+    - "Workflow Requirements Analysis"
+    - "Template and Node Selection"
+    - "Workflow Architecture Plan"
+    - "Implementation Roadmap"
+
+  document_1_requirements:
+    title: "Workflow Requirements Analysis (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Complete requirements documentation"
+      - "Functional requirements (triggers, transformations, actions, outputs)"
+      - "Non-functional requirements (performance, reliability, security, compliance, scalability)"
+      - "Workflow type classification and justification"
+      - "Use case scenarios and user stories"
+      - "Success criteria and acceptance tests"
+    analysis_components:
+      - "Requirements categorization and prioritization"
+      - "Constraints and limitations documentation"
+      - "Stakeholder expectations alignment"
+      - "Compliance and regulatory requirements"
+
+  document_2_selection:
+    title: "Template and Node Selection (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Template discovery results from multiple search strategies"
+      - "Template evaluation matrix with scoring"
+      - "Template selection rationale or custom build justification"
+      - "Template customization requirements (if using template)"
+      - "Node selection matrix with functionality mapping"
+      - "Node alternatives considered and rejected with rationale"
+      - "Template attribution (author, username, n8n.io URL)"
+    selection_components:
+      - "Template vs custom build decision matrix"
+      - "Node capability verification results"
+      - "Integration requirements assessment"
+      - "Performance and reliability considerations"
+
+  document_3_architecture:
+    title: "Workflow Architecture Plan (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "High-level workflow architecture diagram"
+      - "Workflow pattern selection (linear, branching, parallel, error-handling)"
+      - "Data flow mapping and transformation planning"
+      - "Connection architecture (main paths, error paths)"
+      - "Expression planning for data manipulation"
+      - "Error handling and recovery strategy"
+      - "Node configuration overview"
+    architecture_components:
+      - "Workflow structure visualization"
+      - "Data transformation requirements"
+      - "Error handling patterns"
+      - "Performance optimization opportunities"
+
+  document_4_roadmap:
+    title: "Implementation Roadmap (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Phased implementation plan with timelines"
+      - "Phase 1: Template selection and evaluation"
+      - "Phase 2: Node selection and configuration planning"
+      - "Phase 3: Architecture design and validation"
+      - "Phase 4: Validation strategy definition"
+      - "Phase 5: Deployment planning"
+      - "Resource requirements and allocations"
+      - "Risk assessment and mitigation strategies"
+      - "Validation checkpoints and success criteria"
+    roadmap_components:
+      - "Timeline with milestones and deliverables"
+      - "Resource allocation plan"
+      - "Risk matrix with mitigation strategies"
+      - "Rollback and recovery procedures"
+
+# Decision Framework
+decision_framework:
+  template_vs_custom:
+    use_template_when:
+      - "Close match to requirements (>70% overlap)"
+      - "Well-maintained and recently updated"
+      - "Clear documentation and attribution available"
+      - "Acceptable customization effort (<30% changes)"
+
+    build_custom_when:
+      - "No suitable template found (<50% match)"
+      - "Unique business logic requirements"
+      - "Complex custom integrations needed"
+      - "Specific performance requirements"
+
+  node_selection_weights:
+    functionality_match: 40
+    reliability: 25
+    performance: 20
+    documentation: 15
+
+# Risk Assessment
+risk_categories:
+  technical_risks:
+    - "Template compatibility issues requiring significant modification"
+    - "Node availability gaps (required functionality doesn't exist)"
+    - "Performance bottlenecks from workflow complexity"
+    - "Integration challenges with external services"
+    - "Expression complexity and maintenance burden"
+
+  business_risks:
+    - "Development timeline impacts from learning curve"
+    - "Template licensing or attribution requirements"
+    - "Vendor lock-in with proprietary integrations"
+    - "Support and maintenance availability"
+
+  operational_risks:
+    - "Production stability and reliability concerns"
+    - "Monitoring and debugging complexity"
+    - "Scaling challenges with data volume growth"
+    - "Deployment and rollback procedures"
+
+# Success Criteria
+success_criteria:
+  planning_completeness:
+    - "Requirements clearly documented with functional and non-functional aspects"
+    - "Template discovery completed using multiple search strategies"
+    - "Templates evaluated and best option selected (or custom build justified)"
+    - "All required nodes identified and mapped to requirements"
+    - "Node selection decisions documented with rationale"
+    - "Workflow architecture designed with clear data flow"
+    - "Error handling strategy defined and documented"
+    - "Expression usage planned for data transformations"
+
+  decision_quality:
+    - "Template vs custom build decision supported by evidence"
+    - "Node selection criteria applied consistently"
+    - "Architecture design aligns with requirements"
+    - "Risk assessment comprehensive with mitigation strategies"
+    - "Implementation roadmap realistic and achievable"
+
+  documentation_quality:
+    - "All deliverables created with proper reverse date stamps (YYYY-MM-DD-HHMMSS)"
+    - "Template attribution documented (if using template)"
+    - "Rationale provided for all major decisions"
+    - "Success criteria clearly defined and measurable"
+    - "Validation strategy defined for each phase"
+
+# Command Integration
+related_commands:
+  previous: null # This is the first command in workflow lifecycle
+  parallel: "n8n-workflow-gap-analysis (for existing workflow assessment)"
+  next_phase: "n8n-workflow-design"
+
+# Execution Context
+execution_context:
+  working_directory: "project/"
+  output_format: "markdown documents with workflow planning documentation"
+  documentation_level: "Comprehensive strategic planning"
+  validation_required: false # This is planning phase only
+
+# Template Attribution Requirements
+template_attribution:
+  mandatory: true
+  format: "Based on template by **[Author Name]** (@username) - [template URL on n8n.io]"
+  when_required: "Always when using or customizing existing templates"
+  example: "Based on template by **David Ashby** (@cfomodz) - https://n8n.io/workflows/2414"

@@ -1,0 +1,669 @@
+# === MCP PROMPT: Python Code Review Protocol ===
+name: "python-code-review-prompt"
+version: "1.0.0"
+description: "Comprehensive Python code review protocol for quality assessment, PEP compliance, and best practices validation"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Code Review Analysis"
+  description: "Execute comprehensive Python code review focusing on PEP compliance, Pythonic patterns, type safety, and modern Python best practices"
+
+  # Argument Schema
+  arguments:
+    target_codebase:
+      type: "string"
+      description: "Path to the codebase directory for analysis"
+      required: true
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of analysis to perform"
+      required: true
+      enum:
+        [
+          "shallow",
+          "standard",
+          "comprehensive",
+          "enterprise",
+          "security-focused",
+          "performance-focused",
+        ]
+
+    review_scope:
+      type: "string"
+      description: "Scope of code review analysis"
+      required: true
+      enum:
+        [
+          "full-codebase",
+          "critical-paths",
+          "new-features",
+          "security-audit",
+          "performance-audit",
+          "architecture-review",
+        ]
+
+    python_version:
+      type: "string"
+      description: "Python version for compatibility checking"
+      required: false
+      enum: ["3.8", "3.9", "3.10", "3.11", "3.12", "auto-detect"]
+
+    pep_compliance:
+      type: "string"
+      description: "PEP standards to validate against"
+      required: false
+      enum: ["pep8", "pep484", "pep257", "all-peps", "custom"]
+
+    output_format:
+      type: "string"
+      description: "Preferred output format for analysis results"
+      required: false
+      enum: ["jupyter", "markdown", "pdf", "comprehensive"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are a Python code review specialist executing the Python Code Review Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow Python-specific review methodology
+        - Apply PEP standards and Pythonic principles
+        - Perform comprehensive Python code quality assessment
+        - Generate interactive markdown document reports
+        - Validate against Python community best practices
+        - Assess type safety and modern Python patterns
+
+        ABSOLUTELY FORBIDDEN:
+        - Implementing actual code fixes
+        - Partial or incomplete analysis
+        - Analysis without proper tool usage
+        - Missing architectural diagram generation
+        - Analysis without security assessment
+        - Incomplete interface documentation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE REVIEW PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **CODE REVIEW PARAMETERS:**
+        - Target Codebase: {{target_codebase}}
+        - Analysis Depth: {{analysis_depth}}
+        - Review Scope: {{review_scope}}
+        - Python Version: {{python_version}}
+        - PEP Compliance: {{pep_compliance}}
+        - Output Format: {{output_format}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CODE REVIEW PROTOCOL:**
+
+# Python Code Review Protocol Configuration
+review_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    module_structure_analysis: true # MUST analyze Python module organization
+    pythonic_pattern_analysis: true # MUST analyze Pythonic code patterns
+    type_safety_analysis: true # MUST analyze type hints and annotations
+    pep_compliance_analysis: true # MUST analyze PEP standard compliance
+    async_pattern_analysis: true # MUST analyze async/await patterns
+    security_vulnerability_scan: true # MUST analyze Python security issues
+    performance_optimization: true # MUST analyze Python performance
+    testing_coverage_analysis: true # MUST analyze test coverage and quality
+    documentation_quality: true # MUST analyze docstrings and comments
+    no_code_implementation: true # FORBIDDEN: Implementing actual fixes
+    no_external_modifications: true # FORBIDDEN: External file modifications
+    analysis_documentation_only: true # ALLOWED: Analysis documentation only
+
+  # Python Review Requirements - MANDATORY SETTINGS
+  analysis_requirements:
+    pep8_style_compliance: true # MANDATORY: PEP 8 style guide
+    pep484_type_hints: true # MANDATORY: PEP 484 type hints
+    pep257_docstrings: true # MANDATORY: PEP 257 docstring conventions
+    pythonic_idioms: true # MANDATORY: Pythonic patterns and idioms
+    python_security_scan: true # MANDATORY: Python-specific vulnerabilities
+    async_correctness: true # MANDATORY: Async/await pattern validation
+    exception_handling: true # MANDATORY: Exception handling patterns
+    resource_management: true # MANDATORY: Context managers and cleanup
+    test_quality_assessment: true # MANDATORY: Pytest/unittest quality
+    import_organization: true # MANDATORY: Import structure and dependencies
+    dependency_graph_analysis: true # MANDATORY: Dependency analysis
+    test_coverage_analysis: true # MANDATORY: Test coverage evaluation
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Codebase Discovery and Language Detection"
+    mandatory_actions:
+      - "SCAN entire codebase directory structure"
+      - "DETECT programming languages and frameworks used"
+      - "IDENTIFY project type and architectural patterns"
+      - "CATALOG all source files and configuration files"
+      - "MAP build tools and dependency management systems"
+      - "ANALYZE project documentation and README files"
+
+    codebase_discovery:
+      file_system_analysis:
+        - "TRAVERSE directory structure comprehensively"
+        - "IDENTIFY source code files by extension and content"
+        - "CATALOG configuration files (JSON, YAML, TOML, XML)"
+        - "MAP build files (package.json, requirements.txt, go.mod)"
+        - "DOCUMENT test files and test coverage reports"
+
+      language_detection:
+        - "ANALYZE file extensions and content patterns"
+        - "IDENTIFY primary and secondary programming languages"
+        - "DETECT frameworks and libraries in use"
+        - "MAP language-specific patterns and conventions"
+        - "DOCUMENT multi-language integration patterns"
+
+      project_classification:
+        - "CLASSIFY project type (API, Library, CLI, Web App)"
+        - "IDENTIFY architectural patterns and design approaches"
+        - "MAP deployment and infrastructure configurations"
+        - "ANALYZE business domain and functional requirements"
+        - "DOCUMENT project scope and complexity assessment"
+
+  phase_2:
+    name: "Structural Analysis and Code Organization Assessment"
+    mandatory_actions:
+      - "ANALYZE code organization and module structure"
+      - "EVALUATE naming conventions and coding standards"
+      - "ASSESS package/module dependency relationships"
+      - "IDENTIFY circular dependencies and tight coupling"
+      - "MAP code reuse patterns and duplication issues"
+      - "DOCUMENT structural anti-patterns and violations"
+
+    structural_analysis:
+      code_organization:
+        - "ANALYZE directory structure and organization logic"
+        - "EVALUATE module separation and responsibility boundaries"
+        - "ASSESS package hierarchy and namespace organization"
+        - "IDENTIFY logical grouping and functional cohesion"
+        - "DOCUMENT organizational inconsistencies and issues"
+
+      naming_conventions:
+        - "VALIDATE naming conventions for consistency"
+        - "CHECK language-specific naming standards compliance"
+        - "IDENTIFY confusing or misleading names"
+        - "ASSESS abbreviation usage and clarity"
+        - "DOCUMENT naming violations and recommendations"
+
+      dependency_analysis:
+        - "MAP module and package dependencies"
+        - "IDENTIFY circular dependency chains"
+        - "ANALYZE coupling levels between components"
+        - "ASSESS dependency injection patterns"
+        - "DOCUMENT dependency management issues"
+
+  phase_3:
+    name: "Canonical Principles Compliance Analysis"
+    mandatory_actions:
+      - "EVALUATE Single Responsibility Principle compliance"
+      - "ASSESS Open/Closed Principle implementation"
+      - "ANALYZE Liskov Substitution Principle adherence"
+      - "VALIDATE Interface Segregation Principle usage"
+      - "CHECK Dependency Inversion Principle application"
+      - "ASSESS DRY, KISS, and YAGNI principle compliance"
+
+    solid_principles_analysis:
+      single_responsibility:
+        - "ANALYZE classes and functions for single responsibility"
+        - "IDENTIFY multi-purpose components and violations"
+        - "ASSESS responsibility boundaries and clarity"
+        - "DOCUMENT SRP violations with specific examples"
+        - "RECOMMEND refactoring approaches for violations"
+
+      open_closed_principle:
+        - "EVALUATE extension mechanisms and flexibility"
+        - "IDENTIFY modification-resistant design patterns"
+        - "ASSESS plugin and strategy pattern usage"
+        - "ANALYZE inheritance and composition approaches"
+        - "DOCUMENT OCP compliance and violations"
+
+      liskov_substitution:
+        - "VALIDATE inheritance hierarchies and substitutability"
+        - "IDENTIFY contract violations in subclasses"
+        - "ASSESS behavioral compatibility in inheritance"
+        - "ANALYZE interface implementation correctness"
+        - "DOCUMENT LSP violations and recommendations"
+
+      interface_segregation:
+        - "EVALUATE interface design and client dependencies"
+        - "IDENTIFY fat interfaces and unnecessary dependencies"
+        - "ASSESS interface cohesion and purpose clarity"
+        - "ANALYZE client-specific interface requirements"
+        - "DOCUMENT ISP violations and improvements"
+
+      dependency_inversion:
+        - "ANALYZE dependency flow and abstraction usage"
+        - "IDENTIFY concrete dependency violations"
+        - "ASSESS dependency injection implementation"
+        - "EVALUATE abstraction layer effectiveness"
+        - "DOCUMENT DIP compliance and violations"
+
+    additional_principles:
+      dry_principle:
+        - "IDENTIFY code duplication across files and modules"
+        - "ANALYZE repeated logic and pattern violations"
+        - "ASSESS abstraction opportunities for common code"
+        - "DOCUMENT duplication instances with impact analysis"
+        - "RECOMMEND consolidation and abstraction strategies"
+
+      kiss_principle:
+        - "EVALUATE code complexity and readability"
+        - "IDENTIFY over-engineered solutions and patterns"
+        - "ASSESS simplicity in design and implementation"
+        - "ANALYZE unnecessary abstraction layers"
+        - "DOCUMENT complexity violations and simplification opportunities"
+
+      yagni_principle:
+        - "IDENTIFY premature optimization and over-engineering"
+        - "ANALYZE unused features and dead code"
+        - "ASSESS speculative generality patterns"
+        - "EVALUATE feature implementation necessity"
+        - "DOCUMENT YAGNI violations and removal recommendations"
+
+  phase_4:
+    name: "Language-Specific Best Practices Analysis"
+    mandatory_actions:
+      - "APPLY language-specific coding standards validation"
+      - "ASSESS idiomatic patterns and convention adherence"
+      - "EVALUATE error handling and exception patterns"
+      - "ANALYZE memory management and resource handling"
+      - "VALIDATE concurrency and thread safety patterns"
+      - "DOCUMENT language-specific violations and improvements"
+
+    language_analysis:
+      python_analysis:
+        - "VALIDATE PEP 8 compliance and style guidelines"
+        - "ASSESS type hints coverage and effectiveness"
+        - "ANALYZE docstring completeness and quality"
+        - "EVALUATE exception handling patterns and practices"
+        - "CHECK context manager usage and resource management"
+
+      javascript_typescript_analysis:
+        - "VALIDATE ESLint rule compliance and consistency"
+        - "ASSESS TypeScript strict mode adherence"
+        - "ANALYZE Promise and async/await patterns"
+        - "EVALUATE module import/export consistency"
+        - "CHECK framework-specific best practices compliance"
+
+      go_analysis:
+        - "VALIDATE Effective Go guidelines compliance"
+        - "ASSESS error handling patterns and conventions"
+        - "ANALYZE interface design and implementation"
+        - "EVALUATE goroutine safety and concurrency patterns"
+        - "CHECK context usage and cancellation patterns"
+
+      rust_analysis:
+        - "VALIDATE ownership and borrowing pattern correctness"
+        - "ASSESS error handling with Result and Option types"
+        - "ANALYZE trait design and implementation patterns"
+        - "EVALUATE unsafe block usage and justification"
+        - "CHECK lifetime annotation correctness and clarity"
+
+      general_patterns:
+        - "ANALYZE error propagation and handling strategies"
+        - "EVALUATE logging and debugging implementation"
+        - "ASSESS configuration management approaches"
+        - "ANALYZE testing patterns and coverage strategies"
+        - "DOCUMENT cross-language integration patterns"
+
+  phase_5:
+    name: "Security Vulnerability Assessment and Analysis"
+    mandatory_actions:
+      - "SCAN for common security vulnerabilities and weaknesses"
+      - "ANALYZE input validation and sanitization patterns"
+      - "ASSESS authentication and authorization implementations"
+      - "EVALUATE data handling and encryption practices"
+      - "CHECK dependency vulnerabilities and supply chain risks"
+      - "DOCUMENT security findings with severity assessments"
+
+    security_analysis:
+      vulnerability_scanning:
+        - "IDENTIFY SQL injection and code injection risks"
+        - "ANALYZE cross-site scripting (XSS) vulnerabilities"
+        - "ASSESS cross-site request forgery (CSRF) protections"
+        - "CHECK insecure direct object reference patterns"
+        - "EVALUATE authentication bypass vulnerabilities"
+
+      input_validation:
+        - "ANALYZE input sanitization and validation patterns"
+        - "IDENTIFY unvalidated user input processing"
+        - "ASSESS data type validation and bounds checking"
+        - "EVALUATE file upload and processing security"
+        - "CHECK API parameter validation and filtering"
+
+      authentication_authorization:
+        - "ANALYZE authentication mechanism implementation"
+        - "ASSESS password handling and storage practices"
+        - "EVALUATE session management and security"
+        - "CHECK authorization and access control patterns"
+        - "ANALYZE token-based authentication security"
+
+      data_protection:
+        - "EVALUATE encryption implementation and key management"
+        - "ANALYZE sensitive data handling and storage"
+        - "ASSESS data transmission security (HTTPS, TLS)"
+        - "CHECK logging of sensitive information practices"
+        - "EVALUATE data retention and disposal policies"
+
+      dependency_security:
+        - "SCAN dependencies for known vulnerabilities"
+        - "ANALYZE supply chain security and integrity"
+        - "ASSESS dependency update and maintenance practices"
+        - "CHECK for outdated libraries and frameworks"
+        - "EVALUATE license compliance and legal risks"
+
+  phase_6:
+    name: "Performance Analysis and Bottleneck Identification"
+    mandatory_actions:
+      - "ANALYZE algorithmic complexity and performance characteristics"
+      - "IDENTIFY performance bottlenecks and inefficiencies"
+      - "ASSESS resource utilization and memory management"
+      - "EVALUATE database queries and data access patterns"
+      - "ANALYZE concurrency and parallelization opportunities"
+      - "DOCUMENT performance findings with optimization recommendations"
+
+    performance_analysis:
+      algorithmic_complexity:
+        - "ANALYZE time complexity of algorithms and functions"
+        - "EVALUATE space complexity and memory usage patterns"
+        - "IDENTIFY inefficient loops and recursive operations"
+        - "ASSESS data structure choices and performance impact"
+        - "DOCUMENT complexity analysis with Big O notations"
+
+      resource_utilization:
+        - "ANALYZE memory allocation and deallocation patterns"
+        - "IDENTIFY memory leaks and resource management issues"
+        - "ASSESS CPU utilization and computational efficiency"
+        - "EVALUATE I/O operations and blocking behavior"
+        - "CHECK garbage collection impact and optimization"
+
+      data_access_patterns:
+        - "ANALYZE database query efficiency and optimization"
+        - "IDENTIFY N+1 query problems and batching opportunities"
+        - "ASSESS caching strategies and implementation"
+        - "EVALUATE data fetching and pagination patterns"
+        - "CHECK index usage and database optimization"
+
+      concurrency_analysis:
+        - "ANALYZE parallel processing opportunities"
+        - "IDENTIFY thread safety issues and race conditions"
+        - "ASSESS synchronization and locking patterns"
+        - "EVALUATE async/await and non-blocking I/O usage"
+        - "CHECK deadlock potential and prevention measures"
+
+  phase_7:
+    name: "Interface Contract Documentation and Analysis"
+    mandatory_actions:
+      - "DOCUMENT all public interfaces and API contracts"
+      - "ANALYZE input/output specifications and constraints"
+      - "ASSESS error handling and exception contracts"
+      - "EVALUATE side effects and state modification patterns"
+      - "MAP interface dependencies and integration points"
+      - "VALIDATE interface consistency and design quality"
+
+    interface_analysis:
+      api_contract_documentation:
+        - "DOCUMENT function and method signatures comprehensively"
+        - "ANALYZE parameter types, constraints, and validation"
+        - "MAP return types, formats, and guarantees"
+        - "IDENTIFY error conditions and exception contracts"
+        - "DOCUMENT side effects and state modifications"
+
+      interface_consistency:
+        - "EVALUATE naming consistency across interfaces"
+        - "ANALYZE parameter ordering and convention adherence"
+        - "ASSESS return value consistency and predictability"
+        - "CHECK error handling consistency across APIs"
+        - "VALIDATE documentation completeness and accuracy"
+
+      integration_patterns:
+        - "MAP service-to-service communication patterns"
+        - "ANALYZE data transformation and serialization"
+        - "ASSESS protocol compliance and standards adherence"
+        - "EVALUATE version compatibility and migration strategies"
+        - "DOCUMENT integration dependencies and requirements"
+
+  phase_8:
+    name: "Architecture Diagram Generation and Visualization"
+    mandatory_actions:
+      - "GENERATE comprehensive architectural diagrams"
+      - "CREATE dependency graphs and component relationships"
+      - "DESIGN data flow diagrams and transformation maps"
+      - "PRODUCE sequence diagrams for critical workflows"
+      - "DEVELOP class hierarchy and inheritance diagrams"
+      - "COMPILE visualization artifacts with documentation"
+
+    diagram_generation:
+      architectural_diagrams:
+        - "CREATE high-level system architecture diagrams"
+        - "GENERATE component interaction and communication diagrams"
+        - "DESIGN service dependency and integration maps"
+        - "PRODUCE deployment and infrastructure diagrams"
+        - "DEVELOP layered architecture and separation diagrams"
+
+      code_structure_diagrams:
+        - "GENERATE package and module dependency graphs"
+        - "CREATE class hierarchy and inheritance diagrams"
+        - "DESIGN function call graphs and control flow"
+        - "PRODUCE data model and entity relationship diagrams"
+        - "DEVELOP interface and contract specification diagrams"
+
+      workflow_diagrams:
+        - "CREATE sequence diagrams for critical user workflows"
+        - "GENERATE state transition and lifecycle diagrams"
+        - "DESIGN data flow and transformation pipelines"
+        - "PRODUCE error handling and exception flow diagrams"
+        - "DEVELOP deployment and CI/CD process diagrams"
+
+  phase_9:
+    name: "Technical Debt Inventory and Refactoring Roadmap"
+    mandatory_actions:
+      - "IDENTIFY all technical debt instances and categories"
+      - "ASSESS debt impact and priority for remediation"
+      - "CREATE comprehensive refactoring recommendations"
+      - "DESIGN improvement roadmap with timelines"
+      - "DOCUMENT risk assessment and mitigation strategies"
+      - "PRIORITIZE debt reduction based on business impact"
+
+    technical_debt_analysis:
+      debt_identification:
+        - "CATALOG code quality issues and violations"
+        - "IDENTIFY architectural debt and design problems"
+        - "ANALYZE documentation debt and knowledge gaps"
+        - "ASSESS test debt and coverage insufficiencies"
+        - "DOCUMENT infrastructure and tooling debt"
+
+      impact_assessment:
+        - "EVALUATE business impact of technical debt"
+        - "ANALYZE development velocity impact"
+        - "ASSESS maintenance cost and effort increases"
+        - "CALCULATE risk exposure and potential failures"
+        - "PRIORITIZE debt items by impact and effort"
+
+      refactoring_roadmap:
+        - "DESIGN phased refactoring approach and timeline"
+        - "CREATE specific improvement recommendations"
+        - "PLAN risk mitigation and rollback strategies"
+        - "ESTABLISH success metrics and validation criteria"
+        - "DOCUMENT resource requirements and dependencies"
+
+  phase_10:
+    name: "Comprehensive Report Generation and Documentation"
+    mandatory_actions:
+      - "COMPILE comprehensive analysis findings report"
+      - "GENERATE executive summary with key insights"
+      - "CREATE detailed technical documentation"
+      - "PRODUCE actionable recommendations with priorities"
+      - "DELIVER structured markdown document with analysis"
+      - "VALIDATE report completeness and accuracy"
+
+    report_generation:
+      executive_summary:
+        - "SUMMARIZE key findings and critical issues"
+        - "HIGHLIGHT business impact and risk assessment"
+        - "PRESENT prioritized recommendations"
+        - "DOCUMENT resource requirements for improvements"
+        - "CREATE stakeholder communication materials"
+
+      technical_documentation:
+        - "COMPILE detailed analysis findings and evidence"
+        - "DOCUMENT code examples and anti-pattern instances"
+        - "PRESENT architectural diagrams and visualizations"
+        - "INCLUDE interface contracts and specifications"
+        - "PROVIDE comprehensive refactoring guidance"
+
+      deliverable_creation:
+        - "GENERATE markdown document with interactive analysis"
+        - "CREATE markdown documentation with diagrams"
+        - "PRODUCE PDF reports for stakeholder distribution"
+        - "COMPILE code examples and best practice guides"
+        - "DELIVER prioritized action items and timelines"
+
+# Analysis Validation Criteria
+validation_criteria:
+  structural_analysis: "MANDATORY - Complete structural analysis with diagrams"
+  principles_compliance: "MANDATORY - SOLID/DRY/KISS/YAGNI compliance assessment"
+  language_best_practices: "MANDATORY - Language-specific best practices evaluation"
+  security_analysis: "MANDATORY - Comprehensive security vulnerability assessment"
+  performance_analysis: "MANDATORY - Performance bottleneck and optimization analysis"
+  interface_documentation: "MANDATORY - Complete interface contract documentation"
+  technical_debt_inventory: "MANDATORY - Technical debt identification and prioritization"
+  architecture_visualization: "MANDATORY - Comprehensive architectural diagram generation"
+  actionable_recommendations: "MANDATORY - Specific, prioritized improvement recommendations"
+  report_completeness: "MANDATORY - Complete markdown document and documentation delivery"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL code review output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-185035"
+
+  required_outputs:
+    - "./project/docs/python-development/Review_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive code review)"
+    - "./project/docs/python-development/Recommendations-{{YYYY-MM-DD-HHMMSS}}.md (improvements and best practices)"
+    - "./project/docs/python-development/Action_Items-{{YYYY-MM-DD-HHMMSS}}.md (prioritized fixes and validation)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all code review output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL code review deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating code review files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Code Review Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DISCOVER codebase structure and detect languages/frameworks"
+  - "2. ANALYZE structural organization and code quality patterns"
+  - "3. EVALUATE canonical principles compliance (SOLID/DRY/KISS/YAGNI)"
+  - "4. ASSESS language-specific best practices and conventions"
+  - "5. CONDUCT comprehensive security vulnerability assessment"
+  - "6. PERFORM performance analysis and bottleneck identification"
+  - "7. DOCUMENT interface contracts and API specifications"
+  - "8. GENERATE architectural diagrams and visualizations"
+  - "9. INVENTORY technical debt and create refactoring roadmap"
+  - "10. COMPILE comprehensive analysis report and documentation"
+  - "11. VALIDATE findings completeness and accuracy"
+  - "12. DELIVER structured outputs with timestamp documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all analysis tracking"
+  - "MANDATORY: Timestamp all deliverable creation and validation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Analysis Frameworks
+analysis_frameworks:
+  structural_analysis_framework:
+    organization_assessment: "Evaluate directory structure and logical organization"
+    dependency_mapping: "Map module dependencies and coupling analysis"
+    pattern_identification: "Identify architectural and design patterns"
+    anti_pattern_detection: "Detect structural anti-patterns and violations"
+    modularity_evaluation: "Assess module cohesion and separation of concerns"
+
+  principles_compliance_framework:
+    solid_evaluation: "Comprehensive SOLID principles compliance assessment"
+    dry_assessment: "DRY principle evaluation and duplication analysis"
+    kiss_validation: "KISS principle compliance and complexity assessment"
+    yagni_analysis: "YAGNI principle evaluation and over-engineering detection"
+    best_practices_validation: "Language-specific best practices compliance"
+
+  security_analysis_framework:
+    vulnerability_scanning: "Comprehensive security vulnerability identification"
+    threat_modeling: "Security threat analysis and risk assessment"
+    input_validation_analysis: "Input sanitization and validation assessment"
+    authentication_evaluation: "Authentication and authorization analysis"
+    data_protection_assessment: "Data handling and encryption evaluation"
+
+  performance_analysis_framework:
+    complexity_analysis: "Algorithmic complexity and performance characteristic evaluation"
+    resource_utilization_assessment: "Memory and CPU utilization analysis"
+    bottleneck_identification: "Performance bottleneck detection and analysis"
+    optimization_recommendation: "Performance optimization strategy development"
+    scalability_evaluation: "Scalability assessment and improvement planning"
+
+# Analysis Quality Gates
+quality_gates:
+  structural_completeness:
+    - "All source files analyzed for structure and organization"
+    - "Module dependencies mapped and documented"
+    - "Architectural patterns identified and evaluated"
+    - "Code organization issues documented with examples"
+
+  principles_compliance_completeness:
+    - "SOLID principles compliance thoroughly assessed"
+    - "DRY violations identified with specific instances"
+    - "KISS principle compliance evaluated with complexity metrics"
+    - "YAGNI violations documented with over-engineering examples"
+
+  security_analysis_completeness:
+    - "Comprehensive vulnerability scan completed"
+    - "Input validation patterns analyzed"
+    - "Authentication mechanisms evaluated"
+    - "Dependency vulnerabilities assessed"
+
+  performance_analysis_completeness:
+    - "Algorithmic complexity analysis completed"
+    - "Resource utilization patterns evaluated"
+    - "Performance bottlenecks identified and documented"
+    - "Optimization recommendations provided with priorities"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL code review analysis MUST be comprehensive and complete"
+    - "ALL canonical principles MUST be evaluated (SOLID/DRY/KISS/YAGNI)"
+    - "ALL security vulnerabilities MUST be identified and documented"
+    - "ALL performance bottlenecks MUST be analyzed with recommendations"
+    - "ALL interfaces MUST be documented with complete contracts"
+    - "ALL architectural diagrams MUST be generated with appropriate detail"
+    - "ALWAYS provide actionable recommendations with priorities"
+    - "NEVER implement actual code fixes or modifications"
+
+  strictly_forbidden:
+    - "Implementing actual code fixes or modifications"
+    - "Partial or incomplete analysis of any component"
+    - "Analysis without proper architectural diagram generation"
+    - "Missing security vulnerability assessment"
+    - "Analysis without interface contract documentation"
+    - "Incomplete technical debt identification"
+    - "Missing performance bottleneck analysis"
+    - "Analysis without actionable recommendations"

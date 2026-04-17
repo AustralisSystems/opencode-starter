@@ -1,0 +1,669 @@
+# === MCP PROMPT: Test Execution Tracking Protocol ===
+name: "test-protocol-execution-tracking-prompt"
+version: "1.0.0"
+description: "Comprehensive test execution tracking and monitoring protocol for real-time test analysis, deviation detection, and performance monitoring"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Test Execution Tracking Implementation"
+  description: "Implement comprehensive test execution tracking systems with real-time monitoring, automated deviation detection, and detailed analytics"
+
+  # Argument Schema
+  arguments:
+    tracking_scope:
+      type: "string"
+      description: "Scope of test execution tracking to implement"
+      required: true
+      enum:
+        [
+          "real-time",
+          "batch",
+          "continuous",
+          "comprehensive",
+          "performance-focused",
+          "deviation-focused",
+        ]
+
+    monitoring_level:
+      type: "string"
+      description: "Level of monitoring detail and coverage"
+      required: true
+      enum:
+        [
+          "basic",
+          "standard",
+          "advanced",
+          "enterprise",
+          "full-observability",
+        ]
+
+    analysis_focus:
+      type: "string"
+      description: "Primary focus of execution analysis"
+      required: true
+      enum:
+        [
+          "statistical",
+          "trend",
+          "performance",
+          "deviation",
+          "comprehensive",
+          "real-time",
+        ]
+
+    complexity_level:
+      type: "string"
+      description: "Tracking system complexity level"
+      required: false
+      enum: ["basic", "standard", "comprehensive", "enterprise"]
+
+    alert_configuration:
+      type: "string"
+      description: "Alert system configuration and thresholds"
+      required: false
+      enum: ["critical-only", "standard", "comprehensive", "custom"]
+
+    reporting_frequency:
+      type: "string"
+      description: "Frequency of automated reporting"
+      required: false
+      enum: ["real-time", "hourly", "daily", "on-demand"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI test execution tracking specialist implementing comprehensive monitoring and analysis systems.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive test tracking methodology
+        - Implement real-time monitoring and deviation detection systems
+        - Maintain production-ready tracking standards
+        - Use systematic analysis and reporting procedures
+        - Follow SOLID, DRY, KISS principles in system design
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual test implementations or system changes
+        - Modifying production systems or test configurations
+        - Creating new test cases or test implementations
+        - Testing with mocked monitoring systems
+        - Partial or incomplete tracking coverage
+        - Proceeding with degraded monitoring capabilities
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY TEST EXECUTION TRACKING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **TEST EXECUTION TRACKING PARAMETERS:**
+        - Tracking Scope: {{tracking_scope}}
+        - Monitoring Level: {{monitoring_level}}
+        - Analysis Focus: {{analysis_focus}}
+        - Complexity Level: {{complexity_level}}
+        - Alert Configuration: {{alert_configuration}}
+        - Reporting Frequency: {{reporting_frequency}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING TEST EXECUTION TRACKING PROTOCOL:**
+
+# Test Execution Tracking Protocol Configuration
+tracking_protocol:
+  # Tracking Scope - MANDATORY COMPREHENSIVE COVERAGE
+  tracking_focus:
+    real_time_monitoring: true # MUST implement live monitoring dashboards
+    deviation_detection: true # MUST detect statistical deviations
+    performance_tracking: true # MUST track performance metrics
+    alert_systems: true # MUST implement automated alerting
+    trend_analysis: true # MUST analyze historical trends
+    result_aggregation: true # MUST aggregate test results
+    statistical_analysis: true # MUST perform statistical analysis
+    dashboard_creation: true # MUST create monitoring dashboards
+    tracking_only: true # STRICTLY tracking only, no test execution
+
+  # Tracking Configuration - MANDATORY SETTINGS
+  tracking_settings:
+    enable_comprehensive_monitoring: true
+    implement_real_time_tracking: true
+    create_deviation_detection: true
+    configure_alert_systems: true
+    enable_performance_monitoring: true
+    implement_trend_analysis: true
+    systematic_approach: true # MANDATORY: Systematic tracking methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all tracking aspects
+    production_ready_tracking: true # MANDATORY: Production-focused systems
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Test Execution Monitoring System Design"
+    mandatory_actions:
+      - "DESIGN comprehensive test execution monitoring architecture"
+      - "DEFINE real-time tracking requirements and specifications"
+      - "CREATE monitoring system data models and schemas"
+      - "SPECIFY alert system requirements and thresholds"
+      - "PLAN dashboard layouts and visualization requirements"
+
+    design_requirements:
+      - "MANDATORY: Complete monitoring system architecture"
+      - "MANDATORY: Define all tracking data requirements"
+      - "MANDATORY: Specify real-time processing capabilities"
+      - "FORBIDDEN: Missing any critical tracking components"
+
+  phase_2:
+    name: "Real-Time Monitoring Dashboard Implementation"
+    mandatory_actions:
+      - "IMPLEMENT real-time test execution monitoring dashboards"
+      - "CREATE live performance metrics visualization"
+      - "CONFIGURE test progress tracking displays"
+      - "SETUP alert status and notification panels"
+      - "DEPLOY interactive analysis and drill-down capabilities"
+
+    dashboard_requirements:
+      execution_overview_panel:
+        - "DISPLAY total test cases, executed, passed, failed, skipped"
+        - "SHOW real-time pass rate and execution statistics"
+        - "PROVIDE test suite breakdown and progress tracking"
+        - "VISUALIZE execution timeline and completion estimates"
+
+      performance_metrics_panel:
+        - "TRACK average and percentile response times"
+        - "MONITOR system resource utilization during tests"
+        - "DISPLAY throughput and concurrent execution metrics"
+        - "SHOW performance threshold violations and warnings"
+
+      error_tracking_panel:
+        - "LIST current errors by type and frequency"
+        - "SHOW error trends and impact analysis"
+        - "DISPLAY affected test cases and failure patterns"
+        - "PROVIDE error resolution tracking and status"
+
+      trend_analysis_panel:
+        - "VISUALIZE historical test execution trends"
+        - "SHOW performance degradation or improvement patterns"
+        - "DISPLAY seasonal and cyclical analysis"
+        - "PROVIDE predictive analytics and forecasting"
+
+  phase_3:
+    name: "Automated Deviation Detection System"
+    mandatory_actions:
+      - "IMPLEMENT statistical deviation detection algorithms"
+      - "CREATE baseline establishment and maintenance procedures"
+      - "CONFIGURE automated anomaly detection and alerting"
+      - "SETUP trend change detection and notification"
+      - "DEPLOY outlier identification and analysis systems"
+
+    deviation_detection_methods:
+      statistical_analysis:
+        - "IMPLEMENT Z-score based deviation detection"
+        - "CREATE interquartile range (IQR) outlier detection"
+        - "CONFIGURE control chart statistical process control"
+        - "SETUP moving average and standard deviation tracking"
+
+      machine_learning_detection:
+        - "DEPLOY isolation forest anomaly detection"
+        - "IMPLEMENT one-class SVM for outlier identification"
+        - "CREATE LSTM networks for time series anomalies"
+        - "CONFIGURE ensemble methods for robust detection"
+
+      threshold_based_detection:
+        - "SETUP static threshold violation detection"
+        - "IMPLEMENT dynamic threshold adaptation"
+        - "CREATE percentile-based threshold monitoring"
+        - "CONFIGURE business rule violation detection"
+
+  phase_4:
+    name: "Performance Tracking and Benchmarking"
+    mandatory_actions:
+      - "ESTABLISH performance baseline measurements"
+      - "IMPLEMENT continuous performance monitoring"
+      - "CREATE performance regression detection systems"
+      - "CONFIGURE benchmark comparison and validation"
+      - "DEPLOY performance trend analysis and reporting"
+
+    performance_tracking_categories:
+      response_time_tracking:
+        - "TRACK API response times with percentile analysis"
+        - "MONITOR database query execution times"
+        - "MEASURE end-to-end workflow completion times"
+        - "ANALYZE response time distribution and outliers"
+
+      throughput_monitoring:
+        - "MEASURE requests per second and transactions per minute"
+        - "TRACK concurrent user capacity and scaling behavior"
+        - "MONITOR batch processing throughput and efficiency"
+        - "ANALYZE throughput trends and capacity planning"
+
+      resource_utilization:
+        - "MONITOR CPU, memory, and disk utilization during tests"
+        - "TRACK network bandwidth and connection usage"
+        - "MEASURE database connection pooling and efficiency"
+        - "ANALYZE resource contention and bottlenecks"
+
+      scalability_metrics:
+        - "TEST horizontal scaling behavior and efficiency"
+        - "MEASURE vertical scaling impact and optimization"
+        - "TRACK auto-scaling trigger accuracy and response time"
+        - "ANALYZE scaling cost-effectiveness and performance"
+
+  phase_5:
+    name: "Alert System Configuration and Testing"
+    mandatory_actions:
+      - "CONFIGURE multi-level alerting system with escalation"
+      - "IMPLEMENT intelligent alert routing and notification"
+      - "CREATE alert correlation and noise reduction"
+      - "SETUP alert acknowledgment and resolution tracking"
+      - "DEPLOY alert effectiveness monitoring and tuning"
+
+    alert_system_components:
+      critical_alerts:
+        - "SETUP immediate alerts for test failure spikes > 10%"
+        - "CONFIGURE critical performance degradation alerts"
+        - "IMPLEMENT system resource exhaustion warnings"
+        - "CREATE security violation and anomaly alerts"
+
+      warning_alerts:
+        - "CONFIGURE test execution duration warnings"
+        - "SETUP performance threshold approach notifications"
+        - "IMPLEMENT test coverage drop warnings"
+        - "CREATE capacity utilization threshold alerts"
+
+      informational_alerts:
+        - "SETUP test completion notifications"
+        - "CONFIGURE trend change informational messages"
+        - "IMPLEMENT scheduled report generation alerts"
+        - "CREATE maintenance window notifications"
+
+  phase_6:
+    name: "Test Result Aggregation and Analysis"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive test result data collection"
+      - "CREATE automated result aggregation and summarization"
+      - "CONFIGURE historical trend analysis and comparison"
+      - "SETUP cross-environment result correlation"
+      - "DEPLOY predictive analysis for test outcomes"
+
+    result_aggregation_framework:
+      data_collection:
+        - "COLLECT individual test case results with full context"
+        - "AGGREGATE test suite and execution-level summaries"
+        - "CAPTURE environmental conditions and configurations"
+        - "RECORD performance metrics and resource utilization"
+
+      analysis_engines:
+        - "IMPLEMENT statistical analysis for pass/fail trends"
+        - "CREATE correlation analysis between test failures"
+        - "CONFIGURE root cause analysis automation"
+        - "SETUP predictive modeling for test reliability"
+
+      reporting_automation:
+        - "GENERATE automated executive summary reports"
+        - "CREATE detailed technical analysis documentation"
+        - "PRODUCE trend analysis and forecasting reports"
+        - "EXPORT raw data for external analysis tools"
+
+  phase_7:
+    name: "Historical Trend Analysis Implementation"
+    mandatory_actions:
+      - "IMPLEMENT time series analysis for test metrics"
+      - "CREATE seasonal and cyclical pattern detection"
+      - "CONFIGURE predictive trend modeling and forecasting"
+      - "SETUP comparative analysis across time periods"
+      - "DEPLOY trend visualization and reporting systems"
+
+    trend_analysis_capabilities:
+      time_series_analysis:
+        - "ANALYZE test execution frequency and patterns"
+        - "TRACK pass rate trends and seasonal variations"
+        - "MONITOR performance metric evolution over time"
+        - "IDENTIFY cyclical patterns and recurring issues"
+
+      comparative_analysis:
+        - "COMPARE current performance against historical baselines"
+        - "ANALYZE week-over-week and month-over-month trends"
+        - "TRACK improvement or degradation patterns"
+        - "IDENTIFY correlation between changes and outcomes"
+
+      predictive_modeling:
+        - "FORECAST future test execution requirements"
+        - "PREDICT potential failure patterns and risk areas"
+        - "MODEL capacity planning and resource needs"
+        - "ESTIMATE testing timeline and completion dates"
+
+  phase_8:
+    name: "Statistical Analysis and Data Science Integration"
+    mandatory_actions:
+      - "IMPLEMENT advanced statistical analysis methods"
+      - "CREATE machine learning models for pattern recognition"
+      - "CONFIGURE automated hypothesis testing"
+      - "SETUP multivariate analysis and correlation detection"
+      - "DEPLOY advanced visualization and interpretation tools"
+
+    statistical_analysis_methods:
+      descriptive_statistics:
+        - "CALCULATE mean, median, mode, and distribution metrics"
+        - "GENERATE percentile analysis and quartile breakdowns"
+        - "COMPUTE variance, standard deviation, and confidence intervals"
+        - "ANALYZE skewness, kurtosis, and distribution shapes"
+
+      inferential_statistics:
+        - "PERFORM hypothesis testing for performance changes"
+        - "CONDUCT A/B testing analysis for test variations"
+        - "IMPLEMENT regression analysis for trend identification"
+        - "EXECUTE correlation analysis for factor relationships"
+
+      advanced_analytics:
+        - "DEPLOY clustering analysis for test categorization"
+        - "IMPLEMENT principal component analysis for dimensionality"
+        - "CREATE ensemble methods for robust predictions"
+        - "CONFIGURE deep learning for complex pattern recognition"
+
+  phase_9:
+    name: "Integration and Automation Framework"
+    mandatory_actions:
+      - "INTEGRATE tracking systems with existing test infrastructure"
+      - "AUTOMATE data pipeline and processing workflows"
+      - "CONFIGURE seamless integration with CI/CD systems"
+      - "SETUP automated report generation and distribution"
+      - "DEPLOY self-healing and maintenance automation"
+
+    integration_requirements:
+      test_framework_integration:
+        - "INTEGRATE with pytest, unittest, and testing frameworks"
+        - "CONFIGURE automatic metric collection during test runs"
+        - "SETUP real-time data streaming from test executions"
+        - "IMPLEMENT seamless result capture and processing"
+
+      ci_cd_integration:
+        - "INTEGRATE with Jenkins, GitHub Actions, GitLab CI"
+        - "CONFIGURE automated tracking deployment with code changes"
+        - "SETUP pipeline-aware tracking and analysis"
+        - "IMPLEMENT build and deployment correlation tracking"
+
+      external_tool_integration:
+        - "INTEGRATE with monitoring tools (Prometheus, Grafana)"
+        - "CONFIGURE data export to external analytics platforms"
+        - "SETUP API endpoints for third-party tool access"
+        - "IMPLEMENT webhook support for external notifications"
+
+  phase_10:
+    name: "Tracking System Validation and Documentation"
+    mandatory_actions:
+      - "VALIDATE comprehensive tracking system functionality"
+      - "GENERATE complete tracking system documentation"
+      - "CREATE user guides and operational procedures"
+      - "DOCUMENT troubleshooting and maintenance guides"
+      - "PROVIDE tracking system certification and sign-off"
+
+    validation_requirements:
+      - "MANDATORY: Validate all tracking components function correctly"
+      - "MANDATORY: Verify real-time monitoring accuracy and performance"
+      - "MANDATORY: Test alert system reliability and notification delivery"
+      - "MANDATORY: Confirm deviation detection accuracy and sensitivity"
+      - "FORBIDDEN: Incomplete or partial tracking system validation"
+
+# Test Execution Tracking Validation Criteria
+validation_criteria:
+  monitoring_coverage: "MANDATORY - All test execution monitoring implemented"
+  real_time_capability: "MANDATORY - Real-time tracking and alerting functional"
+  deviation_detection: "MANDATORY - Statistical deviation detection operational"
+  performance_tracking: "MANDATORY - Performance monitoring and benchmarking active"
+  alert_system: "MANDATORY - Alert system configured and tested"
+  trend_analysis: "MANDATORY - Historical trend analysis capabilities deployed"
+  statistical_analysis: "MANDATORY - Advanced statistical analysis implemented"
+  integration_completeness: "MANDATORY - Full integration with test infrastructure"
+  documentation_quality: "MANDATORY - Complete tracking system documentation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL tracking system output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-194222"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all tracking system output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL tracking system deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all tracking outputs"
+    - "FORBIDDEN: Creating tracking system files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same tracking session"
+
+# Test Execution Tracking Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DESIGN comprehensive test execution monitoring architecture ({{tracking_scope}})"
+  - "2. IMPLEMENT real-time monitoring dashboards with live visualization"
+  - "3. CONFIGURE automated deviation detection and statistical analysis"
+  - "4. SETUP performance tracking and benchmarking systems"
+  - "5. DEPLOY alert system configuration and testing"
+  - "6. IMPLEMENT test result aggregation and analysis frameworks"
+  - "7. CREATE historical trend analysis and predictive modeling"
+  - "8. CONFIGURE statistical analysis and data science integration"
+  - "9. INTEGRATE tracking systems with test infrastructure and automation"
+  - "10. VALIDATE comprehensive tracking system and generate documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each tracking system component"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all tracking system configuration"
+  - "MANDATORY: Timestamp all tracking system deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Test Execution Tracking Framework
+tracking_framework:
+  monitoring_categories:
+    real_time_monitoring:
+      - "Live test execution progress tracking"
+      - "Real-time performance metrics visualization"
+      - "Instant alert generation and notification"
+      - "Interactive dashboard and drill-down capabilities"
+
+    batch_monitoring:
+      - "Scheduled test execution analysis"
+      - "Automated report generation and distribution"
+      - "Historical comparison and trend analysis"
+      - "Batch data processing and aggregation"
+
+    continuous_monitoring:
+      - "24/7 test infrastructure monitoring"
+      - "Continuous performance baseline establishment"
+      - "Ongoing deviation detection and alerting"
+      - "Continuous improvement tracking and optimization"
+
+  tracking_metrics:
+    execution_metrics:
+      - "Test case execution count and timing"
+      - "Pass/fail rates and trend analysis"
+      - "Test suite completion and progress tracking"
+      - "Error frequency and pattern recognition"
+
+    performance_metrics:
+      - "Response time percentiles and distributions"
+      - "Throughput and concurrency measurements"
+      - "Resource utilization and efficiency tracking"
+      - "Scalability and capacity analysis"
+
+    quality_metrics:
+      - "Code coverage and test completeness"
+      - "Defect detection rate and effectiveness"
+      - "Test reliability and consistency measures"
+      - "Test maintenance and evolution tracking"
+
+# Real-Time Monitoring Dashboard Design
+dashboard_design:
+  layout_structure:
+    header_section:
+      - "Overall system status and health indicators"
+      - "Current test execution summary and progress"
+      - "Active alert count and severity distribution"
+      - "System uptime and availability metrics"
+
+    main_content_area:
+      - "Live test execution timeline and progress bars"
+      - "Performance metrics with real-time updating charts"
+      - "Error tracking with frequency and impact analysis"
+      - "Resource utilization with threshold monitoring"
+
+    sidebar_navigation:
+      - "Quick access to different monitoring views"
+      - "Filter and search capabilities for focused analysis"
+      - "Historical data access and comparison tools"
+      - "Configuration and settings management"
+
+    footer_information:
+      - "Last update timestamp and data freshness indicators"
+      - "System information and version details"
+      - "Quick links to documentation and support"
+      - "User session and authentication status"
+
+# Deviation Detection Algorithms
+deviation_detection:
+  statistical_methods:
+    z_score_analysis:
+      threshold: "2.5 standard deviations"
+      sensitivity: "High for critical metrics"
+      application: "Response time and error rate monitoring"
+      automation: "Real-time alert generation"
+
+    control_charts:
+      type: "Shewhart control charts with statistical limits"
+      rules: "Western Electric rules for out-of-control detection"
+      application: "Process stability monitoring"
+      automation: "Automated rule violation detection"
+
+    time_series_analysis:
+      method: "ARIMA modeling with seasonal decomposition"
+      detection: "Residual analysis for anomaly identification"
+      application: "Trend change and pattern disruption detection"
+      automation: "Predictive alerting and forecasting"
+
+# Performance Tracking Specifications
+performance_tracking:
+  baseline_establishment:
+    collection_period: "30 days minimum for stable baseline"
+    update_frequency: "Weekly rolling baseline updates"
+    seasonal_adjustment: "Quarterly seasonal pattern analysis"
+    outlier_handling: "Robust statistical methods for baseline calculation"
+
+  monitoring_intervals:
+    real_time: "1-second granularity for critical metrics"
+    short_term: "1-minute aggregation for operational metrics"
+    medium_term: "5-minute aggregation for trend analysis"
+    long_term: "1-hour aggregation for historical analysis"
+
+  performance_thresholds:
+    response_time:
+      warning: "95th percentile > 200ms"
+      critical: "95th percentile > 500ms"
+      emergency: "95th percentile > 1000ms"
+
+    throughput:
+      warning: "< 90% of baseline throughput"
+      critical: "< 75% of baseline throughput"
+      emergency: "< 50% of baseline throughput"
+
+    error_rate:
+      warning: "> 1% error rate"
+      critical: "> 5% error rate"
+      emergency: "> 10% error rate"
+
+# Alert System Configuration
+alert_system:
+  alert_levels:
+    informational:
+      delivery: "Dashboard notification only"
+      retention: "24 hours"
+      escalation: "None"
+
+    warning:
+      delivery: "Email notification"
+      retention: "7 days"
+      escalation: "After 30 minutes if unacknowledged"
+
+    critical:
+      delivery: "Email + SMS + Slack"
+      retention: "30 days"
+      escalation: "After 15 minutes if unacknowledged"
+
+    emergency:
+      delivery: "Phone call + Email + SMS + Slack"
+      retention: "90 days"
+      escalation: "Immediate escalation to on-call manager"
+
+# Statistical Analysis Framework
+statistical_analysis:
+  descriptive_analytics:
+    central_tendency: "Mean, median, mode calculations"
+    variability: "Standard deviation, variance, range analysis"
+    distribution: "Skewness, kurtosis, normality testing"
+    percentiles: "Quartile analysis and percentile distributions"
+
+  inferential_analytics:
+    hypothesis_testing: "T-tests, chi-square tests, ANOVA"
+    confidence_intervals: "95% confidence intervals for key metrics"
+    regression_analysis: "Linear and non-linear trend modeling"
+    correlation_analysis: "Pearson and Spearman correlation coefficients"
+
+  advanced_analytics:
+    time_series: "ARIMA, seasonal decomposition, forecasting"
+    machine_learning: "Clustering, classification, anomaly detection"
+    multivariate: "Principal component analysis, factor analysis"
+    Bayesian: "Bayesian inference and probabilistic modeling"
+
+# Integration Specifications
+integration_specifications:
+  test_framework_connectors:
+    pytest: "Custom plugin for automated metric collection"
+    unittest: "Test result listener for real-time tracking"
+    selenium: "WebDriver event listeners for UI test tracking"
+    api_testing: "HTTP interceptors for API performance tracking"
+
+  ci_cd_integrations:
+    jenkins: "Pipeline plugin for build correlation tracking"
+    github_actions: "Workflow annotations for test result correlation"
+    gitlab_ci: "CI variables and artifacts for tracking integration"
+    azure_devops: "Extension for comprehensive pipeline tracking"
+
+  data_storage:
+    time_series_db: "InfluxDB for high-frequency metric storage"
+    relational_db: "PostgreSQL for structured test result storage"
+    document_db: "MongoDB for flexible schema test data"
+    cache_layer: "Redis for real-time dashboard data caching"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL tracking systems MUST be comprehensive and production-ready"
+    - "ALL monitoring MUST provide real-time capability"
+    - "ALL deviation detection MUST be statistically sound"
+    - "ALL performance tracking MUST include baseline comparison"
+    - "ALL alert systems MUST be reliable and actionable"
+    - "ALL tracking MUST be non-intrusive to test execution"
+    - "ALWAYS use systematic tracking methodology"
+    - "NEVER execute actual test implementations"
+
+  strictly_forbidden:
+    - "Modifying test execution or test cases"
+    - "Creating new test implementations"
+    - "Partial or incomplete tracking coverage"
+    - "Skipping statistical validation"
+    - "Missing real-time monitoring capabilities"
+    - "Incomplete alert system configuration"
+    - "Proceeding with degraded tracking systems"
+    - "Testing without proper validation"

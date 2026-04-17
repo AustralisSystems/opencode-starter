@@ -1,0 +1,699 @@
+# === MCP PROMPT: Deployment Planning Protocol ===
+name: "code-deployment-planning-prompt"
+version: "1.0.0"
+description: "Comprehensive deployment strategy and documentation protocol for production code planning"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Deployment Planning"
+  description: "Execute comprehensive deployment planning, strategy design, and documentation creation with mandatory analysis and validation"
+
+  # Argument Schema
+  arguments:
+    target_system:
+      type: "string"
+      description: "Target system or application for deployment planning"
+      required: true
+
+    environment_scope:
+      type: "string"
+      description: "Scope of environments to plan for"
+      required: true
+      enum:
+        [
+          "single",
+          "multi-environment",
+          "full-pipeline",
+          "development-only",
+          "staging-production",
+          "all-environments",
+        ]
+
+    platform_target:
+      type: "string"
+      description: "Target deployment platform(s)"
+      required: true
+      enum:
+        [
+          "docker",
+          "kubernetes",
+          "cloud-native",
+          "hybrid-cloud",
+          "multi-platform",
+          "on-premises",
+        ]
+
+    complexity_level:
+      type: "string"
+      description: "Deployment complexity level"
+      required: false
+      enum: ["simple", "moderate", "complex", "enterprise"]
+
+    compliance_requirements:
+      type: "string"
+      description: "Compliance and regulatory requirements"
+      required: false
+
+    timeline:
+      type: "string"
+      description: "Deployment timeline and constraints"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI deployment planning specialist executing the Deployment Planning Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive planning methodology
+        - Create complete deployment strategies and documentation
+        - Maintain production-ready planning standards
+        - Use systematic analysis and risk assessment
+        - Follow SOLID, DRY, KISS principles in planning
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual deployment commands
+        - Making changes to live systems
+        - Partial or incomplete planning
+        - Creating plans without proper analysis
+        - Skipping risk assessment or security planning
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY DEPLOYMENT PLANNING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **PLANNING PARAMETERS:**
+        - Target System: {{target_system}}
+        - Environment Scope: {{environment_scope}}
+        - Platform Target: {{platform_target}}
+        - Complexity Level: {{complexity_level}}
+        - Compliance Requirements: {{compliance_requirements}}
+        - Timeline: {{timeline}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING DEPLOYMENT PLANNING PROTOCOL:**
+
+# Deployment Planning Protocol Configuration
+planning_protocol:
+  # Planning Scope - MANDATORY COMPREHENSIVE COVERAGE
+  planning_focus:
+    system_analysis: true # MUST analyze all system components
+    infrastructure_planning: true # MUST plan infrastructure requirements
+    deployment_strategy: true # MUST design deployment strategy
+    risk_assessment: true # MUST perform comprehensive risk analysis
+    security_planning: true # MUST plan security and compliance
+    monitoring_design: true # MUST design observability stack
+    cicd_architecture: true # MUST design automation pipeline
+    documentation_creation: true # MUST create comprehensive documentation
+    planning_only: true # STRICTLY planning only, no execution
+
+  # Planning Configuration - MANDATORY SETTINGS
+  planning_settings:
+    enable_comprehensive_analysis: true
+    perform_risk_assessment: true
+    design_monitoring_stack: true
+    plan_security_compliance: true
+    create_cicd_architecture: true
+    generate_documentation: true
+    systematic_approach: true # MANDATORY: Systematic planning methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all planning aspects
+    production_ready_planning: true # MANDATORY: Production-focused planning
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "System Analysis and Inventory"
+    mandatory_actions:
+      - "ANALYZE all application components and dependencies"
+      - "INVENTORY backend services, frontend applications, APIs"
+      - "MAP database schemas and migration requirements"
+      - "IDENTIFY configuration management and environment variables"
+      - "DOCUMENT third-party integrations and external dependencies"
+
+    analysis_requirements:
+      - "MANDATORY: Complete application component analysis"
+      - "MANDATORY: Identify all service dependencies"
+      - "MANDATORY: Map data flows and integration points"
+      - "FORBIDDEN: Incomplete or partial system analysis"
+
+  phase_2:
+    name: "Infrastructure Topology Mapping"
+    mandatory_actions:
+      - "MAP current infrastructure state and topology"
+      - "DESIGN target infrastructure requirements"
+      - "PLAN capacity and scalability requirements"
+      - "ANALYZE network topology and security boundaries"
+      - "DOCUMENT infrastructure components and dependencies"
+
+    infrastructure_requirements:
+      compute_analysis:
+        - "ANALYZE CPU, memory, and instance requirements"
+        - "PLAN scaling policies and resource limits"
+        - "DESIGN high availability configurations"
+        - "DOCUMENT performance requirements"
+
+      storage_analysis:
+        - "PLAN storage requirements for applications and data"
+        - "DESIGN backup and disaster recovery strategies"
+        - "ANALYZE database deployment and replication"
+        - "DOCUMENT storage performance requirements"
+
+      network_analysis:
+        - "DESIGN network topology and segmentation"
+        - "PLAN load balancing and traffic routing"
+        - "ANALYZE security boundaries and access control"
+        - "DOCUMENT network performance requirements"
+
+  phase_3:
+    name: "Deployment Strategy Design"
+    mandatory_actions:
+      - "SELECT appropriate deployment strategy (blue-green, canary, rolling)"
+      - "DESIGN environment-specific deployment approaches"
+      - "PLAN deployment sequencing and dependencies"
+      - "CREATE deployment decision matrix and rationale"
+      - "DOCUMENT strategy implementation details"
+
+    strategy_options:
+      blue_green:
+        - "ANALYZE suitability for zero-downtime requirements"
+        - "PLAN resource requirements for parallel environments"
+        - "DESIGN traffic switching mechanisms"
+        - "DOCUMENT rollback procedures"
+
+      canary:
+        - "DESIGN progressive traffic routing strategy"
+        - "PLAN monitoring and validation gates"
+        - "ANALYZE risk mitigation through gradual exposure"
+        - "DOCUMENT canary promotion criteria"
+
+      rolling:
+        - "PLAN sequential instance replacement strategy"
+        - "DESIGN health check and validation procedures"
+        - "ANALYZE resource efficiency and constraints"
+        - "DOCUMENT rolling update parameters"
+
+  phase_4:
+    name: "Risk Assessment and Mitigation"
+    mandatory_actions:
+      - "IDENTIFY all technical, operational, and business risks"
+      - "ASSESS risk impact and probability matrices"
+      - "DESIGN mitigation strategies for each identified risk"
+      - "PLAN rollback and recovery procedures"
+      - "CREATE risk monitoring and alerting strategies"
+
+    risk_categories:
+      technical_risks:
+        - "Service dependencies and failure scenarios"
+        - "Database migration and data integrity risks"
+        - "Container orchestration and infrastructure failures"
+        - "Network connectivity and performance issues"
+
+      operational_risks:
+        - "Deployment process failures and automation issues"
+        - "Monitoring blind spots and alerting gaps"
+        - "Team availability and knowledge transfer"
+        - "Change management and communication failures"
+
+      business_risks:
+        - "User experience degradation and customer impact"
+        - "Revenue impact from downtime or performance issues"
+        - "Compliance violations and regulatory risks"
+        - "Competitive disadvantage from deployment delays"
+
+  phase_5:
+    name: "Security and Compliance Planning"
+    mandatory_actions:
+      - "DESIGN authentication and authorization strategies"
+      - "PLAN data protection and encryption requirements"
+      - "ANALYZE compliance framework requirements"
+      - "CREATE security validation and audit procedures"
+      - "DOCUMENT security architecture and controls"
+
+    security_planning:
+      authentication_design:
+        - "PLAN OAuth 2.0/OIDC implementation"
+        - "DESIGN multi-factor authentication requirements"
+        - "ANALYZE session management and token strategies"
+        - "DOCUMENT password policies and security controls"
+
+      data_protection:
+        - "PLAN encryption at rest and in transit"
+        - "DESIGN key management and rotation strategies"
+        - "ANALYZE backup encryption and security"
+        - "DOCUMENT data classification and handling"
+
+      compliance_framework:
+        - "ANALYZE regulatory requirements (SOC 2, ISO 27001, GDPR)"
+        - "PLAN audit logging and compliance monitoring"
+        - "DESIGN data retention and privacy controls"
+        - "DOCUMENT compliance validation procedures"
+
+  phase_6:
+    name: "Monitoring and Observability Planning"
+    mandatory_actions:
+      - "DESIGN comprehensive monitoring and metrics strategy"
+      - "PLAN logging aggregation and analysis systems"
+      - "CREATE distributed tracing and correlation strategies"
+      - "DESIGN alerting and escalation procedures"
+      - "DOCUMENT SLA and performance baseline requirements"
+
+    observability_design:
+      metrics_planning:
+        - "PLAN Prometheus and OpenTelemetry implementation"
+        - "DESIGN Grafana dashboards and visualization"
+        - "ANALYZE key performance indicators and SLIs"
+        - "DOCUMENT metrics retention and aggregation"
+
+      logging_strategy:
+        - "PLAN ELK Stack or equivalent implementation"
+        - "DESIGN structured logging and correlation IDs"
+        - "ANALYZE log retention and storage requirements"
+        - "DOCUMENT logging levels and filtering strategies"
+
+      tracing_architecture:
+        - "PLAN distributed tracing implementation"
+        - "DESIGN sampling strategies and performance impact"
+        - "ANALYZE trace correlation and dependency mapping"
+        - "DOCUMENT tracing data retention and analysis"
+
+  phase_7:
+    name: "CI/CD Pipeline Architecture"
+    mandatory_actions:
+      - "DESIGN complete CI/CD pipeline architecture"
+      - "PLAN build, test, and deployment automation"
+      - "CREATE quality gates and validation checkpoints"
+      - "DESIGN approval workflows and governance"
+      - "DOCUMENT pipeline configuration and maintenance"
+
+    pipeline_design:
+      build_automation:
+        - "PLAN source control integration and triggers"
+        - "DESIGN build steps and dependency management"
+        - "ANALYZE testing strategies and coverage requirements"
+        - "DOCUMENT artifact creation and signing"
+
+      deployment_automation:
+        - "PLAN environment-specific deployment workflows"
+        - "DESIGN approval gates and manual checkpoints"
+        - "ANALYZE rollback automation and procedures"
+        - "DOCUMENT deployment validation and health checks"
+
+      quality_assurance:
+        - "PLAN static code analysis and security scanning"
+        - "DESIGN performance testing and benchmarking"
+        - "ANALYZE compliance validation and audit trails"
+        - "DOCUMENT quality metrics and success criteria"
+
+  phase_8:
+    name: "Documentation and Deliverables Creation"
+    mandatory_actions:
+      - "GENERATE comprehensive planning documentation"
+      - "CREATE markdown document deliverables"
+      - "COMPILE planning summary and recommendations"
+      - "DOCUMENT next steps and execution readiness"
+      - "VALIDATE planning completeness and accuracy"
+
+    documentation_requirements:
+      - "MANDATORY: Create all planning deliverables in markdown document format"
+      - "MANDATORY: Include comprehensive analysis and rationale"
+      - "MANDATORY: Document all decisions and trade-offs"
+      - "MANDATORY: Provide clear next steps for execution"
+      - "FORBIDDEN: Incomplete or partial planning documentation"
+
+  phase_9:
+    name: "Quickstart Documentation Creation"
+    mandatory_actions:
+      - "CREATE user-friendly quickstart deployment guides"
+      - "DOCUMENT step-by-step deployment commands for all environments"
+      - "PROVIDE platform-specific deployment instructions"
+      - "INCLUDE prerequisites and setup requirements"
+      - "CREATE troubleshooting guides and common issue resolution"
+
+    quickstart_requirements:
+      - "MANDATORY: Create quickstart guides for all target environments (dev, staging, prod)"
+      - "MANDATORY: Include platform-specific commands (docker, kubernetes, cloud-native, on-premises)"
+      - "MANDATORY: Provide clear prerequisites and setup instructions"
+      - "MANDATORY: Include validation commands and health checks"
+      - "MANDATORY: Document common troubleshooting scenarios"
+      - "FORBIDDEN: Incomplete or unclear quickstart documentation"
+
+  phase_10:
+    name: "Lifecycle Management and Terraform Infrastructure Planning"
+    mandatory_actions:
+      - "DESIGN application lifecycle management procedures"
+      - "PLAN environment promotion workflows"
+      - "CREATE scaling and performance management procedures"
+      - "DESIGN backup and recovery procedures"
+      - "PLAN monitoring and alerting setup"
+      - "DESIGN Infrastructure as Code patterns and structures"
+      - "PLAN environment-specific Terraform configurations"
+      - "CREATE platform-specific Terraform modules"
+
+    lifecycle_terraform_requirements:
+      - "MANDATORY: Create comprehensive lifecycle management procedures"
+      - "MANDATORY: Design environment promotion workflows"
+      - "MANDATORY: Plan scaling and performance management"
+      - "MANDATORY: Design backup and recovery procedures"
+      - "MANDATORY: Plan monitoring and alerting setup"
+      - "MANDATORY: Create Terraform infrastructure patterns for all environments"
+      - "MANDATORY: Design platform-specific Terraform modules"
+      - "MANDATORY: Plan state management and remote backend configuration"
+      - "FORBIDDEN: Incomplete lifecycle management or Terraform planning"
+
+# Planning Validation Criteria
+validation_criteria:
+  system_analysis: "MANDATORY - Complete system component analysis"
+  infrastructure_planning: "MANDATORY - Comprehensive infrastructure requirements"
+  strategy_design: "MANDATORY - Deployment strategy selected and documented"
+  risk_assessment: "MANDATORY - All risks identified and mitigated"
+  security_planning: "MANDATORY - Security and compliance requirements planned"
+  monitoring_design: "MANDATORY - Observability stack designed"
+  cicd_architecture: "MANDATORY - Pipeline architecture completed"
+  documentation_quality: "MANDATORY - All deliverables created and validated"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL planning output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-142155"
+
+  required_outputs:
+    - "Implementation_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (implementation plan)"
+    - "Testing_Strategy_{{YYYYMMDD-HHMMSS}}.ipynb (testing strategy)"
+    - "Integration_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (integration plan)"
+    - "Deployment_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (deployment plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all planning output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL planning deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all planning outputs"
+    - "FORBIDDEN: Creating planning files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same planning session"
+
+# Planning Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE target system ({{target_system}}) components and dependencies"
+  - "2. INVENTORY all application services, APIs, and integrations"
+  - "3. MAP current infrastructure state and requirements"
+  - "4. DESIGN target infrastructure and capacity planning"
+  - "5. SELECT appropriate deployment strategy (blue-green, canary, rolling)"
+  - "6. ASSESS all technical, operational, and business risks"
+  - "7. DESIGN comprehensive mitigation strategies"
+  - "8. PLAN security and compliance requirements"
+  - "9. DESIGN monitoring and observability stack"
+  - "10. ARCHITECT CI/CD pipeline and automation"
+  - "11. CREATE environment-specific configurations"
+  - "12. CREATE user-friendly quickstart deployment guides"
+  - "13. DESIGN application lifecycle management procedures"
+  - "14. PLAN Terraform infrastructure as code patterns"
+  - "15. GENERATE comprehensive planning documentation with timestamps"
+  - "16. VALIDATE planning completeness and accuracy"
+  - "17. PROVIDE clear next steps for deployment execution"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each planning step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all planning tracking"
+  - "MANDATORY: Timestamp all planning deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# System Analysis Framework
+system_analysis_framework:
+  component_discovery:
+    backend_services:
+      - "API services and microservices"
+      - "Background job processors"
+      - "Message queues and event systems"
+      - "Authentication and authorization services"
+
+    frontend_applications:
+      - "Web applications and SPAs"
+      - "Mobile applications"
+      - "Static assets and CDN requirements"
+      - "User interface components"
+
+    data_layer:
+      - "Primary databases and schemas"
+      - "Cache layers and session stores"
+      - "Data warehouses and analytics"
+      - "Backup and archival systems"
+
+    integration_points:
+      - "External API integrations"
+      - "Third-party service dependencies"
+      - "Legacy system connections"
+      - "Partner and vendor integrations"
+
+# Infrastructure Planning Framework
+infrastructure_framework:
+  compute_planning:
+    resource_estimation:
+      - "CPU requirements analysis"
+      - "Memory utilization planning"
+      - "Instance sizing and scaling policies"
+      - "Container resource limits and requests"
+
+    availability_design:
+      - "High availability architecture"
+      - "Multi-zone deployment strategies"
+      - "Fault tolerance and redundancy"
+      - "Auto-scaling configurations"
+
+  storage_planning:
+    application_storage:
+      - "Application data storage requirements"
+      - "Log storage and retention policies"
+      - "Backup storage and disaster recovery"
+      - "Performance and IOPS requirements"
+
+    database_strategy:
+      - "Database deployment and clustering"
+      - "Replication and backup strategies"
+      - "Migration and upgrade procedures"
+      - "Performance tuning and optimization"
+
+# Deployment Strategy Matrix
+deployment_strategies:
+  blue_green:
+    description: "Parallel environment with traffic switch"
+    suitable_for: ["Zero downtime requirements", "Stateless applications"]
+    advantages:
+      ["Instant rollback", "Full environment testing", "Zero downtime"]
+    disadvantages:
+      ["Double resource requirements", "Database migration complexity"]
+    implementation_plan:
+      - "Provision parallel production environment"
+      - "Deploy new version to green environment"
+      - "Perform comprehensive testing"
+      - "Switch traffic from blue to green"
+      - "Monitor and validate deployment"
+
+  canary:
+    description: "Progressive traffic routing with monitoring gates"
+    suitable_for: ["Risk mitigation", "Gradual validation", "User feedback"]
+    advantages:
+      ["Gradual risk exposure", "Real user validation", "Fine-grained control"]
+    disadvantages:
+      ["Complex traffic routing", "Monitoring overhead", "Longer deployment"]
+    implementation_plan:
+      - "Deploy new version to subset of instances"
+      - "Route small percentage of traffic to new version"
+      - "Monitor metrics and user feedback"
+      - "Gradually increase traffic percentage"
+      - "Complete rollout or rollback based on metrics"
+
+  rolling:
+    description: "Sequential instance replacement with health checks"
+    suitable_for:
+      ["Resource constraints", "Stateful applications", "Budget limitations"]
+    advantages: ["Resource efficient", "Gradual deployment", "Partial rollback"]
+    disadvantages:
+      ["Potential downtime", "Version mixing", "Complex state management"]
+    implementation_plan:
+      - "Replace instances sequentially"
+      - "Perform health checks after each replacement"
+      - "Validate service functionality"
+      - "Continue or rollback based on health status"
+      - "Complete deployment validation"
+
+# Risk Assessment Framework
+risk_assessment_framework:
+  risk_identification:
+    technical_risks:
+      - "Service dependencies and failure scenarios"
+      - "Database migration and data integrity"
+      - "Container orchestration failures"
+      - "Network connectivity issues"
+      - "Performance degradation risks"
+
+    operational_risks:
+      - "Deployment process failures"
+      - "Monitoring and alerting gaps"
+      - "Team availability and expertise"
+      - "Change management processes"
+      - "Communication and coordination"
+
+    business_risks:
+      - "User experience impact"
+      - "Revenue and business continuity"
+      - "Compliance and regulatory violations"
+      - "Competitive disadvantage"
+      - "Reputation and customer trust"
+
+  mitigation_strategies:
+    prevention:
+      - "Comprehensive testing and validation"
+      - "Infrastructure redundancy and failover"
+      - "Automated deployment and rollback"
+      - "Monitoring and early warning systems"
+
+    response:
+      - "Incident response procedures"
+      - "Escalation and communication plans"
+      - "Emergency rollback procedures"
+      - "Disaster recovery activation"
+
+# Security and Compliance Planning
+security_compliance_framework:
+  security_architecture:
+    authentication:
+      - "OAuth 2.0/OIDC implementation planning"
+      - "Multi-factor authentication requirements"
+      - "Session management and token strategies"
+      - "Password policies and security controls"
+
+    authorization:
+      - "RBAC (Role-Based Access Control) design"
+      - "Least privilege principle implementation"
+      - "API security and rate limiting"
+      - "Service-to-service authentication (mTLS)"
+
+    data_protection:
+      - "Encryption at rest and in transit"
+      - "Key management and rotation"
+      - "Backup encryption and security"
+      - "Data classification and handling"
+
+  compliance_requirements:
+    regulatory_frameworks:
+      - "SOC 2 compliance planning"
+      - "ISO 27001 security management"
+      - "GDPR data protection requirements"
+      - "Industry-specific regulations"
+
+    audit_and_monitoring:
+      - "Audit logging and trail requirements"
+      - "Compliance monitoring and reporting"
+      - "Data retention and privacy controls"
+      - "Vulnerability scanning and management"
+
+# Monitoring and Observability Design
+observability_framework:
+  metrics_strategy:
+    collection:
+      - "Prometheus and OpenTelemetry implementation"
+      - "Custom metrics and business KPIs"
+      - "Infrastructure and application metrics"
+      - "Performance and resource utilization"
+
+    visualization:
+      - "Grafana dashboards and alerting"
+      - "Real-time monitoring displays"
+      - "Historical trend analysis"
+      - "Executive and operational reporting"
+
+  logging_architecture:
+    aggregation:
+      - "ELK Stack (Elasticsearch, Logstash, Kibana)"
+      - "Structured logging with JSON format"
+      - "Log correlation and request tracing"
+      - "Multi-environment log aggregation"
+
+    retention:
+      - "Hot storage: 30 days"
+      - "Warm storage: 90 days"
+      - "Cold storage: 1 year"
+      - "Archive storage: 7 years (compliance)"
+
+  tracing_design:
+    distributed_tracing:
+      - "Jaeger with OpenTelemetry integration"
+      - "Request flow visualization"
+      - "Performance bottleneck identification"
+      - "Service dependency mapping"
+
+# CI/CD Pipeline Architecture
+cicd_framework:
+  source_control:
+    repository_strategy:
+      - "Git workflow and branching strategy"
+      - "Code review and approval processes"
+      - "Pre-commit hooks and validation"
+      - "Artifact versioning and tagging"
+
+  build_pipeline:
+    automation_stages:
+      - "Code checkout and dependency installation"
+      - "Unit testing and code coverage analysis"
+      - "Static code analysis and security scanning"
+      - "Docker image build and vulnerability scanning"
+      - "Artifact signing and registry publishing"
+
+  deployment_pipeline:
+    environment_promotion:
+      development:
+        trigger: "Automated on build success"
+        validation: "Smoke tests and health checks"
+        approval: "Not required"
+      staging:
+        trigger: "Manual approval after development"
+        validation: "Full test suite and performance tests"
+        approval: "QA team sign-off"
+      production:
+        trigger: "Manual approval after staging"
+        validation: "Canary deployment with monitoring"
+        approval: "Technical lead and operations team"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL planning MUST be comprehensive and complete"
+    - "ALL system components MUST be analyzed and documented"
+    - "ALL risks MUST be identified and mitigated"
+    - "ALL security requirements MUST be planned"
+    - "ALL monitoring MUST be designed and documented"
+    - "ALL planning MUST be production-ready focused"
+    - "ALWAYS use systematic planning methodology"
+    - "NEVER execute actual deployment commands"
+
+  strictly_forbidden:
+    - "Executing actual deployment commands"
+    - "Making changes to live systems"
+    - "Partial or incomplete planning"
+    - "Skipping risk assessment or security planning"
+    - "Creating plans without proper analysis"
+    - "Missing critical planning components"
+    - "Proceeding without comprehensive documentation"
+    - "Planning without considering all environments"

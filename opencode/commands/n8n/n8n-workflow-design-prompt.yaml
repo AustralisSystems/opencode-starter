@@ -1,0 +1,420 @@
+name: "N8N Workflow Design"
+description: "Detailed workflow architecture design including node configuration, connection architecture, expression planning, and error handling design"
+version: "2.1.0"
+category: "design"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Latest n8n node configuration patterns and best practices
+    - grep # Real-world node configuration examples on GitHub
+    - sequential-thinking # Structured design methodology
+    - filesystem # Read planning artifacts and existing workflows
+    - memory # Track design decisions and configuration choices
+    - time # Timestamp design activities
+
+  n8n_specific_tools:
+    - get_node_essentials # Quick node understanding (10-20 essential properties)
+    - get_node_for_task # Pre-configured node templates for common tasks
+    - search_node_properties # Find specific node properties (e.g., authentication)
+    - get_property_dependencies # Understand property relationships
+    - get_node_documentation # Comprehensive node documentation when needed
+    - validate_node_minimal # Quick required fields validation
+    - validate_node_operation # Full configuration validation with profile
+    - get_template # Retrieve template for customization (if using template)
+
+# n8n Workflow Context
+n8n_context:
+  workflow_types:
+    - automation # Event-driven process automation
+    - integration # System-to-system data sync
+    - data-processing # ETL and data transformation
+    - webhook # Real-time event processing
+    - scheduled # Time-based task execution
+    - event-driven # Event-based triggers
+
+  complexity_levels:
+    - simple # Linear workflows with 3-5 nodes
+    - intermediate # Branching logic with 5-15 nodes
+    - advanced # Complex routing with 15+ nodes
+    - enterprise # Multi-workflow orchestration
+
+  design_phase_focus:
+    - node_configuration # Detailed node parameter design
+    - connection_design # Data flow and connection architecture
+    - expression_planning # Data transformation expressions
+    - error_handling # Error handling strategy and configuration
+
+# Execution Protocol
+execution_phases:
+  1_session_initialization:
+    description: "Initialize design session and load planning artifacts"
+    tools: ["filesystem", "context7", "memory", "time"]
+    required_actions:
+      - "Load planning artifacts from previous phase (Workflow_Architecture_Plan)"
+      - "Use context7 to get latest n8n node configuration best practices"
+      - "Initialize session tracking for design decisions"
+      - "Retrieve selected template if template-based approach"
+    success_criteria:
+      - "Planning artifacts loaded and understood"
+      - "Latest n8n node patterns loaded"
+      - "Session context initialized"
+      - "Template retrieved (if applicable)"
+
+  2_template_customization:
+    description: "Customize selected template or prepare for custom build"
+    tools: ["get_template", "validate_node_minimal", "memory"]
+    required_actions:
+      - "If using template: retrieve with get_template(templateId, {mode: 'full'})"
+      - "Validate template against current n8n version"
+      - "Map template nodes to planned requirements"
+      - "Identify nodes requiring configuration changes"
+      - "Plan additional nodes or connections needed"
+      - "Document customization rationale and template attribution"
+    success_criteria:
+      - "Template retrieved and validated (if applicable)"
+      - "Customization requirements identified"
+      - "Gap analysis between template and requirements complete"
+      - "Template attribution documented (author, username, URL)"
+
+  3_node_configuration_design:
+    description: "Design detailed node configurations with validation"
+    tools:
+      [
+        "get_node_essentials",
+        "search_node_properties",
+        "get_node_for_task",
+        "get_property_dependencies",
+        "validate_node_minimal",
+        "validate_node_operation",
+      ]
+    required_actions:
+      - "For each node: use get_node_essentials for quick understanding"
+      - "Design essential configuration parameters"
+      - "Use search_node_properties for specific aspects (auth, channels, etc.)"
+      - "Identify and document property dependencies"
+      - "Design authentication and credential configurations"
+      - "Validate configurations with validate_node_minimal"
+      - "Full validation with validate_node_operation for complex configs"
+      - "Document all configuration decisions with rationale"
+    success_criteria:
+      - "All nodes have complete configuration designs"
+      - "All configurations pass validate_node_minimal"
+      - "Complex configurations pass validate_node_operation"
+      - "Property dependencies identified and documented"
+      - "Authentication and credentials properly designed"
+      - "Configuration decisions documented with rationale"
+
+  4_connection_architecture_design:
+    description: "Design workflow connections and data flow"
+    tools: ["sequential-thinking", "memory", "filesystem"]
+    required_actions:
+      - "Design main execution path with data flow"
+      - "Design error handling paths and connections"
+      - "Plan branching and conditional logic connections"
+      - "Design parallel processing architecture (if applicable)"
+      - "Map connection types (main, error, conditional)"
+      - "Document connection architecture with visualization"
+    success_criteria:
+      - "Main execution path clearly defined"
+      - "Error handling paths designed for all failure points"
+      - "Branching logic connections mapped"
+      - "Parallel processing architecture designed (if needed)"
+      - "Connection architecture visualization created"
+      - "All connection types documented"
+
+  5_expression_planning:
+    description: "Design data transformation expressions"
+    tools: ["memory", "filesystem", "time"]
+    required_actions:
+      - "Design expressions for all data transformations"
+      - "Plan basic data access patterns ($json, $node)"
+      - "Design string, number, and date transformations"
+      - "Plan conditional logic and ternary operations"
+      - "Design array operations (map, filter, reduce)"
+      - "Create sample data with expected outputs"
+      - "Plan fallback values for undefined/null cases"
+      - "Document complex expressions with explanations"
+    success_criteria:
+      - "All data transformations have designed expressions"
+      - "Expression syntax validated"
+      - "Sample data with expected outputs created"
+      - "Fallback strategies defined"
+      - "Complex expressions documented"
+
+  6_error_handling_design:
+    description: "Design comprehensive error handling strategy"
+    tools: ["sequential-thinking", "memory", "time"]
+    required_actions:
+      - "Select appropriate error handling patterns (try-catch, fallback, retry, graceful degradation)"
+      - "Design node-level error configurations (continueOnFail, retryOnFail, maxTries)"
+      - "Design workflow-level error handling paths"
+      - "Plan error notification strategy"
+      - "Define recovery and fallback procedures"
+      - "Document error scenarios and responses"
+    success_criteria:
+      - "Error handling pattern selected and documented"
+      - "Node-level error configurations designed"
+      - "Workflow-level error paths defined"
+      - "Error notification strategy planned"
+      - "Recovery procedures documented"
+      - "All error scenarios addressed"
+
+  7_design_validation:
+    description: "Validate complete design before implementation"
+    tools:
+      ["validate_node_minimal", "validate_node_operation", "memory", "time"]
+    required_actions:
+      - "Validate all node configurations"
+      - "Check authentication and credential completeness"
+      - "Verify expression syntax"
+      - "Validate connection architecture"
+      - "Review error handling coverage"
+      - "Create design validation report"
+    success_criteria:
+      - "All node configurations validated"
+      - "Authentication/credentials complete"
+      - "Expression syntax checked"
+      - "Connection architecture validated"
+      - "Error handling comprehensive"
+      - "Design ready for implementation"
+
+# n8n Design Parameters
+n8n_design_parameters:
+  node_configuration_patterns:
+    essential_first:
+      description: "Start with get_node_essentials for 80-90% token savings"
+      approach:
+        - "Load only 10-20 essential properties"
+        - "Use search_node_properties for specific aspects"
+        - "Get full documentation only when needed"
+
+    pre_configured_templates:
+      description: "Use get_node_for_task for immediate working configs"
+      common_tasks:
+        - send_email
+        - store_data
+        - transform_json
+        - make_api_call
+        - filter_data
+
+    validation_first:
+      description: "Validate before building to catch errors early"
+      validation_sequence:
+        - validate_node_minimal (quick required fields)
+        - validate_node_operation (full config with profile)
+        - get_property_dependencies (understand relationships)
+
+  authentication_patterns:
+    oauth2:
+      fields: ["authentication", "oauthTokenUrl", "clientId", "clientSecret"]
+      credential_references: true
+
+    api_key:
+      fields: ["authentication", "apiKeyLocation", "apiKeyName", "apiKeyValue"]
+      credential_references: true
+
+    basic_auth:
+      fields: ["authentication", "user", "password"]
+      credential_references: true
+
+  connection_patterns:
+    main_execution:
+      description: "Primary data flow path"
+      connection_type: "main"
+
+    error_handling:
+      description: "Error output connections"
+      connection_type: "error"
+
+    conditional:
+      description: "IF/Switch node branching"
+      connection_type: "conditional"
+
+    parallel:
+      description: "Split/Merge concurrent processing"
+      connection_type: "parallel"
+
+  expression_patterns:
+    data_access:
+      - "$json.fieldName"
+      - "$node['NodeName'].json.fieldName"
+      - "$json.items[0].value"
+      - "$input.all()[0].json.data"
+
+    transformations:
+      - "{{ $json.email.toLowerCase() }}"
+      - "{{ $json.price * 1.1 }}"
+      - "{{ new Date($json.timestamp).toISOString() }}"
+
+    conditional:
+      - "{{ $json.status === 'active' ? 'enabled' : 'disabled' }}"
+      - "{{ $json.customField ?? 'default value' }}"
+
+    array_operations:
+      - "{{ $json.items.map(item => item.id) }}"
+      - "{{ $json.items.filter(item => item.active === true) }}"
+
+  error_handling_patterns:
+    try_catch:
+      description: "Error capture and handling"
+      nodes: ["Set (try block)", "Risky Operation", "Error Handler"]
+
+    fallback:
+      description: "Alternative execution path on error"
+      nodes: ["Primary Operation", "Fallback Operation"]
+
+    retry:
+      description: "Automatic retry on failure"
+      configuration: ["maxTries: 3", "waitBetweenTries: 1000"]
+
+    graceful_degradation:
+      description: "Partial success on error"
+      nodes: ["Main Workflow", "Log Error", "Partial Response"]
+
+# Deliverable Specifications
+deliverables:
+  document_count: 4
+  document_types:
+    - "Node Configuration Design"
+    - "Connection Architecture"
+    - "Expression and Data Mapping"
+    - "Error Handling Strategy"
+
+  document_1_node_config:
+    title: "Node Configuration Design (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Complete node configuration specifications"
+      - "Configuration validation results (validate_node_minimal, validate_node_operation)"
+      - "Property dependencies documentation"
+      - "Authentication and credential design"
+      - "Node-level error handling configuration"
+    configuration_components:
+      - "Essential parameters for each node"
+      - "Property dependency mappings"
+      - "Credential reference patterns"
+      - "Validation results and fixes"
+
+  document_2_connections:
+    title: "Connection Architecture (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Connection map with data flow visualization"
+      - "Main execution path design"
+      - "Error handling path design"
+      - "Branching and conditional logic design"
+      - "Parallel processing architecture (if applicable)"
+    connection_components:
+      - "Data flow diagrams"
+      - "Connection type mapping (main, error, conditional)"
+      - "Node relationship visualization"
+      - "Execution sequence documentation"
+
+  document_3_expressions:
+    title: "Expression and Data Mapping (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Expression design for all data transformations"
+      - "Expression syntax validation"
+      - "Sample data with expected outputs"
+      - "Fallback value strategies"
+      - "Complex expression documentation"
+    expression_components:
+      - "Data access patterns"
+      - "Transformation logic"
+      - "Conditional expressions"
+      - "Array operations"
+      - "Error handling in expressions"
+
+  document_4_error_handling:
+    title: "Error Handling Strategy (YYYY-MM-DD-HHMMSS)"
+    contents:
+      - "Error handling pattern selection (try-catch, fallback, retry, degradation)"
+      - "Node-level error configuration"
+      - "Workflow-level error handling design"
+      - "Recovery and fallback procedures"
+      - "Error notification design"
+    error_components:
+      - "Error pattern selection rationale"
+      - "Node error configuration (continueOnFail, retryOnFail, maxTries)"
+      - "Error path connection design"
+      - "Recovery procedure documentation"
+      - "Error notification strategy"
+
+# Validation Strategy
+validation_strategy:
+  pre_build_validation:
+    node_level:
+      - "validate_node_minimal(nodeType, minimalConfig) - Quick required fields check"
+      - "validate_node_operation(nodeType, fullConfig, profile) - Full operation-aware validation"
+      - "get_property_dependencies(nodeType, property) - Ensure dependencies met"
+
+    design_level:
+      - "All required fields configured"
+      - "Authentication properly set"
+      - "Expressions syntax-checked"
+      - "Error handling configured"
+
+  design_validation_checklist:
+    - "All nodes have validated configurations"
+    - "Authentication/credentials planned"
+    - "Expressions designed and syntax-checked"
+    - "Connections mapped (main and error paths)"
+    - "Error handling strategy defined"
+    - "Data transformations planned"
+    - "Performance considerations addressed"
+    - "Security requirements met"
+
+# Success Criteria
+success_criteria:
+  configuration_completeness:
+    - "All nodes configured with validated parameters"
+    - "Node configurations pass validate_node_minimal checks"
+    - "Node configurations pass validate_node_operation validation"
+    - "Property dependencies identified and planned"
+    - "Authentication and credentials properly designed"
+
+  architecture_quality:
+    - "Connection map complete and validated"
+    - "Main execution path clearly defined"
+    - "Error handling paths designed for all failure points"
+    - "Branching logic properly mapped"
+    - "Parallel processing designed (if applicable)"
+
+  expression_quality:
+    - "Expressions designed and syntax-checked"
+    - "Data transformations planned with sample data"
+    - "Fallback strategies defined for undefined/null cases"
+    - "Complex expressions documented with explanations"
+
+  error_handling_quality:
+    - "Error handling strategy comprehensive"
+    - "Retry and fallback logic defined"
+    - "Node-level error configuration complete"
+    - "Workflow-level error paths designed"
+    - "Recovery procedures documented"
+
+  documentation_quality:
+    - "All deliverables created with proper reverse date stamps (YYYY-MM-DD-HHMMSS)"
+    - "Template attribution documented (if using template)"
+    - "All design decisions documented with rationale"
+    - "Design ready for implementation phase"
+
+# Command Integration
+related_commands:
+  previous: "n8n-workflow-planning"
+  next_phase: "n8n-workflow-implementation"
+  parallel: "n8n-workflow-gap-analysis (for existing workflow design review)"
+
+# Execution Context
+execution_context:
+  working_directory: "project/"
+  output_format: "markdown documents with workflow design documentation"
+  documentation_level: "Detailed technical design with validated configurations"
+  validation_required: true
+  validation_tools: ["validate_node_minimal", "validate_node_operation"]
+
+# Template Attribution Requirements
+template_attribution:
+  mandatory: true
+  format: "Based on template by **[Author Name]** (@username) - [template URL on n8n.io]"
+  when_required: "Always when using or customizing existing templates"
+  customization_documentation: "Document all changes from original template"

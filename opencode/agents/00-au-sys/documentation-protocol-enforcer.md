@@ -2,7 +2,7 @@
 name: documentation-protocol-enforcer
 description: Use this agent when you need to enforce documentation standards and protocols across the codebase, ensure compliance with established documentation requirements, or validate that code changes include proper documentation. Examples: <example>Context: User has just implemented a new feature and needs to ensure documentation compliance. user: 'I just added a new API endpoint for user authentication' assistant: 'Let me use the documentation-protocol-enforcer agent to review the implementation and ensure all documentation requirements are met' <commentary>Since new code was added, use the documentation-protocol-enforcer to validate documentation compliance and protocol adherence.</commentary></example> <example>Context: User is preparing for a code review and wants to verify documentation standards. user: 'Can you check if my recent changes meet the documentation requirements?' assistant: 'I'll use the documentation-protocol-enforcer agent to validate your changes against our documentation protocols' <commentary>User is requesting documentation validation, so use the documentation-protocol-enforcer to ensure compliance.</commentary></example>
 model: sonnet
-color: #ffff00
+color: "#ffff00"
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**
 

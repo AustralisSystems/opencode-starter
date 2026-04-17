@@ -1,0 +1,274 @@
+name: "N8N Workflow Implementation"
+description: "Build and deploy n8n workflows using validated design artifacts with comprehensive validation and deployment"
+version: "2.1.0"
+category: "implementation"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7              # Latest n8n workflow building patterns and best practices
+    - grep                  # Real-world workflow implementation examples on GitHub
+    - sequential-thinking   # Structured implementation approach
+    - filesystem           # Read design artifacts and write workflow files
+    - memory               # Track implementation progress and decisions
+    - time                 # Timestamp implementation activities
+
+  n8n_specific_tools:
+    - get_template                     # Retrieve template for customization (if template-based)
+    - validate_workflow                # Complete workflow validation including connections
+    - validate_workflow_connections    # Check structure and AI tool connections
+    - validate_workflow_expressions    # Validate all n8n expressions
+    - n8n_create_workflow             # Deploy workflow to n8n instance
+    - n8n_validate_workflow           # Post-deployment validation
+    - n8n_update_partial_workflow     # Incremental updates using diffs (80-90% token savings)
+    - n8n_trigger_webhook_workflow    # Test webhook workflows
+    - n8n_list_executions             # Monitor execution status
+
+# n8n Workflow Context
+n8n_context:
+  workflow_types:
+    - automation           # Event-driven process automation
+    - integration          # System-to-system data sync
+    - data-processing      # ETL and data transformation
+    - webhook              # Real-time event processing
+    - scheduled            # Time-based task execution
+    - event-driven         # Event-based triggers
+
+  complexity_levels:
+    - simple               # Linear workflows with 3-5 nodes
+    - intermediate         # Branching logic with 5-15 nodes
+    - advanced            # Complex routing with 15+ nodes
+    - enterprise          # Multi-workflow orchestration
+
+  implementation_focus:
+    - workflow_building    # JSON workflow construction
+    - validation          # Pre and post-deployment validation
+    - deployment          # n8n API deployment
+    - testing             # Execution testing
+
+# Execution Protocol
+execution_phases:
+  1_session_initialization:
+    description: "Initialize implementation session and load design artifacts"
+    tools: ["filesystem", "context7", "memory", "time"]
+    required_actions:
+      - "Load design artifacts from design phase"
+      - "Use context7 to get latest n8n workflow building best practices"
+      - "Initialize session tracking for implementation progress"
+      - "Retrieve template if template-based approach"
+    success_criteria:
+      - "Design artifacts loaded and understood"
+      - "Latest n8n building patterns loaded"
+      - "Session context initialized"
+      - "Template retrieved (if applicable)"
+
+  2_workflow_json_construction:
+    description: "Build workflow JSON from design specifications"
+    tools: ["filesystem", "get_template", "memory"]
+    required_actions:
+      - "If template-based: retrieve and customize template"
+      - "Build workflow structure with nodes array"
+      - "Implement node configurations from design artifacts"
+      - "Build connections object (main and error paths)"
+      - "Implement expressions for data transformations"
+      - "Configure error handling (node and workflow level)"
+      - "Set workflow metadata and settings"
+      - "Save workflow JSON with timestamp filename"
+    success_criteria:
+      - "Workflow JSON structure complete"
+      - "All nodes configured with validated parameters"
+      - "Connections implemented correctly"
+      - "Expressions implemented"
+      - "Error handling configured"
+      - "Workflow file saved"
+
+  3_pre_deployment_validation:
+    description: "Validate workflow before deployment (MANDATORY)"
+    tools: ["validate_workflow", "validate_workflow_connections", "validate_workflow_expressions"]
+    required_actions:
+      - "Execute validate_workflow for complete validation"
+      - "Execute validate_workflow_connections for structure check"
+      - "Execute validate_workflow_expressions for expression validation"
+      - "Fix all validation errors"
+      - "Re-validate after fixes"
+      - "Confirm all validations pass"
+    success_criteria:
+      - "validate_workflow passes"
+      - "validate_workflow_connections passes"
+      - "validate_workflow_expressions passes"
+      - "All validation errors fixed"
+      - "Workflow ready for deployment"
+
+  4_deployment:
+    description: "Deploy workflow to n8n instance (if API configured)"
+    tools: ["n8n_create_workflow", "n8n_validate_workflow", "memory"]
+    required_actions:
+      - "Deploy workflow with n8n_create_workflow"
+      - "Capture workflow ID from deployment response"
+      - "Execute post-deployment validation with n8n_validate_workflow"
+      - "Activate workflow if applicable"
+      - "Document deployment details"
+    success_criteria:
+      - "Workflow deployed successfully"
+      - "Workflow ID captured"
+      - "Post-deployment validation passed"
+      - "Workflow activated (if applicable)"
+      - "Deployment documented"
+
+  5_post_deployment_testing:
+    description: "Test workflow execution after deployment"
+    tools: ["n8n_trigger_webhook_workflow", "n8n_list_executions", "memory"]
+    required_actions:
+      - "If webhook: trigger test execution with sample data"
+      - "If manual: execute manually and monitor"
+      - "If schedule: trigger manually for immediate test"
+      - "Monitor executions with n8n_list_executions"
+      - "Verify execution success and data flow"
+      - "Check error handling behavior"
+      - "Document test results"
+    success_criteria:
+      - "Test execution completed successfully"
+      - "Data flow validated"
+      - "Error handling verified"
+      - "Executions monitored"
+      - "Test results documented"
+
+# n8n Implementation Parameters
+n8n_implementation_parameters:
+  workflow_structure:
+    required_fields:
+      - name                  # Workflow name with timestamp
+      - nodes                 # Array of node configurations
+      - connections          # Connection object
+      - settings             # Workflow settings
+
+    node_configuration:
+      required_fields:
+        - parameters          # Node-specific parameters
+        - id                 # Unique node identifier
+        - name               # Node display name
+        - type               # Node type (e.g., n8n-nodes-base.webhook)
+        - typeVersion        # Node type version
+        - position           # [x, y] coordinates
+      optional_fields:
+        - credentials        # Credential references
+        - continueOnFail     # Error handling flag
+        - retryOnFail        # Retry flag
+        - maxTries           # Max retry attempts
+        - waitBetweenTries   # Retry delay
+
+    connection_structure:
+      types:
+        - main              # Primary data flow
+        - error             # Error output
+      format:
+        "NodeName": {
+          "main": [ [{ "node": "NextNode", "type": "main", "index": 0 }] ],
+          "error": [ [{ "node": "ErrorHandler", "type": "main", "index": 0 }] ]
+        }
+
+  expression_patterns:
+    data_access:
+      - "$json.fieldName"
+      - "$node['NodeName'].json.fieldName"
+      - "$json.items[0].value"
+      - "$input.all()[0].json.data"
+
+    transformations:
+      - "={{ $json.email.toLowerCase() }}"
+      - "={{ $json.price * 1.1 }}"
+      - "={{ new Date($json.timestamp).toISOString() }}"
+
+    conditional:
+      - "={{ $json.status === 'active' ? 'enabled' : 'disabled' }}"
+      - "={{ $json.customField ?? 'default value' }}"
+
+  validation_sequence:
+    pre_deployment:
+      - validate_workflow (complete validation)
+      - validate_workflow_connections (structure check)
+      - validate_workflow_expressions (expression validation)
+    post_deployment:
+      - n8n_validate_workflow (n8n environment validation)
+
+  deployment_patterns:
+    new_workflow:
+      - n8n_create_workflow (deploy)
+      - n8n_validate_workflow (validate)
+      - n8n_trigger_webhook_workflow (test if webhook)
+      - n8n_list_executions (monitor)
+
+    update_workflow:
+      - n8n_update_partial_workflow (diff operations - 80-90% token savings)
+      - n8n_validate_workflow (validate update)
+
+# Deliverable Specifications (Implementation Only - NO Documentation Files)
+deliverables:
+  # NO DOCUMENTATION - WORKFLOW BUILDING ONLY COMMAND
+  # This command produces n8n workflow JSON files, deployment artifacts, and test results only
+  # Documentation should be created using separate documentation commands
+
+  implementation_outputs:
+    - "{workflow-name}_YYYY-MM-DD-HHMMSS.json - Complete workflow JSON file"
+    - "Deployment confirmation (workflow ID if deployed)"
+    - "Validation results (pass/fail status)"
+    - "Execution test results (success/failure status)"
+
+  strictly_forbidden:
+    - "NO Jupyter Notebooks (.ipynb files)"
+    - "NO Markdown Documentation (.md files)"
+    - "NO Reports of any kind"
+    - "NO Analysis Documents"
+    - "NO README files"
+
+# Success Criteria
+success_criteria:
+  workflow_building:
+    - "Workflow JSON built successfully from design artifacts"
+    - "All nodes configured with validated parameters"
+    - "Connections implemented correctly (main and error paths)"
+    - "Expressions implemented and syntax-validated"
+    - "Error handling configured as designed"
+
+  validation:
+    - "Pre-deployment validation passed (validate_workflow)"
+    - "Connection validation passed (validate_workflow_connections)"
+    - "Expression validation passed (validate_workflow_expressions)"
+    - "Post-deployment validation passed (n8n_validate_workflow if deployed)"
+
+  deployment:
+    - "Workflow deployed to n8n (if configured)"
+    - "Workflow ID captured"
+    - "Workflow activated (if applicable)"
+
+  testing:
+    - "Test executions successful"
+    - "Data flow validated"
+    - "Error handling verified"
+    - "Executions monitored"
+
+  file_management:
+    - "Workflow file saved with proper naming convention"
+    - "Template attribution included (if template-based)"
+    - "Version history maintained (if using git)"
+
+# Command Integration
+related_commands:
+  previous: "n8n-workflow-design"
+  next_phase: "n8n-workflow-lint-quality-check"
+  parallel: null
+
+# Execution Context
+execution_context:
+  working_directory: "project/"
+  output_format: "n8n workflow JSON files and deployment artifacts"
+  documentation_level: "None - implementation only (no documentation creation)"
+  validation_required: true
+  validation_tools: ["validate_workflow", "validate_workflow_connections", "validate_workflow_expressions", "n8n_validate_workflow"]
+
+# Template Attribution Requirements
+template_attribution:
+  mandatory: true
+  format: "Based on template by **[Author Name]** (@username) - [template URL on n8n.io]"
+  when_required: "Always when using or customizing existing templates"
+  location: "Workflow description field in JSON"

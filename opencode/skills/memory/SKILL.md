@@ -1,76 +1,98 @@
-# Memory Management Skill
-
-**Purpose:** Master persistent and temporary memory protocols using neo4j-memory MCP server with mandatory session and project tracking
-
-**When to use:** ALL development work - loading context at session start, tracking progress, saving learnings at session end
-
+---
+name: MEMORY
+description: Use MCP memory tools systematically to load prior context before work and persist important outcomes automatically during and after work. Use this skill whenever the task starts, resumes, fixes a bug, records a decision, discovers a reusable pattern, or reaches a natural completion point that should be remembered.
 ---
 
-## 🔴 CRITICAL: MCP Tools Workflow - MANDATORY
+# MEMORY Skill
 
-**ALL development work MUST follow the MCP workflow - ZERO EXCEPTIONS:**
+Use this skill to apply the repository memory protocol consistently.
 
-### THE GOLDEN RULE
+## When to use
 
-```
-context7 (docs) → grep (examples) → neo4j-memory (record) → code (SOLID/DRY/KISS) → neo4j-memory (persist)
-```
+- A task is about to start and prior context may exist.
+- A task is being resumed and relevant earlier work needs to be recalled.
+- A bug fix, implementation outcome, or design decision should be stored.
+- A reusable pattern or workflow insight has been discovered.
+- A session or task is ending and important context should be persisted.
 
-### THE 6-PHASE SEQUENCE (REQUIRED)
+## Required startup behavior
 
-1. **CONTEXT LOAD**: Use `neo4j-memory` to load previous work and decisions
-2. **🔴 MANDATORY RESEARCH**: Use `context7` + `grep` BEFORE coding
-3. **PLANNING**: Use `sequential-thinking` to structure complex approaches
-4. **IMPLEMENTATION**: Write code applying SOLID/DRY/KISS principles
-5. **PROGRESS TRACKING**: Record decisions and progress to `neo4j-memory`
-6. **CONTEXT SAVE**: Persist learnings and outcomes to `neo4j-memory`
+1. Use MCP `memory` before starting substantive work.
+2. Call `recall_memories` before any task.
+3. Query by project, technology, or task type to narrow the retrieved context.
+4. When detailed protocol semantics are needed, read `references/MEMORY_PROTOCOL.md` before proceeding.
 
-**ABSOLUTELY FORBIDDEN:**
+## Automatic storage behavior
 
-- ❌ Implementing without context7 + grep research
-- ❌ Skipping neo4j-memory context load at session start
-- ❌ Completing work without saving to neo4j-memory
-- ❌ Creating entities WITHOUT session_id and project_name properties
-- ❌ Using deprecated memory or extended-memory tools
-- ❌ Violating SOLID/DRY/KISS principles
+Store memory automatically when any of these occur:
 
----
+- A git commit captures what changed.
+- A bug fix resolves a concrete problem.
+- A release summarizes a meaningful set of changes.
+- An architecture decision establishes a choice and rationale.
+- A reusable pattern or workflow is identified.
+- An implementation, validation run, integration test, or end-to-end test produces a material outcome worth preserving.
 
-## 🔴 MANDATORY: Entity Property Requirements
+## Preferred timing mode
 
-**EVERY entity created in neo4j-memory MUST include these properties - ZERO EXCEPTIONS:**
+- Default to `on-commit` behavior.
+- Use `immediate` when an important decision or fix should not wait.
+- Use `session-end` only when delayed persistence is explicitly appropriate.
 
-```python
-# MANDATORY PROPERTIES FOR ALL ENTITIES
-{
-    "session_id": "terminal_session_20251022_143000",  # or thread_id
-    "project_name": "ai-agents",                       # or repo_name or app_name
-    "date": "2025-10-22 14:30:00",                    # ISO 8601 format
-    "entity_type": "Decision|Implementation|Pattern|Learning",
-    # ... entity-specific properties
-}
-```
+## Required memory fields
 
-### Why These Properties Are MANDATORY
+- `Type`: choose a concrete type such as `solution`, `problem`, `code_pattern`, `fix`, `error`, `workflow`, `task`, `decision`, `release`, `test_result`, `snapshot`, or `rollup`.
+- `Title`: make it specific and searchable, and include an identifier when possible.
+- `Content`: capture context, what changed, why it mattered, and the outcome.
+- `Tags`: include project, tech, category, repo identifier, date, and author where applicable.
+- `Importance`: scale according to criticality.
+- `Relationships`: connect related memories when available.
+- `Metadata`: include traceability fields when available.
 
-**1. Session ID / Thread ID:**
+## Protocol coverage
 
-- Enables: "Show me ALL memory from session X"
-- Enables: "What did I decide in my last session?"
-- Enables: "Track progress across session boundaries"
-- **Source:** Use terminal/shell session ID or generate unique session identifier
+This skill aligns with the authoritative repository memory protocol and covers:
 
-**2. Project Name / Repo Name / App Name:**
+- scoped recall before work
+- automatic storage triggers
+- timing mode guidance
+- required schema fields
+- relationship governance
+- graph compaction and dedupe expectations
+- pruning and rollup expectations
+- mandatory session-end summaries
 
-- Enables: "Show me ALL entities for project Y"
-- Enables: "What patterns have we established for ai-agents?"
-- Enables: "Get complete knowledge graph for this repository"
-- **Source:** Repository name, application name, or project identifier
+## Forbidden behavior
 
-**3. Date Property:**
+- Do not skip `recall_memories` before starting work.
+- Do not wait for the user to ask before storing important memory.
+- Do not create broad or weakly scoped recall queries when scoped ones are required.
+- Do not create vague memory entries with weak titles or missing tags.
+- Do not treat memory as optional housekeeping.
 
-- Enables: Temporal queries (last 4 hours, past 48 hours, this week)
-- Enables: "What did we work on yesterday?"
+## Reference file
+
+Read `references/MEMORY_PROTOCOL.md` when you need the full authoritative details for:
+
+- tool contract and allowed operations
+- scoped query windows and filters
+- relationship edge types and canonical patterns
+- compaction, dedupe, and pruning behavior
+- mandatory session-end storage semantics
+
+## Example situations
+
+**Example 1:**
+Input: You are starting work on a repo feature you have touched before.
+Output: Call `recall_memories` using the project and feature area before making changes.
+
+**Example 2:**
+Input: You fix a bug and identify the root cause plus the remediation.
+Output: Store a memory entry describing the bug, the fix, validation evidence, and relevant tags.
+
+**Example 3:**
+Input: You discover a reusable implementation pattern during a task.
+Output: Persist the pattern as a memory entry and connect it to related nodes when applicable.
 - Enables: Timeline reconstruction and progress tracking
 - **Format:** ISO 8601 datetime string (YYYY-MM-DD HH:MM:SS)
 

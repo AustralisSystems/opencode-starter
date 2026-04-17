@@ -1,0 +1,503 @@
+# === MCP PROMPT: Quality Results Analysis Protocol ===
+name: "quality-analyze-results-prompt"
+version: "1.0.0"
+description: "Comprehensive quality check results analysis and categorization protocol for systematic issue remediation"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Quality Results Analysis"
+  description: "Execute comprehensive quality results analysis, issue categorization, and remediation planning with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    results_file:
+      type: "string"
+      description: "Path to quality check results JSON file"
+      required: true
+
+    project_directory:
+      type: "string"
+      description: "Root directory of codebase being analyzed"
+      required: true
+
+    analysis_scope:
+      type: "string"
+      description: "Scope of quality analysis to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "critical-only",
+          "specific-tools",
+          "full-assessment",
+          "security-focused",
+          "performance-focused",
+        ]
+
+    categorization_level:
+      type: "string"
+      description: "Level of issue categorization detail"
+      required: false
+      enum: ["basic", "detailed", "comprehensive", "enterprise"]
+
+    remediation_planning:
+      type: "string"
+      description: "Type of remediation planning to generate"
+      required: false
+      enum:
+        ["estimates-only", "full-planning", "automated-fixes", "manual-review"]
+
+    output_format:
+      type: "string"
+      description: "Output format for analysis results"
+      required: false
+      enum: ["json", "jupyter", "markdown", "comprehensive"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI quality analysis specialist executing the Quality Results Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive analysis methodology
+        - Create complete issue categorization and remediation plans
+        - Maintain production-ready analysis standards
+        - Use systematic prioritization and planning approach
+        - Follow SOLID, DRY, KISS principles in analysis
+        - Generate actionable insights and recommendations
+
+        ABSOLUTELY FORBIDDEN:
+        - Skipping quality check results or issue categories
+        - Incomplete or superficial analysis of quality issues
+        - Missing critical issues or misclassification
+        - Creating analysis without proper categorization
+        - Proceeding without comprehensive validation
+        - Generating incomplete remediation plans
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY QUALITY ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Results File: {{results_file}}
+        - Project Directory: {{project_directory}}
+        - Analysis Scope: {{analysis_scope}}
+        - Categorization Level: {{categorization_level}}
+        - Remediation Planning: {{remediation_planning}}
+        - Output Format: {{output_format}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING QUALITY ANALYSIS PROTOCOL:**
+
+# Quality Analysis Protocol Configuration
+analysis_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    issue_categorization: true # MUST categorize all quality issues
+    priority_assessment: true # MUST assess priority and severity
+    remediation_planning: true # MUST plan remediation strategies
+    file_impact_analysis: true # MUST analyze file-level impact
+    dependency_mapping: true # MUST map issue dependencies
+    effort_estimation: true # MUST estimate remediation effort
+    automation_assessment: true # MUST assess automation potential
+    documentation_generation: true # MUST generate comprehensive docs
+    analysis_only: true # STRICTLY analysis only, no remediation
+
+  # Analysis Configuration - MANDATORY SETTINGS
+  analysis_settings:
+    enable_comprehensive_categorization: true
+    perform_priority_assessment: true
+    generate_remediation_plans: true
+    analyze_file_impact: true
+    map_issue_dependencies: true
+    estimate_effort_requirements: true
+    assess_automation_potential: true
+    create_analysis_documentation: true
+    systematic_approach: true # MANDATORY: Systematic analysis methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all analysis aspects
+    production_ready_analysis: true # MANDATORY: Production-focused analysis
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Quality Results Data Loading and Parsing"
+    mandatory_actions:
+      - "LOAD quality check results from specified file path"
+      - "PARSE JSON data structure and validate format"
+      - "EXTRACT file paths, error types, and severity levels"
+      - "NORMALIZE issue data across different tool formats"
+      - "VALIDATE data completeness and integrity"
+
+    data_processing_requirements:
+      - "MANDATORY: Complete quality results file parsing"
+      - "MANDATORY: Validate all data structure integrity"
+      - "MANDATORY: Extract all issue categories and metadata"
+      - "FORBIDDEN: Incomplete or partial data loading"
+
+  phase_2:
+    name: "Issue Classification and Categorization"
+    mandatory_actions:
+      - "CLASSIFY issues by severity (critical, high, medium, low)"
+      - "CATEGORIZE by type (syntax, security, linting, style, etc.)"
+      - "GROUP related issues for batch remediation potential"
+      - "IDENTIFY issue patterns and recurring problems"
+      - "MAP issue relationships and dependencies"
+
+    categorization_framework:
+      critical_issues:
+        - "Syntax errors preventing compilation"
+        - "Missing dependencies blocking execution"
+        - "Security vulnerabilities (high/critical severity)"
+        - "Breaking API changes"
+
+      high_priority_issues:
+        - "Type checking failures"
+        - "Linting errors affecting functionality"
+        - "Performance bottlenecks"
+        - "Deprecated API usage"
+
+      medium_priority_issues:
+        - "Code style violations"
+        - "Complexity warnings"
+        - "Missing documentation"
+        - "Unused imports/variables"
+
+      low_priority_issues:
+        - "Formatting inconsistencies"
+        - "Minor style preferences"
+        - "Optional optimizations"
+
+  phase_3:
+    name: "Priority Assessment and Impact Analysis"
+    mandatory_actions:
+      - "ASSESS impact of each issue on system functionality"
+      - "CALCULATE priority scores based on severity and impact"
+      - "ANALYZE dependencies between different issues"
+      - "DETERMINE remediation order and sequencing"
+      - "EVALUATE risk levels for different issue types"
+
+    priority_assessment:
+      impact_analysis:
+        - "ANALYZE functional impact and business consequences"
+        - "ASSESS security implications and risk exposure"
+        - "EVALUATE performance impact and user experience"
+        - "DETERMINE compliance and regulatory implications"
+
+      dependency_mapping:
+        - "MAP issue dependencies and remediation prerequisites"
+        - "IDENTIFY blocking relationships between fixes"
+        - "ANALYZE cascading effects of remediation actions"
+        - "DETERMINE optimal fix ordering and sequencing"
+
+  phase_4:
+    name: "File-Level Impact Analysis"
+    mandatory_actions:
+      - "ANALYZE issue distribution across files and modules"
+      - "CALCULATE issue density metrics per file"
+      - "IDENTIFY most affected files and components"
+      - "MAP file relationships and shared dependencies"
+      - "GENERATE file-level remediation recommendations"
+
+    file_analysis_framework:
+      density_analysis:
+        - "CALCULATE issues per file and per line of code"
+        - "IDENTIFY files with highest issue concentration"
+        - "ANALYZE issue types distribution per file"
+        - "ASSESS file complexity and maintainability"
+
+      impact_mapping:
+        - "MAP files to system components and functionality"
+        - "ANALYZE shared dependencies and coupling"
+        - "ASSESS remediation impact on related files"
+        - "DETERMINE file-level remediation priorities"
+
+  phase_5:
+    name: "Remediation Strategy Planning"
+    mandatory_actions:
+      - "DESIGN comprehensive remediation strategies"
+      - "PLAN remediation phases and milestones"
+      - "IDENTIFY automated vs manual remediation approaches"
+      - "ESTIMATE effort requirements and timelines"
+      - "CREATE risk mitigation plans for remediation"
+
+    remediation_planning:
+      automation_assessment:
+        - "IDENTIFY issues suitable for automated fixing"
+        - "ASSESS risk levels for automated remediation"
+        - "PLAN manual review requirements"
+        - "DESIGN validation and testing procedures"
+
+      effort_estimation:
+        - "ESTIMATE time requirements for each issue category"
+        - "ASSESS skill requirements and team capacity"
+        - "PLAN resource allocation and scheduling"
+        - "CALCULATE total remediation timeline"
+
+  phase_6:
+    name: "Risk Assessment and Mitigation Planning"
+    mandatory_actions:
+      - "ASSESS risks associated with each remediation approach"
+      - "IDENTIFY potential side effects and complications"
+      - "PLAN rollback procedures for high-risk changes"
+      - "DESIGN validation and testing strategies"
+      - "CREATE contingency plans for remediation failures"
+
+    risk_mitigation:
+      remediation_risks:
+        - "Breaking functionality during fixes"
+        - "Introducing new issues while solving existing ones"
+        - "Performance degradation from remediation changes"
+        - "Compatibility issues with dependencies"
+
+      mitigation_strategies:
+        - "Comprehensive testing before and after changes"
+        - "Staged remediation with validation checkpoints"
+        - "Backup and rollback procedures"
+        - "Code review and peer validation processes"
+
+  phase_7:
+    name: "Quality Metrics and Trend Analysis"
+    mandatory_actions:
+      - "CALCULATE quality metrics and improvement indicators"
+      - "ANALYZE trends in issue types and frequencies"
+      - "ASSESS code quality improvement potential"
+      - "GENERATE quality dashboards and visualizations"
+      - "CREATE baseline measurements for tracking progress"
+
+    metrics_framework:
+      quality_indicators:
+        - "Issues per thousand lines of code (KLOC)"
+        - "Critical issue percentage and distribution"
+        - "Technical debt accumulation and remediation rates"
+        - "Code complexity and maintainability metrics"
+
+      trend_analysis:
+        - "Issue introduction rates and patterns"
+        - "Quality improvement trajectories"
+        - "Team productivity and remediation efficiency"
+        - "Long-term code health projections"
+
+  phase_8:
+    name: "Automation and Workflow Integration"
+    mandatory_actions:
+      - "DESIGN automated remediation workflows"
+      - "PLAN integration with CI/CD pipelines"
+      - "CREATE quality gates and validation checkpoints"
+      - "DESIGN monitoring and alerting for quality metrics"
+      - "PLAN continuous quality improvement processes"
+
+    automation_design:
+      workflow_integration:
+        - "PLAN pre-commit hook implementations"
+        - "DESIGN automated testing and validation"
+        - "CREATE quality metric tracking and reporting"
+        - "PLAN feedback loops and improvement cycles"
+
+      continuous_improvement:
+        - "DESIGN quality monitoring dashboards"
+        - "PLAN regular quality assessment schedules"
+        - "CREATE team training and knowledge sharing"
+        - "DESIGN quality culture and best practices"
+
+  phase_9:
+    name: "Documentation and Reporting Generation"
+    mandatory_actions:
+      - "GENERATE comprehensive analysis documentation"
+      - "CREATE executive summary and recommendations"
+      - "COMPILE detailed technical reports"
+      - "DOCUMENT remediation procedures and guidelines"
+      - "CREATE team training and knowledge materials"
+
+    documentation_requirements:
+      - "MANDATORY: Create all analysis deliverables in markdown document format"
+      - "MANDATORY: Include comprehensive categorization and analysis"
+      - "MANDATORY: Document all decisions and rationale"
+      - "MANDATORY: Provide clear remediation guidance and procedures"
+      - "FORBIDDEN: Incomplete or partial analysis documentation"
+
+  phase_10:
+    name: "Validation and Quality Assurance"
+    mandatory_actions:
+      - "VALIDATE analysis completeness and accuracy"
+      - "VERIFY all critical issues identified and categorized"
+      - "CONFIRM remediation plans are feasible and comprehensive"
+      - "REVIEW documentation quality and completeness"
+      - "PREPARE handoff documentation for remediation teams"
+
+    validation_criteria:
+      - "MANDATORY: All quality issues properly categorized and prioritized"
+      - "MANDATORY: Comprehensive remediation plans with realistic estimates"
+      - "MANDATORY: File impact analysis completed for all affected components"
+      - "MANDATORY: Risk assessment and mitigation strategies documented"
+      - "FORBIDDEN: Missing critical issues or incomplete analysis"
+
+# Analysis Validation Criteria
+validation_criteria:
+  data_loading: "MANDATORY - Complete quality results parsing and validation"
+  issue_categorization: "MANDATORY - Comprehensive issue classification and grouping"
+  priority_assessment: "MANDATORY - Priority scoring and impact analysis completed"
+  file_analysis: "MANDATORY - File-level impact analysis and density mapping"
+  remediation_planning: "MANDATORY - Comprehensive remediation strategies designed"
+  risk_assessment: "MANDATORY - Risk analysis and mitigation planning completed"
+  metrics_analysis: "MANDATORY - Quality metrics and trend analysis generated"
+  automation_planning: "MANDATORY - Automation and workflow integration designed"
+  documentation_quality: "MANDATORY - All deliverables created and validated"
+  validation_completeness: "MANDATORY - Complete analysis validation performed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-085549"
+
+  required_outputs:
+    - "Quality_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (quality analysis)"
+    - "Issues_Identified_{{YYYYMMDD-HHMMSS}}.ipynb (issues identified)"
+    - "Remediation_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (remediation plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. LOAD quality results from {{results_file}} and validate data integrity"
+  - "2. PARSE and normalize issue data across different tool formats"
+  - "3. CLASSIFY issues by severity, type, and impact categories"
+  - "4. ASSESS priority scores and calculate remediation sequences"
+  - "5. ANALYZE file-level impact and issue density distribution"
+  - "6. DESIGN comprehensive remediation strategies and plans"
+  - "7. ASSESS risks and create mitigation procedures"
+  - "8. CALCULATE quality metrics and analyze improvement trends"
+  - "9. PLAN automation and workflow integration strategies"
+  - "10. GENERATE comprehensive analysis documentation with timestamps"
+  - "11. VALIDATE analysis completeness and accuracy"
+  - "12. PREPARE handoff documentation for remediation execution"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all analysis tracking"
+  - "MANDATORY: Timestamp all analysis deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Quality Analysis Framework
+quality_analysis_framework:
+  issue_classification:
+    syntax_errors:
+      - "Python syntax errors and compilation failures"
+      - "Import errors and module resolution issues"
+      - "Indentation and formatting syntax problems"
+      - "Invalid code constructs and language violations"
+
+    security_vulnerabilities:
+      - "High and critical security vulnerabilities (Bandit)"
+      - "Dependency vulnerabilities (Safety check)"
+      - "Code injection and XSS vulnerabilities"
+      - "Authentication and authorization weaknesses"
+
+    type_errors:
+      - "MyPy type checking failures and inconsistencies"
+      - "Missing type hints and annotations"
+      - "Type compatibility and inference errors"
+      - "Generic type usage and variance issues"
+
+    linting_violations:
+      - "Flake8 linting errors and style violations"
+      - "Code complexity and maintainability warnings"
+      - "Unused variables and import statements"
+      - "Code quality and best practice violations"
+
+# Remediation Planning Framework
+remediation_framework:
+  automated_fixes:
+    safe_automation:
+      - "Code formatting (Black, isort)"
+      - "Import optimization and cleanup"
+      - "Simple style violations and consistency"
+      - "Documentation formatting and structure"
+
+    risk_assessment:
+      - "Low risk: Formatting and style fixes"
+      - "Medium risk: Import reorganization and cleanup"
+      - "High risk: Logic changes and refactoring"
+      - "Critical risk: Security and dependency updates"
+
+  manual_remediation:
+    complex_issues:
+      - "Logic errors and algorithm improvements"
+      - "Architecture refactoring and design changes"
+      - "Security vulnerability remediation"
+      - "Performance optimization and bottleneck fixes"
+
+    review_requirements:
+      - "Code review for all manual changes"
+      - "Security review for vulnerability fixes"
+      - "Performance testing for optimization changes"
+      - "Integration testing for architecture changes"
+
+# Issue Priority Matrix
+priority_matrix:
+  critical_immediate:
+    criteria: "Blocks compilation or execution, security critical"
+    timeline: "Fix immediately (same day)"
+    resources: "Senior developer, priority escalation"
+    validation: "Comprehensive testing, security review"
+
+  high_priority:
+    criteria: "Affects functionality, performance, or maintainability"
+    timeline: "Fix within 1-3 days"
+    resources: "Experienced developer, code review"
+    validation: "Unit testing, integration testing"
+
+  medium_priority:
+    criteria: "Code quality, style, documentation issues"
+    timeline: "Fix within 1-2 weeks"
+    resources: "Any team member, batch processing"
+    validation: "Automated testing, peer review"
+
+  low_priority:
+    criteria: "Minor style, formatting, optional improvements"
+    timeline: "Fix when convenient, batch with other work"
+    resources: "Junior developer, learning opportunity"
+    validation: "Automated validation, minimal review"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL quality issues MUST be analyzed and categorized"
+    - "ALL file impact analysis MUST be comprehensive and complete"
+    - "ALL remediation plans MUST be realistic and achievable"
+    - "ALL risk assessments MUST be thorough and documented"
+    - "ALL analysis MUST be production-ready focused"
+    - "ALWAYS use systematic analysis methodology"
+    - "NEVER skip critical issues or misclassify severity"
+
+  strictly_forbidden:
+    - "Skipping quality check results or issue categories"
+    - "Incomplete or superficial analysis of quality issues"
+    - "Missing critical issues or misclassification"
+    - "Creating analysis without proper categorization"
+    - "Proceeding without comprehensive validation"
+    - "Generating incomplete remediation plans"
+    - "Analysis without considering all affected files"
+    - "Missing risk assessment or mitigation planning"

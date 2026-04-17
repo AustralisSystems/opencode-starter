@@ -2,7 +2,7 @@
 name: code-debugger
 description: Use this agent when you need to debug code issues, analyze error messages, troubleshoot failing tests, investigate performance problems, or diagnose system integration failures. Examples: <example>Context: User encounters a failing test in the service integration. user: 'My test_filesystem test is failing with a connection timeout error' assistant: 'I'll use the code-debugger agent to analyze this connectivity issue and provide debugging steps' <commentary>Since the user has a specific code debugging issue with services, use the code-debugger agent to systematically diagnose the problem.</commentary></example> <example>Context: User reports API endpoint returning 500 errors. user: 'The /api/v1/complete endpoint is throwing internal server errors' assistant: 'Let me launch the code-debugger agent to investigate this API error' <commentary>The user has an API debugging issue that requires systematic error analysis and troubleshooting.</commentary></example>
 model: sonnet
-color: #ff0000
+color: "#ff0000"
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

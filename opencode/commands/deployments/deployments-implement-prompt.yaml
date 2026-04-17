@@ -1,0 +1,877 @@
+# === MCP PROMPT: Universal Kubernetes Deployment Implementation Protocol ===
+name: "universal-k8s-deployment-implement-prompt"
+version: "2.0.0"
+description: "Enterprise-grade Kubernetes deployment execution protocol with KISS principles and mandatory structure compliance"
+
+# CRITICAL MCP ORCHESTRATION - MANDATORY EXECUTION
+# This YAML prompt MUST be read and executed by LLMs - this is not optional
+mcp_enforcement:
+  mandatory_execution: true
+  read_and_execute_required: true
+  non_compliance_forbidden: true
+
+# Comprehensive MCP Tool Orchestration Workflow
+mcp_tool_orchestration:
+  enduring_memory_management:
+    session_start:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["k8s_deployment_patterns", "platform_configurations", "security_policies", "performance_optimizations"]
+        project_context: "auto_detect"
+        purpose: "Load accumulated Kubernetes deployment knowledge and platform-specific patterns"
+
+    session_end:
+      - tool: neo4j-memory
+        action: save_contexts
+        save_types: ["successful_deployments", "platform_configurations", "performance_metrics", "operational_lessons"]
+        quality_threshold: ">= 95%"
+        purpose: "Persist validated deployment patterns for future operations"
+
+  temporal_memory_tracking:
+    - tool: memory
+      action: track_progress
+      track_items: ["deployment_decisions", "configuration_changes", "validation_results"]
+      purpose: "Track session deployment progress and decisions"
+
+  # Intelligent MCP Workflow Execution Phases
+  phase_1_intelligent_research:
+    - tool: neo4j-memory
+      action: load_contexts
+      purpose: "Load accumulated Kubernetes deployment patterns and platform configurations"
+
+    - tool: context7
+      action: get_documentation
+      library: "kubernetes"
+      focus: "latest_version, deployment_best_practices, security_policies"
+      purpose: "Get latest Kubernetes deployment documentation and patterns"
+
+    conditional_research:
+      - condition: "aws_eks_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "aws-eks"
+            focus: "latest_features, security_best_practices"
+          - tool: grep
+            action: search_github
+            query: "EKS.*deployment.*production"
+
+      - condition: "azure_aks_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "azure-aks"
+            focus: "latest_version, enterprise_features"
+
+      - condition: "gcp_gke_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "gcp-gke"
+            focus: "autopilot, security_features"
+
+      - condition: "istio_service_mesh_required"
+        then:
+          - tool: grep
+            action: search_github
+            query: "istio.*kubernetes.*deployment"
+            purpose: "Find service mesh deployment patterns"
+
+  phase_2_adaptive_analysis:
+    - tool: filesystem
+      action: read_multiple_files
+      paths: ["k8s/", "manifests/", "charts/"]
+      purpose: "Analyze existing Kubernetes configurations and deployment requirements"
+
+    - tool: sequential-thinking
+      action: plan_deployment
+      focus: "KISS principles, security, performance, operational excellence"
+      purpose: "Create adaptive deployment strategy based on loaded context"
+
+  phase_3_deployment_execution:
+    - tool: filesystem
+      action: create_directory
+      purpose: "Create proper Kubernetes deployment structure"
+
+    - tool: filesystem
+      action: write_file
+      purpose: "Generate Kubernetes manifests with security and performance optimizations"
+
+  phase_4_quality_validation:
+    automated_validation_workflow:
+      - tool: filesystem
+        action: analyze_deployment_quality
+        validation_types: ["security_policies", "resource_limits", "health_checks", "scalability"]
+
+      - tool: sequential-thinking
+        action: validate_deployment
+        validation_criteria: ["kiss_principles", "security_compliance", "performance_optimized", "operational_excellence"]
+
+      - conditional_validation:
+          if_security_issues_detected: true
+          then:
+            - tool: filesystem
+              action: apply_security_fixes
+            - tool: sequential-thinking
+              action: re_validate_security
+
+  phase_5_enduring_memory_persistence:
+    - tool: neo4j-memory
+      action: save_context
+      context_types: ["successful_deployments", "platform_optimizations", "security_configurations", "operational_patterns"]
+      quality_validation: "required"
+      purpose: "Persist validated deployment patterns for future operations"
+
+    - tool: memory
+      action: save_progress
+      purpose: "Track session deployment outcomes and operational decisions"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Universal Kubernetes Deployment Implementation"
+  description: "Execute comprehensive deployment implementation for universal Kubernetes environments with mandatory structure compliance, KISS principles, and production-ready standards"
+
+  # Argument Schema
+  arguments:
+    target_application:
+      type: "string"
+      description: "Target application or microservice for deployment"
+      required: true
+
+    target_environment:
+      type: "string"
+      description: "Target deployment environment"
+      required: true
+      enum:
+        [
+          "development",
+          "dev",
+          "testing",
+          "test",
+          "staging",
+          "stage",
+          "pre-production",
+          "preprod",
+          "production",
+          "prod",
+          "disaster-recovery",
+          "dr"
+        ]
+
+    target_platform:
+      type: "string"
+      description: "Target deployment platform"
+      required: true
+      enum:
+        [
+          "k8s",
+          "docker-desktop",
+          "minikube",
+          "kind",
+          "k3s",
+          "aws-eks",
+          "azure-aks",
+          "gcp-gke",
+          "on-premises",
+          "openshift",
+          "tanzu"
+        ]
+
+    deployment_strategy:
+      type: "string"
+      description: "Deployment strategy to use"
+      required: false
+      enum:
+        [
+          "rolling",
+          "blue-green",
+          "canary",
+          "recreate"
+        ]
+
+    build_tag:
+      type: "string"
+      description: "Container image tag to deploy"
+      required: false
+
+    rollback_enabled:
+      type: "boolean"
+      description: "Enable automatic rollback on deployment failure"
+      required: false
+      default: true
+
+    dry_run:
+      type: "boolean"
+      description: "Perform dry run without actual deployment"
+      required: false
+      default: false
+
+    force_rebuild:
+      type: "boolean"
+      description: "Force rebuild of container images"
+      required: false
+      default: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Kubernetes deployment specialist executing the Universal Deployment Implementation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive deployment methodology
+        - Execute complete validation and health checks
+        - Maintain production-ready deployment standards
+        - Use atomic deployment practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to DEPLOYMENT-STRUCTURE.md
+        - Implement universal platform compatibility
+
+        ABSOLUTELY FORBIDDEN:
+        - Deploying without proper validation
+        - Skipping health checks or verification
+        - Partial deployments or incomplete solutions
+        - Deploying with known issues or failures
+        - Creating temporary or workaround deployments
+        - Deviating from mandatory directory structure
+        - Skipping security validations
+        - Ignoring platform-specific requirements
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY UNIVERSAL KUBERNETES DEPLOYMENT IMPLEMENTATION PROTOCOL**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **DEPLOYMENT PARAMETERS:**
+        - Target Application: {{target_application}}
+        - Target Environment: {{target_environment}}
+        - Target Platform: {{target_platform}}
+        - Deployment Strategy: {{deployment_strategy}}
+        - Build Tag: {{build_tag}}
+        - Rollback Enabled: {{rollback_enabled}}
+        - Dry Run: {{dry_run}}
+        - Force Rebuild: {{force_rebuild}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY STRUCTURE COMPLIANCE:**
+        YOU MUST STRICTLY follow the directory structure defined in DEPLOYMENT-STRUCTURE.md
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING DEPLOYMENT IMPLEMENTATION PROTOCOL:**
+
+# Universal Deployment Implementation Protocol Configuration
+implementation_protocol:
+  # Implementation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  implementation_focus:
+    mandatory_structure_compliance: true # MUST follow DEPLOYMENT-STRUCTURE.md
+    universal_platform_compatibility: true # MUST support specified target platform
+    kiss_principles: true # MUST follow Keep It Simple, Stupid principles
+    security_first_execution: true # MUST validate security requirements
+    atomic_deployment: true # MUST use atomic deployment practices
+    health_validation: true # MUST perform comprehensive health checks
+    rollback_readiness: true # MUST prepare rollback capability
+    monitoring_integration: true # MUST integrate monitoring and alerting
+    production_ready_only: true # STRICTLY production-ready deployments only
+
+  # Implementation Configuration - MANDATORY SETTINGS
+  implementation_settings:
+    enable_comprehensive_logging: true
+    perform_security_validations: true
+    execute_health_checks: true
+    validate_functionality: true
+    prepare_rollback: true
+    monitor_deployment: true
+    atomic_deployment: true # MANDATORY: Atomic deployment practices
+    follow_kiss_principles: true # MANDATORY: Keep It Simple, Stupid
+    continuous_monitoring: true # MANDATORY: Monitor throughout process
+    zero_downtime_target: true # MANDATORY: Aim for zero-downtime deployment
+    mandatory_structure_enforcement: true # MANDATORY: Enforce directory structure
+
+# Execution Instructions with KISS Principles
+execution_phases:
+  phase_1:
+    name: "Pre-Deployment Validation and Setup (KISS)"
+    mandatory_actions:
+      - "VALIDATE deployment parameters and target configuration"
+      - "CHECK mandatory directory structure compliance"
+      - "VERIFY target platform connectivity and permissions"
+      - "VALIDATE container images and build artifacts"
+      - "PREPARE deployment environment and workspace"
+
+    kiss_validation_requirements:
+      - "MANDATORY: Keep validation simple and focused"
+      - "MANDATORY: Validate only essential requirements"
+      - "MANDATORY: Use straightforward validation checks"
+      - "MANDATORY: Avoid over-complex validation logic"
+      - "FORBIDDEN: Complex validation chains or nested checks"
+
+    platform_validation:
+      local_platforms:
+        - "CHECK kubectl connectivity to local cluster"
+        - "VERIFY local cluster has required resources"
+        - "VALIDATE local storage and networking"
+        - "CHECK for required local services"
+
+      aws_eks:
+        - "VALIDATE AWS credentials and permissions"
+        - "CHECK EKS cluster connectivity"
+        - "VERIFY AWS Load Balancer Controller"
+        - "VALIDATE EBS/EFS CSI drivers"
+
+      azure_aks:
+        - "VALIDATE Azure credentials and permissions"
+        - "CHECK AKS cluster connectivity"
+        - "VERIFY Application Gateway integration"
+        - "VALIDATE Azure CSI drivers"
+
+      gcp_gke:
+        - "VALIDATE GCP credentials and permissions"
+        - "CHECK GKE cluster connectivity"
+        - "VERIFY GCP Load Balancer setup"
+        - "VALIDATE GCP CSI drivers"
+
+  phase_2:
+    name: "Container Image Build and Validation (KISS)"
+    mandatory_actions:
+      - "BUILD or PULL container images using simple strategies"
+      - "VALIDATE image security using straightforward scans"
+      - "TAG images with simple, consistent naming"
+      - "PUSH images to registry with basic verification"
+      - "VERIFY image availability and integrity"
+
+    kiss_build_requirements:
+      - "MANDATORY: Use simple, single-stage builds where possible"
+      - "MANDATORY: Keep Dockerfile simple and readable"
+      - "MANDATORY: Use minimal base images"
+      - "MANDATORY: Avoid complex build optimization"
+      - "FORBIDDEN: Over-engineered build processes"
+
+    build_strategies:
+      simple_build:
+        - "USE docker build with straightforward Dockerfile"
+        - "TAG with environment and timestamp"
+        - "PUSH to single target registry"
+        - "VERIFY with simple pull test"
+
+      multi_platform_build:
+        - "USE docker buildx for cross-platform builds"
+        - "TARGET amd64 and arm64 architectures"
+        - "TAG with platform-specific tags"
+        - "VERIFY platform compatibility"
+
+  phase_3:
+    name: "Kubernetes Manifest Preparation (KISS)"
+    mandatory_actions:
+      - "PREPARE Kubernetes manifests using simple Kustomize overlays"
+      - "VALIDATE manifest syntax and structure"
+      - "APPLY environment-specific configurations simply"
+      - "VERIFY resource specifications and limits"
+      - "PREPARE deployment-specific customizations"
+
+    kiss_manifest_requirements:
+      - "MANDATORY: Use simple Kustomize overlays"
+      - "MANDATORY: Keep manifests readable and maintainable"
+      - "MANDATORY: Use standard Kubernetes resources"
+      - "MANDATORY: Avoid complex custom resources unless required"
+      - "FORBIDDEN: Over-complicated resource definitions"
+
+    manifest_preparation:
+      base_resources:
+        - "USE standard Deployment, Service, ConfigMap resources"
+        - "APPLY resource requests and limits simply"
+        - "SET straightforward health check configurations"
+        - "CONFIGURE basic ingress rules"
+
+      environment_overlays:
+        - "APPLY simple environment-specific patches"
+        - "SET environment variables clearly"
+        - "CONFIGURE replica counts appropriately"
+        - "APPLY resource scaling based on environment"
+
+  phase_4:
+    name: "Security Validation and Policy Application (KISS)"
+    mandatory_actions:
+      - "VALIDATE Pod Security Standards compliance"
+      - "APPLY network policies with simple rules"
+      - "CHECK RBAC permissions using straightforward validation"
+      - "VERIFY secret management configuration"
+      - "VALIDATE security contexts and constraints"
+
+    kiss_security_requirements:
+      - "MANDATORY: Apply simple, effective security policies"
+      - "MANDATORY: Use standard security contexts"
+      - "MANDATORY: Keep network policies straightforward"
+      - "MANDATORY: Use simple RBAC configurations"
+      - "FORBIDDEN: Over-complex security configurations"
+
+    security_validations:
+      pod_security:
+        - "ENFORCE runAsNonRoot: true"
+        - "SET readOnlyRootFilesystem: true where possible"
+        - "DROP all capabilities by default"
+        - "DISABLE allowPrivilegeEscalation"
+
+      network_security:
+        - "APPLY default-deny network policies"
+        - "ALLOW only required communication paths"
+        - "USE simple ingress/egress rules"
+        - "VERIFY DNS resolution policies"
+
+  phase_5:
+    name: "Deployment Execution (KISS)"
+    mandatory_actions:
+      - "EXECUTE deployment using chosen strategy"
+      - "MONITOR deployment progress with simple checks"
+      - "VALIDATE pod startup and readiness"
+      - "VERIFY service endpoints and connectivity"
+      - "CONFIRM deployment completion status"
+
+    kiss_deployment_requirements:
+      - "MANDATORY: Use simple deployment strategies"
+      - "MANDATORY: Keep monitoring straightforward"
+      - "MANDATORY: Use standard kubectl commands"
+      - "MANDATORY: Avoid complex deployment orchestration"
+      - "FORBIDDEN: Over-engineered deployment processes"
+
+    deployment_strategies:
+      rolling_deployment:
+        - "APPLY manifest changes with kubectl apply"
+        - "MONITOR rollout status with kubectl rollout status"
+        - "WAIT for deployment completion"
+        - "VERIFY all replicas are ready"
+
+      blue_green_deployment:
+        - "DEPLOY to green environment"
+        - "VALIDATE green environment health"
+        - "SWITCH traffic to green environment"
+        - "VERIFY traffic routing"
+
+      canary_deployment:
+        - "DEPLOY canary version to subset"
+        - "ROUTE percentage of traffic to canary"
+        - "MONITOR canary metrics"
+        - "PROMOTE or rollback based on results"
+
+  phase_6:
+    name: "Health Checks and Validation (KISS)"
+    mandatory_actions:
+      - "WAIT for pod initialization with simple timeouts"
+      - "EXECUTE health checks using standard probes"
+      - "VALIDATE service endpoints with basic tests"
+      - "VERIFY application functionality simply"
+      - "CONFIRM deployment success with clear criteria"
+
+    kiss_health_requirements:
+      - "MANDATORY: Use simple health check mechanisms"
+      - "MANDATORY: Keep validation tests straightforward"
+      - "MANDATORY: Use standard Kubernetes health probes"
+      - "MANDATORY: Avoid complex health check logic"
+      - "FORBIDDEN: Over-engineered health validation"
+
+    health_validations:
+      pod_health:
+        - "CHECK liveness probe responses"
+        - "VERIFY readiness probe success"
+        - "VALIDATE container logs for errors"
+        - "CONFIRM resource utilization within limits"
+
+      service_health:
+        - "TEST service endpoint connectivity"
+        - "VALIDATE load balancer configuration"
+        - "CHECK ingress routing functionality"
+        - "VERIFY DNS resolution"
+
+  phase_7:
+    name: "Monitoring Integration (KISS)"
+    mandatory_actions:
+      - "APPLY monitoring configurations simply"
+      - "VERIFY metrics collection setup"
+      - "CONFIGURE basic alerting rules"
+      - "VALIDATE logging integration"
+      - "CONFIRM observability stack connectivity"
+
+    kiss_monitoring_requirements:
+      - "MANDATORY: Use simple monitoring configurations"
+      - "MANDATORY: Keep alerting rules straightforward"
+      - "MANDATORY: Use standard metrics and logs"
+      - "MANDATORY: Avoid complex observability setups"
+      - "FORBIDDEN: Over-complicated monitoring stacks"
+
+    monitoring_setup:
+      metrics_collection:
+        - "APPLY ServiceMonitor for Prometheus"
+        - "CONFIGURE basic metric scraping"
+        - "VERIFY metrics endpoint availability"
+        - "CHECK metric data flow"
+
+      alerting_rules:
+        - "APPLY basic PrometheusRule configurations"
+        - "SET simple threshold-based alerts"
+        - "VERIFY alert routing configuration"
+        - "TEST alert firing mechanisms"
+
+  phase_8:
+    name: "Deployment Completion and Documentation (KISS)"
+    mandatory_actions:
+      - "GENERATE simple deployment report"
+      - "RECORD deployment metadata with timestamps"
+      - "CLEANUP temporary files and artifacts"
+      - "PROVIDE clear next steps and monitoring guidance"
+      - "CONFIRM successful deployment completion"
+
+    kiss_completion_requirements:
+      - "MANDATORY: Generate simple, clear deployment report"
+      - "MANDATORY: Record essential deployment information"
+      - "MANDATORY: Keep documentation straightforward"
+      - "MANDATORY: Provide actionable next steps"
+      - "FORBIDDEN: Over-detailed or complex reporting"
+
+  phase_9:
+    name: "Quickstart Documentation Creation (KISS)"
+    mandatory_actions:
+      - "CREATE user-friendly quickstart deployment guides"
+      - "DOCUMENT step-by-step deployment commands for all environments"
+      - "PROVIDE platform-specific deployment instructions"
+      - "INCLUDE prerequisites and setup requirements"
+      - "CREATE troubleshooting guides and common issue resolution"
+
+    kiss_quickstart_requirements:
+      - "MANDATORY: Create simple, clear quickstart guides"
+      - "MANDATORY: Include step-by-step commands for all environments"
+      - "MANDATORY: Provide platform-specific instructions"
+      - "MANDATORY: Include clear prerequisites and setup"
+      - "MANDATORY: Document common troubleshooting scenarios"
+      - "FORBIDDEN: Complex or unclear quickstart documentation"
+
+  phase_10:
+    name: "Lifecycle Management and Terraform Infrastructure Implementation (KISS)"
+    mandatory_actions:
+      - "IMPLEMENT application lifecycle management procedures"
+      - "CONFIGURE environment promotion workflows"
+      - "SETUP scaling and performance management procedures"
+      - "IMPLEMENT backup and recovery procedures"
+      - "CONFIGURE monitoring and alerting setup"
+      - "IMPLEMENT Infrastructure as Code patterns and structures"
+      - "CONFIGURE environment-specific Terraform configurations"
+      - "DEPLOY platform-specific Terraform modules"
+
+    kiss_lifecycle_terraform_requirements:
+      - "MANDATORY: Implement simple lifecycle management procedures"
+      - "MANDATORY: Configure straightforward environment promotion workflows"
+      - "MANDATORY: Setup basic scaling and performance management"
+      - "MANDATORY: Implement simple backup and recovery procedures"
+      - "MANDATORY: Configure basic monitoring and alerting"
+      - "MANDATORY: Implement simple Terraform infrastructure patterns"
+      - "MANDATORY: Configure platform-specific Terraform modules"
+      - "MANDATORY: Setup basic state management and remote backend"
+      - "FORBIDDEN: Over-complex lifecycle management or Terraform implementation"
+
+# Platform-Specific Implementation Strategies (KISS)
+platform_strategies:
+  local_development:
+    platforms: ["k8s", "docker-desktop", "minikube", "kind", "k3s"]
+    approach: "simple_local"
+    requirements:
+      - "USE kubectl apply for manifest deployment"
+      - "VERIFY local cluster resources"
+      - "USE NodePort or LoadBalancer services"
+      - "APPLY simple resource limits"
+    tools:
+      - "kubectl"
+      - "docker"
+      - "kustomize"
+
+  aws_eks:
+    platform: "aws-eks"
+    approach: "aws_native"
+    requirements:
+      - "USE AWS Load Balancer Controller"
+      - "CONFIGURE EBS CSI for persistent storage"
+      - "APPLY IRSA for service authentication"
+      - "USE ALB Ingress annotations"
+    tools:
+      - "kubectl"
+      - "aws-cli"
+      - "eksctl"
+      - "helm"
+
+  azure_aks:
+    platform: "azure-aks"
+    approach: "azure_native"
+    requirements:
+      - "USE Application Gateway Ingress Controller"
+      - "CONFIGURE Azure CSI drivers"
+      - "APPLY Pod Identity or Workload Identity"
+      - "USE Azure Load Balancer"
+    tools:
+      - "kubectl"
+      - "azure-cli"
+      - "helm"
+
+  gcp_gke:
+    platform: "gcp-gke"
+    approach: "gcp_native"
+    requirements:
+      - "USE GCP Load Balancer"
+      - "CONFIGURE GCP CSI drivers"
+      - "APPLY Workload Identity"
+      - "USE GCE Ingress"
+    tools:
+      - "kubectl"
+      - "gcloud"
+      - "helm"
+
+  on_premises:
+    platforms: ["on-premises", "openshift", "tanzu"]
+    approach: "generic_k8s"
+    requirements:
+      - "USE MetalLB for load balancing"
+      - "CONFIGURE local storage provisioners"
+      - "APPLY manual scaling policies"
+      - "USE Ingress NGINX"
+    tools:
+      - "kubectl"
+      - "helm"
+      - "kustomize"
+
+# KISS Deployment Patterns
+kiss_deployment_patterns:
+  simple_microservice:
+    components:
+      - "Single Deployment"
+      - "Single Service"
+      - "Simple ConfigMap"
+      - "Basic Ingress"
+    characteristics:
+      - "Minimal resource requirements"
+      - "Straightforward health checks"
+      - "Simple environment configuration"
+      - "Basic monitoring setup"
+
+  web_application:
+    components:
+      - "Frontend Deployment"
+      - "Backend Deployment"
+      - "Shared ConfigMap"
+      - "TLS Ingress"
+    characteristics:
+      - "Static asset serving"
+      - "API endpoint routing"
+      - "Simple authentication"
+      - "Basic caching"
+
+  database_service:
+    components:
+      - "StatefulSet"
+      - "Headless Service"
+      - "PersistentVolumeClaim"
+      - "Backup CronJob"
+    characteristics:
+      - "Persistent storage"
+      - "Ordered deployment"
+      - "Data backup automation"
+      - "Simple replication"
+
+# Security Implementation (KISS)
+kiss_security_implementation:
+  pod_security_standards:
+    restricted_profile:
+      securityContext:
+        runAsNonRoot: true
+        runAsUser: 1000
+        runAsGroup: 3000
+        fsGroup: 2000
+      containerSecurityContext:
+        allowPrivilegeEscalation: false
+        readOnlyRootFilesystem: true
+        runAsNonRoot: true
+        capabilities:
+          drop: ["ALL"]
+
+  network_policies:
+    default_deny:
+      policyTypes: ["Ingress", "Egress"]
+      podSelector: {}
+      ingress: []
+      egress: []
+
+    allow_dns:
+      podSelector: {}
+      policyTypes: ["Egress"]
+      egress:
+        - to: []
+          ports:
+            - protocol: UDP
+              port: 53
+
+# Monitoring Integration (KISS)
+kiss_monitoring_integration:
+  prometheus_integration:
+    servicemonitor:
+      endpoints:
+        - port: "metrics"
+          interval: "30s"
+          path: "/metrics"
+
+    prometheus_rule:
+      groups:
+        - name: "application"
+          rules:
+            - alert: "ApplicationDown"
+              expr: "up == 0"
+              for: "5m"
+              labels:
+                severity: "critical"
+
+  logging_integration:
+    log_format: "json"
+    log_level: "info"
+    correlation_id: true
+    structured_fields:
+      - "timestamp"
+      - "level"
+      - "message"
+      - "service"
+      - "trace_id"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL deployment output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-150000"
+
+  required_outputs: []
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces Kubernetes manifests, configuration files, and deployment scripts only
+  # Documentation should be created using separate documentation commands
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all deployment output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL deployment deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all deployment outputs"
+    - "FORBIDDEN: Creating deployment files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same deployment session"
+
+# Deployment Execution Workflow with KISS Principles
+execution_steps:
+  - "1. VALIDATE deployment parameters ({{target_application}}, {{target_environment}}, {{target_platform}})"
+  - "2. CHECK mandatory directory structure compliance"
+  - "3. VERIFY target platform connectivity and permissions"
+  - "4. BUILD or PULL container images using simple strategies"
+  - "5. VALIDATE image security with straightforward scans"
+  - "6. PREPARE Kubernetes manifests using simple Kustomize"
+  - "7. APPLY security validations and policies"
+  - "8. EXECUTE deployment using chosen strategy"
+  - "9. MONITOR deployment progress with simple checks"
+  - "10. VALIDATE health checks and service endpoints"
+  - "11. CONFIGURE basic monitoring and alerting"
+  - "12. CREATE user-friendly quickstart deployment guides"
+  - "13. IMPLEMENT application lifecycle management procedures"
+  - "14. CONFIGURE Terraform infrastructure as code patterns"
+  - "15. GENERATE simple deployment report with timestamps"
+  - "16. CLEANUP temporary files and artifacts"
+  - "17. PROVIDE clear next steps and monitoring guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each deployment step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all deployment tracking"
+  - "MANDATORY: Timestamp all deployment deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Rollback and Failure Handling (KISS)
+kiss_rollback_protocol:
+  automatic_rollback_triggers:
+    - "Health checks fail after deployment"
+    - "Critical errors in application logs"
+    - "Service endpoints become unreachable"
+    - "Resource limits exceeded"
+
+  simple_rollback_procedures:
+    rolling_deployment:
+      - "kubectl rollout undo deployment/{app-name}"
+      - "kubectl rollout status deployment/{app-name}"
+      - "kubectl get pods -l app={app-name}"
+      - "kubectl logs -l app={app-name}"
+
+    blue_green_deployment:
+      - "Switch service selector back to blue"
+      - "Verify blue environment health"
+      - "Stop green environment pods"
+      - "Cleanup green environment resources"
+
+# Mandatory Success Criteria (KISS)
+kiss_success_criteria:
+  - "MANDATORY: Deployment completed successfully to target environment and platform"
+  - "MANDATORY: All health checks passed with simple validation"
+  - "MANDATORY: Application functionality verified with basic tests"
+  - "MANDATORY: Basic monitoring and logging configured"
+  - "MANDATORY: Simple rollback capability confirmed"
+  - "MANDATORY: Deployment documented with clear timestamps"
+  - "MANDATORY: Clear next steps provided for ongoing management"
+  - "MANDATORY: Mandatory directory structure compliance verified"
+  - "MANDATORY: Security validations passed with standard checks"
+
+# Deployment Quality Gates (KISS)
+kiss_quality_gates:
+  pre_deployment:
+    - "Required parameters provided and validated simply"
+    - "Target platform connectivity confirmed"
+    - "Container images available and verified"
+    - "Kubernetes manifests syntactically valid"
+
+  deployment_phase:
+    - "Deployment executed successfully"
+    - "No critical errors during execution"
+    - "Pods started and reached ready state"
+    - "Services responding to health checks"
+
+  post_deployment:
+    - "Application endpoints accessible"
+    - "Basic functionality verified"
+    - "Monitoring metrics flowing"
+    - "Deployment metadata recorded"
+
+# Constraints and Requirements (KISS)
+kiss_constraints:
+  mandatory_requirements:
+    - "ALL deployments MUST follow KISS principles"
+    - "ALL implementations MUST be simple and maintainable"
+    - "ALL configurations MUST use standard Kubernetes resources"
+    - "ALL validations MUST use straightforward checks"
+    - "ALL monitoring MUST use basic, effective setups"
+    - "ALL documentation MUST be clear and actionable"
+    - "ALWAYS use atomic deployment practices"
+    - "NEVER deploy with known critical issues"
+
+  strictly_forbidden:
+    - "Over-engineered deployment processes"
+    - "Complex custom resource definitions without justification"
+    - "Complicated health check logic"
+    - "Over-detailed monitoring configurations"
+    - "Convoluted rollback procedures"
+    - "Partial or incomplete deployments"
+    - "Deploying without security validation"
+    - "Ignoring platform-specific requirements"
+    - "Deviating from mandatory directory structure"
+
+
+---

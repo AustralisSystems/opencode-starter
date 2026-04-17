@@ -1,0 +1,501 @@
+# === MCP PROMPT: Meta-Recursive Sub-Agent Management Protocol ===
+name: "sub-agents-management-prompt"
+version: "1.0.0"
+description: "Meta-recursive protocol for comprehensive management of Claude Code CLI sub-agents using existing sub-agent ecosystem for specialized expertise and lifecycle management"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Meta-Recursive Sub-Agent Management"
+  description: "Execute comprehensive management of Claude Code CLI sub-agents using existing sub-agent ecosystem for specialized expertise and complete lifecycle management"
+
+  # Argument Schema
+  arguments:
+    management_operation:
+      type: "string"
+      description: "Type of sub-agent management operation to perform"
+      required: true
+      enum: ["create", "update", "delete", "deploy", "monitor", "analyze", "optimize", "integrate"]
+
+    subagent_target:
+      type: "string"
+      description: "Target sub-agent name or path for management operation"
+      required: false
+
+    management_scope:
+      type: "string"
+      description: "Scope of the sub-agent management operation"
+      required: false
+      enum: ["single", "multiple", "ecosystem", "comprehensive"]
+      default: "single"
+
+    target_directory:
+      type: "string"
+      description: "Target directory for sub-agent management operations"
+      required: false
+      default: ".claude/agents"
+
+    management_standards:
+      type: "string"
+      description: "Standards to apply during management operations"
+      required: false
+      enum: ["enterprise", "standard", "basic"]
+      default: "enterprise"
+
+    lifecycle_phase:
+      type: "string"
+      description: "Lifecycle phase to focus management on"
+      required: false
+      enum: ["creation", "development", "testing", "deployment", "monitoring", "maintenance", "retirement"]
+      default: "comprehensive"
+
+    existing_subagent_utilization:
+      type: "boolean"
+      description: "Whether to use existing sub-agent ecosystem for management"
+      required: false
+      default: true
+
+    management_depth:
+      type: "string"
+      description: "Depth of the management analysis"
+      required: false
+      enum: ["surface", "moderate", "deep", "comprehensive"]
+      default: "comprehensive"
+
+    integration_requirements:
+      type: "array"
+      description: "Integration requirements for sub-agent management"
+      required: false
+      items:
+        type: "string"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Meta-Recursive Sub-Agent Management specialist executing the Meta-Recursive Sub-Agent Management Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive meta-recursive sub-agent management methodology
+        - Execute complete sub-agent management using existing sub-agent ecosystem
+        - Maintain production-ready sub-agent management standards
+        - Use systematic sub-agent management practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Anthropic sub-agent best practices
+        - Implement meta-recursive sub-agent management workflows
+
+        ABSOLUTELY FORBIDDEN:
+        - Managing sub-agents without using existing sub-agent ecosystem
+        - Skipping meta-recursive sub-agent management workflows
+        - Partial sub-agent management or incomplete lifecycle operations
+        - Managing sub-agents with known quality violations
+        - Creating temporary or workaround management processes
+        - Ignoring Anthropic sub-agent best practices
+        - Skipping existing sub-agent expertise utilization
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY META-RECURSIVE SUB-AGENT MANAGEMENT PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **META-RECURSIVE SUB-AGENT MANAGEMENT PARAMETERS:**
+        - Management Operation: {{management_operation}}
+        - Sub-Agent Target: {{subagent_target}}
+        - Management Scope: {{management_scope}}
+        - Target Directory: {{target_directory}}
+        - Management Standards: {{management_standards}}
+        - Lifecycle Phase: {{lifecycle_phase}}
+        - Existing Sub-Agent Utilization: {{existing_subagent_utilization}}
+        - Management Depth: {{management_depth}}
+        - Integration Requirements: {{integration_requirements}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING META-RECURSIVE SUB-AGENT MANAGEMENT PROTOCOL:**
+
+# Meta-Recursive Sub-Agent Management Protocol Configuration
+meta_recursive_subagent_management:
+  # Meta-Recursive Management Scope - MANDATORY COMPREHENSIVE COVERAGE
+  meta_recursive_management_focus:
+    existing_subagent_utilization: true # MUST use existing sub-agent ecosystem
+    specialized_expertise_leveraging: true # MUST leverage specialized sub-agent expertise
+    collaborative_management_workflow_execution: true # MUST use collaborative sub-agent management workflows
+    quality_assurance_integration: true # MUST integrate quality assurance sub-agents
+    architectural_compliance_validation: true # MUST validate architectural compliance
+    documentation_standard_enforcement: true # MUST enforce documentation standards
+    lifecycle_management_integration: true # MUST integrate lifecycle management
+    meta_recursive_management_workflow_implementation: true # MUST implement meta-recursive management workflows
+
+  # Meta-Recursive Management Configuration - MANDATORY SETTINGS
+  meta_recursive_management_settings:
+    enable_existing_subagent_utilization: true
+    perform_specialized_expertise_leveraging: true
+    execute_collaborative_management_workflow_execution: true
+    systematic_meta_recursive_management: true # MANDATORY: Systematic meta-recursive management practices
+    follow_meta_recursive_management_principles: true # MANDATORY: Meta-recursive management best practices
+    continuous_quality_validation: true # MANDATORY: Validate quality throughout management process
+    production_ready_subagent_management: true # MANDATORY: Production-ready sub-agent management standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Meta-Recursive Management Validation and Setup"
+    mandatory_actions:
+      - "VALIDATE meta-recursive sub-agent management parameters and requirements"
+      - "CHECK target directory accessibility and permissions"
+      - "VERIFY sub-agent target accessibility and validity"
+      - "PREPARE meta-recursive sub-agent management environment and workspace"
+      - "INITIALIZE existing sub-agent ecosystem utilization tracking"
+
+    meta_recursive_management_validation_requirements:
+      - "MANDATORY: Validate all meta-recursive management parameters"
+      - "MANDATORY: Check target directory accessibility"
+      - "MANDATORY: Verify sub-agent target accessibility"
+      - "MANDATORY: Confirm management operation and scope validity"
+      - "FORBIDDEN: Proceeding with invalid meta-recursive management parameters"
+
+  phase_2:
+    name: "Existing Sub-Agent Ecosystem Analysis for Management"
+    mandatory_actions:
+      - "ANALYZE existing sub-agent ecosystem for management expertise"
+      - "SELECT appropriate existing sub-agents for meta-recursive management workflow"
+      - "MAP existing sub-agent management capabilities to sub-agent management requirements"
+      - "ASSESS existing sub-agent management integration requirements"
+      - "EVALUATE existing sub-agent management collaboration workflows"
+
+    existing_subagent_ecosystem_management_requirements:
+      - "MANDATORY: Analyze existing sub-agent ecosystem for management expertise"
+      - "MANDATORY: Select appropriate existing sub-agents for management workflow"
+      - "MANDATORY: Map existing sub-agent management capabilities to requirements"
+      - "MANDATORY: Assess existing sub-agent management integration requirements"
+      - "FORBIDDEN: Managing sub-agents without leveraging existing sub-agent ecosystem"
+
+    existing_subagent_ecosystem_management_standards:
+      existing_subagent_management_utilization:
+        - "COMPREHENSIVE existing sub-agent ecosystem management analysis"
+        - "APPROPRIATE existing sub-agent selection for management workflow"
+        - "EFFECTIVE existing sub-agent management capability mapping"
+        - "CLEAR existing sub-agent management integration requirements"
+        - "MAINTAINABLE existing sub-agent management collaboration workflows"
+
+      specialized_management_expertise_leveraging:
+        - "LEVERAGE code-implementation-planner for sub-agent management planning"
+        - "LEVERAGE code-quality-analyzer for sub-agent management quality assurance"
+        - "LEVERAGE architecture-compliance-reviewer for sub-agent management architectural validation"
+        - "LEVERAGE documentation-protocol-enforcer for sub-agent management documentation standards"
+        - "LEVERAGE deployment-operations-manager for sub-agent management deployment operations"
+
+  phase_3:
+    name: "Meta-Recursive Sub-Agent Lifecycle Management"
+    mandatory_actions:
+      - "USE code-implementation-planner to plan sub-agent lifecycle management"
+      - "USE code-quality-analyzer to ensure sub-agent lifecycle quality"
+      - "USE architecture-compliance-reviewer to validate sub-agent lifecycle architecture"
+      - "USE documentation-protocol-enforcer to enforce sub-agent lifecycle documentation"
+      - "USE deployment-operations-manager to manage sub-agent lifecycle deployment"
+
+    meta_recursive_lifecycle_management_requirements:
+      - "MANDATORY: Use code-implementation-planner for lifecycle planning"
+      - "MANDATORY: Use code-quality-analyzer for lifecycle quality assurance"
+      - "MANDATORY: Use architecture-compliance-reviewer for lifecycle architectural validation"
+      - "MANDATORY: Use documentation-protocol-enforcer for lifecycle documentation"
+      - "FORBIDDEN: Managing sub-agent lifecycle without using existing sub-agent expertise"
+
+    meta_recursive_lifecycle_management_standards:
+      subagent_lifecycle_management:
+        - "COMPREHENSIVE sub-agent lifecycle management using existing expertise"
+        - "DETAILED sub-agent lifecycle planning and execution"
+        - "SPECIFIC sub-agent lifecycle quality assurance"
+        - "CLEAR sub-agent lifecycle architectural validation"
+        - "EFFECTIVE sub-agent lifecycle documentation enforcement"
+
+      existing_subagent_lifecycle_collaboration:
+        - "COLLABORATIVE existing sub-agent lifecycle management workflow"
+        - "SPECIALIZED existing sub-agent lifecycle expertise utilization"
+        - "INTEGRATED existing sub-agent lifecycle quality assurance"
+        - "COMPREHENSIVE existing sub-agent lifecycle architectural validation"
+        - "STANDARDIZED existing sub-agent lifecycle documentation enforcement"
+
+  phase_4:
+    name: "Meta-Recursive Sub-Agent Quality Management"
+    mandatory_actions:
+      - "USE code-quality-enforcer to enforce sub-agent quality management"
+      - "USE code-quality-analyzer to analyze sub-agent quality management metrics"
+      - "VALIDATE sub-agent quality management best practices compliance"
+      - "ASSESS sub-agent quality management tool access and permissions"
+      - "EVALUATE sub-agent quality management model selection and configuration"
+
+    meta_recursive_quality_management_requirements:
+      - "MANDATORY: Use code-quality-enforcer for quality management enforcement"
+      - "MANDATORY: Use code-quality-analyzer for quality management analysis"
+      - "MANDATORY: Validate sub-agent quality management best practices"
+      - "MANDATORY: Assess sub-agent quality management tool access and permissions"
+      - "FORBIDDEN: Managing sub-agent quality without quality assurance validation"
+
+    meta_recursive_quality_management_standards:
+      subagent_quality_management:
+        - "COMPREHENSIVE sub-agent quality management using existing expertise"
+        - "DETAILED sub-agent quality management enforcement using existing tools"
+        - "SPECIFIC sub-agent quality management validation"
+        - "CLEAR sub-agent quality management assessment"
+        - "EFFECTIVE sub-agent quality management evaluation"
+
+      existing_subagent_quality_management_integration:
+        - "INTEGRATED existing sub-agent quality management"
+        - "COLLABORATIVE existing sub-agent quality management enforcement"
+        - "SPECIALIZED existing sub-agent quality management validation"
+        - "COMPREHENSIVE existing sub-agent quality management assessment"
+        - "STANDARDIZED existing sub-agent quality management evaluation"
+
+  phase_5:
+    name: "Meta-Recursive Sub-Agent Architectural Management"
+    mandatory_actions:
+      - "USE architecture-compliance-reviewer to manage sub-agent architecture"
+      - "USE enterprise-microservices-architect for complex sub-agent architectural management"
+      - "VALIDATE sub-agent architectural management compliance with Anthropic best practices"
+      - "ASSESS sub-agent architectural management integration with existing sub-agent ecosystem"
+      - "EVALUATE sub-agent architectural management scalability and maintainability"
+
+    meta_recursive_architectural_management_requirements:
+      - "MANDATORY: Use architecture-compliance-reviewer for architectural management"
+      - "MANDATORY: Use enterprise-microservices-architect for complex architectural management"
+      - "MANDATORY: Validate sub-agent architectural management compliance with Anthropic best practices"
+      - "MANDATORY: Assess sub-agent architectural management integration with existing ecosystem"
+      - "FORBIDDEN: Managing sub-agent architecture without architectural compliance validation"
+
+    meta_recursive_architectural_management_standards:
+      subagent_architectural_management:
+        - "COMPREHENSIVE sub-agent architectural management using existing expertise"
+        - "DETAILED sub-agent architectural management compliance validation with Anthropic best practices"
+        - "SPECIFIC sub-agent architectural management integration assessment with existing ecosystem"
+        - "CLEAR sub-agent architectural management scalability and maintainability evaluation"
+        - "EFFECTIVE sub-agent architectural management compliance verification"
+
+      existing_subagent_architectural_management_integration:
+        - "INTEGRATED existing sub-agent architectural management"
+        - "COLLABORATIVE existing sub-agent architectural management compliance verification"
+        - "SPECIALIZED existing sub-agent architectural management integration assessment"
+        - "COMPREHENSIVE existing sub-agent architectural management scalability evaluation"
+        - "STANDARDIZED existing sub-agent architectural management maintainability assessment"
+
+  phase_6:
+    name: "Meta-Recursive Sub-Agent Documentation Management"
+    mandatory_actions:
+      - "USE documentation-protocol-enforcer to manage sub-agent documentation"
+      - "ANALYZE sub-agent documentation management completeness and accuracy"
+      - "VALIDATE sub-agent documentation management maintainability"
+      - "ASSESS sub-agent documentation management user experience"
+      - "EVALUATE sub-agent documentation management standards compliance"
+
+    meta_recursive_documentation_management_requirements:
+      - "MANDATORY: Use documentation-protocol-enforcer for documentation management"
+      - "MANDATORY: Analyze sub-agent documentation management completeness"
+      - "MANDATORY: Validate sub-agent documentation management maintainability"
+      - "MANDATORY: Assess sub-agent documentation management user experience"
+      - "FORBIDDEN: Managing sub-agent documentation without documentation standards validation"
+
+    meta_recursive_documentation_management_standards:
+      subagent_documentation_management:
+        - "COMPREHENSIVE sub-agent documentation management using existing expertise"
+        - "DETAILED sub-agent documentation management completeness analysis"
+        - "SPECIFIC sub-agent documentation management maintainability assessment"
+        - "CLEAR sub-agent documentation management user experience evaluation"
+        - "EFFECTIVE sub-agent documentation management standard enforcement"
+
+      existing_subagent_documentation_management_integration:
+        - "INTEGRATED existing sub-agent documentation management"
+        - "COLLABORATIVE existing sub-agent documentation management analysis"
+        - "SPECIALIZED existing sub-agent documentation management assessment"
+        - "COMPREHENSIVE existing sub-agent documentation management evaluation"
+        - "STANDARDIZED existing sub-agent documentation management enforcement"
+
+  phase_7:
+    name: "Meta-Recursive Sub-Agent Testing Management"
+    mandatory_actions:
+      - "USE test-executor-analyzer to manage sub-agent testing functionality"
+      - "USE test-preparation-planner to manage sub-agent testing strategy"
+      - "VALIDATE sub-agent testing management coverage and effectiveness"
+      - "ASSESS sub-agent testing management integration requirements"
+      - "EVALUATE sub-agent testing management performance and reliability"
+
+    meta_recursive_testing_management_requirements:
+      - "MANDATORY: Use test-executor-analyzer for testing management"
+      - "MANDATORY: Use test-preparation-planner for testing strategy management"
+      - "MANDATORY: Validate sub-agent testing management coverage and effectiveness"
+      - "MANDATORY: Assess sub-agent testing management integration requirements"
+      - "FORBIDDEN: Managing sub-agent testing without comprehensive testing validation"
+
+    meta_recursive_testing_management_standards:
+      subagent_testing_management:
+        - "COMPREHENSIVE sub-agent testing management using existing expertise"
+        - "DETAILED sub-agent testing management coverage and effectiveness validation"
+        - "SPECIFIC sub-agent testing management integration assessment"
+        - "CLEAR sub-agent testing management performance evaluation"
+        - "EFFECTIVE sub-agent testing management strategy review"
+
+      existing_subagent_testing_management_integration:
+        - "INTEGRATED existing sub-agent testing management"
+        - "COLLABORATIVE existing sub-agent testing management validation"
+        - "SPECIALIZED existing sub-agent testing management assessment"
+        - "COMPREHENSIVE existing sub-agent testing management evaluation"
+        - "STANDARDIZED existing sub-agent testing management strategy"
+
+  phase_8:
+    name: "Meta-Recursive Sub-Agent Deployment Management"
+    mandatory_actions:
+      - "USE deployment-operations-manager to manage sub-agent deployment"
+      - "USE deployment-orchestrator to manage sub-agent workflow orchestration"
+      - "VALIDATE sub-agent deployment management configuration and readiness"
+      - "ASSESS sub-agent deployment management integration with existing ecosystem"
+      - "EVALUATE sub-agent deployment management success and functionality"
+
+    meta_recursive_deployment_management_requirements:
+      - "MANDATORY: Use deployment-operations-manager for deployment management"
+      - "MANDATORY: Use deployment-orchestrator for workflow orchestration management"
+      - "MANDATORY: Validate sub-agent deployment management configuration"
+      - "MANDATORY: Assess sub-agent deployment management integration"
+      - "FORBIDDEN: Managing sub-agent deployment without proper deployment validation"
+
+    meta_recursive_deployment_management_standards:
+      subagent_deployment_management:
+        - "COMPREHENSIVE sub-agent deployment management using existing expertise"
+        - "DETAILED sub-agent deployment management configuration validation"
+        - "SPECIFIC sub-agent deployment management integration assessment"
+        - "CLEAR sub-agent deployment management success verification"
+        - "EFFECTIVE sub-agent deployment management workflow orchestration"
+
+      existing_subagent_deployment_management_integration:
+        - "INTEGRATED existing sub-agent deployment management"
+        - "COLLABORATIVE existing sub-agent deployment management validation"
+        - "SPECIALIZED existing sub-agent deployment management assessment"
+        - "COMPREHENSIVE existing sub-agent deployment management evaluation"
+        - "STANDARDIZED existing sub-agent deployment management verification"
+
+  phase_9:
+    name: "Meta-Recursive Sub-Agent Management Completion and Reporting"
+    mandatory_actions:
+      - "GENERATE comprehensive meta-recursive sub-agent management report"
+      - "RECORD meta-recursive management findings and recommendations"
+      - "VALIDATE sub-agent management completeness and accuracy"
+      - "PROVIDE next steps and sub-agent management guidance"
+      - "CONFIRM meta-recursive sub-agent management completion and success"
+
+    meta_recursive_management_completion_requirements:
+      - "MANDATORY: Generate detailed meta-recursive management report"
+      - "MANDATORY: Record meta-recursive management findings with timestamps"
+      - "MANDATORY: Validate sub-agent management completeness and accuracy"
+      - "MANDATORY: Provide clear next steps for sub-agent management"
+
+# Meta-Recursive Sub-Agent Management Standards and Criteria
+meta_recursive_subagent_management_standards:
+  anthropic_subagent_management_best_practices:
+    subagent_management_structure: "CLEAR management criteria, specific lifecycle requirements, structured management organization"
+    subagent_management_clarity: "UNAMBIGUOUS management instructions, clear success criteria, specific management validation"
+    subagent_management_safety: "APPROPRIATE management guardrails, ethical considerations, responsible AI management"
+    subagent_management_effectiveness: "MEASURABLE management outcomes, clear validation, specific management constraints"
+
+  existing_subagent_ecosystem_management_utilization:
+    subagent_management_collaboration: "EFFECTIVE existing sub-agent management collaboration workflows"
+    subagent_management_expertise: "SPECIALIZED existing sub-agent management expertise utilization"
+    subagent_management_quality: "INTEGRATED existing sub-agent management quality assurance"
+    subagent_management_architecture: "COMPREHENSIVE existing sub-agent management architectural validation"
+
+  meta_recursive_management_standards:
+    subagent_management_creation: "COMPLETE meta-recursive sub-agent management using existing ecosystem"
+    subagent_management_validation: "THOROUGH sub-agent management validation using existing sub-agent expertise"
+    subagent_management_integration: "SEAMLESS sub-agent management integration with existing ecosystem"
+    subagent_management_quality: "ENTERPRISE sub-agent management quality standards using existing sub-agent tools"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL meta-recursive sub-agent management output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-25-150000"
+
+  required_outputs:
+    - "./project/docs/sub-agents/Management_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (management operations)"
+    - "./project/docs/sub-agents/Configuration-{{YYYY-MM-DD-HHMMSS}}.md (configurations and policies)"
+    - "./project/docs/sub-agents/Operational_Guide-{{YYYY-MM-DD-HHMMSS}}.md (procedures and best practices)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all meta-recursive sub-agent management output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL meta-recursive sub-agent management deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all meta-recursive sub-agent management outputs"
+    - "FORBIDDEN: Creating sub-agent management files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same meta-recursive sub-agent management session"
+
+# Meta-Recursive Sub-Agent Management Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE meta-recursive sub-agent management parameters and requirements"
+  - "2. CHECK target directory accessibility and permissions"
+  - "3. CREATE meta-recursive sub-agent management timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. ANALYZE existing sub-agent ecosystem for management expertise"
+  - "5. USE code-implementation-planner to plan sub-agent lifecycle management"
+  - "6. USE code-quality-enforcer to enforce sub-agent quality management"
+  - "7. USE architecture-compliance-reviewer to manage sub-agent architecture"
+  - "8. USE documentation-protocol-enforcer to manage sub-agent documentation"
+  - "9. USE test-executor-analyzer to manage sub-agent testing functionality"
+  - "10. USE deployment-operations-manager to manage sub-agent deployment"
+  - "11. GENERATE comprehensive meta-recursive sub-agent management report with timestamps"
+  - "12. VALIDATE sub-agent management completeness and accuracy"
+  - "13. CLEANUP temporary meta-recursive sub-agent management files and artifacts"
+  - "14. RECORD meta-recursive sub-agent management completion with timestamp"
+  - "15. PROVIDE next steps and sub-agent management guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each meta-recursive sub-agent management step"
+  - "MANDATORY: Use UTC time for all meta-recursive sub-agent management timestamp recordings"
+  - "MANDATORY: Include timestamps in all meta-recursive sub-agent management tracking"
+  - "MANDATORY: Timestamp all meta-recursive sub-agent management deliverable creation"
+  - "FORBIDDEN: Proceeding without proper meta-recursive sub-agent management timestamp documentation"
+
+# Meta-Recursive Sub-Agent Management Quality Gates
+meta_recursive_subagent_management_quality_gates:
+  pre_meta_recursive_management:
+    - "All required meta-recursive sub-agent management parameters provided and validated"
+    - "Target directory accessible and writable"
+    - "Sub-agent target accessible and valid"
+    - "Existing sub-agent ecosystem accessible and functional"
+
+  meta_recursive_management_phase:
+    - "All meta-recursive sub-agent management phases completed successfully"
+    - "No critical errors during meta-recursive sub-agent management process"
+    - "All existing sub-agent ecosystem management standards validated appropriately"
+    - "All meta-recursive sub-agent management assessments completed thoroughly"
+
+  post_meta_recursive_management:
+    - "Comprehensive meta-recursive sub-agent management report generated"
+    - "All meta-recursive sub-agent management findings documented with timestamps"
+    - "Sub-agent management completeness and accuracy validated"
+    - "Sub-agent management next steps provided"
+
+# Constraints and Requirements
+meta_recursive_subagent_management_constraints:
+  mandatory_requirements:
+    - "ALL meta-recursive sub-agent management MUST be comprehensive and thorough"
+    - "ALL existing sub-agent ecosystem management standards MUST be validated appropriately"
+    - "ALL meta-recursive sub-agent management findings MUST be documented with timestamps"
+    - "ALL meta-recursive sub-agent management recommendations MUST be actionable and specific"
+    - "ALL meta-recursive sub-agent management reports MUST be complete and accurate"
+    - "ALWAYS use systematic meta-recursive sub-agent management practices"
+    - "NEVER manage sub-agents that violate existing sub-agent ecosystem standards"
+
+  strictly_forbidden:
+    - "Managing sub-agents without using existing sub-agent ecosystem"
+    - "Skipping meta-recursive sub-agent management workflows"
+    - "Partial or incomplete meta-recursive sub-agent management"
+    - "Managing sub-agents with critical existing sub-agent ecosystem violations"
+    - "Creating temporary or workaround management processes"
+    - "Missing meta-recursive sub-agent management documentation"
+    - "Proceeding with failed meta-recursive sub-agent management quality gates"

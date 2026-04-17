@@ -1,0 +1,205 @@
+# === Python Quality Standards - TIER 1: CORE CHECKLIST ===
+name: "python-quality-tier1-core"
+version: "1.0.0"
+description: "Core Python quality rules - MUST/MUST NOT requirements (always loaded)"
+tier: 1
+token_target: "< 1000 tokens"
+
+# ============================================================================
+# SECTION 1: UNIVERSAL MANDATORY REQUIREMENTS
+# ============================================================================
+universal_requirements:
+  thinking_requirement:
+    rule: "MANDATORY - ALWAYS use thinking before every action"
+    description: "Before executing any action, operation, or command"
+    steps:
+      - "Analyze the request and understand what needs to be done"
+      - "Plan your approach and identify potential issues"
+      - "Consider the implications and requirements"
+      - "Only then proceed with the actual execution"
+
+  protocol_compliance:
+    rule: "MANDATORY - Execute ai-agent-compliance-prompt.md protocol first"
+    description: "Must read and execute compliance protocol before proceeding"
+
+  mcp_workflow:
+    rule: "MANDATORY - Follow MCP GOLDEN RULE workflow"
+    steps:
+      - "Load context with extended-memory"
+      - "Get latest docs with context7"
+      - "Find examples with grep"
+      - "Plan with sequential-thinking"
+      - "Execute with filesystem"
+      - "Save outcomes with extended-memory"
+
+  functionality_preservation:
+    rule: "MANDATORY - Preserve existing functionality exactly"
+    zero_tolerance:
+      - "No behavior changes"
+      - "No API signature changes"
+      - "No business logic modifications"
+
+# ============================================================================
+# SECTION 2: STRICTLY FORBIDDEN ACTIONS (ZERO TOLERANCE)
+# ============================================================================
+strictly_forbidden:
+  code_changes:
+    - "Changing business logic or algorithms"
+    - "Modifying API signatures or contracts"
+    - "Altering program behavior"
+    - "Breaking existing functionality"
+    - "Making aggressive changes without permission"
+
+  test_creation:
+    - "Creating test code during quality checks"
+    - "Creating test code during analysis"
+    - "Creating test code during refactoring"
+    - "Creating test code during review"
+
+  file_operations:
+    - "Creating duplicate files or backups"
+    - "Creating placeholder implementations"
+    - "Leaving code in transitional state"
+    - "Making incomplete transformations"
+
+  quality_shortcuts:
+    - "Skipping quality tools"
+    - "Missing issue documentation"
+    - "Incomplete metric collection"
+    - "Subjective assessments without metrics"
+    - "Proceeding without proper validation"
+
+# ============================================================================
+# SECTION 3: CORE VALIDATION CRITERIA (MUST PASS)
+# ============================================================================
+validation_criteria:
+  code_quality:
+    pep8_compliance: "MANDATORY - PEP 8 style guide compliance verified"
+    type_safety: "MANDATORY - Type annotations validated with mypy"
+    security_scanned: "MANDATORY - Security vulnerabilities checked (bandit/safety)"
+    functionality_preserved: "MANDATORY - No behavior changes"
+
+  solid_principles:
+    single_responsibility: "MANDATORY - Single Responsibility Principle assessed"
+    open_closed: "MANDATORY - Open/Closed Principle evaluated"
+    liskov_substitution: "MANDATORY - Liskov Substitution Principle checked"
+    interface_segregation: "MANDATORY - Interface Segregation Principle validated"
+    dependency_inversion: "MANDATORY - Dependency Inversion Principle verified"
+
+  code_standards:
+    dry_principle: "MANDATORY - DRY (Don't Repeat Yourself) violations identified"
+    kiss_principle: "MANDATORY - KISS (Keep It Simple) compliance verified"
+    yagni_principle: "MANDATORY - YAGNI (You Aren't Gonna Need It) assessed"
+
+  quality_metrics:
+    complexity_assessed: "MANDATORY - Cyclomatic complexity calculated"
+    tests_validated: "MANDATORY - Test coverage measured"
+    imports_organized: "MANDATORY - Import sorting verified (isort)"
+    documentation_complete: "MANDATORY - Docstrings validated (pydocstyle)"
+
+# ============================================================================
+# SECTION 4: CRITICAL CONSTRAINTS
+# ============================================================================
+constraints:
+  mandatory_actions:
+    - "ALL Python quality tools MUST be run (black, ruff, mypy, bandit, safety, radon)"
+    - "ALL fixes MUST be safe and non-breaking"
+    - "ALL functionality MUST be preserved"
+    - "ALL issues MUST be documented"
+    - "ALL changes MUST be tracked"
+    - "ALL changes MUST be reversible"
+    - "ALL changes MUST be validated"
+    - "ALL code MUST remain production-ready"
+    - "ALWAYS preserve program behavior"
+    - "ALWAYS transform in-place (refactoring only)"
+
+  forbidden_actions:
+    - "NEVER alter business logic"
+    - "NEVER break API contracts"
+    - "NEVER modify behavior logic"
+    - "NEVER create test code during quality work"
+    - "NEVER create duplicate files"
+    - "NEVER make risky changes without validation"
+    - "NEVER skip quality tools"
+    - "NEVER make incomplete transformations"
+
+# ============================================================================
+# SECTION 5: QUALITY GATES (MUST PASS ALL)
+# ============================================================================
+quality_gates:
+  style_gate:
+    - "Black formatting applied and verified"
+    - "Ruff linting passed with all rules"
+    - "PEP 8 compliance 100%"
+
+  type_gate:
+    - "Mypy strict mode passed"
+    - "Type annotation coverage adequate"
+    - "No Any types without justification"
+
+  security_gate:
+    - "Bandit scan passed (no high severity)"
+    - "Safety check passed (no known vulnerabilities)"
+    - "No hardcoded secrets detected"
+
+  complexity_gate:
+    - "Cyclomatic complexity < 15 per function"
+    - "Cognitive complexity < 20 per function"
+    - "Maintainability index > 20"
+
+  functionality_gate:
+    - "All tests pass (if tests exist)"
+    - "No behavioral changes introduced"
+    - "API contracts preserved"
+    - "Backward compatibility maintained"
+
+# ============================================================================
+# SECTION 6: ZERO-TOLERANCE VIOLATIONS
+# ============================================================================
+zero_tolerance_violations:
+  immediate_rejection:
+    - "Any functionality breakage"
+    - "Any API contract violation"
+    - "Any test code creation during quality work"
+    - "Any unsafe changes without validation"
+    - "Any skipped quality tools"
+    - "Any incomplete documentation"
+
+  automatic_rollback:
+    - "Syntax errors introduced"
+    - "Test failures introduced"
+    - "Security vulnerabilities introduced"
+    - "Performance regressions > 20%"
+
+# ============================================================================
+# SECTION 7: SAFE IMPROVEMENTS ONLY
+# ============================================================================
+safe_improvements_allowed:
+  formatting:
+    - "Black formatting (100% safe)"
+    - "Ruff auto-fixes (safe category only)"
+    - "Isort import sorting"
+    - "Trailing whitespace removal"
+
+  type_hints:
+    - "Adding obvious type annotations"
+    - "Fixing type inconsistencies"
+    - "Adding return type hints"
+
+  documentation:
+    - "Formatting docstrings"
+    - "Adding missing docstring summaries"
+    - "Fixing parameter descriptions"
+
+  imports:
+    - "Sorting imports with isort"
+    - "Removing unused imports"
+    - "Organizing import groups"
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+usage:
+  when_to_load: "ALWAYS - This tier is loaded for every Python quality task"
+  next_tier: "Load Tier 2 (python-quality-tier2-standards.yaml) for detailed workflows"
+  escalation: "Load Tier 3 (python-quality-tier3-detailed.yaml) for specific issues"

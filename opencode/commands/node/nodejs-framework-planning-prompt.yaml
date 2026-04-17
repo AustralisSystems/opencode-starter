@@ -1,0 +1,283 @@
+name: "Node.js Framework Planning"
+description: "Strategic planning for Node.js backend framework selection, architecture design, and implementation roadmap based on project requirements"
+version: "2.1.0"
+category: "planning"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Get latest framework documentation and comparisons
+    - grep # Find real-world framework implementations
+    - sequential-thinking # Structure planning approach systematically
+    - filesystem # Read project requirements and constraints
+    - memory # Track planning decisions and rationale
+    - time # Timestamp planning activities
+
+# Execution Protocol
+execution_phases:
+  1_requirements_analysis:
+    description: "Analyze project requirements and constraints"
+    tools: ["filesystem", "context7", "memory"]
+    required_actions:
+      - "Review existing project requirements and business objectives"
+      - "Get current Node.js framework landscape and comparisons"
+      - "Identify technical constraints and non-functional requirements"
+      - "Analyze team capabilities and learning curve considerations"
+    success_criteria:
+      - "Project requirements clearly documented and understood"
+      - "Technical and business constraints identified"
+      - "Team capabilities and resources assessed"
+
+  2_framework_evaluation:
+    description: "Evaluate and compare framework options against requirements"
+    tools: ["context7", "grep", "sequential-thinking"]
+    required_actions:
+      - "Research latest versions and features of major frameworks"
+      - "Find production implementations and performance benchmarks"
+      - "Compare frameworks against project requirements matrix"
+      - "Analyze ecosystem maturity and community support"
+      - "Evaluate long-term maintenance and upgrade paths"
+    success_criteria:
+      - "Framework comparison matrix completed with scoring"
+      - "Production examples analyzed for each framework"
+      - "Pros and cons documented with evidence"
+
+  3_architecture_planning:
+    description: "Design architecture and create implementation roadmap"
+    tools: ["sequential-thinking", "memory", "time"]
+    required_actions:
+      - "Design high-level architecture with chosen framework"
+      - "Plan database integration and ORM selection"
+      - "Design API structure and endpoint organization"
+      - "Create implementation phases with timelines"
+      - "Define success criteria and validation approaches"
+    success_criteria:
+      - "Complete architecture plan with framework integration"
+      - "Implementation roadmap with realistic timelines"
+      - "Success criteria and validation methods defined"
+
+# Planning Parameters
+parameters:
+  framework_options:
+    express_js:
+      version: "v5.x"
+      characteristics: ["Minimalist", "Flexible", "Large ecosystem", "Mature"]
+      use_cases: ["REST APIs", "Web applications", "Rapid prototyping"]
+      performance: "Good with proper optimization"
+
+    fastify:
+      version: "v4.x"
+      characteristics:
+        ["High performance", "Schema-based", "Plugin architecture"]
+      use_cases:
+        ["High-performance APIs", "Microservices", "JSON-heavy applications"]
+      performance: "Excellent out-of-the-box"
+
+    nestjs:
+      version: "v10+"
+      characteristics:
+        ["Enterprise-grade", "TypeScript-first", "Angular-inspired"]
+      use_cases:
+        ["Large applications", "Enterprise systems", "Complex business logic"]
+      performance: "Good with some overhead"
+
+    koa_js:
+      version: "v2.x"
+      characteristics: ["Lightweight", "Modern async/await", "Minimal core"]
+      use_cases:
+        ["Modern applications", "Custom middleware", "Performance-critical"]
+      performance: "Excellent with manual optimization"
+
+  evaluation_criteria:
+    technical_factors:
+      - "Performance and throughput capabilities"
+      - "TypeScript integration and support quality"
+      - "Testing framework compatibility and ease"
+      - "Database ORM integration options"
+      - "Security middleware availability"
+
+    business_factors:
+      - "Development speed and time to market"
+      - "Team learning curve and adoption ease"
+      - "Long-term maintenance and support"
+      - "Community size and ecosystem maturity"
+      - "Hiring and talent availability"
+
+    operational_factors:
+      - "Deployment and containerization ease"
+      - "Monitoring and observability integration"
+      - "Scaling and performance optimization"
+      - "Error handling and debugging capabilities"
+      - "Production stability and reliability"
+
+# Architecture Considerations
+architecture_planning:
+  design_patterns:
+    clean_architecture:
+      applicability: "Large, complex applications with business logic"
+      frameworks_fit: ["NestJS (excellent)", "Express (good with setup)"]
+
+    hexagonal_architecture:
+      applicability: "Applications with multiple interfaces and adapters"
+      frameworks_fit: ["NestJS (excellent)", "Fastify (good with plugins)"]
+
+    layered_architecture:
+      applicability: "Traditional web applications with clear separation"
+      frameworks_fit:
+        ["Express (excellent)", "Koa (good)", "NestJS (excellent)"]
+
+  integration_considerations:
+    database_options:
+      postgresql: "Production-ready with excellent Node.js support"
+      mongodb: "Good for rapid development and flexible schemas"
+      redis: "Essential for caching and session management"
+
+    orm_selection:
+      prisma: "Modern, type-safe, excellent developer experience"
+      drizzle: "Lightweight, performant, SQL-first approach"
+      typeorm: "Mature, feature-rich, decorator-based"
+
+# Deliverable Specifications
+deliverables:
+  document_count: 2
+  document_types:
+    - "Framework Analysis and Selection"
+    - "Architecture Design and Implementation Plan"
+
+  document_1_analysis:
+    title: "Node.js Framework Analysis and Selection"
+    contents:
+      - "Project requirements analysis and prioritization"
+      - "Framework comparison matrix with scoring"
+      - "Production implementation examples and benchmarks"
+      - "Risk assessment and mitigation strategies"
+      - "Final recommendation with detailed rationale"
+    analysis_components:
+      - "Requirements vs framework capabilities matrix"
+      - "Performance benchmarks and load testing results"
+      - "Developer experience and learning curve assessment"
+      - "Community support and ecosystem evaluation"
+      - "Total cost of ownership analysis"
+
+  document_2_architecture:
+    title: "Architecture Design and Implementation Plan"
+    contents:
+      - "High-level architecture diagram with framework integration"
+      - "Database design and ORM integration strategy"
+      - "API design patterns and endpoint organization"
+      - "Security implementation and middleware strategy"
+      - "Implementation roadmap with phases and timelines"
+    architecture_components:
+      - "Service layer design and dependency injection"
+      - "Error handling and logging strategy"
+      - "Testing strategy and framework integration"
+      - "Deployment architecture and containerization"
+      - "Monitoring and observability integration"
+
+# Decision Framework
+decision_matrix:
+  scoring_weights:
+    performance: 25
+    developer_experience: 20
+    ecosystem_maturity: 15
+    learning_curve: 15
+    long_term_viability: 15
+    business_alignment: 10
+
+  scoring_scale:
+    excellent: 5
+    good: 4
+    acceptable: 3
+    poor: 2
+    unacceptable: 1
+
+# Risk Assessment
+risk_categories:
+  technical_risks:
+    - "Framework abandonment or lack of maintenance"
+    - "Performance bottlenecks under expected load"
+    - "Integration complexity with existing systems"
+    - "Security vulnerabilities and patch availability"
+
+  business_risks:
+    - "Development timeline impacts from learning curve"
+    - "Hiring challenges for specialized framework skills"
+    - "Vendor lock-in or migration difficulties"
+    - "Community support and documentation quality"
+
+  operational_risks:
+    - "Production stability and reliability concerns"
+    - "Monitoring and debugging complexity"
+    - "Scaling and performance optimization challenges"
+    - "Deployment and infrastructure compatibility"
+
+# Implementation Roadmap Template
+roadmap_phases:
+  phase_1_foundation:
+    duration: "2-3 weeks"
+    activities:
+      - "Framework setup and basic project structure"
+      - "Database integration and ORM configuration"
+      - "Basic security middleware implementation"
+      - "Initial API endpoint development"
+    deliverables:
+      - "Working development environment"
+      - "Basic CRUD operations"
+      - "Authentication framework"
+
+  phase_2_core_features:
+    duration: "4-6 weeks"
+    activities:
+      - "Business logic implementation"
+      - "Advanced API features and validation"
+      - "Testing framework setup and initial tests"
+      - "Error handling and logging implementation"
+    deliverables:
+      - "Core functionality complete"
+      - "Comprehensive test coverage"
+      - "Production-ready error handling"
+
+  phase_3_optimization:
+    duration: "2-3 weeks"
+    activities:
+      - "Performance optimization and caching"
+      - "Security hardening and vulnerability testing"
+      - "Production deployment setup"
+      - "Monitoring and observability integration"
+    deliverables:
+      - "Performance-optimized application"
+      - "Production deployment pipeline"
+      - "Monitoring and alerting system"
+
+# Success Criteria
+success_criteria:
+  planning_completeness:
+    - "All framework options thoroughly evaluated"
+    - "Requirements mapped to framework capabilities"
+    - "Architecture design aligns with business objectives"
+    - "Implementation plan is realistic and achievable"
+
+  decision_quality:
+    - "Framework selection supported by evidence and analysis"
+    - "Risk assessment comprehensive and mitigation planned"
+    - "Timeline and resource estimates validated"
+    - "Success metrics clearly defined and measurable"
+
+  stakeholder_alignment:
+    - "Technical recommendations align with business strategy"
+    - "Resource requirements fit organizational capacity"
+    - "Timeline supports business milestones"
+    - "Risk tolerance acceptable to leadership"
+
+# Command Integration
+related_commands:
+  follow_up: "nodejs-backend-architecture-design"
+  parallel: "nodejs-gap-analysis (for existing projects)"
+  next_phase: "nodejs-backend-implementation"
+
+# Execution Context
+execution_context:
+  working_directory: "project/"
+  output_format: "markdown documents with analysis and planning documents"
+  documentation_level: "Comprehensive planning documentation"
+  validation_required: false

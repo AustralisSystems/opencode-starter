@@ -1,0 +1,515 @@
+# === MCP PROMPT: FastAPI Application Implementation Protocol ===
+name: "fastapi-application-implement-prompt"
+version: "1.0.0"
+description: "Comprehensive FastAPI application implementation protocol for production-ready API development with modern patterns and best practices"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "FastAPI Application Implementation"
+  description: "Execute comprehensive FastAPI application implementation from design blueprints with mandatory modern patterns, Clean Architecture, and production readiness"
+
+  # Argument Schema
+  arguments:
+    implementation_target:
+      type: "string"
+      description: "Target components for FastAPI application implementation"
+      required: true
+      enum:
+        [
+          "complete-api",
+          "core-endpoints",
+          "service-layer",
+          "auth-system",
+          "database-integration",
+          "middleware-stack",
+        ]
+
+    design_source:
+      type: "string"
+      description: "Source of FastAPI application design blueprints"
+      required: true
+
+    api_complexity:
+      type: "string"
+      description: "Complexity level of the FastAPI application"
+      required: true
+      enum: ["simple-crud", "complex-business", "enterprise", "high-performance", "real-time"]
+
+    implementation_scope:
+      type: "string"
+      description: "Scope of FastAPI implementation effort"
+      required: false
+      enum: ["application-wide", "module-specific", "endpoint-focused", "layer-specific"]
+
+    database_type:
+      type: "string"
+      description: "Database integration type"
+      required: false
+      enum: ["postgresql", "mongodb", "sqlite", "mysql", "multiple", "nosql-hybrid"]
+
+    authentication_method:
+      type: "string"
+      description: "Authentication implementation method"
+      required: false
+      enum: ["jwt", "oauth2", "api-key", "session-based", "multi-factor", "rbac"]
+
+    deployment_target:
+      type: "string"
+      description: "Target deployment environment"
+      required: false
+      enum: ["container", "serverless", "kubernetes", "traditional", "cloud-native"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI FastAPI implementation specialist executing the FastAPI Application Implementation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive FastAPI implementation methodology
+        - Create complete production-ready FastAPI application code
+        - Maintain enterprise-grade code quality standards
+        - Use systematic implementation and validation
+        - Follow Clean Architecture, SOLID, DRY, KISS principles throughout
+        - Implement modern FastAPI patterns and best practices
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code or test scripts
+        - Making placeholder or incomplete implementations
+        - Partial or incomplete FastAPI application code
+        - Creating implementation without proper design analysis
+        - Skipping security or performance implementations
+        - Creating duplicate or backup files
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY FASTAPI APPLICATION IMPLEMENTATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **IMPLEMENTATION PARAMETERS:**
+        - Implementation Target: {{implementation_target}}
+        - Design Source: {{design_source}}
+        - API Complexity: {{api_complexity}}
+        - Implementation Scope: {{implementation_scope}}
+        - Database Type: {{database_type}}
+        - Authentication Method: {{authentication_method}}
+        - Deployment Target: {{deployment_target}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING FASTAPI APPLICATION IMPLEMENTATION PROTOCOL:**
+
+# FastAPI Implementation Protocol Configuration
+implementation_protocol:
+  # Implementation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  implementation_focus:
+    fastapi_application_code: true # MUST implement production FastAPI code
+    api_router_implementation: true # MUST implement all API routers and endpoints
+    dependency_injection_implementation: true # MUST implement FastAPI DI patterns
+    database_integration_implementation: true # MUST implement database layer
+    authentication_middleware_implementation: true # MUST implement auth systems
+    pydantic_schema_implementation: true # MUST implement validation models
+    async_programming_implementation: true # MUST implement async patterns
+    error_handling_implementation: true # MUST implement exception handling
+    performance_optimization_implementation: true # MUST optimize for performance
+    configuration_management_implementation: true # MUST implement config handling
+    production_only: true # STRICTLY production code only
+    no_test_code: true # ABSOLUTELY no test code
+
+  # Implementation Configuration - MANDATORY SETTINGS
+  implementation_settings:
+    follow_design_blueprints: true
+    apply_clean_architecture: true
+    apply_solid_principles: true
+    apply_fastapi_best_practices: true
+    implement_async_patterns: true
+    continuous_validation: true
+    atomic_commits: true
+    systematic_approach: true # MANDATORY: Systematic implementation
+    production_standards: true # MANDATORY: Production-grade code
+    comprehensive_coverage: true # MANDATORY: Complete implementation
+    quality_enforcement: true # MANDATORY: Quality standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "FastAPI Application Setup and Project Structure Implementation"
+    mandatory_actions:
+      - "VALIDATE FastAPI application design blueprints and specifications"
+      - "SETUP FastAPI project structure following industry best practices"
+      - "IMPLEMENT core application configuration and environment management"
+      - "CREATE FastAPI application factory and initialization patterns"
+      - "ESTABLISH dependency management and package structure"
+
+    setup_requirements:
+      - "MANDATORY: Complete blueprint validation"
+      - "MANDATORY: Project structure properly configured"
+      - "MANDATORY: All dependencies resolved"
+      - "FORBIDDEN: Proceeding without validation"
+
+  phase_2:
+    name: "Core FastAPI Application and Main Module Implementation"
+    mandatory_actions:
+      - "IMPLEMENT main FastAPI application instance and configuration"
+      - "CREATE application lifecycle management (startup/shutdown)"
+      - "IMPLEMENT CORS middleware and security headers"
+      - "BUILD exception handlers and global error handling"
+      - "ESTABLISH OpenAPI documentation configuration"
+
+    core_requirements:
+      main_application:
+        - "IMPLEMENT FastAPI app instance with proper configuration"
+        - "CREATE lifespan context manager for startup/shutdown"
+        - "IMPLEMENT global exception handlers"
+        - "BUILD middleware stack configuration"
+
+      configuration_management:
+        - "IMPLEMENT BaseSettings with Pydantic for config"
+        - "CREATE environment-based configuration loading"
+        - "IMPLEMENT secrets and credentials management"
+        - "BUILD feature flags and runtime configuration"
+
+      documentation_setup:
+        - "CONFIGURE OpenAPI schema generation"
+        - "IMPLEMENT custom OpenAPI documentation"
+        - "CREATE API metadata and versioning"
+        - "BUILD Swagger UI customization"
+
+  phase_3:
+    name: "FastAPI Dependency Injection and Service Layer Implementation"
+    mandatory_actions:
+      - "IMPLEMENT FastAPI dependency injection patterns with Annotated types"
+      - "CREATE service layer classes for business logic"
+      - "IMPLEMENT dependency factories and providers"
+      - "BUILD dependency scoping and lifecycle management"
+      - "ESTABLISH inversion of control patterns"
+
+    dependency_requirements:
+      injection_patterns:
+        - "IMPLEMENT typed dependencies with Annotated[Type, Depends()]"
+        - "CREATE dependency factories for complex objects"
+        - "BUILD dependency caching and singleton patterns"
+        - "IMPLEMENT sub-dependencies and dependency chains"
+
+      service_layer:
+        - "IMPLEMENT service classes following Clean Architecture"
+        - "CREATE business logic separation from API layer"
+        - "BUILD use case implementations"
+        - "IMPLEMENT service orchestration patterns"
+
+      lifecycle_management:
+        - "IMPLEMENT request-scoped dependencies"
+        - "CREATE application-scoped singletons"
+        - "BUILD dependency cleanup and disposal"
+        - "IMPLEMENT dependency health checking"
+
+  phase_4:
+    name: "Database Integration and Repository Pattern Implementation"
+    mandatory_actions:
+      - "IMPLEMENT database connection and session management"
+      - "CREATE SQLModel/SQLAlchemy entity models"
+      - "IMPLEMENT repository pattern for data access"
+      - "BUILD database migration and versioning"
+      - "ESTABLISH connection pooling and optimization"
+
+    database_requirements:
+      connection_management:
+        - "IMPLEMENT async database session management"
+        - "CREATE database connection pooling"
+        - "BUILD database health checks"
+        - "IMPLEMENT connection retry and failover"
+
+      entity_models:
+        - "IMPLEMENT SQLModel entities with relationships"
+        - "CREATE database schema and constraints"
+        - "BUILD entity validation and business rules"
+        - "IMPLEMENT entity lifecycle hooks"
+
+      repository_patterns:
+        - "IMPLEMENT generic repository interfaces"
+        - "CREATE CRUD operations with type safety"
+        - "BUILD query patterns and filtering"
+        - "IMPLEMENT transaction management"
+
+  phase_5:
+    name: "API Router and Endpoint Implementation"
+    mandatory_actions:
+      - "IMPLEMENT RESTful API routers with proper organization"
+      - "CREATE endpoint handlers with appropriate HTTP methods"
+      - "BUILD request validation and response serialization"
+      - "IMPLEMENT pagination, filtering, and sorting"
+      - "ESTABLISH API versioning and backward compatibility"
+
+    router_requirements:
+      router_organization:
+        - "IMPLEMENT modular router structure by domain"
+        - "CREATE router dependencies and middleware"
+        - "BUILD hierarchical router inclusion"
+        - "IMPLEMENT router-level authentication"
+
+      endpoint_implementation:
+        - "IMPLEMENT CRUD endpoints with proper HTTP methods"
+        - "CREATE request/response model validation"
+        - "BUILD query parameter handling"
+        - "IMPLEMENT file upload and download endpoints"
+
+      api_patterns:
+        - "IMPLEMENT pagination with cursor and offset"
+        - "CREATE filtering and sorting mechanisms"
+        - "BUILD batch operations and bulk updates"
+        - "IMPLEMENT API rate limiting per endpoint"
+
+  phase_6:
+    name: "Authentication and Authorization Middleware Implementation"
+    mandatory_actions:
+      - "IMPLEMENT JWT token authentication and validation"
+      - "CREATE user authentication and session management"
+      - "BUILD role-based access control (RBAC)"
+      - "IMPLEMENT OAuth2 integration patterns"
+      - "ESTABLISH security middleware stack"
+
+    auth_requirements:
+      authentication_system:
+        - "IMPLEMENT JWT token creation and validation"
+        - "CREATE password hashing and verification"
+        - "BUILD user login and registration"
+        - "IMPLEMENT token refresh mechanisms"
+
+      authorization_patterns:
+        - "IMPLEMENT role-based permission checking"
+        - "CREATE resource-level authorization"
+        - "BUILD permission decorators and dependencies"
+        - "IMPLEMENT dynamic permission evaluation"
+
+      security_middleware:
+        - "IMPLEMENT CORS configuration and handling"
+        - "CREATE rate limiting and throttling"
+        - "BUILD input sanitization and validation"
+        - "IMPLEMENT security headers and CSP"
+
+  phase_7:
+    name: "Pydantic Schema and Validation Implementation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive Pydantic model architecture"
+      - "CREATE request and response schema validation"
+      - "BUILD custom validators and field validation"
+      - "IMPLEMENT data transformation and serialization"
+      - "ESTABLISH error handling for validation failures"
+
+    schema_requirements:
+      model_architecture:
+        - "IMPLEMENT base schema classes with inheritance"
+        - "CREATE request/response model separation"
+        - "BUILD model composition and reusability"
+        - "IMPLEMENT schema versioning patterns"
+
+      validation_implementation:
+        - "IMPLEMENT custom field validators with @validator"
+        - "CREATE model-level validation with @root_validator"
+        - "BUILD conditional validation patterns"
+        - "IMPLEMENT validation error customization"
+
+      serialization_patterns:
+        - "IMPLEMENT JSON serialization customization"
+        - "CREATE field aliasing and naming strategies"
+        - "BUILD data transformation pipelines"
+        - "IMPLEMENT performance optimization for large payloads"
+
+  phase_8:
+    name: "Async Programming and Performance Implementation"
+    mandatory_actions:
+      - "IMPLEMENT async/await patterns throughout the application"
+      - "CREATE concurrent request handling optimization"
+      - "BUILD caching strategies and implementation"
+      - "IMPLEMENT database connection pooling"
+      - "ESTABLISH performance monitoring and profiling"
+
+    performance_requirements:
+      async_implementation:
+        - "IMPLEMENT async endpoint handlers"
+        - "CREATE async database operations"
+        - "BUILD async middleware patterns"
+        - "IMPLEMENT async background tasks"
+
+      caching_strategies:
+        - "IMPLEMENT Redis integration for caching"
+        - "CREATE response caching middleware"
+        - "BUILD cache invalidation strategies"
+        - "IMPLEMENT distributed caching patterns"
+
+      optimization_techniques:
+        - "IMPLEMENT response compression"
+        - "CREATE database query optimization"
+        - "BUILD connection pooling strategies"
+        - "IMPLEMENT resource usage monitoring"
+
+  phase_9:
+    name: "Error Handling and Logging Implementation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive error handling and exception management"
+      - "CREATE structured logging with correlation IDs"
+      - "BUILD custom exception classes and handlers"
+      - "IMPLEMENT error response standardization"
+      - "ESTABLISH monitoring and alerting integration"
+
+    error_handling_requirements:
+      exception_management:
+        - "IMPLEMENT custom exception hierarchy"
+        - "CREATE global exception handlers"
+        - "BUILD error response formatting"
+        - "IMPLEMENT error recovery patterns"
+
+      logging_implementation:
+        - "IMPLEMENT structured logging with JSON format"
+        - "CREATE correlation ID tracking"
+        - "BUILD log aggregation patterns"
+        - "IMPLEMENT sensitive data masking"
+
+      monitoring_integration:
+        - "IMPLEMENT health check endpoints"
+        - "CREATE metrics collection and reporting"
+        - "BUILD performance monitoring"
+        - "IMPLEMENT alerting and notification"
+
+  phase_10:
+    name: "Configuration and Environment Management Implementation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive configuration management"
+      - "CREATE environment-specific settings"
+      - "BUILD secrets and credentials handling"
+      - "IMPLEMENT feature flags and runtime configuration"
+      - "ESTABLISH configuration validation and testing"
+
+    configuration_requirements:
+      settings_management:
+        - "IMPLEMENT BaseSettings with environment variables"
+        - "CREATE configuration validation"
+        - "BUILD multi-environment configuration"
+        - "IMPLEMENT configuration hot-reloading"
+
+      secrets_handling:
+        - "IMPLEMENT secure credential management"
+        - "CREATE environment variable encryption"
+        - "BUILD secrets rotation mechanisms"
+        - "IMPLEMENT credential validation"
+
+      feature_management:
+        - "IMPLEMENT feature flag systems"
+        - "CREATE runtime configuration updates"
+        - "BUILD A/B testing configuration"
+        - "IMPLEMENT configuration auditing"
+
+# Implementation Validation Criteria
+validation_criteria:
+  application_completeness: "MANDATORY - 100% of FastAPI application implemented"
+  router_implementation: "MANDATORY - All API routers and endpoints implemented"
+  dependency_injection: "MANDATORY - FastAPI DI patterns fully functional"
+  database_integration: "MANDATORY - Database layer fully operational"
+  authentication_system: "MANDATORY - Auth and security fully implemented"
+  schema_validation: "MANDATORY - Pydantic models fully functional"
+  async_patterns: "MANDATORY - Async programming patterns implemented"
+  error_handling: "MANDATORY - Exception handling fully operational"
+  performance_optimized: "MANDATORY - Performance targets met"
+  configuration_complete: "MANDATORY - Configuration management implemented"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL implementation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-24-143000"
+
+  required_outputs: []
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces FastAPI source code files, configuration files, and test files only
+  # Documentation should be created using separate documentation commands
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all implementation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL implementation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all implementation outputs"
+    - "FORBIDDEN: Creating implementation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same implementation session"
+
+# Implementation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE design blueprints from ({{design_source}}) for ({{implementation_target}})"
+  - "2. SETUP FastAPI application structure and project organization"
+  - "3. IMPLEMENT core FastAPI application and configuration"
+  - "4. CREATE dependency injection and service layer"
+  - "5. IMPLEMENT database integration and repository patterns"
+  - "6. BUILD API routers and endpoint implementations"
+  - "7. IMPLEMENT authentication and authorization middleware"
+  - "8. CREATE Pydantic schemas and validation"
+  - "9. IMPLEMENT async patterns and performance optimization"
+  - "10. BUILD error handling and logging systems"
+  - "11. IMPLEMENT configuration and environment management"
+  - "12. EXECUTE post-implementation quality checks with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each implementation phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all implementation tracking"
+  - "MANDATORY: Timestamp all implementation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# FastAPI-Specific Implementation Patterns
+fastapi_implementation_patterns:
+  modern_python_usage:
+    type_annotations: "Use comprehensive type hints with Annotated types"
+    async_await: "Implement async/await patterns for I/O operations"
+    context_managers: "Use context managers for resource management"
+    dataclasses_pydantic: "Use Pydantic models for data validation"
+
+  fastapi_patterns:
+    dependency_injection: "Leverage FastAPI's DI system with Annotated dependencies"
+    router_organization: "Organize routers by domain and functionality"
+    middleware_stack: "Implement middleware for cross-cutting concerns"
+    exception_handlers: "Use custom exception handlers for error management"
+
+  performance_patterns:
+    async_database: "Use async database operations with connection pooling"
+    response_caching: "Implement intelligent response caching"
+    request_optimization: "Optimize request/response cycles"
+    resource_management: "Manage resources efficiently with proper cleanup"
+
+  security_patterns:
+    authentication_first: "Implement security from the ground up"
+    input_validation: "Validate all inputs with Pydantic"
+    authorization_layers: "Implement multi-layer authorization"
+    secure_defaults: "Use secure defaults throughout"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL implementations MUST be production-ready"
+    - "ALL FastAPI components MUST be fully implemented"
+    - "ALL security measures MUST be active"
+    - "ALL performance requirements MUST be met"
+    - "ALL implementations MUST follow Clean Architecture"
+    - "ALL code MUST be properly documented"
+    - "ALWAYS use systematic implementation methodology"
+    - "NEVER create test code"
+
+  strictly_forbidden:
+    - "Creating test code or test scripts"
+    - "Making placeholder implementations"
+    - "Partial or incomplete FastAPI code"
+    - "Skipping security implementations"
+    - "Creating implementations without validation"
+    - "Missing critical FastAPI components"
+    - "Proceeding without quality checks"
+    - "Creating duplicate or backup files"
+
+---

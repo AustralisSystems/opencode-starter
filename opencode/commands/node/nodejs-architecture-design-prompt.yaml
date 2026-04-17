@@ -1,0 +1,163 @@
+name: "nodejs-backend-architecture-design-prompt"
+description: "Design comprehensive Node.js backend architecture and system specifications"
+version: "1.0.0"
+created: "2025-09-25"
+updated: "2025-09-25"
+
+# MCP Protocol Configuration
+mcp_protocol:
+  required_tools:
+    - "context7" # Research current architecture patterns
+    - "grep" # Find production examples
+    - "sequential-thinking" # Structure design decisions
+    - "memory" # Track design decisions
+    - "time" # Generate timestamps
+
+execution_phases:
+  1_context_loading:
+    description: "Load architectural context and requirements"
+    required: true
+    tools: ["memory"]
+
+  2_research_phase:
+    description: "Research current backend architecture patterns"
+    required: true
+    tools: ["context7", "grep"]
+    research_topics:
+      - "Node.js backend architecture patterns 2024"
+      - "Express vs Fastify vs NestJS performance comparison"
+      - "Database integration patterns Node.js"
+      - "Microservices communication patterns"
+
+  3_design_phase:
+    description: "Create comprehensive backend architecture design"
+    required: true
+    tools: ["sequential-thinking"]
+    deliverables:
+      - "System architecture diagrams"
+      - "Component interaction specifications"
+      - "Database schema design"
+      - "API endpoint architecture"
+
+  4_validation_phase:
+    description: "Validate architecture against requirements"
+    required: true
+    tools: ["memory"]
+
+# Input Parameters
+parameters:
+  design_scope:
+    type: "string"
+    required: true
+    options: ["api-service", "microservice", "monolith", "data-processor"]
+    description: "Scope of the backend system to design"
+
+  framework:
+    type: "string"
+    required: true
+    options: ["express", "fastify", "nestjs", "koa"]
+    description: "Primary backend framework"
+
+  architecture_pattern:
+    type: "string"
+    required: true
+    options: ["clean-architecture", "hexagonal", "layered", "event-driven"]
+    description: "Architectural pattern to implement"
+
+  complexity_level:
+    type: "string"
+    required: false
+    default: "moderate"
+    options: ["simple", "moderate", "complex", "enterprise"]
+    description: "System complexity level"
+
+  database_type:
+    type: "string"
+    required: false
+    default: "postgresql"
+    options: ["postgresql", "mongodb", "redis", "multi-database"]
+    description: "Primary database technology"
+
+  auth_requirements:
+    type: "string"
+    required: false
+    default: "jwt"
+    options: ["jwt", "session", "oauth2", "rbac"]
+    description: "Authentication requirements"
+
+  api_type:
+    type: "string"
+    required: false
+    default: "rest"
+    options: ["rest", "graphql", "grpc", "hybrid"]
+    description: "API architecture type"
+
+# Success Criteria
+success_criteria:
+  completeness_score: 90
+  technical_accuracy: 95
+  industry_compliance: 85
+  scalability_consideration: 90
+
+# Output Requirements
+deliverables:
+  jupyter_documents:
+    max_count: 3
+    required_documents:
+      1:
+        name: "./project/docs/node-development/architecture/Backend_Architecture_Design_{{YYYY-MM-DD-HHMMSS}}.ipynb"
+        sections:
+          - "System Overview and Requirements"
+          - "Framework Selection Rationale"
+          - "Component Architecture Specification"
+          - "Database Integration Design"
+          - "Security Architecture"
+          - "Performance Considerations"
+
+      2:
+        name: "./project/docs/node-development/architecture/API_Database_Integration_Design_{{YYYY-MM-DD-HHMMSS}}.ipynb"
+        sections:
+          - "API Endpoint Architecture"
+          - "Database Schema Design"
+          - "Data Access Layer Patterns"
+          - "Authentication/Authorization Design"
+          - "Input Validation Strategies"
+
+      3:
+        name: "./project/docs/node-development/architecture/Performance_Scalability_Design_{{YYYY-MM-DD-HHMMSS}}.ipynb"
+        condition: "complexity_level in ['complex', 'enterprise']"
+        sections:
+          - "Performance Optimization Strategies"
+          - "Caching Architecture"
+          - "Load Balancing Design"
+          - "Monitoring and Observability"
+          - "Scalability Patterns"
+
+# Validation Rules
+validation:
+  forbidden_content:
+    - "frontend frameworks (Next.js, Vite, React)"
+    - "implementation code"
+    - "test specifications"
+
+  required_content:
+    - "backend architecture diagrams"
+    - "database integration patterns"
+    - "security design specifications"
+    - "performance considerations"
+
+# Post-Execution Recommendations
+next_commands:
+  primary: "/nodejs-backend-implementation"
+  parameters:
+    framework: "{{framework}}"
+    implementation_target: "{{design_scope}}"
+    database_integration: "{{database_type}}"
+    auth_method: "{{auth_requirements}}"
+    api_type: "{{api_type}}"
+
+  alternatives:
+    - command: "/nodejs-backend-gap-analysis"
+      when: "existing system needs assessment"
+    - command: "/nodejs-backend-planning"
+      when: "implementation roadmap needed"

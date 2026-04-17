@@ -1,0 +1,544 @@
+# === MCP PROMPT: Python Code Analysis Protocol ===
+name: "python-code-analysis-prompt"
+version: "1.0.0"
+description: "Comprehensive Python codebase structure and architecture analysis protocol for understanding code organization, dependencies, and complexity"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Code Analysis"
+  description: "Execute comprehensive Python code structure analysis, module organization assessment, dependency mapping, and complexity evaluation with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to analyze"
+      required: true
+
+    analysis_scope:
+      type: "string"
+      description: "Scope of Python code analysis to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "module-focused",
+          "class-focused",
+          "function-focused",
+          "architecture-focused",
+          "dependency-focused",
+        ]
+
+    python_version:
+      type: "string"
+      description: "Python version for compatibility analysis"
+      required: true
+      enum: ["3.8", "3.9", "3.10", "3.11", "3.12"]
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of analysis to perform"
+      required: false
+      enum: ["surface", "detailed", "comprehensive", "enterprise"]
+
+    type_checking:
+      type: "string"
+      description: "Type annotation and type safety analysis level"
+      required: false
+      enum: ["basic", "strict", "comprehensive"]
+
+    async_analysis:
+      type: "string"
+      description: "Async/await and concurrency pattern analysis"
+      required: false
+      enum: ["enabled", "disabled"]
+
+    complexity_threshold:
+      type: "integer"
+      description: "Maximum acceptable cyclomatic complexity"
+      required: false
+      enum: [10, 15, 20, 25]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are a Python code analysis specialist executing the Python Code Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive Python code structure analysis methodology
+        - Analyze module organization and package structure
+        - Map import dependencies and detect circular imports
+        - Evaluate class hierarchies and inheritance patterns
+        - Assess function complexity and method organization
+        - Analyze type annotations and type safety
+        - Identify Pythonic patterns and idioms
+        - Generate actionable structure improvement recommendations
+
+        ABSOLUTELY FORBIDDEN:
+        - Superficial or incomplete quality analysis
+        - Missing critical quality issues or anti-patterns
+        - Analysis without proper industry standard compliance
+        - Skipping SOLID principles or design pattern analysis
+        - Incomplete security or performance assessment
+        - Creating analysis without proper validation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE QUALITY ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Codebase Path: {{codebase_path}}
+        - Analysis Scope: {{analysis_scope}}
+        - Python Version: {{python_version}}
+        - Analysis Depth: {{analysis_depth}}
+        - Type Checking: {{type_checking}}
+        - Async Analysis: {{async_analysis}}
+        - Complexity Threshold: {{complexity_threshold}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PYTHON CODE ANALYSIS PROTOCOL:**
+
+# Python Code Analysis Protocol Configuration
+analysis_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    module_structure_analysis: true # MUST analyze module and package organization
+    import_dependency_mapping: true # MUST map all import dependencies
+    class_hierarchy_analysis: true # MUST analyze OOP structure and inheritance
+    function_complexity_assessment: true # MUST evaluate function/method complexity
+    type_annotation_coverage: true # MUST assess type hints and type safety
+    async_pattern_analysis: true # MUST analyze async/await usage
+    resource_management_patterns: true # MUST evaluate context managers and cleanup
+    exception_handling_analysis: true # MUST assess error handling patterns
+    pythonic_idiom_evaluation: true # MUST evaluate Python best practices
+    analysis_only: true # STRICTLY analysis only, no code modification
+
+  # Analysis Configuration - MANDATORY SETTINGS
+  analysis_settings:
+    enable_comprehensive_assessment: true
+    perform_solid_analysis: true
+    analyze_design_patterns: true
+    detect_anti_patterns: true
+    assess_security_practices: true
+    evaluate_performance: true
+    calculate_quality_metrics: true
+    generate_improvement_recommendations: true
+    systematic_approach: true # MANDATORY: Systematic analysis methodology
+    follow_principles: true # MANDATORY: Industry standards and best practices
+    comprehensive_coverage: true # MANDATORY: Cover all analysis aspects
+    production_ready_analysis: true # MANDATORY: Production-focused analysis
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Python Module Structure and Package Discovery"
+    mandatory_actions:
+      - "SCAN entire Python codebase directory structure"
+      - "INVENTORY all .py files, packages, and __init__.py structures"
+      - "MAP entry points, __main__.py, and setup.py configurations"
+      - "CATALOG installed packages and requirements.txt dependencies"
+      - "DOCUMENT package hierarchy and namespace organization"
+
+    inventory_requirements:
+      - "MANDATORY: Complete codebase file inventory"
+      - "MANDATORY: Identify all executable scripts and applications"
+      - "MANDATORY: Map all service dependencies and interfaces"
+      - "FORBIDDEN: Incomplete or partial codebase discovery"
+
+  phase_2:
+    name: "Import Dependencies and Circular Import Analysis"
+    mandatory_actions:
+      - "ANALYZE Single Responsibility Principle compliance"
+      - "ASSESS Open/Closed Principle implementation"
+      - "EVALUATE Liskov Substitution Principle adherence"
+      - "REVIEW Interface Segregation Principle usage"
+      - "EXAMINE Dependency Inversion Principle patterns"
+
+    import_analysis_framework:
+      dependency_mapping:
+        - "MAP all import statements (import, from...import)"
+        - "CATEGORIZE imports (standard library, third-party, local)"
+        - "BUILD dependency graph of module relationships"
+        - "IDENTIFY import cycles and circular dependencies"
+
+      import_patterns:
+        - "ANALYZE relative vs absolute imports"
+        - "CHECK for star imports (from module import *)"
+        - "EVALUATE lazy imports and conditional imports"
+        - "REVIEW import organization and grouping"
+
+      dependency_issues:
+        - "DETECT circular import patterns"
+        - "IDENTIFY missing dependencies"
+        - "CHECK for unused imports"
+        - "ANALYZE import complexity and depth"
+
+      interface_segregation:
+        - "CHECK interface granularity and client dependencies"
+        - "IDENTIFY fat interfaces and unnecessary dependencies"
+        - "REVIEW client-specific interface requirements"
+        - "SUGGEST interface splitting and optimization"
+
+      dependency_inversion:
+        - "MAP concrete dependencies and abstraction usage"
+        - "CHECK dependency injection patterns and implementations"
+        - "IDENTIFY tight coupling and abstraction violations"
+        - "REVIEW inversion of control implementations"
+
+  phase_3:
+    name: "Class Structure and OOP Analysis"
+    mandatory_actions:
+      - "IDENTIFY creational pattern implementations and usage"
+      - "ANALYZE structural pattern applications and effectiveness"
+      - "EVALUATE behavioral pattern implementations and benefits"
+      - "ASSESS pattern combination and interaction effectiveness"
+      - "REVIEW pattern appropriateness and implementation quality"
+
+    class_analysis_framework:
+      class_structure:
+        - "ANALYZE class definitions and inheritance chains"
+        - "EVALUATE use of ABC (Abstract Base Classes)"
+        - "CHECK for multiple inheritance and MRO issues"
+        - "ASSESS class cohesion and responsibility"
+
+      method_analysis:
+        - "COUNT methods per class (instance, class, static)"
+        - "EVALUATE method complexity and length"
+        - "CHECK for property decorators and descriptors"
+        - "ANALYZE magic methods (__init__, __str__, etc.)"
+
+      pythonic_oop:
+        - "EVALUATE dataclass usage and attrs"
+        - "CHECK for proper use of @property"
+        - "ANALYZE Protocol and typing patterns"
+        - "ASSESS metaclass usage and class decorators"
+
+  phase_4:
+    name: "Function Complexity and Method Organization"
+    mandatory_actions:
+      - "DETECT code smells and maintainability issues"
+      - "IDENTIFY design anti-patterns and violations"
+      - "ANALYZE language-specific anti-patterns and bad practices"
+      - "ASSESS architectural anti-patterns and system design issues"
+      - "EVALUATE performance anti-patterns and optimization opportunities"
+
+    complexity_analysis:
+      function_metrics:
+        - "CALCULATE cyclomatic complexity per function"
+        - "MEASURE cognitive complexity scores"
+        - "COUNT lines of code per function"
+        - "EVALUATE nesting depth and branching"
+
+      function_organization:
+        - "ASSESS function parameter counts"
+        - "CHECK for default mutable arguments"
+        - "EVALUATE function naming conventions"
+        - "ANALYZE return type consistency"
+        - "IDENTIFY side effects and pure functions"
+
+      architectural_anti_patterns:
+        - "Circular dependencies and tight coupling"
+        - "Monolithic architecture violations"
+        - "Layer violations and architectural boundaries"
+        - "Database as IPC and shared database issues"
+
+  phase_5:
+    name: "Type Annotation and Type Safety Analysis"
+    mandatory_actions:
+      - "ANALYZE input validation and sanitization practices"
+      - "ASSESS authentication and authorization implementations"
+      - "EVALUATE cryptography usage and key management"
+      - "REVIEW error handling and information disclosure"
+      - "EXAMINE secure coding practices and vulnerability prevention"
+
+    type_analysis_framework:
+      annotation_coverage:
+        - "MEASURE percentage of functions with type hints"
+        - "COUNT parameters with type annotations"
+        - "EVALUATE return type annotations"
+        - "ASSESS variable type annotations"
+
+      type_patterns:
+        - "ANALYZE use of typing module features"
+        - "CHECK for Generic types and TypeVars"
+        - "EVALUATE Protocol and TypedDict usage"
+        - "ASSESS Union and Optional patterns"
+
+      type_safety:
+        - "RUN mypy type checking analysis"
+        - "IDENTIFY type inconsistencies"
+        - "CHECK for Any type usage"
+        - "EVALUATE type narrowing and guards"
+
+  phase_6:
+    name: "Async/Await and Concurrency Pattern Analysis"
+    mandatory_actions:
+      - "ANALYZE resource management and memory usage patterns"
+      - "ASSESS algorithmic efficiency and complexity"
+      - "EVALUATE caching strategies and data access patterns"
+      - "REVIEW concurrency and parallelism implementations"
+      - "IDENTIFY performance bottlenecks and optimization opportunities"
+
+    async_analysis_framework:
+      async_patterns:
+        - "IDENTIFY async/await function usage"
+        - "ANALYZE asyncio event loop patterns"
+        - "CHECK for proper async context managers"
+        - "EVALUATE async generator usage"
+
+      concurrency_patterns:
+        - "ASSESS threading vs multiprocessing usage"
+        - "CHECK for thread safety and locks"
+        - "EVALUATE concurrent.futures patterns"
+        - "ANALYZE queue and synchronization usage"
+
+      concurrency_patterns:
+        - "Thread safety and synchronization mechanisms"
+        - "Async/await patterns and promise handling"
+        - "Parallel processing and load distribution"
+        - "Deadlock prevention and race condition analysis"
+
+  phase_7:
+    name: "Resource Management and Exception Handling"
+    mandatory_actions:
+      - "EVALUATE naming conventions and code readability"
+      - "ASSESS function quality and parameter management"
+      - "ANALYZE code organization and modular structure"
+      - "REVIEW documentation quality and code comments"
+      - "CALCULATE maintainability metrics and technical debt"
+
+    resource_management:
+      context_managers:
+        - "IDENTIFY with statement usage"
+        - "CHECK for proper file handling"
+        - "EVALUATE custom context managers"
+        - "ASSESS resource cleanup patterns"
+
+      exception_patterns:
+        - "ANALYZE try/except/finally blocks"
+        - "CHECK for bare except clauses"
+        - "EVALUATE custom exception classes"
+        - "ASSESS error propagation patterns"
+
+      code_organization:
+        - "Module cohesion and logical grouping"
+        - "Dependency organization and import management"
+        - "File structure standards and directory organization"
+        - "Package and namespace design principles"
+
+  phase_8:
+    name: "Python Best Practices and Idiom Assessment"
+    mandatory_actions:
+      - "CALCULATE comprehensive quality metrics and scores"
+      - "GENERATE maintainability index and complexity measurements"
+      - "ASSESS technical debt and improvement potential"
+      - "CREATE quality dashboards and trend analysis"
+      - "ESTABLISH baseline measurements for tracking progress"
+
+    pythonic_assessment:
+      idiom_usage:
+        - "CHECK for list/dict/set comprehensions"
+        - "EVALUATE generator expressions"
+        - "ASSESS enumerate and zip usage"
+        - "ANALYZE f-string formatting"
+        - "CHECK for walrus operator usage (3.8+)"
+
+      best_practices:
+        - "EVALUATE PEP 8 compliance"
+        - "CHECK for proper use of __all__"
+        - "ASSESS docstring conventions (PEP 257)"
+        - "ANALYZE naming conventions (PEP 8)"
+        - "EVALUATE use of type hints (PEP 484)"
+
+  phase_9:
+    name: "Documentation and Reporting Generation"
+    mandatory_actions:
+      - "GENERATE comprehensive quality analysis documentation"
+      - "CREATE executive summary with key findings"
+      - "COMPILE detailed technical reports and recommendations"
+      - "DOCUMENT improvement roadmap and action items"
+      - "PREPARE visual analysis and metric dashboards"
+
+    documentation_requirements:
+      - "MANDATORY: Create all analysis deliverables in markdown document format"
+      - "MANDATORY: Include comprehensive quality assessment and scoring"
+      - "MANDATORY: Document all SOLID violations and design pattern opportunities"
+      - "MANDATORY: Provide clear improvement recommendations and action plans"
+      - "FORBIDDEN: Incomplete or partial quality analysis documentation"
+
+  phase_10:
+    name: "Validation and Quality Assurance"
+    mandatory_actions:
+      - "VALIDATE analysis completeness and accuracy"
+      - "VERIFY all quality frameworks properly applied"
+      - "CONFIRM improvement recommendations are actionable"
+      - "REVIEW documentation quality and completeness"
+      - "PREPARE handoff documentation for improvement teams"
+
+    validation_criteria:
+      - "MANDATORY: All SOLID principles analyzed for every component"
+      - "MANDATORY: Comprehensive design pattern analysis completed"
+      - "MANDATORY: All anti-patterns and code smells detected"
+      - "MANDATORY: Security and performance assessment comprehensive"
+      - "FORBIDDEN: Missing critical quality issues or incomplete analysis"
+
+# Analysis Validation Criteria
+validation_criteria:
+  codebase_inventory: "MANDATORY - Complete codebase discovery and component mapping"
+  solid_analysis: "MANDATORY - Comprehensive SOLID principles compliance assessment"
+  pattern_assessment: "MANDATORY - Design patterns analysis and effectiveness evaluation"
+  anti_pattern_detection: "MANDATORY - Code smells and anti-patterns identification"
+  security_analysis: "MANDATORY - Security best practices and vulnerability assessment"
+  performance_assessment: "MANDATORY - Performance patterns and optimization analysis"
+  clean_code_evaluation: "MANDATORY - Clean code principles and maintainability metrics"
+  quality_metrics: "MANDATORY - Quality scoring and measurement calculations"
+  documentation_quality: "MANDATORY - All deliverables created and validated"
+  validation_completeness: "MANDATORY - Complete analysis validation performed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-085549"
+
+  required_outputs:
+    - "Analysis_Report_{{YYYYMMDD-HHMMSS}}.ipynb (analysis report)"
+    - "Findings_Recommendations_{{YYYYMMDD-HHMMSS}}.ipynb (findings recommendations)"
+    - "Action_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (action plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. SCAN codebase {{codebase_path}} and inventory all components"
+  - "2. ANALYZE SOLID principles compliance across all modules"
+  - "3. ASSESS design patterns usage and implementation quality"
+  - "4. DETECT anti-patterns and code smells systematically"
+  - "5. ANALYZE security best practices and vulnerability assessment"
+  - "6. EVALUATE performance patterns and optimization opportunities"
+  - "7. ASSESS clean code principles and maintainability metrics"
+  - "8. CALCULATE comprehensive quality metrics and scoring"
+  - "9. GENERATE comprehensive analysis documentation with timestamps"
+  - "10. VALIDATE analysis completeness and prepare recommendations"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all analysis tracking"
+  - "MANDATORY: Timestamp all analysis deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Quality Analysis Framework
+quality_analysis_framework:
+  solid_principles:
+    single_responsibility:
+      - "One reason to change per class/module"
+      - "High cohesion and focused functionality"
+      - "Clear separation of concerns"
+      - "Minimal responsibility overlap"
+
+    open_closed:
+      - "Open for extension, closed for modification"
+      - "Use of abstractions and interfaces"
+      - "Plugin and strategy pattern implementations"
+      - "Configuration-driven behavior"
+
+    liskov_substitution:
+      - "Derived classes substitutable for base classes"
+      - "Contract compliance in inheritance"
+      - "Behavioral consistency maintenance"
+      - "Interface contract preservation"
+
+    interface_segregation:
+      - "Client-specific interfaces"
+      - "No forced dependency on unused methods"
+      - "Role-based interface design"
+      - "Minimal interface surface area"
+
+    dependency_inversion:
+      - "Depend on abstractions, not concretions"
+      - "Inversion of control implementation"
+      - "Dependency injection usage"
+      - "Loose coupling through abstractions"
+
+# Design Patterns Assessment Framework
+design_patterns_framework:
+  creational_patterns:
+    assessment_criteria:
+      - "Appropriate pattern selection for object creation"
+      - "Proper implementation without over-engineering"
+      - "Thread safety and performance considerations"
+      - "Flexibility and extensibility benefits"
+
+  structural_patterns:
+    assessment_criteria:
+      - "Effective composition and object relationships"
+      - "Interface adaptation and compatibility"
+      - "Complexity hiding and simplification"
+      - "Maintainability and modularity improvements"
+
+  behavioral_patterns:
+    assessment_criteria:
+      - "Clear algorithm and responsibility separation"
+      - "Effective communication between objects"
+      - "Flexibility in behavior assignment"
+      - "Maintainable and extensible interactions"
+
+# Quality Scoring Framework
+quality_scoring_framework:
+  scoring_weights:
+    solid_compliance: 20
+    pattern_usage: 15
+    anti_pattern_absence: 20
+    clean_code: 15
+    security_practices: 15
+    performance_patterns: 10
+    maintainability: 5
+
+  severity_classification:
+    critical: "Security vulnerabilities, data loss risks, compilation failures"
+    high: "Major SOLID violations, significant anti-patterns"
+    medium: "Code smells, minor pattern issues, maintainability concerns"
+    low: "Style inconsistencies, optimization opportunities"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL Python modules MUST be analyzed for structure and organization"
+    - "ALL import dependencies MUST be mapped and analyzed"
+    - "ALL class hierarchies MUST be evaluated"
+    - "ALL function complexity MUST be calculated"
+    - "ALL type annotations MUST be assessed"
+    - "ALL Python best practices MUST be evaluated"
+    - "ALWAYS use Python-specific analysis tools and metrics"
+    - "NEVER skip critical Python structure assessment areas"
+
+  strictly_forbidden:
+    - "Superficial or incomplete quality analysis"
+    - "Missing critical quality issues or anti-patterns"
+    - "Analysis without proper industry standard compliance"
+    - "Skipping SOLID principles or design pattern analysis"
+    - "Incomplete security or performance assessment"
+    - "Creating analysis without proper validation"
+    - "Analysis without considering maintainability metrics"
+    - "Missing comprehensive quality scoring and recommendations"

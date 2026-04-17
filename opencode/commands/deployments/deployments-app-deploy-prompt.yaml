@@ -1,0 +1,461 @@
+# === MCP PROMPT: Code Deployment Execution Protocol ===
+name: "code-deploy-prompt"
+version: "1.0.0"
+description: "Environment-specific deployment orchestration protocol for production code deployment"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Deployment Execution"
+  description: "Execute comprehensive deployment to specified environment and platform with mandatory validation and health checks"
+
+  # Argument Schema
+  arguments:
+    environment:
+      type: "string"
+      description: "Target deployment environment"
+      required: true
+      enum:
+        [
+          "dev",
+          "development",
+          "test",
+          "testing",
+          "stage",
+          "staging",
+          "prod",
+          "production",
+        ]
+
+    platform:
+      type: "string"
+      description: "Target deployment platform"
+      required: true
+      enum:
+        [
+          "docker-desktop",
+          "docker",
+          "kubernetes",
+          "k8s",
+          "aws",
+          "azure",
+          "gcp",
+          "local",
+        ]
+
+    additional_options:
+      type: "string"
+      description: "Additional deployment options (region, cluster, etc.)"
+      required: false
+
+    build_tag:
+      type: "string"
+      description: "Custom build tag (optional, auto-generated if not provided)"
+      required: false
+
+    rollback_enabled:
+      type: "boolean"
+      description: "Enable automatic rollback on deployment failure"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI deployment specialist executing the Code Deployment Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive deployment methodology
+        - Execute complete validation and health checks
+        - Maintain production-ready deployment standards
+        - Use atomic deployment practices
+        - Follow SOLID, DRY, KISS principles
+
+        ABSOLUTELY FORBIDDEN:
+        - Deploying without proper validation
+        - Skipping health checks or verification
+        - Partial deployments or incomplete solutions
+        - Deploying with known issues or failures
+        - Creating temporary or workaround deployments
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY DEPLOYMENT PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **DEPLOYMENT PARAMETERS:**
+        - Environment: {{environment}}
+        - Platform: {{platform}}
+        - Additional Options: {{additional_options}}
+        - Build Tag: {{build_tag}}
+        - Rollback Enabled: {{rollback_enabled}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING DEPLOYMENT PROTOCOL:**
+
+# Deployment Protocol Configuration
+deployment_protocol:
+  # Deployment Scope - MANDATORY COMPREHENSIVE COVERAGE
+  deployment_focus:
+    environment_validation: true # MUST validate target environment
+    platform_compatibility: true # MUST verify platform compatibility
+    build_process: true # MUST execute complete build
+    security_validation: true # MUST perform security checks
+    health_checks: true # MUST verify service health
+    functional_validation: true # MUST test functionality
+    rollback_preparation: true # MUST prepare rollback capability
+    monitoring_setup: true # MUST configure monitoring
+    production_ready_only: true # STRICTLY production-ready deployments only
+
+  # Deployment Configuration - MANDATORY SETTINGS
+  deployment_settings:
+    enable_comprehensive_logging: true
+    perform_security_scans: true
+    execute_health_checks: true
+    validate_functionality: true
+    prepare_rollback: true
+    monitor_deployment: true
+    atomic_deployment: true # MANDATORY: Atomic deployment practices
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    continuous_monitoring: true # MANDATORY: Monitor throughout process
+    zero_downtime: true # MANDATORY: Aim for zero-downtime deployment
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Deployment Validation and Setup"
+    mandatory_actions:
+      - "VALIDATE deployment parameters: environment, platform, options"
+      - "CHECK system readiness and required files"
+      - "VERIFY deployment plan exists (or warn if missing)"
+      - "VALIDATE working directory and git status"
+      - "PREPARE deployment environment and timestamps"
+
+    validation_requirements:
+      - "MANDATORY: Validate environment parameter against allowed values"
+      - "MANDATORY: Validate platform parameter against supported platforms"
+      - "MANDATORY: Check for required deployment files (Dockerfile, docker-compose.yml)"
+      - "FORBIDDEN: Proceeding with invalid or missing parameters"
+
+  phase_2:
+    name: "Build and Artifact Preparation"
+    mandatory_actions:
+      - "CREATE build timestamp and deployment tag"
+      - "EXECUTE platform-specific build process"
+      - "PERFORM security scanning of built artifacts"
+      - "VALIDATE build artifacts and verify integrity"
+      - "PREPARE deployment-ready artifacts"
+
+    build_requirements:
+      docker_platforms:
+        - "BUILD Docker images with proper tagging"
+        - "EXECUTE docker-compose build if available"
+        - "VERIFY image creation and integrity"
+        - "TAG images for deployment"
+
+      kubernetes_platforms:
+        - "BUILD container images for Kubernetes"
+        - "VALIDATE Kubernetes manifests"
+        - "TAG images for registry if specified"
+        - "PREPARE deployment manifests"
+
+      cloud_platforms:
+        - "BUILD cloud-ready container images"
+        - "VERIFY cloud CLI tools availability"
+        - "PREPARE cloud-specific configurations"
+        - "VALIDATE cloud deployment requirements"
+
+  phase_3:
+    name: "Security and Quality Validation"
+    mandatory_actions:
+      - "EXECUTE container security scanning (Trivy if available)"
+      - "VALIDATE build artifacts integrity"
+      - "VERIFY security compliance"
+      - "CHECK for vulnerabilities and security issues"
+      - "CONFIRM deployment readiness"
+
+    security_requirements:
+      - "MANDATORY: Perform security scanning on all built artifacts"
+      - "MANDATORY: Validate container image security"
+      - "MANDATORY: Check for known vulnerabilities"
+      - "FORBIDDEN: Deploying artifacts with critical security issues"
+
+  phase_4:
+    name: "Deployment Execution"
+    mandatory_actions:
+      - "EXECUTE platform-specific deployment process"
+      - "MONITOR deployment progress and status"
+      - "HANDLE deployment failures with rollback"
+      - "VERIFY deployment completion"
+      - "RECORD deployment success/failure"
+
+    deployment_strategies:
+      docker_deployment:
+        - "STOP existing containers gracefully"
+        - "START new containers with updated images"
+        - "VERIFY container health and status"
+        - "CONFIRM service availability"
+
+      kubernetes_deployment:
+        - "APPLY Kubernetes manifests"
+        - "MONITOR rollout status"
+        - "VERIFY pod health and readiness"
+        - "CONFIRM service endpoints"
+
+      cloud_deployment:
+        - "EXECUTE cloud-specific deployment"
+        - "MONITOR cloud service status"
+        - "VERIFY cloud resource health"
+        - "CONFIRM platform integration"
+
+  phase_5:
+    name: "Post-Deployment Validation"
+    mandatory_actions:
+      - "WAIT for services to initialize"
+      - "EXECUTE comprehensive health checks"
+      - "PERFORM functional validation"
+      - "TEST application endpoints"
+      - "VERIFY deployment success"
+
+    health_check_requirements:
+      - "MANDATORY: Wait adequate time for service initialization"
+      - "MANDATORY: Check all service health indicators"
+      - "MANDATORY: Verify container/pod status"
+      - "MANDATORY: Test application endpoints"
+      - "FORBIDDEN: Declaring success without proper validation"
+
+  phase_6:
+    name: "Deployment Completion and Reporting"
+    mandatory_actions:
+      - "GENERATE comprehensive deployment report"
+      - "RECORD deployment metadata and timestamps"
+      - "CLEANUP temporary files and artifacts"
+      - "PROVIDE next steps and monitoring guidance"
+      - "CONFIRM deployment success"
+
+    completion_requirements:
+      - "MANDATORY: Generate detailed deployment report"
+      - "MANDATORY: Record deployment in logs with timestamps"
+      - "MANDATORY: Clean up temporary deployment artifacts"
+      - "MANDATORY: Provide clear next steps for monitoring"
+
+  phase_7:
+    name: "Quickstart Documentation Creation"
+    mandatory_actions:
+      - "CREATE user-friendly quickstart deployment guides"
+      - "DOCUMENT step-by-step deployment commands for all environments"
+      - "PROVIDE platform-specific deployment instructions"
+      - "INCLUDE prerequisites and setup requirements"
+      - "CREATE troubleshooting guides and common issue resolution"
+
+    quickstart_requirements:
+      - "MANDATORY: Create quickstart guides for all target environments (dev, staging, prod)"
+      - "MANDATORY: Include platform-specific commands (docker, kubernetes, cloud-native, on-premises)"
+      - "MANDATORY: Provide clear prerequisites and setup instructions"
+      - "MANDATORY: Include validation commands and health checks"
+      - "MANDATORY: Document common troubleshooting scenarios"
+      - "FORBIDDEN: Incomplete or unclear quickstart documentation"
+
+  phase_8:
+    name: "Lifecycle Management and Terraform Infrastructure Implementation"
+    mandatory_actions:
+      - "IMPLEMENT application lifecycle management procedures"
+      - "CONFIGURE environment promotion workflows"
+      - "SETUP scaling and performance management procedures"
+      - "IMPLEMENT backup and recovery procedures"
+      - "CONFIGURE monitoring and alerting setup"
+      - "IMPLEMENT Infrastructure as Code patterns and structures"
+      - "CONFIGURE environment-specific Terraform configurations"
+      - "DEPLOY platform-specific Terraform modules"
+
+    lifecycle_terraform_requirements:
+      - "MANDATORY: Implement comprehensive lifecycle management procedures"
+      - "MANDATORY: Configure environment promotion workflows"
+      - "MANDATORY: Setup scaling and performance management"
+      - "MANDATORY: Implement backup and recovery procedures"
+      - "MANDATORY: Configure monitoring and alerting setup"
+      - "MANDATORY: Implement Terraform infrastructure patterns for all environments"
+      - "MANDATORY: Configure platform-specific Terraform modules"
+      - "MANDATORY: Setup state management and remote backend configuration"
+      - "FORBIDDEN: Incomplete lifecycle management or Terraform implementation"
+
+# Platform-Specific Configurations
+platform_configurations:
+  docker:
+    required_files: ["Dockerfile"]
+    optional_files: ["docker-compose.yml"]
+    health_check_method: "container_status"
+    deployment_method: "docker_compose_or_direct"
+
+  kubernetes:
+    required_directories: ["apps", "infrastructure"]
+    required_tools: ["kubectl"]
+    health_check_method: "rollout_status"
+    deployment_method: "kubectl_apply"
+    structure_reference: "DEPLOYMENT-STRUCTURE.md"
+
+  cloud:
+    aws:
+      required_tools: ["aws"]
+      services: ["ecs", "eks", "lambda"]
+      health_check_method: "cloud_specific"
+    azure:
+      required_tools: ["az"]
+      services: ["aci", "aks", "functions"]
+      health_check_method: "cloud_specific"
+    gcp:
+      required_tools: ["gcloud"]
+      services: ["cloud-run", "gke", "functions"]
+      health_check_method: "cloud_specific"
+
+# Deployment Validation Criteria
+validation_criteria:
+  pre_deployment: "MANDATORY - All parameters and requirements validated"
+  build_success: "MANDATORY - All artifacts built successfully"
+  security_compliance: "MANDATORY - Security scans passed or acknowledged"
+  deployment_success: "MANDATORY - Deployment executed successfully"
+  health_checks: "MANDATORY - All health checks passed"
+  functional_validation: "MANDATORY - Application functionality verified"
+  monitoring_setup: "MANDATORY - Monitoring and logging configured"
+  rollback_ready: "MANDATORY - Rollback capability confirmed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL deployment output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-142155"
+
+  required_outputs:
+    - "./project/docs/deployments/Deployment_Execution-{{YYYY-MM-DD-HHMMSS}}.ipynb (deployment execution and results)"
+    - "./project/docs/deployments/Configuration_Applied-{{YYYY-MM-DD-HHMMSS}}.md (configurations and resources deployed)"
+    - "./project/docs/deployments/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.md (health checks, testing, monitoring)"
+    - "./project/docs/deployments/Operational_Documentation-{{YYYY-MM-DD-HHMMSS}}.md (runbooks, rollback, troubleshooting)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all deployment output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL deployment deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all deployment outputs"
+    - "FORBIDDEN: Creating deployment files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same deployment session"
+
+# Deployment Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE deployment parameters ({{environment}}, {{platform}})"
+  - "2. CHECK system readiness and required files"
+  - "3. CREATE build timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. EXECUTE platform-specific build process"
+  - "5. PERFORM security scanning and validation"
+  - "6. DEPLOY to target environment and platform"
+  - "7. MONITOR deployment progress and status"
+  - "8. EXECUTE comprehensive health checks"
+  - "9. PERFORM functional validation testing"
+  - "10. VERIFY deployment success and service health"
+  - "11. CREATE user-friendly quickstart deployment guides"
+  - "12. IMPLEMENT application lifecycle management procedures"
+  - "13. CONFIGURE Terraform infrastructure as code patterns"
+  - "14. GENERATE deployment report with timestamps"
+  - "15. CLEANUP temporary files and artifacts"
+  - "16. RECORD deployment completion with timestamp"
+  - "17. PROVIDE monitoring and next steps guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each deployment step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all deployment tracking"
+  - "MANDATORY: Timestamp all deployment deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Rollback and Failure Handling
+rollback_protocol:
+  automatic_rollback_triggers:
+    - "Health checks fail after deployment"
+    - "Critical security vulnerabilities detected"
+    - "Application functionality validation fails"
+    - "Service endpoints become unreachable"
+
+  rollback_procedures:
+    docker:
+      - "Stop new containers"
+      - "Restore previous container versions"
+      - "Verify rollback success"
+    kubernetes:
+      - "Execute kubectl rollout undo"
+      - "Monitor rollout status"
+      - "Verify pod health after rollback"
+    cloud:
+      - "Execute platform-specific rollback"
+      - "Verify cloud service restoration"
+      - "Confirm platform integration"
+
+# Mandatory Success Criteria
+success_criteria:
+  - "MANDATORY: Deployment completed successfully to target environment"
+  - "MANDATORY: All health checks passed"
+  - "MANDATORY: Application functionality verified"
+  - "MANDATORY: Monitoring and logging configured"
+  - "MANDATORY: Rollback capability confirmed"
+  - "MANDATORY: Deployment documented with timestamps"
+  - "MANDATORY: Next steps provided for ongoing management"
+
+# Deployment Quality Gates
+quality_gates:
+  pre_deployment:
+    - "All required parameters provided and validated"
+    - "System readiness confirmed"
+    - "Required files and tools available"
+
+  build_phase:
+    - "Build process completed without errors"
+    - "Security scans passed or acknowledged"
+    - "Artifacts validated and ready for deployment"
+
+  deployment_phase:
+    - "Deployment executed successfully"
+    - "No critical errors during deployment"
+    - "Services started and responding"
+
+  post_deployment:
+    - "Health checks passed"
+    - "Functional validation successful"
+    - "Monitoring configured and active"
+    - "Documentation generated and complete"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL deployments MUST be to validated environments and platforms"
+    - "ALL builds MUST complete successfully before deployment"
+    - "ALL security validations MUST pass or be acknowledged"
+    - "ALL health checks MUST pass before declaring success"
+    - "ALL deployments MUST be properly documented"
+    - "ALL deployments MUST have rollback capability"
+    - "ALWAYS use atomic deployment practices"
+    - "NEVER deploy with known critical issues"
+
+  strictly_forbidden:
+    - "Deploying without proper validation"
+    - "Skipping security scans or health checks"
+    - "Partial or incomplete deployments"
+    - "Deploying with critical security vulnerabilities"
+    - "Creating temporary or workaround deployments"
+    - "Deploying without rollback capability"
+    - "Missing deployment documentation"
+    - "Proceeding with failed quality gates"

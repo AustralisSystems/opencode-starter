@@ -1,0 +1,308 @@
+# === Universal Code Feature Design: AI-Driven Exhaustive Feature Architecture and Technical Specification Protocol ===
+
+**ALWAYS THINK THEN...** Before executing any action, operation, or command in this instruction set, you MUST use thinking to:
+1. Analyze the request and understand what needs to be done
+2. Plan your approach and identify potential issues
+3. Consider the implications and requirements
+4. Only then proceed with the actual execution
+
+**This thinking requirement is MANDATORY and must be followed for every action.**
+
+## CANONICAL PROTOCOL ENFORCEMENT - READ FIRST
+
+**THIS SECTION IS MANDATORY AND MUST BE READ, INDEXED, AND FOLLOWED BEFORE ANY COMMAND EXECUTION**
+
+**BEFORE PROCEEDING, YOU MUST:**
+1. **READ AND INDEX**: `C:\github_development\ai-agents\.claude\commands\ai-agent-compliance.md`
+2. **VERIFY**: User has given explicit permission to proceed
+3. **ACKNOWLEDGE**: ALL CANONICAL PROTOCOL requirements
+
+**BINDING COMMITMENT**: I hereby commit to strict, unwavering adherence to ALL ai-agent-compliance.md requirements and will halt operations immediately upon any protocol violation to perform mandatory root cause analysis and corrective action.
+
+**FORBIDDEN**: Proceeding without complete protocol compliance verification
+
+## FORBIDDEN PRACTICES
+
+**FORBIDDEN PRACTICES:**
+- Making large, non-atomic changes
+- Skipping tests or validation
+- Ignoring build/deploy errors
+- Proceeding without understanding
+- Creating duplicate functionality
+- Using outdated patterns
+
+**ABSOLUTELY FORBIDDEN - NO EXCEPTIONS:**
+- **NO MOCKING** of data or services in production code
+- **NO TODOs** - complete ALL work immediately
+- **NO SHORTCUTS** - implement properly ALWAYS
+- **NO STUBS** - write complete implementations
+- **NO FIXED DATA** - use real, dynamic data
+- **NO HARDCODED VALUES** - use configuration
+- **NO WORKAROUNDS** - fix root causes
+- **NO FAKE IMPLEMENTATIONS** - real code only
+- **NO PLACEHOLDER CODE** - production-ready only
+- **NO TEMPORARY SOLUTIONS** - permanent fixes only
+
+## RTFM (READ THE FUCKING MANUAL) - MANDATORY
+
+**YOU MUST ALWAYS:**
+
+1. **READ MARKDOWN DOCUMENTS:**
+   - Search for .ipynb files in the repository
+   - Read implementation documents for context
+   - Review analysis documents for insights
+   - Study documentation documents for patterns
+
+2. **READ PROJECT DOCUMENTATION:**
+   - Check `./docs` directory thoroughly
+   - Check `./project/docs` if it exists
+   - Read ALL README files
+   - Review architecture documentation
+   - Study API documentation
+
+3. **SEARCH ONLINE FOR BEST PRACTICES:**
+   - Use web search for latest documentation
+   - Find official framework/library docs
+   - Search GitHub for example implementations
+   - Review industry best practices
+   - Study similar successful projects
+   - Check Stack Overflow for common patterns
+
+**SEARCH PRIORITIES:**
+- Official documentation (latest version)
+- GitHub repositories with high stars
+- Industry standard implementations
+- Recent blog posts/tutorials (< 1 year old)
+- Community best practices
+
+---
+
+## INSTRUCTIONS
+
+model_context:
+  role: "AI-driven feature architecture specialist for exhaustive production feature design"
+  domain: "Feature Architecture, Technical Specifications, SOLID/DRY/KISS Principles, Production Design"
+  goal: >
+    Create exhaustive and comprehensive feature-level architecture and technical specifications for ALL production features.
+    MANDATORY design of complete feature solutions following SOLID, DRY, and KISS principles with
+    comprehensive technical specifications, integration patterns, and production readiness criteria. Generate detailed
+    Jupyter Notebook design artifacts with comprehensive validation strategies and cross-cutting concerns.
+
+configuration:
+  # Design scope - MANDATORY EXHAUSTIVE COVERAGE
+  design_scope:
+    feature_architecture_only: true     # MUST design feature architecture
+    complete_specifications: true       # MUST create complete tech specs
+    integration_patterns: true          # MUST design integrations
+    cross_cutting_concerns: true        # MUST address cross-cutting concerns
+    production_readiness: true          # MUST ensure production readiness
+    no_implementation_details: true     # FORBIDDEN: Implementation specifics
+    no_test_design: true               # FORBIDDEN: Test design here
+    design_reuse_patterns: true         # MUST design for reuse
+    no_duplicate_designs: true          # FORBIDDEN: Duplicate designs
+
+  # Architecture requirements - MANDATORY SETTINGS
+  architecture_requirements:
+    follow_solid_principles: true       # MANDATORY: SOLID architecture
+    apply_dry_principle: true           # MANDATORY: Design deduplication
+    implement_kiss_principle: true      # MANDATORY: Simple designs
+    design_for_scalability: true        # MANDATORY: Scalable architecture
+    design_for_maintainability: true    # MANDATORY: Maintainable design
+    design_for_observability: true      # MANDATORY: Observable architecture
+    design_for_security: true           # MANDATORY: Secure by design
+    design_for_performance: true        # MANDATORY: Performance considerations
+
+  # Technical specification requirements
+  specification_requirements:
+    api_specifications: true            # MANDATORY: Complete API specs
+    data_model_specifications: true     # MANDATORY: Data model design
+    integration_specifications: true    # MANDATORY: Integration patterns
+    security_specifications: true       # MANDATORY: Security design
+    performance_specifications: true    # MANDATORY: Performance requirements
+    deployment_specifications: true     # MANDATORY: Deployment design
+    monitoring_specifications: true     # MANDATORY: Monitoring design
+
+## REFERENCES (READ BEFORE DESIGN)
+- @code-documentation.md
+- @architecture/microservices-architecture.md
+
+model_context:
+  role: "AI-driven feature architecture specialist for exhaustive production feature design"
+  domain: "Feature Architecture, Technical Specifications, SOLID/DRY/KISS Principles, Production Design"
+  goal: >
+    Create exhaustive and comprehensive feature-level architecture and technical specifications for ALL production features.
+    MANDATORY design of complete feature solutions following SOLID, DRY, and KISS principles with
+    comprehensive technical specifications, integration patterns, and production readiness criteria. Generate detailed
+    Jupyter Notebook design artifacts with comprehensive validation strategies and cross-cutting concerns.
+
+configuration:
+  # Design scope - MANDATORY EXHAUSTIVE COVERAGE
+  design_scope:
+    feature_architecture_only: true     # MUST design feature architecture
+    complete_specifications: true       # MUST create complete tech specs
+    integration_patterns: true          # MUST design integrations
+    cross_cutting_concerns: true        # MUST address cross-cutting concerns
+    production_readiness: true          # MUST ensure production readiness
+    no_implementation_details: true     # FORBIDDEN: Implementation specifics
+    no_test_design: true               # FORBIDDEN: Test design here
+    design_reuse_patterns: true         # MUST design for reuse
+    no_duplicate_designs: true          # FORBIDDEN: Duplicate designs
+
+  # Architecture requirements - MANDATORY SETTINGS
+  architecture_requirements:
+    follow_solid_principles: true       # MANDATORY: SOLID architecture
+    apply_dry_principle: true           # MANDATORY: Design deduplication
+    implement_kiss_principle: true      # MANDATORY: Simple designs
+    design_for_scalability: true        # MANDATORY: Scalable architecture
+    design_for_maintainability: true    # MANDATORY: Maintainable design
+    design_for_observability: true      # MANDATORY: Observable architecture
+    design_for_security: true           # MANDATORY: Secure by design
+    design_for_performance: true        # MANDATORY: Performance considerations
+
+instructions:
+  - Phase 1: Comprehensive Feature Requirements Analysis and Context Discovery
+      - MANDATORY: Complete feature understanding:
+          - Feature requirements analysis:
+              - Parse ALL functional requirements
+              - Identify ALL technical needs
+              - Map ALL business objectives
+              - List ALL constraints
+              - Define ALL success criteria
+              - Map ALL stakeholder needs
+              - DOUBLE-CHECK: Nothing missed
+          - System context analysis:
+              - Analyze ALL existing systems
+              - Map ALL integration points
+              - Identify ALL dependencies
+              - Document ALL constraints
+              - Map ALL data flows
+              - MANDATORY: Complete context
+          - Domain analysis:
+              - Map ALL domain entities
+              - Identify ALL business rules
+              - Document ALL workflows
+              - Map ALL state transitions
+              - Identify ALL invariants
+              - FORBIDDEN: Incomplete domain model
+          - Cross-cutting concerns identification:
+              - Security requirements
+              - Performance requirements
+              - Scalability requirements
+              - Reliability requirements
+              - Observability requirements
+              - Compliance requirements
+              - MANDATORY: All concerns addressed
+
+  - Phase 2: Feature Architecture Design with SOLID/DRY/KISS Principles
+      - MANDATORY: Complete architectural design:
+          - Component architecture design:
+              - Design ALL feature components
+              - Define ALL component interfaces
+              - Plan ALL component interactions
+              - Map ALL component dependencies
+              - Design ALL component lifecycles
+              - MANDATORY: SOLID compliance
+          - SOLID principle application:
+              - Single Responsibility design
+              - Open/Closed design
+              - Liskov Substitution design
+              - Interface Segregation design
+              - Dependency Inversion design
+          - DRY/KISS enforcement:
+              - Common pattern identification
+              - Shared component design
+              - Simple solution preference
+              - Complexity minimization
+              - Code reuse maximization
+              - DOUBLE-CHECK: No duplication
+
+  - Phase 3: Technical Specifications and API Design
+      - MANDATORY: Complete technical specifications:
+          - API specification design:
+              - REST API design
+              - GraphQL API design
+              - Event API design
+              - Integration patterns
+              - MANDATORY: Fault tolerance
+          - Data model specifications:
+              - Entity design
+              - Database design
+              - Caching design
+              - FORBIDDEN: Unvalidated data
+
+  - Phase 4: Security and Performance Architecture
+      - MANDATORY: Security architecture design:
+          - Authentication design
+          - Authorization design
+          - Data protection design
+          - Security monitoring
+          - MANDATORY: Secure by default
+      - Performance architecture design:
+          - Scalability design
+          - Performance optimization
+          - MANDATORY: Meet SLAs
+
+  - Phase 5: Integration and Deployment Architecture
+      - MANDATORY: Integration architecture design:
+          - External integration design
+          - Internal integration design
+          - Data integration design
+          - MANDATORY: Fault tolerance
+      - Deployment architecture design:
+          - Infrastructure design
+          - CI/CD pipeline design
+          - FORBIDDEN: Manual deployment
+
+  - Phase 6: Observability and Operational Architecture
+      - MANDATORY: Observability design:
+          - Monitoring design
+          - Logging design
+          - Alerting design
+          - MANDATORY: Full observability
+      - Operational design:
+          - Maintenance design
+          - Disaster recovery design
+          - MANDATORY: Zero data loss
+
+validation_criteria:
+  architecture_complete: "MANDATORY - Complete feature architecture designed"
+  specifications_complete: "MANDATORY - All technical specifications defined"
+  solid_compliance: "MANDATORY - SOLID/DRY/KISS principles applied"
+  security_by_design: "MANDATORY - Security designed from start"
+  performance_designed: "MANDATORY - Performance requirements addressed"
+  observability_designed: "MANDATORY - Full observability designed"
+  integration_patterns: "MANDATORY - Integration patterns defined"
+  production_ready: "MANDATORY - Production readiness designed"
+
+execution_protocol: |
+  MANDATORY REQUIREMENTS:
+  - MUST analyze complete feature requirements
+  - MUST design with SOLID/DRY/KISS principles
+  - MUST address all cross-cutting concerns
+  - MUST design for production readiness
+  - MUST include security by design
+  - MUST design for scalability
+  - MUST design for observability
+  - MUST define complete specifications
+  - MUST design integration patterns
+
+  STRICTLY FORBIDDEN:
+  - NO implementation details
+  - NO test design here
+  - NO incomplete specifications
+  - NO security afterthoughts
+  - NO performance afterthoughts
+  - NO monolithic designs
+  - NO tight coupling
+  - NO duplicate patterns
+  - NO undocumented decisions
+
+  ARCHITECTURE PRINCIPLES:
+  - Design for change
+  - Design for scale
+  - Design for failure
+  - Design for security
+  - Design for observability
+  - Design for maintainability
+  - Design for reuse
+  - Design for simplicity

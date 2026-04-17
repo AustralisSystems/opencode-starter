@@ -1,0 +1,646 @@
+# === MCP PROMPT: Test Planning Protocol ===
+name: "test-planning-prompt"
+version: "1.0.0"
+description: "Comprehensive test planning protocol for test strategy creation, framework development, and test scenario design"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Test Planning Implementation"
+  description: "Create comprehensive test strategies and frameworks with detailed test scenarios, coverage analysis, and execution planning"
+
+  # Argument Schema
+  arguments:
+    planning_scope:
+      type: "string"
+      description: "Scope of test planning to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "functional-focused",
+          "performance-focused",
+          "security-focused",
+          "integration-focused",
+          "api-focused",
+        ]
+
+    testing_methodology:
+      type: "string"
+      description: "Primary testing methodology to apply"
+      required: true
+      enum:
+        [
+          "agile-testing",
+          "bdd-driven",
+          "risk-based",
+          "exploratory",
+          "regression-focused",
+          "hybrid-approach",
+        ]
+
+    coverage_requirements:
+      type: "string"
+      description: "Test coverage requirements and depth"
+      required: true
+      enum:
+        [
+          "basic-coverage",
+          "standard-coverage",
+          "comprehensive-coverage",
+          "enterprise-coverage",
+          "critical-path-only",
+        ]
+
+    planning_detail:
+      type: "string"
+      description: "Level of planning detail and documentation"
+      required: false
+      enum: ["high-level", "detailed", "comprehensive", "enterprise"]
+
+    environment_scope:
+      type: "string"
+      description: "Target environments for test planning"
+      required: false
+      enum: ["single-environment", "multi-environment", "production-like", "all-environments"]
+
+    automation_strategy:
+      type: "string"
+      description: "Test automation strategy and approach"
+      required: false
+      enum: ["manual-only", "hybrid-automation", "automation-first", "full-automation"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI test planning specialist creating comprehensive test strategies and execution frameworks.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive test planning methodology
+        - Create detailed test strategies with measurable criteria
+        - Maintain systematic approach to test coverage
+        - Use structured test scenario design and validation
+        - Follow SOLID, DRY, KISS principles in planning
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating incomplete or superficial test plans
+        - Skipping comprehensive feature analysis
+        - Ignoring performance or security requirements
+        - Planning without understanding system architecture
+        - Missing measurable success criteria
+        - Using generic templates without customization
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY TEST PLANNING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **TEST PLANNING PARAMETERS:**
+        - Planning Scope: {{planning_scope}}
+        - Testing Methodology: {{testing_methodology}}
+        - Coverage Requirements: {{coverage_requirements}}
+        - Planning Detail: {{planning_detail}}
+        - Environment Scope: {{environment_scope}}
+        - Automation Strategy: {{automation_strategy}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING TEST PLANNING PROTOCOL:**
+
+# Test Planning Protocol Configuration
+planning_protocol:
+  # Planning Scope - MANDATORY COMPREHENSIVE COVERAGE
+  planning_focus:
+    comprehensive_analysis: true # MUST analyze ALL system components
+    test_strategy_creation: true # MUST create detailed test strategies
+    scenario_design: true # MUST design comprehensive test scenarios
+    coverage_analysis: true # MUST analyze test coverage requirements
+    risk_assessment: true # MUST assess testing risks and priorities
+    resource_planning: true # MUST plan testing resources and timeline
+    automation_planning: true # MUST plan test automation strategy
+    framework_design: true # MUST design testing frameworks
+    planning_only: true # STRICTLY planning only, no test execution
+
+  # Planning Configuration - MANDATORY SETTINGS
+  planning_settings:
+    enable_comprehensive_analysis: true
+    create_detailed_strategies: true
+    design_measurable_scenarios: true
+    analyze_coverage_requirements: true
+    assess_risks_systematically: true
+    plan_resources_effectively: true
+    systematic_approach: true # MANDATORY: Systematic planning methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all planning aspects
+    production_ready_planning: true # MANDATORY: Production-focused strategies
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "System Analysis and Requirements Assessment"
+    mandatory_actions:
+      - "ANALYZE system architecture and component relationships"
+      - "ASSESS functional requirements and business logic"
+      - "EVALUATE non-functional requirements and constraints"
+      - "IDENTIFY system boundaries and integration points"
+      - "DOCUMENT system understanding and test planning foundation"
+
+    analysis_requirements:
+      - "MANDATORY: Complete system architecture analysis"
+      - "MANDATORY: Document ALL functional requirements"
+      - "MANDATORY: Identify ALL non-functional requirements"
+      - "FORBIDDEN: Proceeding without complete system understanding"
+
+  phase_2:
+    name: "Test Strategy Development and Framework Design"
+    mandatory_actions:
+      - "DEVELOP comprehensive test strategy with clear objectives"
+      - "DESIGN test framework architecture and components"
+      - "CREATE test methodology and approach documentation"
+      - "ESTABLISH test quality gates and success criteria"
+      - "DEFINE test environment and infrastructure requirements"
+
+    strategy_development_requirements:
+      test_strategy_creation:
+        - "DEFINE overall testing objectives and quality goals"
+        - "ESTABLISH testing scope and boundaries clearly"
+        - "CREATE testing approach and methodology framework"
+        - "SPECIFY test environment and infrastructure needs"
+        - "DOCUMENT test strategy with measurable success criteria"
+
+      framework_design:
+        - "DESIGN test automation framework architecture"
+        - "CREATE test data management and preparation strategy"
+        - "ESTABLISH test execution and reporting framework"
+        - "DEFINE test maintenance and evolution procedures"
+        - "SPECIFY integration with CI/CD and development workflow"
+
+      methodology_selection:
+        - "SELECT appropriate testing methodologies for each area"
+        - "DEFINE test case design techniques and approaches"
+        - "ESTABLISH test prioritization and risk-based strategies"
+        - "CREATE test execution sequencing and dependency management"
+        - "SPECIFY test result analysis and deviation handling"
+
+  phase_3:
+    name: "Test Coverage Analysis and Planning"
+    mandatory_actions:
+      - "ANALYZE test coverage requirements across all dimensions"
+      - "CREATE comprehensive test coverage matrices"
+      - "IDENTIFY coverage gaps and mitigation strategies"
+      - "ESTABLISH coverage measurement and tracking methods"
+      - "VALIDATE coverage completeness and adequacy"
+
+    coverage_analysis_requirements:
+      functional_coverage_planning:
+        - "ANALYZE functional requirements coverage needs"
+        - "CREATE functional test coverage matrices"
+        - "IDENTIFY critical business process coverage"
+        - "ESTABLISH user story and acceptance criteria coverage"
+        - "VALIDATE functional coverage completeness"
+
+      technical_coverage_planning:
+        - "ANALYZE API and service coverage requirements"
+        - "CREATE integration point coverage matrices"
+        - "IDENTIFY database and data flow coverage needs"
+        - "ESTABLISH security and authentication coverage"
+        - "VALIDATE technical coverage adequacy"
+
+      non_functional_coverage:
+        - "ANALYZE performance testing coverage requirements"
+        - "CREATE security testing coverage matrices"
+        - "IDENTIFY usability and accessibility coverage"
+        - "ESTABLISH reliability and availability coverage"
+        - "VALIDATE non-functional coverage completeness"
+
+  phase_4:
+    name: "Risk Assessment and Priority Planning"
+    mandatory_actions:
+      - "CONDUCT comprehensive risk assessment for testing"
+      - "IDENTIFY high-risk areas requiring intensive testing"
+      - "PRIORITIZE test scenarios based on risk and impact"
+      - "DEVELOP risk mitigation strategies for testing"
+      - "CREATE contingency plans for testing challenges"
+
+    risk_assessment_framework:
+      risk_identification:
+        - "IDENTIFY technical risks and complexity areas"
+        - "ASSESS business critical functionality risks"
+        - "EVALUATE integration and dependency risks"
+        - "ANALYZE performance and scalability risks"
+        - "DOCUMENT security and compliance risks"
+
+      risk_impact_analysis:
+        - "ASSESS business impact of potential failures"
+        - "EVALUATE user experience impact of defects"
+        - "ANALYZE system reliability and availability impact"
+        - "ASSESS financial and operational impact"
+        - "EVALUATE regulatory and compliance impact"
+
+      priority_matrix_creation:
+        - "CREATE test priority matrix based on risk assessment"
+        - "ESTABLISH testing effort allocation by priority"
+        - "DEFINE critical path testing scenarios"
+        - "PLAN risk-based testing approach and coverage"
+        - "VALIDATE priority alignment with business objectives"
+
+  phase_5:
+    name: "Test Scenario Design and Specification"
+    mandatory_actions:
+      - "DESIGN comprehensive test scenarios for all coverage areas"
+      - "CREATE detailed test case specifications with expected results"
+      - "DEVELOP test data requirements and preparation procedures"
+      - "ESTABLISH test scenario traceability and coverage mapping"
+      - "VALIDATE test scenario completeness and effectiveness"
+
+    scenario_design_framework:
+      functional_scenario_design:
+        - "DESIGN positive path test scenarios for all features"
+        - "CREATE negative path and error handling scenarios"
+        - "DEVELOP boundary value and edge case scenarios"
+        - "ESTABLISH user workflow and journey scenarios"
+        - "VALIDATE functional scenario coverage and effectiveness"
+
+      integration_scenario_design:
+        - "DESIGN service-to-service integration scenarios"
+        - "CREATE end-to-end workflow integration scenarios"
+        - "DEVELOP data flow and persistence scenarios"
+        - "ESTABLISH external system integration scenarios"
+        - "VALIDATE integration scenario completeness"
+
+      performance_scenario_design:
+        - "DESIGN load testing scenarios with realistic usage"
+        - "CREATE stress testing scenarios for capacity limits"
+        - "DEVELOP volume testing scenarios for data handling"
+        - "ESTABLISH endurance testing scenarios for stability"
+        - "VALIDATE performance scenario coverage and realism"
+
+  phase_6:
+    name: "Test Automation Strategy and Planning"
+    mandatory_actions:
+      - "DEVELOP comprehensive test automation strategy"
+      - "IDENTIFY automation candidates and priorities"
+      - "DESIGN automation framework and tool selection"
+      - "PLAN automation implementation and maintenance"
+      - "ESTABLISH automation ROI and effectiveness metrics"
+
+    automation_strategy_framework:
+      automation_assessment:
+        - "ASSESS automation feasibility for test scenarios"
+        - "IDENTIFY high-value automation opportunities"
+        - "EVALUATE automation tool and framework options"
+        - "ANALYZE automation ROI and cost-benefit"
+        - "PRIORITIZE automation implementation roadmap"
+
+      framework_planning:
+        - "DESIGN test automation framework architecture"
+        - "PLAN automation tool integration and workflow"
+        - "ESTABLISH automation coding standards and practices"
+        - "DEFINE automation maintenance and evolution strategy"
+        - "VALIDATE automation framework scalability and sustainability"
+
+      implementation_roadmap:
+        - "CREATE phased automation implementation plan"
+        - "ESTABLISH automation milestone and deliverable schedule"
+        - "PLAN automation team training and skill development"
+        - "DEFINE automation quality gates and acceptance criteria"
+        - "VALIDATE automation timeline and resource allocation"
+
+  phase_7:
+    name: "Test Environment and Infrastructure Planning"
+    mandatory_actions:
+      - "PLAN comprehensive test environment requirements"
+      - "DESIGN test infrastructure and deployment strategy"
+      - "ESTABLISH test data management and lifecycle procedures"
+      - "CONFIGURE test environment monitoring and management"
+      - "VALIDATE test environment readiness and capabilities"
+
+    environment_planning_framework:
+      environment_requirements:
+        - "DEFINE test environment specifications and requirements"
+        - "PLAN environment provisioning and configuration"
+        - "ESTABLISH environment isolation and management"
+        - "DESIGN environment scaling and resource management"
+        - "VALIDATE environment compatibility and performance"
+
+      infrastructure_design:
+        - "DESIGN test infrastructure architecture and components"
+        - "PLAN infrastructure automation and provisioning"
+        - "ESTABLISH infrastructure monitoring and alerting"
+        - "DEFINE infrastructure backup and recovery procedures"
+        - "VALIDATE infrastructure reliability and availability"
+
+      data_management_planning:
+        - "PLAN test data creation and seeding strategies"
+        - "DESIGN test data refresh and synchronization"
+        - "ESTABLISH test data privacy and security measures"
+        - "DEFINE test data lifecycle and cleanup procedures"
+        - "VALIDATE test data quality and completeness"
+
+  phase_8:
+    name: "Resource Planning and Timeline Development"
+    mandatory_actions:
+      - "PLAN comprehensive testing resource requirements"
+      - "DEVELOP realistic testing timeline and milestones"
+      - "ALLOCATE testing effort across different categories"
+      - "ESTABLISH testing team structure and responsibilities"
+      - "VALIDATE resource availability and timeline feasibility"
+
+    resource_planning_framework:
+      team_planning:
+        - "DEFINE testing team structure and roles"
+        - "PLAN skill requirements and training needs"
+        - "ESTABLISH team collaboration and communication"
+        - "ALLOCATE testing responsibilities and ownership"
+        - "VALIDATE team capacity and capability"
+
+      effort_estimation:
+        - "ESTIMATE testing effort for each test category"
+        - "PLAN effort distribution across testing phases"
+        - "ESTABLISH effort tracking and monitoring procedures"
+        - "DEFINE effort adjustment and reallocation strategies"
+        - "VALIDATE effort estimates and assumptions"
+
+      timeline_development:
+        - "CREATE detailed testing timeline and schedule"
+        - "ESTABLISH testing milestone and checkpoint schedule"
+        - "PLAN testing dependency and critical path management"
+        - "DEFINE timeline risk and contingency management"
+        - "VALIDATE timeline alignment with project schedule"
+
+  phase_9:
+    name: "Quality Gates and Success Criteria Definition"
+    mandatory_actions:
+      - "DEFINE comprehensive quality gates and checkpoints"
+      - "ESTABLISH measurable success criteria for testing"
+      - "CREATE quality metrics and measurement framework"
+      - "DEVELOP quality assessment and certification procedures"
+      - "VALIDATE quality standards and acceptance criteria"
+
+    quality_framework_definition:
+      quality_gates_establishment:
+        - "DEFINE entry criteria for each testing phase"
+        - "ESTABLISH exit criteria and completion standards"
+        - "CREATE quality checkpoint and review procedures"
+        - "DEFINE quality escalation and exception handling"
+        - "VALIDATE quality gate effectiveness and enforcement"
+
+      success_criteria_definition:
+        - "ESTABLISH functional quality success criteria"
+        - "DEFINE performance and scalability success metrics"
+        - "CREATE security and compliance success standards"
+        - "ESTABLISH usability and user experience criteria"
+        - "VALIDATE success criteria measurability and realism"
+
+      metrics_framework:
+        - "DESIGN comprehensive testing metrics framework"
+        - "ESTABLISH metrics collection and reporting procedures"
+        - "CREATE metrics analysis and trend monitoring"
+        - "DEFINE metrics-based decision making processes"
+        - "VALIDATE metrics relevance and actionability"
+
+  phase_10:
+    name: "Test Plan Documentation and Validation"
+    mandatory_actions:
+      - "CREATE comprehensive test plan documentation"
+      - "VALIDATE test plan completeness and accuracy"
+      - "REVIEW test plan with stakeholders and obtain approval"
+      - "ESTABLISH test plan maintenance and evolution procedures"
+      - "PROVIDE test planning certification and sign-off"
+
+    documentation_requirements:
+      - "MANDATORY: Create complete test plan with all components"
+      - "MANDATORY: Validate test plan against requirements"
+      - "MANDATORY: Review and approve test plan with stakeholders"
+      - "MANDATORY: Establish plan maintenance and update procedures"
+      - "FORBIDDEN: Incomplete or unvalidated test planning"
+
+# Test Planning Validation Criteria
+validation_criteria:
+  system_analysis: "MANDATORY - Complete system analysis and understanding"
+  strategy_development: "MANDATORY - Comprehensive test strategy created"
+  coverage_planning: "MANDATORY - Complete coverage analysis and planning"
+  risk_assessment: "MANDATORY - Thorough risk assessment and prioritization"
+  scenario_design: "MANDATORY - Comprehensive test scenario design"
+  automation_strategy: "MANDATORY - Complete automation strategy and planning"
+  environment_planning: "MANDATORY - Comprehensive environment and infrastructure planning"
+  resource_planning: "MANDATORY - Complete resource and timeline planning"
+  quality_framework: "MANDATORY - Quality gates and success criteria defined"
+  documentation_quality: "MANDATORY - Complete test plan documentation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL test planning output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-194822"
+
+  required_outputs:
+    - "./project/docs/testing/Planning_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive planning analysis)"
+    - "./project/docs/testing/Architecture_Design-{{YYYY-MM-DD-HHMMSS}}.md (architecture, components, integration)"
+    - "./project/docs/testing/Implementation_Strategy-{{YYYY-MM-DD-HHMMSS}}.md (implementation plan, validation)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all test planning output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL test planning deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all planning outputs"
+    - "FORBIDDEN: Creating test planning files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same planning session"
+
+# Test Planning Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE system architecture and requirements comprehensively ({{planning_scope}})"
+  - "2. DEVELOP test strategy and framework with methodology selection"
+  - "3. ANALYZE test coverage requirements and create matrices"
+  - "4. ASSESS risks and create priority-based planning"
+  - "5. DESIGN comprehensive test scenarios and specifications"
+  - "6. PLAN test automation strategy and implementation roadmap"
+  - "7. PLAN test environment and infrastructure requirements"
+  - "8. PLAN testing resources and develop realistic timelines"
+  - "9. DEFINE quality gates and measurable success criteria"
+  - "10. DOCUMENT comprehensive test plan and obtain validation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each planning phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all test planning documentation"
+  - "MANDATORY: Timestamp all test planning deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Test Planning Framework
+planning_framework:
+  planning_categories:
+    functional_planning:
+      - "Feature-based test planning and coverage"
+      - "User story and acceptance criteria planning"
+      - "Business process and workflow planning"
+      - "API and service interface planning"
+
+    non_functional_planning:
+      - "Performance and scalability test planning"
+      - "Security and compliance test planning"
+      - "Usability and accessibility test planning"
+      - "Reliability and availability test planning"
+
+    technical_planning:
+      - "Integration and component test planning"
+      - "Database and data persistence planning"
+      - "Infrastructure and deployment planning"
+      - "Monitoring and observability planning"
+
+  methodology_frameworks:
+    agile_testing:
+      - "Sprint-based testing planning and execution"
+      - "Continuous integration and testing workflows"
+      - "User story driven test design"
+      - "Iterative test feedback and improvement"
+
+    risk_based_testing:
+      - "Risk assessment and impact analysis"
+      - "Priority-driven test planning and execution"
+      - "Risk mitigation testing strategies"
+      - "Critical path and high-risk area focus"
+
+    behavior_driven_development:
+      - "Feature specification and behavior definition"
+      - "Given-When-Then scenario development"
+      - "Stakeholder collaboration and validation"
+      - "Living documentation and traceability"
+
+# Test Coverage Planning
+coverage_planning:
+  coverage_dimensions:
+    functional_coverage:
+      - "Feature and functionality coverage"
+      - "User interface and interaction coverage"
+      - "Business rule and logic coverage"
+      - "Error handling and exception coverage"
+
+    structural_coverage:
+      - "Code coverage and path analysis"
+      - "Component and module coverage"
+      - "Integration point coverage"
+      - "Data flow and state coverage"
+
+    risk_based_coverage:
+      - "High-risk functionality coverage"
+      - "Critical business process coverage"
+      - "Compliance and regulatory coverage"
+      - "Security vulnerability coverage"
+
+# Test Scenario Design Framework
+scenario_design:
+  scenario_categories:
+    positive_scenarios:
+      - "Happy path and normal flow scenarios"
+      - "Valid input and expected output scenarios"
+      - "Successful integration and collaboration"
+      - "Optimal performance and efficiency scenarios"
+
+    negative_scenarios:
+      - "Invalid input and error handling scenarios"
+      - "Exception and edge case scenarios"
+      - "Failure and recovery scenarios"
+      - "Security breach and attack scenarios"
+
+    boundary_scenarios:
+      - "Minimum and maximum value scenarios"
+      - "Capacity and limit boundary scenarios"
+      - "Performance threshold scenarios"
+      - "Resource constraint scenarios"
+
+# Automation Strategy Framework
+automation_strategy:
+  automation_categories:
+    unit_test_automation:
+      - "Component and function test automation"
+      - "Mock and stub based test automation"
+      - "Code coverage and quality automation"
+      - "Continuous integration test automation"
+
+    integration_test_automation:
+      - "Service and API test automation"
+      - "Database and data flow automation"
+      - "Message and event driven automation"
+      - "End-to-end workflow automation"
+
+    ui_test_automation:
+      - "Web interface test automation"
+      - "Mobile application test automation"
+      - "Cross-browser and device automation"
+      - "Accessibility and usability automation"
+
+# Risk Assessment Framework
+risk_assessment:
+  risk_categories:
+    technical_risks:
+      - "Technology complexity and maturity"
+      - "Integration complexity and dependencies"
+      - "Performance and scalability challenges"
+      - "Security and privacy vulnerabilities"
+
+    business_risks:
+      - "Business critical functionality impact"
+      - "User experience and satisfaction impact"
+      - "Revenue and financial impact"
+      - "Compliance and regulatory impact"
+
+    project_risks:
+      - "Timeline and schedule risks"
+      - "Resource and skill availability risks"
+      - "Scope and requirement change risks"
+      - "Quality and defect impact risks"
+
+# Quality Framework
+quality_framework:
+  quality_dimensions:
+    functional_quality:
+      - "Correctness and accuracy"
+      - "Completeness and coverage"
+      - "Consistency and reliability"
+      - "Traceability and validation"
+
+    operational_quality:
+      - "Performance and efficiency"
+      - "Scalability and capacity"
+      - "Availability and reliability"
+      - "Maintainability and supportability"
+
+    user_quality:
+      - "Usability and user experience"
+      - "Accessibility and inclusivity"
+      - "Security and privacy"
+      - "Compliance and standards"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL test planning MUST be comprehensive and systematic"
+    - "ALL coverage analysis MUST be thorough and complete"
+    - "ALL risk assessment MUST be detailed and prioritized"
+    - "ALL test scenarios MUST be well-designed and traceable"
+    - "ALL automation strategy MUST be realistic and sustainable"
+    - "ALL resource planning MUST be accurate and feasible"
+    - "ALWAYS use systematic planning methodology"
+    - "NEVER create incomplete or superficial plans"
+
+  strictly_forbidden:
+    - "Creating incomplete or superficial test plans"
+    - "Skipping comprehensive feature analysis"
+    - "Ignoring performance or security requirements"
+    - "Planning without understanding system architecture"
+    - "Missing measurable success criteria"
+    - "Using generic templates without customization"
+    - "Planning without stakeholder validation"
+    - "Creating plans without proper documentation"

@@ -1,0 +1,525 @@
+# === MCP PROMPT: Critical Issue Remediation Protocol ===
+name: "quality-fix-critical-prompt"
+version: "1.0.0"
+description: "Immediate fix protocol for critical issues that prevent code compilation and execution"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Critical Issue Remediation"
+  description: "Execute immediate surgical fixes for critical syntax errors, dependency failures, and compilation blockers with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to fix"
+      required: true
+
+    critical_issue_type:
+      type: "string"
+      description: "Type of critical issues to prioritize"
+      required: true
+      enum:
+        [
+          "syntax-errors",
+          "dependency-failures",
+          "compilation-blockers",
+          "import-errors",
+          "configuration-issues",
+          "comprehensive",
+        ]
+
+    fix_scope:
+      type: "string"
+      description: "Scope of critical fixes to apply"
+      required: true
+      enum: ["immediate", "surgical", "comprehensive", "targeted"]
+
+    validation_level:
+      type: "string"
+      description: "Level of validation after fixes"
+      required: false
+      enum: ["basic", "standard", "comprehensive", "production"]
+
+    backup_strategy:
+      type: "string"
+      description: "Backup strategy for safety"
+      required: false
+      enum: ["none", "incremental", "full", "atomic"]
+
+    rollback_capability:
+      type: "string"
+      description: "Rollback capability configuration"
+      required: false
+      enum: ["disabled", "basic", "full", "atomic"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI critical issue remediation specialist executing the Critical Issue Remediation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow surgical fix methodology for critical issues
+        - Apply atomic changes with immediate validation
+        - Maintain compilation safety and functionality preservation
+        - Use production-ready remediation standards
+        - Follow systematic critical issue resolution approach
+        - Generate comprehensive fix documentation and audit trails
+        - Prioritize blocking issues that prevent code execution
+
+        ABSOLUTELY FORBIDDEN:
+        - Large non-atomic changes that introduce new issues
+        - Skipping compilation validation after fixes
+        - Missing backup creation before critical modifications
+        - Fixing without understanding root cause analysis
+        - Creating temporary workarounds instead of proper fixes
+        - Ignoring dependency conflicts or version mismatches
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CRITICAL ISSUE REMEDIATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **REMEDIATION PARAMETERS:**
+        - Codebase Path: {{codebase_path}}
+        - Critical Issue Type: {{critical_issue_type}}
+        - Fix Scope: {{fix_scope}}
+        - Validation Level: {{validation_level}}
+        - Backup Strategy: {{backup_strategy}}
+        - Rollback Capability: {{rollback_capability}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CRITICAL ISSUE REMEDIATION PROTOCOL:**
+
+# Critical Issue Remediation Protocol Configuration
+remediation_protocol:
+  # Remediation Focus - MANDATORY COMPREHENSIVE COVERAGE
+  remediation_focus:
+    syntax_error_resolution: true # MUST fix malformed code and syntax issues
+    dependency_conflict_resolution: true # MUST resolve import and package conflicts
+    compilation_blocker_removal: true # MUST eliminate compilation failures
+    configuration_fix_application: true # MUST repair configuration errors
+    environment_setup_correction: true # MUST fix environment dependencies
+    resource_verification: true # MUST ensure required files exist
+    atomic_change_application: true # MUST apply changes atomically
+    immediate_validation: true # MUST validate after each fix
+    remediation_only: true # STRICTLY remediation only, no feature additions
+
+  # Remediation Configuration - MANDATORY SETTINGS
+  remediation_settings:
+    enable_surgical_fixes: true
+    perform_atomic_changes: true
+    apply_immediate_validation: true
+    maintain_functionality_preservation: true
+    ensure_compilation_safety: true
+    create_backup_before_fixes: true
+    implement_rollback_capability: true
+    generate_audit_trail: true
+    systematic_approach: true # MANDATORY: Systematic remediation methodology
+    follow_safety_protocols: true # MANDATORY: Safety and backup protocols
+    comprehensive_coverage: true # MANDATORY: Cover all critical issue types
+    production_ready_fixes: true # MANDATORY: Production-focused remediation
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Critical Issue Discovery and Assessment"
+    mandatory_actions:
+      - "SCAN entire codebase for syntax errors and compilation failures"
+      - "IDENTIFY dependency conflicts and missing package issues"
+      - "CATALOG configuration errors and environment problems"
+      - "PRIORITIZE blocking issues by severity and impact"
+      - "DOCUMENT critical issue inventory with fix requirements"
+
+    discovery_requirements:
+      - "MANDATORY: Complete syntax error detection and cataloging"
+      - "MANDATORY: Comprehensive dependency analysis and conflict identification"
+      - "MANDATORY: Systematic prioritization of blocking issues"
+      - "FORBIDDEN: Incomplete or partial critical issue discovery"
+
+  phase_2:
+    name: "Syntax Error Resolution and Compilation Fixes"
+    mandatory_actions:
+      - "FIX malformed f-strings with proper closing braces and syntax"
+      - "CORRECT indentation issues using consistent spacing standards"
+      - "REPAIR missing parentheses, brackets, and braces systematically"
+      - "RESOLVE character encoding issues and invalid syntax"
+      - "VALIDATE compilation success after each syntax fix"
+
+    syntax_fix_framework:
+      malformed_strings:
+        - "IDENTIFY f-string syntax errors and missing closing braces"
+        - "APPLY proper f-string formatting with correct syntax"
+        - "VERIFY string interpolation functionality after fixes"
+        - "ENSURE no new syntax errors introduced during repair"
+
+      indentation_correction:
+        - "ANALYZE indentation patterns and consistency requirements"
+        - "APPLY consistent spacing standards across all files"
+        - "VERIFY proper code block structure and nesting"
+        - "MAINTAIN original code logic and control flow"
+
+      bracket_matching:
+        - "SCAN for unmatched parentheses, brackets, and braces"
+        - "APPLY proper bracket matching and closure"
+        - "VERIFY balanced expressions and function calls"
+        - "ENSURE syntactic correctness and code validity"
+
+  phase_3:
+    name: "Dependency Conflict Resolution and Import Fixes"
+    mandatory_actions:
+      - "ANALYZE dependency requirements and version conflicts"
+      - "RESOLVE missing package installations and imports"
+      - "FIX circular dependency issues and import cycles"
+      - "CORRECT module path errors and relative imports"
+      - "VALIDATE all import statements and dependency loading"
+
+    dependency_resolution_framework:
+      package_management:
+        - "IDENTIFY missing packages from requirements files"
+        - "INSTALL required packages with compatible versions"
+        - "RESOLVE version conflicts and dependency chains"
+        - "UPDATE packages with security vulnerabilities"
+
+      import_correction:
+        - "FIX import statement syntax and module references"
+        - "CORRECT relative import paths and package structure"
+        - "RESOLVE circular import dependencies and cycles"
+        - "VERIFY module accessibility and import success"
+
+      version_compatibility:
+        - "CHECK package version compatibility and conflicts"
+        - "RESOLVE breaking changes and API differences"
+        - "ENSURE stable dependency versions and constraints"
+        - "MAINTAIN backwards compatibility where possible"
+
+  phase_4:
+    name: "Configuration Error Correction and Environment Setup"
+    mandatory_actions:
+      - "VALIDATE configuration file syntax and structure"
+      - "CORRECT environment variable requirements and setup"
+      - "ENSURE required directories and resources exist"
+      - "FIX database connection and external service configurations"
+      - "VERIFY application startup and configuration loading"
+
+    configuration_fix_framework:
+      config_file_validation:
+        - "PARSE JSON, YAML, and INI configuration files"
+        - "CORRECT syntax errors and structural issues"
+        - "VERIFY configuration schema compliance"
+        - "ENSURE required configuration values present"
+
+      environment_setup:
+        - "VALIDATE environment variable requirements"
+        - "CREATE missing directories and resource paths"
+        - "VERIFY file permissions and access rights"
+        - "ENSURE proper environment isolation and setup"
+
+      service_configuration:
+        - "CHECK database connection strings and credentials"
+        - "VERIFY external service endpoint configuration"
+        - "ENSURE proper SSL/TLS and security settings"
+        - "VALIDATE service discovery and registration"
+
+  phase_5:
+    name: "Compilation Validation and Functionality Testing"
+    mandatory_actions:
+      - "EXECUTE comprehensive compilation tests on all files"
+      - "VERIFY application startup and initialization success"
+      - "TEST basic functionality and critical path execution"
+      - "CONFIRM no regressions introduced during remediation"
+      - "DOCUMENT compilation status and validation results"
+
+    validation_framework:
+      compilation_testing:
+        - "RUN python -m py_compile on all Python files"
+        - "EXECUTE TypeScript/JavaScript compilation checks"
+        - "VERIFY AST parsing and syntax validation"
+        - "ENSURE zero compilation errors and warnings"
+
+      functionality_verification:
+        - "TEST application startup and initialization"
+        - "VERIFY critical functionality execution paths"
+        - "CHECK service health and endpoint availability"
+        - "ENSURE data processing and business logic correctness"
+
+      regression_testing:
+        - "COMPARE functionality before and after fixes"
+        - "VERIFY no new issues introduced during remediation"
+        - "CHECK performance and resource utilization"
+        - "ENSURE backwards compatibility maintenance"
+
+  phase_6:
+    name: "Atomic Change Application and Safety Protocols"
+    mandatory_actions:
+      - "APPLY fixes using atomic change methodology"
+      - "CREATE backups before each critical modification"
+      - "IMPLEMENT rollback capability for fix failures"
+      - "VALIDATE each change immediately after application"
+      - "MAINTAIN audit trail of all modifications"
+
+    safety_protocol_framework:
+      atomic_changes:
+        - "APPLY one fix at a time with immediate validation"
+        - "ENSURE each change is independent and reversible"
+        - "VERIFY no interdependencies between fix operations"
+        - "MAINTAIN transaction-like semantics for changes"
+
+      backup_management:
+        - "CREATE incremental backups before each fix"
+        - "STORE backup metadata and restoration procedures"
+        - "VERIFY backup integrity and restoration capability"
+        - "MAINTAIN backup retention and cleanup policies"
+
+      rollback_capability:
+        - "IMPLEMENT immediate rollback for failed fixes"
+        - "MAINTAIN change history and reversal procedures"
+        - "VERIFY rollback functionality before proceeding"
+        - "ENSURE safe recovery from fix failures"
+
+  phase_7:
+    name: "Quality Assurance and Standards Compliance"
+    mandatory_actions:
+      - "VERIFY fixes follow coding standards and conventions"
+      - "ENSURE minimal changes principle adherence"
+      - "VALIDATE preservation of original functionality"
+      - "CHECK compliance with project style guidelines"
+      - "CONFIRM production readiness of applied fixes"
+
+    quality_assurance_framework:
+      standards_compliance:
+        - "VERIFY adherence to project coding standards"
+        - "CHECK style guide compliance and formatting"
+        - "ENSURE consistent patterns and conventions"
+        - "VALIDATE documentation and comment standards"
+
+      minimal_changes:
+        - "APPLY only necessary modifications for fixes"
+        - "AVOID over-engineering and unnecessary changes"
+        - "PRESERVE original code structure and patterns"
+        - "MAINTAIN code readability and maintainability"
+
+      functionality_preservation:
+        - "ENSURE original business logic remains intact"
+        - "VERIFY API contracts and interface stability"
+        - "MAINTAIN backwards compatibility requirements"
+        - "PRESERVE performance characteristics and behavior"
+
+  phase_8:
+    name: "Security and Performance Impact Assessment"
+    mandatory_actions:
+      - "ANALYZE security implications of applied fixes"
+      - "VERIFY no introduction of security vulnerabilities"
+      - "ASSESS performance impact of remediation changes"
+      - "ENSURE no degradation of system characteristics"
+      - "VALIDATE security best practices in fix implementations"
+
+    impact_assessment_framework:
+      security_analysis:
+        - "SCAN for introduced security vulnerabilities"
+        - "VERIFY input validation and sanitization maintenance"
+        - "CHECK authentication and authorization preservation"
+        - "ENSURE secure coding practices in fix implementations"
+
+      performance_evaluation:
+        - "MEASURE performance impact of applied fixes"
+        - "VERIFY no degradation in response times"
+        - "CHECK memory usage and resource consumption"
+        - "ENSURE scalability characteristics maintenance"
+
+      stability_verification:
+        - "TEST system stability and reliability"
+        - "VERIFY error handling and exception management"
+        - "CHECK logging and monitoring functionality"
+        - "ENSURE graceful degradation capabilities"
+
+  phase_9:
+    name: "Documentation and Audit Trail Generation"
+    mandatory_actions:
+      - "DOCUMENT all applied fixes with detailed descriptions"
+      - "GENERATE comprehensive remediation audit trail"
+      - "CREATE fix summary with before/after comparisons"
+      - "RECORD validation results and compliance status"
+      - "PREPARE handoff documentation for development teams"
+
+    documentation_requirements:
+      - "MANDATORY: Create detailed fix documentation in markdown document format"
+      - "MANDATORY: Include comprehensive audit trail and change history"
+      - "MANDATORY: Document all validation results and compliance verification"
+      - "MANDATORY: Provide clear remediation summary and next actions"
+      - "FORBIDDEN: Incomplete or partial remediation documentation"
+
+  phase_10:
+    name: "Validation and Production Readiness Certification"
+    mandatory_actions:
+      - "VALIDATE complete resolution of all critical issues"
+      - "VERIFY production readiness and deployment safety"
+      - "CONFIRM zero blocking issues remaining"
+      - "ASSESS need for additional remediation phases"
+      - "GENERATE certification for next development phase"
+
+    certification_criteria:
+      - "MANDATORY: All syntax errors resolved and compilation successful"
+      - "MANDATORY: All dependency conflicts resolved and imports working"
+      - "MANDATORY: All configuration issues fixed and environment stable"
+      - "MANDATORY: Application startup successful and basic functionality verified"
+      - "FORBIDDEN: Proceeding with any remaining critical blocking issues"
+
+# Remediation Validation Criteria
+validation_criteria:
+  syntax_resolution: "MANDATORY - All syntax errors resolved and compilation successful"
+  dependency_resolution: "MANDATORY - All import and dependency conflicts resolved"
+  compilation_success: "MANDATORY - All files compile without errors"
+  functionality_preservation: "MANDATORY - Original functionality maintained"
+  configuration_correction: "MANDATORY - All configuration issues resolved"
+  environment_stability: "MANDATORY - Environment setup stable and functional"
+  atomic_change_application: "MANDATORY - All changes applied atomically"
+  validation_completeness: "MANDATORY - Comprehensive validation performed"
+  audit_trail_generation: "MANDATORY - Complete audit trail documented"
+  production_readiness: "MANDATORY - Ready for next development phase"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL remediation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-093215"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Fix_Implementation-{{YYYY-MM-DD-HHMMSS}}.ipynb (fix implementation report)"
+    - "./project/docs/quality-analysis/Changes_Applied-{{YYYY-MM-DD-HHMMSS}}.md (changes and fixes applied)"
+    - "./project/docs/quality-analysis/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.md (validation and testing results)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all remediation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL remediation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all remediation outputs"
+    - "FORBIDDEN: Creating remediation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same remediation session"
+
+# Remediation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. SCAN codebase {{codebase_path}} for critical issues and blocking problems"
+  - "2. PRIORITIZE syntax errors, dependency conflicts, and compilation blockers"
+  - "3. APPLY surgical fixes with atomic changes and immediate validation"
+  - "4. RESOLVE dependency conflicts and import failures systematically"
+  - "5. CORRECT configuration errors and environment setup issues"
+  - "6. VALIDATE compilation success and functionality preservation"
+  - "7. IMPLEMENT safety protocols with backup and rollback capability"
+  - "8. ASSESS security and performance impact of applied fixes"
+  - "9. GENERATE comprehensive documentation and audit trail with timestamps"
+  - "10. CERTIFY production readiness and validate remediation completeness"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each remediation step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all remediation tracking"
+  - "MANDATORY: Timestamp all remediation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Critical Issue Types and Remediation Strategies
+critical_issue_types:
+  syntax_errors:
+    malformed_f_strings:
+      - "Missing closing braces in f-string expressions"
+      - "Incorrect escape sequences and quote handling"
+      - "Invalid variable references and expression syntax"
+      - "Nested quote and brace conflicts"
+
+    indentation_issues:
+      - "Inconsistent spacing and tab/space mixing"
+      - "Incorrect block nesting and structure"
+      - "Missing indentation for code blocks"
+      - "Over-indentation and alignment problems"
+
+    missing_syntax_elements:
+      - "Unmatched parentheses, brackets, braces"
+      - "Missing colons for control structures"
+      - "Incomplete function and class definitions"
+      - "Invalid character encoding issues"
+
+  dependency_failures:
+    missing_packages:
+      - "Required packages not installed or accessible"
+      - "Version conflicts and compatibility issues"
+      - "Missing development and runtime dependencies"
+      - "Platform-specific package availability"
+
+    import_errors:
+      - "Circular import dependencies and cycles"
+      - "Incorrect module paths and references"
+      - "Missing __init__.py files for packages"
+      - "Relative import path resolution failures"
+
+  compilation_blockers:
+    type_annotation_errors:
+      - "Invalid type hints and annotations"
+      - "Missing imports for typing constructs"
+      - "Forward reference resolution failures"
+      - "Generic type parameter issues"
+
+    configuration_errors:
+      - "Invalid JSON, YAML, INI syntax"
+      - "Missing required configuration values"
+      - "Environment variable dependencies"
+      - "Database and service connection issues"
+
+# Remediation Safety Protocols
+safety_protocols:
+  atomic_changes:
+    - "Apply one fix at a time with immediate validation"
+    - "Ensure each change is independent and reversible"
+    - "Maintain transaction-like semantics for modifications"
+    - "Verify no cascading effects from individual fixes"
+
+  backup_strategies:
+    - "Create incremental backups before each critical fix"
+    - "Store metadata for backup identification and restoration"
+    - "Verify backup integrity and restoration procedures"
+    - "Maintain retention policies and cleanup procedures"
+
+  rollback_capability:
+    - "Implement immediate rollback for failed fixes"
+    - "Maintain change history and reversal procedures"
+    - "Verify rollback functionality before applying fixes"
+    - "Ensure safe recovery from any fix failures"
+
+  validation_protocols:
+    - "Validate compilation after each syntax fix"
+    - "Test import resolution after dependency changes"
+    - "Verify application startup after configuration fixes"
+    - "Confirm functionality preservation throughout process"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL syntax errors MUST be resolved for compilation success"
+    - "ALL dependency conflicts MUST be resolved for import functionality"
+    - "ALL configuration issues MUST be fixed for application startup"
+    - "ALL fixes MUST preserve original functionality and behavior"
+    - "ALL changes MUST be applied atomically with validation"
+    - "ALWAYS use surgical fix methodology with minimal changes"
+    - "NEVER introduce new issues or break existing functionality"
+
+  strictly_forbidden:
+    - "Large non-atomic changes that introduce new issues"
+    - "Skipping compilation validation after fixes"
+    - "Missing backup creation before critical modifications"
+    - "Fixing without understanding root cause analysis"
+    - "Creating temporary workarounds instead of proper fixes"
+    - "Ignoring dependency conflicts or version mismatches"
+    - "Proceeding with any remaining critical blocking issues"
+    - "Missing comprehensive validation and audit trail documentation"

@@ -1,0 +1,132 @@
+name: "N8N Workflow Refactor"
+description: "Systematic workflow refactoring and optimization with focus on architecture, expression quality, error handling, and performance while preserving functionality"
+version: "2.0.0"
+category: "refactoring"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7              # Latest n8n refactoring patterns
+    - grep                  # Production refactoring examples
+    - sequential-thinking   # Structured refactoring methodology
+    - filesystem           # Workflow modification and validation
+    - memory               # Track refactoring changes
+    - time                 # Timestamp refactoring activities
+
+  n8n_specific_tools:
+    - get_workflow_structure      # Workflow analysis
+    - refactor_workflow_architecture  # Architecture improvements
+    - optimize_expressions        # Expression refactoring
+    - improve_error_handling      # Error handling enhancement
+    - validate_workflow           # Post-refactoring validation
+    - test_workflow               # Functionality verification
+
+# Refactoring Protocol
+refactoring_focus:
+  architecture: true        # Pattern improvements
+  expressions: true         # Expression optimization
+  nodes: true              # Node configuration
+  error_handling: true     # Error handling enhancement
+  performance: true        # Performance optimization
+  preserve_functionality: true  # MANDATORY preservation
+
+# Execution Protocol
+execution_phases:
+  1_analysis_planning:
+    description: "Analyze workflow and plan refactoring"
+    tools: ["get_workflow_structure", "context7", "sequential-thinking"]
+    required_actions:
+      - "Load and analyze workflow"
+      - "Identify refactoring opportunities"
+      - "Prioritize improvements by impact"
+      - "Plan refactoring approach"
+    success_criteria:
+      - "Workflow analyzed"
+      - "Opportunities identified"
+      - "Approach planned"
+
+  2_architecture_refactoring:
+    description: "Refactor workflow architecture"
+    tools: ["refactor_workflow_architecture", "validate_workflow"]
+    required_actions:
+      - "Implement pattern improvements"
+      - "Optimize workflow structure"
+      - "Enhance node organization"
+      - "Refine connections"
+    success_criteria:
+      - "Architecture improved"
+      - "Changes validated"
+
+  3_expression_optimization:
+    description: "Optimize workflow expressions"
+    tools: ["optimize_expressions", "filesystem"]
+    required_actions:
+      - "Refactor complex expressions"
+      - "Implement null safety"
+      - "Add error handling"
+      - "Optimize performance"
+    success_criteria:
+      - "Expressions optimized"
+      - "Quality improved"
+
+  4_error_handling_enhancement:
+    description: "Enhance error handling"
+    tools: ["improve_error_handling", "test_workflow"]
+    required_actions:
+      - "Implement error workflows"
+      - "Add fallback logic"
+      - "Create recovery mechanisms"
+      - "Setup notifications"
+    success_criteria:
+      - "Error handling enhanced"
+      - "Reliability improved"
+
+  5_performance_optimization:
+    description: "Optimize workflow performance"
+    tools: ["filesystem", "validate_workflow"]
+    required_actions:
+      - "Implement parallel processing"
+      - "Eliminate inefficiencies"
+      - "Remove redundancies"
+      - "Optimize resources"
+    success_criteria:
+      - "Performance optimized"
+      - "Gains measured"
+
+  6_validation_testing:
+    description: "Validate and test refactored workflow"
+    tools: ["validate_workflow", "test_workflow", "time"]
+    required_actions:
+      - "Validate workflow structure"
+      - "Test functionality preservation"
+      - "Verify error handling"
+      - "Measure improvements"
+      - "Generate deliverables"
+    success_criteria:
+      - "Functionality preserved"
+      - "Quality improved"
+      - "Deliverables created with YYYY-MM-DD-HHMMSS timestamps"
+
+# Deliverables
+final_deliverables:
+  naming_convention: "MANDATORY: ALL refactoring output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "./project/docs/n8n-workflows/Refactoring_Applied-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Architecture_Improvements-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Refactored_Workflow-{{YYYY-MM-DD-HHMMSS}}.json"
+    - "./project/docs/n8n-workflows/Validation_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+
+# Success Criteria
+success_criteria:
+  - "Workflow architecture refactored"
+  - "Expressions optimized"
+  - "Error handling enhanced"
+  - "Performance optimized"
+  - "Functionality preserved"
+  - "All changes validated"
+  - "All deliverables use proper YYYY-MM-DD-HHMMSS timestamps"
+
+# Command Integration
+related_commands:
+  previous_phase: "n8n-workflow-review, n8n-workflow-quality-analysis, n8n-workflow-lint-quality-check"
+  next_phase: "n8n-workflow-lint-quality-check (validation) or deployment"

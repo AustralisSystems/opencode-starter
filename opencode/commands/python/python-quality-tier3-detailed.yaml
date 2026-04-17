@@ -1,0 +1,850 @@
+# === Python Quality Standards - TIER 3: DETAILED SPECIFICATIONS ===
+name: "python-quality-tier3-detailed"
+version: "1.0.0"
+description: "Detailed Python quality specifications - comprehensive examples and edge cases (loaded for specific tasks)"
+tier: 3
+token_target: "< 3000 tokens"
+
+# ============================================================================
+# SECTION 1: DETAILED PHASE ACTIONS
+# ============================================================================
+detailed_phase_actions:
+  phase_1_scope_definition:
+    file_identification:
+      - "IDENTIFY all Python files (.py, .pyi, .pyx)"
+      - "MAP Python package structure with __init__.py"
+      - "CATALOG module hierarchy and organization"
+      - "DOCUMENT entry points and main modules"
+
+    environment_detection:
+      - "DETECT virtual environment and location"
+      - "IDENTIFY Python version in use"
+      - "CATALOG installed dependencies"
+      - "MAP requirements.txt or pyproject.toml"
+
+    baseline_establishment:
+      - "CAPTURE current code metrics"
+      - "RECORD existing issues count"
+      - "DOCUMENT baseline test coverage"
+      - "ESTABLISH quality benchmark"
+
+  phase_2_style_formatting:
+    black_operations:
+      - "RUN black --check to identify formatting issues"
+      - "APPLY black formatting (safe, deterministic)"
+      - "VALIDATE string quote normalization"
+      - "CHECK line length compliance (88 chars default)"
+      - "VERIFY trailing comma insertion"
+
+    ruff_operations:
+      - "RUN ruff check with all rule categories"
+      - "APPLY ruff --fix for safe auto-fixes"
+      - "CHECK import sorting within ruff"
+      - "VALIDATE naming conventions (PEP 8)"
+      - "FLAG complex violations for manual review"
+      - "ASSESS unused imports and variables"
+
+    pep8_validation:
+      - "VERIFY indentation (4 spaces, no tabs)"
+      - "CHECK blank line conventions"
+      - "VALIDATE whitespace around operators"
+      - "ASSESS comment formatting and placement"
+      - "CHECK maximum line length compliance"
+
+  phase_3_type_safety:
+    mypy_execution:
+      - "RUN mypy --strict for comprehensive checking"
+      - "CHECK --disallow-untyped-defs flag"
+      - "VALIDATE --disallow-any-generics flag"
+      - "ASSESS --warn-redundant-casts flag"
+      - "CHECK --warn-unused-ignores flag"
+
+    annotation_coverage:
+      - "MEASURE function signature annotation percentage"
+      - "CHECK class attribute type hints"
+      - "VALIDATE module-level variable annotations"
+      - "ASSESS __init__ parameter annotations"
+      - "CHECK return type annotations completeness"
+
+    type_consistency:
+      - "VERIFY type narrowing with isinstance checks"
+      - "CHECK cast() usage and justification"
+      - "VALIDATE Union and Optional usage"
+      - "ASSESS Generic type parameter consistency"
+      - "CHECK Protocol implementation correctness"
+
+  phase_4_security_scanning:
+    bandit_scanning:
+      - "RUN bandit -r . for recursive scanning"
+      - "CHECK for SQL injection risks (B608)"
+      - "VALIDATE exec/eval usage (B102, B307)"
+      - "ASSESS pickle security issues (B301, B302)"
+      - "CHECK for hardcoded passwords (B105, B106)"
+      - "VALIDATE XML parsing security (B313, B314, B315, B316)"
+
+    safety_checking:
+      - "RUN safety check for known CVEs"
+      - "VERIFY package versions against database"
+      - "CHECK for outdated dependencies"
+      - "VALIDATE license compliance"
+      - "ASSESS supply chain risks"
+
+    secret_detection:
+      - "SCAN for API keys and tokens"
+      - "CHECK for password patterns"
+      - "VALIDATE environment variable usage"
+      - "ASSESS .env file security"
+      - "CHECK for AWS/GCP credentials"
+
+  phase_5_test_coverage:
+    pytest_execution:
+      - "RUN pytest --cov=<module> --cov-report=html"
+      - "MEASURE line coverage percentage"
+      - "CHECK branch coverage completeness"
+      - "VALIDATE test file organization"
+      - "ASSESS fixture usage and reusability"
+
+    coverage_analysis:
+      - "IDENTIFY uncovered code paths"
+      - "CHECK critical path coverage"
+      - "VALIDATE exception handling tests"
+      - "ASSESS edge case coverage"
+      - "MEASURE test execution time"
+
+    test_quality:
+      - "VERIFY assertion quality and clarity"
+      - "CHECK test isolation and independence"
+      - "VALIDATE test naming conventions"
+      - "ASSESS parametrization usage"
+      - "CHECK for test code duplication"
+
+  phase_6_complexity_analysis:
+    cyclomatic_complexity:
+      - "RUN radon cc -s for cyclomatic complexity"
+      - "IDENTIFY functions with complexity > 15"
+      - "CHECK class-level complexity aggregation"
+      - "VALIDATE module complexity scores"
+      - "FLAG high-complexity methods for refactoring"
+
+    cognitive_complexity:
+      - "MEASURE cognitive complexity per function"
+      - "CHECK nesting depth (max 4 levels)"
+      - "VALIDATE control flow complexity"
+      - "ASSESS conditional complexity"
+
+    maintainability_index:
+      - "RUN radon mi for maintainability scoring"
+      - "CHECK maintainability index (MI > 20 good, < 10 poor)"
+      - "CALCULATE per-module MI scores"
+      - "IDENTIFY low-maintainability modules"
+
+    halstead_metrics:
+      - "CALCULATE Halstead volume"
+      - "MEASURE Halstead difficulty"
+      - "ASSESS program vocabulary"
+      - "CHECK operator and operand counts"
+
+  phase_7_documentation:
+    pydocstyle_checking:
+      - "RUN pydocstyle for PEP 257 compliance"
+      - "CHECK docstring presence (D100-D107)"
+      - "VALIDATE docstring format (D200-D215)"
+      - "ASSESS parameter documentation (D400-D417)"
+      - "CHECK imperative mood in summaries"
+
+    interrogate_coverage:
+      - "RUN interrogate -v for docstring coverage"
+      - "MEASURE module docstring coverage"
+      - "CHECK class docstring coverage"
+      - "VALIDATE function docstring coverage"
+      - "TARGET 80%+ docstring coverage"
+
+    documentation_quality:
+      - "VERIFY parameter descriptions match signatures"
+      - "CHECK return value documentation"
+      - "VALIDATE exception documentation"
+      - "ASSESS example code in docstrings"
+      - "CHECK for outdated documentation"
+
+  phase_8_safe_improvements:
+    automated_fixes:
+      - "APPLY black formatting unconditionally"
+      - "RUN ruff --fix for safe auto-fixes"
+      - "EXECUTE isort for import sorting"
+      - "REMOVE trailing whitespace"
+      - "FIX end-of-file newlines"
+
+    type_improvements:
+      - "ADD obvious type hints (str, int, bool, None)"
+      - "FIX type inconsistencies flagged by mypy"
+      - "UPDATE type aliases for clarity"
+      - "IMPROVE generic type usage"
+      - "ADD TypedDict for structured dicts"
+
+    documentation_fixes:
+      - "FORMAT docstrings to PEP 257"
+      - "ADD missing function summaries"
+      - "FIX parameter description formatting"
+      - "UPDATE examples in docstrings"
+      - "ADD module-level docstrings if missing"
+
+  phase_9_issue_flagging:
+    issue_identification:
+      - "IDENTIFY complexity violations (> 15)"
+      - "FLAG security issues (high severity)"
+      - "DETECT architectural problems"
+      - "MAP circular dependencies"
+      - "IDENTIFY performance bottlenecks"
+
+    issue_classification:
+      - "ASSIGN severity: Critical, High, Medium, Low"
+      - "ASSESS business impact: High, Medium, Low"
+      - "EVALUATE technical risk: High, Medium, Low"
+      - "DETERMINE urgency: Immediate, Soon, Later"
+
+    remediation_planning:
+      - "CREATE fix strategies for each issue"
+      - "IDENTIFY fix dependencies"
+      - "ESTIMATE effort (hours/days)"
+      - "PLAN testing requirements"
+      - "PRIORITIZE by impact × urgency"
+
+  phase_10_reporting:
+    report_compilation:
+      - "COMPILE comprehensive quality metrics"
+      - "DOCUMENT all fixes applied"
+      - "LIST all flagged issues with details"
+      - "CREATE prioritized remediation roadmap"
+      - "GENERATE markdown document deliverables"
+
+    metric_documentation:
+      - "RECORD cyclomatic complexity scores"
+      - "DOCUMENT type coverage percentages"
+      - "LOG security scan results"
+      - "CAPTURE test coverage metrics"
+      - "TRACK maintainability index"
+
+# ============================================================================
+# SECTION 2: TOOL CONFIGURATIONS AND FLAGS
+# ============================================================================
+tool_configurations:
+  black_config:
+    command_line:
+      check: "black --check --diff <path>"
+      apply: "black <path>"
+      verbose: "black --verbose <path>"
+    config_file: "pyproject.toml [tool.black]"
+    settings:
+      line_length: 88
+      target_version: "py311"
+      include: "'\\.pyi?$'"
+      exclude: "/(venv|build|dist)/"
+
+  ruff_config:
+    command_line:
+      check: "ruff check <path>"
+      fix: "ruff check --fix <path>"
+      watch: "ruff check --watch <path>"
+    rule_categories:
+      - "E (pycodestyle errors)"
+      - "F (pyflakes)"
+      - "W (pycodestyle warnings)"
+      - "C90 (mccabe complexity)"
+      - "I (isort)"
+      - "N (pep8-naming)"
+      - "D (pydocstyle)"
+      - "UP (pyupgrade)"
+      - "ANN (flake8-annotations)"
+      - "S (flake8-bandit)"
+      - "B (flake8-bugbear)"
+      - "A (flake8-builtins)"
+      - "COM (flake8-commas)"
+      - "C4 (flake8-comprehensions)"
+      - "DTZ (flake8-datetimez)"
+      - "T10 (flake8-debugger)"
+      - "EM (flake8-errmsg)"
+      - "EXE (flake8-executable)"
+      - "ISC (flake8-implicit-str-concat)"
+      - "ICN (flake8-import-conventions)"
+      - "G (flake8-logging-format)"
+      - "INP (flake8-no-pep420)"
+      - "PIE (flake8-pie)"
+      - "T20 (flake8-print)"
+      - "PYI (flake8-pyi)"
+      - "PT (flake8-pytest-style)"
+      - "Q (flake8-quotes)"
+      - "RSE (flake8-raise)"
+      - "RET (flake8-return)"
+      - "SLF (flake8-self)"
+      - "SIM (flake8-simplify)"
+      - "TID (flake8-tidy-imports)"
+      - "TCH (flake8-type-checking)"
+      - "ARG (flake8-unused-arguments)"
+      - "PTH (flake8-use-pathlib)"
+      - "ERA (eradicate)"
+      - "PD (pandas-vet)"
+      - "PGH (pygrep-hooks)"
+      - "PL (pylint)"
+      - "TRY (tryceratops)"
+      - "NPY (numpy)"
+      - "RUF (ruff-specific)"
+
+  mypy_config:
+    command_line:
+      strict: "mypy --strict <path>"
+      report: "mypy --html-report ./mypy-report <path>"
+      incremental: "mypy --incremental <path>"
+    strict_flags:
+      - "--disallow-untyped-defs"
+      - "--disallow-any-generics"
+      - "--warn-redundant-casts"
+      - "--warn-unused-ignores"
+      - "--warn-return-any"
+      - "--warn-unreachable"
+      - "--strict-equality"
+      - "--strict-concatenate"
+    config_file: "mypy.ini or pyproject.toml [tool.mypy]"
+
+  bandit_config:
+    command_line:
+      scan: "bandit -r <directory>"
+      config: "bandit -c bandit.yaml -r <directory>"
+      format: "bandit -f json -o bandit-report.json -r <directory>"
+    severity_levels:
+      high: "Critical security issues"
+      medium: "Moderate security concerns"
+      low: "Minor security considerations"
+    common_checks:
+      B102: "exec_used"
+      B105: "hardcoded_password_string"
+      B106: "hardcoded_password_funcarg"
+      B107: "hardcoded_password_default"
+      B301: "pickle"
+      B302: "marshal"
+      B303: "md5"
+      B304: "ciphers"
+      B305: "cipher_modes"
+      B306: "mktemp_q"
+      B307: "eval"
+      B308: "mark_safe"
+      B309: "httpsconnection"
+      B310: "urllib_urlopen"
+      B311: "random"
+      B312: "telnetlib"
+      B313: "xml_bad_cElementTree"
+      B314: "xml_bad_ElementTree"
+      B315: "xml_bad_expatreader"
+      B316: "xml_bad_expatbuilder"
+      B317: "xml_bad_sax"
+      B318: "xml_bad_minidom"
+      B319: "xml_bad_pulldom"
+      B320: "xml_bad_etree"
+      B321: "ftplib"
+      B322: "input"
+      B323: "unverified_context"
+      B324: "hashlib_new_insecure_functions"
+      B325: "tempnam"
+      B401: "import_telnetlib"
+      B402: "import_ftplib"
+      B403: "import_pickle"
+      B404: "import_subprocess"
+      B405: "import_xml_etree"
+      B406: "import_xml_sax"
+      B407: "import_xml_expat"
+      B408: "import_xml_minidom"
+      B409: "import_xml_pulldom"
+      B410: "import_lxml"
+      B411: "import_xmlrpclib"
+      B412: "import_httpoxy"
+      B413: "import_pycrypto"
+      B501: "request_with_no_cert_validation"
+      B502: "ssl_with_bad_version"
+      B503: "ssl_with_bad_defaults"
+      B504: "ssl_with_no_version"
+      B505: "weak_cryptographic_key"
+      B506: "yaml_load"
+      B507: "ssh_no_host_key_verification"
+      B601: "paramiko_calls"
+      B602: "subprocess_popen_with_shell_equals_true"
+      B603: "subprocess_without_shell_equals_true"
+      B604: "any_other_function_with_shell_equals_true"
+      B605: "start_process_with_a_shell"
+      B606: "start_process_with_no_shell"
+      B607: "start_process_with_partial_path"
+      B608: "hardcoded_sql_expressions"
+      B609: "linux_commands_wildcard_injection"
+      B610: "django_extra_used"
+      B611: "django_rawsql_used"
+      B612: "logging_config_insecure_listen"
+      B701: "jinja2_autoescape_false"
+      B702: "use_of_mako_templates"
+      B703: "django_mark_safe"
+
+  radon_config:
+    cyclomatic_complexity:
+      command: "radon cc -s -a <path>"
+      grades:
+        A: "1-5 (simple)"
+        B: "6-10 (well structured)"
+        C: "11-20 (moderate)"
+        D: "21-30 (complex)"
+        E: "31-40 (very complex)"
+        F: "41+ (extremely complex)"
+      thresholds:
+        good: "< 10"
+        acceptable: "10-15"
+        refactor: "> 15"
+
+    maintainability_index:
+      command: "radon mi -s <path>"
+      scores:
+        A: "20-100 (highly maintainable)"
+        B: "10-19 (moderately maintainable)"
+        C: "0-9 (difficult to maintain)"
+      formula: "171 - 5.2 * ln(V) - 0.23 * G - 16.2 * ln(L)"
+
+    raw_metrics:
+      command: "radon raw <path>"
+      metrics:
+        LOC: "Lines of Code"
+        LLOC: "Logical Lines of Code"
+        SLOC: "Source Lines of Code"
+        Comments: "Comment Lines"
+        Multi: "Multi-line strings"
+        Blank: "Blank lines"
+
+# ============================================================================
+# SECTION 3: DATE STAMP REQUIREMENTS
+# ============================================================================
+date_stamp_requirements:
+  format_specification:
+    primary_format: "YYYY-MM-DD-HHMMSS"
+    example: "2025-10-23-143022"
+    timezone: "UTC"
+    separator: "Hyphens for date, none for time"
+
+  usage_requirements:
+    - "MANDATORY: All deliverable filenames must include date stamp"
+    - "MANDATORY: Use consistent format across all files in session"
+    - "MANDATORY: Record date stamp at session start"
+    - "FORBIDDEN: Using different date formats in same session"
+    - "FORBIDDEN: Creating files without date stamps"
+
+  filename_patterns:
+    quality_report: "Quality_Check_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    issues_list: "Issues_Found-{{YYYY-MM-DD-HHMMSS}}.md"
+    fix_plan: "Fix_Plan-{{YYYY-MM-DD-HHMMSS}}.md"
+    analysis_report: "Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    recommendations: "Recommendations-{{YYYY-MM-DD-HHMMSS}}.md"
+    refactoring_plan: "Refactoring_Plan-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    validation_report: "Validation_Report-{{YYYY-MM-DD-HHMMSS}}.md"
+    review_report: "Review_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    action_items: "Action_Items-{{YYYY-MM-DD-HHMMSS}}.md"
+
+  timestamp_tracking:
+    - "Record start time of analysis"
+    - "Track duration of each phase"
+    - "Log completion time"
+    - "Document tool execution times"
+
+# ============================================================================
+# SECTION 4: DELIVERABLE SPECIFICATIONS
+# ============================================================================
+deliverable_specifications:
+  lint_and_check_deliverables:
+    location: "./project/docs/quality-analysis/"
+    files:
+      - name: "Quality_Check_Report-{{timestamp}}.ipynb"
+        content:
+          - "Executive summary"
+          - "Tool execution results"
+          - "Metrics collected"
+          - "Issues found"
+          - "Fixes applied"
+          - "Recommendations"
+
+      - name: "Issues_Found-{{timestamp}}.md"
+        content:
+          - "Severity classifications"
+          - "Issue descriptions"
+          - "File locations"
+          - "Recommended fixes"
+
+      - name: "Fix_Plan-{{timestamp}}.md"
+        content:
+          - "Prioritized fix list"
+          - "Effort estimates"
+          - "Testing requirements"
+          - "Validation criteria"
+
+  quality_analysis_deliverables:
+    location: "./project/docs/python-development/"
+    files:
+      - name: "Analysis_Report-{{timestamp}}.ipynb"
+        content:
+          - "Module inventory"
+          - "SOLID compliance"
+          - "Pattern analysis"
+          - "Security findings"
+          - "Performance assessment"
+          - "Complexity metrics"
+
+      - name: "Findings_Recommendations-{{timestamp}}.ipynb"
+        content:
+          - "Key findings"
+          - "Prioritized recommendations"
+          - "Refactoring suggestions"
+          - "Optimization opportunities"
+
+      - name: "Action_Plan-{{timestamp}}.ipynb"
+        content:
+          - "Phased improvement plan"
+          - "Resource requirements"
+          - "Timeline estimates"
+          - "Success metrics"
+
+  refactoring_deliverables:
+    location: "./project/docs/python-development/"
+    files:
+      - name: "Refactoring_Plan-{{timestamp}}.ipynb"
+        content:
+          - "Code analysis"
+          - "SOLID applications"
+          - "Pattern implementations"
+          - "Modernization strategy"
+
+      - name: "Implementation_Guide-{{timestamp}}.md"
+        content:
+          - "Step-by-step refactoring"
+          - "Pattern applications"
+          - "Validation checkpoints"
+
+      - name: "Validation_Report-{{timestamp}}.md"
+        content:
+          - "Functionality verification"
+          - "Test results"
+          - "Performance comparison"
+          - "Quality improvements"
+
+  review_deliverables:
+    location: "./project/docs/python-development/"
+    files:
+      - name: "Review_Report-{{timestamp}}.ipynb"
+        content:
+          - "Comprehensive analysis"
+          - "Architectural diagrams"
+          - "Interface documentation"
+          - "Security assessment"
+          - "Performance analysis"
+
+      - name: "Recommendations-{{timestamp}}.md"
+        content:
+          - "Improvement priorities"
+          - "Best practices"
+          - "Refactoring suggestions"
+
+      - name: "Action_Items-{{timestamp}}.md"
+        content:
+          - "Prioritized fixes"
+          - "Technical debt items"
+          - "Validation requirements"
+
+# ============================================================================
+# SECTION 5: ANALYSIS FRAMEWORKS
+# ============================================================================
+analysis_frameworks:
+  structural_analysis:
+    organization_assessment:
+      - "Evaluate directory structure logic"
+      - "Assess module separation clarity"
+      - "Check package hierarchy consistency"
+      - "Identify logical grouping effectiveness"
+
+    dependency_mapping:
+      - "Map import dependencies"
+      - "Identify circular dependencies"
+      - "Assess coupling levels"
+      - "Check dependency injection patterns"
+
+    pattern_identification:
+      - "Identify design patterns used"
+      - "Check pattern application correctness"
+      - "Assess pattern consistency"
+      - "Identify missing patterns"
+
+  principles_compliance:
+    solid_evaluation:
+      - "Assess SRP: Count responsibilities per component"
+      - "Check OCP: Evaluate extension mechanisms"
+      - "Validate LSP: Check contract compliance"
+      - "Assess ISP: Measure interface cohesion"
+      - "Check DIP: Map abstraction usage"
+
+    dry_assessment:
+      - "Measure code duplication percentage"
+      - "Identify similar code blocks"
+      - "Assess abstraction opportunities"
+      - "Check utility function extraction"
+
+    kiss_validation:
+      - "Measure cyclomatic complexity"
+      - "Check nesting depth"
+      - "Assess readability scores"
+      - "Identify over-engineering"
+
+  security_analysis:
+    vulnerability_scanning:
+      - "Run bandit security scanner"
+      - "Check OWASP Top 10 compliance"
+      - "Identify injection risks"
+      - "Assess authentication security"
+
+    input_validation:
+      - "Check input sanitization"
+      - "Assess validation coverage"
+      - "Verify bounds checking"
+      - "Check file upload security"
+
+    data_protection:
+      - "Assess encryption usage"
+      - "Check sensitive data handling"
+      - "Verify secure transmission"
+      - "Assess logging practices"
+
+  performance_analysis:
+    complexity_evaluation:
+      - "Analyze time complexity (Big O)"
+      - "Assess space complexity"
+      - "Check algorithm efficiency"
+      - "Identify optimization opportunities"
+
+    resource_utilization:
+      - "Profile memory usage"
+      - "Check CPU utilization"
+      - "Assess I/O efficiency"
+      - "Identify resource leaks"
+
+    bottleneck_identification:
+      - "Use cProfile for profiling"
+      - "Identify hot spots"
+      - "Check database query efficiency"
+      - "Assess caching effectiveness"
+
+# ============================================================================
+# SECTION 6: QUALITY GATES WITH EXAMPLES
+# ============================================================================
+quality_gates_detailed:
+  style_gate_examples:
+    black_compliance:
+      pass: |
+        # Properly formatted
+        def calculate_total(items: list[Item]) -> float:
+            return sum(item.price for item in items)
+      fail: |
+        # Improperly formatted
+        def calculate_total(items: list[Item])->float:
+            return sum(item.price for item in items) # No space before ->
+
+    ruff_compliance:
+      pass: |
+        # Proper imports
+        import os
+        import sys
+
+        from mypackage import utils
+      fail: |
+        # Improper imports
+        from mypackage import utils
+        import sys  # Should be before local imports
+        import os
+
+  type_gate_examples:
+    mypy_compliance:
+      pass: |
+        from typing import Protocol
+
+        class Drawable(Protocol):
+            def draw(self) -> None: ...
+
+        def render(obj: Drawable) -> None:
+            obj.draw()
+      fail: |
+        # Missing type hints
+        def render(obj):  # Missing parameter type
+            obj.draw()  # Return type not specified
+
+  security_gate_examples:
+    bandit_compliance:
+      pass: |
+        # Secure SQL query
+        cursor.execute("SELECT * FROM users WHERE id = ?", (user_id,))
+      fail: |
+        # SQL injection vulnerability
+        cursor.execute(f"SELECT * FROM users WHERE id = {user_id}")
+
+    safe_password_handling:
+      pass: |
+        import secrets
+        import hashlib
+
+        def hash_password(password: str) -> str:
+            salt = secrets.token_bytes(32)
+            return hashlib.pbkdf2_hmac('sha256', password.encode(), salt, 100000).hex()
+      fail: |
+        # Weak password hashing
+        import hashlib
+
+        def hash_password(password: str) -> str:
+            return hashlib.md5(password.encode()).hexdigest()
+
+  complexity_gate_examples:
+    acceptable_complexity:
+      example: |
+        # Cyclomatic complexity: 4 (acceptable)
+        def process_order(order: Order) -> OrderResult:
+            if not order.is_valid():
+                return OrderResult.invalid()
+
+            if order.requires_payment():
+                if not process_payment(order):
+                    return OrderResult.payment_failed()
+
+            order.mark_as_processed()
+            return OrderResult.success()
+
+    excessive_complexity:
+      example: |
+        # Cyclomatic complexity: 18 (too high, needs refactoring)
+        def process_complex_order(order: Order) -> OrderResult:
+            if not order.is_valid():
+                if order.has_items():
+                    if order.total > 0:
+                        if order.customer.is_premium():
+                            if order.requires_shipping():
+                                # ... many more nested conditions
+                                pass
+
+# ============================================================================
+# SECTION 7: ADVANCED PATTERNS AND TROUBLESHOOTING
+# ============================================================================
+advanced_patterns:
+  async_patterns:
+    async_context_manager:
+      example: |
+        from typing import AsyncGenerator
+
+        class AsyncResource:
+            async def __aenter__(self):
+                await self.acquire()
+                return self
+
+            async def __aexit__(self, exc_type, exc_val, exc_tb):
+                await self.release()
+
+    async_generator:
+      example: |
+        async def fetch_pages(url: str) -> AsyncGenerator[Page, None]:
+            page_num = 1
+            while True:
+                page = await fetch_page(url, page_num)
+                if not page:
+                    break
+                yield page
+                page_num += 1
+
+  protocol_usage:
+    protocol_definition:
+      example: |
+        from typing import Protocol
+
+        class Comparable(Protocol):
+            def __lt__(self, other: 'Comparable') -> bool: ...
+            def __gt__(self, other: 'Comparable') -> bool: ...
+
+        def sort_items(items: list[Comparable]) -> list[Comparable]:
+            return sorted(items)
+
+  dataclass_patterns:
+    frozen_dataclass:
+      example: |
+        from dataclasses import dataclass, field
+
+        @dataclass(frozen=True)
+        class ImmutablePoint:
+            x: float
+            y: float
+
+            def distance_from_origin(self) -> float:
+                return (self.x ** 2 + self.y ** 2) ** 0.5
+
+  dependency_injection:
+    constructor_injection:
+      example: |
+        from typing import Protocol
+
+        class Repository(Protocol):
+            def get(self, id: int) -> Entity: ...
+            def save(self, entity: Entity) -> None: ...
+
+        class Service:
+            def __init__(self, repository: Repository) -> None:
+                self._repository = repository
+
+            def process(self, id: int) -> Entity:
+                entity = self._repository.get(id)
+                entity.process()
+                self._repository.save(entity)
+                return entity
+
+troubleshooting_guides:
+  mypy_issues:
+    incompatible_types:
+      problem: "Incompatible types in assignment"
+      solutions:
+        - "Add explicit type annotation"
+        - "Use type narrowing with isinstance"
+        - "Add type: ignore comment with justification"
+
+    missing_type_hints:
+      problem: "Function is missing type annotation"
+      solutions:
+        - "Add parameter and return type hints"
+        - "Use Any for truly dynamic types"
+        - "Consider using Protocol for duck typing"
+
+  ruff_issues:
+    unused_imports:
+      problem: "Imported but unused"
+      solutions:
+        - "Remove unused imports"
+        - "Use import in __init__.py for re-export"
+        - "Add noqa comment if import is required"
+
+    line_too_long:
+      problem: "Line length exceeds limit"
+      solutions:
+        - "Break into multiple lines"
+        - "Extract to variable"
+        - "Use implicit line joining"
+
+  bandit_issues:
+    high_severity:
+      problem: "High severity security issue"
+      action: "MUST fix before deployment"
+      common_fixes:
+        - "Replace eval/exec with safe alternatives"
+        - "Use parameterized queries"
+        - "Switch from pickle to json"
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+usage:
+  when_to_load: "Load for specific detailed guidance, comprehensive examples, or troubleshooting"
+  prerequisites: "Always load Tier 1 first, Tier 2 second"
+  use_cases:
+    - "Need specific tool flags and configurations"
+    - "Require comprehensive code examples"
+    - "Troubleshooting specific issues"
+    - "Creating detailed deliverables"
+    - "Need date stamp formatting"

@@ -1,0 +1,150 @@
+name: "N8N Workflow Gap Analysis"
+description: "Comprehensive gap analysis comparing workflow implementation against requirements, best practices, and modern patterns"
+version: "2.0.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7              # Latest n8n best practices
+    - grep                  # Production workflow patterns
+    - sequential-thinking   # Structured gap analysis
+    - filesystem           # Workflow and requirements reading
+    - memory               # Track gaps and findings
+    - time                 # Timestamp analysis
+
+  n8n_specific_tools:
+    - get_workflow_structure     # Workflow coverage analysis
+    - compare_with_requirements  # Requirements comparison
+    - identify_missing_features  # Feature gap identification
+    - assess_pattern_compliance  # Best practice gaps
+    - calculate_coverage_metrics # Coverage calculation
+    - prioritize_gaps            # Gap prioritization
+
+# Gap Analysis Configuration
+gap_analysis_protocol:
+  analysis_dimensions:
+    requirements_coverage: true    # Functional and non-functional requirements
+    feature_completeness: true     # Core and advanced features
+    pattern_compliance: true       # Best practice adherence
+    security_compliance: true      # Security requirements
+    performance_requirements: true # Performance standards
+
+  gap_classification:
+    critical: "P0 - Missing core functionality, security, compliance"
+    high: "P1 - Incomplete features, performance, reliability"
+    medium: "P2 - Optional features, optimization, documentation"
+    low: "P3 - Nice-to-have, minor improvements, enhancements"
+
+# Execution Protocol
+execution_phases:
+  1_requirements_loading:
+    description: "Load requirements and workflow for analysis"
+    tools: ["filesystem", "context7", "get_workflow_structure"]
+    required_actions:
+      - "Load original requirements documentation"
+      - "Load current workflow implementation"
+      - "Get latest n8n best practices"
+      - "Extract workflow structure"
+    success_criteria:
+      - "Requirements loaded"
+      - "Workflow analyzed"
+      - "Best practices loaded"
+
+  2_coverage_analysis:
+    description: "Analyze requirements coverage"
+    tools: ["compare_with_requirements", "calculate_coverage_metrics"]
+    required_actions:
+      - "Map requirements to implementation"
+      - "Identify missing requirements"
+      - "Calculate coverage percentages"
+      - "Document coverage gaps"
+    success_criteria:
+      - "Requirements mapped"
+      - "Gaps identified"
+      - "Coverage calculated"
+
+  3_feature_gap_identification:
+    description: "Identify missing features"
+    tools: ["identify_missing_features", "sequential-thinking"]
+    required_actions:
+      - "Compare implemented vs required features"
+      - "Identify missing core features"
+      - "Identify missing advanced features"
+      - "Document feature gaps"
+    success_criteria:
+      - "Feature gaps identified"
+      - "Missing functionality documented"
+
+  4_pattern_compliance_assessment:
+    description: "Assess best practice compliance"
+    tools: ["assess_pattern_compliance", "grep"]
+    required_actions:
+      - "Compare workflow to n8n best practices"
+      - "Identify pattern compliance gaps"
+      - "Find production patterns for comparison"
+      - "Document compliance gaps"
+    success_criteria:
+      - "Compliance assessed"
+      - "Pattern gaps identified"
+      - "Best practice deviations documented"
+
+  5_gap_prioritization:
+    description: "Prioritize gaps by impact"
+    tools: ["prioritize_gaps", "memory"]
+    required_actions:
+      - "Assess business impact of each gap"
+      - "Evaluate technical impact"
+      - "Assign severity levels"
+      - "Create priority matrix"
+    success_criteria:
+      - "Gaps prioritized"
+      - "Impact assessed"
+      - "Priority matrix created"
+
+  6_remediation_planning:
+    description: "Create gap remediation roadmap"
+    tools: ["filesystem", "time", "memory"]
+    required_actions:
+      - "Create gap closure plan"
+      - "Estimate effort and resources"
+      - "Define implementation timeline"
+      - "Generate deliverables"
+    success_criteria:
+      - "Roadmap created"
+      - "Estimates provided"
+      - "Deliverables generated with YYYY-MM-DD-HHMMSS timestamps"
+
+# Coverage Metrics
+coverage_metrics:
+  functional_coverage: "Percentage of functional requirements implemented"
+  feature_coverage: "Percentage of required features complete"
+  pattern_coverage: "Percentage of best practices applied"
+  security_coverage: "Percentage of security requirements met"
+  performance_coverage: "Percentage of performance requirements achieved"
+
+# Deliverables
+final_deliverables:
+  naming_convention: "MANDATORY: ALL gap analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "./project/docs/n8n-workflows/Gap_Analysis_Executive_Summary-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Requirements_Coverage_Analysis-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Pattern_Compliance_Assessment-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Gap_Remediation_Roadmap-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+
+# Success Criteria
+success_criteria:
+  - "Complete requirements coverage analysis"
+  - "All gaps identified and classified"
+  - "Coverage metrics calculated"
+  - "Business impact assessed"
+  - "Technical impact evaluated"
+  - "Gaps prioritized by severity"
+  - "Remediation roadmap created"
+  - "All deliverables use proper YYYY-MM-DD-HHMMSS timestamps"
+
+# Command Integration
+related_commands:
+  previous_phase: "n8n-workflow-implementation, n8n-workflow-review, n8n-workflow-quality-analysis"
+  parallel: "n8n-workflow-quality-analysis"
+  next_phase: "n8n-workflow-planning (gap closure) or n8n-workflow-refactor (improvements)"

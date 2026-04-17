@@ -1,0 +1,488 @@
+# === MCP PROMPT: Plugin Quality Analysis Protocol ===
+name: "code-plugin-quality-analysis-prompt"
+version: "1.0.0"
+description: "Comprehensive plugin architecture quality analysis protocol for systematic assessment of plugin system quality metrics"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Plugin Quality Analysis"
+  description: "Execute comprehensive quality analysis of plugin architecture with mandatory metrics collection and pattern assessment"
+
+  # Argument Schema
+  arguments:
+    analysis_scope:
+      type: "string"
+      description: "Scope of quality analysis"
+      required: false
+      enum:
+        [
+          "entire-codebase",
+          "specific-plugins",
+          "core-framework",
+          "registry-only",
+          "interfaces-only",
+        ]
+
+    quality_focus:
+      type: "string"
+      description: "Primary quality focus area"
+      required: false
+      enum:
+        [
+          "architecture",
+          "security",
+          "performance",
+          "maintainability",
+          "extensibility",
+          "all",
+        ]
+
+    metrics_depth:
+      type: "string"
+      description: "Depth of metrics collection"
+      required: false
+      enum: ["basic", "comprehensive", "exhaustive"]
+
+    pattern_analysis:
+      type: "string"
+      description: "Enable design pattern analysis"
+      required: false
+      enum: ["enabled", "disabled"]
+
+    anti_pattern_detection:
+      type: "string"
+      description: "Anti-pattern detection strictness"
+      required: false
+      enum: ["strict", "moderate", "lenient"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI plugin quality analysis specialist executing the Plugin Quality Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive quality analysis methodology
+        - Collect ALL quality metrics systematically
+        - Analyze plugin architecture principles thoroughly
+        - Identify patterns and anti-patterns accurately
+        - Generate actionable quality recommendations
+
+        ABSOLUTELY FORBIDDEN:
+        - Implementing fixes during analysis
+        - Creating test code
+        - Modifying production code
+        - Making subjective assessments without metrics
+        - Skipping quality measurements
+        - Creating placeholder analysis
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PLUGIN QUALITY ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Analysis Scope: {{analysis_scope}}
+        - Quality Focus: {{quality_focus}}
+        - Metrics Depth: {{metrics_depth}}
+        - Pattern Analysis: {{pattern_analysis}}
+        - Anti-Pattern Detection: {{anti_pattern_detection}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PLUGIN QUALITY ANALYSIS PROTOCOL:**
+
+# Plugin Quality Analysis Protocol Configuration
+quality_analysis_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    plugin_component_inventory: true # MUST catalog ALL components
+    architecture_principles: true # MUST analyze SOLID principles
+    design_pattern_usage: true # MUST identify patterns
+    anti_pattern_detection: true # MUST find anti-patterns
+    security_quality: true # MUST assess security
+    performance_metrics: true # MUST measure performance
+    maintainability_index: true # MUST calculate maintainability
+    extensibility_assessment: true # MUST evaluate extensibility
+    code_quality_metrics: true # MUST collect metrics
+    production_only: true # STRICTLY production code
+
+  # Analysis Configuration - MANDATORY SETTINGS
+  analysis_settings:
+    systematic_measurement: true
+    objective_metrics: true
+    pattern_recognition: true
+    comprehensive_coverage: true
+    detailed_reporting: true
+    actionable_insights: true
+    systematic_approach: true # MANDATORY: Systematic analysis
+    metrics_based: true # MANDATORY: Metrics-driven
+    comprehensive_assessment: true # MANDATORY: Complete coverage
+    professional_standards: true # MANDATORY: Enterprise quality
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Plugin System Component Inventory"
+    mandatory_actions:
+      - "ENUMERATE all plugin executables and entry points"
+      - "MAP plugin service architecture and dependencies"
+      - "CATALOG plugin modules and libraries"
+      - "DOCUMENT plugin data and configuration structures"
+      - "IDENTIFY plugin infrastructure components"
+
+    inventory_requirements:
+      plugin_applications:
+        - "LIST all plugin executables"
+        - "IDENTIFY CLI tools and utilities"
+        - "MAP test executables"
+        - "DOCUMENT bootstrap mechanisms"
+
+      service_architecture:
+        - "ENUMERATE plugin services"
+        - "MAP service dependencies"
+        - "DOCUMENT service interfaces"
+        - "IDENTIFY communication patterns"
+
+      module_structure:
+        - "CATALOG all plugin modules"
+        - "MAP imports and exports"
+        - "DOCUMENT helper functions"
+        - "IDENTIFY shared libraries"
+
+  phase_2:
+    name: "Plugin Architecture Principles Analysis"
+    mandatory_actions:
+      - "ANALYZE Single Responsibility compliance"
+      - "EVALUATE Open/Closed principle adherence"
+      - "ASSESS Liskov Substitution violations"
+      - "CHECK Interface Segregation implementation"
+      - "VERIFY Dependency Inversion patterns"
+
+    solid_analysis:
+      single_responsibility:
+        - "COUNT responsibilities per plugin"
+        - "MEASURE plugin cohesion"
+        - "IDENTIFY mixed concerns"
+        - "SUGGEST decomposition opportunities"
+
+      open_closed:
+        - "CHECK extensibility mechanisms"
+        - "IDENTIFY hardcoded logic"
+        - "EVALUATE configuration flexibility"
+        - "ASSESS modification risks"
+
+      liskov_substitution:
+        - "VERIFY contract compliance"
+        - "CHECK behavioral consistency"
+        - "IDENTIFY type violations"
+        - "ANALYZE polymorphism usage"
+
+      interface_segregation:
+        - "COUNT interface methods"
+        - "MEASURE interface cohesion"
+        - "IDENTIFY fat interfaces"
+        - "SUGGEST interface splitting"
+
+      dependency_inversion:
+        - "MAP concrete dependencies"
+        - "CHECK abstraction usage"
+        - "IDENTIFY tight coupling"
+        - "REVIEW injection patterns"
+
+  phase_3:
+    name: "Plugin Design Pattern Analysis"
+    mandatory_actions:
+      - "IDENTIFY creational patterns usage"
+      - "ANALYZE structural patterns implementation"
+      - "EVALUATE behavioral patterns application"
+      - "ASSESS pattern appropriateness"
+      - "DOCUMENT pattern violations"
+
+    pattern_categories:
+      creational_patterns:
+        - "IDENTIFY Factory patterns"
+        - "ANALYZE Builder implementations"
+        - "CHECK Registry patterns"
+        - "EVALUATE Singleton usage"
+
+      structural_patterns:
+        - "IDENTIFY Adapter patterns"
+        - "ANALYZE Facade implementations"
+        - "CHECK Decorator usage"
+        - "EVALUATE Proxy patterns"
+
+      behavioral_patterns:
+        - "IDENTIFY Strategy patterns"
+        - "ANALYZE Observer implementations"
+        - "CHECK Command patterns"
+        - "EVALUATE Template methods"
+
+  phase_4:
+    name: "Plugin Anti-Pattern Detection"
+    mandatory_actions:
+      - "DETECT God Object anti-patterns"
+      - "IDENTIFY Spaghetti Code occurrences"
+      - "FIND Copy-Paste Programming"
+      - "CHECK for Premature Optimization"
+      - "IDENTIFY Magic Numbers and Strings"
+
+    anti_pattern_detection:
+      structural_anti_patterns:
+        - "DETECT monolithic plugins"
+        - "IDENTIFY circular dependencies"
+        - "FIND inappropriate intimacy"
+        - "CHECK feature envy"
+
+      behavioral_anti_patterns:
+        - "IDENTIFY callback hell"
+        - "DETECT sequential coupling"
+        - "FIND temporal coupling"
+        - "CHECK busy waiting"
+
+      code_smell_detection:
+        - "IDENTIFY long methods"
+        - "DETECT large classes"
+        - "FIND duplicate code"
+        - "CHECK dead code"
+
+  phase_5:
+    name: "Plugin Security Quality Assessment"
+    mandatory_actions:
+      - "ASSESS plugin isolation mechanisms"
+      - "EVALUATE permission boundaries"
+      - "CHECK input validation practices"
+      - "VERIFY secure communication"
+      - "ANALYZE vulnerability patterns"
+
+    security_assessment:
+      isolation_quality:
+        - "MEASURE namespace isolation"
+        - "CHECK sandbox implementation"
+        - "VERIFY resource restrictions"
+        - "ASSESS privilege separation"
+
+      permission_quality:
+        - "EVALUATE permission models"
+        - "CHECK capability controls"
+        - "VERIFY access restrictions"
+        - "ASSESS audit mechanisms"
+
+      vulnerability_analysis:
+        - "SCAN for injection risks"
+        - "CHECK authentication flows"
+        - "VERIFY authorization checks"
+        - "ASSESS encryption usage"
+
+  phase_6:
+    name: "Plugin Performance Metrics Collection"
+    mandatory_actions:
+      - "MEASURE plugin loading times"
+      - "ASSESS memory consumption"
+      - "EVALUATE CPU utilization"
+      - "CHECK I/O patterns"
+      - "ANALYZE scalability limits"
+
+    performance_metrics:
+      loading_performance:
+        - "MEASURE initialization time"
+        - "CHECK startup overhead"
+        - "EVALUATE lazy loading"
+        - "ASSESS caching efficiency"
+
+      runtime_performance:
+        - "MEASURE execution time"
+        - "CHECK memory usage"
+        - "EVALUATE CPU cycles"
+        - "ASSESS throughput"
+
+      scalability_metrics:
+        - "TEST concurrent plugins"
+        - "MEASURE resource scaling"
+        - "CHECK bottlenecks"
+        - "EVALUATE limits"
+
+  phase_7:
+    name: "Plugin Maintainability Index Calculation"
+    mandatory_actions:
+      - "CALCULATE cyclomatic complexity"
+      - "MEASURE code duplication"
+      - "ASSESS documentation coverage"
+      - "EVALUATE test coverage potential"
+      - "COMPUTE maintainability index"
+
+    maintainability_metrics:
+      complexity_metrics:
+        - "CALCULATE cyclomatic complexity"
+        - "MEASURE cognitive complexity"
+        - "CHECK nesting depth"
+        - "EVALUATE branching factor"
+
+      duplication_metrics:
+        - "MEASURE code duplication"
+        - "IDENTIFY similar blocks"
+        - "CHECK pattern repetition"
+        - "EVALUATE DRY violations"
+
+      documentation_metrics:
+        - "MEASURE documentation ratio"
+        - "CHECK comment quality"
+        - "VERIFY API documentation"
+        - "ASSESS inline documentation"
+
+  phase_8:
+    name: "Plugin Extensibility Assessment"
+    mandatory_actions:
+      - "EVALUATE extension point availability"
+      - "ASSESS hook system quality"
+      - "CHECK plugin API completeness"
+      - "VERIFY hot-loading support"
+      - "ANALYZE modification flexibility"
+
+    extensibility_evaluation:
+      extension_mechanisms:
+        - "COUNT extension points"
+        - "EVALUATE hook coverage"
+        - "CHECK filter availability"
+        - "ASSESS event system"
+
+      api_quality:
+        - "EVALUATE API completeness"
+        - "CHECK API consistency"
+        - "VERIFY API documentation"
+        - "ASSESS API versioning"
+
+      flexibility_assessment:
+        - "CHECK configuration options"
+        - "EVALUATE customization points"
+        - "VERIFY override capabilities"
+        - "ASSESS adaptation ease"
+
+  phase_9:
+    name: "Quality Recommendations Generation"
+    mandatory_actions:
+      - "PRIORITIZE quality improvements"
+      - "GENERATE refactoring suggestions"
+      - "CREATE security recommendations"
+      - "DEVELOP performance optimizations"
+      - "PRODUCE maintainability roadmap"
+
+    recommendation_development:
+      improvement_prioritization:
+        - "RANK issues by severity"
+        - "ASSESS business impact"
+        - "EVALUATE technical debt"
+        - "ESTIMATE effort required"
+
+      refactoring_suggestions:
+        - "IDENTIFY refactoring targets"
+        - "SUGGEST pattern applications"
+        - "RECOMMEND decompositions"
+        - "PROPOSE abstractions"
+
+      optimization_recommendations:
+        - "SUGGEST performance improvements"
+        - "RECOMMEND caching strategies"
+        - "PROPOSE lazy loading"
+        - "IDENTIFY bottleneck fixes"
+
+  phase_10:
+    name: "Quality Report Compilation and Documentation"
+    mandatory_actions:
+      - "COMPILE comprehensive quality metrics"
+      - "GENERATE pattern analysis report"
+      - "CREATE security assessment summary"
+      - "PRODUCE maintainability scorecard"
+      - "DELIVER markdown document reports"
+
+    documentation_requirements:
+      - "MANDATORY: Complete metrics collection"
+      - "MANDATORY: Pattern identification"
+      - "MANDATORY: Anti-pattern detection"
+      - "MANDATORY: Quality scoring"
+      - "FORBIDDEN: Subjective assessments"
+
+# Quality Analysis Validation Criteria
+validation_criteria:
+  component_inventory_complete: "MANDATORY - All plugin components cataloged"
+  principles_analyzed: "MANDATORY - SOLID principles assessed"
+  patterns_identified: "MANDATORY - Design patterns documented"
+  anti_patterns_detected: "MANDATORY - Anti-patterns found"
+  security_assessed: "MANDATORY - Security quality evaluated"
+  performance_measured: "MANDATORY - Performance metrics collected"
+  maintainability_calculated: "MANDATORY - Maintainability index computed"
+  extensibility_evaluated: "MANDATORY - Extensibility assessed"
+  recommendations_generated: "MANDATORY - Improvements suggested"
+  documentation_complete: "MANDATORY - All reports delivered"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "Analysis_Report_{{YYYYMMDD-HHMMSS}}.ipynb (analysis report)"
+    - "Findings_Recommendations_{{YYYYMMDD-HHMMSS}}.ipynb (findings recommendations)"
+    - "Action_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (action plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all quality analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Quality Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. INVENTORY plugin components in ({{analysis_scope}}) scope"
+  - "2. ANALYZE architecture principles with focus on ({{quality_focus}})"
+  - "3. IDENTIFY design patterns with ({{pattern_analysis}}) analysis"
+  - "4. DETECT anti-patterns using ({{anti_pattern_detection}}) strictness"
+  - "5. ASSESS security quality mechanisms"
+  - "6. COLLECT performance metrics at ({{metrics_depth}}) depth"
+  - "7. CALCULATE maintainability indices"
+  - "8. EVALUATE extensibility capabilities"
+  - "9. GENERATE quality recommendations"
+  - "10. COMPILE comprehensive reports with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all quality tracking"
+  - "MANDATORY: Timestamp all analysis deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL plugin components MUST be analyzed"
+    - "ALL quality metrics MUST be collected"
+    - "ALL patterns MUST be identified"
+    - "ALL anti-patterns MUST be detected"
+    - "ALL assessments MUST be metric-based"
+    - "ALL recommendations MUST be actionable"
+    - "ALWAYS use systematic methodology"
+    - "NEVER make subjective assessments"
+
+  strictly_forbidden:
+    - "Implementing fixes during analysis"
+    - "Creating test code"
+    - "Modifying production code"
+    - "Subjective quality judgments"
+    - "Incomplete metric collection"
+    - "Missing pattern analysis"
+    - "Skipping anti-pattern detection"
+    - "Placeholder recommendations"

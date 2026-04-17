@@ -1,0 +1,506 @@
+# === MCP PROMPT: FastAPI Service Layer & Dependency Injection Design Protocol ===
+name: "fastapi-service-dependency-patterns-prompt"
+version: "1.0.0"
+description: "Comprehensive FastAPI service layer and dependency injection design protocol with Clean Architecture and Domain-Driven Design patterns"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "FastAPI Service Layer & Dependency Injection Design"
+  description: "Execute comprehensive service layer architecture and dependency injection pattern design with Clean Architecture principles and FastAPI best practices"
+
+  # Argument Schema
+  arguments:
+    service_domain:
+      type: "string"
+      description: "Domain area for service layer design"
+      required: true
+      enum:
+        [
+          "user-management",
+          "order-processing",
+          "inventory",
+          "notification",
+          "analytics",
+          "payment-processing",
+        ]
+
+    architecture_complexity:
+      type: "string"
+      description: "Complexity level of service architecture"
+      required: true
+      enum:
+        [
+          "simple-services",
+          "domain-services",
+          "enterprise-services",
+          "distributed-services",
+          "event-driven-services",
+        ]
+
+    di_pattern_focus:
+      type: "string"
+      description: "Dependency injection pattern focus"
+      required: false
+      enum: ["basic-injection", "advanced-patterns", "lifecycle-management", "testing-patterns"]
+
+    business_logic_complexity:
+      type: "string"
+      description: "Business logic complexity level"
+      required: false
+      enum: ["simple-crud", "complex-workflows", "domain-heavy", "event-driven", "saga-patterns"]
+
+    integration_requirements:
+      type: "string"
+      description: "Integration and external dependency requirements"
+      required: false
+      enum: ["database-only", "external-apis", "message-queues", "all-integrations", "multi-tenant"]
+
+    testing_strategy:
+      type: "string"
+      description: "Testing strategy for services"
+      required: false
+      enum: ["unit-focused", "integration-focused", "comprehensive-mocking", "contract-testing"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI FastAPI service architecture specialist executing the FastAPI Service Layer & Dependency Injection Design Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive service layer design methodology
+        - Create complete Clean Architecture service specifications
+        - Maintain enterprise-grade design standards
+        - Use systematic analysis and service documentation
+        - Follow SOLID principles and Domain-Driven Design
+        - Emphasize FastAPI dependency injection patterns
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating implementation code or actual FastAPI modules
+        - Making changes to live systems
+        - Partial or incomplete service specifications
+        - Creating designs without proper architectural analysis
+        - Skipping dependency management considerations
+        - Creating placeholder or temporary designs
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY FASTAPI SERVICE LAYER & DI DESIGN PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **DESIGN PARAMETERS:**
+        - Service Domain: {{service_domain}}
+        - Architecture Complexity: {{architecture_complexity}}
+        - DI Pattern Focus: {{di_pattern_focus}}
+        - Business Logic Complexity: {{business_logic_complexity}}
+        - Integration Requirements: {{integration_requirements}}
+        - Testing Strategy: {{testing_strategy}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING FASTAPI SERVICE LAYER & DI DESIGN PROTOCOL:**
+
+# FastAPI Service Layer Design Protocol Configuration
+design_protocol:
+  # Design Scope - MANDATORY COMPREHENSIVE COVERAGE
+  design_focus:
+    service_layer_architecture: true # MUST design service layer structure
+    dependency_injection_patterns: true # MUST design FastAPI DI patterns
+    repository_pattern_design: true # MUST design repository interfaces
+    domain_service_design: true # MUST design domain services
+    application_service_design: true # MUST design application services
+    service_composition_patterns: true # MUST design service orchestration
+    dependency_lifecycle_management: true # MUST design dependency scoping
+    event_driven_patterns: true # MUST design event communication
+    transaction_management: true # MUST design transaction patterns
+    testing_strategies: true # MUST design service testing approaches
+    design_only: true # STRICTLY design only, no implementation
+
+  # Design Configuration - MANDATORY SETTINGS
+  design_settings:
+    enable_comprehensive_analysis: true
+    apply_clean_architecture: true
+    apply_solid_principles: true
+    implement_ddd_patterns: true
+    design_fastapi_di_patterns: true
+    plan_service_orchestration: true
+    systematic_approach: true # MANDATORY: Systematic design methodology
+    follow_service_best_practices: true # MANDATORY: Service layer best practices
+    comprehensive_coverage: true # MANDATORY: Cover all service aspects
+    production_ready_design: true # MANDATORY: Production-focused design
+
+# Service Architecture Design Patterns
+service_architecture_patterns:
+  clean_architecture_layers:
+    entities: "Core business entities and domain models"
+    use_cases: "Application-specific business rules and workflows"
+    interface_adapters: "Controllers, presenters, and gateways"
+    frameworks_drivers: "External frameworks, databases, and web servers"
+  
+  service_layer_types:
+    domain_services: "Business logic that doesn't naturally fit in entities"
+    application_services: "Orchestrate use cases and coordinate domain services"
+    infrastructure_services: "External integrations and technical concerns"
+  
+  dependency_injection_scopes:
+    singleton: "Application-scoped dependencies (shared resources)"
+    request_scoped: "Dependencies that live for request duration"
+    transient: "New instance for each dependency resolution"
+    context_managed: "Dependencies with explicit setup/teardown"
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Service Domain Analysis and Business Logic Discovery"
+    mandatory_actions:
+      - "ANALYZE service domain requirements and business context"
+      - "IDENTIFY core business entities and their relationships"
+      - "MAP business processes and workflow requirements"
+      - "DISCOVER domain rules and invariants"
+      - "ESTABLISH service boundaries and responsibilities"
+
+    analysis_requirements:
+      - "MANDATORY: Complete business domain analysis"
+      - "MANDATORY: Identify all business entities and rules"
+      - "MANDATORY: Map service boundaries and interactions"
+      - "FORBIDDEN: Incomplete domain analysis"
+
+  phase_2:
+    name: "Clean Architecture Service Layer Design"
+    mandatory_actions:
+      - "DESIGN Clean Architecture layer structure"
+      - "CREATE service layer hierarchy and organization"
+      - "PLAN dependency direction and abstraction levels"
+      - "ESTABLISH interface contracts and abstractions"
+      - "VALIDATE architectural compliance and separation"
+
+    architecture_design_requirements:
+      layer_structure:
+        - "DESIGN entities layer with business objects"
+        - "CREATE use cases layer with application logic"
+        - "PLAN interface adapters for external communication"
+        - "ESTABLISH frameworks layer separation"
+
+      dependency_management:
+        - "ENSURE dependencies point inward only"
+        - "CREATE abstractions for external dependencies"
+        - "DESIGN interface contracts for layer communication"
+        - "VALIDATE dependency rule compliance"
+
+      service_organization:
+        - "ORGANIZE services by domain boundaries"
+        - "CREATE service interfaces and implementations"
+        - "PLAN service composition and orchestration"
+        - "ESTABLISH service lifecycle and scoping"
+
+  phase_3:
+    name: "Repository Pattern and Data Access Design"
+    mandatory_actions:
+      - "DESIGN repository pattern interfaces and contracts"
+      - "CREATE generic repository base classes"
+      - "PLAN domain-specific repository extensions"
+      - "ESTABLISH data access abstraction layers"
+      - "VALIDATE repository pattern compliance"
+
+    repository_design_requirements:
+      interface_design:
+        - "CREATE generic repository interfaces"
+        - "DESIGN domain-specific repository contracts"
+        - "PLAN query pattern abstractions"
+        - "ESTABLISH unit of work patterns"
+
+      implementation_planning:
+        - "DESIGN concrete repository implementations"
+        - "PLAN database technology abstraction"
+        - "CREATE query optimization strategies"
+        - "ESTABLISH transaction management patterns"
+
+      integration_patterns:
+        - "DESIGN repository dependency injection"
+        - "PLAN repository testing strategies"
+        - "CREATE repository caching patterns"
+        - "ESTABLISH repository error handling"
+
+  phase_4:
+    name: "FastAPI Dependency Injection Pattern Design"
+    mandatory_actions:
+      - "DESIGN FastAPI dependency injection hierarchies"
+      - "CREATE typed dependency declarations with Annotated"
+      - "PLAN dependency factories and providers"
+      - "ESTABLISH dependency scoping and lifecycle management"
+      - "VALIDATE dependency injection compliance"
+
+    di_pattern_requirements:
+      dependency_declaration:
+        - "DESIGN Annotated type dependencies"
+        - "CREATE dependency provider functions"
+        - "PLAN sub-dependency chains and hierarchies"
+        - "ESTABLISH dependency caching strategies"
+
+      lifecycle_management:
+        - "DESIGN singleton dependency patterns"
+        - "CREATE request-scoped dependency management"
+        - "PLAN transient dependency resolution"
+        - "ESTABLISH context-managed dependencies"
+
+      advanced_patterns:
+        - "DESIGN conditional dependency resolution"
+        - "CREATE factory pattern implementations"
+        - "PLAN dependency override strategies for testing"
+        - "ESTABLISH dependency health checking"
+
+  phase_5:
+    name: "Domain and Application Service Design"
+    mandatory_actions:
+      - "DESIGN domain services for business logic"
+      - "CREATE application services for use case orchestration"
+      - "PLAN service interfaces and contracts"
+      - "ESTABLISH service composition patterns"
+      - "VALIDATE service responsibility separation"
+
+    service_design_requirements:
+      domain_services:
+        - "DESIGN domain services for business rules"
+        - "CREATE domain entity manipulation services"
+        - "PLAN business validation and invariant services"
+        - "ESTABLISH domain event publishing services"
+
+      application_services:
+        - "DESIGN use case orchestration services"
+        - "CREATE workflow coordination services"
+        - "PLAN external integration services"
+        - "ESTABLISH application event handling services"
+
+      service_contracts:
+        - "DESIGN service interface abstractions"
+        - "CREATE service method signatures and contracts"
+        - "PLAN service error handling and exceptions"
+        - "ESTABLISH service documentation patterns"
+
+  phase_6:
+    name: "Service Composition and Orchestration Design"
+    mandatory_actions:
+      - "DESIGN service composition patterns and strategies"
+      - "CREATE service orchestration workflows"
+      - "PLAN inter-service communication patterns"
+      - "ESTABLISH service coordination mechanisms"
+      - "VALIDATE service integration patterns"
+
+    composition_design_requirements:
+      orchestration_patterns:
+        - "DESIGN workflow orchestration services"
+        - "CREATE service composition strategies"
+        - "PLAN service chaining and pipelining"
+        - "ESTABLISH service coordination protocols"
+
+      communication_patterns:
+        - "DESIGN direct service invocation patterns"
+        - "CREATE event-driven communication strategies"
+        - "PLAN message passing and queuing patterns"
+        - "ESTABLISH service discovery mechanisms"
+
+      error_handling:
+        - "DESIGN service-level error handling"
+        - "CREATE compensation and rollback patterns"
+        - "PLAN circuit breaker implementations"
+        - "ESTABLISH retry and backoff strategies"
+
+  phase_7:
+    name: "Event-Driven Architecture and Communication Design"
+    mandatory_actions:
+      - "DESIGN event-driven communication patterns"
+      - "CREATE event publishing and subscription mechanisms"
+      - "PLAN event handling and processing strategies"
+      - "ESTABLISH event sourcing patterns if applicable"
+      - "VALIDATE event-driven architecture compliance"
+
+    event_architecture_requirements:
+      event_design:
+        - "DESIGN domain event structures and schemas"
+        - "CREATE event publishing interfaces"
+        - "PLAN event subscription and handling patterns"
+        - "ESTABLISH event versioning and evolution"
+
+      communication_patterns:
+        - "DESIGN publish-subscribe patterns"
+        - "CREATE event bus and routing strategies"
+        - "PLAN event persistence and replay mechanisms"
+        - "ESTABLISH event ordering and sequencing"
+
+      integration_patterns:
+        - "DESIGN service event integration"
+        - "CREATE event-driven workflow patterns"
+        - "PLAN eventual consistency strategies"
+        - "ESTABLISH event monitoring and observability"
+
+  phase_8:
+    name: "Transaction Management and Data Consistency Design"
+    mandatory_actions:
+      - "DESIGN transaction management patterns and strategies"
+      - "CREATE unit of work implementations"
+      - "PLAN data consistency and integrity patterns"
+      - "ESTABLISH distributed transaction handling"
+      - "VALIDATE transaction boundary design"
+
+    transaction_design_requirements:
+      transaction_patterns:
+        - "DESIGN unit of work pattern implementations"
+        - "CREATE transaction scope and boundary management"
+        - "PLAN transaction rollback and compensation"
+        - "ESTABLISH transaction isolation strategies"
+
+      consistency_patterns:
+        - "DESIGN data consistency validation"
+        - "CREATE eventual consistency strategies"
+        - "PLAN conflict resolution mechanisms"
+        - "ESTABLISH consistency monitoring patterns"
+
+      distributed_patterns:
+        - "DESIGN saga pattern implementations"
+        - "CREATE two-phase commit strategies"
+        - "PLAN distributed locking mechanisms"
+        - "ESTABLISH cross-service transaction patterns"
+
+  phase_9:
+    name: "Service Testing Strategy and Dependency Mocking Design"
+    mandatory_actions:
+      - "DESIGN comprehensive service testing strategies"
+      - "CREATE dependency mocking and isolation patterns"
+      - "PLAN integration testing approaches"
+      - "ESTABLISH test data management strategies"
+      - "VALIDATE testing coverage and quality patterns"
+
+    testing_design_requirements:
+      unit_testing_patterns:
+        - "DESIGN service unit testing strategies"
+        - "CREATE dependency mocking patterns"
+        - "PLAN test fixture and setup strategies"
+        - "ESTABLISH assertion and verification patterns"
+
+      integration_testing:
+        - "DESIGN service integration testing approaches"
+        - "CREATE database testing strategies"
+        - "PLAN external service integration testing"
+        - "ESTABLISH end-to-end testing patterns"
+
+      test_automation:
+        - "DESIGN automated testing pipelines"
+        - "CREATE continuous testing strategies"
+        - "PLAN performance and load testing"
+        - "ESTABLISH quality gate enforcement"
+
+  phase_10:
+    name: "Service Design Validation and Architecture Documentation"
+    mandatory_actions:
+      - "VALIDATE service architecture against Clean Architecture principles"
+      - "VERIFY SOLID principles compliance in service design"
+      - "CHECK dependency injection pattern correctness"
+      - "COMPILE comprehensive service architecture documentation"
+      - "GENERATE service design deliverables with timestamps"
+
+    validation_requirements:
+      - "MANDATORY: Validate Clean Architecture compliance"
+      - "MANDATORY: Check SOLID principles adherence"
+      - "MANDATORY: Verify dependency injection correctness"
+      - "MANDATORY: Ensure service responsibility clarity"
+      - "FORBIDDEN: Incomplete or non-compliant designs"
+
+# Service Design Validation Criteria
+validation_criteria:
+  clean_architecture_compliance: "MANDATORY - Clean Architecture principles followed"
+  solid_principles_adherence: "MANDATORY - SOLID principles implemented"
+  dependency_injection_correctness: "MANDATORY - FastAPI DI patterns properly designed"
+  service_responsibility_clarity: "MANDATORY - Clear service boundaries and responsibilities"
+  repository_pattern_implementation: "MANDATORY - Repository pattern properly designed"
+  transaction_management: "MANDATORY - Transaction patterns appropriately designed"
+  testing_strategy_completeness: "MANDATORY - Comprehensive testing approach designed"
+  event_driven_patterns: "MANDATORY - Event communication patterns designed"
+  service_composition: "MANDATORY - Service orchestration patterns designed"
+  documentation_completeness: "MANDATORY - Complete service documentation created"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL design output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-24-143000"
+
+  required_outputs:
+    - "Implementation_Report_{{YYYYMMDD-HHMMSS}}.ipynb (implementation report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Quality_Assessment_{{YYYYMMDD-HHMMSS}}.ipynb (quality assessment)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all design output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL design deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all design outputs"
+    - "FORBIDDEN: Creating design files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same design session"
+
+# Service Design Execution Workflow
+execution_steps:
+  - "1. ANALYZE service domain ({{service_domain}}) and complexity ({{architecture_complexity}})"
+  - "2. DESIGN Clean Architecture service layer structure"
+  - "3. CREATE repository pattern interfaces and abstractions"
+  - "4. DESIGN FastAPI dependency injection patterns and hierarchies"
+  - "5. PLAN domain and application service architecture"
+  - "6. CREATE service composition and orchestration patterns"
+  - "7. DESIGN event-driven communication mechanisms"
+  - "8. PLAN transaction management and data consistency"
+  - "9. CREATE comprehensive service testing strategies"
+  - "10. VALIDATE and document complete service architecture with timestamps"
+
+# FastAPI Service Design Principles
+fastapi_service_principles:
+  dependency_injection:
+    type_safety: "Use Annotated types for all dependencies"
+    lifecycle_management: "Implement appropriate dependency scoping"
+    testability: "Design dependencies for easy mocking and testing"
+    performance: "Optimize dependency resolution and caching"
+  
+  service_architecture:
+    separation_of_concerns: "Clear boundaries between domain and application services"
+    single_responsibility: "Each service has a focused, well-defined purpose"
+    dependency_inversion: "Services depend on abstractions, not concretions"
+    interface_segregation: "Use focused interfaces for different concerns"
+  
+  integration_patterns:
+    async_operations: "Use async/await for I/O-bound service operations"
+    error_handling: "Implement robust error handling and recovery"
+    monitoring: "Include observability and monitoring hooks"
+    scalability: "Design services for horizontal scaling"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL service designs MUST follow Clean Architecture"
+    - "ALL services MUST adhere to SOLID principles"
+    - "ALL dependencies MUST use FastAPI DI patterns"
+    - "ALL services MUST have clear responsibility boundaries"
+    - "ALL repository patterns MUST be properly abstracted"
+    - "ALL transaction management MUST be designed"
+    - "ALWAYS use systematic design methodology"
+    - "NEVER create implementation code"
+
+  strictly_forbidden:
+    - "Creating implementation code or actual FastAPI modules"
+    - "Making changes to live systems"
+    - "Partial or incomplete service specifications"
+    - "Skipping architectural principle validation"
+    - "Creating designs without proper abstraction"
+    - "Missing critical service patterns"
+    - "Proceeding without comprehensive coverage"
+    - "Designing without testing consideration"
+
+---

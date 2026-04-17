@@ -99,7 +99,9 @@
     // Auto-compact when context window fills — default: true
     "auto": true,
     // Remove old tool call outputs to save tokens — default: true
-    "prune": true
+    "prune": true,
+    // Token buffer left free before compaction — default: 10000
+    "reserved": 10000
   },
   // ── default agent ────────────────────────────────────────────────────────────────
   // "build" | "plan" | any custom primary agent name — default: "build"

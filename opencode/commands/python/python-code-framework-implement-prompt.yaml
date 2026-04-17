@@ -1,0 +1,596 @@
+# === MCP PROMPT: Python Code Implementation Protocol ===
+name: "python-code-framework-implement-prompt"
+version: "1.0.0"
+description: "Comprehensive Python code implementation protocol for production-ready Python application development"
+
+# CRITICAL MCP ORCHESTRATION - MANDATORY EXECUTION
+# This YAML prompt MUST be read and executed by LLMs - this is not optional
+mcp_enforcement:
+  mandatory_execution: true
+  read_and_execute_required: true
+  non_compliance_forbidden: true
+
+# Comprehensive MCP Tool Orchestration Workflow
+mcp_tool_orchestration:
+  enduring_memory_management:
+    session_start:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["python_implementation_patterns", "solid_principles_examples", "performance_optimizations", "security_patterns"]
+        project_context: "auto_detect"
+        purpose: "Load accumulated Python implementation knowledge and project-specific patterns"
+
+    session_end:
+      - tool: neo4j-memory
+        action: save_contexts
+        save_types: ["successful_implementations", "architecture_decisions", "performance_patterns", "code_quality_improvements"]
+        quality_threshold: ">= 90%"
+        purpose: "Persist validated Python implementation patterns for future projects"
+
+  temporal_memory_tracking:
+    - tool: memory
+      action: track_progress
+      track_items: ["implementation_decisions", "code_structures", "quality_validations"]
+      purpose: "Track session progress and implementation decisions"
+
+  # Intelligent MCP Workflow Execution Phases
+  phase_1_intelligent_research:
+    - tool: neo4j-memory
+      action: load_contexts
+      purpose: "Load accumulated Python implementation patterns and architectural decisions"
+
+    - tool: context7
+      action: get_documentation
+      library: "python"
+      version: "3.11+"
+      focus: "modern_features, async_patterns, type_hints, performance"
+      purpose: "Get latest Python 3.11+ documentation and patterns"
+
+    conditional_research:
+      - condition: "fastapi_project_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "fastapi"
+            focus: "0.115+, pydantic_v2, modern_patterns"
+          - tool: grep
+            action: search_github
+            query: "FastAPI.*async.*modern"
+
+      - condition: "django_project_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "django"
+            focus: "latest_version, async_views, performance"
+
+      - condition: "data_science_detected"
+        then:
+          - tool: context7
+            action: get_documentation
+            library: "pandas"
+            focus: "performance_optimization, modern_patterns"
+
+  phase_2_adaptive_analysis:
+    - tool: filesystem
+      action: read_multiple_files
+      paths: [".", "src/", "app/"]
+      purpose: "Analyze existing codebase structure and implementation requirements"
+
+    - tool: sequential-thinking
+      action: plan_implementation
+      focus: "SOLID principles, performance optimization, security implementation"
+      purpose: "Create adaptive implementation strategy based on loaded context"
+
+  phase_3_implementation:
+    - tool: filesystem
+      action: write_file
+      purpose: "Implement production-ready Python code with modern patterns"
+
+  phase_4_quality_validation:
+    automated_validation_workflow:
+      - tool: filesystem
+        action: analyze_code_quality
+        validation_types: ["type_safety", "performance", "security", "solid_principles"]
+
+      - tool: sequential-thinking
+        action: validate_implementation
+        validation_criteria: ["functionality_complete", "performance_optimized", "security_implemented"]
+
+      - conditional_validation:
+          if_quality_threshold_not_met: "< 90%"
+          then:
+            - tool: filesystem
+              action: apply_quality_improvements
+            - tool: sequential-thinking
+              action: re_validate_implementation
+
+  phase_5_enduring_memory_persistence:
+    - tool: neo4j-memory
+      action: save_context
+      context_types: ["successful_implementations", "performance_patterns", "architecture_decisions", "code_quality_improvements"]
+      quality_validation: "required"
+      purpose: "Persist validated Python implementation patterns for future projects"
+
+    - tool: memory
+      action: save_progress
+      purpose: "Track session implementation outcomes and decisions"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Code Implementation"
+  description: "Execute comprehensive Python application implementation from design blueprints with mandatory SOLID/DRY/KISS principles and production readiness"
+
+  # Argument Schema
+  arguments:
+    implementation_target:
+      type: "string"
+      description: "Target components for Python application implementation"
+      required: true
+      enum:
+        [
+          "entire-application",
+          "core-components",
+          "service-layer",
+          "data-layer",
+          "api-endpoints",
+          "integration-layer",
+        ]
+
+    design_source:
+      type: "string"
+      description: "Source of Python application design blueprints"
+      required: true
+
+    implementation_scope:
+      type: "string"
+      description: "Scope of Python implementation effort"
+      required: false
+      enum: ["application-wide", "specific-modules", "integration-layer", "service-components"]
+
+    validation_level:
+      type: "string"
+      description: "Level of validation during implementation"
+      required: false
+      enum: ["standard", "comprehensive", "continuous", "strict"]
+
+    commit_strategy:
+      type: "string"
+      description: "Git commit strategy for implementation"
+      required: false
+      enum: ["atomic", "feature-based", "incremental", "monolithic"]
+
+    quality_enforcement:
+      type: "string"
+      description: "Code quality enforcement level"
+      required: false
+      enum: ["standard", "strict", "enterprise", "maximum"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Python implementation specialist executing the Python Code Implementation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive implementation methodology
+        - Create complete production-ready Python application code
+        - Maintain enterprise-grade code quality standards
+        - Use systematic implementation and validation
+        - Follow SOLID, DRY, KISS principles throughout
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating test code or test scripts
+        - Making placeholder or incomplete implementations
+        - Partial or incomplete Python application code
+        - Creating implementation without proper design analysis
+        - Skipping security or performance implementations
+        - Creating duplicate or backup files
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PYTHON CODE IMPLEMENTATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **IMPLEMENTATION PARAMETERS:**
+        - Implementation Target: {{implementation_target}}
+        - Design Source: {{design_source}}
+        - Implementation Scope: {{implementation_scope}}
+        - Validation Level: {{validation_level}}
+        - Commit Strategy: {{commit_strategy}}
+        - Quality Enforcement: {{quality_enforcement}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PYTHON CODE IMPLEMENTATION PROTOCOL:**
+
+# Python Code Implementation Protocol Configuration
+implementation_protocol:
+  # Implementation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  implementation_focus:
+    python_production_code: true # MUST implement production Python code
+    complete_component_implementation: true # MUST implement all planned components
+    service_layer_integration: true # MUST implement service layer integration
+    data_access_implementation: true # MUST implement data access layer
+    api_implementation: true # MUST implement API endpoints
+    security_implementation: true # MUST implement security measures
+    performance_optimization: true # MUST optimize for performance
+    cross_cutting_concerns: true # MUST implement cross-cutting concerns
+    production_only: true # STRICTLY production code only
+    no_test_code: true # ABSOLUTELY no test code
+
+  # Implementation Configuration - MANDATORY SETTINGS
+  implementation_settings:
+    follow_design_blueprints: true
+    apply_solid_principles: true
+    apply_dry_principle: true
+    apply_kiss_principle: true
+    continuous_validation: true
+    atomic_commits: true
+    systematic_approach: true # MANDATORY: Systematic implementation
+    production_standards: true # MANDATORY: Production-grade code
+    comprehensive_coverage: true # MANDATORY: Complete implementation
+    quality_enforcement: true # MANDATORY: Quality standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Implementation Setup and Blueprint Validation"
+    mandatory_actions:
+      - "VALIDATE Python application design blueprints and specifications"
+      - "SETUP development environment for Python application"
+      - "PREPARE Python project structure and directories"
+      - "CONFIGURE Python development dependencies"
+      - "ESTABLISH implementation tracking and monitoring"
+
+    setup_requirements:
+      - "MANDATORY: Complete blueprint validation"
+      - "MANDATORY: Environment properly configured"
+      - "MANDATORY: All dependencies resolved"
+      - "FORBIDDEN: Proceeding without validation"
+
+  phase_2:
+    name: "Core Python Application Implementation"
+    mandatory_actions:
+      - "IMPLEMENT Python interface contracts and abstract base classes"
+      - "CREATE core service and business logic components"
+      - "DEVELOP data models and repository patterns"
+      - "IMPLEMENT application context and state management"
+      - "BUILD configuration management system"
+
+    core_requirements:
+      python_interfaces:
+        - "IMPLEMENT Python interface contracts"
+        - "CREATE abstract base classes"
+        - "DEFINE component lifecycle interfaces"
+        - "IMPLEMENT metadata and type structures"
+
+      component_manager:
+        - "IMPLEMENT component discovery mechanisms"
+        - "CREATE component instantiation logic"
+        - "DEVELOP dependency injection patterns"
+        - "BUILD component state management"
+
+      configuration_system:
+        - "IMPLEMENT configuration loading"
+        - "CREATE configuration validation"
+        - "DEVELOP configuration hot-reload"
+        - "BUILD configuration persistence"
+
+  phase_3:
+    name: "Service Layer and Integration Implementation"
+    mandatory_actions:
+      - "IMPLEMENT service layer architecture"
+      - "CREATE integration mechanisms for external systems"
+      - "DEVELOP event-based component communication"
+      - "IMPLEMENT callback and handler management"
+      - "BUILD middleware and interceptor systems"
+
+    extension_requirements:
+      extension_points:
+        - "IMPLEMENT extension point registry"
+        - "CREATE extension point discovery"
+        - "DEVELOP extension point validation"
+        - "BUILD extension point invocation"
+
+      hook_system:
+        - "IMPLEMENT hook registration"
+        - "CREATE hook priority management"
+        - "DEVELOP hook execution chain"
+        - "BUILD hook error handling"
+
+      event_system:
+        - "IMPLEMENT event dispatcher"
+        - "CREATE event subscription management"
+        - "DEVELOP event filtering"
+        - "BUILD event error recovery"
+
+  phase_4:
+    name: "Data Layer and Repository Implementation"
+    mandatory_actions:
+      - "IMPLEMENT data repository pattern components"
+      - "CREATE data access and query mechanisms"
+      - "DEVELOP database connection and transaction logic"
+      - "IMPLEMENT data validation and transformation system"
+      - "BUILD caching and optimization strategies"
+
+    registry_requirements:
+      registry_client:
+        - "IMPLEMENT registry API client"
+        - "CREATE authentication mechanisms"
+        - "DEVELOP secure communication"
+        - "BUILD retry and failover logic"
+
+      plugin_discovery:
+        - "IMPLEMENT search algorithms"
+        - "CREATE metadata parsing"
+        - "DEVELOP compatibility checking"
+        - "BUILD recommendation engine"
+
+      installation_system:
+        - "IMPLEMENT download manager"
+        - "CREATE package extraction"
+        - "DEVELOP verification system"
+        - "BUILD rollback mechanisms"
+
+  phase_5:
+    name: "API and Endpoint Implementation"
+    mandatory_actions:
+      - "IMPLEMENT RESTful API endpoints"
+      - "CREATE request validation and serialization logic"
+      - "DEVELOP authentication and authorization middleware"
+      - "IMPLEMENT rate limiting and throttling"
+      - "BUILD API documentation and schemas"
+
+    hot_loading_requirements:
+      runtime_loading:
+        - "IMPLEMENT dynamic module loading"
+        - "CREATE classloader isolation"
+        - "DEVELOP namespace management"
+        - "BUILD resource injection"
+
+      unloading_system:
+        - "IMPLEMENT graceful shutdown"
+        - "CREATE resource cleanup"
+        - "DEVELOP state preservation"
+        - "BUILD memory reclamation"
+
+      hot_reload_capabilities:
+        - "IMPLEMENT file watcher system"
+        - "CREATE reload triggers"
+        - "DEVELOP state migration"
+        - "BUILD zero-downtime reload"
+
+  phase_6:
+    name: "Application Lifecycle Management Implementation"
+    mandatory_actions:
+      - "IMPLEMENT application initialization procedures"
+      - "CREATE service startup mechanisms"
+      - "DEVELOP graceful shutdown logic"
+      - "IMPLEMENT configuration reload procedures"
+      - "BUILD health check and monitoring system"
+
+    lifecycle_requirements:
+      installation_procedures:
+        - "IMPLEMENT pre-installation checks"
+        - "CREATE installation validation"
+        - "DEVELOP post-installation setup"
+        - "BUILD installation rollback"
+
+      activation_system:
+        - "IMPLEMENT activation sequence"
+        - "CREATE dependency activation"
+        - "DEVELOP activation validation"
+        - "BUILD activation monitoring"
+
+      update_mechanisms:
+        - "IMPLEMENT version comparison"
+        - "CREATE update strategies"
+        - "DEVELOP migration logic"
+        - "BUILD update rollback"
+
+  phase_7:
+    name: "Security and Authentication Implementation"
+    mandatory_actions:
+      - "IMPLEMENT user authentication system"
+      - "CREATE role-based authorization mechanisms"
+      - "DEVELOP input validation and sanitization"
+      - "IMPLEMENT security headers and CORS"
+      - "BUILD security audit and logging"
+
+    security_requirements:
+      authentication_system:
+        - "IMPLEMENT plugin identity verification"
+        - "CREATE signature validation"
+        - "DEVELOP certificate management"
+        - "BUILD trust chain validation"
+
+      authorization_mechanisms:
+        - "IMPLEMENT permission models"
+        - "CREATE capability-based security"
+        - "DEVELOP access control lists"
+        - "BUILD role-based access"
+
+      isolation_capabilities:
+        - "IMPLEMENT process isolation"
+        - "CREATE resource sandboxing"
+        - "DEVELOP network isolation"
+        - "BUILD filesystem restrictions"
+
+  phase_8:
+    name: "Inter-Service Communication Implementation"
+    mandatory_actions:
+      - "IMPLEMENT service messaging system"
+      - "CREATE event bus architecture"
+      - "DEVELOP RPC and HTTP client mechanisms"
+      - "IMPLEMENT distributed state management"
+      - "BUILD service coordination protocols"
+
+    communication_requirements:
+      messaging_system:
+        - "IMPLEMENT message routing"
+        - "CREATE message serialization"
+        - "DEVELOP message validation"
+        - "BUILD message persistence"
+
+      event_bus:
+        - "IMPLEMENT publish-subscribe"
+        - "CREATE event filtering"
+        - "DEVELOP event ordering"
+        - "BUILD event replay"
+
+      coordination_protocols:
+        - "IMPLEMENT consensus mechanisms"
+        - "CREATE distributed locks"
+        - "DEVELOP transaction support"
+        - "BUILD conflict resolution"
+
+  phase_9:
+    name: "Performance and Observability Implementation"
+    mandatory_actions:
+      - "IMPLEMENT application performance monitoring"
+      - "CREATE metrics collection and reporting"
+      - "DEVELOP structured logging framework"
+      - "IMPLEMENT distributed tracing capabilities"
+      - "BUILD debugging and profiling tools"
+
+    observability_requirements:
+      monitoring_system:
+        - "IMPLEMENT health checks"
+        - "CREATE performance metrics"
+        - "DEVELOP resource tracking"
+        - "BUILD alerting mechanisms"
+
+      logging_framework:
+        - "IMPLEMENT structured logging"
+        - "CREATE log aggregation"
+        - "DEVELOP log filtering"
+        - "BUILD log correlation"
+
+      debugging_tools:
+        - "IMPLEMENT debug interfaces"
+        - "CREATE profiling capabilities"
+        - "DEVELOP state inspection"
+        - "BUILD troubleshooting aids"
+
+  phase_10:
+    name: "Quality Assurance and Production Readiness"
+    mandatory_actions:
+      - "VALIDATE all Python application implementations"
+      - "VERIFY SOLID/DRY/KISS compliance"
+      - "ENSURE production readiness criteria met"
+      - "EXECUTE post-implementation quality checks"
+      - "GENERATE implementation documentation"
+
+    quality_requirements:
+      - "MANDATORY: Complete implementation validation"
+      - "MANDATORY: Code quality verification"
+      - "MANDATORY: Security validation"
+      - "MANDATORY: Performance verification"
+      - "FORBIDDEN: Incomplete implementations"
+
+# Implementation Validation Criteria
+validation_criteria:
+  application_completeness: "MANDATORY - 100% of Python application implemented"
+  interface_implementation: "MANDATORY - All Python interfaces implemented"
+  service_layer_functional: "MANDATORY - Service layer fully functional"
+  data_layer_operational: "MANDATORY - Data layer fully operational"
+  api_endpoints_complete: "MANDATORY - All API endpoints implemented"
+  security_implemented: "MANDATORY - All security measures active"
+  performance_optimized: "MANDATORY - Performance targets met"
+  observability_active: "MANDATORY - Full observability implemented"
+  solid_compliance: "MANDATORY - SOLID/DRY/KISS principles applied"
+  production_ready: "MANDATORY - Production readiness validated"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL implementation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs: []
+  # NO DOCUMENTATION - CODING ONLY COMMAND
+  # This command produces Python source code files, configuration files, and test files only
+  # Documentation should be created using separate documentation commands
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all implementation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL implementation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all implementation outputs"
+    - "FORBIDDEN: Creating implementation files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same implementation session"
+
+# Implementation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE design blueprints from ({{design_source}}) for ({{implementation_target}})"
+  - "2. SETUP Python application development environment"
+  - "3. IMPLEMENT core Python application components"
+  - "4. CREATE service layer and integration mechanisms"
+  - "5. IMPLEMENT data layer and repository patterns"
+  - "6. BUILD API endpoints and documentation"
+  - "7. IMPLEMENT application lifecycle management"
+  - "8. CREATE security and authentication mechanisms"
+  - "9. IMPLEMENT inter-service communication"
+  - "10. BUILD performance and observability features"
+  - "11. VALIDATE implementation completeness"
+  - "12. EXECUTE post-implementation quality checks with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each implementation phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all implementation tracking"
+  - "MANDATORY: Timestamp all implementation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Post-Implementation Quality Check
+post_implementation_quality:
+  automatic_execution: true
+  quality_check_command: "/code-quality-comprehensive"
+
+  mandatory_checks:
+    - "Code quality validation on all modified files"
+    - "SOLID/DRY/KISS compliance verification"
+    - "Security implementation validation"
+    - "Performance optimization verification"
+    - "Production readiness assessment"
+
+  quality_workflow:
+    - "Complete all plugin framework implementation"
+    - "Execute automatic quality check"
+    - "Apply quality fixes"
+    - "Flag complex issues for remediation"
+    - "Commit with quality validation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL implementations MUST be production-ready"
+    - "ALL Python components MUST be fully implemented"
+    - "ALL security measures MUST be active"
+    - "ALL performance requirements MUST be met"
+    - "ALL implementations MUST follow SOLID/DRY/KISS"
+    - "ALL code MUST be properly documented"
+    - "ALWAYS use systematic implementation methodology"
+    - "NEVER create test code"
+
+  strictly_forbidden:
+    - "Creating test code or test scripts"
+    - "Making placeholder implementations"
+    - "Partial or incomplete Python code"
+    - "Skipping security implementations"
+    - "Creating implementations without validation"
+    - "Missing critical Python components"
+    - "Proceeding without quality checks"
+    - "Creating duplicate or backup files"

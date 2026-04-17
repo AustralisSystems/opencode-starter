@@ -1,0 +1,492 @@
+# === MCP PROMPT: Meta-Recursive Sub-Agent Creation Protocol ===
+name: "sub-agents-creation-prompt"
+version: "1.0.0"
+description: "Meta-recursive protocol for creating new Claude Code CLI sub-agents using existing sub-agents"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Meta-Recursive Sub-Agent Creation"
+  description: "Execute comprehensive creation of new Claude Code CLI sub-agents using existing sub-agent ecosystem for specialized expertise and quality assurance"
+
+  # Argument Schema
+  arguments:
+    subagent_name:
+      type: "string"
+      description: "Name of the new sub-agent to create (lowercase with hyphens)"
+      required: true
+
+    subagent_purpose:
+      type: "string"
+      description: "Primary purpose and expertise area of the new sub-agent"
+      required: true
+
+    subagent_scope:
+      type: "string"
+      description: "Scope of the sub-agent (specialized, general, domain-specific)"
+      required: false
+      enum: ["specialized", "general", "domain-specific", "cross-functional"]
+      default: "specialized"
+
+    target_directory:
+      type: "string"
+      description: "Target directory for sub-agent files"
+      required: false
+      default: ".claude/agents"
+
+    required_tools:
+      type: "array"
+      description: "List of tools the sub-agent should have access to"
+      required: false
+      items:
+        type: "string"
+
+    model_preference:
+      type: "string"
+      description: "Model preference for the sub-agent"
+      required: false
+      enum: ["sonnet", "opus", "haiku", "inherit"]
+      default: "inherit"
+
+    integration_requirements:
+      type: "array"
+      description: "Integration requirements with existing sub-agents"
+      required: false
+      items:
+        type: "string"
+
+    quality_standards:
+      type: "string"
+      description: "Quality standards to enforce during creation"
+      required: false
+      enum: ["enterprise", "standard", "basic"]
+      default: "enterprise"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Meta-Recursive Sub-Agent Creation specialist executing the Meta-Recursive Sub-Agent Creation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive meta-recursive sub-agent creation methodology
+        - Execute complete sub-agent creation using existing sub-agent ecosystem
+        - Maintain production-ready sub-agent standards
+        - Use systematic sub-agent creation practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Anthropic sub-agent best practices
+        - Implement meta-recursive sub-agent creation workflows
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating sub-agents without using existing sub-agent ecosystem
+        - Skipping meta-recursive sub-agent creation workflows
+        - Partial sub-agent creation or incomplete solutions
+        - Creating sub-agents with known quality violations
+        - Creating temporary or workaround sub-agents
+        - Ignoring Anthropic sub-agent best practices
+        - Skipping existing sub-agent expertise utilization
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY META-RECURSIVE SUB-AGENT CREATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **META-RECURSIVE SUB-AGENT CREATION PARAMETERS:**
+        - Sub-Agent Name: {{subagent_name}}
+        - Sub-Agent Purpose: {{subagent_purpose}}
+        - Sub-Agent Scope: {{subagent_scope}}
+        - Target Directory: {{target_directory}}
+        - Required Tools: {{required_tools}}
+        - Model Preference: {{model_preference}}
+        - Integration Requirements: {{integration_requirements}}
+        - Quality Standards: {{quality_standards}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING META-RECURSIVE SUB-AGENT CREATION PROTOCOL:**
+
+# Meta-Recursive Sub-Agent Creation Protocol Configuration
+meta_recursive_subagent_creation:
+  # Meta-Recursive Creation Scope - MANDATORY COMPREHENSIVE COVERAGE
+  meta_recursive_creation_focus:
+    existing_subagent_utilization: true # MUST use existing sub-agent ecosystem
+    specialized_expertise_leveraging: true # MUST leverage specialized sub-agent expertise
+    collaborative_workflow_execution: true # MUST use collaborative sub-agent workflows
+    quality_assurance_integration: true # MUST integrate quality assurance sub-agents
+    architectural_compliance_validation: true # MUST validate architectural compliance
+    documentation_standard_enforcement: true # MUST enforce documentation standards
+    meta_recursive_workflow_implementation: true # MUST implement meta-recursive workflows
+
+  # Meta-Recursive Creation Configuration - MANDATORY SETTINGS
+  meta_recursive_creation_settings:
+    enable_existing_subagent_utilization: true
+    perform_specialized_expertise_leveraging: true
+    execute_collaborative_workflow_execution: true
+    systematic_meta_recursive_creation: true # MANDATORY: Systematic meta-recursive creation practices
+    follow_meta_recursive_principles: true # MANDATORY: Meta-recursive creation best practices
+    continuous_quality_validation: true # MANDATORY: Validate quality throughout process
+    production_ready_subagent_creation: true # MANDATORY: Production-ready sub-agent standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Meta-Recursive Creation Validation and Setup"
+    mandatory_actions:
+      - "VALIDATE meta-recursive sub-agent creation parameters and requirements"
+      - "CHECK target directory accessibility and permissions"
+      - "VERIFY sub-agent name uniqueness and validity"
+      - "PREPARE meta-recursive sub-agent creation environment and workspace"
+      - "INITIALIZE existing sub-agent ecosystem utilization tracking"
+
+    meta_recursive_creation_validation_requirements:
+      - "MANDATORY: Validate all meta-recursive creation parameters"
+      - "MANDATORY: Check target directory accessibility"
+      - "MANDATORY: Verify sub-agent name uniqueness"
+      - "MANDATORY: Confirm sub-agent purpose validity"
+      - "FORBIDDEN: Proceeding with invalid meta-recursive creation parameters"
+
+  phase_2:
+    name: "Existing Sub-Agent Ecosystem Analysis and Selection"
+    mandatory_actions:
+      - "ANALYZE existing sub-agent ecosystem for specialized expertise"
+      - "SELECT appropriate existing sub-agents for meta-recursive creation workflow"
+      - "MAP existing sub-agent capabilities to new sub-agent requirements"
+      - "ASSESS existing sub-agent integration requirements"
+      - "EVALUATE existing sub-agent collaboration workflows"
+
+    existing_subagent_ecosystem_requirements:
+      - "MANDATORY: Analyze existing sub-agent ecosystem comprehensively"
+      - "MANDATORY: Select appropriate existing sub-agents for workflow"
+      - "MANDATORY: Map existing sub-agent capabilities to requirements"
+      - "MANDATORY: Assess existing sub-agent integration requirements"
+      - "FORBIDDEN: Creating sub-agents without leveraging existing sub-agent ecosystem"
+
+    existing_subagent_ecosystem_standards:
+      existing_subagent_utilization:
+        - "COMPREHENSIVE existing sub-agent ecosystem analysis"
+        - "APPROPRIATE existing sub-agent selection for workflow"
+        - "EFFECTIVE existing sub-agent capability mapping"
+        - "CLEAR existing sub-agent integration requirements"
+        - "MAINTAINABLE existing sub-agent collaboration workflows"
+
+      specialized_expertise_leveraging:
+        - "LEVERAGE code-implementation-planner for sub-agent structure planning"
+        - "LEVERAGE code-quality-analyzer for sub-agent quality assurance"
+        - "LEVERAGE architecture-compliance-reviewer for architectural validation"
+        - "LEVERAGE documentation-protocol-enforcer for documentation standards"
+        - "LEVERAGE enterprise-microservices-architect for complex architectures"
+
+  phase_3:
+    name: "Meta-Recursive Sub-Agent Structure Planning"
+    mandatory_actions:
+      - "USE code-implementation-planner to plan new sub-agent structure"
+      - "DEFINE sub-agent YAML frontmatter configuration"
+      - "SPECIFY sub-agent tools, model, and description requirements"
+      - "PLAN sub-agent system prompt structure and content"
+      - "DESIGN sub-agent integration with existing sub-agent ecosystem"
+
+    meta_recursive_structure_planning_requirements:
+      - "MANDATORY: Use code-implementation-planner for structure planning"
+      - "MANDATORY: Define comprehensive sub-agent YAML configuration"
+      - "MANDATORY: Specify sub-agent tools and model requirements"
+      - "MANDATORY: Plan sub-agent system prompt structure"
+      - "FORBIDDEN: Creating sub-agent structure without using existing sub-agent expertise"
+
+    meta_recursive_structure_planning_standards:
+      subagent_structure_planning:
+        - "COMPREHENSIVE sub-agent structure planning using existing expertise"
+        - "DETAILED sub-agent YAML frontmatter configuration"
+        - "SPECIFIC sub-agent tools and model specifications"
+        - "CLEAR sub-agent system prompt structure planning"
+        - "EFFECTIVE sub-agent integration design"
+
+      existing_subagent_collaboration:
+        - "COLLABORATIVE existing sub-agent workflow execution"
+        - "SPECIALIZED existing sub-agent expertise utilization"
+        - "INTEGRATED existing sub-agent quality assurance"
+        - "COMPREHENSIVE existing sub-agent architectural validation"
+        - "STANDARDIZED existing sub-agent documentation enforcement"
+
+  phase_4:
+    name: "Meta-Recursive Sub-Agent Quality Assurance"
+    mandatory_actions:
+      - "USE code-quality-analyzer to ensure sub-agent quality standards"
+      - "USE code-quality-enforcer to enforce quality requirements"
+      - "VALIDATE sub-agent prompt engineering best practices"
+      - "ASSESS sub-agent tool access and permissions"
+      - "EVALUATE sub-agent model selection appropriateness"
+
+    meta_recursive_quality_assurance_requirements:
+      - "MANDATORY: Use code-quality-analyzer for quality assurance"
+      - "MANDATORY: Use code-quality-enforcer for quality enforcement"
+      - "MANDATORY: Validate sub-agent prompt engineering best practices"
+      - "MANDATORY: Assess sub-agent tool access and permissions"
+      - "FORBIDDEN: Creating sub-agents without quality assurance validation"
+
+    meta_recursive_quality_assurance_standards:
+      subagent_quality_assurance:
+        - "COMPREHENSIVE sub-agent quality analysis using existing expertise"
+        - "DETAILED sub-agent quality enforcement using existing tools"
+        - "SPECIFIC sub-agent prompt engineering validation"
+        - "CLEAR sub-agent tool access assessment"
+        - "EFFECTIVE sub-agent model selection evaluation"
+
+      existing_subagent_quality_integration:
+        - "INTEGRATED existing sub-agent quality analysis"
+        - "COLLABORATIVE existing sub-agent quality enforcement"
+        - "SPECIALIZED existing sub-agent prompt engineering validation"
+        - "COMPREHENSIVE existing sub-agent tool access assessment"
+        - "STANDARDIZED existing sub-agent model selection evaluation"
+
+  phase_5:
+    name: "Meta-Recursive Sub-Agent Architectural Compliance Validation"
+    mandatory_actions:
+      - "USE architecture-compliance-reviewer to validate sub-agent architecture"
+      - "USE enterprise-microservices-architect for complex sub-agent architectures"
+      - "VALIDATE sub-agent compliance with Anthropic best practices"
+      - "ASSESS sub-agent integration with existing sub-agent ecosystem"
+      - "EVALUATE sub-agent scalability and maintainability"
+
+    meta_recursive_architectural_validation_requirements:
+      - "MANDATORY: Use architecture-compliance-reviewer for architectural validation"
+      - "MANDATORY: Use enterprise-microservices-architect for complex architectures"
+      - "MANDATORY: Validate sub-agent compliance with Anthropic best practices"
+      - "MANDATORY: Assess sub-agent integration with existing ecosystem"
+      - "FORBIDDEN: Creating sub-agents without architectural compliance validation"
+
+    meta_recursive_architectural_validation_standards:
+      subagent_architectural_validation:
+        - "COMPREHENSIVE sub-agent architectural validation using existing expertise"
+        - "DETAILED sub-agent compliance validation with Anthropic best practices"
+        - "SPECIFIC sub-agent integration assessment with existing ecosystem"
+        - "CLEAR sub-agent scalability and maintainability evaluation"
+        - "EFFECTIVE sub-agent architectural compliance verification"
+
+      existing_subagent_architectural_integration:
+        - "INTEGRATED existing sub-agent architectural validation"
+        - "COLLABORATIVE existing sub-agent compliance verification"
+        - "SPECIALIZED existing sub-agent integration assessment"
+        - "COMPREHENSIVE existing sub-agent scalability evaluation"
+        - "STANDARDIZED existing sub-agent maintainability assessment"
+
+  phase_6:
+    name: "Meta-Recursive Sub-Agent Documentation Standards"
+    mandatory_actions:
+      - "USE documentation-protocol-enforcer to ensure proper documentation"
+      - "CREATE comprehensive sub-agent documentation using existing expertise"
+      - "VALIDATE sub-agent documentation completeness and accuracy"
+      - "ASSESS sub-agent documentation maintainability"
+      - "EVALUATE sub-agent documentation user experience"
+
+    meta_recursive_documentation_requirements:
+      - "MANDATORY: Use documentation-protocol-enforcer for documentation standards"
+      - "MANDATORY: Create comprehensive sub-agent documentation"
+      - "MANDATORY: Validate sub-agent documentation completeness"
+      - "MANDATORY: Assess sub-agent documentation maintainability"
+      - "FORBIDDEN: Creating sub-agents without proper documentation standards"
+
+    meta_recursive_documentation_standards:
+      subagent_documentation_creation:
+        - "COMPREHENSIVE sub-agent documentation creation using existing expertise"
+        - "DETAILED sub-agent documentation completeness validation"
+        - "SPECIFIC sub-agent documentation maintainability assessment"
+        - "CLEAR sub-agent documentation user experience evaluation"
+        - "EFFECTIVE sub-agent documentation standard enforcement"
+
+      existing_subagent_documentation_integration:
+        - "INTEGRATED existing sub-agent documentation creation"
+        - "COLLABORATIVE existing sub-agent documentation validation"
+        - "SPECIALIZED existing sub-agent documentation assessment"
+        - "COMPREHENSIVE existing sub-agent documentation evaluation"
+        - "STANDARDIZED existing sub-agent documentation enforcement"
+
+  phase_7:
+    name: "Meta-Recursive Sub-Agent Testing and Validation"
+    mandatory_actions:
+      - "USE test-executor-analyzer to test sub-agent functionality"
+      - "USE test-preparation-planner to plan sub-agent testing strategy"
+      - "VALIDATE sub-agent functionality and performance"
+      - "ASSESS sub-agent integration testing requirements"
+      - "EVALUATE sub-agent testing coverage and effectiveness"
+
+    meta_recursive_testing_requirements:
+      - "MANDATORY: Use test-executor-analyzer for sub-agent testing"
+      - "MANDATORY: Use test-preparation-planner for testing strategy"
+      - "MANDATORY: Validate sub-agent functionality and performance"
+      - "MANDATORY: Assess sub-agent integration testing requirements"
+      - "FORBIDDEN: Creating sub-agents without comprehensive testing validation"
+
+    meta_recursive_testing_standards:
+      subagent_testing_execution:
+        - "COMPREHENSIVE sub-agent testing execution using existing expertise"
+        - "DETAILED sub-agent functionality and performance validation"
+        - "SPECIFIC sub-agent integration testing assessment"
+        - "CLEAR sub-agent testing coverage evaluation"
+        - "EFFECTIVE sub-agent testing strategy implementation"
+
+      existing_subagent_testing_integration:
+        - "INTEGRATED existing sub-agent testing execution"
+        - "COLLABORATIVE existing sub-agent functionality validation"
+        - "SPECIALIZED existing sub-agent integration testing"
+        - "COMPREHENSIVE existing sub-agent testing coverage"
+        - "STANDARDIZED existing sub-agent testing strategy"
+
+  phase_8:
+    name: "Meta-Recursive Sub-Agent Deployment and Integration"
+    mandatory_actions:
+      - "USE deployment-operations-manager to manage sub-agent deployment"
+      - "USE deployment-orchestrator to orchestrate sub-agent workflows"
+      - "DEPLOY sub-agent to target directory with proper configuration"
+      - "INTEGRATE sub-agent with existing sub-agent ecosystem"
+      - "VALIDATE sub-agent deployment success and functionality"
+
+    meta_recursive_deployment_requirements:
+      - "MANDATORY: Use deployment-operations-manager for deployment management"
+      - "MANDATORY: Use deployment-orchestrator for workflow orchestration"
+      - "MANDATORY: Deploy sub-agent to target directory"
+      - "MANDATORY: Integrate sub-agent with existing ecosystem"
+      - "FORBIDDEN: Creating sub-agents without proper deployment and integration"
+
+    meta_recursive_deployment_standards:
+      subagent_deployment_execution:
+        - "COMPREHENSIVE sub-agent deployment execution using existing expertise"
+        - "DETAILED sub-agent deployment configuration and validation"
+        - "SPECIFIC sub-agent ecosystem integration"
+        - "CLEAR sub-agent deployment success verification"
+        - "EFFECTIVE sub-agent workflow orchestration"
+
+      existing_subagent_deployment_integration:
+        - "INTEGRATED existing sub-agent deployment management"
+        - "COLLABORATIVE existing sub-agent workflow orchestration"
+        - "SPECIALIZED existing sub-agent deployment configuration"
+        - "COMPREHENSIVE existing sub-agent ecosystem integration"
+        - "STANDARDIZED existing sub-agent deployment validation"
+
+  phase_9:
+    name: "Meta-Recursive Sub-Agent Creation Completion and Validation"
+    mandatory_actions:
+      - "GENERATE comprehensive meta-recursive sub-agent creation report"
+      - "RECORD meta-recursive creation findings and recommendations"
+      - "VALIDATE sub-agent functionality and completeness"
+      - "PROVIDE next steps and sub-agent usage guidance"
+      - "CONFIRM meta-recursive sub-agent creation completion and success"
+
+    meta_recursive_completion_requirements:
+      - "MANDATORY: Generate detailed meta-recursive creation report"
+      - "MANDATORY: Record meta-recursive creation findings with timestamps"
+      - "MANDATORY: Validate sub-agent functionality and completeness"
+      - "MANDATORY: Provide clear next steps for sub-agent usage"
+
+# Meta-Recursive Sub-Agent Creation Standards and Criteria
+meta_recursive_subagent_creation_standards:
+  anthropic_subagent_best_practices:
+    subagent_structure: "CLEAR role definition, specific task definition, structured organization"
+    subagent_clarity: "UNAMBIGUOUS instructions, clear success criteria, specific validation"
+    subagent_safety: "APPROPRIATE guardrails, ethical considerations, responsible AI usage"
+    subagent_effectiveness: "MEASURABLE outcomes, clear validation, specific constraints"
+
+  existing_subagent_ecosystem_utilization:
+    subagent_collaboration: "EFFECTIVE existing sub-agent collaboration workflows"
+    subagent_expertise: "SPECIALIZED existing sub-agent expertise utilization"
+    subagent_quality: "INTEGRATED existing sub-agent quality assurance"
+    subagent_architecture: "COMPREHENSIVE existing sub-agent architectural validation"
+
+  meta_recursive_creation_standards:
+    subagent_creation: "COMPLETE meta-recursive sub-agent creation using existing ecosystem"
+    subagent_validation: "THOROUGH sub-agent validation using existing sub-agent expertise"
+    subagent_integration: "SEAMLESS sub-agent integration with existing ecosystem"
+    subagent_quality: "ENTERPRISE sub-agent quality standards using existing sub-agent tools"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL meta-recursive sub-agent creation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-25-150000"
+
+  required_outputs:
+    - "./project/docs/sub-agents/Creation_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (creation execution and results)"
+    - "./project/docs/sub-agents/Specifications-{{YYYY-MM-DD-HHMMSS}}.md (specifications and configuration)"
+    - "./project/docs/sub-agents/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.md (validation and quality checks)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all meta-recursive sub-agent creation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL meta-recursive sub-agent creation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all meta-recursive sub-agent creation outputs"
+    - "FORBIDDEN: Creating sub-agent files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same meta-recursive sub-agent creation session"
+
+# Meta-Recursive Sub-Agent Creation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE meta-recursive sub-agent creation parameters and requirements"
+  - "2. CHECK target directory accessibility and permissions"
+  - "3. CREATE meta-recursive sub-agent creation timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. ANALYZE existing sub-agent ecosystem for specialized expertise"
+  - "5. USE code-implementation-planner to plan new sub-agent structure"
+  - "6. USE code-quality-analyzer to ensure sub-agent quality standards"
+  - "7. USE architecture-compliance-reviewer to validate sub-agent architecture"
+  - "8. USE documentation-protocol-enforcer to ensure proper documentation"
+  - "9. USE test-executor-analyzer to test sub-agent functionality"
+  - "10. USE deployment-operations-manager to manage sub-agent deployment"
+  - "11. GENERATE comprehensive meta-recursive sub-agent creation report with timestamps"
+  - "12. VALIDATE sub-agent functionality and completeness"
+  - "13. CLEANUP temporary meta-recursive sub-agent creation files and artifacts"
+  - "14. RECORD meta-recursive sub-agent creation completion with timestamp"
+  - "15. PROVIDE next steps and sub-agent usage guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each meta-recursive sub-agent creation step"
+  - "MANDATORY: Use UTC time for all meta-recursive sub-agent creation timestamp recordings"
+  - "MANDATORY: Include timestamps in all meta-recursive sub-agent creation tracking"
+  - "MANDATORY: Timestamp all meta-recursive sub-agent creation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper meta-recursive sub-agent creation timestamp documentation"
+
+# Meta-Recursive Sub-Agent Creation Quality Gates
+meta_recursive_subagent_creation_quality_gates:
+  pre_meta_recursive_creation:
+    - "All required meta-recursive sub-agent creation parameters provided and validated"
+    - "Target directory accessible and writable"
+    - "Sub-agent name unique and valid"
+    - "Existing sub-agent ecosystem accessible and functional"
+
+  meta_recursive_creation_phase:
+    - "All meta-recursive sub-agent creation phases completed successfully"
+    - "No critical errors during meta-recursive sub-agent creation process"
+    - "All existing sub-agent ecosystem standards validated appropriately"
+    - "All meta-recursive sub-agent creation assessments completed thoroughly"
+
+  post_meta_recursive_creation:
+    - "Comprehensive meta-recursive sub-agent creation report generated"
+    - "All meta-recursive sub-agent creation findings documented with timestamps"
+    - "Sub-agent functionality validated and complete"
+    - "Sub-agent usage guide provided"
+
+# Constraints and Requirements
+meta_recursive_subagent_creation_constraints:
+  mandatory_requirements:
+    - "ALL meta-recursive sub-agent creation MUST be comprehensive and thorough"
+    - "ALL existing sub-agent ecosystem standards MUST be validated appropriately"
+    - "ALL meta-recursive sub-agent creation findings MUST be documented with timestamps"
+    - "ALL meta-recursive sub-agent creation recommendations MUST be actionable and specific"
+    - "ALL meta-recursive sub-agent creation reports MUST be complete and accurate"
+    - "ALWAYS use systematic meta-recursive sub-agent creation practices"
+    - "NEVER create sub-agents that violate existing sub-agent ecosystem standards"
+
+  strictly_forbidden:
+    - "Creating sub-agents without using existing sub-agent ecosystem"
+    - "Skipping meta-recursive sub-agent creation workflows"
+    - "Partial or incomplete meta-recursive sub-agent creation"
+    - "Creating sub-agents with critical existing sub-agent ecosystem violations"
+    - "Creating temporary or workaround sub-agents"
+    - "Missing meta-recursive sub-agent creation documentation"
+    - "Proceeding with failed meta-recursive sub-agent creation quality gates"

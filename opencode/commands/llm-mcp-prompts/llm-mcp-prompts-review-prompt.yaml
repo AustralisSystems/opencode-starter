@@ -1,0 +1,886 @@
+# === MCP PROMPT: LLM MCP Prompts Content Review Protocol ===
+name: "llm-mcp-prompts-review-prompt"
+version: "2.0.0"
+description: "Enhanced comprehensive review protocol for LLM MCP prompts content with MCP workflow orchestration, neo4j-memory integration, and READ_AND_EXECUTE enforcement"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "LLM MCP Prompts Content Review"
+  description: "Execute comprehensive review of LLM MCP prompts content against Anthropic best practices and public prompt engineering standards"
+
+  # Argument Schema
+  arguments:
+    target_prompts:
+      type: "array"
+      description: "List of LLM MCP prompt files to review"
+      required: true
+      items:
+        type: "string"
+
+    review_scope:
+      type: "string"
+      description: "Scope of the content review"
+      required: false
+      enum:
+        [
+          "comprehensive",
+          "content_only",
+          "structure_only",
+          "best_practices_only",
+          "compliance_only"
+        ]
+      default: "comprehensive"
+
+    review_standards:
+      type: "array"
+      description: "Standards to evaluate against"
+      required: false
+      items:
+        type: "string"
+        enum:
+          [
+            "anthropic_best_practices",
+            "public_prompt_engineering",
+            "mcp_protocol_compliance",
+            "llm_prompt_standards",
+            "content_quality_standards"
+          ]
+      default: ["anthropic_best_practices", "public_prompt_engineering", "mcp_protocol_compliance"]
+
+    content_focus:
+      type: "string"
+      description: "Focus area for content review"
+      required: false
+      enum:
+        [
+          "prompt_effectiveness",
+          "content_clarity",
+          "instruction_precision",
+          "context_appropriateness",
+          "output_specification"
+        ]
+      default: "prompt_effectiveness"
+
+    improvement_focus:
+      type: "string"
+      description: "Focus area for improvement recommendations"
+      required: false
+      enum:
+        [
+          "content_optimization",
+          "clarity_enhancement",
+          "instruction_improvement",
+          "context_enhancement",
+          "output_specification"
+        ]
+      default: "content_optimization"
+
+    output_format:
+      type: "string"
+      description: "Output format for review results"
+      required: false
+      enum:
+        [
+          "detailed_report",
+          "summary_report",
+          "actionable_recommendations",
+          "content_improvement_guide"
+        ]
+      default: "detailed_report"
+
+# MCP Workflow Orchestration - Enhanced Integration
+mcp_workflow_orchestration:
+  # MCP Tool Workflow Sections
+  mcp_tool_workflow:
+    phase_1_context_loading:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["content_review_patterns", "previous_reviews", "learned_standards"]
+        memory_type: "enduring_memory"
+      - tool: mcp_server-memory
+        action: load_temporal_context
+        context_types: ["current_session", "recent_reviews"]
+        memory_type: "temporal_memory"
+
+    phase_2_research:
+      - tool: context7
+        action: get_documentation
+        library: "anthropic"
+        version: "latest"
+        focus_areas: ["prompt_engineering", "best_practices", "safety_guidelines"]
+      - tool: grep
+        action: search_github
+        query: "prompt engineering best practices"
+        purpose: "Find real-world prompt engineering examples"
+
+    phase_3_planning:
+      - tool: sequential-thinking
+        action: structure_review_approach
+        complexity: "high"
+        context_aware: true
+
+    phase_4_validation:
+      - tool: filesystem
+        action: analyze_content_quality
+        quality_standards: "anthropic_best_practices"
+      - tool: sequential-thinking
+        action: validate_content_standards
+        standards: ["anthropic", "public", "mcp_protocol"]
+
+    phase_5_persistence:
+      - tool: neo4j-memory
+        action: save_review_patterns
+        if_quality_threshold: ">= 90%"
+        memory_type: "enduring_memory"
+      - tool: mcp_server-memory
+        action: save_session_insights
+        memory_type: "temporal_memory"
+
+  # Context Persistence Patterns
+  context_management:
+    session_start:
+      - load_previous_reviews: true
+      - load_content_standards: true
+      - load_review_patterns: true
+      - load_anthropic_guidelines: true
+
+    session_end:
+      - save_new_patterns: true
+      - save_review_insights: true
+      - save_quality_improvements: true
+      - save_anthropic_compliance: true
+
+  # Intelligent Tool Chaining
+  intelligent_chaining:
+    conditional_research:
+      - if: "new_prompt_type_detected"
+        then:
+          - context7: get_latest_anthropic_documentation
+          - grep: find_similar_prompt_examples
+      - if: "compliance_issues_found"
+        then:
+          - context7: get_anthropic_safety_guidelines
+          - sequential-thinking: plan_compliance_fixes
+
+  # Automated Validation Workflows
+  validation_workflow:
+    post_review:
+      - tool: filesystem
+        action: analyze_content_quality
+      - tool: sequential-thinking
+        action: validate_anthropic_compliance
+      - tool: neo4j-memory
+        action: compare_with_best_practices
+        memory_type: "enduring_memory"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI LLM MCP Prompts content review specialist executing the LLM MCP Prompts Content Review Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive content review methodology
+        - Execute complete validation against Anthropic best practices
+        - Maintain production-ready content review standards
+        - Use systematic content analysis practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Anthropic prompt engineering best practices
+        - Implement public prompt engineering standards
+
+        ABSOLUTELY FORBIDDEN:
+        - Reviewing without proper content validation criteria
+        - Skipping best practices assessment
+        - Partial content reviews or incomplete analysis
+        - Reviewing with known content standards violations
+        - Creating temporary or workaround content reviews
+        - Ignoring Anthropic best practices
+        - Skipping MCP protocol compliance validation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY LLM MCP PROMPTS CONTENT REVIEW PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **CONTENT REVIEW PARAMETERS:**
+        - Target Prompts: {{target_prompts}}
+        - Review Scope: {{review_scope}}
+        - Review Standards: {{review_standards}}
+        - Content Focus: {{content_focus}}
+        - Improvement Focus: {{improvement_focus}}
+        - Output Format: {{output_format}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **CRITICAL MCP PROMPT ENFORCEMENT:**
+        YOU MUST ALWAYS READ_AND_EXECUTE the MCP prompt YAML files referenced in this command. This is MANDATORY and cannot be skipped.
+
+        **MCP WORKFLOW ORCHESTRATION REQUIREMENTS:**
+        - Use neo4j-memory (enduring memory) for persistent context and learning
+        - Use mcp server-memory (temporal memory) for session-specific context
+        - Execute MCP tool workflows in the specified sequence
+        - Implement intelligent tool chaining based on context
+        - Perform automated validation workflows
+        - Save insights to enduring memory for future sessions
+
+        **EXECUTE THE FOLLOWING LLM MCP PROMPTS CONTENT REVIEW PROTOCOL:**
+
+# LLM MCP Prompts Content Review Protocol Configuration
+llm_mcp_prompts_review_protocol:
+  # Content Review Scope - MANDATORY COMPREHENSIVE COVERAGE
+  content_review_focus:
+    anthropic_best_practices: true # MUST validate against Anthropic best practices
+    public_prompt_engineering: true # MUST validate against public prompt engineering standards
+    mcp_protocol_compliance: true # MUST validate MCP protocol compliance
+    llm_prompt_standards: true # MUST validate LLM prompt standards
+    content_quality: true # MUST assess content quality
+    instruction_precision: true # MUST evaluate instruction precision
+    context_appropriateness: true # MUST assess context appropriateness
+    output_specification: true # MUST validate output specifications
+
+  # Content Review Configuration - MANDATORY SETTINGS
+  content_review_settings:
+    enable_comprehensive_content_analysis: true
+    perform_best_practices_validation: true
+    execute_content_standards_compliance: true
+    validate_content_quality: true
+    assess_instruction_precision: true
+    systematic_content_review: true # MANDATORY: Systematic content review practices
+    follow_content_review_principles: true # MANDATORY: Content review best practices
+    continuous_content_validation: true # MANDATORY: Validate content throughout process
+    production_ready_content_review: true # MANDATORY: Production-ready content review standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Content Review Validation and MCP Context Loading"
+    mandatory_actions:
+      - "VALIDATE content review parameters and target prompt files"
+      - "CHECK prompt file accessibility and readability"
+      - "VERIFY content review scope and standards alignment"
+      - "PREPARE content review environment and workspace"
+      - "INITIALIZE content review tracking and documentation"
+      - "LOAD enduring memory contexts using neo4j-memory"
+      - "LOAD temporal memory contexts using mcp server-memory"
+      - "EXECUTE MCP workflow orchestration phase 1"
+
+    mcp_workflow_requirements:
+      - "MANDATORY: Use neo4j-memory to load content review patterns"
+      - "MANDATORY: Use mcp server-memory to load session context"
+      - "MANDATORY: Execute context loading workflow"
+      - "MANDATORY: Initialize MCP tool orchestration"
+      - "FORBIDDEN: Proceeding without MCP context loading"
+
+    content_review_validation_requirements:
+      - "MANDATORY: Validate all target prompt files are accessible"
+      - "MANDATORY: Verify content review scope is appropriate"
+      - "MANDATORY: Check content review standards are valid"
+      - "MANDATORY: Confirm output format is supported"
+      - "FORBIDDEN: Proceeding with invalid or inaccessible prompt files"
+
+  phase_2:
+    name: "Anthropic Best Practices Content Validation with MCP Research"
+    mandatory_actions:
+      - "ANALYZE prompt content structure against Anthropic best practices"
+      - "VALIDATE prompt content clarity and effectiveness"
+      - "CHECK prompt content organization and flow"
+      - "ASSESS prompt content specificity and context"
+      - "EVALUATE prompt content safety and alignment"
+      - "EXECUTE MCP research workflow using context7 and grep"
+      - "LOAD Anthropic documentation using context7"
+      - "SEARCH GitHub for prompt engineering examples using grep"
+
+    mcp_research_requirements:
+      - "MANDATORY: Use context7 to get latest Anthropic documentation"
+      - "MANDATORY: Use grep to search GitHub for prompt engineering examples"
+      - "MANDATORY: Execute research workflow based on content type"
+      - "MANDATORY: Apply intelligent tool chaining for context-aware research"
+      - "FORBIDDEN: Proceeding without MCP research execution"
+
+    anthropic_content_validation_requirements:
+      - "MANDATORY: Validate prompt content structure follows Anthropic guidelines"
+      - "MANDATORY: Check prompt content clarity and specificity"
+      - "MANDATORY: Assess prompt content organization and flow"
+      - "MANDATORY: Evaluate prompt content safety considerations"
+      - "MANDATORY: Validate prompt content effectiveness"
+      - "FORBIDDEN: Approving prompt content that violates Anthropic best practices"
+
+    anthropic_content_standards:
+      prompt_content_structure:
+        - "CLEAR role definition and context setting in content"
+        - "SPECIFIC task definition and objectives in content"
+        - "STRUCTURED prompt content organization"
+        - "APPROPRIATE prompt content length and complexity"
+        - "CLEAR output format specifications in content"
+
+      prompt_content_clarity:
+        - "UNAMBIGUOUS instructions and requirements in content"
+        - "CLEAR success criteria definition in content"
+        - "SPECIFIC validation requirements in content"
+        - "EXPLICIT constraint definitions in content"
+        - "CLEAR error handling instructions in content"
+
+      prompt_content_safety:
+        - "APPROPRIATE safety guardrails in content"
+        - "ETHICAL considerations and constraints in content"
+        - "RESPONSIBLE AI usage guidelines in content"
+        - "PRIVACY and security considerations in content"
+        - "ALIGNMENT with Anthropic's principles in content"
+
+  phase_3:
+    name: "Public Prompt Engineering Content Standards Validation"
+    mandatory_actions:
+      - "ANALYZE prompt content against public prompt engineering best practices"
+      - "VALIDATE prompt content engineering principles"
+      - "CHECK prompt content effectiveness patterns"
+      - "ASSESS prompt content optimization opportunities"
+      - "EVALUATE prompt content maintainability"
+
+    public_content_standards_requirements:
+      - "MANDATORY: Validate against established prompt engineering principles"
+      - "MANDATORY: Check prompt content effectiveness patterns"
+      - "MANDATORY: Assess prompt content optimization opportunities"
+      - "MANDATORY: Evaluate prompt content maintainability"
+      - "FORBIDDEN: Approving prompt content that ignores public best practices"
+
+    public_content_standards:
+      prompt_content_engineering_principles:
+        - "CLEAR and specific instructions in content"
+        - "APPROPRIATE context and background in content"
+        - "STRUCTURED prompt content organization"
+        - "EFFECTIVE use of examples and demonstrations in content"
+        - "CLEAR output format specifications in content"
+
+      prompt_content_effectiveness:
+        - "MEASURABLE success criteria in content"
+        - "CLEAR validation requirements in content"
+        - "SPECIFIC error handling in content"
+        - "APPROPRIATE complexity level in content"
+        - "EFFECTIVE constraint definitions in content"
+
+      prompt_content_optimization:
+        - "OPTIMAL prompt content length"
+        - "EFFECTIVE prompt content structure"
+        - "CLEAR prompt content flow"
+        - "APPROPRIATE prompt content complexity"
+        - "MAINTAINABLE prompt content design"
+
+  phase_4:
+    name: "MCP Protocol Content Compliance Validation"
+    mandatory_actions:
+      - "VALIDATE MCP prompt content structure compliance"
+      - "CHECK argument schema content validation"
+      - "ASSESS message structure content standards"
+      - "EVALUATE execution phase content clarity"
+      - "VERIFY deliverable content specifications"
+
+    mcp_content_compliance_requirements:
+      - "MANDATORY: Validate MCP prompt content structure compliance"
+      - "MANDATORY: Check argument schema content validation"
+      - "MANDATORY: Assess message structure content standards"
+      - "MANDATORY: Evaluate execution phase content clarity"
+      - "MANDATORY: Verify deliverable content specifications"
+      - "FORBIDDEN: Approving MCP prompt content that violates protocol"
+
+    mcp_content_standards:
+      prompt_content_structure:
+        - "PROPER MCP prompt content metadata"
+        - "VALID argument schema content definitions"
+        - "COMPLIANT message structure content"
+        - "CLEAR execution phase content definitions"
+        - "SPECIFIC deliverable content specifications"
+
+      argument_content_validation:
+        - "COMPLETE argument schema content definitions"
+        - "APPROPRIATE argument types and constraints in content"
+        - "CLEAR argument descriptions in content"
+        - "VALID argument validation rules in content"
+        - "PROPER argument requirements in content"
+
+      message_content_structure:
+        - "APPROPRIATE message roles and content"
+        - "CLEAR message content organization"
+        - "EFFECTIVE message content flow"
+        - "PROPER message content formatting"
+        - "COMPLETE message content"
+
+  phase_5:
+    name: "LLM Prompt Content Standards Validation"
+    mandatory_actions:
+      - "ANALYZE prompt content quality"
+      - "VALIDATE prompt content structure and organization"
+      - "CHECK prompt content effectiveness and clarity"
+      - "ASSESS prompt content completeness"
+      - "EVALUATE prompt content maintainability"
+
+    llm_prompt_content_standards_requirements:
+      - "MANDATORY: Validate prompt content quality"
+      - "MANDATORY: Check prompt content structure and organization"
+      - "MANDATORY: Assess prompt content effectiveness and clarity"
+      - "MANDATORY: Evaluate prompt content completeness"
+      - "FORBIDDEN: Approving prompt content that violates LLM prompt standards"
+
+    llm_prompt_content_standards:
+      prompt_content_documentation:
+        - "COMPLETE prompt content documentation"
+        - "CLEAR prompt content descriptions"
+        - "SPECIFIC prompt content usage examples"
+        - "DETAILED prompt content parameters"
+        - "COMPREHENSIVE prompt content examples"
+
+      prompt_content_structure:
+        - "LOGICAL prompt content organization"
+        - "CLEAR prompt content flow"
+        - "APPROPRIATE prompt content complexity"
+        - "EFFECTIVE prompt content structure"
+        - "MAINTAINABLE prompt content design"
+
+      prompt_content_effectiveness:
+        - "CLEAR prompt content objectives"
+        - "SPECIFIC prompt content requirements"
+        - "EFFECTIVE prompt content validation"
+        - "APPROPRIATE prompt content constraints"
+        - "CLEAR prompt content success criteria"
+
+  phase_6:
+    name: "Content Quality Assessment"
+    mandatory_actions:
+      - "ANALYZE prompt content completeness"
+      - "VALIDATE prompt content clarity"
+      - "CHECK prompt content accuracy"
+      - "ASSESS prompt content maintainability"
+      - "EVALUATE prompt content effectiveness"
+
+    content_quality_requirements:
+      - "MANDATORY: Assess prompt content completeness"
+      - "MANDATORY: Validate prompt content clarity"
+      - "MANDATORY: Check prompt content accuracy"
+      - "MANDATORY: Evaluate prompt content maintainability"
+      - "FORBIDDEN: Approving incomplete or unclear prompt content"
+
+    content_quality_standards:
+      content_completeness:
+        - "COMPLETE prompt content coverage"
+        - "DETAILED prompt content sections"
+        - "COMPREHENSIVE prompt content examples"
+        - "THOROUGH prompt content explanations"
+        - "COMPLETE prompt content references"
+
+      content_clarity:
+        - "CLEAR prompt content language"
+        - "UNAMBIGUOUS prompt content instructions"
+        - "SPECIFIC prompt content examples"
+        - "CLEAR prompt content structure"
+        - "EFFECTIVE prompt content organization"
+
+      content_accuracy:
+        - "ACCURATE prompt content information"
+        - "CURRENT prompt content information"
+        - "VALID prompt content examples"
+        - "CORRECT prompt content references"
+        - "PRECISE prompt content instructions"
+
+  phase_7:
+    name: "Instruction Precision Analysis"
+    mandatory_actions:
+      - "ANALYZE instruction precision and specificity"
+      - "VALIDATE instruction clarity and effectiveness"
+      - "CHECK instruction completeness and accuracy"
+      - "ASSESS instruction maintainability and scalability"
+      - "EVALUATE instruction optimization opportunities"
+
+    instruction_precision_requirements:
+      - "MANDATORY: Analyze instruction precision and specificity"
+      - "MANDATORY: Validate instruction clarity and effectiveness"
+      - "MANDATORY: Check instruction completeness and accuracy"
+      - "MANDATORY: Assess instruction maintainability and scalability"
+      - "FORBIDDEN: Approving imprecise or unclear instructions"
+
+    instruction_precision_standards:
+      instruction_specificity:
+        - "SPECIFIC instruction definitions"
+        - "CLEAR instruction parameters"
+        - "PRECISE instruction requirements"
+        - "DETAILED instruction specifications"
+        - "EXPLICIT instruction constraints"
+
+      instruction_clarity:
+        - "CLEAR instruction language"
+        - "UNAMBIGUOUS instruction definitions"
+        - "SPECIFIC instruction examples"
+        - "CLEAR instruction structure"
+        - "EFFECTIVE instruction organization"
+
+      instruction_completeness:
+        - "COMPLETE instruction coverage"
+        - "DETAILED instruction sections"
+        - "COMPREHENSIVE instruction examples"
+        - "THOROUGH instruction explanations"
+        - "COMPLETE instruction references"
+
+  phase_8:
+    name: "Context Appropriateness Assessment"
+    mandatory_actions:
+      - "ANALYZE context appropriateness and relevance"
+      - "VALIDATE context completeness and accuracy"
+      - "CHECK context clarity and effectiveness"
+      - "ASSESS context maintainability and scalability"
+      - "EVALUATE context optimization opportunities"
+
+    context_appropriateness_requirements:
+      - "MANDATORY: Analyze context appropriateness and relevance"
+      - "MANDATORY: Validate context completeness and accuracy"
+      - "MANDATORY: Check context clarity and effectiveness"
+      - "MANDATORY: Assess context maintainability and scalability"
+      - "FORBIDDEN: Approving inappropriate or irrelevant context"
+
+    context_appropriateness_standards:
+      context_relevance:
+        - "RELEVANT context information"
+        - "APPROPRIATE context selection"
+        - "PERTINENT context details"
+        - "SIGNIFICANT context relationships"
+        - "MEANINGFUL context connections"
+
+      context_completeness:
+        - "COMPLETE context coverage"
+        - "DETAILED context information"
+        - "COMPREHENSIVE context examples"
+        - "THOROUGH context explanations"
+        - "COMPLETE context references"
+
+      context_clarity:
+        - "CLEAR context language"
+        - "UNAMBIGUOUS context definitions"
+        - "SPECIFIC context examples"
+        - "CLEAR context structure"
+        - "EFFECTIVE context organization"
+
+  phase_9:
+    name: "Content Improvement Recommendations Generation"
+    mandatory_actions:
+      - "GENERATE specific content improvement recommendations"
+      - "PRIORITIZE content recommendations by impact and effort"
+      - "PROVIDE actionable content implementation guidance"
+      - "ASSESS content improvement feasibility and impact"
+      - "CREATE content improvement roadmap and timeline"
+
+    content_improvement_requirements:
+      - "MANDATORY: Generate specific content improvement recommendations"
+      - "MANDATORY: Prioritize content recommendations by impact and effort"
+      - "MANDATORY: Provide actionable content implementation guidance"
+      - "MANDATORY: Assess content improvement feasibility and impact"
+      - "FORBIDDEN: Providing vague or non-actionable content recommendations"
+
+    content_improvement_framework:
+      critical_content_improvements:
+        - "ADDRESS critical content compliance violations"
+        - "FIX structural content issues and gaps"
+        - "RESOLVE content completeness issues"
+        - "CORRECT content best practices violations"
+        - "IMPLEMENT essential content functionality"
+
+      high_priority_content_improvements:
+        - "ENHANCE content clarity and effectiveness"
+        - "IMPROVE content structure and organization"
+        - "OPTIMIZE content performance and efficiency"
+        - "STRENGTHEN content validation and error handling"
+        - "ENHANCE content user experience"
+
+      medium_priority_content_improvements:
+        - "REFINE content documentation and examples"
+        - "IMPROVE content maintainability and scalability"
+        - "ENHANCE content flexibility and adaptability"
+        - "OPTIMIZE content resource usage"
+        - "IMPROVE content user experience"
+
+      low_priority_content_improvements:
+        - "POLISH content formatting and presentation"
+        - "ENHANCE content aesthetic and visual appeal"
+        - "IMPROVE minor content usability issues"
+        - "OPTIMIZE content performance details"
+        - "ENHANCE content documentation polish"
+
+  phase_10:
+    name: "Command Reference and Workflow Validation"
+    mandatory_actions:
+      - "VALIDATE all command references exist and are accessible"
+      - "CHECK for broken or non-existent command references"
+      - "VERIFY workflow continuity and command relationships"
+      - "ASSESS navigation structure and command flow"
+      - "EVALUATE command parameter consistency"
+
+    command_reference_requirements:
+      - "MANDATORY: Validate all command references are valid and accessible"
+      - "MANDATORY: Check for broken or non-existent command references"
+      - "MANDATORY: Verify workflow continuity between commands"
+      - "MANDATORY: Assess navigation structure completeness"
+      - "FORBIDDEN: Approving prompts with broken command references"
+
+    command_reference_standards:
+      reference_validity:
+        - "ALL command references must exist and be accessible"
+        - "NO broken or non-existent command references allowed"
+        - "COMMAND parameters must be consistent and valid"
+        - "WORKFLOW continuity must be maintained"
+        - "NAVIGATION structure must be complete"
+
+      workflow_continuity:
+        - "CLEAR command relationships and dependencies"
+        - "LOGICAL command flow and progression"
+        - "APPROPRIATE command sequencing"
+        - "COMPLETE workflow coverage"
+        - "EFFECTIVE command navigation"
+
+  phase_11:
+    name: "Deliverable Specification and Documentation Separation Review"
+    mandatory_actions:
+      - "VALIDATE deliverable specifications are realistic and appropriate"
+      - "CHECK deliverable counts are reasonable (2-3 per command, not 10+)"
+      - "ASSESS documentation vs coding command separation"
+      - "VERIFY proper command type responsibilities"
+      - "EVALUATE deliverable type appropriateness"
+
+    deliverable_specification_requirements:
+      - "MANDATORY: Validate deliverable specifications are realistic"
+      - "MANDATORY: Check deliverable counts are reasonable (2-3 per command)"
+      - "MANDATORY: Assess documentation vs coding command separation"
+      - "MANDATORY: Verify proper command type responsibilities"
+      - "FORBIDDEN: Unrealistic deliverable specifications (10+ per command)"
+
+    deliverable_specification_standards:
+      realistic_deliverables:
+        - "DELIVERABLE counts must be realistic (2-3 per command maximum)"
+        - "NO excessive deliverable specifications (10+ per command forbidden)"
+        - "APPROPRIATE deliverable types for command purpose"
+        - "REALISTIC deliverable complexity and scope"
+        - "ACHIEVABLE deliverable timelines"
+
+      command_separation:
+        - "DOCUMENTATION commands MUST produce documentation only"
+        - "CODING commands FORBIDDEN from creating documentation"
+        - "ANALYSIS commands may create reports/information as required"
+        - "CLEAR separation of command responsibilities"
+        - "APPROPRIATE command type assignments"
+
+  phase_12:
+    name: "YAML File Existence and Technology Version Compliance"
+    mandatory_actions:
+      - "VALIDATE all referenced YAML files exist and are accessible"
+      - "CHECK for missing or non-existent YAML prompt files"
+      - "VERIFY technology versions are current and up-to-date"
+      - "ASSESS framework-specific guidance currency"
+      - "EVALUATE technology pattern compliance"
+
+    yaml_technology_requirements:
+      - "MANDATORY: Validate all referenced YAML files exist"
+      - "MANDATORY: Check for missing YAML prompt files"
+      - "MANDATORY: Verify technology versions are current"
+      - "MANDATORY: Assess framework-specific guidance currency"
+      - "FORBIDDEN: Referencing non-existent YAML files"
+
+    yaml_technology_standards:
+      yaml_file_existence:
+        - "ALL referenced YAML files must exist and be accessible"
+        - "NO missing or non-existent YAML prompt files"
+        - "YAML file references must be valid and current"
+        - "YAML file structure must be compliant"
+        - "YAML file content must be complete"
+
+      technology_version_compliance:
+        - "USE current technology versions (Node.js 21.x LTS, Next.js 15+ App Router)"
+        - "MODERNIZE framework-specific guidance"
+        - "UPDATE to latest patterns and best practices"
+        - "REMOVE outdated technology references"
+        - "IMPLEMENT current version features and capabilities"
+
+  phase_13:
+    name: "Content Organization and Navigation Structure Assessment"
+    mandatory_actions:
+      - "ANALYZE content organization and separation"
+      - "VALIDATE navigation structure completeness"
+      - "CHECK for workflow diagrams and command relationships"
+      - "ASSESS content separation and organization"
+      - "EVALUATE navigation flow and user experience"
+
+    content_organization_requirements:
+      - "MANDATORY: Analyze content organization and separation"
+      - "MANDATORY: Validate navigation structure completeness"
+      - "MANDATORY: Check for workflow diagrams and command relationships"
+      - "MANDATORY: Assess content separation and organization"
+      - "FORBIDDEN: Poor content organization or missing navigation"
+
+    content_organization_standards:
+      navigation_structure:
+        - "WORKFLOW diagrams showing actual command relationships"
+        - "NAVIGATION structure between commands"
+        - "RECOMMENDED next commands with parameters"
+        - "CLEAR command flow and progression"
+        - "EFFECTIVE user navigation experience"
+
+      content_separation:
+        - "PROPER content organization and separation"
+        - "REMOVE frontend content (NextJS, Vite) - use specific commands"
+        - "SIMPLIFY security examples (avoid overly complex configurations)"
+        - "CLEAR content boundaries and responsibilities"
+        - "APPROPRIATE content placement and organization"
+
+  phase_14:
+    name: "Content Review Completion and MCP Persistence"
+    mandatory_actions:
+      - "GENERATE comprehensive content review report"
+      - "RECORD content review findings and recommendations"
+      - "CLEANUP temporary content review files and artifacts"
+      - "PROVIDE next steps and content implementation guidance"
+      - "CONFIRM content review completion and success"
+      - "SAVE review patterns to neo4j-memory (enduring memory)"
+      - "SAVE session insights to mcp server-memory (temporal memory)"
+      - "EXECUTE MCP persistence workflow"
+
+    mcp_persistence_requirements:
+      - "MANDATORY: Use neo4j-memory to save review patterns and insights"
+      - "MANDATORY: Use mcp server-memory to save session-specific context"
+      - "MANDATORY: Execute persistence workflow for future learning"
+      - "MANDATORY: Save quality improvements to enduring memory"
+      - "FORBIDDEN: Completing review without MCP persistence"
+
+    content_review_completion_requirements:
+      - "MANDATORY: Generate detailed content review report"
+      - "MANDATORY: Record content review findings with timestamps"
+      - "MANDATORY: Clean up temporary content review artifacts"
+      - "MANDATORY: Provide clear next steps for content implementation"
+
+# Content Review Standards and Criteria
+content_review_standards:
+  anthropic_best_practices:
+    prompt_content_structure: "CLEAR role definition, specific task definition, structured organization"
+    prompt_content_clarity: "UNAMBIGUOUS instructions, clear success criteria, specific validation"
+    prompt_content_safety: "APPROPRIATE guardrails, ethical considerations, responsible AI usage"
+    prompt_content_effectiveness: "MEASURABLE outcomes, clear validation, specific constraints"
+
+  public_prompt_engineering:
+    prompt_content_principles: "CLEAR instructions, appropriate context, structured organization"
+    prompt_content_effectiveness: "MEASURABLE criteria, clear validation, specific error handling"
+    prompt_content_optimization: "OPTIMAL length, effective structure, clear flow, appropriate complexity"
+
+  mcp_protocol_compliance:
+    prompt_content_structure: "PROPER metadata, valid argument schema, compliant message structure"
+    argument_content_validation: "COMPLETE schema, appropriate types, clear descriptions"
+    message_content_structure: "APPROPRIATE roles, clear organization, effective flow"
+
+  llm_prompt_standards:
+    prompt_content_documentation: "COMPLETE documentation, clear descriptions, specific examples"
+    prompt_content_structure: "LOGICAL organization, clear flow, appropriate complexity"
+    prompt_content_effectiveness: "CLEAR objectives, specific requirements, effective validation"
+
+  content_quality_standards:
+    content_completeness: "COMPLETE coverage, detailed sections, comprehensive examples"
+    content_clarity: "CLEAR language, unambiguous instructions, specific examples"
+    content_accuracy: "ACCURATE content, current information, valid examples"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL content review output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-150000"
+
+  required_outputs:
+    - "./project/docs/llm-prompts/LLM_Prompt_Review_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive prompt analysis and quality assessment)"
+    - "./project/docs/llm-prompts/Quality_Recommendations-{{YYYY-MM-DD-HHMMSS}}.md (improvements, best practices, optimization strategies)"
+    - "./project/docs/llm-prompts/Validation_Summary-{{YYYY-MM-DD-HHMMSS}}.md (compliance status, quality metrics, action items)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all content review output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL content review deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all content review outputs"
+    - "FORBIDDEN: Creating content review files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same content review session"
+
+# Content Review Execution Workflow with MCP Orchestration and Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE content review parameters and target prompt files"
+  - "2. CHECK prompt file accessibility and readability"
+  - "3. CREATE content review timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. LOAD enduring memory contexts using neo4j-memory"
+  - "5. LOAD temporal memory contexts using mcp server-memory"
+  - "6. EXECUTE MCP research workflow using context7 and grep"
+  - "7. ANALYZE prompt content against Anthropic best practices"
+  - "8. VALIDATE prompt content against public prompt engineering standards"
+  - "9. CHECK MCP protocol content compliance"
+  - "10. ASSESS LLM prompt content standards compliance"
+  - "11. EVALUATE content quality and completeness"
+  - "12. ANALYZE instruction precision and specificity"
+  - "13. ASSESS context appropriateness and relevance"
+  - "14. VALIDATE command references and workflow continuity"
+  - "15. REVIEW deliverable specifications and documentation separation"
+  - "16. CHECK YAML file existence and technology version compliance"
+  - "17. ASSESS content organization and navigation structure"
+  - "18. GENERATE content improvement recommendations"
+  - "19. PRIORITIZE content recommendations by impact and effort"
+  - "20. CREATE content implementation roadmap and timeline"
+  - "21. EXECUTE MCP validation workflow using filesystem and sequential-thinking"
+  - "22. GENERATE comprehensive content review report with timestamps"
+  - "23. SAVE review patterns to neo4j-memory (enduring memory)"
+  - "24. SAVE session insights to mcp server-memory (temporal memory)"
+  - "25. CLEANUP temporary content review files and artifacts"
+  - "26. RECORD content review completion with timestamp"
+  - "27. PROVIDE next steps and content implementation guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each content review step"
+  - "MANDATORY: Use UTC time for all content review timestamp recordings"
+  - "MANDATORY: Include timestamps in all content review tracking"
+  - "MANDATORY: Timestamp all content review deliverable creation"
+  - "FORBIDDEN: Proceeding without proper content review timestamp documentation"
+
+# Content Review Quality Gates
+content_review_quality_gates:
+  pre_content_review:
+    - "All required content review parameters provided and validated"
+    - "Target prompt files accessible and readable"
+    - "Content review scope and standards confirmed"
+    - "Output format specified and supported"
+
+  content_review_phase:
+    - "All content review phases completed successfully"
+    - "No critical errors during content review process"
+    - "All content standards validated appropriately"
+    - "All content assessments completed thoroughly"
+
+  post_content_review:
+    - "Comprehensive content review report generated"
+    - "All content findings documented with timestamps"
+    - "Content improvement recommendations provided"
+    - "Content implementation roadmap created"
+
+# Constraints and Requirements
+content_review_constraints:
+  mandatory_requirements:
+    - "ALL content reviews MUST be comprehensive and thorough"
+    - "ALL content standards MUST be validated appropriately"
+    - "ALL content findings MUST be documented with timestamps"
+    - "ALL content recommendations MUST be actionable and specific"
+    - "ALL content reports MUST be complete and accurate"
+    - "ALWAYS use systematic content review practices"
+    - "NEVER approve content that violates standards"
+
+  strictly_forbidden:
+    - "Reviewing content without proper validation criteria"
+    - "Skipping content standards assessment"
+    - "Partial or incomplete content reviews"
+    - "Approving content with critical violations"
+    - "Creating temporary or workaround content reviews"
+    - "Missing content review documentation"
+    - "Proceeding with failed content review quality gates"

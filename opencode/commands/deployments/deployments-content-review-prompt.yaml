@@ -1,0 +1,444 @@
+# === MCP PROMPT: Content Review & Validation Protocol ===
+name: "deployments-content-review-prompt"
+version: "1.0.0"
+description: "Comprehensive content review and validation protocol for deployment documentation, commands, and deliverables"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Deployment Content Review & Validation"
+  description: "Execute comprehensive review of all created deployment content with mandatory gap analysis, alignment validation, and quality assurance"
+
+  # Argument Schema
+  arguments:
+    review_scope:
+      type: "string"
+      description: "Scope of content review"
+      required: true
+      enum: ["all-content", "deployment-commands", "documentation-only", "yaml-prompts", "specific-files"]
+
+    review_depth:
+      type: "string"
+      description: "Depth of review analysis"
+      required: false
+      enum: ["basic", "comprehensive", "exhaustive"]
+      default: "comprehensive"
+
+    validation_focus:
+      type: "string"
+      description: "Primary validation focus area"
+      required: false
+      enum: ["structure-compliance", "content-completeness", "best-practices", "gap-analysis", "alignment", "all"]
+      default: "all"
+
+    target_directory:
+      type: "string"
+      description: "Specific directory to review (optional)"
+      required: false
+
+    compliance_level:
+      type: "string"
+      description: "Compliance validation level"
+      required: false
+      enum: ["basic", "enterprise", "strict"]
+      default: "enterprise"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are a content review and validation specialist executing the Deployment Content Review Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive review methodology
+        - Perform exhaustive gap analysis
+        - Validate alignment with requirements
+        - Check compliance with best practices
+        - Identify missing components and inconsistencies
+        - Ensure production-ready quality standards
+
+        ABSOLUTELY FORBIDDEN:
+        - Skipping any review phases
+        - Partial or incomplete analysis
+        - Missing gap identification
+        - Ignoring alignment issues
+        - Creating incomplete validation reports
+        - Proceeding without comprehensive documentation review
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CONTENT REVIEW PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the review scope and understand what needs to be examined
+        2. Plan your review approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual review execution
+
+        **REVIEW PARAMETERS:**
+        - Review Scope: {{review_scope}}
+        - Review Depth: {{review_depth}}
+        - Validation Focus: {{validation_focus}}
+        - Target Directory: {{target_directory}}
+        - Compliance Level: {{compliance_level}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING CONTENT REVIEW PROTOCOL:**
+
+# Content Review Protocol Configuration
+review_protocol:
+  # Review Scope - MANDATORY COMPREHENSIVE COVERAGE
+  review_focus:
+    structure_validation: true # MUST validate directory structure compliance
+    content_completeness: true # MUST check content completeness
+    gap_analysis: true # MUST perform comprehensive gap analysis
+    alignment_validation: true # MUST validate alignment with requirements
+    best_practices_compliance: true # MUST check best practices adherence
+    quality_assurance: true # MUST perform quality assurance validation
+    production_readiness: true # MUST ensure production-ready standards
+    comprehensive_review: true # STRICTLY comprehensive review only
+
+  # Review Configuration - MANDATORY SETTINGS
+  review_settings:
+    enable_exhaustive_analysis: true
+    perform_gap_identification: true
+    validate_alignment: true
+    check_best_practices: true
+    ensure_quality_standards: true
+    verify_completeness: true
+    systematic_approach: true # MANDATORY: Systematic review methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all review aspects
+    production_ready_validation: true # MANDATORY: Production-focused validation
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Content Discovery & Inventory"
+    mandatory_actions:
+      - "SCAN and catalog all created files and directories"
+      - "INVENTORY deployment commands, documentation, and deliverables"
+      - "MAP file relationships and dependencies"
+      - "IDENTIFY content structure and organization"
+      - "DOCUMENT content coverage and scope"
+
+    discovery_requirements:
+      - "MANDATORY: Complete file and directory inventory"
+      - "MANDATORY: Identify all deployment-related content"
+      - "MANDATORY: Map content relationships and dependencies"
+      - "FORBIDDEN: Incomplete or partial content discovery"
+
+  phase_2:
+    name: "Structure Compliance Validation"
+    mandatory_actions:
+      - "VALIDATE directory structure against mandatory requirements"
+      - "CHECK file naming conventions and organization"
+      - "VERIFY MCP prompt structure compliance"
+      - "VALIDATE YAML syntax and formatting"
+      - "CONFIRM proper file hierarchy and relationships"
+
+    structure_requirements:
+      - "MANDATORY: Validate against DEPLOYMENT-STRUCTURE.md"
+      - "MANDATORY: Check MCP prompt YAML structure compliance"
+      - "MANDATORY: Verify file naming conventions"
+      - "MANDATORY: Validate directory hierarchy"
+      - "FORBIDDEN: Proceeding with structural non-compliance"
+
+  phase_3:
+    name: "Content Completeness Analysis"
+    mandatory_actions:
+      - "ANALYZE content completeness against requirements"
+      - "IDENTIFY missing components and sections"
+      - "CHECK for incomplete implementations"
+      - "VALIDATE deliverable completeness"
+      - "ASSESS documentation coverage"
+
+    completeness_requirements:
+      - "MANDATORY: Complete content gap analysis"
+      - "MANDATORY: Identify all missing components"
+      - "MANDATORY: Validate deliverable completeness"
+      - "MANDATORY: Check implementation completeness"
+      - "FORBIDDEN: Missing critical content components"
+
+  phase_4:
+    name: "Gap Analysis & Identification"
+    mandatory_actions:
+      - "IDENTIFY gaps between created content and requirements"
+      - "ANALYZE missing functionality and features"
+      - "ASSESS incomplete implementations"
+      - "EVALUATE missing documentation and examples"
+      - "IDENTIFY inconsistencies and conflicts"
+
+    gap_analysis_requirements:
+      - "MANDATORY: Comprehensive gap identification"
+      - "MANDATORY: Missing functionality analysis"
+      - "MANDATORY: Incomplete implementation assessment"
+      - "MANDATORY: Documentation gap analysis"
+      - "FORBIDDEN: Incomplete gap analysis"
+
+  phase_5:
+    name: "Alignment Validation"
+    mandatory_actions:
+      - "VALIDATE alignment with original requirements"
+      - "CHECK compliance with best practices"
+      - "VERIFY technology version alignment"
+      - "ASSESS pattern consistency"
+      - "VALIDATE implementation approach"
+
+    alignment_requirements:
+      - "MANDATORY: Validate against original requirements"
+      - "MANDATORY: Check best practices compliance"
+      - "MANDATORY: Verify technology alignment"
+      - "MANDATORY: Assess pattern consistency"
+      - "FORBIDDEN: Misaligned implementations"
+
+  phase_6:
+    name: "Quality Assurance Validation"
+    mandatory_actions:
+      - "VALIDATE content quality and standards"
+      - "CHECK for production-ready implementations"
+      - "VERIFY error handling and edge cases"
+      - "ASSESS security and compliance standards"
+      - "VALIDATE performance and scalability"
+
+    quality_requirements:
+      - "MANDATORY: Production-ready quality validation"
+      - "MANDATORY: Security and compliance checking"
+      - "MANDATORY: Performance and scalability assessment"
+      - "MANDATORY: Error handling validation"
+      - "FORBIDDEN: Sub-standard quality content"
+
+  phase_7:
+    name: "Best Practices Compliance"
+    mandatory_actions:
+      - "VALIDATE adherence to industry best practices"
+      - "CHECK for outdated patterns and technologies"
+      - "VERIFY modern implementation approaches"
+      - "ASSESS security-first design principles"
+      - "VALIDATE KISS principle adherence"
+
+    best_practices_requirements:
+      - "MANDATORY: Industry best practices validation"
+      - "MANDATORY: Technology version compliance"
+      - "MANDATORY: Security-first design verification"
+      - "MANDATORY: KISS principle adherence"
+      - "FORBIDDEN: Outdated or non-compliant patterns"
+
+  phase_8:
+    name: "Comprehensive Review Report"
+    mandatory_actions:
+      - "GENERATE comprehensive review report"
+      - "DOCUMENT all findings and recommendations"
+      - "CREATE action plan for improvements"
+      - "VALIDATE review completeness"
+      - "PROVIDE clear next steps and priorities"
+
+    reporting_requirements:
+      - "MANDATORY: Complete review report generation"
+      - "MANDATORY: Document all findings and gaps"
+      - "MANDATORY: Create improvement action plan"
+      - "MANDATORY: Provide clear next steps"
+      - "FORBIDDEN: Incomplete or partial reporting"
+
+# Review Validation Criteria
+validation_criteria:
+  content_discovery: "MANDATORY - Complete content inventory and mapping"
+  structure_compliance: "MANDATORY - Full structure compliance validation"
+  content_completeness: "MANDATORY - Comprehensive completeness analysis"
+  gap_identification: "MANDATORY - Complete gap analysis and identification"
+  alignment_validation: "MANDATORY - Full alignment with requirements"
+  quality_assurance: "MANDATORY - Production-ready quality validation"
+  best_practices: "MANDATORY - Best practices compliance verification"
+  comprehensive_reporting: "MANDATORY - Complete review report with recommendations"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL review output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-142155"
+
+  required_outputs:
+    - "./project/docs/deployments/Review_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive code review)"
+    - "./project/docs/deployments/Recommendations-{{YYYY-MM-DD-HHMMSS}}.md (improvements and best practices)"
+    - "./project/docs/deployments/Action_Items-{{YYYY-MM-DD-HHMMSS}}.md (prioritized fixes and validation)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all review output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL review deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all review outputs"
+    - "FORBIDDEN: Creating review files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same review session"
+
+# Review Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. SCAN and catalog all created content ({{review_scope}})"
+  - "2. INVENTORY files, directories, and deliverables"
+  - "3. VALIDATE structure compliance against mandatory requirements"
+  - "4. ANALYZE content completeness and coverage"
+  - "5. IDENTIFY gaps and missing components"
+  - "6. VALIDATE alignment with original requirements"
+  - "7. ASSESS quality and production-readiness"
+  - "8. VERIFY best practices compliance"
+  - "9. GENERATE comprehensive review report with timestamps"
+  - "10. CREATE improvement action plan with priorities"
+  - "11. DOCUMENT all findings and recommendations"
+  - "12. PROVIDE clear next steps for content improvement"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each review step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all review tracking"
+  - "MANDATORY: Timestamp all review deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Specific Review Areas
+review_areas:
+  deployment_commands:
+    - "Validate MCP prompt YAML structure"
+    - "Check argument schema completeness"
+    - "Verify message structure compliance"
+    - "Validate protocol configuration"
+    - "Check execution phase completeness"
+    - "Verify validation criteria"
+    - "Validate deliverable specifications"
+
+  documentation:
+    - "Check documentation completeness"
+    - "Validate technical accuracy"
+    - "Verify best practices alignment"
+    - "Check for outdated information"
+    - "Validate example quality"
+    - "Verify structure compliance"
+
+  yaml_prompts:
+    - "Validate YAML syntax and formatting"
+    - "Check MCP prompt structure"
+    - "Verify argument schema"
+    - "Validate message structure"
+    - "Check protocol configuration"
+    - "Verify execution phases"
+
+  deliverables:
+    - "Check deliverable completeness"
+    - "Validate timestamp requirements"
+    - "Verify content quality"
+    - "Check production readiness"
+    - "Validate documentation standards"
+
+  quickstart_documentation:
+    - "Check quickstart guide completeness and accuracy"
+    - "Validate step-by-step deployment commands"
+    - "Verify platform-specific instructions"
+    - "Check prerequisites and setup requirements"
+    - "Validate troubleshooting guides and common issues"
+    - "Verify user-friendly language and clarity"
+    - "Check validation commands and health checks"
+
+  lifecycle_management:
+    - "Check lifecycle management procedure completeness"
+    - "Validate environment promotion workflows"
+    - "Verify scaling and performance management procedures"
+    - "Check backup and recovery procedures"
+    - "Validate monitoring and alerting setup"
+    - "Verify operational runbooks and procedures"
+    - "Check maintenance and update procedures"
+
+  terraform_infrastructure:
+    - "Check Terraform file structure and organization"
+    - "Validate Infrastructure as Code patterns"
+    - "Verify environment-specific configurations"
+    - "Check platform-specific Terraform modules"
+    - "Validate state management and remote backend configuration"
+    - "Verify variable management and secrets handling"
+    - "Check Terraform validation and testing procedures"
+
+# Gap Analysis Framework
+gap_analysis_framework:
+  missing_components:
+    - "Missing YAML prompt files"
+    - "Incomplete documentation"
+    - "Missing examples"
+    - "Incomplete validation criteria"
+    - "Missing workflow integration"
+    - "Missing quickstart documentation and guides"
+    - "Incomplete lifecycle management documentation"
+    - "Missing Terraform infrastructure files and configurations"
+    - "Incomplete user-friendly deployment commands"
+    - "Missing troubleshooting guides and common issue resolution"
+
+  alignment_issues:
+    - "Structure non-compliance"
+    - "Best practices violations"
+    - "Technology version mismatches"
+    - "Pattern inconsistencies"
+    - "Implementation gaps"
+
+  quality_issues:
+    - "Sub-standard implementations"
+    - "Missing error handling"
+    - "Incomplete security measures"
+    - "Performance issues"
+    - "Scalability concerns"
+
+# Improvement Recommendations Framework
+improvement_framework:
+  critical_improvements:
+    - "Address missing YAML files"
+    - "Fix structure non-compliance"
+    - "Complete missing documentation"
+    - "Add workflow integration"
+    - "Implement missing validation"
+    - "Create comprehensive quickstart documentation and guides"
+    - "Implement complete lifecycle management documentation"
+    - "Add Terraform infrastructure files and configurations"
+    - "Create user-friendly deployment commands for all environments"
+    - "Add troubleshooting guides and common issue resolution"
+
+  quality_enhancements:
+    - "Improve content quality"
+    - "Add production-ready examples"
+    - "Enhance security measures"
+    - "Optimize performance"
+    - "Improve scalability"
+
+  best_practices_updates:
+    - "Update to latest technologies"
+    - "Implement modern patterns"
+    - "Add security-first design"
+    - "Improve maintainability"
+    - "Enhance documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL content MUST be comprehensively reviewed"
+    - "ALL gaps MUST be identified and documented"
+    - "ALL alignment issues MUST be validated"
+    - "ALL quality issues MUST be assessed"
+    - "ALL improvements MUST be prioritized"
+    - "ALL findings MUST be documented with timestamps"
+    - "ALWAYS use systematic review methodology"
+    - "NEVER skip any review phases"
+
+  strictly_forbidden:
+    - "Partial or incomplete reviews"
+    - "Skipping gap analysis"
+    - "Ignoring alignment issues"
+    - "Missing quality validation"
+    - "Incomplete reporting"
+    - "Creating review files without timestamps"
+    - "Proceeding without comprehensive analysis"
+    - "Missing improvement recommendations"

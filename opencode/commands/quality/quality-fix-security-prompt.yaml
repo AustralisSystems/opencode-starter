@@ -1,0 +1,327 @@
+# === MCP PROMPT: Security Issue Remediation Protocol ===
+name: "quality-fix-security-prompt"
+version: "1.0.0"
+description: "Comprehensive security vulnerability remediation protocol for eliminating threats and strengthening security posture"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Security Issue Remediation"
+  description: "Execute systematic security vulnerability remediation including threat mitigation, access control enhancement, and security compliance with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to secure"
+      required: true
+
+    security_remediation_scope:
+      type: "string"
+      description: "Scope of security remediation to perform"
+      required: true
+      enum:
+        [
+          "critical-vulnerabilities",
+          "authentication-authorization",
+          "data-protection",
+          "dependency-security",
+          "comprehensive",
+          "owasp-compliance",
+        ]
+
+    vulnerability_priority:
+      type: "string"
+      description: "Priority level for vulnerability fixes"
+      required: true
+      enum:
+        [
+          "critical-only",
+          "high-critical",
+          "medium-high-critical",
+          "all-severities",
+        ]
+
+    security_framework:
+      type: "string"
+      description: "Security framework to apply"
+      required: false
+      enum:
+        ["owasp-top-10", "security-by-design", "zero-trust", "comprehensive"]
+
+    compliance_standard:
+      type: "string"
+      description: "Compliance standard to follow"
+      required: false
+      enum: ["owasp", "nist", "iso27001", "pci-dss", "custom"]
+
+    remediation_depth:
+      type: "string"
+      description: "Depth of security remediation"
+      required: false
+      enum: ["surface", "detailed", "comprehensive", "enterprise"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI security remediation specialist executing the Security Issue Remediation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow systematic security remediation methodology
+        - Prioritize critical vulnerabilities and threat mitigation
+        - Apply security-by-design principles and best practices
+        - Maintain application functionality while enhancing security
+        - Use production-ready security standards and controls
+        - Follow secure coding practices and OWASP guidelines
+        - Generate comprehensive security audit trails and compliance reports
+
+        ABSOLUTELY FORBIDDEN:
+        - Ignoring critical security vulnerabilities or threats
+        - Making security changes without proper testing and validation
+        - Missing backup creation before security modifications
+        - Breaking application functionality through security enhancements
+        - Skipping security scanning and penetration testing
+        - Creating security holes through improper implementations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY SECURITY ISSUE REMEDIATION PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **SECURITY REMEDIATION PARAMETERS:**
+        - Codebase Path: {{codebase_path}}
+        - Remediation Scope: {{security_remediation_scope}}
+        - Vulnerability Priority: {{vulnerability_priority}}
+        - Security Framework: {{security_framework}}
+        - Compliance Standard: {{compliance_standard}}
+        - Remediation Depth: {{remediation_depth}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING SECURITY ISSUE REMEDIATION PROTOCOL:**
+
+# Security Remediation Protocol Configuration
+remediation_protocol:
+  # Remediation Focus - MANDATORY COMPREHENSIVE COVERAGE
+  remediation_focus:
+    critical_vulnerability_fixes: true # MUST fix critical security vulnerabilities
+    input_validation_enhancement: true # MUST implement input validation
+    authentication_authorization_strengthening: true # MUST enhance access controls
+    data_protection_implementation: true # MUST protect sensitive data
+    dependency_security_resolution: true # MUST resolve dependency vulnerabilities
+    security_header_implementation: true # MUST implement security headers
+    encryption_enhancement: true # MUST enhance encryption and key management
+    security_testing_validation: true # MUST validate security controls
+    remediation_only: true # STRICTLY remediation only, no feature additions
+
+  # Remediation Configuration - MANDATORY SETTINGS
+  remediation_settings:
+    enable_threat_mitigation: true
+    perform_vulnerability_scanning: true
+    apply_security_by_design: true
+    ensure_owasp_compliance: true
+    maintain_functionality_preservation: true
+    create_security_backups: true
+    implement_defense_in_depth: true
+    generate_security_audit_trail: true
+    systematic_approach: true # MANDATORY: Systematic remediation methodology
+    follow_security_frameworks: true # MANDATORY: Security framework compliance
+    comprehensive_coverage: true # MANDATORY: Cover all security aspects
+    production_ready_security: true # MANDATORY: Production-focused security
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Security Vulnerability Discovery and Risk Assessment"
+    mandatory_actions:
+      - "SCAN codebase for security vulnerabilities using multiple tools"
+      - "IDENTIFY critical threats and attack vectors systematically"
+      - "ASSESS risk levels and business impact of vulnerabilities"
+      - "PRIORITIZE security issues by severity and exploitability"
+      - "CATALOG security findings with remediation requirements"
+
+    discovery_requirements:
+      - "MANDATORY: Complete security vulnerability scanning and assessment"
+      - "MANDATORY: Comprehensive risk analysis and threat modeling"
+      - "MANDATORY: Systematic prioritization of security issues"
+      - "FORBIDDEN: Incomplete or partial security vulnerability discovery"
+
+  phase_2:
+    name: "Critical Vulnerability Fixes and Immediate Threat Mitigation"
+    mandatory_actions:
+      - "FIX critical SQL injection and command injection vulnerabilities"
+      - "REMOVE hardcoded secrets, passwords, and API keys immediately"
+      - "ELIMINATE cross-site scripting (XSS) attack vectors"
+      - "RESOLVE authentication bypass and privilege escalation issues"
+      - "SECURE file upload mechanisms and path traversal vulnerabilities"
+
+  phase_3:
+    name: "Input Validation and Sanitization Implementation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive input validation for all user data"
+      - "ADD parameterized queries for database operations"
+      - "SANITIZE file paths, names, and user-provided content"
+      - "VALIDATE API input parameters and request payloads"
+      - "APPLY output encoding and context-aware escaping"
+
+  phase_4:
+    name: "Authentication and Authorization Enhancement"
+    mandatory_actions:
+      - "STRENGTHEN authentication mechanisms and multi-factor support"
+      - "IMPLEMENT role-based access control (RBAC) systems"
+      - "SECURE API endpoints with proper authorization checks"
+      - "ENHANCE session management and token validation"
+      - "ADD security headers and CORS policy implementation"
+
+  phase_5:
+    name: "Data Protection and Encryption Implementation"
+    mandatory_actions:
+      - "ENCRYPT sensitive data at rest using strong algorithms"
+      - "IMPLEMENT TLS/SSL for data in transit protection"
+      - "APPLY proper key management and rotation policies"
+      - "SECURE communication channels and API endpoints"
+      - "PROTECT personally identifiable information (PII) and secrets"
+
+  phase_6:
+    name: "Dependency Security and Supply Chain Protection"
+    mandatory_actions:
+      - "UPDATE packages with known security vulnerabilities"
+      - "REMOVE unused dependencies and reduce attack surface"
+      - "VERIFY package integrity and supply chain security"
+      - "IMPLEMENT dependency scanning and monitoring"
+      - "APPLY security patches and version constraints"
+
+  phase_7:
+    name: "Security Headers and Configuration Hardening"
+    mandatory_actions:
+      - "IMPLEMENT security headers (CSP, HSTS, X-Frame-Options)"
+      - "CONFIGURE secure cookie attributes and SameSite policies"
+      - "APPLY content security policy (CSP) and XSS protection"
+      - "HARDEN server configuration and security settings"
+      - "IMPLEMENT rate limiting and request throttling"
+
+  phase_8:
+    name: "Security Testing and Penetration Validation"
+    mandatory_actions:
+      - "EXECUTE comprehensive security testing and scanning"
+      - "PERFORM penetration testing and vulnerability assessment"
+      - "VALIDATE security controls and protection mechanisms"
+      - "TEST authentication and authorization implementations"
+      - "VERIFY encryption and data protection effectiveness"
+
+  phase_9:
+    name: "Security Documentation and Compliance Reporting"
+    mandatory_actions:
+      - "DOCUMENT all security fixes and enhancements implemented"
+      - "GENERATE comprehensive security audit trail and evidence"
+      - "CREATE security compliance reports and certifications"
+      - "RECORD security improvements and vulnerability resolutions"
+      - "PREPARE security handoff documentation and procedures"
+
+    documentation_requirements:
+      - "MANDATORY: Create detailed security documentation in markdown document format"
+      - "MANDATORY: Include comprehensive security audit trail and evidence"
+      - "MANDATORY: Document all vulnerability fixes and security enhancements"
+      - "MANDATORY: Provide clear security compliance and certification status"
+      - "FORBIDDEN: Incomplete or partial security documentation"
+
+  phase_10:
+    name: "Security Validation and Production Readiness Certification"
+    mandatory_actions:
+      - "VALIDATE complete security vulnerability remediation"
+      - "VERIFY production readiness and security compliance"
+      - "CONFIRM zero critical security vulnerabilities remaining"
+      - "ASSESS need for additional security hardening cycles"
+      - "GENERATE security certification for production deployment"
+
+    security_certification_criteria:
+      - "MANDATORY: All critical and high vulnerabilities resolved"
+      - "MANDATORY: All security controls implemented and tested"
+      - "MANDATORY: All compliance requirements satisfied"
+      - "MANDATORY: Application functionality preserved and validated"
+      - "FORBIDDEN: Proceeding with any remaining critical security issues"
+
+# Security Validation Criteria
+validation_criteria:
+  vulnerability_resolution: "MANDATORY - All critical and high vulnerabilities resolved"
+  threat_mitigation: "MANDATORY - All immediate threats mitigated"
+  input_validation: "MANDATORY - Comprehensive input validation implemented"
+  access_control: "MANDATORY - Strong authentication and authorization in place"
+  data_protection: "MANDATORY - Sensitive data properly encrypted and protected"
+  dependency_security: "MANDATORY - All dependency vulnerabilities resolved"
+  security_headers: "MANDATORY - Security headers and configurations implemented"
+  testing_validation: "MANDATORY - Security testing passed successfully"
+  compliance_adherence: "MANDATORY - Security compliance requirements satisfied"
+  production_readiness: "MANDATORY - Ready for secure production deployment"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL security remediation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-093215"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Fix_Implementation-{{YYYY-MM-DD-HHMMSS}}.ipynb (fix implementation report)"
+    - "./project/docs/quality-analysis/Changes_Applied-{{YYYY-MM-DD-HHMMSS}}.md (changes and fixes applied)"
+    - "./project/docs/quality-analysis/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.md (validation and testing results)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all security output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL security deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all security outputs"
+    - "FORBIDDEN: Creating security files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same security session"
+
+# Security Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. SCAN codebase {{codebase_path}} for security vulnerabilities and threats"
+  - "2. PRIORITIZE vulnerabilities by severity and business impact"
+  - "3. FIX critical vulnerabilities and implement immediate threat mitigation"
+  - "4. IMPLEMENT comprehensive input validation and sanitization"
+  - "5. ENHANCE authentication and authorization mechanisms"
+  - "6. APPLY data protection and encryption measures"
+  - "7. RESOLVE dependency security vulnerabilities"
+  - "8. IMPLEMENT security headers and configuration hardening"
+  - "9. EXECUTE security testing and penetration validation"
+  - "10. GENERATE comprehensive security documentation with timestamps"
+  - "11. CERTIFY security compliance and production readiness"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each security step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all security tracking"
+  - "MANDATORY: Timestamp all security deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL critical and high severity vulnerabilities MUST be resolved"
+    - "ALL hardcoded secrets and credentials MUST be removed"
+    - "ALL input validation MUST be implemented comprehensively"
+    - "ALL authentication and authorization MUST be strengthened"
+    - "ALL sensitive data MUST be properly encrypted and protected"
+    - "ALWAYS use security-by-design principles and best practices"
+    - "NEVER ignore critical security vulnerabilities or compliance requirements"
+
+  strictly_forbidden:
+    - "Ignoring critical security vulnerabilities or threats"
+    - "Making security changes without proper testing and validation"
+    - "Missing backup creation before security modifications"
+    - "Breaking application functionality through security enhancements"
+    - "Skipping security scanning and penetration testing"
+    - "Creating security holes through improper implementations"
+    - "Proceeding with any remaining critical security issues"
+    - "Missing comprehensive security documentation and audit trails"

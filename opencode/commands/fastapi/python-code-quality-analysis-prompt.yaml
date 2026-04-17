@@ -1,0 +1,525 @@
+# === MCP PROMPT: Python Code Quality Analysis Protocol ===
+name: "python-code-quality-analysis-prompt"
+version: "1.0.0"
+description: "Comprehensive Python code quality analysis protocol for systematic assessment of code quality metrics, SOLID principles, and best practices"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Code Quality Analysis"
+  description: "Execute comprehensive quality analysis of Python code with mandatory metrics collection, type safety assessment, and best practices evaluation"
+
+  # Argument Schema
+  arguments:
+    analysis_scope:
+      type: "string"
+      description: "Scope of quality analysis"
+      required: false
+      enum:
+        [
+          "entire-codebase",
+          "specific-module",
+          "package",
+          "class",
+          "function-level",
+        ]
+
+    quality_focus:
+      type: "string"
+      description: "Primary quality focus area"
+      required: false
+      enum:
+        [
+          "architecture",
+          "security",
+          "performance",
+          "maintainability",
+          "type-safety",
+          "testing",
+          "all",
+        ]
+
+    metrics_depth:
+      type: "string"
+      description: "Depth of metrics collection"
+      required: false
+      enum: ["basic", "comprehensive", "exhaustive"]
+
+    pattern_analysis:
+      type: "string"
+      description: "Enable design pattern analysis"
+      required: false
+      enum: ["enabled", "disabled"]
+
+    anti_pattern_detection:
+      type: "string"
+      description: "Anti-pattern detection strictness"
+      required: false
+      enum: ["strict", "moderate", "lenient"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are a Python code quality analysis specialist executing the Python Quality Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive quality analysis methodology
+        - Collect ALL quality metrics systematically
+        - Analyze SOLID principles in Python context
+        - Identify Pythonic patterns and anti-patterns
+        - Assess type safety and static analysis compliance
+        - Generate actionable quality recommendations
+
+        ABSOLUTELY FORBIDDEN:
+        - Implementing fixes during analysis
+        - Creating test code
+        - Modifying production code
+        - Making subjective assessments without metrics
+        - Skipping quality measurements
+        - Creating placeholder analysis
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PLUGIN QUALITY ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Analysis Scope: {{analysis_scope}}
+        - Quality Focus: {{quality_focus}}
+        - Metrics Depth: {{metrics_depth}}
+        - Pattern Analysis: {{pattern_analysis}}
+        - Anti-Pattern Detection: {{anti_pattern_detection}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PLUGIN QUALITY ANALYSIS PROTOCOL:**
+
+# Python Quality Analysis Protocol Configuration
+quality_analysis_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    module_structure_inventory: true # MUST catalog ALL modules and packages
+    solid_principles_compliance: true # MUST analyze SOLID in Python context
+    pythonic_pattern_usage: true # MUST identify Python design patterns
+    anti_pattern_detection: true # MUST find Python anti-patterns
+    type_safety_assessment: true # MUST check type annotations and mypy
+    security_vulnerability_scan: true # MUST run bandit and safety
+    performance_profiling: true # MUST measure performance bottlenecks
+    complexity_metrics: true # MUST calculate cyclomatic/cognitive complexity
+    test_coverage_potential: true # MUST assess testability
+    documentation_quality: true # MUST evaluate docstrings and comments
+
+  # Analysis Configuration - MANDATORY SETTINGS
+  analysis_settings:
+    systematic_measurement: true
+    objective_metrics: true
+    pattern_recognition: true
+    comprehensive_coverage: true
+    detailed_reporting: true
+    actionable_insights: true
+    systematic_approach: true # MANDATORY: Systematic analysis
+    metrics_based: true # MANDATORY: Metrics-driven
+    comprehensive_assessment: true # MANDATORY: Complete coverage
+    professional_standards: true # MANDATORY: Enterprise quality
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Python Module Structure Analysis"
+    mandatory_actions:
+      - "ENUMERATE all Python modules and packages"
+      - "MAP import dependencies and circular imports"
+      - "CATALOG classes, functions, and constants"
+      - "DOCUMENT module interfaces and contracts"
+      - "IDENTIFY package organization patterns"
+
+    inventory_requirements:
+      module_organization:
+        - "LIST all Python packages and modules"
+        - "IDENTIFY entry points and main modules"
+        - "MAP __init__.py structures"
+        - "DOCUMENT module hierarchy"
+
+      import_analysis:
+        - "ENUMERATE all imports (standard, third-party, local)"
+        - "DETECT circular dependencies"
+        - "ANALYZE import complexity"
+        - "IDENTIFY unused imports"
+
+      api_surface:
+        - "CATALOG public APIs and interfaces"
+        - "MAP class hierarchies"
+        - "DOCUMENT exported functions"
+        - "IDENTIFY module contracts"
+
+  phase_2:
+    name: "Python SOLID Principles Analysis"
+    mandatory_actions:
+      - "ANALYZE Single Responsibility compliance"
+      - "EVALUATE Open/Closed principle adherence"
+      - "ASSESS Liskov Substitution violations"
+      - "CHECK Interface Segregation implementation"
+      - "VERIFY Dependency Inversion patterns"
+
+    solid_analysis:
+      single_responsibility:
+        - "COUNT responsibilities per class/module"
+        - "MEASURE class cohesion (LCOM)"
+        - "IDENTIFY mixed concerns in functions"
+        - "SUGGEST class/function decomposition"
+
+      open_closed:
+        - "CHECK extensibility mechanisms"
+        - "IDENTIFY hardcoded logic"
+        - "EVALUATE configuration flexibility"
+        - "ASSESS modification risks"
+
+      liskov_substitution:
+        - "VERIFY contract compliance"
+        - "CHECK behavioral consistency"
+        - "IDENTIFY type violations"
+        - "ANALYZE polymorphism usage"
+
+      interface_segregation:
+        - "COUNT interface methods"
+        - "MEASURE interface cohesion"
+        - "IDENTIFY fat interfaces"
+        - "SUGGEST interface splitting"
+
+      dependency_inversion:
+        - "MAP concrete dependencies"
+        - "CHECK abstraction usage"
+        - "IDENTIFY tight coupling"
+        - "REVIEW injection patterns"
+
+  phase_3:
+    name: "Python Design Pattern Analysis"
+    mandatory_actions:
+      - "IDENTIFY Pythonic patterns usage"
+      - "ANALYZE creational patterns in Python"
+      - "EVALUATE structural patterns implementation"
+      - "ASSESS behavioral patterns application"
+      - "DOCUMENT non-Pythonic pattern usage"
+
+    pattern_categories:
+      pythonic_patterns:
+        - "IDENTIFY context managers (with statement)"
+        - "ANALYZE descriptor protocol usage"
+        - "CHECK property decorators"
+        - "EVALUATE generator patterns"
+        - "ASSESS dataclass usage"
+
+      creational_patterns:
+        - "IDENTIFY Factory patterns (functions/classes)"
+        - "ANALYZE Builder patterns"
+        - "CHECK Abstract Factory usage"
+        - "EVALUATE Singleton (module-level)"
+
+      structural_patterns:
+        - "IDENTIFY Adapter/Wrapper patterns"
+        - "ANALYZE Facade implementations"
+        - "CHECK Decorator pattern (@decorator)"
+        - "EVALUATE Proxy/delegation patterns"
+
+      behavioral_patterns:
+        - "IDENTIFY Strategy (duck typing)"
+        - "ANALYZE Observer (events/signals)"
+        - "CHECK Iterator protocol"
+        - "EVALUATE Template Method (ABC)"
+
+  phase_4:
+    name: "Python Anti-Pattern Detection"
+    mandatory_actions:
+      - "DETECT God Object/Module anti-patterns"
+      - "IDENTIFY Spaghetti Code occurrences"
+      - "FIND Copy-Paste Programming (DRY violations)"
+      - "CHECK for Premature Optimization"
+      - "IDENTIFY Magic Numbers and Strings"
+      - "DETECT mutable default arguments"
+      - "FIND bare except clauses"
+
+    anti_pattern_detection:
+      python_specific_anti_patterns:
+        - "DETECT mutable default arguments"
+        - "IDENTIFY bare except clauses"
+        - "FIND import * usage"
+        - "CHECK global state modification"
+        - "IDENTIFY late binding closures"
+        - "DETECT type checking with type()"
+        - "FIND manual string concatenation in loops"
+
+      structural_anti_patterns:
+        - "DETECT monolithic modules"
+        - "IDENTIFY circular imports"
+        - "FIND inappropriate intimacy"
+        - "CHECK feature envy"
+
+      behavioral_anti_patterns:
+        - "IDENTIFY callback hell"
+        - "DETECT sequential coupling"
+        - "FIND temporal coupling"
+        - "CHECK busy waiting"
+
+      code_smell_detection:
+        - "IDENTIFY long methods"
+        - "DETECT large classes"
+        - "FIND duplicate code"
+        - "CHECK dead code"
+
+  phase_5:
+    name: "Python Security Assessment"
+    mandatory_actions:
+      - "RUN bandit security scanner"
+      - "CHECK for SQL injection vulnerabilities"
+      - "EVALUATE input validation practices"
+      - "VERIFY secure password handling"
+      - "ANALYZE dependency vulnerabilities"
+      - "ASSESS cryptographic usage"
+
+    security_assessment:
+      static_analysis:
+        - "RUN bandit -r . for security issues"
+        - "CHECK safety for known vulnerabilities"
+        - "VERIFY pip-audit results"
+        - "ASSESS SAST findings"
+
+      common_vulnerabilities:
+        - "DETECT SQL injection risks"
+        - "CHECK command injection points"
+        - "FIND path traversal vulnerabilities"
+        - "IDENTIFY XXE attack vectors"
+        - "ASSESS SSRF possibilities"
+
+      secure_coding:
+        - "VERIFY input sanitization"
+        - "CHECK output encoding"
+        - "ASSESS authentication mechanisms"
+        - "EVALUATE authorization controls"
+        - "VERIFY cryptographic implementations"
+
+  phase_6:
+    name: "Python Performance Analysis"
+    mandatory_actions:
+      - "PROFILE code execution with cProfile"
+      - "MEASURE memory usage with memory_profiler"
+      - "IDENTIFY performance bottlenecks"
+      - "ANALYZE algorithm complexity"
+      - "EVALUATE I/O operations"
+      - "CHECK async/await usage"
+
+    performance_metrics:
+      profiling_analysis:
+        - "RUN cProfile for execution profiling"
+        - "USE line_profiler for line-by-line analysis"
+        - "MEASURE memory with memory_profiler"
+        - "IDENTIFY hot spots and bottlenecks"
+
+      algorithmic_complexity:
+        - "ANALYZE time complexity (Big O)"
+        - "EVALUATE space complexity"
+        - "CHECK nested loop performance"
+        - "ASSESS recursive function efficiency"
+
+      optimization_opportunities:
+        - "IDENTIFY caching opportunities"
+        - "CHECK list comprehension usage"
+        - "EVALUATE generator usage"
+        - "ASSESS vectorization potential"
+        - "VERIFY async/await efficiency"
+
+  phase_7:
+    name: "Python Code Complexity and Maintainability"
+    mandatory_actions:
+      - "CALCULATE cyclomatic complexity"
+      - "MEASURE code duplication"
+      - "ASSESS documentation coverage"
+      - "EVALUATE test coverage potential"
+      - "COMPUTE maintainability index"
+
+    maintainability_metrics:
+      complexity_metrics:
+        - "CALCULATE cyclomatic complexity (radon cc)"
+        - "MEASURE cognitive complexity"
+        - "CHECK nesting depth"
+        - "EVALUATE McCabe complexity"
+        - "COMPUTE Halstead metrics"
+        - "ASSESS maintainability index (radon mi)"
+
+      duplication_metrics:
+        - "MEASURE code duplication"
+        - "IDENTIFY similar blocks"
+        - "CHECK pattern repetition"
+        - "EVALUATE DRY violations"
+
+      documentation_metrics:
+        - "MEASURE docstring coverage (interrogate)"
+        - "CHECK docstring conventions (pydocstyle)"
+        - "VERIFY type hint coverage"
+        - "ASSESS comment quality"
+        - "EVALUATE README completeness"
+
+  phase_8:
+    name: "Python Type Safety and Testing Assessment"
+    mandatory_actions:
+      - "EVALUATE type annotation coverage"
+      - "RUN mypy type checking"
+      - "ASSESS test coverage potential"
+      - "CHECK testing patterns"
+      - "ANALYZE mocking requirements"
+
+    type_safety_evaluation:
+      type_annotation_analysis:
+        - "MEASURE type annotation coverage"
+        - "RUN mypy --strict checking"
+        - "CHECK generic type usage"
+        - "EVALUATE Protocol usage"
+        - "ASSESS TypedDict patterns"
+
+      static_analysis:
+        - "RUN pylint with scoring"
+        - "EXECUTE ruff check"
+        - "VERIFY flake8 compliance"
+        - "CHECK black formatting"
+        - "ASSESS isort import ordering"
+
+      testability_assessment:
+        - "EVALUATE unit test potential"
+        - "CHECK dependency injection"
+        - "ASSESS mock-ability"
+        - "IDENTIFY integration test points"
+        - "EVALUATE fixture requirements"
+
+  phase_9:
+    name: "Quality Recommendations Generation"
+    mandatory_actions:
+      - "PRIORITIZE quality improvements"
+      - "GENERATE refactoring suggestions"
+      - "CREATE security recommendations"
+      - "DEVELOP performance optimizations"
+      - "PRODUCE maintainability roadmap"
+
+    recommendation_development:
+      improvement_prioritization:
+        - "RANK issues by severity"
+        - "ASSESS business impact"
+        - "EVALUATE technical debt"
+        - "ESTIMATE effort required"
+
+      refactoring_suggestions:
+        - "IDENTIFY refactoring targets"
+        - "SUGGEST pattern applications"
+        - "RECOMMEND decompositions"
+        - "PROPOSE abstractions"
+
+      optimization_recommendations:
+        - "SUGGEST performance improvements"
+        - "RECOMMEND caching strategies (@lru_cache)"
+        - "PROPOSE async/await adoption"
+        - "IDENTIFY algorithmic improvements"
+        - "SUGGEST type annotation additions"
+        - "RECOMMEND testing strategies"
+
+  phase_10:
+    name: "Quality Report Compilation and Documentation"
+    mandatory_actions:
+      - "COMPILE comprehensive quality metrics"
+      - "GENERATE pattern analysis report"
+      - "CREATE security assessment summary"
+      - "PRODUCE maintainability scorecard"
+      - "DELIVER markdown document reports"
+
+    documentation_requirements:
+      - "MANDATORY: Complete metrics collection"
+      - "MANDATORY: Pattern identification"
+      - "MANDATORY: Anti-pattern detection"
+      - "MANDATORY: Quality scoring"
+      - "FORBIDDEN: Subjective assessments"
+
+# Python Quality Analysis Validation Criteria
+validation_criteria:
+  module_inventory_complete: "MANDATORY - All Python modules cataloged"
+  solid_principles_analyzed: "MANDATORY - SOLID principles assessed in Python context"
+  patterns_identified: "MANDATORY - Pythonic patterns documented"
+  anti_patterns_detected: "MANDATORY - Python anti-patterns found"
+  type_safety_assessed: "MANDATORY - Type annotations and mypy compliance checked"
+  security_scanned: "MANDATORY - Bandit and safety analysis completed"
+  performance_profiled: "MANDATORY - Performance bottlenecks identified"
+  complexity_calculated: "MANDATORY - Complexity metrics computed"
+  testability_evaluated: "MANDATORY - Test coverage potential assessed"
+  recommendations_generated: "MANDATORY - Quality improvements suggested"
+  documentation_complete: "MANDATORY - All analysis reports delivered"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "Analysis_Report_{{YYYYMMDD-HHMMSS}}.ipynb (analysis report)"
+    - "Findings_Recommendations_{{YYYYMMDD-HHMMSS}}.ipynb (findings recommendations)"
+    - "Action_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (action plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all quality analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Python Quality Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. INVENTORY Python modules and packages in ({{analysis_scope}}) scope"
+  - "2. ANALYZE SOLID principles compliance with focus on ({{quality_focus}})"
+  - "3. IDENTIFY Pythonic design patterns with ({{pattern_analysis}}) analysis"
+  - "4. DETECT Python anti-patterns using ({{anti_pattern_detection}}) strictness"
+  - "5. ASSESS type safety with mypy and static analysis tools"
+  - "6. SCAN security vulnerabilities with bandit and safety"
+  - "7. PROFILE performance at ({{metrics_depth}}) depth"
+  - "8. CALCULATE complexity and maintainability metrics"
+  - "9. EVALUATE testability and test coverage potential"
+  - "10. GENERATE prioritized quality recommendations"
+  - "11. COMPILE comprehensive markdown document reports with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all quality tracking"
+  - "MANDATORY: Timestamp all analysis deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL Python modules MUST be analyzed systematically"
+    - "ALL quality metrics MUST be collected using tools"
+    - "ALL Pythonic patterns MUST be identified"
+    - "ALL Python anti-patterns MUST be detected"
+    - "ALL type annotations MUST be assessed"
+    - "ALL security vulnerabilities MUST be scanned"
+    - "ALL assessments MUST be tool-based and objective"
+    - "ALL recommendations MUST be actionable and prioritized"
+    - "ALWAYS use Python-specific analysis tools"
+    - "NEVER make subjective assessments without metrics"
+
+  strictly_forbidden:
+    - "Implementing fixes during analysis"
+    - "Creating test code"
+    - "Modifying production code"
+    - "Subjective quality judgments"
+    - "Incomplete metric collection"
+    - "Missing pattern analysis"
+    - "Skipping anti-pattern detection"
+    - "Placeholder recommendations"

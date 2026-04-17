@@ -1,0 +1,144 @@
+name: "N8N Workflow Review"
+description: "Comprehensive human-centric workflow review with focus on architecture, node selection, expression quality, error handling, and maintainability"
+version: "2.0.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7              # Latest n8n best practices and architectural patterns
+    - grep                  # Real-world production workflow implementations
+    - sequential-thinking   # Structured review methodology
+    - filesystem           # Workflow reading and analysis
+    - memory               # Track review findings and decisions
+    - time                 # Timestamp review activities
+
+  n8n_specific_tools:
+    - get_workflow_structure         # Comprehensive workflow structure analysis
+    - analyze_workflow_architecture  # Architecture pattern evaluation
+    - review_node_selection          # Node choice appropriateness
+    - analyze_expressions            # Expression quality review
+    - assess_error_handling          # Error handling pattern review
+    - evaluate_maintainability       # Maintainability assessment
+
+# Review Protocol
+review_focus_areas:
+  architecture_quality: true      # Workflow pattern appropriateness
+  node_selection: true           # Optimal node choices
+  expression_quality: true       # Expression maintainability
+  error_handling: true           # Error coverage and reliability
+  security_compliance: true      # Security and compliance
+  performance_optimization: true  # Performance review
+
+# Execution Protocol
+execution_phases:
+  1_review_preparation:
+    description: "Initialize review session and load workflow"
+    tools: ["filesystem", "context7", "get_workflow_structure"]
+    required_actions:
+      - "Load workflow and extract structure"
+      - "Get latest n8n best practices"
+      - "Identify review scope and priorities"
+    success_criteria:
+      - "Workflow loaded and analyzed"
+      - "Best practices documented"
+      - "Review scope defined"
+
+  2_architecture_review:
+    description: "Review workflow architecture and patterns"
+    tools: ["analyze_workflow_architecture", "grep"]
+    required_actions:
+      - "Assess workflow pattern appropriateness"
+      - "Evaluate data flow logic"
+      - "Review node organization"
+      - "Check scalability considerations"
+    success_criteria:
+      - "Architecture pattern identified"
+      - "Data flow assessed"
+      - "Scalability evaluated"
+
+  3_node_configuration_review:
+    description: "Review node selection and configuration"
+    tools: ["review_node_selection", "sequential-thinking"]
+    required_actions:
+      - "Evaluate node appropriateness"
+      - "Review configuration completeness"
+      - "Assess credential management"
+      - "Identify alternative node options"
+    success_criteria:
+      - "Node choices assessed"
+      - "Configuration evaluated"
+      - "Alternatives identified"
+
+  4_expression_quality_review:
+    description: "Review expression quality and maintainability"
+    tools: ["analyze_expressions", "memory"]
+    required_actions:
+      - "Review expression complexity"
+      - "Assess null safety"
+      - "Evaluate performance implications"
+      - "Identify simplification opportunities"
+    success_criteria:
+      - "Expression quality assessed"
+      - "Complexity evaluated"
+      - "Improvements identified"
+
+  5_error_handling_review:
+    description: "Review error handling and reliability"
+    tools: ["assess_error_handling", "get_workflow_structure"]
+    required_actions:
+      - "Check error handling coverage"
+      - "Review error workflows"
+      - "Assess fallback strategies"
+      - "Evaluate recovery mechanisms"
+    success_criteria:
+      - "Error coverage calculated"
+      - "Reliability assessed"
+      - "Improvements identified"
+
+  6_review_reporting:
+    description: "Generate comprehensive review report"
+    tools: ["filesystem", "time", "memory"]
+    required_actions:
+      - "Compile review findings"
+      - "Categorize issues by severity"
+      - "Create improvement recommendations"
+      - "Generate review deliverables"
+    success_criteria:
+      - "Review report complete"
+      - "Issues categorized"
+      - "Recommendations provided"
+      - "Deliverables use YYYY-MM-DD-HHMMSS timestamps"
+
+# Review Scoring
+review_levels:
+  A: "90-100% - Excellent, production ready"
+  B: "80-89% - Good, minor improvements"
+  C: "70-79% - Acceptable, moderate issues"
+  D: "60-69% - Below standard, significant issues"
+  F: "<60% - Failing, major rework needed"
+
+# Deliverables
+final_deliverables:
+  naming_convention: "MANDATORY: ALL review output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "./project/docs/n8n-workflows/Workflow_Review_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Architecture_Assessment-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+    - "./project/docs/n8n-workflows/Implementation_Recommendations-{{YYYY-MM-DD-HHMMSS}}.ipynb"
+
+# Success Criteria
+success_criteria:
+  - "Complete workflow architecture reviewed"
+  - "All nodes evaluated for appropriateness"
+  - "Expression quality analyzed"
+  - "Error handling assessed"
+  - "Security reviewed"
+  - "Performance opportunities identified"
+  - "Review score and level assigned"
+  - "All deliverables use proper YYYY-MM-DD-HHMMSS timestamps"
+
+# Command Integration
+related_commands:
+  previous_phase: "n8n-workflow-implementation, n8n-workflow-lint-quality-check, n8n-workflow-quality-analysis"
+  parallel: "n8n-workflow-quality-analysis, n8n-workflow-gap-analysis"
+  next_phase: "n8n-workflow-refactor or deployment"

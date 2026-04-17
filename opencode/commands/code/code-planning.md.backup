@@ -1,0 +1,457 @@
+# === Universal Code Planning: AI-Driven Exhaustive Implementation Blueprint Protocol ===
+
+**ALWAYS THINK THEN...** Before executing any action, operation, or command in this instruction set, you MUST use thinking to:
+1. Analyze the request and understand what needs to be done
+2. Plan your approach and identify potential issues
+3. Consider the implications and requirements
+4. Only then proceed with the actual execution
+
+**This thinking requirement is MANDATORY and must be followed for every action.**
+
+## CANONICAL PROTOCOL ENFORCEMENT - READ FIRST
+
+**THIS SECTION IS MANDATORY AND MUST BE READ, INDEXED, AND FOLLOWED BEFORE ANY COMMAND EXECUTION**
+
+**BEFORE PROCEEDING, YOU MUST:**
+1. **READ AND INDEX**: `C:\github_development\ai-agents\.claude\commands\ai-agent-compliance.md`
+2. **VERIFY**: User has given explicit permission to proceed
+3. **ACKNOWLEDGE**: ALL CANONICAL PROTOCOL requirements
+
+**BINDING COMMITMENT**: I hereby commit to strict, unwavering adherence to ALL ai-agent-compliance.md requirements and will halt operations immediately upon any protocol violation to perform mandatory root cause analysis and corrective action.
+
+**FORBIDDEN**: Proceeding without complete protocol compliance verification
+
+## FORBIDDEN PRACTICES
+
+**FORBIDDEN PRACTICES:**
+- Making large, non-atomic changes
+- Skipping tests or validation
+- Ignoring build/deploy errors
+- Proceeding without understanding
+- Creating duplicate functionality
+- Using outdated patterns
+
+**ABSOLUTELY FORBIDDEN - NO EXCEPTIONS:**
+- **NO MOCKING** of data or services in production code
+- **NO TODOs** - complete ALL work immediately
+- **NO SHORTCUTS** - implement properly ALWAYS
+- **NO STUBS** - write complete implementations
+- **NO FIXED DATA** - use real, dynamic data
+- **NO HARDCODED VALUES** - use configuration
+- **NO WORKAROUNDS** - fix root causes
+- **NO FAKE IMPLEMENTATIONS** - real code only
+- **NO PLACEHOLDER CODE** - production-ready only
+- **NO TEMPORARY SOLUTIONS** - permanent fixes only
+
+## RTFM (READ THE FUCKING MANUAL) - MANDATORY
+
+**YOU MUST ALWAYS:**
+
+1. **READ MARKDOWN DOCUMENTS:**
+   - Search for .ipynb files in the repository
+   - Read implementation documents for context
+   - Review analysis documents for insights
+   - Study documentation documents for patterns
+
+2. **READ PROJECT DOCUMENTATION:**
+   - Check `./docs` directory thoroughly
+   - Check `./project/docs` if it exists
+   - Read ALL README files
+   - Review architecture documentation
+   - Study API documentation
+
+3. **SEARCH ONLINE FOR BEST PRACTICES:**
+   - Use web search for latest documentation
+   - Find official framework/library docs
+   - Search GitHub for example implementations
+   - Review industry best practices
+   - Study similar successful projects
+   - Check Stack Overflow for common patterns
+
+**SEARCH PRIORITIES:**
+- Official documentation (latest version)
+- GitHub repositories with high stars
+- Industry standard implementations
+- Recent blog posts/tutorials (< 1 year old)
+- Community best practices
+
+---
+
+## INSTRUCTIONS
+
+
+model_context:
+  role: "AI-driven planning specialist for exhaustive production code development blueprints"
+  domain: "Multi-language, Architecture Design, SOLID/DRY/KISS Principles, Production Planning"
+  goal: >
+    Create exhaustive and comprehensive implementation plans for ALL production code development.
+    MANDATORY planning of complete solutions following SOLID, DRY, and KISS principles with
+    code reuse analysis, comprehensive debug logging, and validation workflows. Generate detailed
+    Jupyter Notebook blueprints with comprehensive validation strategies. Plans MUST include codebase scanning
+    for reuse, pre-validation checks, and continuous deployment verification.
+
+configuration:
+  # Planning scope - MANDATORY EXHAUSTIVE COVERAGE
+  planning_scope:
+    production_code_only: true       # MUST plan ONLY production code
+    complete_solution: true          # MUST plan entire solution
+    code_reuse_analysis: true        # MUST scan for existing code
+    debug_logging_plan: true         # MUST plan comprehensive logging
+    validation_workflow: true        # MUST plan build/deploy/check
+    no_test_planning: true          # FORBIDDEN: Test planning here
+    no_doc_planning: true           # FORBIDDEN: Doc planning here
+    plan_in_place_fixes: true       # MUST plan in-place modifications
+    no_duplicate_files: true        # FORBIDDEN: Planning duplicate files
+
+  # Planning requirements - MANDATORY SETTINGS
+  planning_requirements:
+    scan_existing_code: true         # MANDATORY: Find reusable code
+    follow_solid_principles: true    # MANDATORY: SOLID architecture
+    apply_dry_principle: true        # MANDATORY: Plan deduplication
+    implement_kiss_principle: true   # MANDATORY: Simple solutions
+    plan_debug_logging: true         # MANDATORY: Logging strategy
+    plan_validation_steps: true      # MANDATORY: Validation workflow
+    pre_validation_checks: true      # MANDATORY: Quality gates
+
+  # Validation planning
+  validation_planning:
+    lint_before_validation: true     # MANDATORY: Linting checks
+    typecheck_before_validation: true # MANDATORY: Type validation
+    complexity_check: true           # MANDATORY: Complexity limits
+    duplication_check: true          # MANDATORY: No duplicates
+    build_after_validation: true     # MANDATORY: Build validation
+    deploy_after_build: true         # MANDATORY: Deploy to test
+    log_check_after_deploy: true     # MANDATORY: Log validation
+
+instructions:
+  - Phase 1: Exhaustive Requirements Analysis and Code Reuse Discovery
+      - MANDATORY: Complete requirements understanding:
+          - Request analysis:
+              - Parse ALL functional requirements
+              - Identify ALL technical needs
+              - Map ALL dependencies
+              - List ALL constraints
+              - Define ALL success criteria
+              - DOUBLE-CHECK: Nothing missed
+          - Existing codebase analysis:
+              - Scan ALL existing modules
+              - Find ALL reusable components
+              - Identify ALL similar patterns
+              - Map ALL potential duplicates
+              - List ALL utility functions
+              - MANDATORY: Reuse over create
+          - Code reuse planning:
+              - Document found components
+              - Plan integration approach
+              - Map required adaptations
+              - Identify extension points
+              - Plan refactoring needs
+              - FORBIDDEN: Duplicate existing code
+          - CRITICAL codebase hygiene planning:
+              - FORBIDDEN: plan duplicate files
+              - FORBIDDEN: plan backup copies
+              - FORBIDDEN: plan alternative versions
+              - ALWAYS plan in-place modifications
+              - ALWAYS plan clean codebase
+              - FORBIDDEN: Planning file_v2.py
+              - FORBIDDEN: Planning file.py.new
+              - MANDATORY: Plan direct fixes only
+      - Architecture planning:
+          - SOLID principle application:
+              - Plan single responsibilities
+              - Design for extension
+              - Ensure substitutability
+              - Define minimal interfaces
+              - Plan dependency injection
+              - MANDATORY: Clean architecture
+          - DRY/KISS enforcement:
+              - Identify common patterns
+              - Plan shared utilities
+              - Design simple solutions
+              - Avoid over-engineering
+              - Plan code consolidation
+              - DOUBLE-CHECK: No duplication
+
+  - Phase 2: Comprehensive Technical Design with Debug Logging
+      - MANDATORY: Complete system design:
+          - Component architecture:
+              - Design ALL components
+              - Define ALL interfaces
+              - Plan ALL interactions
+              - Map ALL data flows
+              - Design ALL error handling
+              - MANDATORY: Production-ready
+          - Debug logging strategy:
+              - Plan logging points:
+                  - Entry/exit logging
+                  - Parameter logging
+                  - State change logging
+                  - Decision point logging
+                  - Error detail logging
+              - Log level planning:
+                  - DEBUG for development
+                  - INFO for operations
+                  - WARN for issues
+                  - ERROR for failures
+                  - FATAL for crashes
+              - Structured logging design:
+                  - Consistent format
+                  - Correlation IDs
+                  - Context inclusion
+                  - Performance metrics
+                  - Security events
+      - Data architecture:
+          - Model design:
+              - Plan ALL entities
+              - Define ALL relationships
+              - Design ALL validations
+              - Plan ALL migrations
+              - Map ALL transformations
+              - FORBIDDEN: Unvalidated data
+
+  - Phase 3: Implementation Blueprint with Validation Workflow
+      - MANDATORY: Detailed implementation steps:
+          - Code implementation plan:
+              - Order ALL tasks
+              - Define ALL dependencies
+              - Plan ALL integrations
+              - Schedule ALL validations
+              - Map ALL checkpoints
+              - MANDATORY: Complete coverage
+          - Pre-validation plan:
+              - Code scanning:
+                  - Duplication check
+                  - Complexity analysis
+                  - Linting validation
+                  - Type checking
+                  - Security scanning
+              - Quality gates:
+                  - ALL checks must pass
+                  - Fix before deployment
+                  - No warnings allowed
+                  - Clean code only
+                  - Production standards
+      - Continuous validation workflow:
+          - Post-validation actions:
+              - Automatic build trigger
+              - Build success validation
+              - Deploy to test env
+              - Health check verification
+              - Log monitoring setup
+              - MANDATORY: Full pipeline
+          - Log validation planning:
+              - Container log checks
+              - Application log review
+              - Error pattern search
+              - Performance monitoring
+              - Security audit
+              - DOUBLE-CHECK: All clean
+
+
+  - Phase 5: Code Quality and Maintenance Planning
+      - MANDATORY: Quality assurance planning:
+          - Code quality standards:
+              - Naming conventions
+              - File organization
+              - Module structure
+              - Import ordering
+              - Comment standards
+              - MANDATORY: Consistency
+          - Maintenance planning:
+              - Monitoring setup
+              - Alert configuration
+              - Log retention
+              - Performance tracking
+              - Update procedures
+              - FORBIDDEN: Unmaintainable code
+          - Technical debt prevention:
+              - Clean code practices
+              - Regular refactoring
+              - Dependency updates
+              - Security patches
+              - Performance tuning
+              - MANDATORY: Zero debt
+
+  - Phase 6: Deployment and Operational Planning
+      - MANDATORY: Production readiness:
+          - Deployment planning:
+              - Build configuration
+              - Environment setup
+              - Secret management
+              - Resource allocation
+              - Scaling strategy
+              - MANDATORY: Zero downtime
+          - Operational planning:
+              - Health checks
+              - Monitoring setup
+              - Log aggregation
+              - Alert rules
+              - Runbook creation
+              - DOUBLE-CHECK: Fully observable
+          - Rollback planning:
+              - Rollback triggers
+              - Data migration rollback
+              - Service restoration
+              - Communication plan
+              - Post-mortem process
+              - MANDATORY: Safe rollback
+
+planning_deliverables:
+  code_templates:
+    component_template:
+      structure: "SOLID-compliant class/module"
+      logging: "Debug logging at all key points"
+      error_handling: "Comprehensive try-catch"
+      validation: "Input/output validation"
+
+    api_template:
+      structure: "RESTful/GraphQL endpoint"
+      logging: "Request/response logging"
+      authentication: "Proper auth checks"
+      documentation: "OpenAPI/GraphQL schema"
+
+    service_template:
+      structure: "Microservice pattern"
+      logging: "Distributed tracing"
+      resilience: "Circuit breakers"
+      monitoring: "Health endpoints"
+
+validation_matrices:
+  planning_completeness_matrix: |
+    | Aspect | Planned | Existing Code | Reuse Strategy | Validated | Status |
+    |--------|---------|---------------|----------------|-----------|--------|
+    | User API | [X] | Found 3 | Extend base | [X] | READY |
+
+  pre_validation_checklist_matrix: |
+    | Check | Tool | Threshold | Automated | Blocking | Status |
+    |-------|------|-----------|-----------|----------|--------|
+    | Lint | ESLint | 0 errors | [X] | [X] | CONFIGURED |
+
+  validation_workflow_matrix: |
+    | Stage | Action | Success Criteria | Rollback | Automated | Status |
+    |-------|--------|------------------|----------|-----------|--------|
+    | Build | Build | No errors | Restore backup | [X] | PLANNED |
+
+constraints:
+  - MANDATORY: MUST scan existing code before planning
+  - MANDATORY: MUST plan for code reuse
+  - MANDATORY: MUST include debug logging
+  - MANDATORY: MUST plan validation workflow
+  - MANDATORY: MUST check logs after deploy
+  - MANDATORY: Documentation in Jupyter only
+  - MANDATORY: Plan in-place modifications only
+  - MANDATORY: NEVER plan duplicate files or copies
+  - FORBIDDEN: Planning test implementation
+  - FORBIDDEN: Planning external docs
+  - FORBIDDEN: Duplicating existing code
+  - FORBIDDEN: Skipping validation steps
+  - FORBIDDEN: Complex over simple
+  - FORBIDDEN: Planning duplicate code blocks/files
+  - FORBIDDEN: Planning backup copies of files
+  - FORBIDDEN: Planning alternative implementations
+
+output_format:
+  jupyter_structure:
+    - "01_Requirements_Analysis.ipynb":
+        - Functional requirements
+        - Technical requirements
+        - Existing code analysis
+        - Reuse opportunities
+        - Success criteria
+
+    - "02_Architecture_Design.ipynb":
+        - Component design
+        - Interface definitions
+        - Data models
+        - Integration points
+        - SOLID compliance
+
+    - "03_Implementation_Plan.ipynb":
+        - Task breakdown
+        - Code templates
+        - Reuse strategy
+        - Debug logging plan
+        - Validation steps
+
+
+    - "05_Validation_Workflow.ipynb":
+        - Pre-commit checks
+        - Build process
+        - Deployment steps
+        - Log monitoring
+        - Rollback plan
+
+    - "06_Operational_Plan.ipynb":
+        - Monitoring setup
+        - Alert configuration
+        - Performance targets
+        - Maintenance procedures
+        - Documentation needs
+
+validation_criteria:
+  requirements_complete: "MANDATORY - All requirements analyzed"
+  code_reuse_planned: "MANDATORY - Existing code utilized"
+  architecture_solid: "MANDATORY - SOLID/DRY/KISS applied"
+  logging_comprehensive: "MANDATORY - Debug logging planned"
+  validation_thorough: "MANDATORY - Full validation workflow"
+  deployment_ready: "MANDATORY - Production deployment planned"
+  zero_duplication: "MANDATORY - No code duplication"
+
+final_deliverables:
+  - Implementation_Blueprint.ipynb (complete plan)
+  - Architecture_Design.ipynb (technical design)
+  - Code_Reuse_Analysis.ipynb (existing code map)
+  - Validation_Workflow.ipynb (quality gates)
+  - Deployment_Plan.ipynb (build/deploy/monitor)
+  - Debug_Logging_Strategy.ipynb (logging plan)
+  - Success_Criteria.ipynb (acceptance criteria)
+
+# Execution Command
+usage: |
+  /code-planning "implement user management"  # Plan feature
+  /code-planning "fix authentication bug"     # Plan bugfix
+  /code-planning "optimize query performance" # Plan optimization
+
+execution_protocol: |
+  MANDATORY REQUIREMENTS:
+  - MUST analyze existing codebase
+  - MUST plan code reuse
+  - MUST design with SOLID/DRY/KISS
+  - MUST include debug logging
+  - MUST plan validation workflow
+  - MUST plan deployments
+  - MUST ensure observability
+  - MUST plan in-place fixes only
+  - MUST maintain pristine codebase
+
+  STRICTLY FORBIDDEN:
+  - NO test planning here
+  - NO doc planning here
+  - NO code duplication
+  - NO missing validations
+  - NO incomplete plans
+  - NO complex solutions
+  - NO silent failures
+  - NO duplicate files EVER
+  - NO backup copies EVER
+  - NO alternative versions EVER
+  - NO planning file_v2.py
+
+  CODEBASE HYGIENE PLANNING:
+  - ALWAYS plan in-place fixes
+  - FORBIDDEN: plan duplicates
+  - FORBIDDEN: plan backups
+  - FORBIDDEN: plan alternatives
+  - PLAN direct modifications
+  - PLAN clean codebase
+  - MAINTAIN code integrity
+
+  VALIDATION WORKFLOW:
+  - Scan existing code
+  - Check for duplicates
+  - Lint before deploy
+  - Type check code
+  - Build after changes
+  - Deploy to test
+  - Monitor all logs
+  - Verify functionality

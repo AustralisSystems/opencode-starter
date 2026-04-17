@@ -1,0 +1,618 @@
+# === MCP PROMPT: Service Testing Examples Protocol ===
+name: "test-protocol-service-examples-prompt"
+version: "1.0.0"
+description: "Comprehensive service testing examples protocol for platform service testing patterns, implementation examples, and best practices development"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Service Testing Examples Development"
+  description: "Develop comprehensive service-specific testing examples with detailed patterns, implementations, and best practices for platform service validation"
+
+  # Argument Schema
+  arguments:
+    service_scope:
+      type: "string"
+      description: "Scope of service testing examples to develop"
+      required: true
+      enum:
+        [
+          "all-services",
+          "core-services",
+          "n8n-focused",
+          "database-focused",
+          "ai-focused",
+          "infrastructure-focused",
+        ]
+
+    testing_depth:
+      type: "string"
+      description: "Depth of testing examples and patterns"
+      required: true
+      enum:
+        [
+          "basic",
+          "standard",
+          "advanced",
+          "enterprise",
+          "comprehensive",
+        ]
+
+    example_complexity:
+      type: "string"
+      description: "Complexity level of testing examples"
+      required: true
+      enum:
+        [
+          "simple",
+          "standard",
+          "detailed",
+          "enterprise",
+          "comprehensive",
+        ]
+
+    pattern_focus:
+      type: "string"
+      description: "Primary focus area for testing patterns"
+      required: false
+      enum: ["functional", "performance", "security", "integration", "monitoring"]
+
+    implementation_style:
+      type: "string"
+      description: "Style of testing implementation examples"
+      required: false
+      enum: ["unit-testing", "integration-testing", "e2e-testing", "mixed-approach"]
+
+    documentation_level:
+      type: "string"
+      description: "Level of documentation detail"
+      required: false
+      enum: ["basic", "detailed", "comprehensive", "enterprise"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI service testing examples specialist developing comprehensive testing patterns and implementations for platform services.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive service testing methodology
+        - Create detailed and reusable testing examples
+        - Maintain systematic approach to pattern development
+        - Use structured implementation design and validation
+        - Follow SOLID, DRY, KISS principles in example design
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating incomplete or superficial examples
+        - Developing generic patterns without service specificity
+        - Skipping comprehensive implementation validation
+        - Example development without proper documentation
+        - Missing systematic approach to pattern creation
+        - Creating examples without measurable outcomes
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY SERVICE TESTING EXAMPLES PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **SERVICE TESTING EXAMPLES PARAMETERS:**
+        - Service Scope: {{service_scope}}
+        - Testing Depth: {{testing_depth}}
+        - Example Complexity: {{example_complexity}}
+        - Pattern Focus: {{pattern_focus}}
+        - Implementation Style: {{implementation_style}}
+        - Documentation Level: {{documentation_level}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING SERVICE TESTING EXAMPLES PROTOCOL:**
+
+# Service Testing Examples Protocol Configuration
+examples_protocol:
+  # Examples Scope - MANDATORY COMPREHENSIVE COVERAGE
+  examples_focus:
+    service_specific_patterns: true # MUST create service-specific testing patterns
+    implementation_examples: true # MUST develop detailed implementation examples
+    integration_patterns: true # MUST create inter-service integration patterns
+    performance_examples: true # MUST develop performance testing examples
+    security_patterns: true # MUST create security testing patterns
+    monitoring_examples: true # MUST develop monitoring and observability examples
+    error_handling_patterns: true # MUST create error handling and recovery patterns
+    best_practices: true # MUST establish testing best practices
+    examples_only: true # STRICTLY examples development only
+
+  # Examples Configuration - MANDATORY SETTINGS
+  examples_settings:
+    enable_comprehensive_development: true
+    create_reusable_patterns: true
+    develop_detailed_implementations: true
+    establish_best_practices: true
+    design_scalable_examples: true
+    ensure_pattern_validation: true
+    systematic_approach: true # MANDATORY: Systematic examples methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all service aspects
+    production_ready_examples: true # MANDATORY: Production-focused examples
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Service Architecture Analysis and Testing Strategy"
+    mandatory_actions:
+      - "ANALYZE platform service architecture and dependencies"
+      - "IDENTIFY service testing requirements and constraints"
+      - "ESTABLISH service-specific testing strategies"
+      - "DEFINE testing scope and boundaries for each service"
+      - "DOCUMENT service testing architecture and approach"
+
+    analysis_requirements:
+      - "MANDATORY: Complete service architecture analysis"
+      - "MANDATORY: Document ALL service dependencies and interactions"
+      - "MANDATORY: Establish service-specific testing strategies"
+      - "FORBIDDEN: Missing any critical service components"
+
+  phase_2:
+    name: "n8n Workflow Engine Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive n8n workflow testing patterns"
+      - "CREATE n8n API testing examples and implementations"
+      - "ESTABLISH n8n workflow execution testing methodologies"
+      - "DESIGN n8n integration testing patterns"
+      - "IMPLEMENT n8n performance and monitoring examples"
+
+    n8n_testing_requirements:
+      workflow_testing_patterns:
+        - "CREATE workflow creation and validation testing examples"
+        - "DEVELOP workflow execution and monitoring test patterns"
+        - "ESTABLISH workflow node and connection testing methods"
+        - "DESIGN workflow error handling and recovery testing"
+        - "IMPLEMENT workflow performance and scalability testing"
+
+      api_testing_examples:
+        - "DEVELOP n8n REST API testing comprehensive examples"
+        - "CREATE authentication and authorization testing patterns"
+        - "ESTABLISH API endpoint validation and error testing"
+        - "DESIGN API performance and load testing examples"
+        - "IMPLEMENT API security and vulnerability testing"
+
+      integration_testing_patterns:
+        - "CREATE n8n to PostgreSQL integration testing examples"
+        - "DEVELOP n8n to Neo4j integration validation patterns"
+        - "ESTABLISH n8n to Qdrant integration testing methods"
+        - "DESIGN n8n to LightRAG integration test examples"
+        - "IMPLEMENT n8n to external service integration testing"
+
+  phase_3:
+    name: "Database Services Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive PostgreSQL testing patterns"
+      - "CREATE Neo4j graph database testing examples"
+      - "ESTABLISH Qdrant vector database testing methodologies"
+      - "DESIGN database integration testing patterns"
+      - "IMPLEMENT database performance and monitoring examples"
+
+    database_testing_requirements:
+      postgresql_testing_patterns:
+        - "CREATE PostgreSQL connection and health testing examples"
+        - "DEVELOP data persistence and integrity testing patterns"
+        - "ESTABLISH query performance and optimization testing"
+        - "DESIGN backup and recovery validation testing"
+        - "IMPLEMENT PostgreSQL security and access control testing"
+
+      neo4j_testing_examples:
+        - "DEVELOP Neo4j graph database connectivity testing"
+        - "CREATE knowledge graph creation and validation patterns"
+        - "ESTABLISH Cypher query testing and optimization examples"
+        - "DESIGN graph relationship and constraint testing"
+        - "IMPLEMENT Neo4j performance and scalability testing"
+
+      qdrant_testing_patterns:
+        - "CREATE Qdrant vector database connection testing"
+        - "DEVELOP vector embedding storage and retrieval testing"
+        - "ESTABLISH vector similarity search testing examples"
+        - "DESIGN vector index performance testing patterns"
+        - "IMPLEMENT Qdrant clustering and scaling testing"
+
+  phase_4:
+    name: "AI and Processing Services Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive LightRAG testing patterns"
+      - "CREATE AI processing validation testing examples"
+      - "ESTABLISH ML model integration testing methodologies"
+      - "DESIGN AI service performance testing patterns"
+      - "IMPLEMENT AI service monitoring and observability examples"
+
+    ai_services_testing_requirements:
+      lightrag_testing_patterns:
+        - "CREATE LightRAG service health and availability testing"
+        - "DEVELOP RAG pipeline processing testing examples"
+        - "ESTABLISH document ingestion and processing testing"
+        - "DESIGN embedding generation and storage testing"
+        - "IMPLEMENT retrieval and generation accuracy testing"
+
+      ai_processing_examples:
+        - "DEVELOP AI model inference testing patterns"
+        - "CREATE machine learning pipeline validation testing"
+        - "ESTABLISH AI service response time testing"
+        - "DESIGN AI accuracy and quality validation testing"
+        - "IMPLEMENT AI service error handling testing"
+
+      ml_integration_patterns:
+        - "CREATE ML model deployment and validation testing"
+        - "DEVELOP model versioning and rollback testing"
+        - "ESTABLISH model performance monitoring examples"
+        - "DESIGN model A/B testing and comparison patterns"
+        - "IMPLEMENT model security and access control testing"
+
+  phase_5:
+    name: "Infrastructure Services Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive Terraform testing patterns"
+      - "CREATE Ansible configuration testing examples"
+      - "ESTABLISH infrastructure deployment testing methodologies"
+      - "DESIGN infrastructure validation testing patterns"
+      - "IMPLEMENT infrastructure monitoring and compliance examples"
+
+    infrastructure_testing_requirements:
+      terraform_testing_patterns:
+        - "CREATE Terraform plan validation testing examples"
+        - "DEVELOP infrastructure deployment testing patterns"
+        - "ESTABLISH Terraform state management testing"
+        - "DESIGN infrastructure drift detection testing"
+        - "IMPLEMENT Terraform security and compliance testing"
+
+      ansible_testing_examples:
+        - "DEVELOP Ansible playbook validation testing"
+        - "CREATE configuration management testing patterns"
+        - "ESTABLISH Ansible idempotency testing examples"
+        - "DESIGN Ansible role and task testing methods"
+        - "IMPLEMENT Ansible security and compliance testing"
+
+      deployment_validation_patterns:
+        - "CREATE infrastructure deployment validation testing"
+        - "DEVELOP container deployment testing examples"
+        - "ESTABLISH service discovery and networking testing"
+        - "DESIGN load balancing and scaling testing patterns"
+        - "IMPLEMENT infrastructure health monitoring testing"
+
+  phase_6:
+    name: "Monitoring and Observability Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive Prometheus testing patterns"
+      - "CREATE Grafana dashboard testing examples"
+      - "ESTABLISH monitoring configuration testing methodologies"
+      - "DESIGN alerting and notification testing patterns"
+      - "IMPLEMENT observability validation and compliance examples"
+
+    monitoring_testing_requirements:
+      prometheus_testing_patterns:
+        - "CREATE Prometheus metrics collection testing"
+        - "DEVELOP metrics accuracy and completeness testing"
+        - "ESTABLISH Prometheus query and alerting testing"
+        - "DESIGN metrics retention and storage testing"
+        - "IMPLEMENT Prometheus performance and scaling testing"
+
+      grafana_testing_examples:
+        - "DEVELOP Grafana dashboard functionality testing"
+        - "CREATE visualization accuracy and performance testing"
+        - "ESTABLISH dashboard responsiveness testing patterns"
+        - "DESIGN user access and permission testing"
+        - "IMPLEMENT Grafana integration and plugin testing"
+
+      alerting_testing_patterns:
+        - "CREATE alert rule validation and testing examples"
+        - "DEVELOP notification delivery testing patterns"
+        - "ESTABLISH alert escalation testing methodologies"
+        - "DESIGN alert correlation and grouping testing"
+        - "IMPLEMENT alert resolution and cleanup testing"
+
+  phase_7:
+    name: "Integration and Communication Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive inter-service integration testing patterns"
+      - "CREATE service communication validation examples"
+      - "ESTABLISH API gateway and routing testing methodologies"
+      - "DESIGN service mesh and networking testing patterns"
+      - "IMPLEMENT distributed system testing and validation examples"
+
+    integration_testing_requirements:
+      service_communication_patterns:
+        - "CREATE HTTP/REST API communication testing"
+        - "DEVELOP message queue and event-driven testing"
+        - "ESTABLISH database connection and query testing"
+        - "DESIGN file storage and retrieval testing"
+        - "IMPLEMENT real-time communication testing"
+
+      api_gateway_testing_examples:
+        - "DEVELOP API gateway routing testing patterns"
+        - "CREATE load balancing and failover testing"
+        - "ESTABLISH rate limiting and throttling testing"
+        - "DESIGN authentication and authorization testing"
+        - "IMPLEMENT API versioning and compatibility testing"
+
+      distributed_system_patterns:
+        - "CREATE distributed transaction testing examples"
+        - "DEVELOP eventual consistency testing patterns"
+        - "ESTABLISH distributed caching testing methodologies"
+        - "DESIGN distributed locking and coordination testing"
+        - "IMPLEMENT distributed system fault tolerance testing"
+
+  phase_8:
+    name: "Performance and Scalability Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive performance testing patterns for each service"
+      - "CREATE load testing and stress testing examples"
+      - "ESTABLISH scalability validation testing methodologies"
+      - "DESIGN performance optimization testing patterns"
+      - "IMPLEMENT performance monitoring and analysis examples"
+
+    performance_testing_requirements:
+      service_performance_patterns:
+        - "CREATE individual service performance testing"
+        - "DEVELOP service response time and throughput testing"
+        - "ESTABLISH service resource utilization testing"
+        - "DESIGN service capacity and limits testing"
+        - "IMPLEMENT service performance optimization testing"
+
+      load_testing_examples:
+        - "DEVELOP realistic load simulation testing patterns"
+        - "CREATE concurrent user and request testing"
+        - "ESTABLISH sustained load testing methodologies"
+        - "DESIGN peak load and burst testing examples"
+        - "IMPLEMENT load testing automation and reporting"
+
+      scalability_validation_patterns:
+        - "CREATE horizontal scaling testing examples"
+        - "DEVELOP vertical scaling validation testing"
+        - "ESTABLISH auto-scaling testing methodologies"
+        - "DESIGN scaling trigger and threshold testing"
+        - "IMPLEMENT scaling performance and efficiency testing"
+
+  phase_9:
+    name: "Security and Compliance Testing Examples"
+    mandatory_actions:
+      - "DEVELOP comprehensive security testing patterns for each service"
+      - "CREATE authentication and authorization testing examples"
+      - "ESTABLISH vulnerability assessment testing methodologies"
+      - "DESIGN compliance validation testing patterns"
+      - "IMPLEMENT security monitoring and incident response examples"
+
+    security_testing_requirements:
+      authentication_testing_patterns:
+        - "CREATE user authentication testing examples"
+        - "DEVELOP service-to-service authentication testing"
+        - "ESTABLISH token management and validation testing"
+        - "DESIGN session management testing patterns"
+        - "IMPLEMENT multi-factor authentication testing"
+
+      authorization_testing_examples:
+        - "DEVELOP role-based access control testing"
+        - "CREATE resource-level authorization testing"
+        - "ESTABLISH permission inheritance testing patterns"
+        - "DESIGN privilege escalation prevention testing"
+        - "IMPLEMENT authorization audit and compliance testing"
+
+      vulnerability_assessment_patterns:
+        - "CREATE security scanning and testing examples"
+        - "DEVELOP penetration testing methodologies"
+        - "ESTABLISH vulnerability detection testing"
+        - "DESIGN security patch validation testing"
+        - "IMPLEMENT security compliance reporting testing"
+
+  phase_10:
+    name: "Testing Examples Validation and Best Practices Documentation"
+    mandatory_actions:
+      - "VALIDATE comprehensive testing examples functionality and effectiveness"
+      - "GENERATE complete testing patterns documentation and guides"
+      - "CREATE testing best practices and implementation guidelines"
+      - "ESTABLISH testing examples maintenance and evolution procedures"
+      - "PROVIDE testing examples certification and quality assurance"
+
+    validation_documentation_requirements:
+      - "MANDATORY: Validate ALL testing examples function correctly"
+      - "MANDATORY: Verify testing pattern effectiveness and reusability"
+      - "MANDATORY: Test examples integration and interoperability"
+      - "MANDATORY: Confirm examples documentation completeness and accuracy"
+      - "FORBIDDEN: Incomplete or unvalidated testing examples"
+
+# Service Testing Examples Validation Criteria
+validation_criteria:
+  service_coverage: "MANDATORY - ALL platform services have comprehensive testing examples"
+  pattern_quality: "MANDATORY - Testing patterns are effective and reusable"
+  implementation_completeness: "MANDATORY - Examples are complete and functional"
+  integration_validation: "MANDATORY - Inter-service testing patterns validated"
+  performance_examples: "MANDATORY - Performance testing examples for all services"
+  security_patterns: "MANDATORY - Security testing examples comprehensive"
+  monitoring_examples: "MANDATORY - Monitoring and observability examples complete"
+  best_practices: "MANDATORY - Testing best practices established and documented"
+  documentation_quality: "MANDATORY - Complete examples documentation provided"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL service testing examples output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-195422"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all examples output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL examples deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all examples outputs"
+    - "FORBIDDEN: Creating examples files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same examples session"
+
+# Service Testing Examples Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE service architecture and establish testing strategies ({{service_scope}})"
+  - "2. DEVELOP n8n workflow engine testing examples and patterns"
+  - "3. CREATE database services testing examples and implementations"
+  - "4. IMPLEMENT AI and processing services testing patterns"
+  - "5. DEVELOP infrastructure services testing examples"
+  - "6. CREATE monitoring and observability testing patterns"
+  - "7. IMPLEMENT integration and communication testing examples"
+  - "8. DEVELOP performance and scalability testing patterns"
+  - "9. CREATE security and compliance testing examples"
+  - "10. VALIDATE comprehensive examples and document best practices"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each examples development phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all examples development tracking"
+  - "MANDATORY: Timestamp all examples deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Service Testing Examples Framework
+examples_framework:
+  service_categories:
+    core_application_services:
+      - "n8n workflow orchestration and execution testing"
+      - "PostgreSQL database operations and integrity testing"
+      - "Neo4j graph database and query testing"
+      - "Qdrant vector database and similarity search testing"
+
+    ai_and_processing_services:
+      - "LightRAG AI processing and pipeline testing"
+      - "Machine learning model inference testing"
+      - "Data processing and transformation testing"
+      - "AI service integration and validation testing"
+
+    infrastructure_services:
+      - "Terraform infrastructure provisioning testing"
+      - "Ansible configuration management testing"
+      - "Container orchestration and deployment testing"
+      - "Network and security configuration testing"
+
+    monitoring_and_observability:
+      - "Prometheus metrics collection testing"
+      - "Grafana dashboard and visualization testing"
+      - "Log aggregation and analysis testing"
+      - "Alert management and notification testing"
+
+# Testing Pattern Categories
+pattern_categories:
+  functional_testing_patterns:
+    - "API endpoint functionality validation"
+    - "Business logic and workflow testing"
+    - "Data processing and transformation testing"
+    - "User interface and interaction testing"
+
+  integration_testing_patterns:
+    - "Service-to-service communication testing"
+    - "Database integration and consistency testing"
+    - "API gateway and routing testing"
+    - "Event-driven architecture testing"
+
+  performance_testing_patterns:
+    - "Load testing and capacity validation"
+    - "Stress testing and failure point identification"
+    - "Performance optimization and tuning testing"
+    - "Scalability and auto-scaling testing"
+
+  security_testing_patterns:
+    - "Authentication and authorization testing"
+    - "Data encryption and privacy testing"
+    - "Vulnerability assessment and penetration testing"
+    - "Compliance and audit testing"
+
+# Implementation Style Guidelines
+implementation_styles:
+  unit_testing_approach:
+    - "Individual component and function testing"
+    - "Mock and stub-based isolation testing"
+    - "Test-driven development patterns"
+    - "Code coverage and quality testing"
+
+  integration_testing_approach:
+    - "Component integration and interaction testing"
+    - "End-to-end workflow testing"
+    - "API contract and compatibility testing"
+    - "Data flow and consistency testing"
+
+  system_testing_approach:
+    - "Complete system functionality testing"
+    - "Non-functional requirement testing"
+    - "User acceptance and validation testing"
+    - "Production environment testing"
+
+# Best Practices Framework
+best_practices:
+  testing_design_principles:
+    - "Test independence and isolation"
+    - "Repeatable and deterministic testing"
+    - "Comprehensive coverage and validation"
+    - "Maintainable and scalable test design"
+
+  implementation_guidelines:
+    - "Clear and descriptive test naming"
+    - "Comprehensive test documentation"
+    - "Efficient test execution and reporting"
+    - "Continuous integration and automation"
+
+  quality_assurance:
+    - "Test code review and validation"
+    - "Test maintenance and evolution"
+    - "Test performance and optimization"
+    - "Test reliability and stability"
+
+# Service-Specific Testing Considerations
+service_considerations:
+  n8n_workflow_engine:
+    - "Workflow definition and validation testing"
+    - "Node execution and error handling testing"
+    - "Workflow scheduling and trigger testing"
+    - "Performance and resource utilization testing"
+
+  database_services:
+    - "Data consistency and integrity testing"
+    - "Query performance and optimization testing"
+    - "Backup and recovery validation testing"
+    - "Concurrent access and locking testing"
+
+  ai_processing_services:
+    - "Model accuracy and quality testing"
+    - "Processing pipeline validation testing"
+    - "Resource utilization and scaling testing"
+    - "Integration and API testing"
+
+  infrastructure_services:
+    - "Deployment and provisioning testing"
+    - "Configuration management testing"
+    - "Security and compliance testing"
+    - "Monitoring and alerting testing"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL service testing examples MUST be comprehensive and complete"
+    - "ALL patterns MUST be reusable and adaptable"
+    - "ALL implementations MUST be validated and proven"
+    - "ALL examples MUST include proper documentation"
+    - "ALL patterns MUST follow best practices"
+    - "ALL examples MUST be production-ready"
+    - "ALWAYS use systematic examples development methodology"
+    - "NEVER create incomplete or superficial examples"
+
+  strictly_forbidden:
+    - "Creating incomplete or superficial examples"
+    - "Developing generic patterns without service specificity"
+    - "Skipping comprehensive implementation validation"
+    - "Example development without proper documentation"
+    - "Missing systematic approach to pattern creation"
+    - "Creating examples without measurable outcomes"
+    - "Proceeding without examples validation"
+    - "Development without integration and interoperability"

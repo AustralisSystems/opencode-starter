@@ -1,0 +1,115 @@
+# === MCP PROMPT: Simple Quality Fix Protocol ===
+name: "quality-fix-simple-prompt"
+version: "1.0.0"
+description: "Streamlined quality fix protocol for basic code formatting, linting, and style improvements"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Simple Quality Fix"
+  description: "Execute systematic code quality improvements including formatting, linting, import organization, and basic security fixes with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to fix"
+      required: true
+
+    fix_scope:
+      type: "string"
+      description: "Scope of quality fixes to apply"
+      required: true
+      enum: ["formatting", "linting", "imports", "security", "comprehensive"]
+
+    formatter_config:
+      type: "string"
+      description: "Code formatter configuration"
+      required: false
+      enum: ["black", "prettier", "standard", "custom"]
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Code Quality Assessment and Discovery"
+    mandatory_actions:
+      - "SCAN codebase for formatting and style issues"
+      - "IDENTIFY linting violations and code quality problems"
+      - "CATALOG import organization and unused dependencies"
+
+  phase_2:
+    name: "Code Formatting and Style Standardization"
+    mandatory_actions:
+      - "APPLY Black formatter to all Python files"
+      - "ORGANIZE imports using isort with Black profile"
+      - "FIX basic linting issues and style violations"
+
+  phase_3:
+    name: "Import Organization and Dependency Cleanup"
+    mandatory_actions:
+      - "SORT and organize import statements"
+      - "REMOVE unused imports and dependencies"
+      - "STANDARDIZE import grouping and ordering"
+
+  phase_4:
+    name: "Basic Security Issue Resolution"
+    mandatory_actions:
+      - "IDENTIFY and remove hardcoded secrets"
+      - "MOVE sensitive data to environment variables"
+      - "APPLY basic security improvements"
+
+  phase_5:
+    name: "Code Complexity and Structure Optimization"
+    mandatory_actions:
+      - "SIMPLIFY overly complex functions"
+      - "IMPROVE code readability and structure"
+      - "OPTIMIZE basic performance patterns"
+
+  phase_6:
+    name: "Quality Standards Compliance"
+    mandatory_actions:
+      - "VERIFY adherence to coding standards"
+      - "ENSURE consistent formatting and style"
+      - "VALIDATE code quality improvements"
+
+  phase_7:
+    name: "Automated Fix Application"
+    mandatory_actions:
+      - "RUN automated formatters and linters"
+      - "APPLY automated fixes and improvements"
+      - "VALIDATE successful fix application"
+
+  phase_8:
+    name: "Validation and Testing"
+    mandatory_actions:
+      - "TEST code compilation and functionality"
+      - "VERIFY no regressions introduced"
+      - "VALIDATE quality improvements achieved"
+
+  phase_9:
+    name: "Documentation and Reporting"
+    mandatory_actions:
+      - "DOCUMENT all quality fixes applied"
+      - "GENERATE quality improvement report"
+      - "RECORD metrics and improvements"
+
+  phase_10:
+    name: "Final Validation and Certification"
+    mandatory_actions:
+      - "VALIDATE complete quality improvement"
+      - "CERTIFY readiness for next quality phase"
+      - "CONFIRM all simple fixes completed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality fix output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "Simple_Quality_Fixes-{{YYYY-MM-DD-HHMMSS}}.ipynb (quality fix report)"
+    - "Formatting_Results-{{YYYY-MM-DD-HHMMSS}}.md (formatting improvements)"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL Python files MUST be properly formatted"
+    - "ALL import statements MUST be organized"
+    - "ALL basic linting issues MUST be resolved"
+    - "ALL hardcoded secrets MUST be removed"

@@ -1,0 +1,450 @@
+# === Python Quality Standards - TIER 2: COMMON STANDARDS ===
+name: "python-quality-tier2-standards"
+version: "1.0.0"
+description: "Python quality standards - tools, patterns, workflows (loaded when needed)"
+tier: 2
+token_target: "< 2000 tokens"
+
+# ============================================================================
+# SECTION 1: PYTHON QUALITY TOOLS
+# ============================================================================
+tools:
+  linting_formatting:
+    black:
+      purpose: "Code formatting"
+      command: "black --check <file>"
+      auto_fix: "black <file>"
+      config: "Line length 88 (default)"
+
+    ruff:
+      purpose: "Fast Python linter (replaces flake8, isort, pydocstyle)"
+      command: "ruff check <path>"
+      auto_fix: "ruff check --fix <path>"
+      features: "All PEP 8 rules, import sorting, docstring checks"
+
+    isort:
+      purpose: "Import sorting"
+      command: "isort --check-only <file>"
+      auto_fix: "isort <file>"
+      groups: "stdlib, third-party, first-party, local"
+
+  type_checking:
+    mypy:
+      purpose: "Static type checking"
+      command: "mypy <file>"
+      strict_mode: "mypy --strict <file>"
+      checks: "Type annotations, consistency, generics, Protocols"
+
+  security:
+    bandit:
+      purpose: "Security vulnerability scanner"
+      command: "bandit -r <directory>"
+      severity_levels: "Low, Medium, High"
+      checks: "SQL injection, exec/eval, pickle, hardcoded secrets"
+
+    safety:
+      purpose: "Dependency vulnerability checker"
+      command: "safety check"
+      database: "Known CVE database"
+      checks: "Package versions, known vulnerabilities"
+
+  complexity:
+    radon:
+      purpose: "Complexity metrics"
+      commands:
+        cyclomatic: "radon cc <file>"
+        maintainability: "radon mi <file>"
+        raw_metrics: "radon raw <file>"
+      thresholds:
+        complexity: "< 15"
+        maintainability: "> 20"
+
+  documentation:
+    pydocstyle:
+      purpose: "Docstring style checker"
+      command: "pydocstyle <file>"
+      standard: "PEP 257"
+      checks: "Docstring presence, format, completeness"
+
+    interrogate:
+      purpose: "Docstring coverage measurement"
+      command: "interrogate <directory>"
+      coverage_target: "> 80%"
+
+  testing:
+    pytest:
+      purpose: "Test execution and coverage"
+      command: "pytest --cov=<module> --cov-report=html"
+      coverage_target: "> 80%"
+
+    coverage:
+      purpose: "Test coverage measurement"
+      command: "coverage run -m pytest"
+      report: "coverage report -m"
+
+# ============================================================================
+# SECTION 2: EXECUTION PHASES (10-Phase Standard Workflow)
+# ============================================================================
+execution_phases:
+  phase_1:
+    name: "Scope Definition and Validation"
+    focus: "Validate target area and identify Python files"
+    actions:
+      - "Validate target exists"
+      - "Identify all Python files"
+      - "Map package structure"
+      - "Detect dependencies"
+
+  phase_2:
+    name: "Style and Formatting"
+    focus: "PEP 8 compliance and code formatting"
+    tools: ["black", "ruff", "isort"]
+    actions:
+      - "Run black formatting"
+      - "Execute ruff linting"
+      - "Sort imports"
+      - "Check naming conventions"
+
+  phase_3:
+    name: "Type Safety"
+    focus: "Type annotations and mypy validation"
+    tools: ["mypy"]
+    actions:
+      - "Run mypy strict mode"
+      - "Check type coverage"
+      - "Validate consistency"
+      - "Assess Protocol compliance"
+
+  phase_4:
+    name: "Security Scanning"
+    focus: "Vulnerability detection"
+    tools: ["bandit", "safety"]
+    actions:
+      - "Scan for security issues"
+      - "Check dependencies"
+      - "Validate input handling"
+      - "Assess cryptographic usage"
+
+  phase_5:
+    name: "Test Coverage"
+    focus: "Test quality and coverage measurement"
+    tools: ["pytest", "coverage"]
+    actions:
+      - "Run tests with coverage"
+      - "Check coverage percentages"
+      - "Validate assertions"
+      - "Assess test organization"
+
+  phase_6:
+    name: "Code Complexity"
+    focus: "Complexity metrics and maintainability"
+    tools: ["radon"]
+    actions:
+      - "Measure cyclomatic complexity"
+      - "Check cognitive complexity"
+      - "Calculate maintainability index"
+      - "Identify refactoring candidates"
+
+  phase_7:
+    name: "Documentation Quality"
+    focus: "Docstring completeness and quality"
+    tools: ["pydocstyle", "interrogate"]
+    actions:
+      - "Check PEP 257 compliance"
+      - "Verify parameter docs"
+      - "Validate return docs"
+      - "Assess API documentation"
+
+  phase_8:
+    name: "Safe Auto-fixes"
+    focus: "Apply safe, non-breaking improvements"
+    actions:
+      - "Apply black formatting"
+      - "Fix ruff auto-fixable issues"
+      - "Sort imports"
+      - "Add obvious type hints"
+
+  phase_9:
+    name: "Issue Flagging"
+    focus: "Identify complex issues for remediation"
+    actions:
+      - "Flag complex problems"
+      - "Classify by severity"
+      - "Create recommendations"
+      - "Prioritize fixes"
+
+  phase_10:
+    name: "Report Generation"
+    focus: "Comprehensive quality reports"
+    deliverables:
+      - "Quality assessment report"
+      - "Issues and recommendations"
+      - "Fix plan with priorities"
+
+# ============================================================================
+# SECTION 3: SOLID PRINCIPLES (Python Context)
+# ============================================================================
+solid_principles:
+  single_responsibility:
+    principle: "Each class/module should have one reason to change"
+    python_patterns:
+      - "Use separate modules for distinct concerns"
+      - "Extract classes with single purpose"
+      - "Avoid god objects and modules"
+    indicators:
+      - "Class has multiple responsibilities"
+      - "Function does too many things"
+      - "Module has mixed concerns"
+
+  open_closed:
+    principle: "Open for extension, closed for modification"
+    python_patterns:
+      - "Use Abstract Base Classes (ABC)"
+      - "Implement plugin patterns"
+      - "Use dependency injection"
+      - "Strategy pattern with protocols"
+    indicators:
+      - "Need to modify existing code for new features"
+      - "Hardcoded logic without extension points"
+
+  liskov_substitution:
+    principle: "Subclasses must be substitutable for base classes"
+    python_patterns:
+      - "Maintain behavioral contracts"
+      - "Don't strengthen preconditions"
+      - "Don't weaken postconditions"
+      - "Use Protocol for duck typing"
+    indicators:
+      - "Subclass changes base behavior"
+      - "Type checking with isinstance"
+      - "Unexpected exceptions in subclass"
+
+  interface_segregation:
+    principle: "Clients shouldn't depend on unused interfaces"
+    python_patterns:
+      - "Use Protocol classes for specific contracts"
+      - "Split fat interfaces"
+      - "Use multiple inheritance sparingly"
+      - "Create focused ABC classes"
+    indicators:
+      - "Large ABC with many methods"
+      - "Classes implement unused methods"
+      - "Clients depend on irrelevant methods"
+
+  dependency_inversion:
+    principle: "Depend on abstractions, not concretions"
+    python_patterns:
+      - "Use Protocol or ABC for dependencies"
+      - "Inject dependencies (constructor, parameter)"
+      - "Use factory patterns"
+      - "Avoid direct imports of concrete classes"
+    indicators:
+      - "Direct instantiation of concrete classes"
+      - "Tight coupling to specific implementations"
+      - "Hard to test without real dependencies"
+
+# ============================================================================
+# SECTION 4: COMMON DESIGN PATTERNS
+# ============================================================================
+design_patterns:
+  pythonic_patterns:
+    context_manager:
+      pattern: "with statement and __enter__/__exit__"
+      use_cases: "Resource management, temporary state"
+      example: "with open(file) as f: ..."
+
+    descriptor:
+      pattern: "__get__, __set__, __delete__"
+      use_cases: "Property validation, lazy computation"
+      example: "property decorator, cached_property"
+
+    decorator:
+      pattern: "@decorator syntax"
+      use_cases: "Cross-cutting concerns, aspect-oriented"
+      example: "@lru_cache, @property, @dataclass"
+
+    generator:
+      pattern: "yield statement"
+      use_cases: "Lazy evaluation, memory efficiency"
+      example: "Generator expressions, yield from"
+
+  creational_patterns:
+    factory:
+      pattern: "Factory function or class"
+      use_cases: "Object creation abstraction"
+
+    builder:
+      pattern: "Fluent interface for construction"
+      use_cases: "Complex object creation"
+
+    singleton:
+      pattern: "Module-level or metaclass"
+      use_cases: "Single instance requirement"
+      warning: "Use sparingly, consider module-level instead"
+
+  structural_patterns:
+    adapter:
+      pattern: "Wrapper to match interfaces"
+      use_cases: "Interface compatibility"
+
+    facade:
+      pattern: "Simplified interface to complex system"
+      use_cases: "API simplification"
+
+    proxy:
+      pattern: "Surrogate or placeholder"
+      use_cases: "Lazy loading, access control"
+
+  behavioral_patterns:
+    strategy:
+      pattern: "Interchangeable algorithms"
+      use_cases: "Algorithm selection at runtime"
+      python_approach: "Functions as first-class objects, Protocol"
+
+    observer:
+      pattern: "Event notification"
+      use_cases: "Event-driven architecture"
+      python_approach: "callbacks, signals, async generators"
+
+    iterator:
+      pattern: "Sequential access"
+      use_cases: "Collection traversal"
+      python_approach: "__iter__ and __next__, itertools"
+
+# ============================================================================
+# SECTION 5: COMMON ANTI-PATTERNS
+# ============================================================================
+anti_patterns:
+  python_specific:
+    mutable_default_arguments:
+      problem: "def func(arg=[]): ..."
+      impact: "Shared state across calls"
+      fix: "def func(arg=None): arg = arg or []"
+
+    bare_except:
+      problem: "except: (catches KeyboardInterrupt, SystemExit)"
+      impact: "Masks critical errors"
+      fix: "except Exception: or specific exceptions"
+
+    import_star:
+      problem: "from module import *"
+      impact: "Namespace pollution"
+      fix: "Explicit imports"
+
+    type_checking:
+      problem: "type(x) == SomeType"
+      impact: "Breaks duck typing"
+      fix: "isinstance(x, SomeType) or Protocol"
+
+  structural:
+    god_object:
+      problem: "Class does everything"
+      impact: "Hard to maintain and test"
+      fix: "Extract classes, apply SRP"
+
+    circular_imports:
+      problem: "Module A imports B, B imports A"
+      impact: "Import errors, design issue"
+      fix: "Restructure dependencies, use imports in functions"
+
+    feature_envy:
+      problem: "Method uses another class's data extensively"
+      impact: "Poor encapsulation"
+      fix: "Move method to appropriate class"
+
+  code_smells:
+    long_method:
+      threshold: "> 30 lines"
+      fix: "Extract methods"
+
+    large_class:
+      threshold: "> 500 lines"
+      fix: "Extract classes"
+
+    duplicate_code:
+      threshold: "> 5 lines repeated"
+      fix: "Extract function, apply DRY"
+
+# ============================================================================
+# SECTION 6: ERROR HANDLING PATTERNS
+# ============================================================================
+error_handling:
+  exception_patterns:
+    specific_exceptions:
+      pattern: "Catch specific exceptions, not broad Exception"
+      example: "except (ValueError, KeyError): ..."
+
+    exception_chaining:
+      pattern: "raise NewError from original_error"
+      purpose: "Preserve exception context"
+
+    custom_exceptions:
+      pattern: "Create domain-specific exceptions"
+      example: "class ValidationError(Exception): ..."
+
+    context_managers:
+      pattern: "Use context managers for cleanup"
+      example: "with resource: ... ensures cleanup"
+
+  validation_patterns:
+    early_return:
+      pattern: "Validate and return early"
+      example: "if not valid: raise ValueError"
+
+    type_hints:
+      pattern: "Use type hints for validation"
+      example: "def func(x: int) -> str: ..."
+
+    assertions:
+      pattern: "Use assertions for invariants"
+      warning: "Don't use for input validation"
+
+# ============================================================================
+# SECTION 7: STANDARD WORKFLOWS
+# ============================================================================
+workflows:
+  lint_and_check:
+    steps:
+      - "Run black --check"
+      - "Run ruff check"
+      - "Run mypy"
+      - "Run bandit"
+      - "Run safety check"
+
+  quality_analysis:
+    steps:
+      - "Inventory modules"
+      - "Analyze SOLID compliance"
+      - "Identify patterns and anti-patterns"
+      - "Scan security"
+      - "Profile performance"
+      - "Generate reports"
+
+  refactoring:
+    steps:
+      - "Analyze code quality"
+      - "Apply SOLID principles"
+      - "Implement design patterns"
+      - "Modernize to Python 3.11+"
+      - "Add type annotations"
+      - "Validate functionality"
+
+  code_review:
+    steps:
+      - "Discover codebase"
+      - "Analyze structure"
+      - "Evaluate principles"
+      - "Assess security"
+      - "Analyze performance"
+      - "Document interfaces"
+      - "Generate diagrams"
+      - "Inventory technical debt"
+
+# ============================================================================
+# USAGE NOTES
+# ============================================================================
+usage:
+  when_to_load: "Load when you need specific tool configurations or workflow guidance"
+  tier_1_prerequisite: "Always load Tier 1 first (core rules)"
+  next_tier: "Load Tier 3 (python-quality-tier3-detailed.yaml) for detailed examples"
+  escalation: "If you need specific tool flags or comprehensive examples, load Tier 3"

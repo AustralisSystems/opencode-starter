@@ -1,0 +1,452 @@
+# === MCP PROMPT: Plugin Framework Planning Protocol ===
+name: "code-plugin-framework-planning-prompt"
+version: "1.0.0"
+description: "Comprehensive plugin framework planning protocol for exhaustive implementation planning and task breakdown"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Plugin Framework Planning"
+  description: "Execute comprehensive plugin framework planning, task breakdown, and implementation roadmap creation with mandatory quality gates"
+
+  # Argument Schema
+  arguments:
+    plugin_name:
+      type: "string"
+      description: "Name of the plugin framework to plan"
+      required: true
+
+    plugin_complexity:
+      type: "string"
+      description: "Complexity level of the plugin framework"
+      required: true
+      enum: ["simple", "moderate", "complex", "enterprise"]
+
+    framework_context:
+      type: "string"
+      description: "Framework architecture context"
+      required: true
+      enum: ["monolithic", "microservices", "distributed", "event-driven"]
+
+    planning_scope:
+      type: "string"
+      description: "Scope of planning effort"
+      required: false
+      enum: ["comprehensive", "focused", "mvp", "full-feature"]
+
+    integration_requirements:
+      type: "string"
+      description: "Integration and dependency requirements"
+      required: false
+
+    timeline_constraints:
+      type: "string"
+      description: "Timeline and milestone constraints"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI plugin framework planning specialist executing the Plugin Framework Planning Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive planning methodology
+        - Create complete implementation plans and task breakdowns
+        - Maintain production-ready planning standards
+        - Use systematic analysis and planning documentation
+        - Identify all reuse opportunities and dependencies
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating implementation code or actual plugins
+        - Making changes to live systems
+        - Partial or incomplete planning
+        - Creating planning without proper analysis
+        - Skipping risk assessment or quality gates
+        - Creating placeholder or temporary plans
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PLUGIN FRAMEWORK PLANNING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **PLANNING PARAMETERS:**
+        - Plugin Name: {{plugin_name}}
+        - Plugin Complexity: {{plugin_complexity}}
+        - Framework Context: {{framework_context}}
+        - Planning Scope: {{planning_scope}}
+        - Integration Requirements: {{integration_requirements}}
+        - Timeline Constraints: {{timeline_constraints}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PLUGIN FRAMEWORK PLANNING PROTOCOL:**
+
+# Plugin Framework Planning Protocol Configuration
+planning_protocol:
+  # Planning Scope - MANDATORY COMPREHENSIVE COVERAGE
+  planning_focus:
+    plugin_requirements_analysis: true # MUST analyze all requirements
+    task_breakdown_structure: true # MUST create detailed task breakdown
+    dependency_mapping: true # MUST map all dependencies
+    resource_planning: true # MUST plan resources and timelines
+    risk_assessment: true # MUST assess risks and mitigations
+    quality_planning: true # MUST plan quality gates
+    implementation_roadmap: true # MUST create implementation roadmap
+    reuse_analysis: true # MUST analyze code reuse opportunities
+    planning_only: true # STRICTLY planning only, no implementation
+
+  # Planning Configuration - MANDATORY SETTINGS
+  planning_settings:
+    enable_comprehensive_analysis: true
+    identify_reuse_opportunities: true
+    map_dependencies_thoroughly: true
+    plan_quality_gates: true
+    assess_risks_completely: true
+    create_detailed_roadmap: true
+    systematic_approach: true # MANDATORY: Systematic planning methodology
+    production_focused: true # MANDATORY: Production-ready planning
+    comprehensive_coverage: true # MANDATORY: Cover all planning aspects
+    professional_standards: true # MANDATORY: Professional planning standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Plugin Framework Requirements Analysis"
+    mandatory_actions:
+      - "ANALYZE complete plugin framework requirements"
+      - "IDENTIFY all functional and non-functional requirements"
+      - "MAP business objectives and success criteria"
+      - "DOCUMENT stakeholder needs and expectations"
+      - "ESTABLISH acceptance criteria and metrics"
+
+    analysis_requirements:
+      - "MANDATORY: Complete requirements gathering"
+      - "MANDATORY: Stakeholder analysis"
+      - "MANDATORY: Success criteria definition"
+      - "FORBIDDEN: Incomplete requirements analysis"
+
+  phase_2:
+    name: "Plugin Architecture Planning"
+    mandatory_actions:
+      - "PLAN plugin framework component architecture"
+      - "DESIGN plugin interface and contract specifications"
+      - "MAP extension points and hook mechanisms"
+      - "PLAN registry integration architecture"
+      - "DESIGN hot-loading and lifecycle management"
+
+    architecture_planning:
+      component_planning:
+        - "PLAN all plugin framework components"
+        - "DESIGN component interactions and dependencies"
+        - "MAP component responsibilities"
+        - "PLAN component interfaces"
+
+      integration_planning:
+        - "PLAN registry integration points"
+        - "DESIGN discovery mechanisms"
+        - "MAP installation workflows"
+        - "PLAN version management"
+
+      lifecycle_planning:
+        - "PLAN installation procedures"
+        - "DESIGN activation workflows"
+        - "MAP deactivation procedures"
+        - "PLAN update mechanisms"
+
+  phase_3:
+    name: "Task Breakdown and Dependency Mapping"
+    mandatory_actions:
+      - "CREATE comprehensive work breakdown structure"
+      - "IDENTIFY all task dependencies and sequences"
+      - "MAP critical path and parallel workstreams"
+      - "ASSIGN task priorities and effort estimates"
+      - "ESTABLISH task ownership and responsibilities"
+
+    task_breakdown:
+      structure_creation:
+        - "DECOMPOSE into manageable tasks"
+        - "IDENTIFY task relationships"
+        - "SEQUENCE tasks logically"
+        - "ESTIMATE task durations"
+
+      dependency_analysis:
+        - "MAP inter-task dependencies"
+        - "IDENTIFY blocking dependencies"
+        - "PLAN dependency resolution"
+        - "CREATE dependency matrix"
+
+      critical_path:
+        - "IDENTIFY critical path tasks"
+        - "OPTIMIZE task sequences"
+        - "PLAN parallel execution"
+        - "MINIMIZE total duration"
+
+  phase_4:
+    name: "Resource and Timeline Planning"
+    mandatory_actions:
+      - "ESTIMATE resource requirements for each task"
+      - "PLAN resource allocation and scheduling"
+      - "CREATE realistic timeline with milestones"
+      - "IDENTIFY resource constraints and bottlenecks"
+      - "DEVELOP contingency resource plans"
+
+    resource_planning:
+      estimation:
+        - "ESTIMATE development effort"
+        - "IDENTIFY skill requirements"
+        - "PLAN resource availability"
+        - "CALCULATE resource costs"
+
+      scheduling:
+        - "CREATE project schedule"
+        - "DEFINE milestones"
+        - "PLAN sprint allocations"
+        - "ESTABLISH deadlines"
+
+      optimization:
+        - "OPTIMIZE resource usage"
+        - "BALANCE workloads"
+        - "MINIMIZE bottlenecks"
+        - "PLAN buffer time"
+
+  phase_5:
+    name: "Code Reuse and Integration Analysis"
+    mandatory_actions:
+      - "SCAN existing codebase for reusable components"
+      - "IDENTIFY integration points with existing systems"
+      - "MAP reusable modules and functions"
+      - "PLAN adaptation of existing code"
+      - "DOCUMENT integration requirements"
+
+    reuse_analysis:
+      codebase_scan:
+        - "IDENTIFY reusable components"
+        - "ASSESS adaptation effort"
+        - "MAP integration points"
+        - "EVALUATE compatibility"
+
+      integration_planning:
+        - "PLAN system integrations"
+        - "DESIGN integration interfaces"
+        - "MAP data flows"
+        - "IDENTIFY transformation needs"
+
+      adaptation_strategy:
+        - "PLAN code modifications"
+        - "DESIGN wrapper components"
+        - "MAP refactoring needs"
+        - "ESTIMATE adaptation effort"
+
+  phase_6:
+    name: "Risk Assessment and Mitigation Planning"
+    mandatory_actions:
+      - "IDENTIFY all project risks and threats"
+      - "ASSESS risk probability and impact"
+      - "DEVELOP risk mitigation strategies"
+      - "CREATE contingency plans"
+      - "ESTABLISH risk monitoring procedures"
+
+    risk_management:
+      risk_identification:
+        - "IDENTIFY technical risks"
+        - "ASSESS integration risks"
+        - "EVALUATE schedule risks"
+        - "ANALYZE resource risks"
+
+      mitigation_planning:
+        - "DEVELOP mitigation strategies"
+        - "CREATE contingency plans"
+        - "PLAN risk responses"
+        - "ESTABLISH triggers"
+
+      monitoring_procedures:
+        - "DEFINE risk indicators"
+        - "ESTABLISH monitoring frequency"
+        - "PLAN escalation procedures"
+        - "CREATE risk register"
+
+  phase_7:
+    name: "Quality Gates and Validation Planning"
+    mandatory_actions:
+      - "DEFINE quality gates at each milestone"
+      - "ESTABLISH validation criteria and procedures"
+      - "PLAN testing and verification strategies"
+      - "CREATE quality metrics and KPIs"
+      - "DEVELOP quality assurance workflows"
+
+    quality_planning:
+      gate_definition:
+        - "DEFINE entry criteria"
+        - "ESTABLISH exit criteria"
+        - "SPECIFY validation procedures"
+        - "CREATE checklists"
+
+      validation_strategy:
+        - "PLAN validation approaches"
+        - "DEFINE test strategies"
+        - "CREATE verification procedures"
+        - "ESTABLISH acceptance criteria"
+
+      metrics_planning:
+        - "DEFINE quality metrics"
+        - "ESTABLISH KPIs"
+        - "PLAN measurement procedures"
+        - "CREATE reporting formats"
+
+  phase_8:
+    name: "Security and Performance Planning"
+    mandatory_actions:
+      - "PLAN security implementation strategies"
+      - "DESIGN plugin isolation mechanisms"
+      - "DEVELOP performance optimization plans"
+      - "CREATE scalability strategies"
+      - "ESTABLISH monitoring procedures"
+
+    security_planning:
+      security_strategy:
+        - "PLAN authentication mechanisms"
+        - "DESIGN authorization models"
+        - "DEVELOP isolation strategies"
+        - "CREATE audit procedures"
+
+      performance_planning:
+        - "DEFINE performance targets"
+        - "PLAN optimization strategies"
+        - "DESIGN caching mechanisms"
+        - "CREATE scaling plans"
+
+      monitoring_planning:
+        - "PLAN monitoring implementation"
+        - "DEFINE metrics collection"
+        - "CREATE alerting strategies"
+        - "ESTABLISH baselines"
+
+  phase_9:
+    name: "Implementation Roadmap Creation"
+    mandatory_actions:
+      - "CREATE phased implementation roadmap"
+      - "DEFINE clear milestones and deliverables"
+      - "ESTABLISH go/no-go decision points"
+      - "PLAN incremental delivery strategy"
+      - "DEVELOP rollback procedures"
+
+    roadmap_development:
+      phase_planning:
+        - "DEFINE implementation phases"
+        - "SEQUENCE deliverables"
+        - "ESTABLISH dependencies"
+        - "CREATE phase gates"
+
+      milestone_definition:
+        - "IDENTIFY key milestones"
+        - "DEFINE success criteria"
+        - "ESTABLISH timelines"
+        - "CREATE deliverables list"
+
+      delivery_strategy:
+        - "PLAN incremental delivery"
+        - "DEFINE MVP scope"
+        - "CREATE feature rollout plan"
+        - "ESTABLISH feedback loops"
+
+  phase_10:
+    name: "Planning Documentation and Validation"
+    mandatory_actions:
+      - "COMPILE comprehensive planning documentation"
+      - "VALIDATE planning completeness and accuracy"
+      - "REVIEW with stakeholders and get approvals"
+      - "CREATE planning artifacts with timestamps"
+      - "GENERATE markdown document deliverables"
+
+    documentation_requirements:
+      - "MANDATORY: Create all planning deliverables"
+      - "MANDATORY: Include detailed task breakdowns"
+      - "MANDATORY: Document all dependencies"
+      - "MANDATORY: Provide resource estimates"
+      - "FORBIDDEN: Incomplete planning documentation"
+
+# Planning Validation Criteria
+validation_criteria:
+  requirements_complete: "MANDATORY - All requirements analyzed and documented"
+  architecture_planned: "MANDATORY - Complete architecture planning done"
+  tasks_decomposed: "MANDATORY - All tasks broken down with dependencies"
+  resources_planned: "MANDATORY - Resources and timeline established"
+  reuse_analyzed: "MANDATORY - Code reuse opportunities identified"
+  risks_assessed: "MANDATORY - All risks identified with mitigations"
+  quality_planned: "MANDATORY - Quality gates and validation defined"
+  security_planned: "MANDATORY - Security and performance strategies created"
+  roadmap_complete: "MANDATORY - Implementation roadmap established"
+  documentation_ready: "MANDATORY - All planning deliverables created"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL planning output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "Implementation_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (implementation plan)"
+    - "Testing_Strategy_{{YYYYMMDD-HHMMSS}}.ipynb (testing strategy)"
+    - "Integration_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (integration plan)"
+    - "Deployment_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (deployment plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all planning output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL planning deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all planning outputs"
+    - "FORBIDDEN: Creating planning files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same planning session"
+
+# Planning Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ANALYZE plugin framework requirements for ({{plugin_name}}) with complexity ({{plugin_complexity}})"
+  - "2. PLAN architecture within ({{framework_context}}) context"
+  - "3. CREATE comprehensive task breakdown with dependencies"
+  - "4. ESTIMATE resources and create timeline"
+  - "5. ANALYZE code reuse opportunities"
+  - "6. ASSESS risks and plan mitigations"
+  - "7. DEFINE quality gates and validation procedures"
+  - "8. PLAN security and performance strategies"
+  - "9. CREATE phased implementation roadmap"
+  - "10. COMPILE comprehensive planning documentation with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each planning phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all planning tracking"
+  - "MANDATORY: Timestamp all planning deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL planning MUST be comprehensive and complete"
+    - "ALL requirements MUST be thoroughly analyzed"
+    - "ALL tasks MUST be properly decomposed"
+    - "ALL dependencies MUST be identified"
+    - "ALL risks MUST be assessed with mitigations"
+    - "ALL quality gates MUST be defined"
+    - "ALWAYS use systematic planning methodology"
+    - "NEVER create implementation code"
+
+  strictly_forbidden:
+    - "Creating implementation code or actual plugins"
+    - "Making changes to live systems"
+    - "Partial or incomplete planning"
+    - "Skipping risk assessment"
+    - "Creating planning without analysis"
+    - "Missing critical planning components"
+    - "Proceeding without comprehensive coverage"
+    - "Planning without production focus"

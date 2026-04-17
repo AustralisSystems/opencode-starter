@@ -1,0 +1,721 @@
+# === MCP PROMPT: Test Prerequisites Protocol ===
+name: "test-protocol-prerequisites-prompt"
+version: "1.0.0"
+description: "Comprehensive test prerequisite setup and validation protocol for test environment preparation, service health validation, and configuration management"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Test Prerequisites Implementation"
+  description: "Implement comprehensive test prerequisite validation systems with environment setup, service health checks, and configuration management"
+
+  # Argument Schema
+  arguments:
+    prerequisite_scope:
+      type: "string"
+      description: "Scope of prerequisite setup and validation"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "service-specific",
+          "environment-setup",
+          "security-focused",
+          "performance-baseline",
+          "minimal",
+        ]
+
+    validation_level:
+      type: "string"
+      description: "Level of validation depth and coverage"
+      required: true
+      enum:
+        [
+          "basic",
+          "standard",
+          "advanced",
+          "enterprise",
+          "production-ready",
+        ]
+
+    setup_complexity:
+      type: "string"
+      description: "Complexity level of setup automation"
+      required: true
+      enum:
+        [
+          "simple",
+          "standard",
+          "comprehensive",
+          "enterprise",
+          "full-automation",
+        ]
+
+    environment_type:
+      type: "string"
+      description: "Target environment type for prerequisite setup"
+      required: false
+      enum: ["local", "development", "staging", "production", "multi-environment"]
+
+    service_focus:
+      type: "string"
+      description: "Focus area for service configuration"
+      required: false
+      enum: ["all-services", "core-services", "specific-services", "custom"]
+
+    automation_level:
+      type: "string"
+      description: "Level of setup and validation automation"
+      required: false
+      enum: ["manual", "semi-automated", "fully-automated", "enterprise"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI test prerequisite specialist implementing comprehensive environment setup and validation systems.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive prerequisite validation methodology
+        - Implement robust environment setup and service health validation
+        - Maintain production-ready prerequisite standards
+        - Use systematic validation and configuration procedures
+        - Follow SOLID, DRY, KISS principles in automation design
+
+        ABSOLUTELY FORBIDDEN:
+        - Executing actual test implementations or live system changes
+        - Modifying production systems or live configurations
+        - Creating new test cases or test executions
+        - Setting up with mocked services or fake configurations
+        - Partial or incomplete prerequisite coverage
+        - Proceeding with invalid or unhealthy services
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY TEST PREREQUISITE PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **TEST PREREQUISITE PARAMETERS:**
+        - Prerequisite Scope: {{prerequisite_scope}}
+        - Validation Level: {{validation_level}}
+        - Setup Complexity: {{setup_complexity}}
+        - Environment Type: {{environment_type}}
+        - Service Focus: {{service_focus}}
+        - Automation Level: {{automation_level}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING TEST PREREQUISITE PROTOCOL:**
+
+# Test Prerequisites Protocol Configuration
+prerequisite_protocol:
+  # Prerequisite Scope - MANDATORY COMPREHENSIVE COVERAGE
+  prerequisite_focus:
+    service_health_validation: true # MUST validate all service health
+    environment_configuration: true # MUST configure test environments
+    data_preparation: true # MUST prepare and validate test data
+    security_validation: true # MUST validate security compliance
+    performance_baseline: true # MUST establish performance baselines
+    monitoring_setup: true # MUST configure monitoring systems
+    backup_recovery: true # MUST validate backup and recovery
+    automation_framework: true # MUST implement automation systems
+    setup_only: true # STRICTLY setup only, no test execution
+
+  # Prerequisite Configuration - MANDATORY SETTINGS
+  prerequisite_settings:
+    enable_comprehensive_validation: true
+    implement_automated_setup: true
+    configure_health_monitoring: true
+    establish_security_compliance: true
+    create_performance_baselines: true
+    setup_monitoring_systems: true
+    systematic_approach: true # MANDATORY: Systematic setup methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all prerequisite aspects
+    production_ready_setup: true # MANDATORY: Production-focused configurations
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Environment Discovery and Assessment"
+    mandatory_actions:
+      - "DISCOVER all system components and current configurations"
+      - "ASSESS current environment state and readiness"
+      - "INVENTORY all services, dependencies, and resources"
+      - "ANALYZE system requirements and prerequisite needs"
+      - "DOCUMENT current system architecture and topology"
+
+    discovery_requirements:
+      - "MANDATORY: Complete system component discovery"
+      - "MANDATORY: Document all service dependencies"
+      - "MANDATORY: Assess current environment readiness"
+      - "FORBIDDEN: Missing any critical system components"
+
+  phase_2:
+    name: "Service Health Check Implementation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive service health check automation"
+      - "CREATE health monitoring dashboards and alerts"
+      - "CONFIGURE service dependency validation"
+      - "SETUP automated health status reporting"
+      - "DEPLOY continuous health monitoring systems"
+
+    service_health_requirements:
+      core_services_validation:
+        - "VALIDATE n8n service health and API accessibility"
+        - "CHECK PostgreSQL database connectivity and performance"
+        - "VERIFY Neo4j graph database availability and queries"
+        - "TEST Qdrant vector database connectivity and operations"
+        - "CONFIRM LightRAG service health and API endpoints"
+
+      infrastructure_services:
+        - "VALIDATE Docker container health and resource usage"
+        - "CHECK load balancer configuration and routing"
+        - "VERIFY DNS resolution and network connectivity"
+        - "TEST SSL/TLS certificate validity and configuration"
+        - "CONFIRM monitoring and logging service availability"
+
+      external_dependencies:
+        - "VALIDATE external API connectivity and authentication"
+        - "CHECK third-party service integrations and health"
+        - "VERIFY cloud provider service availability"
+        - "TEST external data source connectivity"
+        - "CONFIRM webhook and callback endpoint accessibility"
+
+  phase_3:
+    name: "Environment Configuration Automation"
+    mandatory_actions:
+      - "AUTOMATE environment configuration and setup procedures"
+      - "CREATE configuration management and validation systems"
+      - "IMPLEMENT environment consistency verification"
+      - "CONFIGURE automated environment provisioning"
+      - "DEPLOY configuration drift detection and correction"
+
+    configuration_automation:
+      docker_environment:
+        - "AUTOMATE Docker container configuration and deployment"
+        - "IMPLEMENT Docker Compose service orchestration"
+        - "CONFIGURE container networking and service discovery"
+        - "SETUP volume management and data persistence"
+        - "VALIDATE container health checks and restart policies"
+
+      database_configuration:
+        - "AUTOMATE PostgreSQL database setup and configuration"
+        - "IMPLEMENT database schema validation and migration"
+        - "CONFIGURE database connection pooling and optimization"
+        - "SETUP database backup and recovery automation"
+        - "VALIDATE database performance and resource allocation"
+
+      application_configuration:
+        - "AUTOMATE n8n application configuration and setup"
+        - "IMPLEMENT environment variable management"
+        - "CONFIGURE application security and authentication"
+        - "SETUP application logging and monitoring"
+        - "VALIDATE application functionality and integrations"
+
+  phase_4:
+    name: "Data Preparation and Validation Framework"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive test data preparation automation"
+      - "CREATE data validation and quality assurance systems"
+      - "CONFIGURE data seeding and cleanup procedures"
+      - "SETUP data consistency and integrity verification"
+      - "DEPLOY automated data refresh and synchronization"
+
+    data_preparation_framework:
+      test_data_management:
+        - "CREATE test data generation and seeding automation"
+        - "IMPLEMENT data anonymization and privacy protection"
+        - "CONFIGURE data versioning and rollback capabilities"
+        - "SETUP data quality validation and verification"
+        - "VALIDATE data consistency across all services"
+
+      database_preparation:
+        - "PREPARE PostgreSQL test schemas and sample data"
+        - "SEED Neo4j graph database with test relationships"
+        - "CONFIGURE Qdrant vector embeddings for testing"
+        - "SETUP database state management and snapshots"
+        - "VALIDATE cross-database data consistency"
+
+      api_data_preparation:
+        - "PREPARE API test data and request/response pairs"
+        - "CONFIGURE authentication tokens and test accounts"
+        - "SETUP workflow definitions and test scenarios"
+        - "VALIDATE API data format and schema compliance"
+        - "ENSURE data isolation and test independence"
+
+  phase_5:
+    name: "Security Validation and Compliance Framework"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive security validation automation"
+      - "CREATE security compliance checking and reporting"
+      - "CONFIGURE vulnerability scanning and assessment"
+      - "SETUP security policy enforcement and monitoring"
+      - "DEPLOY automated security baseline validation"
+
+    security_validation_framework:
+      authentication_security:
+        - "VALIDATE authentication mechanisms and token security"
+        - "CHECK password policies and security requirements"
+        - "VERIFY multi-factor authentication configuration"
+        - "TEST session management and timeout handling"
+        - "CONFIRM OAuth and SSO integration security"
+
+      authorization_security:
+        - "VALIDATE role-based access control implementation"
+        - "CHECK permission enforcement and privilege separation"
+        - "VERIFY API endpoint authorization and protection"
+        - "TEST resource-level access control mechanisms"
+        - "CONFIRM audit logging and access tracking"
+
+      infrastructure_security:
+        - "VALIDATE network security and firewall configuration"
+        - "CHECK SSL/TLS certificate management and renewal"
+        - "VERIFY container security and image scanning"
+        - "TEST database security and encryption settings"
+        - "CONFIRM monitoring and alerting security measures"
+
+  phase_6:
+    name: "Performance Baseline Establishment"
+    mandatory_actions:
+      - "ESTABLISH comprehensive performance baselines for all services"
+      - "CREATE performance monitoring and measurement systems"
+      - "CONFIGURE performance threshold and alerting systems"
+      - "SETUP automated performance regression detection"
+      - "DEPLOY continuous performance tracking and analysis"
+
+    performance_baseline_establishment:
+      service_performance_baselines:
+        - "MEASURE n8n workflow execution performance baselines"
+        - "ESTABLISH database query performance benchmarks"
+        - "SET API response time and throughput baselines"
+        - "CONFIGURE resource utilization baseline metrics"
+        - "VALIDATE system scalability and capacity limits"
+
+      infrastructure_performance:
+        - "MEASURE container startup and deployment times"
+        - "ESTABLISH network latency and bandwidth baselines"
+        - "SET storage I/O performance benchmarks"
+        - "CONFIGURE memory and CPU utilization baselines"
+        - "VALIDATE load balancing and traffic distribution"
+
+      end_to_end_performance:
+        - "MEASURE complete workflow execution times"
+        - "ESTABLISH user journey performance baselines"
+        - "SET integration performance benchmarks"
+        - "CONFIGURE system-wide performance metrics"
+        - "VALIDATE performance under various load conditions"
+
+  phase_7:
+    name: "Monitoring and Observability Setup"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive monitoring and observability systems"
+      - "CREATE real-time dashboard and visualization setup"
+      - "CONFIGURE alerting and notification systems"
+      - "SETUP log aggregation and analysis automation"
+      - "DEPLOY distributed tracing and performance monitoring"
+
+    monitoring_observability_setup:
+      metrics_collection:
+        - "CONFIGURE Prometheus metrics collection and storage"
+        - "SETUP application performance monitoring (APM)"
+        - "IMPLEMENT custom metrics and business KPI tracking"
+        - "CONFIGURE resource utilization and system metrics"
+        - "VALIDATE metrics accuracy and data completeness"
+
+      dashboard_configuration:
+        - "CREATE Grafana dashboards for system monitoring"
+        - "IMPLEMENT real-time alerting and status displays"
+        - "CONFIGURE performance trending and analysis views"
+        - "SETUP operational dashboards for service health"
+        - "VALIDATE dashboard accuracy and usability"
+
+      logging_and_tracing:
+        - "CONFIGURE centralized logging with ELK stack"
+        - "IMPLEMENT distributed tracing with Jaeger/Zipkin"
+        - "SETUP log analysis and pattern detection"
+        - "CONFIGURE audit logging and compliance tracking"
+        - "VALIDATE log correlation and trace completeness"
+
+  phase_8:
+    name: "Backup and Recovery Procedure Validation"
+    mandatory_actions:
+      - "IMPLEMENT comprehensive backup and recovery automation"
+      - "CREATE disaster recovery testing and validation"
+      - "CONFIGURE automated backup scheduling and verification"
+      - "SETUP recovery procedure testing and documentation"
+      - "DEPLOY backup integrity and restoration validation"
+
+    backup_recovery_validation:
+      database_backup_recovery:
+        - "CONFIGURE automated PostgreSQL backup and restore"
+        - "IMPLEMENT Neo4j graph database backup procedures"
+        - "SETUP Qdrant vector database backup automation"
+        - "VALIDATE cross-database backup consistency"
+        - "TEST point-in-time recovery capabilities"
+
+      application_backup_recovery:
+        - "CONFIGURE n8n workflow and configuration backup"
+        - "IMPLEMENT application state backup and restore"
+        - "SETUP container image and configuration backup"
+        - "VALIDATE application recovery procedures"
+        - "TEST complete system restoration capabilities"
+
+      disaster_recovery_testing:
+        - "IMPLEMENT disaster recovery scenario testing"
+        - "CONFIGURE recovery time objective (RTO) validation"
+        - "SETUP recovery point objective (RPO) verification"
+        - "VALIDATE business continuity procedures"
+        - "TEST failover and failback mechanisms"
+
+  phase_9:
+    name: "Integration and Automation Framework"
+    mandatory_actions:
+      - "INTEGRATE all prerequisite systems with CI/CD pipelines"
+      - "AUTOMATE prerequisite validation and environment setup"
+      - "CONFIGURE seamless integration with development workflows"
+      - "SETUP automated environment provisioning and teardown"
+      - "DEPLOY self-healing and maintenance automation"
+
+    integration_automation_framework:
+      ci_cd_integration:
+        - "INTEGRATE prerequisite validation with CI/CD pipelines"
+        - "CONFIGURE automated environment setup in build processes"
+        - "SETUP prerequisite checks as pipeline gates"
+        - "IMPLEMENT environment provisioning automation"
+        - "VALIDATE pipeline integration and execution"
+
+      infrastructure_as_code:
+        - "IMPLEMENT Infrastructure as Code for environment setup"
+        - "CONFIGURE declarative environment configuration"
+        - "SETUP version-controlled infrastructure definitions"
+        - "IMPLEMENT environment consistency validation"
+        - "VALIDATE infrastructure deployment automation"
+
+      self_healing_automation:
+        - "CONFIGURE automated service recovery and restart"
+        - "IMPLEMENT health check remediation automation"
+        - "SETUP configuration drift detection and correction"
+        - "CONFIGURE automated scaling and resource adjustment"
+        - "VALIDATE self-healing mechanism effectiveness"
+
+  phase_10:
+    name: "Prerequisite Validation Certification and Documentation"
+    mandatory_actions:
+      - "VALIDATE comprehensive prerequisite system functionality"
+      - "GENERATE complete prerequisite validation documentation"
+      - "CREATE operational procedures and troubleshooting guides"
+      - "DOCUMENT maintenance and update procedures"
+      - "PROVIDE prerequisite system certification and sign-off"
+
+    validation_certification_requirements:
+      - "MANDATORY: Validate all prerequisite components function correctly"
+      - "MANDATORY: Verify environment setup automation reliability"
+      - "MANDATORY: Test service health validation accuracy"
+      - "MANDATORY: Confirm security compliance and validation"
+      - "FORBIDDEN: Incomplete or partial prerequisite validation"
+
+# Test Prerequisites Validation Criteria
+validation_criteria:
+  service_health: "MANDATORY - All services healthy and operational"
+  environment_setup: "MANDATORY - Environment properly configured and validated"
+  data_preparation: "MANDATORY - Test data prepared and validated"
+  security_compliance: "MANDATORY - Security validation and compliance verified"
+  performance_baseline: "MANDATORY - Performance baselines established"
+  monitoring_setup: "MANDATORY - Monitoring and observability operational"
+  backup_recovery: "MANDATORY - Backup and recovery procedures validated"
+  automation_framework: "MANDATORY - Automation systems functional"
+  documentation_completeness: "MANDATORY - Complete prerequisite documentation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL prerequisite output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-194422"
+
+  required_outputs:
+    - "Test_Execution_Report_{{YYYYMMDD-HHMMSS}}.ipynb (test execution report)"
+    - "Test_Results_{{YYYYMMDD-HHMMSS}}.ipynb (test results)"
+    - "Coverage_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (coverage analysis)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all prerequisite output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL prerequisite deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all prerequisite outputs"
+    - "FORBIDDEN: Creating prerequisite files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same validation session"
+
+# Test Prerequisites Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DISCOVER environment and assess system readiness ({{prerequisite_scope}})"
+  - "2. IMPLEMENT service health check automation and monitoring"
+  - "3. CONFIGURE environment setup automation and validation"
+  - "4. PREPARE test data and implement validation frameworks"
+  - "5. VALIDATE security compliance and implement checks"
+  - "6. ESTABLISH performance baselines and monitoring"
+  - "7. SETUP monitoring and observability systems"
+  - "8. VALIDATE backup and recovery procedures"
+  - "9. INTEGRATE automation with CI/CD and infrastructure"
+  - "10. CERTIFY prerequisite validation and generate documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each prerequisite setup phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all prerequisite configuration"
+  - "MANDATORY: Timestamp all prerequisite deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Test Prerequisites Framework
+prerequisite_framework:
+  environment_categories:
+    local_development:
+      - "Docker-based service stack setup"
+      - "Local database configuration and seeding"
+      - "Development tool integration and setup"
+      - "Local monitoring and debugging setup"
+
+    staging_environment:
+      - "Cloud-based service deployment"
+      - "Production-like data and configuration"
+      - "Integration testing environment setup"
+      - "Performance testing environment preparation"
+
+    production_environment:
+      - "Production service configuration validation"
+      - "Production security compliance verification"
+      - "Production monitoring and alerting setup"
+      - "Production backup and recovery validation"
+
+  service_categories:
+    core_application_services:
+      - "n8n workflow automation platform"
+      - "PostgreSQL database system"
+      - "Neo4j graph database"
+      - "Qdrant vector database"
+
+    supporting_services:
+      - "LightRAG AI framework"
+      - "Monitoring and observability stack"
+      - "Load balancing and routing"
+      - "Security and authentication services"
+
+    infrastructure_services:
+      - "Container orchestration platform"
+      - "Service mesh and networking"
+      - "Storage and backup systems"
+      - "CI/CD and automation pipelines"
+
+# Service Health Check Specifications
+service_health_specifications:
+  health_check_intervals:
+    real_time: "Every 5 seconds for critical services"
+    frequent: "Every 30 seconds for core services"
+    standard: "Every 2 minutes for supporting services"
+    periodic: "Every 10 minutes for infrastructure services"
+
+  health_check_methods:
+    http_endpoint_checks:
+      - "GET /health endpoint validation"
+      - "GET /metrics endpoint verification"
+      - "GET /ready endpoint confirmation"
+      - "Custom application health endpoints"
+
+    database_health_checks:
+      - "Connection pool status validation"
+      - "Query response time measurement"
+      - "Database size and usage monitoring"
+      - "Replication status verification"
+
+    service_dependency_checks:
+      - "Downstream service connectivity"
+      - "External API availability"
+      - "Message queue health status"
+      - "Cache service accessibility"
+
+# Environment Configuration Templates
+environment_configuration:
+  docker_compose_template:
+    version: "3.8"
+    services:
+      n8n:
+        image: "n8nio/n8n:latest"
+        environment:
+          - "N8N_BASIC_AUTH_ACTIVE=true"
+          - "N8N_BASIC_AUTH_USER=${N8N_BASIC_AUTH_USER}"
+          - "N8N_BASIC_AUTH_PASSWORD=${N8N_BASIC_AUTH_PASSWORD}"
+        healthcheck:
+          test: ["CMD", "curl", "-f", "http://localhost:5678/healthz"]
+          interval: "30s"
+          timeout: "10s"
+          retries: 3
+
+      postgres:
+        image: "postgres:15"
+        environment:
+          - "POSTGRES_DB=${POSTGRES_DB}"
+          - "POSTGRES_USER=${POSTGRES_USER}"
+          - "POSTGRES_PASSWORD=${POSTGRES_PASSWORD}"
+        healthcheck:
+          test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER}"]
+          interval: "30s"
+          timeout: "5s"
+          retries: 5
+
+# Data Preparation Specifications
+data_preparation:
+  test_data_categories:
+    user_data:
+      - "Test user accounts with various roles"
+      - "Authentication credentials and tokens"
+      - "User preference and configuration data"
+      - "User activity and audit log data"
+
+    workflow_data:
+      - "Sample workflow definitions and templates"
+      - "Workflow execution history and logs"
+      - "Workflow node configurations and connections"
+      - "Workflow scheduling and trigger data"
+
+    integration_data:
+      - "External service connection configurations"
+      - "API endpoint definitions and schemas"
+      - "Authentication and authorization tokens"
+      - "Integration mapping and transformation rules"
+
+# Security Validation Framework
+security_validation:
+  security_check_categories:
+    authentication_validation:
+      - "Password policy enforcement verification"
+      - "Multi-factor authentication configuration"
+      - "Session management and timeout validation"
+      - "OAuth and SSO integration verification"
+
+    authorization_validation:
+      - "Role-based access control verification"
+      - "Permission enforcement validation"
+      - "API endpoint protection verification"
+      - "Resource-level authorization checks"
+
+    network_security_validation:
+      - "SSL/TLS certificate validation"
+      - "Network segmentation verification"
+      - "Firewall rule validation"
+      - "VPN and secure tunnel verification"
+
+# Performance Baseline Specifications
+performance_baselines:
+  baseline_metrics:
+    response_time_baselines:
+      api_endpoints: "< 100ms for simple queries"
+      database_queries: "< 50ms for indexed queries"
+      workflow_execution: "< 2 seconds for simple workflows"
+      user_interface: "< 500ms for page loads"
+
+    throughput_baselines:
+      api_requests: "1000 requests/second sustained"
+      database_transactions: "500 transactions/second"
+      workflow_executions: "100 workflows/minute"
+      concurrent_users: "500 active users"
+
+    resource_utilization_baselines:
+      cpu_utilization: "< 70% under normal load"
+      memory_utilization: "< 80% under normal load"
+      disk_utilization: "< 85% for data storage"
+      network_utilization: "< 60% of available bandwidth"
+
+# Monitoring Setup Specifications
+monitoring_setup:
+  monitoring_categories:
+    application_monitoring:
+      - "Application performance metrics collection"
+      - "Business logic and workflow monitoring"
+      - "User experience and journey tracking"
+      - "Custom application metrics and KPIs"
+
+    infrastructure_monitoring:
+      - "Server and container resource monitoring"
+      - "Network performance and connectivity monitoring"
+      - "Storage and database monitoring"
+      - "Service dependency and health monitoring"
+
+    security_monitoring:
+      - "Authentication and authorization monitoring"
+      - "Security event and incident tracking"
+      - "Compliance and audit log monitoring"
+      - "Vulnerability and threat detection"
+
+# Backup and Recovery Specifications
+backup_recovery:
+  backup_categories:
+    database_backups:
+      frequency: "Every 6 hours for critical data"
+      retention: "30 days for regular backups, 1 year for monthly"
+      verification: "Automated backup integrity checks"
+      restoration: "Point-in-time recovery capability"
+
+    application_backups:
+      frequency: "Daily for configuration and workflows"
+      retention: "90 days for application state"
+      verification: "Automated configuration validation"
+      restoration: "Complete application state recovery"
+
+    infrastructure_backups:
+      frequency: "Weekly for infrastructure configurations"
+      retention: "1 year for infrastructure definitions"
+      verification: "Infrastructure deployment validation"
+      restoration: "Complete infrastructure recreation"
+
+# Automation Framework Specifications
+automation_framework:
+  automation_categories:
+    environment_automation:
+      - "Automated environment provisioning"
+      - "Configuration management automation"
+      - "Service deployment automation"
+      - "Environment teardown automation"
+
+    validation_automation:
+      - "Automated health check execution"
+      - "Automated security validation"
+      - "Automated performance baseline verification"
+      - "Automated compliance checking"
+
+    maintenance_automation:
+      - "Automated backup execution and verification"
+      - "Automated update and patching"
+      - "Automated scaling and optimization"
+      - "Automated incident response and recovery"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL prerequisite systems MUST be comprehensive and production-ready"
+    - "ALL service health checks MUST be reliable and accurate"
+    - "ALL environment configuration MUST be automated and repeatable"
+    - "ALL security validation MUST be thorough and compliant"
+    - "ALL performance baselines MUST be established and validated"
+    - "ALL monitoring MUST provide complete observability"
+    - "ALWAYS use systematic setup methodology"
+    - "NEVER execute actual test implementations during setup"
+
+  strictly_forbidden:
+    - "Modifying production systems during prerequisite setup"
+    - "Creating new test implementations during environment setup"
+    - "Partial or incomplete prerequisite coverage"
+    - "Skipping security or compliance validation"
+    - "Missing performance baseline establishment"
+    - "Incomplete monitoring and observability setup"
+    - "Proceeding with unhealthy or invalid services"
+    - "Setup without proper validation and certification"

@@ -1,0 +1,576 @@
+# === MCP PROMPT: Claude Code CLI Command and MCP Prompt Writing Protocol ===
+name: "claude-code-write-prompt"
+version: "1.0.0"
+description: "Comprehensive protocol for writing Claude Code CLI commands and associated MCP prompt YAML files"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Claude Code CLI Command and MCP Prompt Writing"
+  description: "Execute comprehensive writing of Claude Code CLI commands and associated MCP prompt YAML files with mandatory structure compliance and best practices"
+
+  # Argument Schema
+  arguments:
+    command_name:
+      type: "string"
+      description: "Name of the Claude Code CLI command to create"
+      required: true
+
+    command_type:
+      type: "string"
+      description: "Type of command to create"
+      required: true
+      enum:
+        [
+          "deployment",
+          "planning",
+          "architecture",
+          "implementation",
+          "review",
+          "analysis",
+          "documentation",
+          "testing",
+          "security",
+          "monitoring"
+        ]
+
+    target_directory:
+      type: "string"
+      description: "Target directory for command files"
+      required: false
+      default: ".claude/commands"
+
+    command_purpose:
+      type: "string"
+      description: "Purpose and description of the command"
+      required: true
+
+    command_scope:
+      type: "string"
+      description: "Scope of the command"
+      required: false
+      enum:
+        [
+          "comprehensive",
+          "focused",
+          "specialized",
+          "general"
+        ]
+      default: "comprehensive"
+
+    related_commands:
+      type: "array"
+      description: "List of related commands for navigation"
+      required: false
+      items:
+        type: "string"
+
+    deliverable_count:
+      type: "integer"
+      description: "Number of deliverables (2-3 recommended, max 5)"
+      required: false
+      default: 3
+      minimum: 1
+      maximum: 5
+
+    include_quickstart:
+      type: "boolean"
+      description: "Include quickstart documentation"
+      required: false
+      default: true
+
+    include_lifecycle:
+      type: "boolean"
+      description: "Include lifecycle management"
+      required: false
+      default: true
+
+    include_terraform:
+      type: "boolean"
+      description: "Include Terraform infrastructure"
+      required: false
+      default: true
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Claude Code CLI command writing specialist executing the Claude Code CLI Command and MCP Prompt Writing Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive command writing methodology
+        - Execute complete command structure validation
+        - Maintain production-ready command standards
+        - Use systematic command creation practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Anthropic best practices
+        - Implement command relationship validation
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating commands without proper structure validation
+        - Skipping command reference validation
+        - Partial command creation or incomplete solutions
+        - Creating commands with known structure violations
+        - Creating temporary or workaround commands
+        - Ignoring Anthropic best practices
+        - Skipping MCP prompt YAML creation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CLAUDE CODE CLI COMMAND WRITING PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **COMMAND WRITING PARAMETERS:**
+        - Command Name: {{command_name}}
+        - Command Type: {{command_type}}
+        - Target Directory: {{target_directory}}
+        - Command Purpose: {{command_purpose}}
+        - Command Scope: {{command_scope}}
+        - Related Commands: {{related_commands}}
+        - Deliverable Count: {{deliverable_count}}
+        - Include Quickstart: {{include_quickstart}}
+        - Include Lifecycle: {{include_lifecycle}}
+        - Include Terraform: {{include_terraform}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CLAUDE CODE CLI COMMAND WRITING PROTOCOL:**
+
+# Claude Code CLI Command Writing Protocol Configuration
+claude_code_writing_protocol:
+  # Command Writing Scope - MANDATORY COMPREHENSIVE COVERAGE
+  command_writing_focus:
+    command_structure_validation: true # MUST validate command structure
+    mcp_prompt_creation: true # MUST create associated MCP prompt YAML
+    command_reference_validation: true # MUST validate command references
+    documentation_creation: true # MUST create comprehensive documentation
+    best_practices_compliance: true # MUST follow Anthropic best practices
+    command_relationship_mapping: true # MUST map command relationships
+    deliverable_validation: true # MUST validate deliverable specifications
+    navigation_structure: true # MUST create navigation structure
+
+  # Command Writing Configuration - MANDATORY SETTINGS
+  command_writing_settings:
+    enable_comprehensive_command_creation: true
+    perform_command_structure_validation: true
+    execute_mcp_prompt_creation: true
+    validate_command_references: true
+    create_command_documentation: true
+    systematic_command_creation: true # MANDATORY: Systematic command creation practices
+    follow_command_principles: true # MANDATORY: Command creation best practices
+    continuous_command_validation: true # MANDATORY: Validate commands throughout process
+    production_ready_command_creation: true # MANDATORY: Production-ready command standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Command Writing Validation and Setup"
+    mandatory_actions:
+      - "VALIDATE command writing parameters and requirements"
+      - "CHECK target directory accessibility and permissions"
+      - "VERIFY command name uniqueness and validity"
+      - "PREPARE command writing environment and workspace"
+      - "INITIALIZE command creation tracking and documentation"
+
+    command_writing_validation_requirements:
+      - "MANDATORY: Validate all command writing parameters"
+      - "MANDATORY: Check target directory accessibility"
+      - "MANDATORY: Verify command name uniqueness"
+      - "MANDATORY: Confirm command type validity"
+      - "FORBIDDEN: Proceeding with invalid command parameters"
+
+  phase_2:
+    name: "Command Structure Design and Validation"
+    mandatory_actions:
+      - "DESIGN command structure and organization"
+      - "VALIDATE command structure against best practices"
+      - "CHECK command type appropriateness"
+      - "ASSESS command scope and complexity"
+      - "EVALUATE command relationship requirements"
+
+    command_structure_requirements:
+      - "MANDATORY: Design comprehensive command structure"
+      - "MANDATORY: Validate command structure against best practices"
+      - "MANDATORY: Check command type appropriateness"
+      - "MANDATORY: Assess command scope and complexity"
+      - "FORBIDDEN: Creating commands with poor structure"
+
+    command_structure_standards:
+      command_organization:
+        - "LOGICAL command structure and organization"
+        - "CLEAR command hierarchy and flow"
+        - "APPROPRIATE command complexity"
+        - "EFFECTIVE command structure"
+        - "MAINTAINABLE command design"
+
+      command_type_appropriateness:
+        - "APPROPRIATE command type for purpose"
+        - "CLEAR command type responsibilities"
+        - "EFFECTIVE command type implementation"
+        - "CONSISTENT command type patterns"
+        - "SCALABLE command type design"
+
+  phase_3:
+    name: "MCP Prompt YAML Creation and Validation"
+    mandatory_actions:
+      - "CREATE MCP prompt YAML file structure"
+      - "VALIDATE MCP prompt YAML syntax and structure"
+      - "CHECK argument schema completeness"
+      - "ASSESS message structure compliance"
+      - "EVALUATE execution phase definitions"
+
+    mcp_prompt_creation_requirements:
+      - "MANDATORY: Create complete MCP prompt YAML structure"
+      - "MANDATORY: Validate MCP prompt YAML syntax"
+      - "MANDATORY: Check argument schema completeness"
+      - "MANDATORY: Assess message structure compliance"
+      - "FORBIDDEN: Creating incomplete MCP prompt YAML files"
+
+    mcp_prompt_standards:
+      yaml_structure:
+        - "PROPER MCP prompt metadata"
+        - "COMPLETE argument schema definitions"
+        - "COMPLIANT message structure"
+        - "CLEAR execution phase definitions"
+        - "SPECIFIC deliverable specifications"
+
+      argument_validation:
+        - "COMPLETE argument schema definitions"
+        - "APPROPRIATE argument types and constraints"
+        - "CLEAR argument descriptions"
+        - "VALID argument validation rules"
+        - "PROPER argument requirements"
+
+      message_structure:
+        - "APPROPRIATE message roles and content"
+        - "CLEAR message organization"
+        - "EFFECTIVE message flow"
+        - "PROPER message formatting"
+        - "COMPLETE message content"
+
+  phase_4:
+    name: "Command Documentation Creation"
+    mandatory_actions:
+      - "CREATE comprehensive command documentation"
+      - "VALIDATE documentation completeness and accuracy"
+      - "CHECK documentation clarity and effectiveness"
+      - "ASSESS documentation maintainability"
+      - "EVALUATE documentation user experience"
+
+    command_documentation_requirements:
+      - "MANDATORY: Create comprehensive command documentation"
+      - "MANDATORY: Validate documentation completeness"
+      - "MANDATORY: Check documentation clarity"
+      - "MANDATORY: Assess documentation maintainability"
+      - "FORBIDDEN: Creating incomplete or unclear documentation"
+
+    command_documentation_standards:
+      documentation_completeness:
+        - "COMPLETE command documentation coverage"
+        - "DETAILED command sections"
+        - "COMPREHENSIVE command examples"
+        - "THOROUGH command explanations"
+        - "COMPLETE command references"
+
+      documentation_clarity:
+        - "CLEAR command documentation language"
+        - "UNAMBIGUOUS command instructions"
+        - "SPECIFIC command examples"
+        - "CLEAR command structure"
+        - "EFFECTIVE command organization"
+
+      documentation_accuracy:
+        - "ACCURATE command information"
+        - "CURRENT command information"
+        - "VALID command examples"
+        - "CORRECT command references"
+        - "PRECISE command instructions"
+
+  phase_5:
+    name: "Command Reference Validation and Relationship Mapping"
+    mandatory_actions:
+      - "VALIDATE all command references exist and are accessible"
+      - "CHECK for broken or non-existent command references"
+      - "VERIFY command relationship continuity"
+      - "ASSESS navigation structure completeness"
+      - "EVALUATE command parameter consistency"
+
+    command_reference_requirements:
+      - "MANDATORY: Validate all command references are valid"
+      - "MANDATORY: Check for broken command references"
+      - "MANDATORY: Verify command relationship continuity"
+      - "MANDATORY: Assess navigation structure completeness"
+      - "FORBIDDEN: Creating commands with broken references"
+
+    command_reference_standards:
+      reference_validity:
+        - "ALL command references must exist and be accessible"
+        - "NO broken or non-existent command references"
+        - "COMMAND parameters must be consistent"
+        - "WORKFLOW continuity must be maintained"
+        - "NAVIGATION structure must be complete"
+
+      relationship_mapping:
+        - "CLEAR command relationships and dependencies"
+        - "LOGICAL command flow and progression"
+        - "APPROPRIATE command sequencing"
+        - "COMPLETE workflow coverage"
+        - "EFFECTIVE command navigation"
+
+  phase_6:
+    name: "Deliverable Specification and Validation"
+    mandatory_actions:
+      - "VALIDATE deliverable specifications are realistic"
+      - "CHECK deliverable counts are appropriate (2-3 per command)"
+      - "ASSESS deliverable type appropriateness"
+      - "VERIFY deliverable complexity and scope"
+      - "EVALUATE deliverable timeline feasibility"
+
+    deliverable_validation_requirements:
+      - "MANDATORY: Validate deliverable specifications are realistic"
+      - "MANDATORY: Check deliverable counts are appropriate"
+      - "MANDATORY: Assess deliverable type appropriateness"
+      - "MANDATORY: Verify deliverable complexity and scope"
+      - "FORBIDDEN: Unrealistic deliverable specifications"
+
+    deliverable_validation_standards:
+      realistic_deliverables:
+        - "DELIVERABLE counts must be realistic (2-3 per command)"
+        - "NO excessive deliverable specifications"
+        - "APPROPRIATE deliverable types for command purpose"
+        - "REALISTIC deliverable complexity and scope"
+        - "ACHIEVABLE deliverable timelines"
+
+      deliverable_appropriateness:
+        - "APPROPRIATE deliverable types for command type"
+        - "REALISTIC deliverable complexity"
+        - "ACHIEVABLE deliverable scope"
+        - "APPROPRIATE deliverable timelines"
+        - "EFFECTIVE deliverable organization"
+
+  phase_7:
+    name: "Quickstart Documentation Creation"
+    mandatory_actions:
+      - "CREATE user-friendly quickstart documentation"
+      - "DOCUMENT step-by-step command usage"
+      - "PROVIDE command-specific instructions"
+      - "INCLUDE prerequisites and setup requirements"
+      - "CREATE troubleshooting guides and common issues"
+
+    quickstart_creation_requirements:
+      - "MANDATORY: Create user-friendly quickstart documentation"
+      - "MANDATORY: Document step-by-step command usage"
+      - "MANDATORY: Provide command-specific instructions"
+      - "MANDATORY: Include prerequisites and setup requirements"
+      - "FORBIDDEN: Creating unclear or incomplete quickstart documentation"
+
+    quickstart_creation_standards:
+      quickstart_completeness:
+        - "COMPLETE quickstart documentation"
+        - "DETAILED step-by-step instructions"
+        - "COMPREHENSIVE command examples"
+        - "THOROUGH troubleshooting guides"
+        - "COMPLETE prerequisite information"
+
+      quickstart_clarity:
+        - "CLEAR quickstart language"
+        - "UNAMBIGUOUS quickstart instructions"
+        - "SPECIFIC quickstart examples"
+        - "CLEAR quickstart structure"
+        - "EFFECTIVE quickstart organization"
+
+  phase_8:
+    name: "Lifecycle Management Integration"
+    mandatory_actions:
+      - "IMPLEMENT application lifecycle management procedures"
+      - "CONFIGURE environment promotion workflows"
+      - "SETUP scaling and performance management procedures"
+      - "IMPLEMENT backup and recovery procedures"
+      - "CONFIGURE monitoring and alerting setup"
+
+    lifecycle_integration_requirements:
+      - "MANDATORY: Implement lifecycle management procedures"
+      - "MANDATORY: Configure environment promotion workflows"
+      - "MANDATORY: Setup scaling and performance management"
+      - "MANDATORY: Implement backup and recovery procedures"
+      - "FORBIDDEN: Incomplete lifecycle management implementation"
+
+    lifecycle_integration_standards:
+      lifecycle_completeness:
+        - "COMPLETE lifecycle management procedures"
+        - "DETAILED environment promotion workflows"
+        - "COMPREHENSIVE scaling and performance management"
+        - "THOROUGH backup and recovery procedures"
+        - "COMPLETE monitoring and alerting setup"
+
+      lifecycle_effectiveness:
+        - "EFFECTIVE lifecycle management procedures"
+        - "CLEAR environment promotion workflows"
+        - "APPROPRIATE scaling and performance management"
+        - "RELIABLE backup and recovery procedures"
+        - "COMPREHENSIVE monitoring and alerting setup"
+
+  phase_9:
+    name: "Terraform Infrastructure Integration"
+    mandatory_actions:
+      - "IMPLEMENT Infrastructure as Code patterns"
+      - "CONFIGURE environment-specific Terraform configurations"
+      - "DEPLOY platform-specific Terraform modules"
+      - "SETUP state management and remote backend"
+      - "CONFIGURE variable management and secrets handling"
+
+    terraform_integration_requirements:
+      - "MANDATORY: Implement Terraform infrastructure patterns"
+      - "MANDATORY: Configure environment-specific Terraform"
+      - "MANDATORY: Deploy platform-specific Terraform modules"
+      - "MANDATORY: Setup state management and remote backend"
+      - "FORBIDDEN: Incomplete Terraform infrastructure implementation"
+
+    terraform_integration_standards:
+      terraform_completeness:
+        - "COMPLETE Terraform infrastructure patterns"
+        - "DETAILED environment-specific configurations"
+        - "COMPREHENSIVE platform-specific modules"
+        - "THOROUGH state management setup"
+        - "COMPLETE variable and secrets management"
+
+      terraform_effectiveness:
+        - "EFFECTIVE Terraform infrastructure patterns"
+        - "CLEAR environment-specific configurations"
+        - "APPROPRIATE platform-specific modules"
+        - "RELIABLE state management setup"
+        - "SECURE variable and secrets management"
+
+  phase_10:
+    name: "Command Writing Completion and Validation"
+    mandatory_actions:
+      - "GENERATE comprehensive command creation report"
+      - "RECORD command creation findings and recommendations"
+      - "VALIDATE command functionality and completeness"
+      - "PROVIDE next steps and command usage guidance"
+      - "CONFIRM command creation completion and success"
+
+    command_completion_requirements:
+      - "MANDATORY: Generate detailed command creation report"
+      - "MANDATORY: Record command creation findings with timestamps"
+      - "MANDATORY: Validate command functionality and completeness"
+      - "MANDATORY: Provide clear next steps for command usage"
+
+# Command Writing Standards and Criteria
+command_writing_standards:
+  anthropic_best_practices:
+    command_structure: "CLEAR role definition, specific task definition, structured organization"
+    command_clarity: "UNAMBIGUOUS instructions, clear success criteria, specific validation"
+    command_safety: "APPROPRIATE guardrails, ethical considerations, responsible AI usage"
+    command_effectiveness: "MEASURABLE outcomes, clear validation, specific constraints"
+
+  public_prompt_engineering:
+    command_principles: "CLEAR instructions, appropriate context, structured organization"
+    command_effectiveness: "MEASURABLE criteria, clear validation, specific error handling"
+    command_optimization: "OPTIMAL length, effective structure, clear flow, appropriate complexity"
+
+  mcp_protocol_compliance:
+    command_structure: "PROPER metadata, valid argument schema, compliant message structure"
+    argument_validation: "COMPLETE schema, appropriate types, clear descriptions"
+    message_structure: "APPROPRIATE roles, clear organization, effective flow"
+
+  command_creation_standards:
+    command_documentation: "COMPLETE documentation, clear descriptions, specific examples"
+    command_structure: "LOGICAL organization, clear flow, appropriate complexity"
+    command_effectiveness: "CLEAR objectives, specific requirements, effective validation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL command creation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-150000"
+
+  required_outputs:
+    - "./project/docs/llm-prompts/LLM_Prompt_Writing-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive prompt creation)"
+    - "./project/docs/llm-prompts/Prompt_Specifications-{{YYYY-MM-DD-HHMMSS}}.md (specifications, templates, patterns)"
+    - "./project/docs/llm-prompts/Validation_Guidelines-{{YYYY-MM-DD-HHMMSS}}.md (validation criteria, testing, quality)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all command creation output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL command creation deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all command creation outputs"
+    - "FORBIDDEN: Creating command files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same command creation session"
+
+# Command Creation Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE command writing parameters and requirements"
+  - "2. CHECK target directory accessibility and permissions"
+  - "3. CREATE command creation timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. DESIGN command structure and organization"
+  - "5. CREATE MCP prompt YAML file structure"
+  - "6. VALIDATE MCP prompt YAML syntax and structure"
+  - "7. CREATE comprehensive command documentation"
+  - "8. VALIDATE all command references and relationships"
+  - "9. VALIDATE deliverable specifications and counts"
+  - "10. CREATE user-friendly quickstart documentation"
+  - "11. IMPLEMENT lifecycle management integration"
+  - "12. IMPLEMENT Terraform infrastructure integration"
+  - "13. GENERATE comprehensive command creation report with timestamps"
+  - "14. VALIDATE command functionality and completeness"
+  - "15. CLEANUP temporary command creation files and artifacts"
+  - "16. RECORD command creation completion with timestamp"
+  - "17. PROVIDE next steps and command usage guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each command creation step"
+  - "MANDATORY: Use UTC time for all command creation timestamp recordings"
+  - "MANDATORY: Include timestamps in all command creation tracking"
+  - "MANDATORY: Timestamp all command creation deliverable creation"
+  - "FORBIDDEN: Proceeding without proper command creation timestamp documentation"
+
+# Command Creation Quality Gates
+command_creation_quality_gates:
+  pre_command_creation:
+    - "All required command creation parameters provided and validated"
+    - "Target directory accessible and writable"
+    - "Command name unique and valid"
+    - "Command type appropriate and supported"
+
+  command_creation_phase:
+    - "All command creation phases completed successfully"
+    - "No critical errors during command creation process"
+    - "All command standards validated appropriately"
+    - "All command assessments completed thoroughly"
+
+  post_command_creation:
+    - "Comprehensive command creation report generated"
+    - "All command findings documented with timestamps"
+    - "Command functionality validated and complete"
+    - "Command usage guide provided"
+
+# Constraints and Requirements
+command_creation_constraints:
+  mandatory_requirements:
+    - "ALL command creation MUST be comprehensive and thorough"
+    - "ALL command standards MUST be validated appropriately"
+    - "ALL command findings MUST be documented with timestamps"
+    - "ALL command recommendations MUST be actionable and specific"
+    - "ALL command reports MUST be complete and accurate"
+    - "ALWAYS use systematic command creation practices"
+    - "NEVER create commands that violate standards"
+
+  strictly_forbidden:
+    - "Creating commands without proper structure validation"
+    - "Skipping command reference validation"
+    - "Partial or incomplete command creation"
+    - "Creating commands with critical violations"
+    - "Creating temporary or workaround commands"
+    - "Missing command creation documentation"
+    - "Proceeding with failed command creation quality gates"

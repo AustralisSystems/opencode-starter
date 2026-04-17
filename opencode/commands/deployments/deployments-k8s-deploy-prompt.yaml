@@ -1,0 +1,570 @@
+# === MCP PROMPT: Kubernetes Deployment Execution Protocol ===
+name: "k8s-deploy-prompt"
+version: "1.0.0"
+description: "Kubernetes-specific deployment orchestration protocol for production K8s deployment execution"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Kubernetes Deployment Execution"
+  description: "Execute comprehensive Kubernetes deployment to specified environment and platform with mandatory K8s validation and health checks"
+
+  # Argument Schema
+  arguments:
+    environment:
+      type: "string"
+      description: "Target deployment environment"
+      required: true
+      enum:
+        [
+          "dev",
+          "development",
+          "test",
+          "testing",
+          "stage",
+          "staging",
+          "prod",
+          "production",
+        ]
+
+    k8s_platform:
+      type: "string"
+      description: "Target Kubernetes platform"
+      required: true
+      enum:
+        [
+          "k8s",
+          "docker-desktop",
+          "minikube",
+          "kind",
+          "k3s",
+          "aws-eks",
+          "azure-aks",
+          "gcp-gke",
+          "on-premises",
+          "openshift",
+          "tanzu",
+        ]
+
+    deployment_strategy:
+      type: "string"
+      description: "Kubernetes deployment strategy"
+      required: false
+      enum: ["rolling", "blue-green", "canary", "recreate"]
+      default: "rolling"
+
+    namespace:
+      type: "string"
+      description: "Target Kubernetes namespace"
+      required: false
+      default: "default"
+
+    image_tag:
+      type: "string"
+      description: "Container image tag to deploy"
+      required: false
+
+    rollback_enabled:
+      type: "boolean"
+      description: "Enable automatic rollback on deployment failure"
+      required: false
+      default: true
+
+    dry_run:
+      type: "boolean"
+      description: "Perform dry run without actual deployment"
+      required: false
+      default: false
+
+    force_rebuild:
+      type: "boolean"
+      description: "Force rebuild of container images"
+      required: false
+      default: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Kubernetes deployment specialist executing the Kubernetes Deployment Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive Kubernetes deployment methodology
+        - Execute complete K8s validation and health checks
+        - Maintain production-ready K8s deployment standards
+        - Use atomic K8s deployment practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Kubernetes best practices
+        - Implement K8s security standards (Pod Security Standards, Network Policies, RBAC)
+
+        ABSOLUTELY FORBIDDEN:
+        - Deploying without proper K8s validation
+        - Skipping K8s health checks or verification
+        - Partial K8s deployments or incomplete solutions
+        - Deploying with known K8s issues or failures
+        - Creating temporary or workaround K8s deployments
+        - Ignoring K8s security standards and best practices
+        - Skipping K8s resource validation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY KUBERNETES DEPLOYMENT PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **KUBERNETES DEPLOYMENT PARAMETERS:**
+        - Environment: {{environment}}
+        - K8s Platform: {{k8s_platform}}
+        - Deployment Strategy: {{deployment_strategy}}
+        - Namespace: {{namespace}}
+        - Image Tag: {{image_tag}}
+        - Rollback Enabled: {{rollback_enabled}}
+        - Dry Run: {{dry_run}}
+        - Force Rebuild: {{force_rebuild}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING KUBERNETES DEPLOYMENT PROTOCOL:**
+
+# Kubernetes Deployment Protocol Configuration
+k8s_deployment_protocol:
+  # K8s Deployment Scope - MANDATORY COMPREHENSIVE COVERAGE
+  k8s_deployment_focus:
+    k8s_environment_validation: true # MUST validate target K8s environment
+    k8s_platform_compatibility: true # MUST verify K8s platform compatibility
+    k8s_manifest_preparation: true # MUST prepare K8s manifests
+    k8s_security_validation: true # MUST perform K8s security checks
+    k8s_health_checks: true # MUST verify K8s service health
+    k8s_functional_validation: true # MUST test K8s functionality
+    k8s_rollback_preparation: true # MUST prepare K8s rollback capability
+    k8s_monitoring_setup: true # MUST configure K8s monitoring
+    k8s_production_ready_only: true # STRICTLY production-ready K8s deployments only
+
+  # K8s Deployment Configuration - MANDATORY SETTINGS
+  k8s_deployment_settings:
+    enable_k8s_comprehensive_logging: true
+    perform_k8s_security_scans: true
+    execute_k8s_health_checks: true
+    validate_k8s_functionality: true
+    prepare_k8s_rollback: true
+    monitor_k8s_deployment: true
+    atomic_k8s_deployment: true # MANDATORY: Atomic K8s deployment practices
+    follow_k8s_principles: true # MANDATORY: K8s best practices
+    continuous_k8s_monitoring: true # MANDATORY: Monitor K8s throughout process
+    zero_downtime_k8s: true # MANDATORY: Aim for zero-downtime K8s deployment
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "K8s Pre-Deployment Validation and Setup"
+    mandatory_actions:
+      - "VALIDATE K8s deployment parameters: environment, platform, namespace"
+      - "CHECK K8s cluster connectivity and kubectl access"
+      - "VERIFY K8s deployment manifests exist (or warn if missing)"
+      - "VALIDATE K8s working directory and git status"
+      - "PREPARE K8s deployment environment and timestamps"
+
+    k8s_validation_requirements:
+      - "MANDATORY: Validate K8s environment parameter against allowed values"
+      - "MANDATORY: Validate K8s platform parameter against supported platforms"
+      - "MANDATORY: Check for required K8s files (kustomization.yaml, helm charts)"
+      - "MANDATORY: Verify kubectl connectivity to target cluster"
+      - "MANDATORY: Validate K8s namespace exists or can be created"
+      - "FORBIDDEN: Proceeding with invalid or missing K8s parameters"
+
+  phase_2:
+    name: "K8s Container Image Build and Validation"
+    mandatory_actions:
+      - "CREATE K8s build timestamp and deployment tag"
+      - "EXECUTE K8s platform-specific build process"
+      - "PERFORM K8s security scanning of built artifacts"
+      - "VALIDATE K8s build artifacts and verify integrity"
+      - "PREPARE K8s deployment-ready artifacts"
+
+    k8s_build_requirements:
+      k8s_docker_platforms:
+        - "BUILD Docker images with proper K8s tagging"
+        - "EXECUTE docker-compose build if available"
+        - "VERIFY K8s image creation and integrity"
+        - "TAG images for K8s registry"
+
+      k8s_cloud_platforms:
+        - "BUILD K8s container images for cloud platforms"
+        - "VALIDATE K8s cloud CLI tools availability"
+        - "PREPARE K8s cloud-specific configurations"
+        - "VALIDATE K8s cloud deployment requirements"
+
+      k8s_local_platforms:
+        - "BUILD K8s images for local development"
+        - "VERIFY local K8s cluster resources"
+        - "PREPARE K8s local storage and networking"
+        - "VALIDATE K8s local deployment requirements"
+
+  phase_3:
+    name: "K8s Manifest Preparation and Validation"
+    mandatory_actions:
+      - "PREPARE K8s manifests using Kustomize or Helm"
+      - "VALIDATE K8s manifest syntax and structure"
+      - "APPLY K8s environment-specific configurations"
+      - "VERIFY K8s resource specifications and limits"
+      - "PREPARE K8s deployment-specific customizations"
+
+    k8s_manifest_requirements:
+      kustomize_approach:
+        - "USE Kustomize overlays for environment-specific configs"
+        - "VALIDATE kustomization.yaml syntax"
+        - "APPLY K8s resource patches and transformations"
+        - "VERIFY K8s resource generation"
+
+      helm_approach:
+        - "USE Helm charts for K8s deployment"
+        - "VALIDATE Helm chart syntax and values"
+        - "APPLY K8s environment-specific values"
+        - "VERIFY K8s Helm template rendering"
+
+      raw_manifests:
+        - "USE raw K8s YAML manifests"
+        - "VALIDATE K8s YAML syntax and structure"
+        - "APPLY K8s environment-specific configurations"
+        - "VERIFY K8s resource specifications"
+
+  phase_4:
+    name: "K8s Security Validation and Policy Application"
+    mandatory_actions:
+      - "VALIDATE K8s Pod Security Standards compliance"
+      - "APPLY K8s network policies with security rules"
+      - "CHECK K8s RBAC permissions and service accounts"
+      - "VERIFY K8s secret management configuration"
+      - "VALIDATE K8s security contexts and constraints"
+
+    k8s_security_requirements:
+      pod_security_standards:
+        - "ENFORCE K8s Pod Security Standards (Restricted profile)"
+        - "VALIDATE K8s security contexts and constraints"
+        - "CHECK K8s container security configurations"
+        - "VERIFY K8s non-root user execution"
+
+      network_security:
+        - "APPLY K8s default-deny network policies"
+        - "CONFIGURE K8s ingress and egress rules"
+        - "VALIDATE K8s service mesh security"
+        - "VERIFY K8s DNS resolution policies"
+
+      rbac_security:
+        - "CONFIGURE K8s RBAC roles and bindings"
+        - "VALIDATE K8s service account permissions"
+        - "CHECK K8s cluster role bindings"
+        - "VERIFY K8s security contexts"
+
+  phase_5:
+    name: "K8s Deployment Execution"
+    mandatory_actions:
+      - "EXECUTE K8s deployment using chosen strategy"
+      - "MONITOR K8s deployment progress and status"
+      - "HANDLE K8s deployment failures with rollback"
+      - "VERIFY K8s deployment completion"
+      - "RECORD K8s deployment success/failure"
+
+    k8s_deployment_strategies:
+      rolling_deployment:
+        - "APPLY K8s manifests with kubectl apply"
+        - "MONITOR K8s rollout status with kubectl rollout status"
+        - "VERIFY K8s pod health and readiness"
+        - "CONFIRM K8s service endpoints"
+
+      blue_green_deployment:
+        - "DEPLOY K8s green environment"
+        - "VALIDATE K8s green environment health"
+        - "SWITCH K8s traffic to green environment"
+        - "VERIFY K8s traffic routing"
+
+      canary_deployment:
+        - "DEPLOY K8s canary version to subset"
+        - "ROUTE percentage of K8s traffic to canary"
+        - "MONITOR K8s canary metrics"
+        - "PROMOTE or rollback K8s based on results"
+
+  phase_6:
+    name: "K8s Post-Deployment Validation"
+    mandatory_actions:
+      - "WAIT for K8s pods to initialize"
+      - "EXECUTE comprehensive K8s health checks"
+      - "PERFORM K8s functional validation"
+      - "TEST K8s application endpoints"
+      - "VERIFY K8s deployment success"
+
+    k8s_health_check_requirements:
+      - "MANDATORY: Wait adequate time for K8s pod initialization"
+      - "MANDATORY: Check all K8s service health indicators"
+      - "MANDATORY: Verify K8s pod/container status"
+      - "MANDATORY: Test K8s application endpoints"
+      - "FORBIDDEN: Declaring K8s success without proper validation"
+
+  phase_7:
+    name: "K8s Monitoring and Observability Setup"
+    mandatory_actions:
+      - "APPLY K8s monitoring configurations"
+      - "VERIFY K8s metrics collection setup"
+      - "CONFIGURE K8s alerting rules"
+      - "VALIDATE K8s logging integration"
+      - "CONFIRM K8s observability stack connectivity"
+
+    k8s_monitoring_requirements:
+      prometheus_integration:
+        - "APPLY K8s ServiceMonitor for Prometheus"
+        - "CONFIGURE K8s metric scraping"
+        - "VERIFY K8s metrics endpoint availability"
+        - "CHECK K8s metric data flow"
+
+      grafana_integration:
+        - "APPLY K8s Grafana dashboard configurations"
+        - "CONFIGURE K8s dashboard data sources"
+        - "VERIFY K8s dashboard functionality"
+        - "TEST K8s dashboard access"
+
+      logging_integration:
+        - "CONFIGURE K8s log aggregation"
+        - "APPLY K8s log forwarding rules"
+        - "VERIFY K8s log collection"
+        - "TEST K8s log search functionality"
+
+  phase_8:
+    name: "K8s Deployment Completion and Documentation"
+    mandatory_actions:
+      - "GENERATE comprehensive K8s deployment report"
+      - "RECORD K8s deployment metadata and timestamps"
+      - "CLEANUP K8s temporary files and artifacts"
+      - "PROVIDE K8s next steps and monitoring guidance"
+      - "CONFIRM K8s deployment success"
+
+    k8s_completion_requirements:
+      - "MANDATORY: Generate detailed K8s deployment report"
+      - "MANDATORY: Record K8s deployment in logs with timestamps"
+      - "MANDATORY: Clean up K8s temporary deployment artifacts"
+      - "MANDATORY: Provide clear K8s next steps for monitoring"
+
+  phase_9:
+    name: "K8s Quickstart Documentation Creation"
+    mandatory_actions:
+      - "CREATE user-friendly K8s quickstart deployment guides"
+      - "DOCUMENT step-by-step K8s deployment commands for all environments"
+      - "PROVIDE K8s platform-specific deployment instructions"
+      - "INCLUDE K8s prerequisites and setup requirements"
+      - "CREATE K8s troubleshooting guides and common issue resolution"
+
+    k8s_quickstart_requirements:
+      - "MANDATORY: Create K8s quickstart guides for all target environments (dev, staging, prod)"
+      - "MANDATORY: Include K8s platform-specific commands (k8s, aws-eks, azure-aks, gcp-gke)"
+      - "MANDATORY: Provide clear K8s prerequisites and setup instructions"
+      - "MANDATORY: Include K8s validation commands and health checks"
+      - "MANDATORY: Document K8s common troubleshooting scenarios"
+      - "FORBIDDEN: Incomplete or unclear K8s quickstart documentation"
+
+  phase_10:
+    name: "K8s Lifecycle Management and Terraform Infrastructure Implementation"
+    mandatory_actions:
+      - "IMPLEMENT K8s application lifecycle management procedures"
+      - "CONFIGURE K8s environment promotion workflows"
+      - "SETUP K8s scaling and performance management procedures"
+      - "IMPLEMENT K8s backup and recovery procedures"
+      - "CONFIGURE K8s monitoring and alerting setup"
+      - "IMPLEMENT K8s Infrastructure as Code patterns and structures"
+      - "CONFIGURE K8s environment-specific Terraform configurations"
+      - "DEPLOY K8s platform-specific Terraform modules"
+
+    k8s_lifecycle_terraform_requirements:
+      - "MANDATORY: Implement comprehensive K8s lifecycle management procedures"
+      - "MANDATORY: Configure K8s environment promotion workflows"
+      - "MANDATORY: Setup K8s scaling and performance management"
+      - "MANDATORY: Implement K8s backup and recovery procedures"
+      - "MANDATORY: Configure K8s monitoring and alerting setup"
+      - "MANDATORY: Implement K8s Terraform infrastructure patterns for all environments"
+      - "MANDATORY: Configure K8s platform-specific Terraform modules"
+      - "MANDATORY: Setup K8s state management and remote backend configuration"
+      - "FORBIDDEN: Incomplete K8s lifecycle management or Terraform implementation"
+
+# Platform-Specific K8s Configurations
+k8s_platform_configurations:
+  local_k8s:
+    required_tools: ["kubectl", "docker"]
+    required_files: ["kustomization.yaml"]
+    health_check_method: "k8s_pod_status"
+    deployment_method: "kubectl_apply"
+
+  aws_eks:
+    required_tools: ["kubectl", "aws", "eksctl"]
+    required_files: ["kustomization.yaml", "helm charts"]
+    health_check_method: "k8s_rollout_status"
+    deployment_method: "kubectl_apply_with_aws"
+
+  azure_aks:
+    required_tools: ["kubectl", "az"]
+    required_files: ["kustomization.yaml", "helm charts"]
+    health_check_method: "k8s_rollout_status"
+    deployment_method: "kubectl_apply_with_azure"
+
+  gcp_gke:
+    required_tools: ["kubectl", "gcloud"]
+    required_files: ["kustomization.yaml", "helm charts"]
+    health_check_method: "k8s_rollout_status"
+    deployment_method: "kubectl_apply_with_gcp"
+
+  on_premises:
+    required_tools: ["kubectl", "helm"]
+    required_files: ["kustomization.yaml", "helm charts"]
+    health_check_method: "k8s_pod_status"
+    deployment_method: "kubectl_apply_with_helm"
+
+# K8s Deployment Validation Criteria
+k8s_validation_criteria:
+  pre_deployment: "MANDATORY - All K8s parameters and requirements validated"
+  k8s_build_success: "MANDATORY - All K8s artifacts built successfully"
+  k8s_security_compliance: "MANDATORY - K8s security scans passed or acknowledged"
+  k8s_deployment_success: "MANDATORY - K8s deployment executed successfully"
+  k8s_health_checks: "MANDATORY - All K8s health checks passed"
+  k8s_functional_validation: "MANDATORY - K8s application functionality verified"
+  k8s_monitoring_setup: "MANDATORY - K8s monitoring and logging configured"
+  k8s_rollback_ready: "MANDATORY - K8s rollback capability confirmed"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL K8s deployment output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-24-150000"
+
+  required_outputs:
+    - "./project/docs/deployments/Deployment_Execution-{{YYYY-MM-DD-HHMMSS}}.ipynb (deployment execution and results)"
+    - "./project/docs/deployments/Configuration_Applied-{{YYYY-MM-DD-HHMMSS}}.md (configurations and resources deployed)"
+    - "./project/docs/deployments/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.md (health checks, testing, monitoring)"
+    - "./project/docs/deployments/Operational_Documentation-{{YYYY-MM-DD-HHMMSS}}.md (runbooks, rollback, troubleshooting)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all K8s deployment output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL K8s deployment deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all K8s deployment outputs"
+    - "FORBIDDEN: Creating K8s deployment files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same K8s deployment session"
+
+# K8s Deployment Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE K8s deployment parameters ({{environment}}, {{k8s_platform}}, {{namespace}})"
+  - "2. CHECK K8s cluster connectivity and kubectl access"
+  - "3. CREATE K8s build timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. EXECUTE K8s platform-specific build process"
+  - "5. PERFORM K8s security scanning and validation"
+  - "6. PREPARE K8s manifests using Kustomize or Helm"
+  - "7. APPLY K8s security validations and policies"
+  - "8. DEPLOY to K8s target environment and platform"
+  - "9. MONITOR K8s deployment progress and status"
+  - "10. EXECUTE comprehensive K8s health checks"
+  - "11. PERFORM K8s functional validation testing"
+  - "12. VERIFY K8s deployment success and service health"
+  - "13. CREATE user-friendly K8s quickstart deployment guides"
+  - "14. IMPLEMENT K8s application lifecycle management procedures"
+  - "15. CONFIGURE K8s Terraform infrastructure as code patterns"
+  - "16. GENERATE K8s deployment report with timestamps"
+  - "17. CLEANUP K8s temporary files and artifacts"
+  - "18. RECORD K8s deployment completion with timestamp"
+  - "19. PROVIDE K8s monitoring and next steps guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each K8s deployment step"
+  - "MANDATORY: Use UTC time for all K8s timestamp recordings"
+  - "MANDATORY: Include timestamps in all K8s deployment tracking"
+  - "MANDATORY: Timestamp all K8s deployment deliverable creation"
+  - "FORBIDDEN: Proceeding without proper K8s timestamp documentation"
+
+# K8s Rollback and Failure Handling
+k8s_rollback_protocol:
+  automatic_rollback_triggers:
+    - "K8s health checks fail after deployment"
+    - "K8s critical security vulnerabilities detected"
+    - "K8s application functionality validation fails"
+    - "K8s service endpoints become unreachable"
+
+  k8s_rollback_procedures:
+    rolling_deployment:
+      - "kubectl rollout undo deployment/{app-name}"
+      - "kubectl rollout status deployment/{app-name}"
+      - "kubectl get pods -l app={app-name}"
+      - "kubectl logs -l app={app-name}"
+    blue_green_deployment:
+      - "Switch K8s service selector back to blue"
+      - "Verify K8s blue environment health"
+      - "Stop K8s green environment pods"
+      - "Cleanup K8s green environment resources"
+    canary_deployment:
+      - "kubectl scale deployment {app-name}-canary --replicas=0"
+      - "kubectl delete deployment {app-name}-canary"
+      - "Verify K8s main deployment health"
+
+# Mandatory K8s Success Criteria
+k8s_success_criteria:
+  - "MANDATORY: K8s deployment completed successfully to target environment"
+  - "MANDATORY: All K8s health checks passed"
+  - "MANDATORY: K8s application functionality verified"
+  - "MANDATORY: K8s monitoring and logging configured"
+  - "MANDATORY: K8s rollback capability confirmed"
+  - "MANDATORY: K8s deployment documented with timestamps"
+  - "MANDATORY: K8s next steps provided for ongoing management"
+
+# K8s Deployment Quality Gates
+k8s_quality_gates:
+  pre_deployment:
+    - "All required K8s parameters provided and validated"
+    - "K8s cluster readiness confirmed"
+    - "Required K8s files and tools available"
+
+  k8s_build_phase:
+    - "K8s build process completed without errors"
+    - "K8s security scans passed or acknowledged"
+    - "K8s artifacts validated and ready for deployment"
+
+  k8s_deployment_phase:
+    - "K8s deployment executed successfully"
+    - "No critical errors during K8s deployment"
+    - "K8s services started and responding"
+
+  k8s_post_deployment:
+    - "K8s health checks passed"
+    - "K8s functional validation successful"
+    - "K8s monitoring configured and active"
+    - "K8s documentation generated and complete"
+
+# Constraints and Requirements
+k8s_constraints:
+  mandatory_requirements:
+    - "ALL K8s deployments MUST be to validated environments and platforms"
+    - "ALL K8s builds MUST complete successfully before deployment"
+    - "ALL K8s security validations MUST pass or be acknowledged"
+    - "ALL K8s health checks MUST pass before declaring success"
+    - "ALL K8s deployments MUST be properly documented"
+    - "ALL K8s deployments MUST have rollback capability"
+    - "ALWAYS use atomic K8s deployment practices"
+    - "NEVER deploy with known K8s critical issues"
+
+  strictly_forbidden:
+    - "Deploying without proper K8s validation"
+    - "Skipping K8s security scans or health checks"
+    - "Partial or incomplete K8s deployments"
+    - "Deploying with critical K8s security vulnerabilities"
+    - "Creating temporary or workaround K8s deployments"
+    - "Deploying without K8s rollback capability"
+    - "Missing K8s deployment documentation"
+    - "Proceeding with failed K8s quality gates"

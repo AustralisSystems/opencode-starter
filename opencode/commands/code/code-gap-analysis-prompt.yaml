@@ -1,0 +1,618 @@
+# === MCP PROMPT: Universal Code Gap Analysis Protocol ===
+name: "code-gap-analysis-prompt"
+version: "1.0.0"
+description: "AI-driven exhaustive production code gap assessment protocol for completeness validation"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Universal Code Gap Analysis"
+  description: "Execute comprehensive gap analysis of ALL production code against requirements, best practices, and standards with mandatory remediation planning"
+
+  # Argument Schema
+  arguments:
+    analysis_target:
+      type: "string"
+      description: "Target for gap analysis (entire codebase, specific module, or focus area)"
+      required: true
+
+    analysis_scope:
+      type: "string"
+      description: "Scope and depth of gap analysis"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "functional-only",
+          "technical-only",
+          "security-focused",
+          "performance-focused",
+          "quality-focused",
+        ]
+
+    gap_categories:
+      type: "string"
+      description: "Categories of gaps to analyze"
+      required: false
+      enum:
+        [
+          "all-gaps",
+          "functional-gaps",
+          "technical-gaps",
+          "security-gaps",
+          "performance-gaps",
+          "logging-gaps",
+          "validation-gaps",
+        ]
+
+    priority_focus:
+      type: "string"
+      description: "Priority focus for gap analysis"
+      required: false
+      enum: ["critical-only", "high-priority", "all-priorities", "quick-wins"]
+
+    remediation_planning:
+      type: "boolean"
+      description: "Include detailed remediation planning"
+      required: false
+
+    compliance_standards:
+      type: "string"
+      description: "Compliance standards to validate against"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI gap analysis specialist executing the Universal Code Gap Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow exhaustive gap analysis methodology
+        - Analyze ONLY production code (no test code)
+        - Identify ALL missing components and incomplete implementations
+        - Create actionable remediation plans with priorities
+        - Apply SOLID, DRY, KISS compliance validation
+
+        ABSOLUTELY FORBIDDEN:
+        - Analyzing test code or external documentation
+        - Creating duplicate files or backup copies
+        - Partial or incomplete gap analysis
+        - Accepting placeholders, stubs, or TODOs
+        - Missing remediation planning
+        - Ignoring security or performance gaps
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY GAP ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **GAP ANALYSIS PARAMETERS:**
+        - Analysis Target: {{analysis_target}}
+        - Analysis Scope: {{analysis_scope}}
+        - Gap Categories: {{gap_categories}}
+        - Priority Focus: {{priority_focus}}
+        - Remediation Planning: {{remediation_planning}}
+        - Compliance Standards: {{compliance_standards}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING GAP ANALYSIS PROTOCOL:**
+
+# Gap Analysis Protocol Configuration
+analysis_protocol:
+  # Analysis Scope - MANDATORY EXHAUSTIVE COVERAGE
+  analysis_focus:
+    production_code_only: true # MUST analyze ONLY production code
+    functional_gaps: true # MUST find ALL missing features
+    technical_gaps: true # MUST identify ALL technical debt
+    security_gaps: true # MUST find ALL vulnerabilities
+    performance_gaps: true # MUST identify ALL bottlenecks
+    quality_gaps: true # MUST find ALL quality issues
+    logging_gaps: true # MUST identify missing debug logs
+    validation_gaps: true # MUST find missing validations
+    reuse_gaps: true # MUST identify duplication
+    no_test_analysis: true # FORBIDDEN: Test gap analysis
+    no_doc_analysis: true # FORBIDDEN: External doc analysis
+    analyze_in_place: true # MUST analyze existing code only
+    no_duplicate_files: true # FORBIDDEN: Creating duplicate files
+
+  # Gap Requirements - MANDATORY SETTINGS
+  gap_requirements:
+    complete_coverage: true # MANDATORY: Analyze ALL code
+    deep_inspection: true # MANDATORY: Thorough analysis
+    actionable_findings: true # MANDATORY: Remediation plans
+    priority_scoring: true # MANDATORY: Prioritize gaps
+    effort_estimation: true # MANDATORY: Time estimates
+    risk_assessment: true # MANDATORY: Impact analysis
+    continuous_monitoring: true # MANDATORY: Track progress
+    double_validation: true # MANDATORY: Verify findings
+
+  # Quality Standards
+  quality_standards:
+    solid_compliance: true # MANDATORY: SOLID principles
+    dry_compliance: true # MANDATORY: No duplication
+    kiss_compliance: true # MANDATORY: Simplicity
+    debug_logging: true # MANDATORY: Comprehensive logs
+    error_handling: true # MANDATORY: Full coverage
+    input_validation: true # MANDATORY: All inputs
+    git_practices: true # MANDATORY: Proper workflow
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Complete Production Code Inventory and Analysis"
+    mandatory_actions:
+      - "SCAN ALL source files and map ALL modules"
+      - "LIST ALL components and track ALL dependencies"
+      - "DOCUMENT ALL interfaces and service boundaries"
+      - "MAP component relationships and data flows"
+      - "IDENTIFY integration points and API contracts"
+      - "MEASURE code quality baseline and complexity"
+
+    code_discovery:
+      production_code_inventory:
+        - "SCAN ALL source files comprehensively"
+        - "MAP ALL modules and components"
+        - "LIST ALL classes, functions, and interfaces"
+        - "TRACK ALL dependencies and relationships"
+        - "DOCUMENT ALL service boundaries"
+        - "DOUBLE-CHECK: Ensure nothing is missed"
+
+      architecture_analysis:
+        - "MAP component relationships and interactions"
+        - "DOCUMENT data flows and transformations"
+        - "IDENTIFY integration points and contracts"
+        - "TRACK service boundaries and communication"
+        - "MAP API contracts and protocols"
+        - "MANDATORY: Complete architectural picture"
+
+      code_quality_baseline:
+        - "MEASURE complexity metrics and thresholds"
+        - "CHECK duplication levels and patterns"
+        - "ASSESS coupling and cohesion metrics"
+        - "EVALUATE maintainability indices"
+        - "TRACK technical debt accumulation"
+        - "FORBIDDEN: Ignoring quality issues"
+
+    requirements_mapping:
+      functional_requirements:
+        - "MAP ALL features to implementation status"
+        - "TRACK implementation completeness levels"
+        - "IDENTIFY missing components and features"
+        - "DOCUMENT partial implementations and stubs"
+        - "LIST edge cases and error scenarios"
+        - "MANDATORY: Full requirements traceability"
+
+      technical_requirements:
+        - "VALIDATE performance targets and achievements"
+        - "CHECK scalability implementations and gaps"
+        - "ASSESS security requirement compliance"
+        - "EVALUATE reliability and availability goals"
+        - "VALIDATE maintainability standard compliance"
+        - "DOUBLE-CHECK: All technical requirements covered"
+
+  phase_2:
+    name: "Functional and Feature Gap Analysis"
+    mandatory_actions:
+      - "IDENTIFY ALL unimplemented requirements"
+      - "FIND ALL partial implementations and stubs"
+      - "LOCATE ALL TODO comments and placeholders"
+      - "ANALYZE business logic completeness"
+      - "ASSESS integration completeness and contracts"
+      - "EVALUATE user experience completeness"
+
+    functional_gap_identification:
+      missing_features:
+        - "IDENTIFY unimplemented requirements and specifications"
+        - "FIND partial implementations and incomplete features"
+        - "LOCATE stubbed functions and placeholder code"
+        - "DISCOVER TODO comments and deferred implementations"
+        - "ANALYZE incomplete workflows and processes"
+        - "FORBIDDEN: Accepting stubs or placeholders"
+
+      business_logic_gaps:
+        - "FIND incorrect calculations and algorithms"
+        - "IDENTIFY missing validations and checks"
+        - "LOCATE incomplete workflows and state machines"
+        - "ANALYZE edge case handling and error scenarios"
+        - "DISCOVER missing business rules and constraints"
+        - "MANDATORY: Complete business logic implementation"
+
+      integration_gaps:
+        - "IDENTIFY missing API endpoints and contracts"
+        - "FIND incomplete service integrations"
+        - "LOCATE broken or non-functional connections"
+        - "ANALYZE missing adapters and protocols"
+        - "DISCOVER protocol mismatches and incompatibilities"
+        - "DOUBLE-CHECK: All integrations functional"
+
+    user_experience_gaps:
+      missing_functionality:
+        - "IDENTIFY incomplete user features and workflows"
+        - "FIND broken user journeys and processes"
+        - "LOCATE missing user feedback and validation"
+        - "ANALYZE error handling and user communication"
+        - "DISCOVER missing help and support systems"
+        - "MANDATORY: Complete user experience"
+
+  phase_3:
+    name: "Technical and Architecture Gap Analysis"
+    mandatory_actions:
+      - "IDENTIFY ALL SOLID principle violations"
+      - "FIND ALL DRY and KISS principle violations"
+      - "ANALYZE architecture gaps and anti-patterns"
+      - "ASSESS code quality issues and technical debt"
+      - "EVALUATE infrastructure and scalability gaps"
+      - "DOCUMENT all technical remediation requirements"
+
+    solid_principle_analysis:
+      single_responsibility_gaps:
+        - "IDENTIFY classes/functions with multiple responsibilities"
+        - "FIND mixed concerns and unclear boundaries"
+        - "LOCATE overly complex components"
+        - "ANALYZE responsibility distribution"
+
+      open_closed_gaps:
+        - "FIND components that require modification for extension"
+        - "IDENTIFY missing abstraction layers"
+        - "LOCATE hard-coded dependencies"
+        - "ANALYZE extensibility limitations"
+
+      liskov_substitution_gaps:
+        - "IDENTIFY behavioral incompatibilities"
+        - "FIND contract violations in implementations"
+        - "LOCATE inheritance hierarchy problems"
+        - "ANALYZE substitutability issues"
+
+      interface_segregation_gaps:
+        - "FIND fat interfaces with unused methods"
+        - "IDENTIFY forced dependencies on unused functionality"
+        - "LOCATE interface pollution and bloat"
+        - "ANALYZE client-specific interface needs"
+
+      dependency_inversion_gaps:
+        - "IDENTIFY dependencies on concrete implementations"
+        - "FIND missing abstraction layers"
+        - "LOCATE tight coupling to specific implementations"
+        - "ANALYZE dependency injection opportunities"
+
+    code_quality_gaps:
+      dry_violations:
+        - "IDENTIFY duplicated code blocks and patterns"
+        - "FIND repeated logic and algorithms"
+        - "LOCATE similar functions and methods"
+        - "ANALYZE consolidation opportunities"
+
+      kiss_violations:
+        - "IDENTIFY overly complex implementations"
+        - "FIND unnecessary abstractions and over-engineering"
+        - "LOCATE convoluted logic and algorithms"
+        - "ANALYZE simplification opportunities"
+
+      architecture_gaps:
+        - "IDENTIFY missing architectural layers"
+        - "FIND tight coupling and poor separation"
+        - "LOCATE circular dependencies"
+        - "ANALYZE missing design patterns"
+
+  phase_4:
+    name: "Security and Performance Gap Analysis"
+    mandatory_actions:
+      - "IDENTIFY ALL security vulnerabilities and gaps"
+      - "ANALYZE authentication and authorization gaps"
+      - "ASSESS data security and encryption gaps"
+      - "EVALUATE performance bottlenecks and inefficiencies"
+      - "ANALYZE resource utilization and optimization gaps"
+      - "DOCUMENT security and performance remediation plans"
+
+    security_gap_analysis:
+      authentication_gaps:
+        - "IDENTIFY weak authentication mechanisms"
+        - "FIND missing multi-factor authentication"
+        - "LOCATE token management issues"
+        - "ANALYZE session security problems"
+        - "DISCOVER password policy violations"
+        - "MANDATORY: Strong authentication implementation"
+
+      authorization_gaps:
+        - "FIND missing access control checks"
+        - "IDENTIFY broken authorization mechanisms"
+        - "LOCATE privilege escalation vulnerabilities"
+        - "ANALYZE data exposure risks"
+        - "DISCOVER API security vulnerabilities"
+        - "FORBIDDEN: Open or weak access controls"
+
+      data_security_gaps:
+        - "IDENTIFY missing encryption implementations"
+        - "FIND weak cryptographic algorithms"
+        - "LOCATE key management vulnerabilities"
+        - "ANALYZE data leakage risks"
+        - "DISCOVER injection attack vectors"
+        - "DOUBLE-CHECK: Comprehensive data security"
+
+    performance_gap_analysis:
+      algorithm_efficiency:
+        - "IDENTIFY inefficient algorithms and operations"
+        - "FIND missing database indexes and optimizations"
+        - "LOCATE N+1 query problems"
+        - "ANALYZE synchronous I/O bottlenecks"
+        - "DISCOVER memory waste and leaks"
+        - "MANDATORY: Optimized implementations"
+
+      resource_utilization:
+        - "ANALYZE connection pooling gaps"
+        - "IDENTIFY missing caching strategies"
+        - "FIND batch processing opportunities"
+        - "LOCATE async operation needs"
+        - "DISCOVER stream processing requirements"
+        - "MANDATORY: Efficient resource usage"
+
+  phase_5:
+    name: "Debug Logging and Monitoring Gap Analysis"
+    mandatory_actions:
+      - "ANALYZE ALL logging coverage and gaps"
+      - "IDENTIFY missing debug logging points"
+      - "ASSESS structured logging compliance"
+      - "EVALUATE monitoring and observability gaps"
+      - "ANALYZE operational readiness gaps"
+      - "DOCUMENT logging and monitoring remediation"
+
+    logging_gap_analysis:
+      debug_logging_coverage:
+        - "IDENTIFY missing entry/exit logging"
+        - "FIND missing parameter and state logging"
+        - "LOCATE missing decision point logging"
+        - "ANALYZE error detail logging gaps"
+        - "DISCOVER performance logging gaps"
+        - "MANDATORY: Comprehensive logging coverage"
+
+      structured_logging:
+        - "ASSESS consistent format compliance"
+        - "IDENTIFY missing correlation IDs"
+        - "FIND missing context inclusion"
+        - "ANALYZE performance metrics logging"
+        - "DISCOVER security event logging gaps"
+        - "FORBIDDEN: Silent failures or missing logs"
+
+      monitoring_gaps:
+        - "IDENTIFY missing metrics and KPIs"
+        - "FIND missing health check implementations"
+        - "LOCATE absent alerting and notifications"
+        - "ANALYZE dashboard and visualization gaps"
+        - "DISCOVER missing distributed tracing"
+        - "DOUBLE-CHECK: Full observability coverage"
+
+    operational_gaps:
+      deployment_readiness:
+        - "IDENTIFY missing configuration management"
+        - "FIND missing rollback and recovery plans"
+        - "LOCATE absent operational runbooks"
+        - "ANALYZE monitoring and alerting gaps"
+        - "DISCOVER missing deployment automation"
+        - "MANDATORY: Production deployment readiness"
+
+  phase_6:
+    name: "Code Reuse and Validation Gap Analysis"
+    mandatory_actions:
+      - "IDENTIFY ALL code duplication and reuse opportunities"
+      - "ANALYZE consolidation and refactoring needs"
+      - "ASSESS validation workflow gaps and requirements"
+      - "EVALUATE CI/CD pipeline gaps and automation"
+      - "DOCUMENT reuse and validation remediation plans"
+      - "CREATE comprehensive gap remediation roadmap"
+
+    reuse_analysis:
+      duplication_analysis:
+        - "IDENTIFY identical code blocks and patterns"
+        - "FIND similar algorithms and implementations"
+        - "LOCATE common utility opportunities"
+        - "ANALYZE shared logic and structures"
+        - "DISCOVER repeated patterns and designs"
+        - "MANDATORY: DRY principle compliance"
+
+      consolidation_opportunities:
+        - "PLAN method extraction and refactoring"
+        - "DESIGN utility and library creation"
+        - "IDENTIFY component sharing opportunities"
+        - "ANALYZE pattern unification needs"
+        - "PLAN code structure optimization"
+        - "FORBIDDEN: Allowing code duplication"
+
+    validation_workflow_gaps:
+      pre_commit_gaps:
+        - "IDENTIFY missing linting and formatting"
+        - "FIND missing type checking and validation"
+        - "LOCATE missing complexity analysis"
+        - "ANALYZE missing deduplication scanning"
+        - "DISCOVER missing security scanning"
+        - "MANDATORY: Comprehensive quality gates"
+
+      cicd_gaps:
+        - "IDENTIFY missing automated build processes"
+        - "FIND missing deployment automation"
+        - "LOCATE missing log checking and validation"
+        - "ANALYZE missing rollback automation"
+        - "DISCOVER missing monitoring integration"
+        - "DOUBLE-CHECK: Complete CI/CD pipeline"
+
+# Gap Analysis Methodologies
+gap_analysis_methodologies:
+  static_analysis:
+    code_quality:
+      tools: "Language-specific analyzers (pylint, eslint, etc.)"
+      metrics: "Complexity, duplication, coupling, cohesion"
+      thresholds: "Industry standards and best practices"
+      validation: "SOLID, DRY, KISS principle compliance"
+
+    security_scanning:
+      tools: "SAST tools, dependency scanners (bandit, safety, npm audit)"
+      rules: "OWASP Top 10, CWE standards, security best practices"
+      severity: "Critical, High, Medium, Low classification"
+      remediation: "Immediate, short-term, long-term planning"
+
+    compliance_checking:
+      standards: "SOLID, DRY, KISS principle validation"
+      patterns: "Best practice pattern identification"
+      violations: "Anti-pattern detection and analysis"
+      metrics: "Compliance scores and improvement tracking"
+
+  dynamic_analysis:
+    runtime_behavior:
+      monitoring: "Performance profiling and resource usage"
+      tracing: "Execution path analysis and bottlenecks"
+      logging: "Debug output analysis and coverage"
+      validation: "Runtime behavior verification"
+
+    integration_testing:
+      api_validation: "Contract testing and compliance"
+      data_flow: "End-to-end data flow verification"
+      error_scenarios: "Failure mode testing and analysis"
+      performance: "Load testing and scalability validation"
+
+# Validation Matrices
+validation_matrices:
+  gap_inventory_matrix:
+    structure: |
+      | Gap ID | Category | Severity | Component | Impact | Effort | Priority | Status |
+      |--------|----------|----------|-----------|---------|---------|----------|--------|
+      | GAP-001 | Security | CRITICAL | Auth API | High | 2d | P1 | OPEN |
+      | GAP-002 | Performance | HIGH | DB Query | Medium | 1d | P2 | OPEN |
+
+  compliance_gap_matrix:
+    structure: |
+      | Principle | Component | Violation | Remediation | Priority | Effort | Status |
+      |-----------|-----------|-----------|-------------|----------|---------|--------|
+      | SOLID-SRP | UserService | Mixed concerns | Extract service | HIGH | 4h | OPEN |
+      | DRY | AuthUtils | Code duplication | Consolidate | MEDIUM | 2h | OPEN |
+
+  logging_gap_matrix:
+    structure: |
+      | Component | Entry/Exit | Params | Errors | State | Security | Coverage |
+      |-----------|------------|---------|---------|--------|----------|----------|
+      | AuthAPI | Missing | Partial | Yes | No | Partial | 40% |
+      | UserService | Yes | Yes | Yes | Partial | Yes | 80% |
+
+# Gap Analysis Validation Criteria
+validation_criteria:
+  analysis_completeness: "MANDATORY - 100% code analyzed"
+  gap_identification: "MANDATORY - All gaps found and documented"
+  priority_assignment: "MANDATORY - All gaps prioritized"
+  effort_estimation: "MANDATORY - Hours/days estimated for remediation"
+  remediation_planning: "MANDATORY - Action plans created"
+  risk_assessment: "MANDATORY - Impact evaluated and documented"
+  documentation_quality: "MANDATORY - markdown documents complete"
+  actionable_findings: "MANDATORY - All findings can be implemented"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL gap analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-142155"
+
+  required_outputs:
+    - "./project/docs/code-development/Gap_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive gap analysis)"
+    - "./project/docs/code-development/Requirements_Gap-{{YYYY-MM-DD-HHMMSS}}.md (missing features and requirements)"
+    - "./project/docs/code-development/Remediation_Plan-{{YYYY-MM-DD-HHMMSS}}.md (implementation roadmap and priorities)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all gap analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL gap analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all analysis outputs"
+    - "FORBIDDEN: Creating analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same analysis session"
+
+# Gap Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. INVENTORY all production code ({{analysis_target}}) comprehensively"
+  - "2. MAP all components, modules, and dependencies"
+  - "3. ANALYZE functional requirements against implementation"
+  - "4. IDENTIFY all missing features and incomplete implementations"
+  - "5. ASSESS SOLID/DRY/KISS principle compliance"
+  - "6. ANALYZE security vulnerabilities and gaps"
+  - "7. EVALUATE performance bottlenecks and inefficiencies"
+  - "8. ASSESS debug logging and monitoring coverage"
+  - "9. IDENTIFY code duplication and reuse opportunities"
+  - "10. ANALYZE validation workflow and CI/CD gaps"
+  - "11. PRIORITIZE all identified gaps by impact and effort"
+  - "12. CREATE comprehensive remediation roadmap"
+  - "13. GENERATE gap analysis documentation with timestamps"
+  - "14. VALIDATE analysis completeness and accuracy"
+  - "15. PROVIDE clear remediation recommendations"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each analysis step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all analysis tracking"
+  - "MANDATORY: Timestamp all analysis deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Codebase Hygiene Rules
+codebase_hygiene:
+  always_required:
+    - "ALWAYS analyze existing code in-place"
+    - "ANALYZE without modification or duplication"
+    - "MAINTAIN clean repository during analysis"
+    - "DELETE any temporary analysis artifacts"
+
+  strictly_forbidden:
+    - "FORBIDDEN: Create duplicate analysis files"
+    - "FORBIDDEN: Create backup copies for analysis"
+    - "FORBIDDEN: Create alternative code versions"
+    - "NO gap_analysis_copy.py files"
+    - "NO analysis_backup.py files"
+    - "NO code_analysis_temp.py files"
+
+# Gap Priority Matrix
+gap_priority_matrix:
+  severity_scores:
+    critical: 4 # Security vulnerabilities, data corruption risks
+    high: 3 # Major functionality missing, performance issues
+    medium: 2 # Quality issues, minor functionality gaps
+    low: 1 # Cosmetic issues, nice-to-have improvements
+
+  impact_scores:
+    system_wide: 4 # Affects entire system
+    module: 3 # Affects specific module or service
+    feature: 2 # Affects single feature
+    component: 1 # Affects single component
+
+  effort_scores:
+    minimal: 1 # < 4 hours
+    low: 2 # 4-16 hours (1-2 days)
+    medium: 3 # 16-40 hours (2-5 days)
+    high: 4 # > 40 hours (> 1 week)
+
+  priority_calculation: "(Severity × Impact) / Effort = Priority Score"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL production code MUST be analyzed comprehensively"
+    - "EVERY gap MUST be documented with priority and effort"
+    - "ALL findings MUST be actionable and specific"
+    - "ALL remediation MUST be planned with timelines"
+    - "ALL analysis MUST focus on existing code only"
+    - "ALWAYS maintain pristine codebase during analysis"
+    - "NEVER create duplicate or backup files"
+
+  strictly_forbidden:
+    - "Analyzing test code or external documentation"
+    - "Creating duplicate files or backup copies"
+    - "Partial or incomplete gap analysis"
+    - "Accepting placeholders, stubs, or TODOs"
+    - "Missing remediation planning"
+    - "Ignoring security or performance gaps"
+    - "Vague or non-actionable findings"
+    - "Analysis without priority assignment"

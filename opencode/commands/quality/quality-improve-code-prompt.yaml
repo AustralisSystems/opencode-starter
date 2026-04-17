@@ -1,0 +1,116 @@
+# === MCP PROMPT: Code Quality Improvement Protocol ===
+name: "quality-improve-code-prompt"
+version: "1.0.0"
+description: "Comprehensive code quality improvement protocol for formatting, complexity reduction, and maintainability enhancement"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Quality Improvement"
+  description: "Execute systematic code quality improvements including formatting, linting, complexity reduction, and maintainability enhancements with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to improve"
+      required: true
+
+    improvement_scope:
+      type: "string"
+      description: "Scope of quality improvements to apply"
+      required: true
+      enum: ["formatting", "linting", "complexity", "documentation", "comprehensive"]
+
+    quality_standards:
+      type: "string"
+      description: "Quality standards to apply"
+      required: false
+      enum: ["strict", "standard", "flexible", "enterprise"]
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Code Quality Assessment and Baseline"
+    mandatory_actions:
+      - "ASSESS current code quality metrics and standards"
+      - "ESTABLISH baseline measurements for improvement tracking"
+      - "IDENTIFY specific areas requiring quality improvements"
+
+  phase_2:
+    name: "Automated Code Formatting and Style"
+    mandatory_actions:
+      - "APPLY Black formatter to all Python files"
+      - "FORMAT JavaScript/TypeScript with Prettier"
+      - "ORGANIZE imports using isort and automated tools"
+
+  phase_3:
+    name: "Linting and Style Enforcement"
+    mandatory_actions:
+      - "RUN comprehensive linting with Ruff and ESLint"
+      - "FIX style violations and formatting issues"
+      - "ENFORCE coding standards and conventions"
+
+  phase_4:
+    name: "Complexity Analysis and Reduction"
+    mandatory_actions:
+      - "ANALYZE cyclomatic complexity using Radon"
+      - "IDENTIFY overly complex functions and methods"
+      - "REFACTOR complex code to improve maintainability"
+
+  phase_5:
+    name: "Code Structure and Architecture Improvement"
+    mandatory_actions:
+      - "EXTRACT methods from large functions"
+      - "SIMPLIFY conditional logic and nested structures"
+      - "REMOVE code duplication and improve reusability"
+
+  phase_6:
+    name: "Documentation and Type Safety Enhancement"
+    mandatory_actions:
+      - "ADD missing docstrings and documentation"
+      - "IMPLEMENT comprehensive type annotations"
+      - "IMPROVE inline comments and code clarity"
+
+  phase_7:
+    name: "Dead Code Removal and Optimization"
+    mandatory_actions:
+      - "IDENTIFY and remove unused imports and variables"
+      - "ELIMINATE dead code and unreachable statements"
+      - "OPTIMIZE performance and resource utilization"
+
+  phase_8:
+    name: "Quality Standards Validation"
+    mandatory_actions:
+      - "VALIDATE adherence to SOLID principles"
+      - "VERIFY compliance with quality gates"
+      - "ENSURE maintainability index improvements"
+
+  phase_9:
+    name: "Testing and Functionality Preservation"
+    mandatory_actions:
+      - "RUN comprehensive test suite validation"
+      - "VERIFY functionality preservation after improvements"
+      - "ENSURE no performance regressions introduced"
+
+  phase_10:
+    name: "Quality Metrics Reporting and Certification"
+    mandatory_actions:
+      - "MEASURE post-improvement quality metrics"
+      - "GENERATE before/after comparison reports"
+      - "CERTIFY quality improvement achievements"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality improvement output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "./project/docs/quality-analysis/improvements/Code_Quality_Improvements_{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive analysis)"
+    - "./project/docs/quality-analysis/improvements/Complexity_Reduction_Report_{{YYYY-MM-DD-HHMMSS}}.md (complexity improvements)"
+    - "./project/docs/quality-analysis/improvements/Quality_Metrics_Comparison_{{YYYY-MM-DD-HHMMSS}}.json (before/after metrics)"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL code MUST be formatted consistently"
+    - "ALL functions MUST be below complexity threshold (15)"
+    - "ALL public APIs MUST be documented"
+    - "ALL quality improvements MUST preserve functionality"

@@ -1,0 +1,448 @@
+# === MCP PROMPT: LLM MCP Prompts Management Protocol ===
+name: "llm-mcp-prompts-manage-prompt"
+version: "2.0.0"
+description: "Enhanced comprehensive management protocol for LLM MCP prompts with MCP workflow orchestration, neo4j-memory integration, and READ_AND_EXECUTE enforcement"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "LLM MCP Prompts Management"
+  description: "Execute comprehensive management of LLM MCP prompts with enhanced MCP integration and Anthropic best practices"
+
+  # Argument Schema
+  arguments:
+    management_operation:
+      type: "string"
+      description: "Type of prompt management operation to perform"
+      required: true
+      enum: ["create", "update", "delete", "deploy", "monitor", "analyze", "optimize", "integrate"]
+
+    prompt_target:
+      type: "string"
+      description: "Target prompt name or path for management operation"
+      required: false
+
+    management_scope:
+      type: "string"
+      description: "Scope of the prompt management operation"
+      required: false
+      enum: ["single", "multiple", "ecosystem", "comprehensive"]
+      default: "single"
+
+    target_directory:
+      type: "string"
+      description: "Target directory for prompt management operations"
+      required: false
+      default: ".claude/commands"
+
+    management_standards:
+      type: "array"
+      description: "Standards to apply during management operations"
+      required: false
+      items:
+        type: "string"
+        enum: ["anthropic_best_practices", "public_prompt_engineering", "mcp_protocol_compliance", "llm_prompt_standards"]
+      default: ["anthropic_best_practices", "public_prompt_engineering", "mcp_protocol_compliance"]
+
+    lifecycle_phase:
+      type: "string"
+      description: "Lifecycle phase to focus management on"
+      required: false
+      enum: ["creation", "development", "testing", "deployment", "monitoring", "maintenance", "retirement"]
+      default: "comprehensive"
+
+    mcp_workflow_enabled:
+      type: "boolean"
+      description: "Enable MCP workflow orchestration"
+      required: false
+      default: true
+
+    management_depth:
+      type: "string"
+      description: "Depth of the management analysis"
+      required: false
+      enum: ["surface", "moderate", "deep", "comprehensive"]
+      default: "comprehensive"
+
+    integration_requirements:
+      type: "array"
+      description: "Integration requirements for prompt management"
+      required: false
+      items:
+        type: "string"
+
+# MCP Workflow Orchestration - Enhanced Integration
+mcp_workflow_orchestration:
+  # MCP Tool Workflow Sections
+  mcp_tool_workflow:
+    phase_1_context_loading:
+      - tool: neo4j-memory
+        action: load_contexts
+        context_types: ["prompt_management_patterns", "previous_management", "learned_standards"]
+        memory_type: "enduring_memory"
+      - tool: mcp_server-memory
+        action: load_temporal_context
+        context_types: ["current_session", "recent_management"]
+        memory_type: "temporal_memory"
+
+    phase_2_research:
+      - tool: context7
+        action: get_documentation
+        library: "anthropic"
+        version: "latest"
+        focus_areas: ["prompt_engineering", "best_practices", "safety_guidelines"]
+      - tool: grep
+        action: search_github
+        query: "prompt engineering best practices"
+        purpose: "Find real-world prompt engineering examples"
+
+    phase_3_planning:
+      - tool: sequential-thinking
+        action: structure_management_approach
+        complexity: "high"
+        context_aware: true
+
+    phase_4_management:
+      - tool: filesystem
+        action: manage_prompt_lifecycle
+        standards: "anthropic_best_practices"
+      - tool: sequential-thinking
+        action: validate_management_standards
+        standards: ["anthropic", "public", "mcp_protocol"]
+
+    phase_5_persistence:
+      - tool: neo4j-memory
+        action: save_management_patterns
+        if_quality_threshold: ">= 90%"
+        memory_type: "enduring_memory"
+      - tool: mcp_server-memory
+        action: save_session_insights
+        memory_type: "temporal_memory"
+
+  # Context Persistence Patterns
+  context_management:
+    session_start:
+      - load_previous_management: true
+      - load_prompt_standards: true
+      - load_management_patterns: true
+      - load_anthropic_guidelines: true
+
+    session_end:
+      - save_new_patterns: true
+      - save_management_insights: true
+      - save_quality_improvements: true
+      - save_anthropic_compliance: true
+
+  # Intelligent Tool Chaining
+  intelligent_chaining:
+    conditional_research:
+      - if: "new_prompt_type_detected"
+        then:
+          - context7: get_latest_anthropic_documentation
+          - grep: find_similar_prompt_examples
+      - if: "compliance_issues_found"
+        then:
+          - context7: get_anthropic_safety_guidelines
+          - sequential-thinking: plan_compliance_fixes
+
+  # Automated Validation Workflows
+  validation_workflow:
+    post_management:
+      - tool: filesystem
+        action: analyze_prompt_quality
+      - tool: sequential-thinking
+        action: validate_anthropic_compliance
+      - tool: neo4j-memory
+        action: compare_with_best_practices
+        memory_type: "enduring_memory"
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI LLM MCP Prompts management specialist executing the Enhanced LLM MCP Prompts Management Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive prompt management methodology
+        - Execute complete validation against Anthropic best practices
+        - Maintain production-ready prompt management standards
+        - Use systematic prompt management practices
+        - Follow SOLID, DRY, KISS principles
+        - STRICTLY adhere to Anthropic prompt engineering best practices
+        - Implement enhanced MCP workflow orchestration
+
+        ABSOLUTELY FORBIDDEN:
+        - Managing prompts without proper validation criteria
+        - Skipping best practices assessment
+        - Partial prompt management or incomplete analysis
+        - Managing prompts with known standards violations
+        - Creating temporary or workaround management processes
+        - Ignoring Anthropic best practices
+        - Skipping MCP protocol compliance validation
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY LLM MCP PROMPTS MANAGEMENT PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **PROMPT MANAGEMENT PARAMETERS:**
+        - Management Operation: {{management_operation}}
+        - Prompt Target: {{prompt_target}}
+        - Management Scope: {{management_scope}}
+        - Target Directory: {{target_directory}}
+        - Management Standards: {{management_standards}}
+        - Lifecycle Phase: {{lifecycle_phase}}
+        - MCP Workflow Enabled: {{mcp_workflow_enabled}}
+        - Management Depth: {{management_depth}}
+        - Integration Requirements: {{integration_requirements}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **CRITICAL MCP PROMPT ENFORCEMENT:**
+        YOU MUST ALWAYS READ_AND_EXECUTE the MCP prompt YAML files referenced in this command. This is MANDATORY and cannot be skipped.
+
+        **MCP WORKFLOW ORCHESTRATION REQUIREMENTS:**
+        - Use neo4j-memory (enduring memory) for persistent context and learning
+        - Use mcp server-memory (temporal memory) for session-specific context
+        - Execute MCP tool workflows in the specified sequence
+        - Implement intelligent tool chaining based on context
+        - Perform automated validation workflows
+        - Save insights to enduring memory for future sessions
+
+        **EXECUTE THE FOLLOWING LLM MCP PROMPTS MANAGEMENT PROTOCOL:**
+
+# LLM MCP Prompts Management Protocol Configuration
+llm_mcp_prompts_management_protocol:
+  # Prompt Management Scope - MANDATORY COMPREHENSIVE COVERAGE
+  prompt_management_focus:
+    anthropic_best_practices: true # MUST validate against Anthropic best practices
+    public_prompt_engineering: true # MUST validate against public prompt engineering standards
+    mcp_protocol_compliance: true # MUST validate MCP protocol compliance
+    llm_prompt_standards: true # MUST validate LLM prompt standards
+    prompt_quality: true # MUST assess prompt quality
+    instruction_precision: true # MUST evaluate instruction precision
+    context_appropriateness: true # MUST assess context appropriateness
+    output_specification: true # MUST validate output specifications
+
+  # Prompt Management Configuration - MANDATORY SETTINGS
+  prompt_management_settings:
+    enable_comprehensive_prompt_management: true
+    perform_best_practices_validation: true
+    execute_prompt_standards_compliance: true
+    validate_prompt_quality: true
+    assess_instruction_precision: true
+    systematic_prompt_management: true # MANDATORY: Systematic prompt management practices
+    follow_prompt_management_principles: true # MANDATORY: Prompt management best practices
+    continuous_prompt_validation: true # MANDATORY: Validate prompts throughout process
+    production_ready_prompt_management: true # MANDATORY: Production-ready prompt management standards
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Pre-Prompt Management Validation and MCP Context Loading"
+    mandatory_actions:
+      - "VALIDATE prompt management parameters and requirements"
+      - "CHECK target directory accessibility and permissions"
+      - "VERIFY prompt target accessibility and validity"
+      - "PREPARE prompt management environment and workspace"
+      - "INITIALIZE prompt management tracking and documentation"
+      - "LOAD enduring memory contexts using neo4j-memory"
+      - "LOAD temporal memory contexts using mcp server-memory"
+      - "EXECUTE MCP workflow orchestration phase 1"
+
+    mcp_workflow_requirements:
+      - "MANDATORY: Use neo4j-memory to load prompt management patterns"
+      - "MANDATORY: Use mcp server-memory to load session context"
+      - "MANDATORY: Execute context loading workflow"
+      - "MANDATORY: Initialize MCP tool orchestration"
+      - "FORBIDDEN: Proceeding without MCP context loading"
+
+    prompt_management_validation_requirements:
+      - "MANDATORY: Validate all prompt management parameters"
+      - "MANDATORY: Check target directory accessibility"
+      - "MANDATORY: Verify prompt target accessibility"
+      - "MANDATORY: Confirm management operation validity"
+      - "FORBIDDEN: Proceeding with invalid prompt management parameters"
+
+  phase_2:
+    name: "Anthropic Best Practices Research and Validation"
+    mandatory_actions:
+      - "EXECUTE MCP research workflow using context7 and grep"
+      - "LOAD Anthropic documentation using context7"
+      - "SEARCH GitHub for prompt engineering examples using grep"
+      - "ANALYZE prompt structure against Anthropic best practices"
+      - "VALIDATE prompt clarity and effectiveness"
+      - "CHECK prompt organization and flow"
+      - "ASSESS prompt specificity and context"
+      - "EVALUATE prompt safety and alignment"
+
+    mcp_research_requirements:
+      - "MANDATORY: Use context7 to get latest Anthropic documentation"
+      - "MANDATORY: Use grep to search GitHub for prompt engineering examples"
+      - "MANDATORY: Execute research workflow based on prompt type"
+      - "MANDATORY: Apply intelligent tool chaining for context-aware research"
+      - "FORBIDDEN: Proceeding without MCP research execution"
+
+    anthropic_validation_requirements:
+      - "MANDATORY: Validate prompt structure follows Anthropic guidelines"
+      - "MANDATORY: Check prompt clarity and specificity"
+      - "MANDATORY: Assess prompt organization and flow"
+      - "MANDATORY: Evaluate prompt safety considerations"
+      - "MANDATORY: Validate prompt effectiveness"
+      - "FORBIDDEN: Managing prompts that violate Anthropic best practices"
+
+  phase_3:
+    name: "MCP Protocol Compliance Validation"
+    mandatory_actions:
+      - "VALIDATE MCP prompt structure compliance"
+      - "CHECK argument schema validation"
+      - "ASSESS message structure standards"
+      - "EVALUATE execution phase clarity"
+      - "VERIFY deliverable specifications"
+
+    mcp_compliance_requirements:
+      - "MANDATORY: Validate MCP prompt structure compliance"
+      - "MANDATORY: Check argument schema validation"
+      - "MANDATORY: Assess message structure standards"
+      - "MANDATORY: Evaluate execution phase clarity"
+      - "MANDATORY: Verify deliverable specifications"
+      - "FORBIDDEN: Managing MCP prompts that violate protocol"
+
+  phase_4:
+    name: "Prompt Quality Assessment and Management"
+    mandatory_actions:
+      - "ANALYZE prompt completeness"
+      - "VALIDATE prompt clarity"
+      - "CHECK prompt accuracy"
+      - "ASSESS prompt maintainability"
+      - "EVALUATE prompt effectiveness"
+      - "MANAGE prompt lifecycle operations"
+      - "IMPLEMENT prompt management best practices"
+
+    prompt_quality_requirements:
+      - "MANDATORY: Assess prompt completeness"
+      - "MANDATORY: Validate prompt clarity"
+      - "MANDATORY: Check prompt accuracy"
+      - "MANDATORY: Evaluate prompt maintainability"
+      - "FORBIDDEN: Managing incomplete or unclear prompts"
+
+  phase_5:
+    name: "Prompt Management Completion and MCP Persistence"
+    mandatory_actions:
+      - "GENERATE comprehensive prompt management report"
+      - "RECORD prompt management findings and recommendations"
+      - "VALIDATE prompt management completeness and accuracy"
+      - "PROVIDE next steps and prompt management guidance"
+      - "CONFIRM prompt management completion and success"
+      - "SAVE management patterns to neo4j-memory (enduring memory)"
+      - "SAVE session insights to mcp server-memory (temporal memory)"
+      - "EXECUTE MCP persistence workflow"
+
+    mcp_persistence_requirements:
+      - "MANDATORY: Use neo4j-memory to save management patterns and insights"
+      - "MANDATORY: Use mcp server-memory to save session-specific context"
+      - "MANDATORY: Execute persistence workflow for future learning"
+      - "MANDATORY: Save quality improvements to enduring memory"
+      - "FORBIDDEN: Completing management without MCP persistence"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL prompt management output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-25-150000"
+
+  required_outputs:
+    - "LLM_MCP_Prompts_Management_Report-{{YYYY-MM-DD-HHMMSS}}.md (comprehensive prompt management report)"
+    - "Anthropic_Best_Practices_Validation-{{YYYY-MM-DD-HHMMSS}}.md (Anthropic standards validation)"
+    - "MCP_Protocol_Compliance_Validation-{{YYYY-MM-DD-HHMMSS}}.md (MCP protocol compliance validation)"
+    - "Prompt_Quality_Assessment-{{YYYY-MM-DD-HHMMSS}}.md (prompt quality analysis)"
+    - "Prompt_Management_Next_Steps-{{YYYY-MM-DD-HHMMSS}}.md (prompt management next steps and guidance)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all prompt management output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL prompt management deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all prompt management outputs"
+    - "FORBIDDEN: Creating prompt management files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same prompt management session"
+
+# Prompt Management Execution Workflow with MCP Orchestration and Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE prompt management parameters and requirements"
+  - "2. CHECK target directory accessibility and permissions"
+  - "3. CREATE prompt management timestamp: $(date -u +%Y-%m-%d-%H%M%S)"
+  - "4. LOAD enduring memory contexts using neo4j-memory"
+  - "5. LOAD temporal memory contexts using mcp server-memory"
+  - "6. EXECUTE MCP research workflow using context7 and grep"
+  - "7. ANALYZE prompt structure against Anthropic best practices"
+  - "8. VALIDATE prompt against public prompt engineering standards"
+  - "9. CHECK MCP protocol compliance"
+  - "10. ASSESS LLM prompt standards compliance"
+  - "11. EVALUATE prompt quality and completeness"
+  - "12. ANALYZE instruction precision and specificity"
+  - "13. ASSESS context appropriateness and relevance"
+  - "14. MANAGE prompt lifecycle operations"
+  - "15. EXECUTE MCP validation workflow using filesystem and sequential-thinking"
+  - "16. GENERATE comprehensive prompt management report with timestamps"
+  - "17. SAVE management patterns to neo4j-memory (enduring memory)"
+  - "18. SAVE session insights to mcp server-memory (temporal memory)"
+  - "19. CLEANUP temporary prompt management files and artifacts"
+  - "20. RECORD prompt management completion with timestamp"
+  - "21. PROVIDE next steps and prompt management guidance"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each prompt management step"
+  - "MANDATORY: Use UTC time for all prompt management timestamp recordings"
+  - "MANDATORY: Include timestamps in all prompt management tracking"
+  - "MANDATORY: Timestamp all prompt management deliverable creation"
+  - "FORBIDDEN: Proceeding without proper prompt management timestamp documentation"
+
+# Prompt Management Quality Gates
+prompt_management_quality_gates:
+  pre_prompt_management:
+    - "All required prompt management parameters provided and validated"
+    - "Target directory accessible and writable"
+    - "Prompt target accessible and valid"
+    - "MCP workflow orchestration enabled and functional"
+
+  prompt_management_phase:
+    - "All prompt management phases completed successfully"
+    - "No critical errors during prompt management process"
+    - "All prompt standards validated appropriately"
+    - "All prompt assessments completed thoroughly"
+
+  post_prompt_management:
+    - "Comprehensive prompt management report generated"
+    - "All prompt management findings documented with timestamps"
+    - "Prompt management completeness and accuracy validated"
+    - "Prompt management next steps provided"
+
+# Constraints and Requirements
+prompt_management_constraints:
+  mandatory_requirements:
+    - "ALL prompt management MUST be comprehensive and thorough"
+    - "ALL prompt standards MUST be validated appropriately"
+    - "ALL prompt management findings MUST be documented with timestamps"
+    - "ALL prompt management recommendations MUST be actionable and specific"
+    - "ALL prompt management reports MUST be complete and accurate"
+    - "ALWAYS use systematic prompt management practices"
+    - "NEVER manage prompts that violate standards"
+
+  strictly_forbidden:
+    - "Managing prompts without proper validation criteria"
+    - "Skipping prompt standards assessment"
+    - "Partial or incomplete prompt management"
+    - "Managing prompts with critical violations"
+    - "Creating temporary or workaround management processes"
+    - "Missing prompt management documentation"
+    - "Proceeding with failed prompt management quality gates"

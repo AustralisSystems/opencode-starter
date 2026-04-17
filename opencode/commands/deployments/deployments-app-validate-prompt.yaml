@@ -1,0 +1,472 @@
+# === MCP PROMPT: Generic Application Deployment Validation Protocol ===
+name: "generic-app-deployment-validation-prompt"
+version: "1.0.0"
+description: "Comprehensive post-deployment validation protocol for generic applications with strict pass/fail criteria"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Generic Application Deployment Validation"
+  description: "Execute comprehensive post-deployment validation for Docker, containers, and cloud applications with paranoid-level thoroughness"
+
+  # Argument Schema
+  arguments:
+    deployment_target:
+      type: "string"
+      description: "Application/service that was deployed"
+      required: true
+
+    platform:
+      type: "string"
+      description: "Platform where application was deployed"
+      required: true
+      enum: ["docker", "docker-compose", "cloud", "local"]
+
+    health_endpoints:
+      type: "string"
+      description: "Comma-separated health endpoints to test (e.g., /health,/ready,/live)"
+      required: false
+
+    api_endpoints:
+      type: "string"
+      description: "Comma-separated API endpoints to validate (e.g., /api/users,/api/products)"
+      required: false
+
+    validation_depth:
+      type: "string"
+      description: "Level of validation thoroughness"
+      required: false
+      default: "standard"
+      enum: ["basic", "standard", "comprehensive", "paranoid"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI deployment validation specialist executing the Generic Application Deployment Validation Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every validation action
+        - Be PARANOID and THOROUGH, not optimistic
+        - Catch ALL issues, errors, warnings, and anomalies
+        - ANY significant issue = FAIL (be STRICT)
+        - Create comprehensive validation reports with remediation steps
+        - Follow systematic validation methodology
+        - NEVER claim success when issues exist
+
+        ABSOLUTELY FORBIDDEN:
+        - Claiming "100% success" without thorough validation
+        - Ignoring errors, warnings, or anomalies in logs
+        - Superficial or incomplete validation
+        - Optimistic reporting when issues exist
+        - Skipping critical validation phases
+        - False positive success claims
+
+        STRICT FAIL CRITERIA (ANY = FAIL):
+        - ANY ERROR in logs (unless explicitly acceptable)
+        - ANY CrashLoopBackOff or restart cycle
+        - ANY failing health check
+        - ANY 500 error from API
+        - ANY missing required resource
+        - ANY security policy violation
+        - ANY persistent connectivity failure
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY GENERIC APPLICATION DEPLOYMENT VALIDATION PROTOCOL**
+
+        **ALWAYS THINK THEN...** Before executing any validation action, you MUST use thinking to:
+        1. Analyze the validation requirements
+        2. Plan your approach and identify critical checks
+        3. Consider potential failure scenarios
+        4. Only then proceed with validation
+
+        **VALIDATION PARAMETERS:**
+        - Deployment Target: {{deployment_target}}
+        - Platform: {{platform}}
+        - Health Endpoints: {{health_endpoints}}
+        - API Endpoints: {{api_endpoints}}
+        - Validation Depth: {{validation_depth}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **MANDATORY REPOSITORY STRUCTURE:**
+        YOU MUST read `.claude/commands/deployments/DEPLOYMENT-STRUCTURE.md` to understand the canonical Kubernetes deployment structure.
+        - NO root wrapper directories (no k8s/, deployments/, kubernetes/)
+        - Use: apps/, infrastructure/, services/, clusters/, gitops/, helm-charts/, ci/, scripts/, docs/, tests/, .templates/
+        - Reference VALIDATION-CHECKLIST.md for validation requirements
+
+        **EXECUTE THE FOLLOWING DEPLOYMENT VALIDATION PROTOCOL:**
+
+# Validation Protocol Configuration
+validation_protocol:
+  # Validation Focus - MANDATORY COMPREHENSIVE COVERAGE
+  validation_focus:
+    container_health: true # MUST validate container/service health
+    endpoint_testing: true # MUST test all endpoints
+    log_analysis: true # MUST analyze logs thoroughly
+    connectivity_validation: true # MUST validate all connectivity
+    smoke_testing: true # MUST execute smoke tests
+    performance_baseline: true # MUST measure performance
+    comprehensive_reporting: true # MUST generate detailed reports
+    paranoid_mode: true # MUST be paranoid and thorough
+    strict_pass_fail: true # MUST use strict criteria
+
+  # Validation Settings - MANDATORY
+  validation_settings:
+    enable_deep_analysis: true
+    analyze_all_logs: true
+    test_all_endpoints: true
+    validate_all_connectivity: true
+    measure_performance: true
+    generate_remediation: true
+    strict_failure_criteria: true # MANDATORY: Any significant issue = FAIL
+    zero_tolerance_errors: true # MANDATORY: No errors allowed in logs
+    comprehensive_coverage: true # MANDATORY: Cover all validation aspects
+
+# Execution Phases
+execution_phases:
+  phase_1:
+    name: "Container/Service Status Validation"
+    mandatory_actions:
+      - "CHECK container status (must be 'running', not 'restarting' or 'exited')"
+      - "VERIFY all expected containers/services are present"
+      - "ANALYZE container resource usage (CPU < 80%, Memory < 80%)"
+      - "INSPECT container logs for startup errors or warnings"
+      - "DETECT crash loops or restart cycles (restart count must be 0 or stable)"
+      - "MEASURE time since last restart (must be stable, no recent restarts)"
+      - "VERIFY container image versions match deployment specification"
+
+    validation_commands:
+      docker:
+        - "docker ps -a --filter name={{deployment_target}}"
+        - "docker stats {{deployment_target}} --no-stream"
+        - "docker inspect {{deployment_target}} | jq '.[] | {State, RestartCount}'"
+        - "docker logs {{deployment_target}} --tail 200 2>&1 | grep -i 'error\\|critical\\|fatal\\|exception'"
+
+      docker_compose:
+        - "docker-compose ps"
+        - "docker-compose logs --tail=200 2>&1 | grep -i 'error\\|critical\\|fatal\\|exception'"
+
+      cloud:
+        - "cloud-specific status commands based on platform"
+
+    fail_criteria:
+      - "ANY container not in 'running' state"
+      - "ANY container with restart count > 0 in last 5 minutes"
+      - "ANY error in container logs"
+      - "ANY resource usage > 90%"
+      - "ANY missing expected container"
+
+  phase_2:
+    name: "Health Endpoint Validation"
+    mandatory_actions:
+      - "TEST health endpoints ({{health_endpoints}}) minimum 5 times"
+      - "VERIFY response codes (MUST be 200 OK, not 404/500/503)"
+      - "MEASURE response times (MUST be < 1000ms, preferably < 500ms)"
+      - "VALIDATE health endpoint payload structure and content"
+      - "CONFIRM consistency across multiple attempts (all 5 must succeed)"
+      - "CHECK health check dependencies (database, cache, external services)"
+      - "VERIFY health endpoint doesn't return cached/stale data"
+
+    validation_commands:
+      - "for i in {1..5}; do curl -s -o /dev/null -w '%{http_code} %{time_total}s\\n' http://{{endpoint}}/health; sleep 1; done"
+      - "curl -v http://{{endpoint}}/health 2>&1 | grep -E 'HTTP|Content-Type|Response'"
+      - "curl -s http://{{endpoint}}/health | jq '.'"
+
+    fail_criteria:
+      - "ANY non-200 response code"
+      - "ANY response time > 2000ms"
+      - "ANY inconsistent responses across attempts"
+      - "ANY health check reporting unhealthy dependencies"
+      - "ANY timeout or connection refused"
+
+  phase_3:
+    name: "API Functionality Validation"
+    mandatory_actions:
+      - "TEST critical API endpoints ({{api_endpoints}}) with real requests"
+      - "VERIFY authentication/authorization mechanisms work correctly"
+      - "VALIDATE API response formats and data integrity"
+      - "TEST error handling (404, 400, 401, 500 responses)"
+      - "CHECK API rate limiting if configured"
+      - "VERIFY API versioning and backwards compatibility"
+      - "TEST CORS configuration if applicable"
+      - "VALIDATE request/response content types"
+
+    validation_commands:
+      - "curl -X GET http://{{endpoint}}/api/endpoint -H 'Content-Type: application/json'"
+      - "curl -X POST http://{{endpoint}}/api/endpoint -d '{\"test\":\"data\"}' -H 'Content-Type: application/json'"
+      - "curl -I http://{{endpoint}}/api/endpoint # Check headers"
+
+    fail_criteria:
+      - "ANY 500 error from API endpoints"
+      - "ANY authentication/authorization failures"
+      - "ANY malformed response data"
+      - "ANY CORS errors if web-facing"
+      - "ANY unexpected error handling behavior"
+
+  phase_4:
+    name: "Service Connectivity Validation"
+    mandatory_actions:
+      - "TEST inter-service communication (if microservices)"
+      - "VALIDATE database connections and execute test queries"
+      - "CHECK external service integrations (APIs, webhooks)"
+      - "VERIFY message queue connections and message processing"
+      - "TEST cache connectivity (Redis, Memcached) with read/write"
+      - "VALIDATE DNS resolution for all dependencies"
+      - "CHECK network policies and firewall rules"
+      - "TEST load balancer health checks"
+
+    validation_commands:
+      docker_compose:
+        - "docker-compose exec {{service}} ping -c 3 {{dependency_service}}"
+        - "docker-compose exec {{service}} nc -zv {{database_host}} {{database_port}}"
+        - "docker-compose exec {{service}} redis-cli -h redis ping"
+
+      docker:
+        - "docker exec {{container}} ping -c 3 {{dependency}}"
+        - "docker exec {{container}} nc -zv {{host}} {{port}}"
+
+    fail_criteria:
+      - "ANY connectivity failure to required services"
+      - "ANY database connection errors"
+      - "ANY message queue connection failures"
+      - "ANY cache connectivity issues"
+      - "ANY DNS resolution failures"
+
+  phase_5:
+    name: "Log Analysis (CRITICAL PHASE)"
+    mandatory_actions:
+      - "SEARCH logs for ERROR, CRITICAL, FATAL, PANIC messages"
+      - "IDENTIFY stack traces or exceptions"
+      - "VERIFY expected startup messages are present"
+      - "DETECT configuration errors or missing environment variables"
+      - "ANALYZE warning messages for potential issues"
+      - "CHECK for security-related errors (auth failures, injection attempts)"
+      - "DETECT resource exhaustion warnings (memory, disk, connections)"
+      - "FIND timeout or connection errors"
+      - "VERIFY no data corruption or integrity errors"
+
+    validation_commands:
+      - "docker logs {{container}} --tail 500 2>&1 | grep -i 'error' | head -20"
+      - "docker logs {{container}} --tail 500 2>&1 | grep -i 'critical\\|fatal\\|panic' | head -20"
+      - "docker logs {{container}} --tail 500 2>&1 | grep -i 'exception\\|stack trace' | head -20"
+      - "docker logs {{container}} --tail 500 2>&1 | grep -i 'warn' | head -20"
+      - "docker logs {{container}} --tail 500 2>&1 | grep -i 'timeout\\|refused\\|failed' | head -20"
+
+    fail_criteria:
+      - "ANY ERROR message in logs (unless explicitly acceptable)"
+      - "ANY CRITICAL or FATAL message"
+      - "ANY stack trace or unhandled exception"
+      - "ANY configuration error"
+      - "ANY security-related error"
+      - "ANY resource exhaustion warning"
+      - "MORE THAN 5 WARNING messages of same type"
+
+  phase_6:
+    name: "Smoke Testing"
+    mandatory_actions:
+      - "EXECUTE basic end-to-end workflows"
+      - "TEST core functionality paths (critical user journeys)"
+      - "VALIDATE data persistence (write, read, update, delete)"
+      - "CHECK background jobs/workers are processing"
+      - "TEST scheduled tasks if applicable"
+      - "VERIFY file upload/download functionality if applicable"
+      - "TEST user authentication flows"
+      - "VALIDATE session management"
+
+    test_scenarios:
+      - "Create a test resource (POST request)"
+      - "Retrieve the test resource (GET request)"
+      - "Update the test resource (PUT/PATCH request)"
+      - "Delete the test resource (DELETE request)"
+      - "Verify resource is actually deleted"
+
+    fail_criteria:
+      - "ANY core functionality failure"
+      - "ANY data persistence issues"
+      - "ANY background job processing failures"
+      - "ANY authentication flow errors"
+      - "ANY end-to-end workflow breakage"
+
+  phase_7:
+    name: "Performance Baseline Measurement"
+    mandatory_actions:
+      - "MEASURE response times for key endpoints (p50, p95, p99)"
+      - "CHECK resource utilization baselines (CPU, memory, disk, network)"
+      - "VALIDATE throughput capacity"
+      - "TEST concurrent request handling (10, 50, 100 concurrent)"
+      - "MEASURE database query performance"
+      - "CHECK cache hit rates if applicable"
+      - "ANALYZE request queue depths"
+
+    validation_commands:
+      - "ab -n 100 -c 10 http://{{endpoint}}/api/endpoint # Apache Bench"
+      - "wrk -t4 -c100 -d30s http://{{endpoint}}/ # wrk load test"
+      - "docker stats {{container}} --no-stream"
+
+    performance_thresholds:
+      response_time_p50: "< 200ms"
+      response_time_p95: "< 1000ms"
+      response_time_p99: "< 2000ms"
+      cpu_usage: "< 80%"
+      memory_usage: "< 80%"
+      error_rate: "< 0.1%"
+
+    fail_criteria:
+      - "ANY p99 response time > 5000ms"
+      - "ANY error rate > 1%"
+      - "ANY resource usage > 95%"
+      - "ANY timeout under normal load"
+      - "ANY significant performance degradation from baseline"
+
+  phase_8:
+    name: "Comprehensive Reporting and Remediation"
+    mandatory_actions:
+      - "GENERATE comprehensive validation report with ALL findings"
+      - "CATEGORIZE all issues by severity (CRITICAL, HIGH, MEDIUM, LOW)"
+      - "DOCUMENT each issue with full context and evidence"
+      - "PROVIDE detailed remediation steps for EACH issue"
+      - "CREATE rollback recommendation based on findings"
+      - "DETERMINE final PASS/FAIL status (be STRICT)"
+      - "GENERATE structured JSON results for automation"
+
+    report_requirements:
+      - "Executive summary with clear pass/fail"
+      - "All 8 validation phases with detailed findings"
+      - "Complete issue list with severity categorization"
+      - "Remediation steps for every issue found"
+      - "Rollback recommendation with justification"
+      - "Performance metrics and baselines"
+      - "Appendix with evidence (log excerpts, test results)"
+
+    remediation_template:
+      issue_description: "Clear description of the problem"
+      root_cause: "Root cause analysis"
+      impact: "Impact on functionality and users"
+      remediation_steps:
+        - "Step-by-step fix instructions"
+        - "Commands to execute (docker/kubectl/cloud CLI)"
+        - "Configuration changes needed"
+        - "Testing to verify fix"
+      prevention: "Recommendations to prevent recurrence"
+
+    pass_fail_determination:
+      PASS_criteria:
+        - "ZERO errors in logs"
+        - "ALL health checks passing consistently"
+        - "ALL API endpoints responding correctly"
+        - "ALL connectivity validated"
+        - "ALL smoke tests passing"
+        - "Performance within acceptable thresholds"
+        - "NO critical or high severity issues"
+
+      FAIL_criteria:
+        - "ANY error in logs (unless explicitly acceptable)"
+        - "ANY failing health check"
+        - "ANY API endpoint returning 500 errors"
+        - "ANY connectivity failures"
+        - "ANY smoke test failures"
+        - "ANY performance degradation beyond thresholds"
+        - "ANY critical or high severity issues"
+
+# Deliverables Configuration
+deliverables:
+  naming_convention: "MANDATORY: ALL validation output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+
+  required_outputs:
+    validation_report:
+      path: "./project/docs/deployments/Validation_Report-{{YYYY-MM-DD-HHMMSS}}.md"
+      format: "markdown"
+      content:
+        - "Executive summary with pass/fail determination"
+        - "All 8 validation phases with detailed findings"
+        - "Complete issue list categorized by severity"
+        - "Remediation steps for all issues"
+        - "Rollback recommendation"
+        - "Performance metrics"
+        - "Evidence appendix"
+
+    validation_results:
+      path: "./project/docs/deployments/Validation_Results-{{YYYY-MM-DD-HHMMSS}}.json"
+      format: "json"
+      content:
+        deployment_target: "{{deployment_target}}"
+        platform: "{{platform}}"
+        validation_timestamp: "{{ISO-8601 UTC}}"
+        validation_depth: "{{validation_depth}}"
+        overall_result: "PASS|FAIL"
+        phases: []
+        issues_found: []
+        performance_metrics: {}
+
+    remediation_steps:
+      path: "./project/docs/deployments/Remediation_Steps-{{YYYY-MM-DD-HHMMSS}}.md"
+      format: "markdown"
+      condition: "Only if issues found"
+      content:
+        - "Issue-by-issue remediation guide"
+        - "Root cause analysis for each issue"
+        - "Step-by-step fix instructions"
+        - "Prevention recommendations"
+
+# Execution Workflow
+execution_steps:
+  - "1. VALIDATE deployment target ({{deployment_target}}) is accessible"
+  - "2. EXECUTE Phase 1: Container/Service Status Validation"
+  - "3. EXECUTE Phase 2: Health Endpoint Validation"
+  - "4. EXECUTE Phase 3: API Functionality Validation"
+  - "5. EXECUTE Phase 4: Service Connectivity Validation"
+  - "6. EXECUTE Phase 5: Log Analysis (CRITICAL)"
+  - "7. EXECUTE Phase 6: Smoke Testing"
+  - "8. EXECUTE Phase 7: Performance Baseline Measurement"
+  - "9. EXECUTE Phase 8: Comprehensive Reporting and Remediation"
+  - "10. DETERMINE final PASS/FAIL status using strict criteria"
+  - "11. GENERATE all required deliverables with proper timestamps"
+  - "12. PROVIDE rollback recommendation if FAIL"
+
+# Success Criteria
+success_criteria:
+  - "MANDATORY: Complete ALL 8 validation phases"
+  - "MANDATORY: Analyze ALL logs for errors and warnings"
+  - "MANDATORY: Test ALL health endpoints successfully"
+  - "MANDATORY: Validate ALL API functionality"
+  - "MANDATORY: Confirm ALL service connectivity"
+  - "MANDATORY: Execute ALL smoke tests"
+  - "MANDATORY: Measure performance baselines"
+  - "MANDATORY: Generate comprehensive validation report"
+  - "MANDATORY: Apply STRICT pass/fail criteria"
+  - "MANDATORY: Provide remediation for ALL issues found"
+  - "MANDATORY: Create all deliverables with proper timestamps"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "Be PARANOID and THOROUGH, not optimistic"
+    - "ANY significant issue = FAIL (be STRICT)"
+    - "ZERO errors in logs for PASS determination"
+    - "ALL health checks must pass consistently"
+    - "ALL API endpoints must respond correctly"
+    - "ALL connectivity must be validated"
+    - "Complete remediation steps for EVERY issue"
+    - "Generate detailed evidence-based reports"
+    - "Use UTC timestamps for all operations"
+    - "NEVER claim success when issues exist"
+
+  strictly_forbidden:
+    - "Claiming '100% success' without thorough validation"
+    - "Ignoring errors, warnings, or anomalies in logs"
+    - "Superficial or incomplete validation"
+    - "Optimistic reporting when issues exist"
+    - "Skipping any validation phase"
+    - "False positive success claims"
+    - "Incomplete remediation steps"
+    - "Missing evidence or documentation"
+    - "Creating deliverables without proper timestamps"
+
+---

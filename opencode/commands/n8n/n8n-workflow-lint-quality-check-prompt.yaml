@@ -1,0 +1,463 @@
+# === MCP PROMPT: N8N Workflow Lint and Quality Check Protocol ===
+name: "n8n-workflow-lint-quality-check-prompt"
+version: "1.0.0"
+description: "Comprehensive n8n workflow lint and quality check protocol for automated validation with workflow structure, expression, and node configuration verification"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "N8N Workflow Lint and Quality Check"
+  description: "Execute comprehensive n8n workflow quality validation with automated tools, mandatory functionality preservation, and safe improvements"
+
+  # Argument Schema
+  arguments:
+    workflow_id:
+      type: "string"
+      description: "Workflow ID or file path for quality analysis"
+      required: true
+
+    check_focus:
+      type: "string"
+      description: "Focus area for quality checking"
+      required: false
+      enum:
+        [
+          "all",
+          "structure",
+          "expressions",
+          "nodes",
+          "connections",
+          "security",
+          "error-handling",
+        ]
+
+    fix_level:
+      type: "string"
+      description: "Level of fixes to apply"
+      required: false
+      enum: ["safe-only", "moderate", "aggressive"]
+
+    validation_depth:
+      type: "string"
+      description: "Depth of validation checking"
+      required: false
+      enum: ["basic", "comprehensive", "exhaustive"]
+
+    reporting_detail:
+      type: "string"
+      description: "Level of reporting detail"
+      required: false
+      enum: ["summary", "detailed", "verbose"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI n8n workflow quality check specialist executing the N8N Workflow Lint and Quality Check Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive workflow validation methodology
+        - Run ALL n8n validation tools systematically
+        - Apply only safe, functionality-preserving fixes
+        - Maintain existing workflow behavior exactly
+        - Flag complex issues for manual review
+
+        ABSOLUTELY FORBIDDEN:
+        - Changing workflow business logic
+        - Modifying data transformation logic
+        - Altering workflow execution behavior
+        - Breaking existing integrations
+        - Creating test workflows during validation
+        - Making aggressive changes without permission
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY N8N WORKFLOW LINT AND QUALITY CHECK PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **CHECK PARAMETERS:**
+        - Workflow ID: {{workflow_id}}
+        - Check Focus: {{check_focus}}
+        - Fix Level: {{fix_level}}
+        - Validation Depth: {{validation_depth}}
+        - Reporting Detail: {{reporting_detail}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING N8N WORKFLOW QUALITY CHECK PROTOCOL:**
+
+# N8N Workflow Quality Check Protocol Configuration
+quality_check_protocol:
+  # Quality Check Scope - MANDATORY COMPREHENSIVE COVERAGE
+  check_focus:
+    workflow_structure_validation: true # MUST validate workflow JSON structure
+    connection_integrity: true # MUST check connection validity
+    node_configuration: true # MUST verify node settings
+    expression_validation: true # MUST validate expressions
+    security_compliance: true # MUST verify security
+    error_handling: true # MUST check error handling
+    performance_patterns: true # MUST assess performance
+    best_practices: true # MUST check n8n idioms
+    preserve_functionality: true # ABSOLUTELY preserve behavior
+
+  # Quality Check Configuration - MANDATORY SETTINGS
+  check_settings:
+    comprehensive_validation: true
+    safe_fixes_only: true
+    functionality_preservation: true
+    issue_flagging: true
+    detailed_reporting: true
+    timestamp_tracking: true
+    tool_integration: true # MANDATORY: Use all n8n validation tools
+    automated_fixes: true # MANDATORY: Apply safe auto-fixes
+    non_destructive: true # MANDATORY: No breaking changes
+    professional_standards: true # MANDATORY: Enterprise quality
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Workflow Scope Definition and Structure Validation"
+    mandatory_actions:
+      - "VALIDATE workflow exists and is accessible"
+      - "LOAD workflow JSON structure"
+      - "VERIFY workflow metadata completeness"
+      - "CHECK workflow settings validity"
+      - "ESTABLISH validation baseline"
+
+    scope_requirements:
+      - "MANDATORY: Workflow accessibility validation"
+      - "MANDATORY: JSON structure validation"
+      - "MANDATORY: Metadata completeness check"
+      - "FORBIDDEN: Modifying workflow structure during validation"
+
+  phase_2:
+    name: "Connection Architecture and Integrity Validation"
+    mandatory_actions:
+      - "MAP all workflow connections"
+      - "VALIDATE connection structure"
+      - "CHECK for orphaned nodes"
+      - "DETECT circular dependencies"
+      - "VERIFY data flow logic"
+
+    connection_validation:
+      structure_checking:
+        - "VALIDATE connection JSON structure"
+        - "CHECK source node existence"
+        - "VERIFY target node existence"
+        - "ASSESS connection type validity"
+
+      integrity_verification:
+        - "DETECT orphaned nodes"
+        - "IDENTIFY circular dependencies"
+        - "CHECK data flow completeness"
+        - "VALIDATE connection logic"
+
+      optimization_opportunities:
+        - "IDENTIFY redundant connections"
+        - "CHECK connection efficiency"
+        - "ASSESS parallel processing potential"
+        - "EVALUATE connection patterns"
+
+  phase_3:
+    name: "Node Configuration and Parameter Validation"
+    mandatory_actions:
+      - "ENUMERATE all workflow nodes"
+      - "CHECK node configuration completeness"
+      - "VALIDATE required parameters"
+      - "VERIFY credential references"
+      - "ASSESS node-specific settings"
+
+    node_validation:
+      configuration_completeness:
+        - "CHECK all required parameters set"
+        - "VALIDATE parameter value ranges"
+        - "VERIFY credential references"
+        - "ASSESS resource locators"
+
+      node_specific_checks:
+        - "HTTP Request: URL validity, method config, auth setup"
+        - "Webhook: Path config, response handling, auth settings"
+        - "Code: Syntax validation, input/output handling"
+        - "Database: Connection settings, query syntax"
+        - "Transform: Expression syntax, data type compatibility"
+
+      best_practice_assessment:
+        - "CHECK node selection appropriateness"
+        - "VERIFY configuration best practices"
+        - "ASSESS alternative node options"
+        - "EVALUATE node efficiency"
+
+  phase_4:
+    name: "Expression Syntax and Logic Validation"
+    mandatory_actions:
+      - "EXTRACT all workflow expressions"
+      - "VALIDATE expression syntax"
+      - "CHECK node references"
+      - "VERIFY data path existence"
+      - "ASSESS type compatibility"
+
+    expression_validation:
+      syntax_checking:
+        - "VALIDATE {{ }} delimiter usage"
+        - "CHECK JavaScript syntax validity"
+        - "VERIFY expression structure"
+        - "ASSESS complexity levels"
+
+      reference_validation:
+        - "CHECK $json references"
+        - "VALIDATE $node references"
+        - "VERIFY $items() usage"
+        - "ASSESS data path existence"
+
+      quality_metrics:
+        - "MEASURE expression complexity"
+        - "CHECK null safety"
+        - "VALIDATE type coercion"
+        - "ASSESS error handling"
+
+      optimization_opportunities:
+        - "IDENTIFY simplification options"
+        - "CHECK performance implications"
+        - "ASSESS readability improvements"
+        - "EVALUATE alternative approaches"
+
+  phase_5:
+    name: "Security and Credentials Validation"
+    mandatory_actions:
+      - "SCAN for hardcoded credentials"
+      - "VALIDATE credential references"
+      - "CHECK secret management"
+      - "VERIFY authentication configuration"
+      - "ASSESS data security compliance"
+
+    security_validation:
+      credential_security:
+        - "SCAN for hardcoded API keys"
+        - "CHECK password patterns"
+        - "VALIDATE credential references"
+        - "ASSESS secret management"
+
+      authentication_verification:
+        - "CHECK auth configuration"
+        - "VERIFY auth patterns"
+        - "VALIDATE token handling"
+        - "ASSESS auth best practices"
+
+      data_security:
+        - "CHECK input sanitization"
+        - "VALIDATE output filtering"
+        - "ASSESS data encryption"
+        - "VERIFY compliance requirements"
+
+  phase_6:
+    name: "Error Handling and Recovery Validation"
+    mandatory_actions:
+      - "MAP error handling workflows"
+      - "CHECK error node connections"
+      - "VALIDATE try/catch blocks"
+      - "VERIFY fallback logic"
+      - "ASSESS recovery strategies"
+
+    error_handling_validation:
+      error_workflows:
+        - "CHECK error output connections"
+        - "VALIDATE error node configuration"
+        - "VERIFY error data handling"
+        - "ASSESS error notification setup"
+
+      code_node_error_handling:
+        - "VALIDATE try/catch blocks"
+        - "CHECK error propagation"
+        - "VERIFY error logging"
+        - "ASSESS exception handling"
+
+      recovery_strategies:
+        - "CHECK fallback logic"
+        - "VALIDATE retry mechanisms"
+        - "VERIFY recovery workflows"
+        - "ASSESS failure handling"
+
+  phase_7:
+    name: "Performance and Optimization Assessment"
+    mandatory_actions:
+      - "ANALYZE workflow complexity"
+      - "ASSESS execution efficiency"
+      - "CHECK resource utilization"
+      - "IDENTIFY bottlenecks"
+      - "EVALUATE optimization opportunities"
+
+    performance_validation:
+      complexity_analysis:
+        - "MEASURE workflow complexity"
+        - "COUNT total nodes"
+        - "ASSESS connection density"
+        - "EVALUATE nesting depth"
+
+      efficiency_assessment:
+        - "CHECK execution paths"
+        - "VALIDATE data transformation efficiency"
+        - "ASSESS parallel processing usage"
+        - "EVALUATE resource consumption"
+
+      optimization_identification:
+        - "IDENTIFY redundant operations"
+        - "CHECK caching opportunities"
+        - "ASSESS batch processing potential"
+        - "EVALUATE alternative approaches"
+
+  phase_8:
+    name: "Safe Quality Improvements and Auto-fixes"
+    mandatory_actions:
+      - "APPLY expression formatting"
+      - "OPTIMIZE connection organization"
+      - "STANDARDIZE node positioning"
+      - "COMPLETE missing metadata"
+      - "FORMAT documentation"
+
+    safe_improvements:
+      automated_fixes:
+        - "FORMAT expressions consistently"
+        - "ORGANIZE connections logically"
+        - "POSITION nodes for readability"
+        - "COMPLETE workflow metadata"
+
+      documentation_enhancements:
+        - "ADD missing node notes"
+        - "FORMAT existing notes"
+        - "COMPLETE workflow description"
+        - "STANDARDIZE naming conventions"
+
+      non_breaking_optimizations:
+        - "OPTIMIZE expression syntax"
+        - "SIMPLIFY complex expressions"
+        - "IMPROVE data flow clarity"
+        - "ENHANCE workflow readability"
+
+  phase_9:
+    name: "Issue Classification and Remediation Planning"
+    mandatory_actions:
+      - "CLASSIFY all identified issues"
+      - "ASSIGN severity levels"
+      - "CREATE remediation recommendations"
+      - "PRIORITIZE fix order"
+      - "ESTIMATE remediation effort"
+
+    issue_management:
+      issue_classification:
+        - "CATEGORIZE: Critical (must fix)"
+        - "CATEGORIZE: Warnings (should fix)"
+        - "CATEGORIZE: Suggestions (consider)"
+        - "ASSESS business impact"
+
+      severity_assignment:
+        - "ASSIGN P0: Critical issues"
+        - "ASSIGN P1: High priority"
+        - "ASSIGN P2: Medium priority"
+        - "ASSIGN P3: Low priority"
+
+      remediation_planning:
+        - "CREATE fix strategies"
+        - "IDENTIFY dependencies"
+        - "ESTIMATE effort levels"
+        - "PLAN testing requirements"
+
+  phase_10:
+    name: "Quality Report Generation and Documentation"
+    mandatory_actions:
+      - "COMPILE comprehensive validation report"
+      - "DOCUMENT all issues found"
+      - "LIST all fixes applied"
+      - "CREATE remediation roadmap"
+      - "GENERATE markdown document deliverables"
+
+    documentation_requirements:
+      - "MANDATORY: Complete validation report"
+      - "MANDATORY: Issue documentation"
+      - "MANDATORY: Fix summary"
+      - "MANDATORY: Remediation plans"
+      - "FORBIDDEN: Missing timestamps"
+
+# Workflow Quality Validation Criteria
+validation_criteria:
+  structure_valid: "MANDATORY - Workflow JSON structure verified"
+  connections_valid: "MANDATORY - Connection integrity confirmed"
+  nodes_configured: "MANDATORY - Node configurations validated"
+  expressions_valid: "MANDATORY - Expression syntax verified"
+  security_compliant: "MANDATORY - Security compliance confirmed"
+  error_handling_present: "MANDATORY - Error handling validated"
+  performance_acceptable: "MANDATORY - Performance assessed"
+  safe_fixes_applied: "MANDATORY - Only safe fixes made"
+  functionality_preserved: "MANDATORY - No behavior changes"
+  issues_documented: "MANDATORY - All issues flagged"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL workflow quality check output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-10-02-143000"
+
+  required_outputs:
+    - "./project/docs/n8n-workflows/Workflow_Validation_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive validation analysis)"
+    - "./project/docs/n8n-workflows/Expression_Analysis-{{YYYY-MM-DD-HHMMSS}}.ipynb (expression validation details)"
+    - "./project/docs/n8n-workflows/Node_Configuration_Review-{{YYYY-MM-DD-HHMMSS}}.ipynb (node configuration analysis)"
+    - "./project/docs/n8n-workflows/Quality_Fixes_Applied-{{YYYY-MM-DD-HHMMSS}}.ipynb (auto-fix summary, if fixes applied)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all workflow quality check output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL workflow quality check deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all check outputs"
+    - "FORBIDDEN: Creating check files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same check session"
+
+# Workflow Quality Check Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE workflow ({{workflow_id}}) exists and is accessible"
+  - "2. ANALYZE workflow structure and connections with ({{check_focus}}) focus"
+  - "3. VALIDATE node configurations and parameters"
+  - "4. CHECK expression syntax and logic"
+  - "5. VERIFY security and credential handling"
+  - "6. ASSESS error handling and recovery"
+  - "7. EVALUATE performance and optimization opportunities"
+  - "8. APPLY ({{fix_level}}) quality improvements"
+  - "9. CLASSIFY and prioritize issues for remediation"
+  - "10. GENERATE ({{reporting_detail}}) quality report with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each validation phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all quality tracking"
+  - "MANDATORY: Timestamp all check deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL workflow validation tools MUST be run"
+    - "ALL fixes MUST be safe and non-breaking"
+    - "ALL workflow functionality MUST be preserved"
+    - "ALL issues MUST be documented and classified"
+    - "ALL fixes MUST be reversible"
+    - "ALL changes MUST be tracked with timestamps"
+    - "ALWAYS preserve workflow behavior"
+    - "NEVER alter business logic or data transformations"
+
+  strictly_forbidden:
+    - "Changing workflow functionality"
+    - "Breaking integration contracts"
+    - "Modifying data transformation logic"
+    - "Altering execution behavior"
+    - "Creating test workflows during validation"
+    - "Making risky changes without review"
+    - "Skipping validation tools"
+    - "Missing issue documentation"

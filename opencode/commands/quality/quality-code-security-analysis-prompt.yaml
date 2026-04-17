@@ -1,0 +1,687 @@
+# === MCP PROMPT: Universal Code Security Analysis Protocol ===
+name: "quality-code-security-analysis-prompt"
+version: "1.0.0"
+description: "AI-driven comprehensive security assessment protocol for code security analysis"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Universal Code Security Analysis"
+  description: "Execute exhaustive security analysis of entire codebase against security frameworks, vulnerability patterns, and compliance standards"
+
+  # Argument Schema
+  arguments:
+    target_codebase:
+      type: "string"
+      description: "Path to the codebase directory for security analysis"
+      required: true
+
+    security_scope:
+      type: "string"
+      description: "Scope of security analysis to perform"
+      required: true
+      enum:
+        [
+          "full-security-audit",
+          "vulnerability-assessment",
+          "compliance-check",
+          "threat-modeling",
+          "penetration-test-prep",
+          "sast-analysis",
+        ]
+
+    security_frameworks:
+      type: "string"
+      description: "Security frameworks and standards to validate against"
+      required: true
+      enum:
+        [
+          "owasp-top-10",
+          "owasp-asvs",
+          "cwe-sans-top-25",
+          "nist-cybersecurity",
+          "iso-27001",
+          "pci-dss",
+          "gdpr-privacy",
+          "soc2-compliance",
+          "comprehensive",
+        ]
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of security analysis"
+      required: true
+      enum:
+        [
+          "surface-scan",
+          "standard-assessment",
+          "deep-analysis",
+          "enterprise-audit",
+          "critical-systems",
+          "comprehensive",
+        ]
+
+    compliance_requirements:
+      type: "string"
+      description: "Specific compliance requirements"
+      required: false
+
+    threat_model_focus:
+      type: "string"
+      description: "Specific threat modeling focus areas"
+      required: false
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI-driven security analysis specialist executing the Universal Code Security Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow exhaustive security assessment methodology
+        - Apply industry security frameworks and standards
+        - Perform comprehensive vulnerability identification
+        - Generate detailed threat models and risk assessments
+        - Create actionable remediation strategies
+
+        ABSOLUTELY FORBIDDEN:
+        - Implementing actual security fixes
+        - Partial or incomplete security analysis
+        - Analysis without proper vulnerability classification
+        - Missing threat modeling and risk assessment
+        - Analysis without compliance framework validation
+        - Incomplete remediation recommendations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY SECURITY ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **SECURITY ANALYSIS PARAMETERS:**
+        - Target Codebase: {{target_codebase}}
+        - Security Scope: {{security_scope}}
+        - Security Frameworks: {{security_frameworks}}
+        - Analysis Depth: {{analysis_depth}}
+        - Compliance Requirements: {{compliance_requirements}}
+        - Threat Model Focus: {{threat_model_focus}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING SECURITY ANALYSIS PROTOCOL:**
+
+# Security Analysis Protocol Configuration
+security_protocol:
+  # Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  analysis_focus:
+    vulnerability_assessment: true # MUST identify all security vulnerabilities
+    threat_modeling: true # MUST create comprehensive threat models
+    compliance_validation: true # MUST validate against security frameworks
+    risk_assessment: true # MUST calculate and prioritize security risks
+    penetration_test_preparation: true # MUST identify high-risk attack vectors
+    secure_coding_analysis: true # MUST evaluate secure coding practices
+    dependency_security_analysis: true # MUST analyze third-party security risks
+    configuration_security_analysis: true # MUST evaluate security configurations
+    no_security_implementations: true # FORBIDDEN: Implementing actual security fixes
+    no_external_modifications: true # FORBIDDEN: External system modifications
+    security_documentation_only: true # ALLOWED: Security analysis documentation only
+
+  # Security Requirements - MANDATORY SETTINGS
+  security_requirements:
+    owasp_top_10_compliance: true # MANDATORY: OWASP Top 10 vulnerability assessment
+    owasp_asvs_compliance: true # MANDATORY: Application Security Verification Standard
+    cwe_sans_top_25_compliance: true # MANDATORY: Common Weakness Enumeration analysis
+    nist_cybersecurity_compliance: true # MANDATORY: NIST Cybersecurity Framework
+    static_analysis_sast: true # MANDATORY: Static Application Security Testing
+    dynamic_analysis_preparation: true # MANDATORY: Dynamic analysis preparation
+    secrets_detection: true # MANDATORY: Hardcoded secrets and credentials detection
+    cryptography_analysis: true # MANDATORY: Cryptographic implementation analysis
+    authentication_analysis: true # MANDATORY: Authentication mechanism analysis
+    authorization_analysis: true # MANDATORY: Authorization and access control analysis
+    input_validation_analysis: true # MANDATORY: Input validation and sanitization analysis
+    supply_chain_security_analysis: true # MANDATORY: Dependency and supply chain security
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Security Inventory and Attack Surface Mapping"
+    mandatory_actions:
+      - "DISCOVER and catalog all system components and assets"
+      - "MAP external and internal attack surface comprehensively"
+      - "IDENTIFY all entry points and data flows"
+      - "CATALOG security controls and protection mechanisms"
+      - "DOCUMENT authentication and authorization systems"
+      - "ANALYZE infrastructure and deployment security"
+
+    security_inventory:
+      system_components:
+        - "ENUMERATE all applications and services"
+        - "IDENTIFY technology stacks and frameworks"
+        - "MAP application boundaries and trust zones"
+        - "CATALOG exposed interfaces and endpoints"
+        - "DOCUMENT service-to-service communications"
+
+      attack_surface_mapping:
+        - "IDENTIFY external-facing interfaces and APIs"
+        - "MAP web applications and mobile endpoints"
+        - "CATALOG third-party integrations and connections"
+        - "ANALYZE internal admin panels and interfaces"
+        - "DOCUMENT database and storage access points"
+
+      security_controls_inventory:
+        - "CATALOG authentication systems and mechanisms"
+        - "IDENTIFY authorization frameworks and controls"
+        - "MAP monitoring and logging infrastructure"
+        - "ANALYZE encryption and data protection controls"
+        - "DOCUMENT incident response and security tools"
+
+  phase_2:
+    name: "Static Application Security Testing (SAST)"
+    mandatory_actions:
+      - "PERFORM comprehensive static code analysis"
+      - "IDENTIFY injection vulnerabilities and attack vectors"
+      - "ANALYZE authentication and session management flaws"
+      - "DETECT authorization and access control weaknesses"
+      - "SCAN for cryptographic implementation issues"
+      - "DOCUMENT all vulnerabilities with detailed evidence"
+
+    vulnerability_scanning:
+      injection_vulnerabilities:
+        - "IDENTIFY SQL injection attack vectors and patterns"
+        - "DETECT NoSQL injection vulnerabilities"
+        - "ANALYZE command injection and OS command execution"
+        - "SCAN for LDAP and XPath injection vulnerabilities"
+        - "IDENTIFY template injection and expression language flaws"
+
+      cross_site_scripting:
+        - "DETECT reflected XSS vulnerabilities and contexts"
+        - "IDENTIFY stored XSS attack vectors and persistence"
+        - "ANALYZE DOM-based XSS and client-side vulnerabilities"
+        - "SCAN for template injection and server-side includes"
+        - "IDENTIFY JavaScript injection and code execution"
+
+      authentication_security:
+        - "ANALYZE password policies and strength requirements"
+        - "IDENTIFY weak session management and token handling"
+        - "DETECT credential storage and transmission issues"
+        - "SCAN for multi-factor authentication bypass"
+        - "ANALYZE authentication mechanism implementation flaws"
+
+      authorization_security:
+        - "IDENTIFY privilege escalation vulnerabilities"
+        - "DETECT insecure direct object reference (IDOR) flaws"
+        - "ANALYZE path traversal and directory enumeration"
+        - "SCAN for missing access control and authorization bypass"
+        - "IDENTIFY role-based access control implementation issues"
+
+  phase_3:
+    name: "Security Configuration and Infrastructure Analysis"
+    mandatory_actions:
+      - "ANALYZE infrastructure security configurations"
+      - "EVALUATE container and deployment security settings"
+      - "ASSESS database security and access controls"
+      - "REVIEW cloud security configurations and policies"
+      - "VALIDATE security headers and protection mechanisms"
+      - "DOCUMENT configuration vulnerabilities and misconfigurations"
+
+    infrastructure_security:
+      container_security:
+        - "ANALYZE container base images for vulnerabilities"
+        - "EVALUATE runtime configurations and privilege settings"
+        - "ASSESS resource limits and security constraints"
+        - "REVIEW network policies and isolation settings"
+        - "IDENTIFY container escape and privilege escalation risks"
+
+      cloud_security:
+        - "EVALUATE IAM configurations and access policies"
+        - "ANALYZE storage permissions and data exposure"
+        - "ASSESS network security groups and firewall rules"
+        - "REVIEW encryption settings and key management"
+        - "IDENTIFY cloud service misconfigurations and risks"
+
+      database_security:
+        - "ANALYZE database access controls and authentication"
+        - "EVALUATE encryption at rest and in transit"
+        - "ASSESS connection security and network isolation"
+        - "REVIEW audit logging and monitoring configurations"
+        - "IDENTIFY backup security and data retention issues"
+
+    application_security_configuration:
+      security_headers:
+        - "VALIDATE Content Security Policy (CSP) implementation"
+        - "ANALYZE HTTP Strict Transport Security (HSTS) settings"
+        - "EVALUATE X-Frame-Options and clickjacking protection"
+        - "ASSESS X-Content-Type-Options and MIME sniffing protection"
+        - "REVIEW Referrer Policy and information leakage prevention"
+
+      session_management:
+        - "ANALYZE cookie security attributes and settings"
+        - "EVALUATE session timeout and lifecycle management"
+        - "ASSESS token expiration and refresh mechanisms"
+        - "REVIEW logout handling and session invalidation"
+        - "IDENTIFY concurrent session and user management issues"
+
+  phase_4:
+    name: "Cryptography and Secrets Security Analysis"
+    mandatory_actions:
+      - "ANALYZE cryptographic algorithm implementation and usage"
+      - "EVALUATE key management and lifecycle practices"
+      - "DETECT hardcoded secrets and credential exposure"
+      - "ASSESS encryption strength and implementation quality"
+      - "REVIEW certificate management and PKI implementation"
+      - "DOCUMENT cryptographic vulnerabilities and weaknesses"
+
+    cryptographic_analysis:
+      algorithm_assessment:
+        - "IDENTIFY weak or deprecated cryptographic algorithms"
+        - "ANALYZE cipher selection and configuration strength"
+        - "EVALUATE key length sufficiency and entropy quality"
+        - "ASSESS random number generation and cryptographic randomness"
+        - "IDENTIFY custom cryptographic implementations and risks"
+
+      key_management:
+        - "ANALYZE key storage security and access controls"
+        - "EVALUATE key rotation and lifecycle management"
+        - "ASSESS key generation and distribution mechanisms"
+        - "REVIEW key escrow and backup procedures"
+        - "IDENTIFY key destruction and secure deletion practices"
+
+    secrets_detection:
+      hardcoded_credentials:
+        - "SCAN for hardcoded API keys and access tokens"
+        - "IDENTIFY embedded database passwords and connection strings"
+        - "DETECT service account credentials and authentication keys"
+        - "ANALYZE encryption keys and cryptographic material exposure"
+        - "IDENTIFY OAuth tokens and authentication secrets"
+
+      configuration_exposure:
+        - "ANALYZE environment variable security and exposure"
+        - "SCAN configuration files for sensitive information"
+        - "REVIEW build scripts and deployment automation secrets"
+        - "IDENTIFY container image credential exposure"
+        - "ANALYZE version control history for credential leakage"
+
+  phase_5:
+    name: "Dependency and Supply Chain Security Assessment"
+    mandatory_actions:
+      - "SCAN all dependencies for known vulnerabilities"
+      - "ANALYZE third-party component security and licensing"
+      - "EVALUATE supply chain integrity and verification"
+      - "ASSESS transitive dependency risks and exposure"
+      - "REVIEW dependency update and maintenance practices"
+      - "DOCUMENT supply chain security risks and recommendations"
+
+    dependency_vulnerability_analysis:
+      known_vulnerabilities:
+        - "SCAN dependencies against CVE databases"
+        - "IDENTIFY security advisories and vendor notifications"
+        - "ASSESS patch availability and remediation status"
+        - "ANALYZE exploit availability and risk exposure"
+        - "CALCULATE vulnerability risk scores and prioritization"
+
+      license_compliance:
+        - "ANALYZE license compatibility and commercial restrictions"
+        - "IDENTIFY attribution requirements and obligations"
+        - "ASSESS copyleft implications and source code exposure"
+        - "REVIEW patent issues and intellectual property risks"
+        - "DOCUMENT compliance gaps and legal requirements"
+
+    supply_chain_integrity:
+      package_verification:
+        - "VALIDATE package signatures and integrity checksums"
+        - "ANALYZE source verification and authenticity"
+        - "ASSESS build reproducibility and transparency"
+        - "REVIEW update mechanisms and security channels"
+        - "IDENTIFY package repository security and trust"
+
+      transitive_dependencies:
+        - "MAP deep dependency trees and relationships"
+        - "IDENTIFY version conflicts and compatibility issues"
+        - "ANALYZE abandoned packages and maintenance status"
+        - "DETECT malicious packages and typosquatting attempts"
+        - "ASSESS dependency confusion and substitution attacks"
+
+  phase_6:
+    name: "Threat Modeling and Attack Vector Analysis"
+    mandatory_actions:
+      - "CREATE comprehensive threat models using STRIDE methodology"
+      - "IDENTIFY potential attack scenarios and exploit chains"
+      - "ANALYZE attack vectors and entry points systematically"
+      - "ASSESS threat actor capabilities and motivations"
+      - "DEVELOP attack trees and scenario mapping"
+      - "DOCUMENT threat landscape and risk exposure"
+
+    threat_modeling:
+      stride_analysis:
+        - "IDENTIFY spoofing threats and identity attacks"
+        - "ANALYZE tampering threats and data integrity attacks"
+        - "ASSESS repudiation threats and audit trail attacks"
+        - "EVALUATE information disclosure and data exposure threats"
+        - "IDENTIFY denial of service and availability attacks"
+        - "ANALYZE elevation of privilege and access control attacks"
+
+      attack_scenario_development:
+        - "CREATE realistic attack scenarios and use cases"
+        - "MAP attack paths and exploitation sequences"
+        - "ANALYZE attacker capabilities and resource requirements"
+        - "ASSESS attack complexity and likelihood estimation"
+        - "DEVELOP attack trees and decision matrices"
+
+    attack_vector_analysis:
+      external_attack_vectors:
+        - "ANALYZE internet-facing application vulnerabilities"
+        - "IDENTIFY email and social engineering attack vectors"
+        - "ASSESS physical security and access control weaknesses"
+        - "EVALUATE supply chain and third-party attack vectors"
+        - "ANALYZE cloud service and infrastructure attack vectors"
+
+      internal_attack_vectors:
+        - "IDENTIFY insider threat and privilege abuse scenarios"
+        - "ANALYZE lateral movement and network propagation"
+        - "ASSESS administrative interface and backdoor risks"
+        - "EVALUATE service-to-service communication vulnerabilities"
+        - "IDENTIFY data exfiltration and information theft vectors"
+
+  phase_7:
+    name: "Risk Assessment and CVSS Scoring"
+    mandatory_actions:
+      - "CALCULATE CVSS scores for all identified vulnerabilities"
+      - "ASSESS business impact and operational risk exposure"
+      - "PRIORITIZE vulnerabilities based on exploitability and impact"
+      - "ANALYZE risk tolerance and acceptable risk levels"
+      - "CREATE risk matrices and heat maps for visualization"
+      - "DOCUMENT risk assessment methodology and assumptions"
+
+    vulnerability_risk_scoring:
+      cvss_base_scoring:
+        - "CALCULATE attack vector accessibility and complexity"
+        - "ASSESS privileges required and user interaction needs"
+        - "EVALUATE scope change and impact boundary crossing"
+        - "ANALYZE confidentiality, integrity, and availability impact"
+        - "DOCUMENT CVSS vector strings and score justification"
+
+      business_impact_assessment:
+        - "EVALUATE financial impact and revenue loss potential"
+        - "ASSESS regulatory compliance and legal exposure"
+        - "ANALYZE reputation damage and customer trust impact"
+        - "EVALUATE operational disruption and service availability"
+        - "ASSESS competitive advantage and intellectual property risks"
+
+    risk_prioritization:
+      exploitability_analysis:
+        - "ASSESS exploit availability and proof-of-concept existence"
+        - "ANALYZE attack complexity and skill requirements"
+        - "EVALUATE detection difficulty and stealth potential"
+        - "ASSESS weaponization potential and automation feasibility"
+        - "ANALYZE threat actor interest and targeting likelihood"
+
+      remediation_complexity:
+        - "EVALUATE fix complexity and development effort"
+        - "ASSESS testing requirements and validation complexity"
+        - "ANALYZE deployment risk and rollback procedures"
+        - "EVALUATE business process impact and change management"
+        - "ASSESS resource availability and timeline constraints"
+
+  phase_8:
+    name: "Compliance Framework Validation"
+    mandatory_actions:
+      - "VALIDATE compliance against OWASP Top 10 requirements"
+      - "ASSESS OWASP ASVS compliance levels and gaps"
+      - "EVALUATE CWE/SANS Top 25 vulnerability coverage"
+      - "ANALYZE NIST Cybersecurity Framework alignment"
+      - "REVIEW regulatory compliance requirements (GDPR, PCI, SOC2)"
+      - "DOCUMENT compliance status and remediation requirements"
+
+    owasp_compliance:
+      top_10_validation:
+        - "VALIDATE protection against injection attacks"
+        - "ASSESS broken authentication and session management"
+        - "EVALUATE sensitive data exposure and protection"
+        - "ANALYZE XML external entities (XXE) vulnerabilities"
+        - "ASSESS broken access control implementation"
+        - "VALIDATE security misconfiguration prevention"
+        - "ANALYZE cross-site scripting (XSS) protection"
+        - "EVALUATE insecure deserialization protection"
+        - "ASSESS components with known vulnerabilities"
+        - "VALIDATE insufficient logging and monitoring"
+
+      asvs_compliance:
+        - "ASSESS authentication verification requirements"
+        - "EVALUATE session management verification standards"
+        - "ANALYZE access control verification requirements"
+        - "VALIDATE input validation and encoding standards"
+        - "ASSESS cryptography verification requirements"
+        - "EVALUATE error handling and logging standards"
+        - "ANALYZE data protection verification requirements"
+        - "VALIDATE communication security standards"
+        - "ASSESS malicious code protection requirements"
+        - "EVALUATE business logic verification standards"
+
+    regulatory_compliance:
+      gdpr_privacy:
+        - "ASSESS personal data identification and classification"
+        - "EVALUATE data processing lawfulness and consent"
+        - "ANALYZE data subject rights implementation"
+        - "VALIDATE data protection by design and default"
+        - "ASSESS data breach notification procedures"
+
+      pci_dss:
+        - "EVALUATE cardholder data environment security"
+        - "ASSESS payment processing security controls"
+        - "ANALYZE network segmentation and isolation"
+        - "VALIDATE encryption and key management"
+        - "ASSESS vulnerability management and testing"
+
+  phase_9:
+    name: "Penetration Testing Preparation and High-Risk Target Identification"
+    mandatory_actions:
+      - "IDENTIFY high-risk targets for penetration testing"
+      - "PRIORITIZE attack vectors by exploitability and impact"
+      - "CREATE penetration testing scope and methodology"
+      - "DEVELOP attack scenarios and test cases"
+      - "DOCUMENT testing procedures and safety considerations"
+      - "PREPARE penetration testing reports and deliverables"
+
+    penetration_test_planning:
+      high_risk_targets:
+        - "IDENTIFY critical application entry points"
+        - "PRIORITIZE high-value data and system access"
+        - "MAP privilege escalation opportunities"
+        - "ANALYZE lateral movement and network propagation"
+        - "IDENTIFY administrative and management interfaces"
+
+      attack_scenario_planning:
+        - "DEVELOP realistic attack scenarios and use cases"
+        - "CREATE step-by-step exploitation procedures"
+        - "PLAN evidence collection and impact demonstration"
+        - "DESIGN safe testing procedures and rollback plans"
+        - "DOCUMENT testing constraints and safety measures"
+
+    test_case_development:
+      vulnerability_exploitation:
+        - "CREATE injection vulnerability test cases"
+        - "DEVELOP authentication bypass test procedures"
+        - "DESIGN privilege escalation exploit scenarios"
+        - "PLAN data extraction and exfiltration tests"
+        - "CREATE denial of service and availability tests"
+
+      security_control_testing:
+        - "DESIGN authentication mechanism bypass tests"
+        - "PLAN authorization control circumvention tests"
+        - "CREATE encryption and cryptographic weakness tests"
+        - "DEVELOP input validation and sanitization bypass tests"
+        - "PLAN security header and protection mechanism tests"
+
+  phase_10:
+    name: "Security Report Generation and Remediation Planning"
+    mandatory_actions:
+      - "COMPILE comprehensive security assessment report"
+      - "GENERATE executive summary with risk overview"
+      - "CREATE detailed vulnerability inventory and evidence"
+      - "DEVELOP prioritized remediation roadmap and timeline"
+      - "PRODUCE compliance matrices and gap analysis"
+      - "DELIVER actionable security recommendations and procedures"
+
+    security_reporting:
+      executive_summary:
+        - "SUMMARIZE overall security posture and risk level"
+        - "HIGHLIGHT critical vulnerabilities and immediate risks"
+        - "PRESENT business impact and financial risk exposure"
+        - "RECOMMEND strategic security improvements and investments"
+        - "COMMUNICATE compliance status and regulatory requirements"
+
+      technical_documentation:
+        - "DOCUMENT all vulnerabilities with detailed evidence"
+        - "PROVIDE proof-of-concept exploits and demonstrations"
+        - "INCLUDE code examples and security anti-patterns"
+        - "PRESENT architectural diagrams and attack scenarios"
+        - "DELIVER comprehensive remediation guidance and procedures"
+
+    remediation_planning:
+      priority_matrix:
+        - "CATEGORIZE vulnerabilities by severity and exploitability"
+        - "PRIORITIZE fixes based on business impact and resources"
+        - "CREATE short-term and long-term remediation phases"
+        - "PLAN security architecture improvements and enhancements"
+        - "SCHEDULE security testing and validation procedures"
+
+      implementation_guidance:
+        - "PROVIDE specific code fixes and secure implementation examples"
+        - "RECOMMEND security tools and automated protection mechanisms"
+        - "DESIGN security training and awareness programs"
+        - "PLAN security monitoring and incident response procedures"
+        - "CREATE security metrics and measurement frameworks"
+
+# Security Analysis Validation Criteria
+validation_criteria:
+  vulnerability_completeness: "MANDATORY - All security vulnerabilities identified and documented"
+  threat_modeling_completeness: "MANDATORY - Comprehensive threat models with STRIDE analysis"
+  compliance_validation: "MANDATORY - All specified security frameworks validated"
+  risk_assessment_accuracy: "MANDATORY - Accurate CVSS scoring and business impact analysis"
+  penetration_test_preparation: "MANDATORY - High-risk targets and attack scenarios identified"
+  remediation_actionability: "MANDATORY - Specific, actionable remediation recommendations"
+  evidence_quality: "MANDATORY - Reproducible findings with detailed proof-of-concept"
+  compliance_documentation: "MANDATORY - Complete compliance matrices and gap analysis"
+  security_architecture_review: "MANDATORY - Comprehensive security architecture assessment"
+  executive_communication: "MANDATORY - Clear executive summary and business risk communication"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL security analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-185035"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Security_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive security analysis)"
+    - "./project/docs/quality-analysis/Vulnerability_Assessment-{{YYYY-MM-DD-HHMMSS}}.md (vulnerabilities, risk assessment)"
+    - "./project/docs/quality-analysis/Remediation_Plan-{{YYYY-MM-DD-HHMMSS}}.md (security fixes, compliance, validation)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all security analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL security analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all security analysis outputs"
+    - "FORBIDDEN: Creating security analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same security analysis session"
+
+# Security Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. INVENTORY system components and map attack surface comprehensively"
+  - "2. PERFORM static application security testing (SAST) with vulnerability detection"
+  - "3. ANALYZE security configurations and infrastructure protection"
+  - "4. ASSESS cryptography implementation and secrets management"
+  - "5. EVALUATE dependency security and supply chain risks"
+  - "6. CONDUCT threat modeling with STRIDE methodology"
+  - "7. CALCULATE risk scores using CVSS and business impact analysis"
+  - "8. VALIDATE compliance against security frameworks and standards"
+  - "9. PREPARE penetration testing targets and attack scenarios"
+  - "10. COMPILE comprehensive security report and remediation plan"
+  - "11. VALIDATE findings accuracy and evidence reproducibility"
+  - "12. DELIVER structured outputs with timestamp documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each security analysis phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all security analysis tracking"
+  - "MANDATORY: Timestamp all vulnerability discovery and validation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Security Analysis Frameworks
+security_frameworks:
+  vulnerability_assessment_framework:
+    static_analysis: "Comprehensive SAST with pattern matching and flow analysis"
+    dynamic_preparation: "Preparation for DAST and runtime security testing"
+    dependency_scanning: "SCA with CVE database matching and license analysis"
+    configuration_analysis: "Security configuration and infrastructure assessment"
+    threat_modeling: "STRIDE-based threat identification and attack scenario development"
+
+  compliance_validation_framework:
+    owasp_assessment: "OWASP Top 10 and ASVS compliance validation"
+    regulatory_compliance: "GDPR, PCI DSS, SOC2, and industry standard validation"
+    security_standards: "NIST Cybersecurity Framework and ISO 27001 assessment"
+    best_practices: "Industry security best practices and secure coding standards"
+    penetration_testing: "High-risk target identification and testing preparation"
+
+  risk_assessment_framework:
+    cvss_scoring: "Common Vulnerability Scoring System with business impact"
+    threat_intelligence: "Threat actor analysis and attack vector assessment"
+    business_impact: "Financial, operational, and reputational risk analysis"
+    exploitability_analysis: "Exploit availability and weaponization assessment"
+    remediation_planning: "Risk-based prioritization and timeline development"
+
+# Security Analysis Quality Gates
+quality_gates:
+  vulnerability_assessment_completeness:
+    - "All code paths analyzed for security vulnerabilities"
+    - "OWASP Top 10 and CWE/SANS Top 25 coverage validated"
+    - "Dependency vulnerabilities identified and assessed"
+    - "Configuration security evaluated and documented"
+
+  threat_modeling_completeness:
+    - "STRIDE analysis completed for all system components"
+    - "Attack scenarios developed with detailed exploit chains"
+    - "Threat actor capabilities and motivations analyzed"
+    - "Attack surface mapped with entry points identified"
+
+  compliance_validation_completeness:
+    - "All specified security frameworks validated"
+    - "Compliance gaps identified and documented"
+    - "Regulatory requirements assessed and verified"
+    - "Security controls evaluated for effectiveness"
+
+  risk_assessment_completeness:
+    - "CVSS scores calculated for all vulnerabilities"
+    - "Business impact assessed and quantified"
+    - "Risk prioritization completed with justification"
+    - "Remediation effort and timeline estimated"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL security vulnerabilities MUST be identified and documented"
+    - "ALL specified security frameworks MUST be validated"
+    - "ALL vulnerabilities MUST have accurate CVSS scoring"
+    - "ALL findings MUST include detailed evidence and proof-of-concept"
+    - "ALL remediation recommendations MUST be specific and actionable"
+    - "ALL compliance gaps MUST be documented with regulatory references"
+    - "ALWAYS provide business impact and risk contextualization"
+    - "NEVER implement actual security fixes or modifications"
+
+  strictly_forbidden:
+    - "Implementing actual security fixes or code modifications"
+    - "Partial or incomplete vulnerability assessment"
+    - "Analysis without proper threat modeling and risk assessment"
+    - "Missing compliance framework validation"
+    - "Analysis without actionable remediation recommendations"
+    - "Incomplete vulnerability evidence and documentation"
+    - "Missing business impact and risk quantification"
+    - "Analysis without penetration testing preparation"

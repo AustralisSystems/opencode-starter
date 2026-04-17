@@ -1,0 +1,219 @@
+name: "Node.js Code Review"
+description: "Comprehensive code review for Node.js backend applications with security, performance, and architecture analysis"
+version: "2.1.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Get latest best practices
+    - grep # Find similar patterns in GitHub
+    - sequential-thinking # Structure review approach
+    - filesystem # Read existing code
+    - memory # Track findings during review
+    - time # Timestamp review activities
+
+# Execution Protocol
+execution_phases:
+  1_preparation:
+    description: "Gather context and establish review criteria"
+    tools: ["context7", "grep", "filesystem"]
+    required_actions:
+      - "Get latest Node.js security and performance best practices"
+      - "Search for similar code review patterns on GitHub"
+      - "Read existing codebase structure and dependencies"
+      - "Identify review scope and focus areas"
+    success_criteria:
+      - "Current best practices documented"
+      - "Existing code structure understood"
+      - "Review scope clearly defined"
+
+  2_analysis:
+    description: "Systematic code analysis across multiple dimensions"
+    tools: ["sequential-thinking", "memory", "filesystem"]
+    required_actions:
+      - "Analyze code architecture and design patterns"
+      - "Review security implementations and vulnerabilities"
+      - "Assess performance patterns and potential bottlenecks"
+      - "Evaluate error handling and edge cases"
+      - "Check code quality and maintainability"
+    success_criteria:
+      - "All code files systematically reviewed"
+      - "Issues categorized by severity and type"
+      - "Recommendations formulated with examples"
+
+  3_reporting:
+    description: "Generate comprehensive review report with actionable insights"
+    tools: ["memory", "time", "filesystem"]
+    required_actions:
+      - "Compile findings into structured report"
+      - "Prioritize issues by impact and effort"
+      - "Provide specific code examples and fixes"
+      - "Create improvement roadmap"
+    success_criteria:
+      - "Complete review report generated"
+      - "Issues prioritized and categorized"
+      - "Actionable recommendations provided"
+
+# Review Parameters
+parameters:
+  review_categories:
+    architecture:
+      - "Design pattern compliance (Clean, Hexagonal, Layered)"
+      - "SOLID principles adherence"
+      - "Dependency injection implementation"
+      - "Module organization and separation of concerns"
+
+    security:
+      - "helmet.js configuration and security headers"
+      - "JWT implementation and token handling"
+      - "Input validation and sanitization"
+      - "Authentication and authorization patterns"
+      - "Environment variable and secret management"
+
+    performance:
+      - "Database connection pooling and optimization"
+      - "Async/await usage and promise handling"
+      - "Memory usage and potential leaks"
+      - "Caching strategies and implementation"
+      - "Response time optimization"
+
+    code_quality:
+      - "Error handling and exception management"
+      - "Logging implementation and levels"
+      - "Code readability and maintainability"
+      - "Test coverage and quality"
+      - "Documentation completeness"
+
+  node_specific_checks:
+    version_compliance:
+      - "Node.js 21.x LTS feature usage"
+      - "Built-in test runner implementation"
+      - "Permission model utilization"
+      - "Modern ES modules with node: protocol"
+
+    framework_patterns:
+      - "Express.js v5.x best practices"
+      - "Fastify v4.x optimization patterns"
+      - "NestJS v10+ architectural compliance"
+
+    ecosystem_integration:
+      - "Prisma/Drizzle ORM usage patterns"
+      - "Redis caching implementation"
+      - "PostgreSQL/MongoDB integration"
+
+# Deliverable Specifications
+deliverables:
+  document_count: 2
+  document_types:
+    - "Code Review Analysis Report"
+    - "Improvement Implementation Guide"
+
+  document_1_analysis:
+    title: "Node.js Code Review Analysis"
+    contents:
+      - "Executive summary with key findings"
+      - "Architecture analysis and recommendations"
+      - "Security vulnerability assessment"
+      - "Performance bottleneck identification"
+      - "Code quality metrics and issues"
+    report_sections:
+      - "Critical Issues (immediate attention required)"
+      - "Major Issues (next sprint priority)"
+      - "Minor Issues (technical debt)"
+      - "Recommendations (best practice improvements)"
+      - "Positive Findings (what's working well)"
+
+  document_2_implementation:
+    title: "Code Improvement Implementation Guide"
+    contents:
+      - "Prioritized improvement roadmap"
+      - "Specific code fixes with before/after examples"
+      - "Performance optimization implementations"
+      - "Security enhancement code samples"
+      - "Testing improvements and additions"
+    implementation_focus:
+      - "High-impact, low-effort improvements first"
+      - "Security fixes prioritized"
+      - "Performance optimizations with measurable impact"
+      - "Code quality improvements for maintainability"
+
+# Quality Standards
+quality_requirements:
+  review_depth:
+    - "Line-by-line analysis for critical components"
+    - "Architectural pattern evaluation"
+    - "Security vulnerability scanning"
+    - "Performance impact assessment"
+    - "Maintainability scoring"
+
+  reporting_standards:
+    - "Specific file and line number references"
+    - "Code examples for all recommendations"
+    - "Risk assessment for identified issues"
+    - "Estimated effort for fixes"
+    - "Business impact analysis"
+
+  recommendation_quality:
+    - "Actionable and specific guidance"
+    - "Current best practice alignment"
+    - "Production-ready solutions"
+    - "Measurable improvement targets"
+    - "Implementation timeline suggestions"
+
+# Review Scoring System
+scoring_criteria:
+  categories:
+    architecture:
+      weight: 25
+      factors: ["design_patterns", "solid_principles", "separation_of_concerns"]
+    security:
+      weight: 30
+      factors:
+        ["vulnerability_prevention", "authentication", "input_validation"]
+    performance:
+      weight: 25
+      factors: ["response_times", "memory_usage", "database_optimization"]
+    maintainability:
+      weight: 20
+      factors: ["code_readability", "test_coverage", "documentation"]
+
+  grade_scale:
+    A: "90-100% - Production ready, minimal issues"
+    B: "80-89% - Good quality, minor improvements needed"
+    C: "70-79% - Acceptable, moderate issues to address"
+    D: "60-69% - Below standard, significant improvements required"
+    F: "Below 60% - Major issues, substantial refactoring needed"
+
+# Success Criteria
+success_criteria:
+  analysis_completeness:
+    - "All code files reviewed and analyzed"
+    - "Issues categorized and prioritized"
+    - "Root cause analysis completed"
+    - "Impact assessment documented"
+
+  recommendation_quality:
+    - "Specific, actionable recommendations provided"
+    - "Code examples included for major fixes"
+    - "Implementation effort estimated"
+    - "Business value clearly articulated"
+
+  report_usefulness:
+    - "Findings clearly communicated to stakeholders"
+    - "Improvement roadmap provides clear direction"
+    - "Recommendations align with current best practices"
+    - "Report enables informed decision making"
+
+# Command Integration
+related_commands:
+  prerequisite: "nodejs-backend-implementation"
+  parallel: "nodejs-code-quality-analysis"
+  follow_up: "nodejs-gap-analysis"
+
+# Execution Context
+execution_context:
+  working_directory: "src/"
+  output_format: "markdown documents with analysis and recommendations"
+  documentation_level: "Comprehensive analysis reports"
+  validation_required: false

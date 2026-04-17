@@ -1,0 +1,501 @@
+# === MCP PROMPT: Code Operational Analysis Protocol ===
+name: "quality-code-operational-analysis-prompt"
+version: "1.0.0"
+description: "AI-driven runtime assessment protocol for comprehensive operational analysis of deployed code and infrastructure"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Operational Analysis"
+  description: "Execute exhaustive operational analysis of deployed systems examining logs, performance, infrastructure, monitoring, and observability with comprehensive runtime assessment and optimization recommendations"
+
+  # Argument Schema
+  arguments:
+    target_environment:
+      type: "string"
+      description: "Target environment for operational analysis"
+      required: true
+      enum: ["production", "staging", "development", "test", "all-environments"]
+
+    analysis_scope:
+      type: "string"
+      description: "Scope of operational analysis to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "performance-focused",
+          "reliability-focused",
+          "security-focused",
+          "cost-focused",
+          "infrastructure-focused",
+          "application-focused",
+        ]
+
+    analysis_depth:
+      type: "string"
+      description: "Depth of operational analysis to conduct"
+      required: true
+      enum: ["surface-level", "detailed", "comprehensive", "deep-dive"]
+
+    time_range:
+      type: "string"
+      description: "Time range for operational data analysis"
+      required: false
+      enum: ["last-24h", "last-7d", "last-30d", "last-90d", "custom-range"]
+
+    data_sources:
+      type: "string"
+      description: "Data sources to include in operational analysis"
+      required: false
+      enum:
+        [
+          "logs-only",
+          "metrics-only",
+          "traces-only",
+          "all-sources",
+          "custom-selection",
+        ]
+
+    output_format:
+      type: "string"
+      description: "Format for operational analysis deliverables"
+      required: false
+      enum: ["jupyter-document", "dashboard", "report", "comprehensive"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI operational analysis specialist executing the Code Operational Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive runtime assessment methodology
+        - Analyze ALL operational layers (application, container, infrastructure, data)
+        - Examine logs, metrics, traces, and monitoring systems comprehensively
+        - Maintain production-ready operational analysis standards
+        - Use systematic operational assessment approach
+        - Generate detailed insights with performance metrics and health assessments
+        - Create comprehensive optimization recommendations and operational roadmaps
+
+        ABSOLUTELY FORBIDDEN:
+        - Superficial or incomplete operational analysis
+        - Missing critical operational issues or performance bottlenecks
+        - Analysis without proper data collection from all relevant sources
+        - Skipping security or reliability operational assessments
+        - Incomplete infrastructure or application layer analysis
+        - Creating analysis without actionable optimization recommendations
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE OPERATIONAL ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Target Environment: {{target_environment}}
+        - Analysis Scope: {{analysis_scope}}
+        - Analysis Depth: {{analysis_depth}}
+        - Time Range: {{time_range}}
+        - Data Sources: {{data_sources}}
+        - Output Format: {{output_format}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CODE OPERATIONAL ANALYSIS PROTOCOL:**
+
+# Code Operational Analysis Protocol Configuration
+analysis_protocol:
+  # Operational Analysis Scope - MANDATORY COMPREHENSIVE COVERAGE
+  operational_scope:
+    application_layer: true # Apps, services, APIs operational analysis
+    container_layer: true # Docker, Kubernetes, orchestration analysis
+    infrastructure_layer: true # Servers, networks, storage operational review
+    data_layer: true # Databases, caches, queues operational health
+    monitoring_layer: true # Logs, metrics, traces, alerts analysis
+    security_layer: true # Access, encryption, compliance operational review
+    performance_layer: true # Response times, throughput, resources analysis
+    reliability_layer: true # Uptime, errors, recovery operational assessment
+
+  # Data Collection Configuration - MANDATORY SETTINGS
+  data_collection:
+    real_time_analysis: true # Current state operational assessment
+    historical_analysis: true # Trend analysis and patterns
+    predictive_analysis: true # Forecast and capacity planning
+    comparative_analysis: true # Baseline comparisons
+    root_cause_analysis: true # Issue investigation and resolution
+    comprehensive_coverage: true # Cover all operational aspects
+    production_ready_analysis: true # Production-focused operational insights
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "System Discovery and Comprehensive Inventory"
+    mandatory_actions:
+      - "DISCOVER and inventory all operational components systematically"
+      - "MAP application architecture, services, and dependencies"
+      - "CATALOG container orchestration and infrastructure components"
+      - "INVENTORY data systems, networks, and monitoring infrastructure"
+      - "DOCUMENT operational configurations and deployment patterns"
+
+    system_discovery_requirements:
+      - "MANDATORY: Complete infrastructure discovery and component mapping"
+      - "MANDATORY: Identify all applications, services, and their dependencies"
+      - "MANDATORY: Catalog all container and orchestration systems"
+      - "FORBIDDEN: Incomplete system inventory or missing components"
+
+  phase_2:
+    name: "Performance Analysis and Metrics Collection"
+    mandatory_actions:
+      - "COLLECT comprehensive performance metrics from all systems"
+      - "ANALYZE application response times, throughput, and error rates"
+      - "ASSESS infrastructure resource utilization and capacity"
+      - "EVALUATE data system performance and optimization opportunities"
+      - "MEASURE end-to-end system performance and user experience"
+
+    performance_analysis_framework:
+      application_performance:
+        - "Analyze API response times and transaction performance"
+        - "Measure throughput, concurrent users, and processing rates"
+        - "Assess error rates, timeout frequencies, and retry patterns"
+        - "Evaluate page load times and user interaction performance"
+        - "MANDATORY: Comprehensive application performance coverage"
+
+      infrastructure_performance:
+        - "Monitor CPU usage patterns and memory consumption"
+        - "Analyze disk I/O rates and network bandwidth utilization"
+        - "Assess container resource limits and scaling behavior"
+        - "Evaluate load distribution and bottleneck identification"
+        - "MANDATORY: Complete infrastructure performance assessment"
+
+      scalability_analysis:
+        - "Analyze auto-scaling behavior and load distribution"
+        - "Assess capacity planning and growth projections"
+        - "Identify performance bottlenecks and scaling limitations"
+        - "Evaluate horizontal and vertical scaling effectiveness"
+        - "MANDATORY: Comprehensive scalability assessment"
+
+  phase_3:
+    name: "Reliability and Availability Assessment"
+    mandatory_actions:
+      - "ASSESS system reliability, uptime metrics, and availability"
+      - "ANALYZE failure patterns, root causes, and recovery mechanisms"
+      - "EVALUATE data integrity, backup verification, and replication"
+      - "REVIEW disaster recovery capabilities and business continuity"
+      - "MEASURE system resilience and fault tolerance effectiveness"
+
+    reliability_assessment_framework:
+      system_reliability:
+        - "Calculate service availability and component uptime metrics"
+        - "Analyze planned maintenance impact and unplanned outages"
+        - "Measure recovery times and system restoration procedures"
+        - "Assess failure patterns and cascade failure risks"
+        - "MANDATORY: Complete reliability and availability analysis"
+
+      data_integrity:
+        - "Verify backup systems and replication status"
+        - "Analyze data consistency and corruption detection"
+        - "Test recovery procedures and archive integrity"
+        - "Assess data retention policies and compliance"
+        - "MANDATORY: Comprehensive data integrity assessment"
+
+      resilience_testing:
+        - "Evaluate fault tolerance and graceful degradation"
+        - "Analyze circuit breaker effectiveness and retry policies"
+        - "Test disaster recovery scenarios and procedures"
+        - "Assess system redundancy and failover mechanisms"
+        - "MANDATORY: Complete resilience and fault tolerance analysis"
+
+  phase_4:
+    name: "Security Operational Analysis"
+    mandatory_actions:
+      - "REVIEW access control mechanisms and authentication systems"
+      - "ANALYZE security monitoring, intrusion detection, and compliance"
+      - "ASSESS data protection, encryption status, and privacy controls"
+      - "EVALUATE incident response readiness and security procedures"
+      - "EXAMINE vulnerability management and security patch status"
+
+    security_operational_framework:
+      access_control_review:
+        - "Analyze authentication mechanisms and authorization policies"
+        - "Review API key management and certificate status"
+        - "Assess privilege escalation risks and access patterns"
+        - "Evaluate multi-factor authentication and SSO implementation"
+        - "MANDATORY: Complete access control operational assessment"
+
+      security_monitoring:
+        - "Review intrusion detection and vulnerability scanning"
+        - "Analyze compliance monitoring and audit log analysis"
+        - "Assess incident response readiness and security alerting"
+        - "Evaluate threat detection and security event correlation"
+        - "MANDATORY: Comprehensive security monitoring analysis"
+
+      data_protection:
+        - "Analyze encryption status and data classification"
+        - "Review PII handling and privacy compliance"
+        - "Assess data retention policies and secure deletion"
+        - "Evaluate compliance verification and regulatory adherence"
+        - "MANDATORY: Complete data protection operational review"
+
+  phase_5:
+    name: "Log and Trace Analysis"
+    mandatory_actions:
+      - "ANALYZE application logs for error patterns and performance issues"
+      - "EXAMINE system logs for infrastructure problems and trends"
+      - "PROCESS distributed traces for service latency and bottlenecks"
+      - "CORRELATE logs across services for root cause analysis"
+      - "IDENTIFY operational insights and improvement opportunities"
+
+    log_trace_analysis_framework:
+      log_analysis:
+        - "Detect recurring error patterns and clustering"
+        - "Analyze stack traces and error correlation"
+        - "Identify performance patterns and slow operations"
+        - "Detect resource contention and memory leaks"
+        - "MANDATORY: Comprehensive log pattern analysis"
+
+      distributed_tracing:
+        - "Analyze request flow and service latency breakdown"
+        - "Identify dependency performance and bottlenecks"
+        - "Evaluate cross-service optimization opportunities"
+        - "Assess service mesh data and communication patterns"
+        - "MANDATORY: Complete distributed tracing analysis"
+
+      error_pattern_detection:
+        - "Identify root cause patterns and failure modes"
+        - "Analyze deadlock detection and concurrency issues"
+        - "Detect cascading failures and dependency problems"
+        - "Evaluate error handling effectiveness and recovery"
+        - "MANDATORY: Comprehensive error pattern identification"
+
+  phase_6:
+    name: "Cost and Efficiency Analysis"
+    mandatory_actions:
+      - "ANALYZE resource costs and utilization efficiency"
+      - "IDENTIFY optimization opportunities and waste reduction"
+      - "ASSESS right-sizing recommendations and capacity planning"
+      - "EVALUATE reserved capacity and spot instance opportunities"
+      - "CALCULATE ROI and cost-benefit analysis for improvements"
+
+    cost_efficiency_framework:
+      resource_optimization:
+        - "Identify right-sizing opportunities and idle resources"
+        - "Analyze reserved capacity utilization and optimization"
+        - "Assess spot instance usage and cost savings opportunities"
+        - "Evaluate storage optimization and data lifecycle management"
+        - "MANDATORY: Complete resource optimization analysis"
+
+      cost_analysis:
+        - "Break down service costs and spending trends"
+        - "Analyze budget compliance and cost variance"
+        - "Identify cost optimization opportunities and ROI"
+        - "Evaluate financial impact of performance improvements"
+        - "MANDATORY: Comprehensive cost analysis and optimization"
+
+  phase_7:
+    name: "Monitoring and Observability Assessment"
+    mandatory_actions:
+      - "EVALUATE current monitoring infrastructure and coverage"
+      - "ASSESS observability gaps and blind spots"
+      - "ANALYZE alerting effectiveness and notification systems"
+      - "REVIEW dashboard quality and operational visibility"
+      - "RECOMMEND monitoring improvements and observability enhancements"
+
+    monitoring_observability_framework:
+      monitoring_coverage:
+        - "Assess metrics collection coverage and completeness"
+        - "Evaluate logging infrastructure and retention policies"
+        - "Analyze tracing implementation and distributed visibility"
+        - "Review alerting rules and notification effectiveness"
+        - "MANDATORY: Complete monitoring coverage assessment"
+
+      observability_gaps:
+        - "Identify blind spots and missing telemetry"
+        - "Analyze dashboard effectiveness and usability"
+        - "Assess operational visibility and troubleshooting capabilities"
+        - "Evaluate business metrics and SLA monitoring"
+        - "MANDATORY: Comprehensive observability gap analysis"
+
+  phase_8:
+    name: "Operational Risk Assessment"
+    mandatory_actions:
+      - "IDENTIFY operational risks and vulnerabilities"
+      - "ASSESS business impact and probability of operational failures"
+      - "ANALYZE single points of failure and dependency risks"
+      - "EVALUATE operational procedures and incident response"
+      - "PRIORITIZE risk mitigation and improvement initiatives"
+
+    operational_risk_framework:
+      risk_identification:
+        - "Identify single points of failure and dependency risks"
+        - "Analyze cascade failure scenarios and impact"
+        - "Assess operational procedure gaps and human error risks"
+        - "Evaluate business continuity and disaster recovery risks"
+        - "MANDATORY: Complete operational risk identification"
+
+      risk_assessment:
+        - "Calculate risk probability and business impact"
+        - "Prioritize risks based on severity and likelihood"
+        - "Evaluate current mitigation strategies and effectiveness"
+        - "Assess risk tolerance and acceptable service levels"
+        - "MANDATORY: Comprehensive operational risk assessment"
+
+  phase_9:
+    name: "Optimization and Improvement Recommendations"
+    mandatory_actions:
+      - "COMPILE comprehensive optimization opportunities"
+      - "PRIORITIZE improvements based on impact and effort"
+      - "CREATE detailed implementation roadmap and timelines"
+      - "ESTIMATE costs, benefits, and resource requirements"
+      - "PROVIDE actionable recommendations with success metrics"
+
+    optimization_framework:
+      performance_optimization:
+        - "Identify high-impact performance improvement opportunities"
+        - "Recommend caching strategies and query optimizations"
+        - "Suggest scaling improvements and load balancing"
+        - "Provide resource tuning and capacity optimization"
+        - "MANDATORY: Comprehensive performance optimization plan"
+
+      operational_excellence:
+        - "Recommend monitoring and alerting improvements"
+        - "Suggest automation opportunities and process optimization"
+        - "Provide disaster recovery and business continuity enhancements"
+        - "Recommend security posture and compliance improvements"
+        - "MANDATORY: Complete operational excellence roadmap"
+
+  phase_10:
+    name: "Comprehensive Reporting and Documentation"
+    mandatory_actions:
+      - "GENERATE comprehensive operational analysis documentation"
+      - "CREATE executive summary with key findings and recommendations"
+      - "COMPILE detailed technical reports with metrics and analysis"
+      - "DOCUMENT operational procedures and improvement roadmap"
+      - "PREPARE operational dashboards and monitoring enhancements"
+
+    reporting_framework:
+      comprehensive_documentation:
+        - "Create detailed operational analysis report in Jupyter format"
+        - "Generate executive summary with key operational insights"
+        - "Compile system inventory and component documentation"
+        - "Document performance metrics and health assessments"
+        - "MANDATORY: Complete operational analysis documentation"
+
+      operational_deliverables:
+        - "Create interactive performance dashboards"
+        - "Generate optimization roadmap and implementation plan"
+        - "Document risk register and mitigation strategies"
+        - "Prepare incident playbooks and operational procedures"
+        - "MANDATORY: All operational deliverables with date stamps"
+
+# Operational Analysis Validation Criteria
+validation_criteria:
+  system_discovery: "MANDATORY - Complete system inventory and component mapping"
+  performance_analysis: "MANDATORY - Comprehensive performance metrics and assessment"
+  reliability_assessment: "MANDATORY - Complete reliability and availability analysis"
+  security_analysis: "MANDATORY - Comprehensive security operational review"
+  log_trace_analysis: "MANDATORY - Complete log and trace pattern analysis"
+  cost_efficiency: "MANDATORY - Comprehensive cost and efficiency assessment"
+  monitoring_observability: "MANDATORY - Complete monitoring and observability review"
+  risk_assessment: "MANDATORY - Comprehensive operational risk analysis"
+  optimization_recommendations: "MANDATORY - Actionable improvement roadmap"
+  comprehensive_documentation: "MANDATORY - All deliverables created and validated"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL operational analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-22-085549"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Operational_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive operational analysis and observability assessment)"
+    - "./project/docs/quality-analysis/Optimization_Plan-{{YYYY-MM-DD-HHMMSS}}.md (recommendations, improvements, automation strategies)"
+    - "./project/docs/quality-analysis/Monitoring_Strategy-{{YYYY-MM-DD-HHMMSS}}.md (observability setup, alerting, incident response)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all operational analysis output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL operational analysis deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all operational analysis outputs"
+    - "FORBIDDEN: Creating operational analysis files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same operational analysis session"
+
+# Operational Analysis Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. DISCOVER systems {{target_environment}} and create comprehensive inventory"
+  - "2. COLLECT performance metrics and analyze application/infrastructure performance"
+  - "3. ASSESS reliability, availability, and system resilience comprehensively"
+  - "4. ANALYZE security operations, access controls, and compliance posture"
+  - "5. EXAMINE logs and traces for patterns, errors, and optimization opportunities"
+  - "6. EVALUATE cost efficiency, resource utilization, and optimization potential"
+  - "7. ASSESS monitoring coverage, observability gaps, and alerting effectiveness"
+  - "8. IDENTIFY operational risks, dependencies, and mitigation strategies"
+  - "9. COMPILE optimization recommendations and implementation roadmap"
+  - "10. GENERATE comprehensive documentation and operational deliverables with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each operational analysis step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all operational analysis tracking"
+  - "MANDATORY: Timestamp all deliverable creation and validation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Operational Analysis Framework
+operational_analysis_framework:
+  performance_patterns:
+    latency_analysis:
+      - "Peak load patterns and seasonal variations"
+      - "Response time degradation and bottleneck identification"
+      - "Throughput analysis and capacity planning"
+      - "Error rate patterns and failure correlation"
+
+    resource_utilization:
+      - "CPU and memory usage patterns and optimization"
+      - "Storage and network utilization analysis"
+      - "Container resource allocation and scaling"
+      - "Database performance and query optimization"
+
+  reliability_patterns:
+    failure_analysis:
+      - "Recurring incident patterns and root causes"
+      - "Cascade failure scenarios and dependencies"
+      - "Recovery patterns and MTTR analysis"
+      - "System resilience and fault tolerance"
+
+    availability_assessment:
+      - "Uptime metrics and SLA compliance"
+      - "Planned maintenance impact and scheduling"
+      - "Disaster recovery capabilities and testing"
+      - "Business continuity and operational procedures"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL operational layers MUST be analyzed comprehensively"
+    - "ALL performance metrics MUST be collected and assessed"
+    - "ALL reliability and availability aspects MUST be evaluated"
+    - "ALL security operational controls MUST be reviewed"
+    - "ALL logs and traces MUST be analyzed for patterns"
+    - "ALL cost and efficiency opportunities MUST be identified"
+    - "ALL monitoring and observability gaps MUST be assessed"
+    - "ALWAYS use systematic operational analysis methodology"
+    - "NEVER skip critical operational assessment areas"
+
+  strictly_forbidden:
+    - "Superficial or incomplete operational analysis"
+    - "Missing critical operational issues or performance bottlenecks"
+    - "Analysis without proper data collection from all sources"
+    - "Skipping security or compliance operational assessments"
+    - "Incomplete infrastructure or application analysis"
+    - "Creating analysis without actionable recommendations"
+    - "Operational assessment without proper risk evaluation"
+    - "Analysis without considering cost and efficiency optimization"

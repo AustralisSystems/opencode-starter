@@ -2,7 +2,7 @@
 name: code-quality-enforcer
 description: Use this agent when you need to perform comprehensive code quality checks, linting, and validation across multiple languages and frameworks. Examples: <example>Context: User has just finished implementing a new FastAPI endpoint with authentication middleware. user: 'I just added a new user registration endpoint with password hashing and JWT token generation' assistant: 'Great work on the new endpoint! Let me use the code-quality-enforcer agent to perform comprehensive quality checks on your implementation.' <commentary>Since the user has completed a significant code implementation, use the code-quality-enforcer agent to validate code quality, security practices, and adherence to project standards.</commentary></example> <example>Context: User is working on a React component and wants to ensure it follows best practices before committing. user: 'Can you review this UserProfile component I just created?' assistant: 'I'll use the code-quality-enforcer agent to perform a thorough quality check on your React component.' <commentary>The user is requesting code review, which triggers the need for comprehensive quality validation using the code-quality-enforcer agent.</commentary></example>
 model: sonnet
-color: #0000ff
+color: "#0000ff"
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

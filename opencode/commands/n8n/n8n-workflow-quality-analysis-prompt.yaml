@@ -1,0 +1,192 @@
+name: "N8N Workflow Quality Analysis"
+description: "Deep workflow quality analysis with comprehensive metrics, pattern assessment, and maintainability evaluation for n8n workflows"
+version: "2.0.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7              # Latest n8n quality standards and best practices
+    - grep                  # Production-quality workflow patterns on GitHub
+    - sequential-thinking   # Structured quality analysis methodology
+    - filesystem           # Workflow analysis and metrics calculation
+    - memory               # Track quality metrics during analysis
+    - time                 # Timestamp quality assessment activities
+
+  n8n_specific_tools:
+    - get_workflow_metrics            # Calculate workflow complexity metrics
+    - analyze_workflow_performance    # Performance pattern analysis
+    - get_workflow_structure          # Architectural analysis
+    - list_workflow_patterns          # Pattern identification and assessment
+    - calculate_quality_score         # Overall quality scoring
+    - identify_improvement_opportunities  # Optimization recommendations
+
+# Quality Analysis Configuration
+quality_analysis_protocol:
+  analysis_dimensions:
+    complexity_maintainability: true    # Workflow complexity and maintainability metrics
+    n8n_patterns: true                 # n8n-specific quality patterns
+    expression_quality: true           # Expression quality assessment
+    performance_analysis: true         # Execution efficiency analysis
+    error_handling: true               # Error handling coverage
+    security_compliance: true          # Security and compliance
+    pattern_assessment: true           # Best practice patterns vs anti-patterns
+
+  quality_scoring:
+    structure_quality: 25              # Workflow organization (25%)
+    expression_quality: 20             # Expression quality (20%)
+    error_handling: 20                 # Error handling coverage (20%)
+    performance: 15                    # Execution efficiency (15%)
+    security: 10                       # Security compliance (10%)
+    maintainability: 10                # Documentation and readability (10%)
+
+# Execution Protocol
+execution_phases:
+  1_workflow_analysis_setup:
+    description: "Initialize quality analysis session and load workflow"
+    tools: ["filesystem", "context7", "get_workflow_structure", "memory"]
+    required_actions:
+      - "Load workflow file or retrieve workflow by ID"
+      - "Use context7 to get latest n8n quality standards"
+      - "Extract workflow structure with get_workflow_structure"
+      - "Initialize quality metrics tracking"
+    success_criteria:
+      - "Workflow loaded and accessible"
+      - "Latest n8n quality standards loaded"
+      - "Workflow structure extracted"
+      - "Metrics tracking initialized"
+
+  2_complexity_analysis:
+    description: "Analyze workflow complexity and maintainability"
+    tools: ["get_workflow_metrics", "calculate_quality_score"]
+    required_actions:
+      - "Calculate node count and connection complexity"
+      - "Measure expression complexity (nesting depth)"
+      - "Assess workflow depth (execution path length)"
+      - "Evaluate documentation completeness"
+      - "Assess naming convention consistency"
+    success_criteria:
+      - "Complexity metrics calculated"
+      - "Maintainability score determined"
+      - "Complexity thresholds compared"
+      - "Documentation gaps identified"
+
+  3_pattern_assessment:
+    description: "Identify workflow patterns and anti-patterns"
+    tools: ["list_workflow_patterns", "grep"]
+    required_actions:
+      - "Identify workflow architecture pattern (linear, branching, complex)"
+      - "Detect best practice patterns (input validation, error boundary, async optimization)"
+      - "Identify anti-patterns (sequential independent ops, missing error handling, hardcoded values)"
+      - "Use grep to find similar production patterns for comparison"
+    success_criteria:
+      - "Workflow pattern type identified"
+      - "Best practices catalogued"
+      - "Anti-patterns detected and documented"
+      - "Pattern quality assessed"
+
+  4_expression_quality_analysis:
+    description: "Analyze expression quality and complexity"
+    tools: ["get_workflow_structure", "sequential-thinking"]
+    required_actions:
+      - "Extract all workflow expressions"
+      - "Calculate average expression complexity"
+      - "Assess null safety implementation"
+      - "Evaluate error handling in expressions"
+      - "Identify optimization opportunities (Code node extraction)"
+    success_criteria:
+      - "All expressions catalogued"
+      - "Complexity metrics calculated"
+      - "Null safety assessed"
+      - "Optimization opportunities identified"
+
+  5_performance_analysis:
+    description: "Analyze execution efficiency and optimization opportunities"
+    tools: ["analyze_workflow_performance", "identify_improvement_opportunities"]
+    required_actions:
+      - "Analyze parallel processing utilization"
+      - "Detect sequential execution of independent operations"
+      - "Identify redundant data transformations"
+      - "Assess resource-intensive operations"
+      - "Calculate performance optimization impact"
+    success_criteria:
+      - "Performance metrics calculated"
+      - "Bottlenecks identified"
+      - "Optimization opportunities quantified"
+      - "Performance improvement estimates created"
+
+  6_error_handling_analysis:
+    description: "Assess error handling coverage and reliability"
+    tools: ["get_workflow_structure", "list_workflow_patterns"]
+    required_actions:
+      - "Calculate error handling coverage percentage"
+      - "Assess error workflow completeness"
+      - "Evaluate fallback strategy implementation"
+      - "Check recovery mechanism presence"
+      - "Verify error notification configuration"
+    success_criteria:
+      - "Error handling coverage calculated"
+      - "Error patterns evaluated"
+      - "Recovery strategies assessed"
+      - "Reliability score determined"
+
+  7_security_compliance_analysis:
+    description: "Review security and compliance adherence"
+    tools: ["get_workflow_structure", "context7"]
+    required_actions:
+      - "Scan for hardcoded credentials"
+      - "Assess credential management practices"
+      - "Verify input validation coverage"
+      - "Check output sanitization"
+      - "Evaluate compliance requirements adherence"
+    success_criteria:
+      - "Security risks identified"
+      - "Credential management assessed"
+      - "Validation coverage calculated"
+      - "Compliance gaps documented"
+
+  8_quality_score_calculation:
+    description: "Calculate overall quality score and create deliverables"
+    tools: ["calculate_quality_score", "filesystem", "time"]
+    required_actions:
+      - "Calculate component scores (structure, expression, error handling, performance, security, maintainability)"
+      - "Determine overall quality score (weighted average)"
+      - "Assign quality level (1-5)"
+      - "Prioritize improvement opportunities by impact"
+      - "Create quality dashboard and analysis reports"
+      - "Generate improvement roadmap with effort estimates"
+    success_criteria:
+      - "Quality score calculated with breakdown"
+      - "Quality level assigned"
+      - "Improvement priorities determined"
+      - "All deliverables created with YYYY-MM-DD-HHMMSS timestamps"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality analysis output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+
+  required_outputs:
+    - "./project/docs/n8n-workflows/Workflow_Quality_Dashboard-{{YYYY-MM-DD-HHMMSS}}.ipynb (quality metrics dashboard)"
+    - "./project/docs/n8n-workflows/Quality_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (detailed analysis)"
+    - "./project/docs/n8n-workflows/Performance_Analysis-{{YYYY-MM-DD-HHMMSS}}.ipynb (performance assessment)"
+    - "./project/docs/n8n-workflows/Security_Compliance_Review-{{YYYY-MM-DD-HHMMSS}}.ipynb (security analysis)"
+    - "./project/docs/n8n-workflows/Improvement_Roadmap-{{YYYY-MM-DD-HHMMSS}}.ipynb (improvement plan)"
+
+# Success Criteria
+success_criteria:
+  - "Comprehensive quality metrics calculated"
+  - "Overall quality score determined with component breakdown"
+  - "Workflow patterns identified and assessed"
+  - "Performance analysis complete with recommendations"
+  - "Security compliance reviewed with gap identification"
+  - "Error handling coverage measured"
+  - "Improvement opportunities prioritized by impact"
+  - "Quality improvement roadmap created with effort estimates"
+  - "All deliverables use proper YYYY-MM-DD-HHMMSS timestamps"
+
+# Command Integration
+related_commands:
+  previous_phase: "n8n-workflow-implementation or n8n-workflow-lint-quality-check"
+  parallel: "n8n-workflow-review, n8n-workflow-lint-quality-check"
+  next_phase: "n8n-workflow-refactor or n8n-workflow-gap-analysis"

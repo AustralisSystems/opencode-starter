@@ -1,0 +1,449 @@
+# === MCP PROMPT: Python Lint and Quality Check Protocol ===
+name: "python-code-lint-and-quality-check-prompt"
+version: "1.0.0"
+description: "Comprehensive Python code lint and quality check protocol for automated validation with ruff, black, mypy, and other quality tools"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Python Lint and Quality Check"
+  description: "Execute comprehensive Python quality validation with automated tools, mandatory functionality preservation, and safe improvements"
+
+  # Argument Schema
+  arguments:
+    target_area:
+      type: "string"
+      description: "Directory or file path for Python quality analysis"
+      required: true
+
+    check_focus:
+      type: "string"
+      description: "Focus area for quality checking"
+      required: false
+      enum:
+        ["all", "style", "types", "security", "tests", "complexity", "imports"]
+
+    fix_level:
+      type: "string"
+      description: "Level of fixes to apply"
+      required: false
+      enum: ["safe-only", "moderate", "aggressive"]
+
+    validation_depth:
+      type: "string"
+      description: "Depth of validation checking"
+      required: false
+      enum: ["basic", "comprehensive", "exhaustive"]
+
+    reporting_detail:
+      type: "string"
+      description: "Level of reporting detail"
+      required: false
+      enum: ["summary", "detailed", "verbose"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI Python quality check specialist executing the Python Lint and Quality Check Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive quality check methodology
+        - Run ALL Python quality tools systematically
+        - Apply only safe, functionality-preserving fixes
+        - Maintain existing behavior exactly
+        - Flag complex issues for remediation
+
+        ABSOLUTELY FORBIDDEN:
+        - Changing business logic or algorithms
+        - Modifying API signatures
+        - Altering program behavior
+        - Breaking existing functionality
+        - Creating test code during quality check
+        - Making aggressive changes without permission
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY PYTHON LINT AND QUALITY CHECK PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **CHECK PARAMETERS:**
+        - Target Area: {{target_area}}
+        - Check Focus: {{check_focus}}
+        - Fix Level: {{fix_level}}
+        - Validation Depth: {{validation_depth}}
+        - Reporting Detail: {{reporting_detail}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING PYTHON QUALITY CHECK PROTOCOL:**
+
+# Python Quality Check Protocol Configuration
+quality_check_protocol:
+  # Quality Check Scope - MANDATORY COMPREHENSIVE COVERAGE
+  check_focus:
+    pep8_compliance: true # MUST validate PEP 8 style
+    type_safety: true # MUST check type annotations
+    security_scanning: true # MUST verify security
+    test_coverage: true # MUST validate test quality
+    code_complexity: true # MUST check complexity metrics
+    import_organization: true # MUST verify imports
+    documentation_quality: true # MUST validate docstrings
+    performance_patterns: true # MUST assess performance
+    best_practices: true # MUST check Python idioms
+    production_code: true # Production and test code
+    preserve_functionality: true # ABSOLUTELY preserve behavior
+
+  # Quality Check Configuration - MANDATORY SETTINGS
+  check_settings:
+    comprehensive_validation: true
+    safe_fixes_only: true
+    functionality_preservation: true
+    issue_flagging: true
+    detailed_reporting: true
+    timestamp_tracking: true
+    tool_integration: true # MANDATORY: Use all Python tools
+    automated_fixes: true # MANDATORY: Apply safe auto-fixes
+    non_destructive: true # MANDATORY: No breaking changes
+    professional_standards: true # MANDATORY: Enterprise quality
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Python Scope Definition and Target Validation"
+    mandatory_actions:
+      - "VALIDATE target area exists and contains Python code"
+      - "IDENTIFY all Python files (.py, .pyi, .pyx)"
+      - "MAP Python package structure"
+      - "DETECT virtual environment and dependencies"
+      - "ESTABLISH quality check baseline"
+
+    scope_requirements:
+      - "MANDATORY: Target area validation"
+      - "MANDATORY: Python file identification"
+      - "MANDATORY: Package structure mapping"
+      - "FORBIDDEN: Modifying third-party libraries"
+
+  phase_2:
+    name: "Style and Formatting Validation (Black/Ruff)"
+    mandatory_actions:
+      - "RUN black --check for formatting"
+      - "EXECUTE ruff check for linting"
+      - "VERIFY PEP 8 compliance"
+      - "CHECK line length limits"
+      - "VALIDATE naming conventions"
+
+    style_validation:
+      black_formatting:
+        - "CHECK code formatting"
+        - "APPLY black fixes safely"
+        - "VALIDATE string quotes"
+        - "ASSESS line breaks"
+
+      ruff_linting:
+        - "RUN ruff with all rules"
+        - "FIX auto-fixable issues"
+        - "FLAG complex violations"
+        - "CHECK import sorting"
+
+      pep8_compliance:
+        - "VERIFY indentation (4 spaces)"
+        - "CHECK blank lines"
+        - "VALIDATE whitespace"
+        - "ASSESS comment style"
+
+  phase_3:
+    name: "Type Safety and Annotation Validation (Mypy)"
+    mandatory_actions:
+      - "RUN mypy with strict mode"
+      - "CHECK type annotation coverage"
+      - "VALIDATE type consistency"
+      - "ASSESS Protocol compliance"
+      - "IDENTIFY type safety violations"
+
+    type_validation:
+      mypy_checking:
+        - "RUN mypy --strict"
+        - "VERIFY no Any types"
+        - "CHECK return types"
+        - "VALIDATE generics usage"
+
+      annotation_coverage:
+        - "CHECK function signatures"
+        - "VERIFY class attributes"
+        - "VALIDATE module variables"
+        - "ASSESS completeness"
+
+      type_consistency:
+        - "VERIFY type narrowing"
+        - "CHECK cast usage"
+        - "VALIDATE Union types"
+        - "ASSESS Optional handling"
+
+  phase_4:
+    name: "Security Scanning and Vulnerability Detection (Bandit/Safety)"
+    mandatory_actions:
+      - "RUN bandit for security issues"
+      - "EXECUTE safety check on dependencies"
+      - "VALIDATE input sanitization"
+      - "ASSESS cryptographic usage"
+      - "CHECK for hardcoded secrets"
+
+    security_validation:
+      bandit_scanning:
+        - "RUN bandit -r recursively"
+        - "CHECK SQL injection risks"
+        - "VALIDATE exec/eval usage"
+        - "ASSESS pickle security"
+
+      dependency_security:
+        - "CHECK known vulnerabilities"
+        - "VERIFY package versions"
+        - "VALIDATE license compliance"
+        - "ASSESS supply chain risks"
+
+      secret_detection:
+        - "SCAN for API keys"
+        - "CHECK password patterns"
+        - "VALIDATE environment usage"
+        - "ASSESS configuration security"
+
+  phase_5:
+    name: "Test Coverage and Quality Validation (Pytest/Coverage)"
+    mandatory_actions:
+      - "RUN pytest with coverage"
+      - "CHECK coverage percentages"
+      - "VALIDATE test assertions"
+      - "ASSESS test organization"
+      - "VERIFY fixtures and mocks"
+
+    test_validation:
+      coverage_analysis:
+        - "MEASURE line coverage"
+        - "CHECK branch coverage"
+        - "VALIDATE path coverage"
+        - "ASSESS coverage gaps"
+
+      test_quality:
+        - "VERIFY assertion quality"
+        - "CHECK test isolation"
+        - "VALIDATE test names"
+        - "ASSESS test documentation"
+
+      test_organization:
+        - "CHECK test structure"
+        - "VERIFY fixture usage"
+        - "VALIDATE parametrization"
+        - "ASSESS test performance"
+
+  phase_6:
+    name: "Code Complexity and Maintainability (Radon/McCabe)"
+    mandatory_actions:
+      - "MEASURE cyclomatic complexity"
+      - "CHECK cognitive complexity"
+      - "VALIDATE maintainability index"
+      - "ASSESS code duplication"
+      - "IDENTIFY refactoring candidates"
+
+    complexity_validation:
+      cyclomatic_complexity:
+        - "MEASURE function complexity"
+        - "CHECK class complexity"
+        - "VALIDATE module complexity"
+        - "ASSESS threshold violations"
+
+      maintainability_metrics:
+        - "CALCULATE maintainability index"
+        - "CHECK code climate"
+        - "VALIDATE readability scores"
+        - "ASSESS technical debt"
+
+      duplication_detection:
+        - "FIND duplicate code blocks"
+        - "CHECK similar functions"
+        - "VALIDATE DRY compliance"
+        - "ASSESS refactoring needs"
+
+  phase_7:
+    name: "Import Organization and Documentation (Isort/Pydocstyle)"
+    mandatory_actions:
+      - "RUN isort for import sorting"
+      - "CHECK pydocstyle compliance"
+      - "VALIDATE docstring completeness"
+      - "ASSESS module documentation"
+      - "VERIFY import optimization"
+
+    import_validation:
+      import_organization:
+        - "RUN isort --check-only"
+        - "APPLY safe import fixes"
+        - "VALIDATE import groups"
+        - "ASSESS circular imports"
+
+      docstring_quality:
+        - "CHECK PEP 257 compliance"
+        - "VERIFY parameter docs"
+        - "VALIDATE return docs"
+        - "ASSESS example code"
+
+      documentation_coverage:
+        - "CHECK module docstrings"
+        - "VERIFY class documentation"
+        - "VALIDATE function docs"
+        - "ASSESS API documentation"
+
+  phase_8:
+    name: "Safe Quality Improvements and Auto-fixes"
+    mandatory_actions:
+      - "APPLY black formatting automatically"
+      - "FIX ruff auto-fixable issues"
+      - "SORT imports with isort"
+      - "ADD basic type annotations"
+      - "UPDATE docstring formatting"
+
+    safe_improvements:
+      automated_fixes:
+        - "RUN black to format"
+        - "APPLY ruff --fix"
+        - "EXECUTE isort"
+        - "FIX trailing whitespace"
+
+      type_improvements:
+        - "ADD obvious type hints"
+        - "FIX type inconsistencies"
+        - "UPDATE type aliases"
+        - "IMPROVE generics"
+
+      documentation_fixes:
+        - "FORMAT docstrings"
+        - "ADD missing summaries"
+        - "FIX parameter descriptions"
+        - "UPDATE examples"
+
+  phase_9:
+    name: "Issue Flagging and Remediation Planning"
+    mandatory_actions:
+      - "IDENTIFY complex issues requiring remediation"
+      - "CLASSIFY issues by severity and impact"
+      - "CREATE remediation recommendations"
+      - "PRIORITIZE fix order"
+      - "ESTIMATE remediation effort"
+
+    issue_management:
+      issue_identification:
+        - "FIND complex problems"
+        - "IDENTIFY risky changes"
+        - "DETECT architectural issues"
+        - "MAP dependency problems"
+
+      issue_classification:
+        - "ASSIGN severity levels"
+        - "ASSESS business impact"
+        - "EVALUATE technical risk"
+        - "DETERMINE urgency"
+
+      remediation_planning:
+        - "CREATE fix strategies"
+        - "IDENTIFY dependencies"
+        - "ESTIMATE effort"
+        - "PLAN testing needs"
+
+  phase_10:
+    name: "Quality Report Generation and Documentation"
+    mandatory_actions:
+      - "COMPILE comprehensive quality report"
+      - "DOCUMENT all fixes applied"
+      - "LIST all flagged issues"
+      - "CREATE remediation roadmap"
+      - "GENERATE markdown document deliverables"
+
+    documentation_requirements:
+      - "MANDATORY: Complete quality assessment"
+      - "MANDATORY: Fix documentation"
+      - "MANDATORY: Issue tracking"
+      - "MANDATORY: Remediation plans"
+      - "FORBIDDEN: Missing timestamps"
+
+# Quality Check Validation Criteria
+validation_criteria:
+  style_compliant: "MANDATORY - PEP 8 compliance verified"
+  type_safe: "MANDATORY - Type annotations validated"
+  security_scanned: "MANDATORY - Security vulnerabilities checked"
+  tests_validated: "MANDATORY - Test coverage measured"
+  complexity_assessed: "MANDATORY - Complexity metrics calculated"
+  imports_organized: "MANDATORY - Import sorting verified"
+  documentation_complete: "MANDATORY - Docstrings validated"
+  safe_fixes_applied: "MANDATORY - Only safe fixes made"
+  functionality_preserved: "MANDATORY - No behavior changes"
+  issues_documented: "MANDATORY - All issues flagged"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL quality check output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-17-094523"
+
+  required_outputs:
+    - "Quality_Analysis_{{YYYYMMDD-HHMMSS}}.ipynb (quality analysis)"
+    - "Issues_Identified_{{YYYYMMDD-HHMMSS}}.ipynb (issues identified)"
+    - "Remediation_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (remediation plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all quality check output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL quality check deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all check outputs"
+    - "FORBIDDEN: Creating check files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same check session"
+
+# Quality Check Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. VALIDATE target area ({{target_area}}) contains Python code"
+  - "2. RUN black and ruff for style checking with ({{check_focus}}) focus"
+  - "3. EXECUTE mypy for type safety validation"
+  - "4. SCAN with bandit and safety for security"
+  - "5. MEASURE test coverage with pytest"
+  - "6. ASSESS complexity with radon"
+  - "7. ORGANIZE imports with isort"
+  - "8. APPLY ({{fix_level}}) quality improvements"
+  - "9. FLAG complex issues for remediation"
+  - "10. GENERATE ({{reporting_detail}}) quality report with timestamps"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each check phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all quality tracking"
+  - "MANDATORY: Timestamp all check deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL Python quality tools MUST be run"
+    - "ALL fixes MUST be safe and non-breaking"
+    - "ALL functionality MUST be preserved"
+    - "ALL issues MUST be documented"
+    - "ALL fixes MUST be reversible"
+    - "ALL changes MUST be tracked"
+    - "ALWAYS preserve program behavior"
+    - "NEVER alter business logic"
+
+  strictly_forbidden:
+    - "Changing program functionality"
+    - "Breaking API contracts"
+    - "Modifying behavior logic"
+    - "Altering security measures"
+    - "Creating test code during check"
+    - "Making risky changes"
+    - "Skipping quality tools"
+    - "Missing issue documentation"

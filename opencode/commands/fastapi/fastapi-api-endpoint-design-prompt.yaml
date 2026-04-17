@@ -1,0 +1,538 @@
+# === MCP PROMPT: FastAPI API Endpoint Design Protocol ===
+name: "fastapi-api-endpoint-design-prompt"
+version: "1.0.0"
+description: "Comprehensive FastAPI API endpoint design protocol for RESTful API architecture with industry best practices and design patterns"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "FastAPI API Endpoint Design"
+  description: "Execute comprehensive RESTful API endpoint design with FastAPI patterns, HTTP method selection, and response standardization"
+
+  # Argument Schema
+  arguments:
+    api_domain:
+      type: "string"
+      description: "Domain area for API endpoint design"
+      required: true
+      enum:
+        [
+          "user-management",
+          "order-processing",
+          "content-management",
+          "data-analytics",
+          "inventory-management",
+          "notification-system",
+        ]
+
+    endpoint_complexity:
+      type: "string"
+      description: "Complexity level of API endpoints"
+      required: true
+      enum:
+        [
+          "simple-crud",
+          "complex-business",
+          "enterprise-integration",
+          "real-time",
+          "data-intensive",
+          "workflow-based",
+        ]
+
+    resource_model:
+      type: "string"
+      description: "Resource modeling approach"
+      required: false
+      enum: ["single-resource", "related-resources", "hierarchical", "graph-based", "event-sourced"]
+
+    authentication_requirements:
+      type: "string"
+      description: "Authentication requirements for endpoints"
+      required: false
+      enum: ["public", "authenticated", "role-based", "resource-based", "multi-tenant"]
+
+    versioning_strategy:
+      type: "string"
+      description: "API versioning approach"
+      required: false
+      enum: ["url-versioning", "header-versioning", "content-negotiation", "no-versioning"]
+
+    response_formats:
+      type: "string"
+      description: "Supported response formats"
+      required: false
+      enum: ["json-only", "multiple-formats", "streaming", "file-downloads", "real-time"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI FastAPI API endpoint design specialist executing the FastAPI API Endpoint Design Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive RESTful API design methodology
+        - Create complete FastAPI endpoint specifications
+        - Maintain industry-standard API design practices
+        - Use systematic analysis and endpoint documentation
+        - Follow RESTful principles and HTTP standards
+        - Emphasize FastAPI-specific patterns and Pydantic integration
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating implementation code or actual FastAPI modules
+        - Making changes to live systems
+        - Partial or incomplete endpoint specifications
+        - Creating designs without proper API analysis
+        - Skipping security or performance considerations
+        - Creating placeholder or temporary designs
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY FASTAPI API ENDPOINT DESIGN PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **DESIGN PARAMETERS:**
+        - API Domain: {{api_domain}}
+        - Endpoint Complexity: {{endpoint_complexity}}
+        - Resource Model: {{resource_model}}
+        - Authentication Requirements: {{authentication_requirements}}
+        - Versioning Strategy: {{versioning_strategy}}
+        - Response Formats: {{response_formats}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING FASTAPI API ENDPOINT DESIGN PROTOCOL:**
+
+# FastAPI API Endpoint Design Protocol Configuration
+design_protocol:
+  # Design Scope - MANDATORY COMPREHENSIVE COVERAGE
+  design_focus:
+    restful_api_design: true # MUST design RESTful API patterns
+    http_method_selection: true # MUST select appropriate HTTP methods
+    url_pattern_design: true # MUST design consistent URL patterns
+    request_response_schemas: true # MUST design Pydantic models
+    authentication_authorization: true # MUST design auth patterns
+    error_response_standardization: true # MUST standardize error responses
+    pagination_filtering: true # MUST design pagination and filtering
+    versioning_strategy: true # MUST design API versioning
+    file_operations: true # MUST design file upload/download
+    bulk_operations: true # MUST design bulk operation patterns
+    openapi_documentation: true # MUST design API documentation
+    design_only: true # STRICTLY design only, no implementation
+
+  # Design Configuration - MANDATORY SETTINGS
+  design_settings:
+    enable_comprehensive_analysis: true
+    apply_restful_principles: true
+    use_http_standards: true
+    implement_fastapi_patterns: true
+    design_pydantic_models: true
+    plan_authentication_flows: true
+    systematic_approach: true # MANDATORY: Systematic design methodology
+    follow_api_best_practices: true # MANDATORY: API design best practices
+    comprehensive_coverage: true # MANDATORY: Cover all endpoint aspects
+    production_ready_design: true # MANDATORY: Production-focused design
+
+# API Endpoint Design Standards and Patterns
+api_design_standards:
+  http_method_guidelines:
+    GET:
+      purpose: "Retrieve resource(s)"
+      idempotent: true
+      safe: true
+      request_body: false
+      response_body: true
+      usage: "List collections, get individual resources"
+    
+    POST:
+      purpose: "Create new resource"
+      idempotent: false
+      safe: false
+      request_body: true
+      response_body: true
+      usage: "Create resources, non-idempotent operations"
+    
+    PUT:
+      purpose: "Replace entire resource"
+      idempotent: true
+      safe: false
+      request_body: true
+      response_body: true
+      usage: "Full resource replacement"
+    
+    PATCH:
+      purpose: "Partial resource update"
+      idempotent: false
+      safe: false
+      request_body: true
+      response_body: true
+      usage: "Partial updates, field modifications"
+    
+    DELETE:
+      purpose: "Remove resource"
+      idempotent: true
+      safe: false
+      request_body: false
+      response_body: false
+      usage: "Resource deletion"
+
+  status_code_standards:
+    success_codes:
+      200: "OK - Successful GET, PUT, PATCH, or DELETE"
+      201: "Created - Successful POST with resource creation"
+      202: "Accepted - Request accepted for async processing"
+      204: "No Content - Successful DELETE or PUT with no response"
+    
+    client_error_codes:
+      400: "Bad Request - Invalid syntax or validation errors"
+      401: "Unauthorized - Authentication required"
+      403: "Forbidden - Authenticated but not authorized"
+      404: "Not Found - Resource does not exist"
+      405: "Method Not Allowed - HTTP method not supported"
+      409: "Conflict - Resource conflict or state conflict"
+      422: "Unprocessable Entity - Valid syntax but semantic errors"
+      429: "Too Many Requests - Rate limit exceeded"
+    
+    server_error_codes:
+      500: "Internal Server Error - Generic server error"
+      502: "Bad Gateway - Invalid upstream response"
+      503: "Service Unavailable - Server temporarily unavailable"
+      504: "Gateway Timeout - Upstream server timeout"
+
+  url_design_patterns:
+    resource_patterns:
+      collection: "/api/v1/{resource}"
+      individual: "/api/v1/{resource}/{id}"
+      sub_resource: "/api/v1/{resource}/{id}/{sub-resource}"
+      relationship: "/api/v1/{resource}/{id}/relationships/{relationship}"
+    
+    naming_conventions:
+      - "Use lowercase letters and hyphens for URLs"
+      - "Use plural nouns for collection resources"
+      - "Use singular nouns for individual resources"
+      - "Avoid deep nesting (max 2-3 levels)"
+      - "Use consistent naming patterns"
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "API Domain Analysis and Resource Identification"
+    mandatory_actions:
+      - "ANALYZE API domain requirements and business context"
+      - "IDENTIFY primary resources and their relationships"
+      - "MAP resource hierarchies and dependencies"
+      - "DOCUMENT business rules and constraints"
+      - "ESTABLISH API boundaries and scope"
+
+    analysis_requirements:
+      - "MANDATORY: Complete domain analysis and resource identification"
+      - "MANDATORY: Document all resource relationships"
+      - "MANDATORY: Identify business rules and constraints"
+      - "FORBIDDEN: Incomplete domain analysis"
+
+  phase_2:
+    name: "RESTful URL Pattern and Resource Design"
+    mandatory_actions:
+      - "DESIGN RESTful URL patterns following industry standards"
+      - "CREATE resource hierarchy and endpoint organization"
+      - "ESTABLISH consistent naming conventions"
+      - "PLAN API versioning and namespace structure"
+      - "VALIDATE URL design against RESTful principles"
+
+    url_design_requirements:
+      resource_modeling:
+        - "DESIGN primary resource endpoints"
+        - "CREATE sub-resource relationship endpoints"
+        - "PLAN collection and individual resource URLs"
+        - "ESTABLISH resource identifier patterns"
+
+      naming_consistency:
+        - "APPLY consistent naming conventions"
+        - "USE plural forms for collections"
+        - "IMPLEMENT hierarchical URL structures"
+        - "VALIDATE URL readability and intuition"
+
+      versioning_implementation:
+        - "DESIGN API version strategy"
+        - "PLAN version migration paths"
+        - "ESTABLISH deprecation policies"
+        - "CREATE backward compatibility approach"
+
+  phase_3:
+    name: "HTTP Method Selection and Endpoint Specification"
+    mandatory_actions:
+      - "SELECT appropriate HTTP methods for each endpoint"
+      - "DESIGN CRUD operation mappings"
+      - "PLAN custom action endpoints"
+      - "ESTABLISH method consistency across resources"
+      - "VALIDATE HTTP method semantics"
+
+    method_selection_requirements:
+      crud_operations:
+        - "MAP Create operations to POST methods"
+        - "DESIGN Read operations with GET methods"
+        - "PLAN Update operations (PUT for full, PATCH for partial)"
+        - "IMPLEMENT Delete operations with DELETE methods"
+
+      custom_actions:
+        - "DESIGN custom action endpoints"
+        - "SELECT appropriate HTTP methods for actions"
+        - "PLAN action parameter handling"
+        - "VALIDATE action endpoint necessity"
+
+      method_consistency:
+        - "ENSURE consistent method usage across resources"
+        - "VALIDATE idempotency requirements"
+        - "CHECK safety requirements for methods"
+        - "PLAN error handling for unsupported methods"
+
+  phase_4:
+    name: "Request and Response Schema Design with Pydantic"
+    mandatory_actions:
+      - "DESIGN comprehensive Pydantic model architecture"
+      - "CREATE request validation schemas"
+      - "IMPLEMENT response serialization models"
+      - "ESTABLISH field validation rules"
+      - "PLAN schema composition and inheritance"
+
+    schema_design_requirements:
+      model_architecture:
+        - "DESIGN base model classes with common fields"
+        - "CREATE request-specific input models"
+        - "IMPLEMENT response-specific output models"
+        - "PLAN model inheritance hierarchies"
+
+      validation_patterns:
+        - "IMPLEMENT field-level validation rules"
+        - "DESIGN custom validators for business logic"
+        - "CREATE model-level validation patterns"
+        - "PLAN conditional validation scenarios"
+
+      serialization_design:
+        - "DESIGN JSON serialization patterns"
+        - "IMPLEMENT field aliasing strategies"
+        - "PLAN data transformation rules"
+        - "CREATE performance optimization patterns"
+
+  phase_5:
+    name: "Authentication and Authorization Endpoint Design"
+    mandatory_actions:
+      - "DESIGN authentication flow endpoints"
+      - "CREATE authorization checking patterns"
+      - "PLAN permission-based access control"
+      - "IMPLEMENT security middleware integration"
+      - "ESTABLISH token management endpoints"
+
+    auth_design_requirements:
+      authentication_flows:
+        - "DESIGN login/logout endpoints"
+        - "CREATE token refresh mechanisms"
+        - "PLAN multi-factor authentication flows"
+        - "IMPLEMENT password reset workflows"
+
+      authorization_patterns:
+        - "DESIGN role-based access control"
+        - "CREATE resource-level permissions"
+        - "PLAN dynamic permission evaluation"
+        - "IMPLEMENT permission inheritance"
+
+      security_integration:
+        - "PLAN security middleware integration"
+        - "DESIGN authentication dependency patterns"
+        - "CREATE authorization decorator patterns"
+        - "IMPLEMENT security context management"
+
+  phase_6:
+    name: "Error Response Standardization and Exception Handling"
+    mandatory_actions:
+      - "DESIGN standardized error response formats"
+      - "CREATE exception-to-HTTP status code mappings"
+      - "PLAN error detail and context inclusion"
+      - "IMPLEMENT validation error handling"
+      - "ESTABLISH error logging and monitoring integration"
+
+    error_handling_requirements:
+      response_standardization:
+        - "DESIGN consistent error response structure"
+        - "CREATE error code classification system"
+        - "PLAN error message localization"
+        - "IMPLEMENT error context inclusion"
+
+      status_code_mapping:
+        - "MAP business exceptions to HTTP status codes"
+        - "DESIGN validation error responses"
+        - "PLAN authorization error handling"
+        - "CREATE system error response patterns"
+
+      error_documentation:
+        - "DOCUMENT error response schemas"
+        - "CREATE error handling examples"
+        - "PLAN error recovery guidance"
+        - "IMPLEMENT error troubleshooting aids"
+
+  phase_7:
+    name: "Pagination, Filtering, and Sorting Design"
+    mandatory_actions:
+      - "DESIGN pagination strategies and implementations"
+      - "CREATE filtering parameter patterns"
+      - "PLAN sorting and ordering mechanisms"
+      - "IMPLEMENT search functionality"
+      - "ESTABLISH query optimization patterns"
+
+    query_design_requirements:
+      pagination_strategies:
+        - "DESIGN cursor-based pagination for performance"
+        - "CREATE offset-based pagination for simplicity"
+        - "PLAN page metadata inclusion"
+        - "IMPLEMENT pagination response formats"
+
+      filtering_patterns:
+        - "DESIGN field-based filtering parameters"
+        - "CREATE range filtering for dates and numbers"
+        - "PLAN full-text search capabilities"
+        - "IMPLEMENT complex filter combinations"
+
+      sorting_mechanisms:
+        - "DESIGN multi-field sorting parameters"
+        - "CREATE ascending/descending order specification"
+        - "PLAN default sorting strategies"
+        - "IMPLEMENT sorting performance optimization"
+
+  phase_8:
+    name: "File Operations and Bulk Processing Endpoint Design"
+    mandatory_actions:
+      - "DESIGN file upload and download endpoints"
+      - "CREATE bulk operation processing patterns"
+      - "PLAN multipart form data handling"
+      - "IMPLEMENT progress tracking for long operations"
+      - "ESTABLISH file validation and security measures"
+
+    file_bulk_requirements:
+      file_operations:
+        - "DESIGN file upload endpoints with validation"
+        - "CREATE file download and streaming patterns"
+        - "PLAN file metadata management"
+        - "IMPLEMENT file security and access control"
+
+      bulk_processing:
+        - "DESIGN bulk create/update/delete operations"
+        - "CREATE batch processing patterns"
+        - "PLAN async processing for large operations"
+        - "IMPLEMENT progress tracking and status reporting"
+
+      validation_security:
+        - "IMPLEMENT file type and size validation"
+        - "CREATE virus scanning integration points"
+        - "PLAN file storage and cleanup strategies"
+        - "DESIGN access control for file operations"
+
+  phase_9:
+    name: "API Documentation and OpenAPI Specification Design"
+    mandatory_actions:
+      - "DESIGN comprehensive OpenAPI documentation"
+      - "CREATE endpoint descriptions and examples"
+      - "PLAN parameter documentation and constraints"
+      - "IMPLEMENT response schema documentation"
+      - "ESTABLISH API usage guidelines and best practices"
+
+    documentation_requirements:
+      openapi_design:
+        - "CREATE comprehensive OpenAPI 3.0 specifications"
+        - "DESIGN clear endpoint descriptions"
+        - "PLAN parameter documentation with examples"
+        - "IMPLEMENT response schema documentation"
+
+      usage_guidelines:
+        - "CREATE API usage examples and tutorials"
+        - "DESIGN authentication and authorization guides"
+        - "PLAN rate limiting and throttling documentation"
+        - "IMPLEMENT troubleshooting and FAQ sections"
+
+      interactive_documentation:
+        - "DESIGN Swagger UI customization"
+        - "CREATE interactive API exploration tools"
+        - "PLAN code generation support"
+        - "IMPLEMENT API testing capabilities"
+
+  phase_10:
+    name: "API Design Validation and Specification Compilation"
+    mandatory_actions:
+      - "VALIDATE API design against RESTful principles"
+      - "VERIFY endpoint consistency and completeness"
+      - "CHECK authentication and authorization coverage"
+      - "COMPILE comprehensive API specification"
+      - "GENERATE design deliverables with timestamps"
+
+    validation_requirements:
+      - "MANDATORY: Validate RESTful compliance"
+      - "MANDATORY: Check endpoint consistency"
+      - "MANDATORY: Verify security coverage"
+      - "MANDATORY: Ensure documentation completeness"
+      - "FORBIDDEN: Incomplete or inconsistent designs"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL design output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-24-143000"
+
+  required_outputs:
+    - "Architecture_Design_{{YYYYMMDD-HHMMSS}}.ipynb (architecture design)"
+    - "Security_Design_{{YYYYMMDD-HHMMSS}}.ipynb (security design)"
+    - "Integration_Patterns_{{YYYYMMDD-HHMMSS}}.ipynb (integration patterns)"
+    - "Performance_Design_{{YYYYMMDD-HHMMSS}}.ipynb (performance design)"
+    - "Deployment_Architecture_{{YYYYMMDD-HHMMSS}}.ipynb (deployment architecture)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all design output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL design deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all design outputs"
+    - "FORBIDDEN: Creating design files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same design session"
+
+# API Endpoint Design Execution Workflow
+execution_steps:
+  - "1. ANALYZE API domain ({{api_domain}}) and complexity ({{endpoint_complexity}})"
+  - "2. DESIGN RESTful URL patterns and resource hierarchy"
+  - "3. SELECT appropriate HTTP methods for each endpoint"
+  - "4. CREATE Pydantic request/response schemas"
+  - "5. DESIGN authentication and authorization patterns"
+  - "6. STANDARDIZE error responses and status codes"
+  - "7. PLAN pagination, filtering, and sorting mechanisms"
+  - "8. DESIGN file operations and bulk processing"
+  - "9. CREATE comprehensive OpenAPI documentation"
+  - "10. VALIDATE and compile complete API specification with timestamps"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL API designs MUST follow RESTful principles"
+    - "ALL endpoints MUST have proper HTTP method selection"
+    - "ALL requests/responses MUST use Pydantic models"
+    - "ALL endpoints MUST have authentication consideration"
+    - "ALL error responses MUST be standardized"
+    - "ALL designs MUST include OpenAPI documentation"
+    - "ALWAYS use systematic design methodology"
+    - "NEVER create implementation code"
+
+  strictly_forbidden:
+    - "Creating implementation code or actual FastAPI modules"
+    - "Making changes to live systems"
+    - "Partial or incomplete endpoint specifications"
+    - "Skipping security or authentication design"
+    - "Creating designs without proper HTTP standards"
+    - "Missing critical endpoint patterns"
+    - "Proceeding without RESTful compliance"
+    - "Designing without documentation consideration"
+
+---

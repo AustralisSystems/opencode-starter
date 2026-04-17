@@ -1,0 +1,598 @@
+# === MCP PROMPT: Test Planning Framework Protocol ===
+name: "test-protocol-planning-framework-prompt"
+version: "1.0.0"
+description: "Comprehensive test planning framework development protocol for strategy creation, template development, and methodology establishment"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Test Planning Framework Development"
+  description: "Develop comprehensive test planning frameworks with strategy templates, methodology frameworks, and analysis tools"
+
+  # Argument Schema
+  arguments:
+    framework_scope:
+      type: "string"
+      description: "Scope of planning framework development"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "strategic",
+          "tactical",
+          "templates-focused",
+          "methodology-focused",
+          "analysis-focused",
+        ]
+
+    methodology_depth:
+      type: "string"
+      description: "Depth of methodology development"
+      required: true
+      enum:
+        [
+          "basic",
+          "standard",
+          "advanced",
+          "enterprise",
+          "comprehensive",
+        ]
+
+    template_complexity:
+      type: "string"
+      description: "Complexity level of templates and tools"
+      required: true
+      enum:
+        [
+          "simple",
+          "standard",
+          "detailed",
+          "enterprise",
+          "comprehensive",
+        ]
+
+    planning_focus:
+      type: "string"
+      description: "Primary focus area for planning framework"
+      required: false
+      enum: ["strategy", "coverage", "risk", "automation", "quality", "resources"]
+
+    framework_type:
+      type: "string"
+      description: "Type of testing framework methodology"
+      required: false
+      enum: ["agile", "waterfall", "hybrid", "risk-based", "exploratory"]
+
+    customization_level:
+      type: "string"
+      description: "Level of framework customization"
+      required: false
+      enum: ["generic", "domain-specific", "project-specific", "organization-specific"]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI test planning framework specialist developing comprehensive frameworks and methodologies for test strategy creation.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow comprehensive framework development methodology
+        - Create detailed and reusable planning frameworks
+        - Maintain systematic approach to template development
+        - Use structured methodology design and validation
+        - Follow SOLID, DRY, KISS principles in framework design
+
+        ABSOLUTELY FORBIDDEN:
+        - Creating incomplete or superficial frameworks
+        - Developing generic templates without customization
+        - Skipping comprehensive methodology validation
+        - Framework development without proper documentation
+        - Missing systematic approach to template creation
+        - Creating frameworks without measurable criteria
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY TEST PLANNING FRAMEWORK PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **TEST PLANNING FRAMEWORK PARAMETERS:**
+        - Framework Scope: {{framework_scope}}
+        - Methodology Depth: {{methodology_depth}}
+        - Template Complexity: {{template_complexity}}
+        - Planning Focus: {{planning_focus}}
+        - Framework Type: {{framework_type}}
+        - Customization Level: {{customization_level}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING TEST PLANNING FRAMEWORK PROTOCOL:**
+
+# Test Planning Framework Protocol Configuration
+framework_protocol:
+  # Framework Scope - MANDATORY COMPREHENSIVE COVERAGE
+  framework_focus:
+    strategy_development: true # MUST create test strategy frameworks
+    template_creation: true # MUST develop comprehensive templates
+    methodology_design: true # MUST design systematic methodologies
+    analysis_tools: true # MUST create analysis and planning tools
+    coverage_frameworks: true # MUST develop coverage analysis frameworks
+    risk_assessment: true # MUST create risk assessment frameworks
+    resource_planning: true # MUST develop resource planning tools
+    quality_frameworks: true # MUST create quality and success frameworks
+    framework_only: true # STRICTLY framework development only
+
+  # Framework Configuration - MANDATORY SETTINGS
+  framework_settings:
+    enable_comprehensive_development: true
+    create_reusable_templates: true
+    develop_systematic_methodologies: true
+    establish_measurable_criteria: true
+    design_scalable_frameworks: true
+    ensure_framework_validation: true
+    systematic_approach: true # MANDATORY: Systematic framework methodology
+    follow_principles: true # MANDATORY: SOLID, DRY, KISS
+    comprehensive_coverage: true # MANDATORY: Cover all framework aspects
+    production_ready_frameworks: true # MANDATORY: Production-focused frameworks
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Framework Architecture and Design Principles"
+    mandatory_actions:
+      - "ESTABLISH comprehensive framework architecture and design principles"
+      - "DEFINE framework components and their relationships"
+      - "CREATE framework design patterns and templates"
+      - "SPECIFY framework integration and extensibility requirements"
+      - "DOCUMENT framework architecture and design decisions"
+
+    architecture_requirements:
+      - "MANDATORY: Define complete framework architecture"
+      - "MANDATORY: Establish framework design principles and patterns"
+      - "MANDATORY: Specify component relationships and dependencies"
+      - "FORBIDDEN: Incomplete or ad-hoc framework architecture"
+
+  phase_2:
+    name: "Test Strategy Development Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive test strategy development methodology"
+      - "CREATE strategy templates and planning matrices"
+      - "ESTABLISH strategy validation and review processes"
+      - "DESIGN strategy customization and adaptation guidelines"
+      - "IMPLEMENT strategy effectiveness measurement frameworks"
+
+    strategy_framework_requirements:
+      strategy_development_methodology:
+        - "CREATE systematic approach to test strategy development"
+        - "ESTABLISH strategy requirements gathering and analysis"
+        - "DESIGN strategy formulation and validation processes"
+        - "IMPLEMENT strategy communication and approval workflows"
+        - "VALIDATE strategy effectiveness and measurement criteria"
+
+      strategy_templates_creation:
+        - "DEVELOP comprehensive test strategy document templates"
+        - "CREATE strategy planning worksheets and matrices"
+        - "ESTABLISH strategy review and approval templates"
+        - "DESIGN strategy communication and presentation templates"
+        - "IMPLEMENT strategy tracking and evolution templates"
+
+      strategy_customization_framework:
+        - "CREATE strategy adaptation guidelines for different contexts"
+        - "ESTABLISH domain-specific strategy customization approaches"
+        - "DESIGN project-specific strategy modification procedures"
+        - "IMPLEMENT organization-specific strategy alignment methods"
+        - "VALIDATE strategy customization effectiveness and outcomes"
+
+  phase_3:
+    name: "Feature Analysis and Planning Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive feature analysis methodology"
+      - "CREATE feature inventory and categorization frameworks"
+      - "ESTABLISH feature prioritization and risk assessment tools"
+      - "DESIGN feature testing scope and coverage analysis"
+      - "IMPLEMENT feature validation and acceptance criteria frameworks"
+
+    feature_analysis_framework:
+      feature_inventory_methodology:
+        - "CREATE systematic feature identification and cataloging"
+        - "ESTABLISH feature categorization and classification systems"
+        - "DESIGN feature dependency and relationship mapping"
+        - "IMPLEMENT feature complexity and effort estimation"
+        - "VALIDATE feature inventory completeness and accuracy"
+
+      feature_prioritization_framework:
+        - "DEVELOP feature prioritization criteria and scoring systems"
+        - "CREATE business value and impact assessment frameworks"
+        - "ESTABLISH risk-based feature prioritization methodologies"
+        - "DESIGN resource allocation and scheduling optimization"
+        - "IMPLEMENT prioritization validation and adjustment processes"
+
+      feature_testing_scope_framework:
+        - "CREATE feature testing scope definition methodologies"
+        - "ESTABLISH feature coverage requirements and criteria"
+        - "DESIGN feature test scenario identification and planning"
+        - "IMPLEMENT feature acceptance criteria and validation"
+        - "VALIDATE feature testing completeness and adequacy"
+
+  phase_4:
+    name: "Test Coverage Analysis and Planning Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive test coverage analysis methodology"
+      - "CREATE coverage matrices and tracking frameworks"
+      - "ESTABLISH coverage gap identification and mitigation strategies"
+      - "DESIGN coverage optimization and efficiency frameworks"
+      - "IMPLEMENT coverage validation and reporting systems"
+
+    coverage_framework_development:
+      coverage_analysis_methodology:
+        - "CREATE systematic coverage requirements analysis"
+        - "ESTABLISH coverage dimensions and measurement criteria"
+        - "DESIGN coverage mapping and traceability frameworks"
+        - "IMPLEMENT coverage calculation and reporting methods"
+        - "VALIDATE coverage analysis accuracy and completeness"
+
+      coverage_planning_framework:
+        - "DEVELOP coverage planning and target setting methodologies"
+        - "CREATE coverage allocation and distribution strategies"
+        - "ESTABLISH coverage prioritization and optimization approaches"
+        - "DESIGN coverage risk assessment and mitigation planning"
+        - "IMPLEMENT coverage monitoring and adjustment procedures"
+
+      coverage_gap_analysis:
+        - "CREATE coverage gap identification and analysis methods"
+        - "ESTABLISH gap impact assessment and prioritization"
+        - "DESIGN gap mitigation and closure strategies"
+        - "IMPLEMENT gap tracking and resolution monitoring"
+        - "VALIDATE gap analysis effectiveness and outcomes"
+
+  phase_5:
+    name: "Risk Assessment and Priority Planning Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive risk assessment methodology for testing"
+      - "CREATE risk identification and categorization frameworks"
+      - "ESTABLISH risk impact and probability analysis tools"
+      - "DESIGN risk-based test planning and prioritization systems"
+      - "IMPLEMENT risk mitigation and contingency planning frameworks"
+
+    risk_assessment_framework:
+      risk_identification_methodology:
+        - "CREATE systematic risk identification and cataloging"
+        - "ESTABLISH risk categorization and classification systems"
+        - "DESIGN risk source and trigger analysis frameworks"
+        - "IMPLEMENT risk interdependency and cascade analysis"
+        - "VALIDATE risk identification completeness and accuracy"
+
+      risk_analysis_framework:
+        - "DEVELOP risk impact assessment and scoring methodologies"
+        - "CREATE risk probability estimation and validation methods"
+        - "ESTABLISH risk exposure calculation and ranking systems"
+        - "DESIGN risk tolerance and acceptance criteria frameworks"
+        - "IMPLEMENT risk analysis validation and review processes"
+
+      risk_based_planning_framework:
+        - "CREATE risk-based test planning and prioritization methods"
+        - "ESTABLISH risk mitigation strategy development frameworks"
+        - "DESIGN contingency planning and response procedures"
+        - "IMPLEMENT risk monitoring and tracking systems"
+        - "VALIDATE risk-based planning effectiveness and outcomes"
+
+  phase_6:
+    name: "Resource Planning and Timeline Development Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive resource planning methodology"
+      - "CREATE resource estimation and allocation frameworks"
+      - "ESTABLISH timeline development and scheduling tools"
+      - "DESIGN resource optimization and efficiency frameworks"
+      - "IMPLEMENT resource tracking and management systems"
+
+    resource_planning_framework:
+      resource_estimation_methodology:
+        - "CREATE systematic resource requirement analysis"
+        - "ESTABLISH effort estimation and validation methods"
+        - "DESIGN skill requirement and capability mapping"
+        - "IMPLEMENT resource capacity and availability planning"
+        - "VALIDATE resource estimation accuracy and reliability"
+
+      timeline_development_framework:
+        - "DEVELOP timeline planning and scheduling methodologies"
+        - "CREATE dependency management and critical path analysis"
+        - "ESTABLISH milestone and checkpoint planning frameworks"
+        - "DESIGN timeline optimization and adjustment procedures"
+        - "IMPLEMENT timeline tracking and progress monitoring"
+
+      resource_optimization_framework:
+        - "CREATE resource allocation and distribution optimization"
+        - "ESTABLISH resource utilization and efficiency analysis"
+        - "DESIGN resource leveling and balancing strategies"
+        - "IMPLEMENT resource constraint and bottleneck management"
+        - "VALIDATE resource optimization effectiveness and outcomes"
+
+  phase_7:
+    name: "Test Automation Strategy and Planning Framework"
+    mandatory_actions:
+      - "DEVELOP comprehensive test automation strategy framework"
+      - "CREATE automation assessment and feasibility analysis tools"
+      - "ESTABLISH automation implementation planning methodologies"
+      - "DESIGN automation ROI and value assessment frameworks"
+      - "IMPLEMENT automation maintenance and evolution planning"
+
+    automation_framework_development:
+      automation_strategy_methodology:
+        - "CREATE systematic automation strategy development"
+        - "ESTABLISH automation scope and boundary definition"
+        - "DESIGN automation approach and methodology selection"
+        - "IMPLEMENT automation tool and technology evaluation"
+        - "VALIDATE automation strategy effectiveness and alignment"
+
+      automation_assessment_framework:
+        - "DEVELOP automation feasibility and suitability analysis"
+        - "CREATE automation candidate identification and evaluation"
+        - "ESTABLISH automation cost-benefit and ROI assessment"
+        - "DESIGN automation risk and complexity analysis"
+        - "IMPLEMENT automation readiness and maturity evaluation"
+
+      automation_implementation_framework:
+        - "CREATE automation implementation planning and roadmap"
+        - "ESTABLISH automation development and deployment strategies"
+        - "DESIGN automation testing and validation procedures"
+        - "IMPLEMENT automation maintenance and evolution planning"
+        - "VALIDATE automation implementation success and outcomes"
+
+  phase_8:
+    name: "Quality Framework and Success Criteria Definition"
+    mandatory_actions:
+      - "DEVELOP comprehensive quality framework for testing"
+      - "CREATE quality metrics and measurement systems"
+      - "ESTABLISH success criteria and acceptance frameworks"
+      - "DESIGN quality assessment and validation procedures"
+      - "IMPLEMENT quality improvement and optimization frameworks"
+
+    quality_framework_development:
+      quality_criteria_establishment:
+        - "CREATE comprehensive quality dimensions and attributes"
+        - "ESTABLISH quality standards and benchmarks"
+        - "DESIGN quality measurement and assessment criteria"
+        - "IMPLEMENT quality validation and verification procedures"
+        - "VALIDATE quality criteria relevance and effectiveness"
+
+      success_criteria_framework:
+        - "DEVELOP measurable success criteria and indicators"
+        - "CREATE success validation and verification methods"
+        - "ESTABLISH success tracking and monitoring systems"
+        - "DESIGN success communication and reporting frameworks"
+        - "IMPLEMENT success criteria evolution and adaptation"
+
+      quality_improvement_framework:
+        - "CREATE quality improvement identification and planning"
+        - "ESTABLISH quality optimization and enhancement strategies"
+        - "DESIGN quality feedback and learning mechanisms"
+        - "IMPLEMENT quality evolution and maturity progression"
+        - "VALIDATE quality improvement effectiveness and impact"
+
+  phase_9:
+    name: "Framework Integration and Customization Tools"
+    mandatory_actions:
+      - "DEVELOP framework integration and interoperability systems"
+      - "CREATE customization and adaptation methodologies"
+      - "ESTABLISH framework validation and quality assurance"
+      - "DESIGN framework deployment and implementation guides"
+      - "IMPLEMENT framework maintenance and evolution procedures"
+
+    integration_customization_framework:
+      framework_integration_methodology:
+        - "CREATE framework component integration and orchestration"
+        - "ESTABLISH framework interoperability and compatibility"
+        - "DESIGN framework data and information flow management"
+        - "IMPLEMENT framework configuration and parameter management"
+        - "VALIDATE framework integration effectiveness and reliability"
+
+      customization_framework:
+        - "DEVELOP framework customization and adaptation guidelines"
+        - "CREATE domain-specific and context-specific customization"
+        - "ESTABLISH customization validation and testing procedures"
+        - "DESIGN customization documentation and training materials"
+        - "IMPLEMENT customization support and maintenance systems"
+
+      framework_deployment_framework:
+        - "CREATE framework deployment and rollout methodologies"
+        - "ESTABLISH framework training and adoption strategies"
+        - "DESIGN framework support and maintenance procedures"
+        - "IMPLEMENT framework feedback and improvement mechanisms"
+        - "VALIDATE framework deployment success and adoption"
+
+  phase_10:
+    name: "Framework Validation and Documentation Completion"
+    mandatory_actions:
+      - "VALIDATE comprehensive framework functionality and effectiveness"
+      - "GENERATE complete framework documentation and guides"
+      - "CREATE framework training and adoption materials"
+      - "ESTABLISH framework maintenance and evolution procedures"
+      - "PROVIDE framework certification and quality assurance"
+
+    validation_documentation_requirements:
+      - "MANDATORY: Validate ALL framework components function correctly"
+      - "MANDATORY: Verify framework integration and interoperability"
+      - "MANDATORY: Test framework customization and adaptation capabilities"
+      - "MANDATORY: Confirm framework documentation completeness and accuracy"
+      - "FORBIDDEN: Incomplete or unvalidated framework development"
+
+# Test Planning Framework Validation Criteria
+validation_criteria:
+  framework_architecture: "MANDATORY - Complete framework architecture and design"
+  strategy_framework: "MANDATORY - Comprehensive test strategy development framework"
+  feature_analysis: "MANDATORY - Complete feature analysis and planning framework"
+  coverage_framework: "MANDATORY - Comprehensive coverage analysis and planning"
+  risk_assessment: "MANDATORY - Complete risk assessment and priority framework"
+  resource_planning: "MANDATORY - Comprehensive resource and timeline planning"
+  automation_framework: "MANDATORY - Complete automation strategy and planning"
+  quality_framework: "MANDATORY - Comprehensive quality and success criteria"
+  integration_tools: "MANDATORY - Framework integration and customization tools"
+  documentation_completeness: "MANDATORY - Complete framework documentation"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL planning framework output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-09-22-195222"
+
+  required_outputs:
+    - "Implementation_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (implementation plan)"
+    - "Testing_Strategy_{{YYYYMMDD-HHMMSS}}.ipynb (testing strategy)"
+    - "Integration_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (integration plan)"
+    - "Deployment_Plan_{{YYYYMMDD-HHMMSS}}.ipynb (deployment plan)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all framework output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL framework deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all framework outputs"
+    - "FORBIDDEN: Creating framework files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same framework session"
+
+# Framework Development Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. ESTABLISH framework architecture and design principles ({{framework_scope}})"
+  - "2. DEVELOP test strategy development framework and templates"
+  - "3. CREATE feature analysis and planning framework tools"
+  - "4. IMPLEMENT coverage analysis and planning frameworks"
+  - "5. DEVELOP risk assessment and priority planning frameworks"
+  - "6. CREATE resource planning and timeline development tools"
+  - "7. IMPLEMENT automation strategy and planning frameworks"
+  - "8. ESTABLISH quality framework and success criteria definition"
+  - "9. DEVELOP framework integration and customization tools"
+  - "10. VALIDATE comprehensive framework and complete documentation"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each framework development phase"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all framework development tracking"
+  - "MANDATORY: Timestamp all framework deliverable creation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Test Planning Framework Categories
+framework_categories:
+  strategic_frameworks:
+    - "Test strategy development and validation"
+    - "Organizational testing alignment and governance"
+    - "Quality objectives and success criteria definition"
+    - "Testing investment and ROI optimization"
+
+  tactical_frameworks:
+    - "Test planning and execution methodologies"
+    - "Test design and implementation approaches"
+    - "Test automation and tool strategies"
+    - "Test environment and data management"
+
+  operational_frameworks:
+    - "Test execution and monitoring procedures"
+    - "Defect management and resolution processes"
+    - "Test reporting and communication protocols"
+    - "Test maintenance and evolution practices"
+
+# Template Development Framework
+template_framework:
+  template_categories:
+    planning_templates:
+      - "Test strategy document templates"
+      - "Test plan creation and review templates"
+      - "Risk assessment and mitigation templates"
+      - "Resource allocation and timeline templates"
+
+    analysis_templates:
+      - "Feature analysis and prioritization templates"
+      - "Coverage analysis and gap assessment templates"
+      - "Risk impact and probability analysis templates"
+      - "ROI and cost-benefit analysis templates"
+
+    execution_templates:
+      - "Test case design and specification templates"
+      - "Test execution and tracking templates"
+      - "Defect reporting and management templates"
+      - "Test result analysis and reporting templates"
+
+# Methodology Design Framework
+methodology_framework:
+  methodology_categories:
+    agile_methodologies:
+      - "Sprint-based testing planning and execution"
+      - "Continuous integration and testing workflows"
+      - "User story driven test design and validation"
+      - "Retrospective and improvement methodologies"
+
+    traditional_methodologies:
+      - "Phase-gate testing planning and execution"
+      - "Requirements-based test design and validation"
+      - "Formal review and approval processes"
+      - "Documentation-driven quality assurance"
+
+    hybrid_methodologies:
+      - "Adaptive testing approaches and frameworks"
+      - "Context-driven testing methodologies"
+      - "Risk-based testing prioritization and execution"
+      - "Value-driven testing optimization and improvement"
+
+# Framework Customization Guidelines
+customization_guidelines:
+  domain_customization:
+    healthcare: "HIPAA compliance and patient safety validation"
+    financial: "SOX compliance and financial accuracy validation"
+    automotive: "ISO 26262 safety and reliability validation"
+    aerospace: "DO-178C safety and certification validation"
+
+  project_customization:
+    size_based: "Small, medium, large project adaptation"
+    complexity_based: "Simple, complex, enterprise complexity adaptation"
+    risk_based: "Low, medium, high risk project adaptation"
+    timeline_based: "Short, medium, long timeline adaptation"
+
+  organization_customization:
+    maturity_based: "Testing maturity level adaptation"
+    culture_based: "Organizational culture and values adaptation"
+    resource_based: "Resource availability and constraint adaptation"
+    technology_based: "Technology stack and tool adaptation"
+
+# Quality Assurance Framework
+quality_assurance:
+  framework_quality_criteria:
+    completeness: "Framework covers all essential planning aspects"
+    consistency: "Framework components align and integrate properly"
+    usability: "Framework is practical and easy to use"
+    scalability: "Framework adapts to different sizes and contexts"
+    maintainability: "Framework can be updated and evolved"
+
+  validation_methods:
+    expert_review: "Subject matter expert validation and feedback"
+    pilot_testing: "Small-scale implementation and validation"
+    case_study: "Real-world application and outcome analysis"
+    stakeholder_feedback: "User feedback and satisfaction assessment"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL framework development MUST be comprehensive and systematic"
+    - "ALL templates MUST be reusable and customizable"
+    - "ALL methodologies MUST be validated and proven"
+    - "ALL tools MUST be practical and effective"
+    - "ALL frameworks MUST integrate and interoperate"
+    - "ALL documentation MUST be complete and accurate"
+    - "ALWAYS use systematic framework development methodology"
+    - "NEVER create incomplete or superficial frameworks"
+
+  strictly_forbidden:
+    - "Creating incomplete or superficial frameworks"
+    - "Developing generic templates without customization"
+    - "Skipping comprehensive methodology validation"
+    - "Framework development without proper documentation"
+    - "Missing systematic approach to template creation"
+    - "Creating frameworks without measurable criteria"
+    - "Proceeding without framework validation"
+    - "Development without integration and interoperability"

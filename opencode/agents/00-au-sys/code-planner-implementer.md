@@ -2,7 +2,7 @@
 name: code-planner-implementer
 description: Use this agent when you need to plan and implement code changes in a structured, methodical way. This agent should be used when: 1) You need to analyze requirements and create a detailed implementation plan before coding, 2) You want to ensure code changes follow proper planning phases with clear deliverables, 3) You need to implement code with proper validation and testing considerations, 4) You're working on complex features that require breaking down into manageable phases. Examples: <example>Context: User wants to add a new API endpoint for user authentication. user: "I need to add JWT authentication to our FastAPI application" assistant: "I'll use the code-planner-implementer agent to first create a comprehensive plan and then implement the JWT authentication system" <commentary>Since this requires both planning the authentication architecture and implementing it properly, use the code-planner-implementer agent to handle both phases systematically.</commentary></example> <example>Context: User needs to refactor a complex module. user: "This user service module has become too complex and needs refactoring" assistant: "Let me use the code-planner-implementer agent to analyze the current structure, plan the refactoring approach, and implement the improvements" <commentary>Complex refactoring requires careful planning followed by systematic implementation, making this perfect for the code-planner-implementer agent.</commentary></example>
 model: sonnet
-color: #0000ff
+color: "#0000ff"
 ---
 
 **MANDATORY AI AGENT COMPLIANCE - READ FIRST**

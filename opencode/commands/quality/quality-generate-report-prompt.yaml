@@ -1,0 +1,117 @@
+# === MCP PROMPT: Quality Remediation Report Generation Protocol ===
+name: "quality-generate-report-prompt"
+version: "1.0.0"
+description: "Comprehensive report generation protocol for quality remediation analysis and stakeholder communication"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Quality Remediation Report Generation"
+  description: "Execute systematic quality report generation including metrics analysis, stakeholder summaries, and actionable recommendations with mandatory validation and timestamp tracking"
+
+  # Argument Schema
+  arguments:
+    project_path:
+      type: "string"
+      description: "Root directory of project to analyze"
+      required: true
+
+    report_scope:
+      type: "string"
+      description: "Scope of report to generate"
+      required: true
+      enum: ["executive", "technical", "security", "comprehensive"]
+
+    stakeholder_audience:
+      type: "string"
+      description: "Target audience for report"
+      required: false
+      enum: ["executives", "developers", "security", "operations", "all"]
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Quality Data Collection and Aggregation"
+    mandatory_actions:
+      - "COLLECT all quality metrics and remediation data"
+      - "AGGREGATE before/after comparison statistics"
+      - "CATALOG all improvements and fixes applied"
+
+  phase_2:
+    name: "Statistical Analysis and Trend Assessment"
+    mandatory_actions:
+      - "ANALYZE quality improvement trends and patterns"
+      - "CALCULATE ROI and impact measurements"
+      - "ASSESS technical debt reduction and benefits"
+
+  phase_3:
+    name: "Executive Summary Generation"
+    mandatory_actions:
+      - "CREATE high-level quality improvement summary"
+      - "HIGHLIGHT key achievements and critical fixes"
+      - "SUMMARIZE business impact and value delivered"
+
+  phase_4:
+    name: "Detailed Technical Analysis"
+    mandatory_actions:
+      - "DOCUMENT technical improvements and fixes"
+      - "ANALYZE code quality metrics and trends"
+      - "DETAIL implementation steps and tools used"
+
+  phase_5:
+    name: "Security and Compliance Assessment"
+    mandatory_actions:
+      - "REPORT security vulnerabilities resolved"
+      - "DOCUMENT compliance improvements achieved"
+      - "ASSESS security posture enhancement"
+
+  phase_6:
+    name: "Stakeholder-Specific Report Creation"
+    mandatory_actions:
+      - "GENERATE executive dashboard and summaries"
+      - "CREATE technical implementation reports"
+      - "PRODUCE security assessment documentation"
+
+  phase_7:
+    name: "Visualization and Dashboard Development"
+    mandatory_actions:
+      - "CREATE quality trend charts and graphs"
+      - "DEVELOP interactive dashboards and metrics"
+      - "GENERATE visual impact assessments"
+
+  phase_8:
+    name: "Recommendations and Action Plan"
+    mandatory_actions:
+      - "DEVELOP immediate action recommendations"
+      - "CREATE long-term quality strategy roadmap"
+      - "SUGGEST process improvements and best practices"
+
+  phase_9:
+    name: "Multi-Format Report Compilation"
+    mandatory_actions:
+      - "COMPILE reports in JSON, Markdown, HTML, PDF formats"
+      - "ENSURE accessibility and stakeholder distribution"
+      - "VALIDATE report accuracy and completeness"
+
+  phase_10:
+    name: "Report Validation and Distribution"
+    mandatory_actions:
+      - "VALIDATE all metrics and analysis accuracy"
+      - "CONFIRM stakeholder requirements satisfaction"
+      - "DISTRIBUTE reports to appropriate audiences"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL report output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  required_outputs:
+    - "Quality_Remediation_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive analysis)"
+    - "Executive_Summary-{{YYYY-MM-DD-HHMMSS}}.pdf (stakeholder overview)"
+    - "Technical_Report-{{YYYY-MM-DD-HHMMSS}}.md (implementation details)"
+    - "Quality_Dashboard-{{YYYY-MM-DD-HHMMSS}}.html (interactive metrics)"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL quality improvements MUST be quantified and documented"
+    - "ALL stakeholder reports MUST be accurate and actionable"
+    - "ALL metrics MUST include before/after comparisons"
+    - "ALL recommendations MUST be specific and implementable"

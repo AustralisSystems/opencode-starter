@@ -1,0 +1,274 @@
+name: "Node.js Gap Analysis"
+description: "Comprehensive gap analysis comparing current Node.js implementation against industry best practices, modern patterns, and business requirements"
+version: "2.1.0"
+category: "analysis"
+
+# MCP Protocol Requirements
+mcp_requirements:
+  mandatory_tools:
+    - context7 # Get latest industry standards
+    - grep # Find current best practices on GitHub
+    - sequential-thinking # Structure gap analysis approach
+    - filesystem # Analyze existing implementation
+    - memory # Track findings during analysis
+    - time # Timestamp analysis activities
+
+# Execution Protocol
+execution_phases:
+  1_benchmark_research:
+    description: "Establish current industry benchmarks and best practices"
+    tools: ["context7", "grep"]
+    required_actions:
+      - "Research latest Node.js 21.x LTS features and adoption patterns"
+      - "Get current best practices for chosen frameworks (Express/Fastify/NestJS)"
+      - "Find high-quality production implementations on GitHub"
+      - "Identify emerging patterns and technologies"
+      - "Research performance and security benchmarks"
+    success_criteria:
+      - "Industry benchmarks documented with sources"
+      - "Best practices catalog created with examples"
+      - "Performance and security standards identified"
+
+  2_current_state_analysis:
+    description: "Analyze existing implementation against benchmarks"
+    tools: ["sequential-thinking", "filesystem", "memory"]
+    required_actions:
+      - "Audit current architecture and design patterns"
+      - "Assess technology stack currency and alignment"
+      - "Evaluate performance characteristics and bottlenecks"
+      - "Review security implementation and compliance"
+      - "Analyze development processes and tooling"
+    success_criteria:
+      - "Current state comprehensively documented"
+      - "Gaps identified and categorized"
+      - "Impact assessment completed"
+
+  3_gap_identification:
+    description: "Identify and prioritize gaps with improvement roadmap"
+    tools: ["memory", "time", "filesystem"]
+    required_actions:
+      - "Compare current state against benchmarks"
+      - "Categorize gaps by domain and impact"
+      - "Assess implementation effort and business value"
+      - "Create prioritized improvement roadmap"
+      - "Define success metrics and timelines"
+    success_criteria:
+      - "Complete gap analysis report generated"
+      - "Improvement roadmap with priorities established"
+      - "Success metrics and KPIs defined"
+
+# Analysis Parameters
+parameters:
+  analysis_domains:
+    technology_stack:
+      - "Node.js version and feature utilization"
+      - "Framework version currency and best practices"
+      - "Database and ORM optimization patterns"
+      - "Security library implementation quality"
+      - "Testing framework and coverage adequacy"
+
+    architecture_patterns:
+      - "Design pattern implementation (Clean, Hexagonal, Layered)"
+      - "SOLID principles adherence and violations"
+      - "Microservices vs monolithic architecture alignment"
+      - "API design and RESTful compliance"
+      - "Error handling and resilience patterns"
+
+    performance_optimization:
+      - "Response time optimization techniques"
+      - "Memory usage and garbage collection patterns"
+      - "Database query optimization and connection pooling"
+      - "Caching strategies and implementation"
+      - "Load balancing and scaling readiness"
+
+    security_implementation:
+      - "Authentication and authorization patterns"
+      - "Input validation and sanitization coverage"
+      - "Security header and middleware configuration"
+      - "Vulnerability management and scanning"
+      - "Secrets management and environment security"
+
+    development_processes:
+      - "Code quality and linting standards"
+      - "Testing strategy and automation coverage"
+      - "CI/CD pipeline maturity and optimization"
+      - "Documentation quality and completeness"
+      - "Monitoring and observability implementation"
+
+# Gap Categories
+gap_classification:
+  critical_gaps:
+    priority: "P0 - Immediate attention required"
+    characteristics:
+      - "Security vulnerabilities or compliance violations"
+      - "Performance issues affecting user experience"
+      - "Architectural decisions blocking scalability"
+      - "Major version dependencies with known issues"
+
+  strategic_gaps:
+    priority: "P1 - Next quarter planning"
+    characteristics:
+      - "Technology stack modernization opportunities"
+      - "Architecture improvements for long-term maintainability"
+      - "Development process enhancements"
+      - "Performance optimization with measurable ROI"
+
+  tactical_gaps:
+    priority: "P2 - Continuous improvement"
+    characteristics:
+      - "Code quality and consistency improvements"
+      - "Documentation and knowledge sharing enhancements"
+      - "Developer experience optimizations"
+      - "Minor dependency updates and optimizations"
+
+# Deliverable Specifications
+deliverables:
+  document_count: 3
+  document_types:
+    - "Gap Analysis Executive Summary"
+    - "Detailed Gap Assessment by Domain"
+    - "Implementation Roadmap and Success Metrics"
+
+  document_1_executive:
+    title: "Node.js Gap Analysis Executive Summary"
+    contents:
+      - "Current state maturity assessment"
+      - "Key gaps and their business impact"
+      - "Investment priorities and recommendations"
+      - "Risk assessment and mitigation strategies"
+      - "Expected ROI and timeline overview"
+    executive_focus:
+      - "Business impact quantification"
+      - "Resource requirements estimation"
+      - "Risk vs reward analysis"
+      - "Strategic alignment assessment"
+
+  document_2_detailed:
+    title: "Comprehensive Gap Assessment by Domain"
+    contents:
+      - "Technology stack gap analysis"
+      - "Architecture and design pattern gaps"
+      - "Performance and scalability gaps"
+      - "Security and compliance gaps"
+      - "Development process and tooling gaps"
+    technical_depth:
+      - "Specific examples and code comparisons"
+      - "Industry benchmark comparisons"
+      - "Implementation effort estimates"
+      - "Technical debt impact analysis"
+
+  document_3_roadmap:
+    title: "Implementation Roadmap and Success Metrics"
+    contents:
+      - "Prioritized improvement phases"
+      - "Resource allocation recommendations"
+      - "Success metrics and KPI definitions"
+      - "Risk mitigation strategies"
+      - "Progress tracking and monitoring framework"
+    implementation_focus:
+      - "Quarterly milestone definitions"
+      - "Team capacity and skill requirements"
+      - "Technology adoption timelines"
+      - "Success measurement frameworks"
+
+# Maturity Assessment Framework
+maturity_levels:
+  level_1_basic:
+    description: "Basic functionality with minimal optimization"
+    characteristics: ["Working code", "Basic error handling", "Limited testing"]
+
+  level_2_managed:
+    description: "Organized code with standard practices"
+    characteristics:
+      ["Consistent structure", "Good error handling", "Adequate testing"]
+
+  level_3_defined:
+    description: "Well-architected with best practices"
+    characteristics:
+      ["Clear architecture", "Comprehensive testing", "Good documentation"]
+
+  level_4_quantitatively_managed:
+    description: "Measured and optimized performance"
+    characteristics:
+      ["Performance monitoring", "Quality metrics", "Automated processes"]
+
+  level_5_optimizing:
+    description: "Continuously improving and innovating"
+    characteristics:
+      ["Continuous optimization", "Innovation adoption", "Industry leadership"]
+
+# Success Metrics and KPIs
+success_measurements:
+  technical_metrics:
+    - "Response time improvement (target: <200ms average)"
+    - "Error rate reduction (target: <0.1%)"
+    - "Test coverage increase (target: >85%)"
+    - "Security vulnerability elimination (target: zero critical/high)"
+
+  business_metrics:
+    - "Development velocity improvement (target: 25% faster delivery)"
+    - "Maintenance cost reduction (target: 20% less time on bugs)"
+    - "System reliability improvement (target: 99.9% uptime)"
+    - "Developer satisfaction increase (measured via surveys)"
+
+  process_metrics:
+    - "Code review cycle time reduction"
+    - "Deployment frequency increase"
+    - "Mean time to recovery (MTTR) reduction"
+    - "Knowledge sharing and documentation completeness"
+
+# Implementation Phases
+improvement_phases:
+  phase_1_foundation:
+    duration: "Months 1-2"
+    focus: "Critical gaps and security fixes"
+    investment: "High priority, immediate ROI"
+    deliverables:
+      ["Security patches", "Critical performance fixes", "Basic monitoring"]
+
+  phase_2_enhancement:
+    duration: "Months 3-4"
+    focus: "Architecture improvements and tooling"
+    investment: "Medium priority, strategic value"
+    deliverables:
+      ["Refactored architecture", "Enhanced testing", "Improved tooling"]
+
+  phase_3_optimization:
+    duration: "Months 5-6"
+    focus: "Performance optimization and advanced features"
+    investment: "Lower priority, long-term value"
+    deliverables:
+      ["Performance improvements", "Advanced features", "Process automation"]
+
+# Success Criteria
+success_criteria:
+  analysis_completeness:
+    - "All domains thoroughly analyzed and documented"
+    - "Gaps categorized and prioritized accurately"
+    - "Business impact quantified with supporting data"
+    - "Implementation effort estimated with confidence intervals"
+
+  roadmap_viability:
+    - "Implementation phases are realistic and achievable"
+    - "Resource requirements align with organizational capacity"
+    - "Success metrics are measurable and time-bound"
+    - "Risk mitigation strategies address identified concerns"
+
+  stakeholder_alignment:
+    - "Executive summary addresses business concerns"
+    - "Technical details provide sufficient implementation guidance"
+    - "Investment priorities align with business strategy"
+    - "Timeline and milestones support project planning"
+
+# Command Integration
+related_commands:
+  prerequisite: "nodejs-code-review, nodejs-code-quality-analysis"
+  parallel: "nodejs-framework-planning"
+  follow_up: "nodejs-backend-architecture-design (for next iteration)"
+
+# Execution Context
+execution_context:
+  working_directory: "src/"
+  output_format: "markdown documents with gap analysis and roadmap"
+  documentation_level: "Comprehensive analysis with executive and technical sections"
+  validation_required: false

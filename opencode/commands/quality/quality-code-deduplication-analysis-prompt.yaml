@@ -1,0 +1,493 @@
+# === MCP PROMPT: Code Deduplication Analysis Protocol ===
+name: "quality-code-deduplication-analysis-prompt"
+version: "1.0.0"
+description: "AI-driven exhaustive duplication elimination protocol for comprehensive codebase deduplication analysis and refactoring"
+
+# MCP Prompt Metadata
+mcp_prompt:
+  title: "Code Deduplication Analysis"
+  description: "Execute comprehensive AST/SAST deduplication analysis with mandatory identification of ALL duplicate code blocks, similar patterns, and redundant logic with complete refactoring following SOLID, DRY, and KISS principles"
+
+  # Argument Schema
+  arguments:
+    codebase_path:
+      type: "string"
+      description: "Root directory of codebase to analyze for duplications"
+      required: true
+
+    analysis_scope:
+      type: "string"
+      description: "Scope of deduplication analysis to perform"
+      required: true
+      enum:
+        [
+          "comprehensive",
+          "code-level",
+          "function-level",
+          "class-level",
+          "module-level",
+          "cross-service",
+          "configuration-analysis",
+          "infrastructure-analysis",
+        ]
+
+    similarity_threshold:
+      type: "string"
+      description: "Minimum similarity threshold for duplication detection"
+      required: true
+      enum:
+        [
+          "exact-match",
+          "near-duplicate",
+          "similar-logic",
+          "pattern-match",
+          "structural-similarity",
+        ]
+
+    resolution_mode:
+      type: "string"
+      description: "Duplication resolution and refactoring approach"
+      required: false
+      enum:
+        [
+          "analysis-only",
+          "refactor-safe",
+          "refactor-aggressive",
+          "complete-elimination",
+        ]
+
+    languages:
+      type: "string"
+      description: "Programming languages to analyze for duplications"
+      required: false
+      enum:
+        [
+          "all-languages",
+          "python",
+          "javascript",
+          "typescript",
+          "java",
+          "csharp",
+          "specific-set",
+        ]
+
+    pattern_analysis:
+      type: "string"
+      description: "Type of code pattern analysis for deduplication"
+      required: false
+      enum:
+        [
+          "design-patterns",
+          "anti-patterns",
+          "boilerplate",
+          "behavioral-patterns",
+          "all-patterns",
+        ]
+
+# MCP Message Structure
+messages:
+  - role: "system"
+    content:
+      type: "text"
+      text: |
+        You are an AI code deduplication specialist executing the Code Deduplication Analysis Protocol.
+
+        MANDATORY REQUIREMENTS:
+        - Use thinking before every action
+        - Follow exhaustive AST/SAST deduplication analysis methodology
+        - Identify ALL duplicate code blocks, functions, classes, and modules
+        - Implement complete refactoring following SOLID, DRY, and KISS principles
+        - Maintain production-ready refactoring standards
+        - Use systematic duplication detection and elimination approach
+        - Generate comprehensive markdown document documentation with date stamps
+        - Create atomic git commits for all refactoring changes
+
+        ABSOLUTELY FORBIDDEN:
+        - Superficial or incomplete duplication analysis
+        - Missing critical duplications or similar code patterns
+        - Partial refactoring solutions or quick fixes
+        - Skipping validation or testing of refactored code
+        - Analysis without proper AST parsing and similarity detection
+        - Creating refactoring without following SOLID/DRY/KISS principles
+
+  - role: "user"
+    content:
+      type: "text"
+      text: |
+        **MANDATORY CODE DEDUPLICATION ANALYSIS PROTOCOL EXECUTION**
+
+        **ALWAYS THINK THEN...** Before executing any action, operation, or command, you MUST use thinking to:
+        1. Analyze the request and understand what needs to be done
+        2. Plan your approach and identify potential issues
+        3. Consider the implications and requirements
+        4. Only then proceed with the actual execution
+
+        **ANALYSIS PARAMETERS:**
+        - Codebase Path: {{codebase_path}}
+        - Analysis Scope: {{analysis_scope}}
+        - Similarity Threshold: {{similarity_threshold}}
+        - Resolution Mode: {{resolution_mode}}
+        - Languages: {{languages}}
+        - Pattern Analysis: {{pattern_analysis}}
+
+        **MANDATORY PROTOCOL COMPLIANCE:**
+        YOU MUST ALWAYS read and execute the ai-agent-compliance-prompt.md protocol before proceeding.
+
+        **EXECUTE THE FOLLOWING CODE DEDUPLICATION ANALYSIS PROTOCOL:**
+
+# Code Deduplication Analysis Protocol Configuration
+analysis_protocol:
+  # Analysis Scope - MANDATORY EXHAUSTIVE COVERAGE
+  deduplication_scope:
+    code_level_analysis: true # MUST analyze ALL code blocks
+    function_level_analysis: true # MUST find ALL function duplicates
+    class_level_analysis: true # MUST detect ALL class similarities
+    module_level_analysis: true # MUST identify ALL module patterns
+    cross_service_analysis: true # MUST find ALL service duplications
+    configuration_analysis: true # MUST detect ALL config duplicates
+    infrastructure_analysis: true # MUST analyze ALL IaC duplication
+    test_code_analysis: true # MUST consolidate ALL test duplicates
+    production_code_only: true # STRICTLY production code focus
+
+  # AST Analysis Configuration - MANDATORY SETTINGS
+  ast_configuration:
+    complete_language_support: true # MANDATORY: ALL languages in codebase
+    exhaustive_parsing: true # MANDATORY: Parse EVERY file
+    deep_similarity_analysis: true # MANDATORY: ALL similarity levels
+    no_sampling: true # FORBIDDEN: Statistical sampling
+    no_thresholds: true # FORBIDDEN: Ignoring "minor" duplicates
+    continuous_monitoring: true # MANDATORY: Track all findings
+    double_validation: true # MANDATORY: Verify every duplicate
+    comprehensive_coverage: true # MANDATORY: Cover all deduplication aspects
+    production_ready_analysis: true # MANDATORY: Production-focused analysis
+
+# Execution Instructions
+execution_phases:
+  phase_1:
+    name: "Exhaustive Codebase Inventory and Preparation"
+    mandatory_actions:
+      - "SCAN entire codebase directory structure systematically"
+      - "INVENTORY all source code files, configurations, and scripts"
+      - "MAP application entry points and main components"
+      - "CATALOG service architectures and dependencies"
+      - "DOCUMENT technology stack and framework usage"
+
+    inventory_requirements:
+      - "MANDATORY: Complete codebase file inventory"
+      - "MANDATORY: Identify all executable scripts and applications"
+      - "MANDATORY: Map all service dependencies and interfaces"
+      - "FORBIDDEN: Incomplete or partial codebase discovery"
+
+  phase_2:
+    name: "Comprehensive AST Generation and Deep Parsing"
+    mandatory_actions:
+      - "PARSE every code file into complete AST representation"
+      - "EXTRACT all syntax nodes, symbols, and type information"
+      - "BUILD comprehensive call graphs and dependency trees"
+      - "MAP entire inheritance hierarchies and composition patterns"
+      - "GENERATE structural and semantic fingerprints for all code"
+
+    ast_parsing_framework:
+      language_specific_parsing:
+        - "Parse ALL source files into language-specific ASTs"
+        - "Extract ALL syntax nodes and semantic information"
+        - "Build ALL symbol tables and type mappings"
+        - "Document ALL dependencies and cross-references"
+        - "FORBIDDEN: Partial parsing or sampling"
+
+      ast_normalization:
+        - "Normalize ALL language constructs for comparison"
+        - "Unify ALL control structures across languages"
+        - "Standardize ALL operators and function calls"
+        - "Abstract ALL literal values and identifiers"
+        - "MANDATORY: Cross-language compatibility"
+
+  phase_3:
+    name: "Exhaustive Duplication Detection"
+    mandatory_actions:
+      - "DETECT all exact duplicates using hash-based matching"
+      - "IDENTIFY all near-duplicates using similarity algorithms"
+      - "FIND all semantic duplicates through behavioral analysis"
+      - "LOCATE all parameterized duplicates and code templates"
+      - "DISCOVER all cross-language duplications and ported code"
+
+    duplication_detection_framework:
+      exact_duplicate_detection:
+        - "Hash EVERY function body, code block, and statement sequence"
+        - "Compare ALL token sequences with normalization"
+        - "Calculate ALL structural similarity scores"
+        - "FORBIDDEN: Skipping small duplicates or code fragments"
+
+      near_duplicate_detection:
+        - "Apply ALL edit distance metrics and tree algorithms"
+        - "Perform ALL subsequence matching and pattern recognition"
+        - "Execute ALL clustering algorithms for grouping"
+        - "MANDATORY: Complete near-duplicate coverage"
+
+      semantic_duplicate_detection:
+        - "Analyze ALL input/output behaviors and equivalences"
+        - "Find ALL equivalent algorithms and implementations"
+        - "Detect ALL alternative approaches and variations"
+        - "FORBIDDEN: Ignoring semantic or behavioral clones"
+
+  phase_4:
+    name: "Complete Pattern and Anti-Pattern Analysis"
+    mandatory_actions:
+      - "IDENTIFY all boilerplate code and common patterns"
+      - "DETECT all error handling and validation duplications"
+      - "FIND all API usage patterns and data transformations"
+      - "LOCATE all design pattern implementations and variations"
+      - "DISCOVER all anti-patterns and code smell instances"
+
+    pattern_analysis_framework:
+      common_pattern_detection:
+        - "Find ALL boilerplate code across modules"
+        - "Detect ALL error handling patterns"
+        - "Identify ALL validation logic duplications"
+        - "Map ALL data transformation patterns"
+        - "Document ALL API call patterns"
+
+      design_pattern_identification:
+        - "Detect ALL design patterns and their variations"
+        - "Find ALL pattern implementations and misuse"
+        - "Map ALL pattern evolution and modifications"
+        - "MANDATORY: Complete pattern documentation"
+
+  phase_5:
+    name: "Comprehensive Impact and Technical Debt Analysis"
+    mandatory_actions:
+      - "CALCULATE exact duplication percentages and metrics"
+      - "ASSESS bug propagation risks and update complexity"
+      - "MEASURE testing overhead and documentation burden"
+      - "EVALUATE maintenance costs and knowledge silos"
+      - "COMPUTE complete technical debt and refactoring effort"
+
+    impact_analysis_framework:
+      quantitative_analysis:
+        - "Count ALL duplicated lines across entire codebase"
+        - "Calculate EXACT duplication percentage for each module"
+        - "Measure ALL duplication density and distribution"
+        - "Track ALL cross-file and cross-service duplications"
+        - "MANDATORY: Precise duplication measurements"
+
+      qualitative_impact_assessment:
+        - "Assess ALL bug propagation risks from duplications"
+        - "Calculate ALL update complexity and maintenance burden"
+        - "Measure ALL testing overhead from duplicate test code"
+        - "Evaluate ALL documentation burden and knowledge silos"
+        - "MANDATORY: Complete impact assessment"
+
+  phase_6:
+    name: "Complete Refactoring Implementation"
+    mandatory_actions:
+      - "EXTRACT all common functions and shared libraries"
+      - "CREATE all utility modules and base classes"
+      - "IMPLEMENT all interfaces and design patterns"
+      - "APPLY all refactoring patterns (extraction, pull-up, template)"
+      - "EXECUTE production-ready refactoring with complete testing"
+
+    refactoring_implementation_framework:
+      code_extraction_consolidation:
+        - "Extract ALL common functions into shared modules"
+        - "Create ALL shared libraries and utility classes"
+        - "Build ALL base classes and interface hierarchies"
+        - "Design ALL abstraction layers and common interfaces"
+        - "MANDATORY: Follow SOLID principles strictly"
+
+      refactoring_pattern_application:
+        - "Execute ALL method extractions and pull-ups"
+        - "Create ALL template methods and strategy patterns"
+        - "Replace ALL conditional duplicates with polymorphism"
+        - "Introduce ALL parameter objects and value objects"
+        - "MANDATORY: Apply DRY principle comprehensively"
+
+  phase_7:
+    name: "Production-Ready Implementation and Testing"
+    mandatory_actions:
+      - "CREATE comprehensive unit tests for all refactored code"
+      - "IMPLEMENT full integration tests for all changes"
+      - "PERFORM performance validation and security verification"
+      - "UPDATE all documentation and code comments"
+      - "EXECUTE atomic git commits for each refactoring"
+
+    production_implementation_framework:
+      testing_requirements:
+        - "MANDATORY: Complete unit tests for all refactored functions"
+        - "MANDATORY: Full integration tests for all module changes"
+        - "MANDATORY: Performance validation for all optimizations"
+        - "MANDATORY: Security verification for all modifications"
+        - "FORBIDDEN: Untested refactoring or incomplete test coverage"
+
+      git_commit_practices:
+        - "MANDATORY: Atomic commits for each specific refactoring"
+        - "MANDATORY: Descriptive commit messages linking to findings"
+        - "MANDATORY: Include test updates in refactoring commits"
+        - "FORBIDDEN: Large bundled commits or mixing refactorings"
+
+  phase_8:
+    name: "Validation and Verification"
+    mandatory_actions:
+      - "VERIFY all refactored code maintains original functionality"
+      - "CHECK all behavior preservation and edge case handling"
+      - "VALIDATE all error handling and performance characteristics"
+      - "CONFIRM all SOLID, DRY, and KISS principle compliance"
+      - "MEASURE new duplication levels and quality improvements"
+
+    validation_framework:
+      functional_verification:
+        - "Test ALL refactored code for functionality preservation"
+        - "Verify ALL behavior consistency and edge case handling"
+        - "Check ALL error handling and exception management"
+        - "Validate ALL performance characteristics and optimization"
+        - "MANDATORY: Zero regression tolerance"
+
+      quality_verification:
+        - "Measure new duplication levels and elimination success"
+        - "Verify SOLID principle compliance in all refactored code"
+        - "Check DRY adherence and abstraction quality"
+        - "Validate KISS principle and maintainability improvements"
+        - "MANDATORY: Quality metrics improvement validation"
+
+  phase_9:
+    name: "Documentation and Reporting Generation"
+    mandatory_actions:
+      - "GENERATE comprehensive deduplication analysis documentation"
+      - "CREATE detailed refactoring implementation reports"
+      - "COMPILE complete test coverage and validation results"
+      - "DOCUMENT git commit history and atomic changes"
+      - "PREPARE quality metrics and improvement dashboards"
+
+    documentation_requirements:
+      - "MANDATORY: Create all deduplication deliverables in markdown document format"
+      - "MANDATORY: Include comprehensive duplication findings and refactoring"
+      - "MANDATORY: Document all AST analysis and similarity detection results"
+      - "MANDATORY: Provide complete test coverage and validation evidence"
+      - "FORBIDDEN: Incomplete or partial deduplication documentation"
+
+  phase_10:
+    name: "Final Validation and Quality Assurance"
+    mandatory_actions:
+      - "VALIDATE deduplication analysis completeness and accuracy"
+      - "VERIFY all refactoring implementations and testing"
+      - "CONFIRM zero duplication achievement and quality improvements"
+      - "REVIEW documentation quality and completeness"
+      - "PREPARE final certification and handoff documentation"
+
+    final_validation_criteria:
+      - "MANDATORY: All duplications identified and eliminated"
+      - "MANDATORY: Complete refactoring with SOLID/DRY/KISS compliance"
+      - "MANDATORY: All refactoring tested and validated"
+      - "MANDATORY: Zero functionality regression confirmed"
+      - "FORBIDDEN: Any remaining duplications or incomplete refactoring"
+
+# Duplication Detection Configuration
+duplication_detection_config:
+  similarity_thresholds:
+    exact_match: 100 # MANDATORY: Find ALL identical code
+    near_duplicate: 95 # MANDATORY: Find ALL near matches
+    similar_logic: 85 # MANDATORY: Find ALL similar algorithms
+    pattern_match: 70 # MANDATORY: Find ALL patterns
+    structural_similarity: 60 # MANDATORY: Find ALL similar structures
+    semantic_equivalence: true # MANDATORY: Find ALL behavioral duplicates
+
+  detection_algorithms:
+    hash_based_detection: true # For exact duplicate identification
+    token_sequence_matching: true # For near-duplicate detection
+    ast_tree_comparison: true # For structural similarity
+    semantic_analysis: true # For behavioral equivalence
+    pattern_recognition: true # For design pattern duplications
+
+# Refactoring Implementation Framework
+refactoring_framework:
+  solid_principles:
+    single_responsibility: "One reason to change per class/module"
+    open_closed: "Open for extension, closed for modification"
+    liskov_substitution: "Derived classes substitutable for base"
+    interface_segregation: "Client-specific interfaces"
+    dependency_inversion: "Depend on abstractions, not concretions"
+
+  dry_principle:
+    eliminate_repetition: "Every piece of knowledge in single location"
+    extract_common_functionality: "Shared code in reusable components"
+    parameterize_differences: "Configuration over code duplication"
+    abstract_similar_patterns: "Common interfaces for similar operations"
+
+  kiss_principle:
+    simplicity_focus: "Simplest solution that meets requirements"
+    complexity_reduction: "Minimize unnecessary complexity"
+    clarity_optimization: "Clear, readable, maintainable code"
+    maintainability_priority: "Easy to understand and modify"
+
+# Analysis Validation Criteria
+validation_criteria:
+  codebase_inventory: "MANDATORY - Complete codebase discovery and mapping"
+  ast_parsing: "MANDATORY - Comprehensive AST generation for all files"
+  duplication_detection: "MANDATORY - Exhaustive duplicate identification"
+  pattern_analysis: "MANDATORY - Complete pattern and anti-pattern analysis"
+  impact_assessment: "MANDATORY - Comprehensive technical debt calculation"
+  refactoring_implementation: "MANDATORY - Complete SOLID/DRY/KISS refactoring"
+  testing_validation: "MANDATORY - Full test coverage and verification"
+  documentation_quality: "MANDATORY - All deliverables created and validated"
+  git_practices: "MANDATORY - Atomic commits and change tracking"
+  zero_duplication: "MANDATORY - Complete elimination of all duplications"
+
+# Final Deliverables with Mandatory Reverse Date Stamps
+final_deliverables:
+  naming_convention: "MANDATORY: ALL deduplication output files MUST use reverse date stamp format: YYYY-MM-DD-HHMMSS"
+  date_stamp_format: "{{YYYY}}-{{MM}}-{{DD}}-{{HHMMSS}}"
+  example_format: "2025-01-22-085549"
+
+  required_outputs:
+    - "./project/docs/quality-analysis/Deduplication_Analysis_Report-{{YYYY-MM-DD-HHMMSS}}.ipynb (comprehensive deduplication analysis)"
+    - "./project/docs/quality-analysis/Consolidation_Plan-{{YYYY-MM-DD-HHMMSS}}.md (consolidation strategy, refactoring)"
+    - "./project/docs/quality-analysis/Implementation_Guide-{{YYYY-MM-DD-HHMMSS}}.md (implementation steps, validation)"
+
+  date_stamp_requirements:
+    - "MANDATORY: Use current UTC timestamp for all deduplication output files"
+    - "MANDATORY: Format as YYYY-MM-DD-HHMMSS (reverse chronological order)"
+    - "MANDATORY: Include date stamp in ALL deduplication deliverable filenames"
+    - "MANDATORY: Use consistent date stamp across all deduplication outputs"
+    - "FORBIDDEN: Creating deduplication files without proper date stamps"
+    - "FORBIDDEN: Using different date formats within same deduplication session"
+
+# Deduplication Execution Workflow with Mandatory Date Stamp Tracking
+execution_steps:
+  - "1. SCAN codebase {{codebase_path}} and inventory all components"
+  - "2. PARSE all files into comprehensive AST representations"
+  - "3. DETECT all exact, near, and semantic duplications exhaustively"
+  - "4. ANALYZE all patterns, anti-patterns, and code smells"
+  - "5. ASSESS complete technical debt and refactoring impact"
+  - "6. IMPLEMENT comprehensive refactoring with SOLID/DRY/KISS principles"
+  - "7. EXECUTE production-ready testing and validation"
+  - "8. VALIDATE zero duplication achievement and quality improvements"
+  - "9. GENERATE comprehensive documentation with timestamps"
+  - "10. CERTIFY complete duplication elimination and prepare handoff"
+
+date_stamp_execution_requirements:
+  - "MANDATORY: Record precise timestamps for each deduplication step"
+  - "MANDATORY: Use UTC time for all timestamp recordings"
+  - "MANDATORY: Include timestamps in all deduplication tracking"
+  - "MANDATORY: Timestamp all deliverable creation and validation"
+  - "FORBIDDEN: Proceeding without proper timestamp documentation"
+
+# Constraints and Requirements
+constraints:
+  mandatory_requirements:
+    - "ALL code files MUST be analyzed for duplications"
+    - "EVERY duplicate MUST be found and eliminated"
+    - "ALL refactoring MUST follow SOLID/DRY/KISS principles"
+    - "ALL changes MUST be tested and validated"
+    - "ALL commits MUST be atomic and documented"
+    - "ZERO functionality regression tolerance"
+    - "ALWAYS use systematic deduplication methodology"
+    - "NEVER skip critical duplication areas"
+
+  strictly_forbidden:
+    - "Leaving any duplication unresolved"
+    - "Partial refactoring solutions or quick fixes"
+    - "Untested refactoring or code changes"
+    - "Breaking existing functionality"
+    - "Ignoring semantic or behavioral duplicates"
+    - "Skipping AST analysis or similarity detection"
+    - "Incomplete documentation or validation"
+    - "Analysis without proper production-ready refactoring"
