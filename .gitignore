@@ -193,3 +193,23 @@ opencode/plugins
 
 opencode/command/next-sprint-design.md
 opencode/command/fix-renovate-mr.md
+out_*.txt
+out_*.json
+.venv
+venv/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.tox/
+.nox/
+build/
+dist/
+node_modules/
+tmp/
+temp/
+*.tmp
+*.temp
+logs/
+*.log
+.env
+.env.*
